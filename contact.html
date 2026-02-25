@@ -95,7 +95,7 @@
         <div class="contact-item-icon">✉️</div>
         <div>
           <div class="contact-item-label">Email</div>
-          <div class="contact-item-value">hello@dropeverythingandgo.com</div>
+          <div class="contact-item-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e9818c858586a98d9b86998c9f8c9b909d8180878e88878d8e86c78a8684">[email&#160;protected]</a></div>
           <div class="contact-item-desc">I reply to all enquiries within 24 hours</div>
         </div>
       </div>
@@ -120,22 +120,23 @@
     <div class="contact-form-box reveal reveal-delay-1">
       <h3>Send a Message</h3>
       <p>Fill in the form and I'll get back to you as soon as possible.</p>
-      <form class="cf" onsubmit="submitContact(event)">
+      <form class="cf" action="https://formspree.io/f/mjgelkpz" method="POST">
+        <input type="hidden" name="_subject" value="New Contact Message — Drop Everything And Go" />
         <div class="cf-row">
-          <div class="cf-group"><label>First Name</label><input type="text" placeholder="Your first name" required /></div>
-          <div class="cf-group"><label>Last Name</label><input type="text" placeholder="Your last name" required /></div>
+          <div class="cf-group"><label>First Name</label><input type="text" name="first_name" placeholder="Your first name" required /></div>
+          <div class="cf-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Your last name" required /></div>
         </div>
-        <div class="cf-group"><label>Email</label><input type="email" placeholder="hello@email.com" required /></div>
+        <div class="cf-group"><label>Email</label><input type="email" name="email" placeholder="hello@email.com" required /></div>
         <div class="cf-group">
           <label>What's this about?</label>
-          <select>
+          <select name="enquiry_type">
             <option>I want help planning a trip</option>
             <option>I have a general travel question</option>
             <option>Collaboration / press enquiry</option>
             <option>Something else</option>
           </select>
         </div>
-        <div class="cf-group"><label>Your Message</label><textarea placeholder="Tell me what you're thinking..."></textarea></div>
+        <div class="cf-group"><label>Your Message</label><textarea name="message" placeholder="Tell me what you're thinking..."></textarea></div>
         <button type="submit" class="cf-submit">Send Message</button>
       </form>
     </div>
@@ -181,7 +182,7 @@
   <div class="footer-bottom"><p>© 2025 Drop Everything And Go. All rights reserved.</p><p>Made with ♡ for travellers everywhere</p></div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
   window.addEventListener('scroll', () => { document.getElementById('navbar').style.background = window.scrollY > 60 ? 'rgba(10,22,40,0.97)' : 'rgba(10,22,40,0.92)'; });
@@ -192,12 +193,4 @@
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
       if (!wasOpen) item.classList.add('open');
     });
-  });
-  function submitContact(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('.cf-submit');
-    btn.textContent = '✓ Message Sent!'; btn.style.background = '#4caf82'; btn.disabled = true;
-  }
-</script>
-</body>
-</html>
+  

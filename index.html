@@ -401,8 +401,9 @@
 <section class="newsletter">
   <h2>Never Miss an Adventure</h2>
   <p>Fresh destination guides, honest tips, and exclusive deals — straight to your inbox.</p>
-  <form class="nl-form" onsubmit="subscribe(event)">
-    <input type="email" placeholder="Your email address" required />
+  <form class="nl-form" action="https://formspree.io/f/mjgelkpz" method="POST">
+    <input type="hidden" name="_subject" value="New Newsletter Signup — Drop Everything And Go" />
+    <input type="email" name="email" placeholder="Your email address" required />
     <button type="submit">Subscribe</button>
   </form>
 </section>
