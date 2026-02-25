@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Drop Everything And Go</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-section { background: var(--white); }
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem;
+      max-width: 1100px; margin: 0 auto; align-items: start;
+    }
+    .contact-info h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem; line-height: 1.2; }
+    .contact-info h2 em { font-style: italic; color: var(--sky); }
+    .contact-info p { font-size: 0.95rem; color: var(--light-text); line-height: 1.8; margin-bottom: 2.5rem; }
+    .contact-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.8rem; }
+    .contact-item-icon { font-size: 1.5rem; margin-top: 0.1rem; }
+    .contact-item-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.2rem; }
+    .contact-item-value { font-size: 0.92rem; color: var(--navy); font-weight: 500; }
+    .contact-item-desc { font-size: 0.82rem; color: var(--light-text); margin-top: 0.2rem; }
+
+    .contact-form-box {
+      background: var(--navy); border-radius: 4px; padding: 3rem;
+    }
+    .contact-form-box h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
+    .contact-form-box p { color: rgba(200,230,245,0.6); font-size: 0.85rem; margin-bottom: 2rem; }
+    .cf { display: flex; flex-direction: column; gap: 1rem; }
+    .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .cf-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .cf-group label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(200,230,245,0.55); font-weight: 500; }
+    .cf-group input, .cf-group select, .cf-group textarea {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(200,230,245,0.15);
+      border-radius: 2px; padding: 0.75rem 1rem; color: var(--white);
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; outline: none;
+      transition: border-color 0.2s;
+    }
+    .cf-group input:focus, .cf-group select:focus, .cf-group textarea:focus { border-color: var(--gold); }
+    .cf-group input::placeholder, .cf-group textarea::placeholder { color: rgba(200,230,245,0.3); }
+    .cf-group select option { background: var(--navy); }
+    .cf-group textarea { resize: vertical; min-height: 120px; }
+    .cf-submit { background: var(--gold); color: var(--navy); border: none; padding: 1rem; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.2s; }
+    .cf-submit:hover { background: #e0b97c; transform: translateY(-1px); }
+
+    .faq-section { background: var(--bg-light); }
+    .faq-section h2 { text-align: center; margin-bottom: 3rem; }
+    .faq-list { max-width: 750px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid rgba(10,22,40,0.1); }
+    .faq-q { padding: 1.3rem 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 500; color: var(--navy); font-size: 0.95rem; }
+    .faq-q:hover { color: var(--sky); }
+    .faq-icon { color: var(--sky); font-size: 1.2rem; transition: transform 0.3s; font-style: normal; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s; font-size: 0.88rem; color: var(--light-text); line-height: 1.7; }
+    .faq-item.open .faq-a { max-height: 200px; padding-bottom: 1.2rem; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .cf-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog & Services</span></a>
+  <ul class="nav-links">
+    <li><a href="destinations.html">Destinations</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta active">Plan My Trip</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <p class="page-eyebrow">✦ Let's Plan Something Amazing</p>
+    <h1 class="page-title">Get In <em>Touch</em></h1>
+    <p class="page-subtitle">Whether you have a trip in mind or just an idea — we'd love to hear from you.</p>
+  </div>
+  <div class="page-hero-wave">
+    <svg viewBox="0 0 1800 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 C300,80 600,0 900,40 C1200,80 1500,0 1800,40 L1800,80 L0,80 Z" fill="var(--white)"/>
+    </svg>
+  </div>
+</div>
+
+<section class="section contact-section">
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <p class="section-label">✦ Say Hello</p>
+      <h2>Let's make your <em>next trip</em> happen</h2>
+      <p>Have a destination in mind? A vague idea? Or no idea at all — that's fine too! Drop me a message and we'll figure out the perfect trip together.</p>
+      <div class="contact-item">
+        <div class="contact-item-icon">✉️</div>
+        <div>
+          <div class="contact-item-label">Email</div>
+          <div class="contact-item-value">hello@dropeverythingandgo.com</div>
+          <div class="contact-item-desc">I reply to all enquiries within 24 hours</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">⏰</div>
+        <div>
+          <div class="contact-item-label">Response Time</div>
+          <div class="contact-item-value">Within 24 hours</div>
+          <div class="contact-item-desc">Usually much faster — I love talking travel!</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-item-icon">📍</div>
+        <div>
+          <div class="contact-item-label">Based In</div>
+          <div class="contact-item-value">United Kingdom</div>
+          <div class="contact-item-desc">Planning trips worldwide</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-box reveal reveal-delay-1">
+      <h3>Send a Message</h3>
+      <p>Fill in the form and I'll get back to you as soon as possible.</p>
+      <form class="cf" onsubmit="submitContact(event)">
+        <div class="cf-row">
+          <div class="cf-group"><label>First Name</label><input type="text" placeholder="Your first name" required /></div>
+          <div class="cf-group"><label>Last Name</label><input type="text" placeholder="Your last name" required /></div>
+        </div>
+        <div class="cf-group"><label>Email</label><input type="email" placeholder="hello@email.com" required /></div>
+        <div class="cf-group">
+          <label>What's this about?</label>
+          <select>
+            <option>I want help planning a trip</option>
+            <option>I have a general travel question</option>
+            <option>Collaboration / press enquiry</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div class="cf-group"><label>Your Message</label><textarea placeholder="Tell me what you're thinking..."></textarea></div>
+        <button type="submit" class="cf-submit">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="section faq-section">
+  <div class="reveal"><p class="section-label" style="text-align:center">✦ Quick Answers</p><h2 class="section-title">Frequently Asked <em>Questions</em></h2></div>
+  <div class="faq-list reveal">
+    <div class="faq-item">
+      <div class="faq-q">How much does trip planning cost? <em class="faq-icon">+</em></div>
+      <div class="faq-a">Bespoke itinerary planning starts from £150. This covers a fully personalised day-by-day itinerary, accommodation recommendations, and transport advice. Full booking services are priced separately — get in touch for a quote.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How long does it take to plan a trip? <em class="faq-icon">+</em></div>
+      <div class="faq-a">I'll send you an initial itinerary within 24-48 hours of your enquiry. From there we refine and finalise together — most trips take 1-2 weeks from first contact to everything being booked.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do you only plan trips to destinations on the blog? <em class="faq-icon">+</em></div>
+      <div class="faq-a">Not at all! I can plan trips to destinations worldwide. The blog just covers places I've personally visited, but my planning services aren't limited to those locations.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can you help with last-minute trips? <em class="faq-icon">+</em></div>
+      <div class="faq-a">Yes! Drop everything and go, right? I can often turn around a last-minute itinerary very quickly. Get in touch and we'll see what we can do.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do you offer refunds if my trip is cancelled? <em class="faq-icon">+</em></div>
+      <div class="faq-a">Planning fees are non-refundable, but I always recommend comprehensive travel insurance and will help guide you through the claims process if something goes wrong.</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog & Services</span></a>
+      <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><ul><li><a href="destinations.html">Destinations</a></li><li><a href="blog.html">Blog</a></li><li><a href="about.html">About</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Trip Planning</a></li><li><a href="services.html">Hotel Curation</a></li><li><a href="contact.html">Get a Quote</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Drop Everything And Go. All rights reserved.</p><p>Made with ♡ for travellers everywhere</p></div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
+  window.addEventListener('scroll', () => { document.getElementById('navbar').style.background = window.scrollY > 60 ? 'rgba(10,22,40,0.97)' : 'rgba(10,22,40,0.92)'; });
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+  function submitContact(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.cf-submit');
+    btn.textContent = '✓ Message Sent!'; btn.style.background = '#4caf82'; btn.disabled = true;
+  }
+</script>
+</body>
+</html>

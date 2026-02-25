@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Drop Everything And Go</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .services-section { background: var(--navy); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+      max-width: 1200px; margin: 0 auto 5rem;
+    }
+    .service-card {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(200,230,245,0.1);
+      border-radius: 3px; padding: 2.5rem 2rem; position: relative; overflow: hidden;
+      transition: background 0.3s, border-color 0.3s, transform 0.3s;
+    }
+    .service-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(to right, var(--sky), var(--gold));
+      transform: scaleX(0); transform-origin: left; transition: transform 0.4s;
+    }
+    .service-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(200,230,245,0.2); transform: translateY(-4px); }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-icon { font-size: 2.4rem; margin-bottom: 1.2rem; }
+    .service-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--white); margin-bottom: 0.7rem; }
+    .service-desc { font-size: 0.85rem; color: rgba(200,230,245,0.6); line-height: 1.7; margin-bottom: 1.5rem; }
+    .service-price { font-size: 0.75rem; color: var(--gold); letter-spacing: 0.1em; font-weight: 600; text-transform: uppercase; }
+
+    .services-header-block { text-align: center; margin-bottom: 4rem; }
+    .services-header-block .section-title { color: var(--white); }
+    .services-header-block .section-title em { color: var(--mist); }
+    .services-subtitle { font-size: 1rem; color: rgba(200,230,245,0.65); max-width: 520px; margin: 1rem auto 0; line-height: 1.7; }
+
+    .process-section { background: var(--bg-light); }
+    .process-section h2 { text-align: center; margin-bottom: 3.5rem; }
+    .process-steps {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem;
+      max-width: 1100px; margin: 0 auto;
+    }
+    .process-step { text-align: center; padding: 1rem; }
+    .step-num {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--navy); color: var(--gold);
+      font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .step-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; }
+    .step-desc { font-size: 0.85rem; color: var(--light-text); line-height: 1.6; }
+    .process-divider {
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; color: var(--mist); padding-top: 1rem;
+    }
+
+    .quote-section { background: var(--white); }
+    .quote-box {
+      max-width: 700px; margin: 0 auto;
+      background: linear-gradient(135deg, var(--navy), var(--ocean));
+      border-radius: 4px; padding: 3.5rem; text-align: center;
+    }
+    .quote-box h2 { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--white); margin-bottom: 0.8rem; }
+    .quote-box p { color: rgba(200,230,245,0.7); margin-bottom: 2rem; line-height: 1.6; }
+    .quote-form { display: flex; flex-direction: column; gap: 1rem; text-align: left; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(200,230,245,0.6); font-weight: 500; }
+    .form-group input, .form-group select, .form-group textarea {
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(200,230,245,0.2);
+      border-radius: 2px; padding: 0.75rem 1rem; color: var(--white);
+      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(200,230,245,0.35); }
+    .form-group select option { background: var(--navy); }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .form-submit { background: var(--gold); color: var(--navy); border: none; padding: 1rem; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.2s; }
+    .form-submit:hover { background: #e0b97c; }
+
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog & Services</span></a>
+  <ul class="nav-links">
+    <li><a href="destinations.html">Destinations</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Plan My Trip</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <p class="page-eyebrow">✦ More Than Just a Blog</p>
+    <h1 class="page-title">Travel <em>Services</em></h1>
+    <p class="page-subtitle">We don't just inspire your next trip — we plan and book it for you, from start to finish.</p>
+  </div>
+  <div class="page-hero-wave">
+    <svg viewBox="0 0 1800 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 C300,80 600,0 900,40 C1200,80 1500,0 1800,40 L1800,80 L0,80 Z" fill="var(--navy)"/>
+    </svg>
+  </div>
+</div>
+
+<section class="section services-section">
+  <div class="services-header-block reveal">
+    <p class="section-label">✦ What We Offer</p>
+    <h2 class="section-title">Our <em>Services</em></h2>
+    <p class="services-subtitle">Every service is handled personally — no call centres, no automated responses. Just great travel planning.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal"><div class="service-icon">✈️</div><h3 class="service-name">Bespoke Trip Planning</h3><p class="service-desc">Fully personalised itineraries built around your budget, travel style, and wish list. No templates, no shortcuts.</p><p class="service-price">From £150 per trip</p></div>
+    <div class="service-card reveal reveal-delay-1"><div class="service-icon">🏨</div><h3 class="service-name">Hotel & Villa Curation</h3><p class="service-desc">We find the perfect place to stay — from boutique B&Bs to five-star resorts — so you don't have to trawl through hundreds of listings.</p><p class="service-price">Free with full itinerary</p></div>
+    <div class="service-card reveal reveal-delay-2"><div class="service-icon">💑</div><h3 class="service-name">Honeymoon Packages</h3><p class="service-desc">Specialist honeymoon planning with romantic upgrades, surprise touches, and a real attention to detail for the most important trip of your life.</p><p class="service-price">Custom pricing</p></div>
+    <div class="service-card reveal"><div class="service-icon">👥</div><h3 class="service-name">Group Travel</h3><p class="service-desc">Planning a group holiday, birthday trip, or hen/stag do abroad? We coordinate everything so nobody has to be the organiser.</p><p class="service-price">From £75 per person</p></div>
+    <div class="service-card reveal reveal-delay-1"><div class="service-icon">🛡️</div><h3 class="service-name">Travel Insurance Advice</h3><p class="service-desc">We'll guide you through the best cover options for your trip — clearly, without jargon, so you know you're properly protected.</p><p class="service-price">Complimentary</p></div>
+    <div class="service-card reveal reveal-delay-2"><div class="service-icon">📱</div><h3 class="service-name">24/7 On-Trip Support</h3><p class="service-desc">Flight cancelled? Hotel issue? We're on hand around the clock to help with rebookings, emergencies, and anything in between.</p><p class="service-price">Included in packages</p></div>
+  </div>
+</section>
+
+<section class="section process-section">
+  <div class="reveal"><p class="section-label" style="text-align:center">✦ Simple Process</p><h2 class="section-title">How It <em>Works</em></h2></div>
+  <div class="process-steps">
+    <div class="process-step reveal"><div class="step-num">1</div><h4 class="step-title">Tell Us Your Dream</h4><p class="step-desc">Fill in our short enquiry form — where you want to go, your budget, travel style, and dates.</p></div>
+    <div class="process-step reveal reveal-delay-1"><div class="step-num">2</div><h4 class="step-title">We Create Your Plan</h4><p class="step-desc">Within 24 hours we'll send you a personalised itinerary and quote, completely tailored to you.</p></div>
+    <div class="process-step reveal reveal-delay-2"><div class="step-num">3</div><h4 class="step-title">We Refine & Book</h4><p class="step-desc">We tweak until it's perfect, then handle all the bookings, confirmations, and documents.</p></div>
+    <div class="process-step reveal reveal-delay-3"><div class="step-num">4</div><h4 class="step-title">You Just Show Up</h4><p class="step-desc">Everything is ready. All you have to do is pack, get to the airport, and enjoy every moment.</p></div>
+  </div>
+</section>
+
+<section class="section quote-section" id="quote">
+  <div class="quote-box reveal">
+    <h2>Get a Free Quote</h2>
+    <p>Tell us about your dream trip and we'll come back to you with a personalised quote within 24 hours. No commitment, no pressure.</p>
+    <form class="quote-form" onsubmit="submitQuote(event)">
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="Your first name" required /></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="Your last name" required /></div>
+      </div>
+      <div class="form-group"><label>Email Address</label><input type="email" placeholder="hello@email.com" required /></div>
+      <div class="form-row">
+        <div class="form-group"><label>Destination</label><input type="text" placeholder="Where do you want to go?" /></div>
+        <div class="form-group"><label>Approx. Budget</label>
+          <select>
+            <option>Under £1,000</option>
+            <option>£1,000 – £2,500</option>
+            <option>£2,500 – £5,000</option>
+            <option>£5,000 – £10,000</option>
+            <option>£10,000+</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group"><label>Tell us more</label><textarea placeholder="Dates, number of travellers, special occasions, any specific wishes..."></textarea></div>
+      <button type="submit" class="form-submit">Send My Enquiry</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog & Services</span></a>
+      <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><ul><li><a href="destinations.html">Destinations</a></li><li><a href="blog.html">Blog</a></li><li><a href="about.html">About</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Trip Planning</a></li><li><a href="services.html">Hotel Curation</a></li><li><a href="contact.html">Get a Quote</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Drop Everything And Go. All rights reserved.</p><p>Made with ♡ for travellers everywhere</p></div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
+  window.addEventListener('scroll', () => { document.getElementById('navbar').style.background = window.scrollY > 60 ? 'rgba(10,22,40,0.97)' : 'rgba(10,22,40,0.92)'; });
+  function submitQuote(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = '✓ Enquiry Sent! We\'ll be in touch within 24 hours.';
+    btn.style.background = '#4caf82'; btn.disabled = true;
+  }
+</script>
+</body>
+</html>

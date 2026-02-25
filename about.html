@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Drop Everything And Go</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .about-section { background: var(--white); }
+    .about-intro {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem;
+      max-width: 1100px; margin: 0 auto; align-items: center;
+    }
+    .about-img-block {
+      position: relative;
+    }
+    .about-img-placeholder {
+      width: 100%; aspect-ratio: 3/4;
+      background: linear-gradient(135deg, #1a4a7a, #0a2a50);
+      border-radius: 3px;
+      display: flex; align-items: center; justify-content: center; font-size: 7rem;
+    }
+    .about-img-badge {
+      position: absolute; bottom: -1.5rem; right: -1.5rem;
+      background: var(--gold); color: var(--navy);
+      padding: 1.2rem 1.5rem; border-radius: 3px; text-align: center;
+      font-family: 'Playfair Display', serif;
+    }
+    .about-img-badge span { display: block; font-size: 2rem; font-weight: 700; line-height: 1; }
+    .about-img-badge small { font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; font-family: 'DM Sans', sans-serif; font-weight: 600; }
+    .about-text h2 { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 700; color: var(--navy); margin-bottom: 1.2rem; line-height: 1.15; }
+    .about-text h2 em { font-style: italic; color: var(--sky); }
+    .about-text p { font-size: 0.95rem; color: var(--light-text); line-height: 1.8; margin-bottom: 1.2rem; }
+    .about-text .btn-primary { margin-top: 0.8rem; }
+
+    .about-stats { background: var(--navy); padding: 4rem; }
+    .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 900px; margin: 0 auto; text-align: center; }
+    .stat-item-num { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 700; color: var(--gold); }
+    .stat-item-label { font-size: 0.8rem; color: rgba(200,230,245,0.55); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.3rem; }
+
+    .values-section { background: var(--bg-light); }
+    .values-section h2 { text-align: center; margin-bottom: 3rem; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 1000px; margin: 0 auto; }
+    .value-card { background: var(--white); padding: 2.5rem 2rem; border-radius: 3px; border-top: 3px solid var(--sky); }
+    .value-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .value-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 0.6rem; }
+    .value-desc { font-size: 0.87rem; color: var(--light-text); line-height: 1.7; }
+
+    @media (max-width: 900px) {
+      .about-intro { grid-template-columns: 1fr; gap: 3rem; }
+      .about-img-block { max-width: 400px; margin: 0 auto; }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .values-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog & Services</span></a>
+  <ul class="nav-links">
+    <li><a href="destinations.html">Destinations</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Plan My Trip</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-content">
+    <p class="page-eyebrow">✦ The Story Behind the Blog</p>
+    <h1 class="page-title">About <em>Me</em></h1>
+    <p class="page-subtitle">Real traveller. Honest stories. No fluff.</p>
+  </div>
+  <div class="page-hero-wave">
+    <svg viewBox="0 0 1800 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 C300,80 600,0 900,40 C1200,80 1500,0 1800,40 L1800,80 L0,80 Z" fill="var(--white)"/>
+    </svg>
+  </div>
+</div>
+
+<section class="section about-section">
+  <div class="about-intro">
+    <div class="about-img-block reveal">
+      <div class="about-img-placeholder">🌍</div>
+      <div class="about-img-badge"><span>40+</span><small>Countries Visited</small></div>
+    </div>
+    <div class="about-text reveal reveal-delay-1">
+      <p class="section-label">✦ My Story</p>
+      <h2>Hi, I'm the person who actually <em>drops everything</em></h2>
+      <p>This is where your story goes! Tell your visitors who you are, where your love of travel began, and what makes your perspective on travel unique.</p>
+      <p>Share the moment you decided to start a travel blog — maybe it was a life-changing trip, a desire to help others travel smarter, or simply a passion you couldn't keep to yourself.</p>
+      <p>Let people know what they can expect from your blog and services — your honest, no-nonsense take on every destination you visit.</p>
+      <a href="contact.html" class="btn-primary">Work With Me</a>
+    </div>
+  </div>
+</section>
+
+<section class="about-stats">
+  <div class="stats-grid">
+    <div class="stat-item reveal"><div class="stat-item-num">40+</div><div class="stat-item-label">Countries Visited</div></div>
+    <div class="stat-item reveal reveal-delay-1"><div class="stat-item-num">120+</div><div class="stat-item-label">Blog Posts Written</div></div>
+    <div class="stat-item reveal reveal-delay-2"><div class="stat-item-num">500+</div><div class="stat-item-label">Trips Planned</div></div>
+    <div class="stat-item reveal reveal-delay-3"><div class="stat-item-num">5★</div><div class="stat-item-label">Average Rating</div></div>
+  </div>
+</section>
+
+<section class="section values-section">
+  <div class="reveal"><p class="section-label" style="text-align:center">✦ What I Stand For</p><h2 class="section-title">My <em>Values</em></h2></div>
+  <div class="values-grid">
+    <div class="value-card reveal"><div class="value-icon">🤝</div><h4 class="value-title">Honesty First</h4><p class="value-desc">No sponsored fluff. If somewhere didn't live up to the hype, I'll say so. You deserve the real picture before you spend your money.</p></div>
+    <div class="value-card reveal reveal-delay-1"><div class="value-icon">♻️</div><h4 class="value-title">Responsible Travel</h4><p class="value-desc">I care about the places I visit. My recommendations always consider local communities, sustainability, and leaving destinations better than I found them.</p></div>
+    <div class="value-card reveal reveal-delay-2"><div class="value-icon">💡</div><h4 class="value-title">Practical Advice</h4><p class="value-desc">Less dreamy photos, more useful information. Budget breakdowns, transport tips, what to actually pack — the stuff that matters when you're planning.</p></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog & Services</span></a>
+      <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><ul><li><a href="destinations.html">Destinations</a></li><li><a href="blog.html">Blog</a></li><li><a href="about.html">About</a></li></ul></div>
+    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Trip Planning</a></li><li><a href="services.html">Hotel Curation</a></li><li><a href="contact.html">Get a Quote</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 Drop Everything And Go. All rights reserved.</p><p>Made with ♡ for travellers everywhere</p></div>
+</footer>
+
+<script>
+  const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
+  window.addEventListener('scroll', () => { document.getElementById('navbar').style.background = window.scrollY > 60 ? 'rgba(10,22,40,0.97)' : 'rgba(10,22,40,0.92)'; });
+</script>
+</body>
+</html>
