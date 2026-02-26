@@ -2,101 +2,383 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Travel blog — honest destination guides, budget tips, and adventure stories from Drop Everything And Go."/>
+  <meta name="description" content="Travel blog — honest destination guides and adventure stories from Drop Everything And Go."/>
   <title>Blog — Drop Everything And Go</title>
   <link rel="stylesheet" href="style.css"/>
   <style>
-    .blog-section{background:var(--bg-light);}
-    .blog-filters{display:flex;gap:0.6rem;flex-wrap:wrap;max-width:1200px;margin:0 auto 3.5rem;justify-content:center;}
-    .filter-btn{padding:0.48rem 1.3rem;border:1.5px solid rgba(10,22,40,0.14);border-radius:50px;background:transparent;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.79rem;font-weight:500;letter-spacing:0.07em;color:var(--light-text);transition:all 0.2s;}
-    .filter-btn:hover,.filter-btn.active{background:var(--navy);border-color:var(--navy);color:var(--white);}
-    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:1200px;margin:0 auto;}
-    .blog-card{background:var(--white);border-radius:var(--radius);overflow:hidden;box-shadow:0 2px 20px rgba(10,22,40,0.07);transition:transform 0.3s,box-shadow 0.3s;text-decoration:none;color:inherit;display:block;border:1px solid rgba(10,22,40,0.05);}
-    .blog-card:hover{transform:translateY(-7px);box-shadow:0 16px 48px rgba(10,22,40,0.13);}
-    .blog-card.dimmed{opacity:0.62;pointer-events:none;}
-    .blog-img{height:210px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative;}
-    .c1{background:linear-gradient(135deg,#2e7fc2,#0a4a7a);}.c2{background:linear-gradient(135deg,#1a7a5a,#0a3a2a);}.c3{background:linear-gradient(135deg,#7a5a1a,#4a3a0a);}
-    .c4{background:linear-gradient(135deg,#6a2a4a,#4a1a3a);}.c5{background:linear-gradient(135deg,#2a5a7a,#1a3a5a);}.c6{background:linear-gradient(135deg,#4a6a1a,#2a4a0a);}
-    .c7{background:linear-gradient(135deg,#7a4a1a,#5a2a0a);}.c8{background:linear-gradient(135deg,#1a4a7a,#0a2a5a);}.c9{background:linear-gradient(135deg,#5a1a5a,#3a0a3a);}
-    .soon-badge{position:absolute;top:1rem;right:1rem;background:rgba(10,22,40,0.75);color:var(--foam);font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.28rem 0.7rem;border-radius:50px;backdrop-filter:blur(8px);}
-    .blog-body{padding:1.7rem;}
-    .blog-meta{display:flex;gap:1rem;align-items:center;margin-bottom:0.75rem;}
-    .blog-cat{font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--sky);font-weight:700;}
-    .blog-date{font-size:0.73rem;color:var(--light-text);}
-    .blog-title{font-family:'Playfair Display',serif;font-size:1.22rem;font-weight:700;line-height:1.3;color:var(--navy);margin-bottom:0.6rem;}
-    .blog-excerpt{font-size:0.84rem;color:var(--light-text);line-height:1.72;margin-bottom:1.2rem;}
-    .read-more{font-size:0.76rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--sky);}
-    @media(max-width:900px){.blog-grid{grid-template-columns:1fr 1fr;}}
-    @media(max-width:600px){.blog-grid{grid-template-columns:1fr;}}
+    .blog-section { background: var(--bg-light); }
+
+    .blog-intro {
+      text-align: center; max-width: 620px; margin: 0 auto 4rem;
+    }
+    .blog-intro p {
+      font-size: 0.96rem; color: var(--light-text); line-height: 1.8; margin-top: 1rem;
+    }
+
+    .blog-filters {
+      display: flex; gap: 0.6rem; flex-wrap: wrap;
+      max-width: 1200px; margin: 0 auto 3.5rem; justify-content: center;
+    }
+    .filter-btn {
+      padding: 0.48rem 1.3rem; border: 1.5px solid rgba(10,22,40,0.14);
+      border-radius: 50px; background: transparent; cursor: pointer;
+      font-family: 'DM Sans', sans-serif; font-size: 0.79rem;
+      font-weight: 500; letter-spacing: 0.07em; color: var(--light-text);
+      transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--navy); border-color: var(--navy); color: var(--white);
+    }
+
+    .blog-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 2rem; max-width: 1200px; margin: 0 auto;
+    }
+
+    .blog-card {
+      background: var(--white); border-radius: var(--radius); overflow: hidden;
+      box-shadow: 0 2px 20px rgba(10,22,40,0.07);
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid rgba(10,22,40,0.05);
+      display: flex; flex-direction: column;
+    }
+    .blog-card.live { cursor: pointer; text-decoration: none; color: inherit; }
+    .blog-card.live:hover { transform: translateY(-7px); box-shadow: 0 16px 48px rgba(10,22,40,0.13); }
+    .blog-card.soon { opacity: 0.75; }
+
+    .blog-img {
+      height: 200px; display: flex; align-items: center;
+      justify-content: center; font-size: 3.8rem; position: relative;
+      flex-shrink: 0;
+    }
+
+    /* Each destination gets its own gradient */
+    .bg-montenegro  { background: linear-gradient(135deg, #1a4a6a, #0a2a4a); }
+    .bg-marrakech   { background: linear-gradient(135deg, #7a3a0a, #4a1a00); }
+    .bg-netherlands { background: linear-gradient(135deg, #1a5a3a, #0a3a20); }
+    .bg-slovenia    { background: linear-gradient(135deg, #2a5a2a, #0a3a0a); }
+    .bg-finland     { background: linear-gradient(135deg, #0a3a5a, #051a30); }
+    .bg-budapest    { background: linear-gradient(135deg, #5a2a0a, #3a1000); }
+    .bg-sicily      { background: linear-gradient(135deg, #6a4a0a, #4a2a00); }
+    .bg-hongkong    { background: linear-gradient(135deg, #4a0a1a, #2a0010); }
+
+    .soon-badge {
+      position: absolute; top: 1rem; right: 1rem;
+      background: rgba(10,22,40,0.78); color: var(--foam);
+      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; padding: 0.28rem 0.75rem;
+      border-radius: 50px; backdrop-filter: blur(8px);
+    }
+
+    .blog-body { padding: 1.7rem; flex: 1; display: flex; flex-direction: column; }
+    .blog-meta { display: flex; gap: 0.8rem; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
+    .blog-cat {
+      font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--sky); font-weight: 700;
+    }
+    .blog-region {
+      font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--light-text); font-weight: 500;
+      border-left: 1px solid rgba(10,22,40,0.15); padding-left: 0.8rem;
+    }
+    .blog-title {
+      font-family: 'Playfair Display', serif; font-size: 1.22rem;
+      font-weight: 700; line-height: 1.3; color: var(--navy); margin-bottom: 0.6rem;
+    }
+    .blog-excerpt {
+      font-size: 0.84rem; color: var(--light-text); line-height: 1.72;
+      margin-bottom: 1.2rem; flex: 1;
+    }
+    .read-more {
+      font-size: 0.76rem; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--sky); align-self: flex-start;
+      transition: gap 0.2s; display: inline-flex; align-items: center; gap: 0.3rem;
+    }
+    .blog-card.live:hover .read-more { gap: 0.5rem; }
+
+    .coming-soon-note {
+      font-size: 0.78rem; color: var(--light-text); font-style: italic;
+      margin-top: auto; padding-top: 0.5rem;
+    }
+
+    .notify-banner {
+      background: var(--navy); border-radius: var(--radius);
+      padding: 3rem; text-align: center;
+      max-width: 700px; margin: 4rem auto 0;
+    }
+    .notify-banner h3 {
+      font-family: 'Playfair Display', serif; font-size: 1.7rem;
+      font-weight: 700; color: var(--white); margin-bottom: 0.5rem;
+    }
+    .notify-banner p {
+      color: rgba(200,230,245,0.62); font-size: 0.9rem; margin-bottom: 1.8rem; line-height: 1.65;
+    }
+    .nl-form { display: flex; max-width: 420px; margin: 0 auto; }
+    .nl-form input {
+      flex: 1; padding: 0.85rem 1.2rem;
+      background: rgba(255,255,255,0.09); border: 1px solid rgba(200,230,245,0.2);
+      border-right: none; border-radius: var(--radius) 0 0 var(--radius);
+      color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.88rem; outline: none;
+    }
+    .nl-form input::placeholder { color: rgba(200,230,245,0.35); }
+    .nl-form button {
+      background: var(--gold); color: var(--navy); border: none;
+      padding: 0.85rem 1.5rem; border-radius: 0 var(--radius) var(--radius) 0;
+      font-family: 'DM Sans', sans-serif; font-size: 0.77rem;
+      font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+      cursor: pointer; transition: background 0.2s; white-space: nowrap;
+    }
+    .nl-form button:hover { background: var(--gold-dark); }
+
+    @media(max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
+    @media(max-width: 600px) {
+      .blog-grid { grid-template-columns: 1fr; }
+      .nl-form { flex-direction: column; }
+      .nl-form input { border-right: 1px solid rgba(200,230,245,0.2); border-bottom: none; border-radius: var(--radius) var(--radius) 0 0; }
+      .nl-form button { border-radius: 0 0 var(--radius) var(--radius); }
+    }
   </style>
 </head>
 <body>
+
 <div class="cookie-banner" id="cookieBanner">
   <p class="cookie-text">🍪 We use cookies to improve your experience. By continuing, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
-  <div class="cookie-btns"><button class="cookie-accept" onclick="acceptCookies()">Accept All</button><button class="cookie-decline" onclick="declineCookies()">Decline</button></div>
+  <div class="cookie-btns">
+    <button class="cookie-accept" onclick="acceptCookies()">Accept All</button>
+    <button class="cookie-decline" onclick="declineCookies()">Decline</button>
+  </div>
 </div>
+
 <nav id="navbar">
   <a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a>
   <ul class="nav-links">
-    <li><a href="destinations.html">Destinations</a></li><li><a href="blog.html" class="active">Blog</a></li>
-    <li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li>
+    <li><a href="destinations.html">Destinations</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="contact.html" class="nav-cta">Plan My Trip</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
 <ul class="nav-mobile" id="navMobile">
-  <li><a href="destinations.html">Destinations</a></li><li><a href="blog.html" class="active">Blog</a></li>
-  <li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li>
+  <li><a href="destinations.html">Destinations</a></li>
+  <li><a href="blog.html" class="active">Blog</a></li>
+  <li><a href="services.html">Services</a></li>
+  <li><a href="about.html">About</a></li>
   <li><a href="contact.html" class="mob-cta">Plan My Trip</a></li>
 </ul>
+
 <div class="page-hero">
   <div class="page-hero-content">
     <p class="page-eyebrow">Honest Stories, Real Experiences</p>
     <h1 class="page-title">The Travel <em>Journal</em></h1>
-    <p class="page-subtitle">Guides, budget breakdowns, and adventures — from someone who actually goes.</p>
+    <p class="page-subtitle">Real guides from real trips — the good, the unexpected, and everything in between.</p>
   </div>
-  <div class="page-hero-wave"><svg viewBox="0 0 1800 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,40 C300,80 600,0 900,40 C1200,80 1500,0 1800,40 L1800,80 L0,80 Z" fill="var(--bg-light)"/></svg></div>
+  <div class="page-hero-wave">
+    <svg viewBox="0 0 1800 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 C300,80 600,0 900,40 C1200,80 1500,0 1800,40 L1800,80 L0,80 Z" fill="var(--bg-light)"/>
+    </svg>
+  </div>
 </div>
+
 <section class="section blog-section">
+
+  <div class="blog-intro reveal">
+    <p class="section-label section-label-center">Coming Soon</p>
+    <h2 class="section-title">Adventures <em>In Progress</em></h2>
+    <p>These are the trips already planned or in the pipeline. Full guides, honest reviews, and everything you need to know — coming soon. Subscribe below to be the first to know when they drop.</p>
+  </div>
+
   <div class="blog-filters reveal">
-    <button class="filter-btn active">All Posts</button><button class="filter-btn">Guides</button>
-    <button class="filter-btn">Budget Travel</button><button class="filter-btn">Adventure</button>
-    <button class="filter-btn">Luxury</button><button class="filter-btn">City Breaks</button>
-    <button class="filter-btn">Food &amp; Culture</button>
+    <button class="filter-btn active">All</button>
+    <button class="filter-btn">Europe</button>
+    <button class="filter-btn">Asia</button>
+    <button class="filter-btn">City Breaks</button>
+    <button class="filter-btn">Winter</button>
+    <button class="filter-btn">Hidden Gems</button>
   </div>
+
   <div class="blog-grid">
-    <a href="#" class="blog-card reveal"><div class="blog-img c1">🌅</div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Guides</span><span class="blog-date">15 Jan 2025</span></div><h3 class="blog-title">7 Days in Santorini: The Honest Traveller's Guide</h3><p class="blog-excerpt">Skip the tourist traps. Here's what the island actually looks like — and the hidden coves only locals know about.</p><span class="read-more">Read More →</span></div></a>
-    <a href="#" class="blog-card reveal reveal-delay-1"><div class="blog-img c2">🌸</div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Budget Travel</span><span class="blog-date">3 Feb 2025</span></div><h3 class="blog-title">Tokyo on a Budget: How I Spent 10 Days for £800</h3><p class="blog-excerpt">Japan doesn't have to break the bank. From ramen stalls to free shrines.</p><span class="read-more">Read More →</span></div></a>
-    <a href="#" class="blog-card reveal reveal-delay-2"><div class="blog-img c3">🦋</div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Adventure</span><span class="blog-date">20 Feb 2025</span></div><h3 class="blog-title">Costa Rica: Zip-lining Through the Cloud Forest</h3><p class="blog-excerpt">An adrenaline-fuelled week in one of the world's most biodiverse countries.</p><span class="read-more">Read More →</span></div></a>
-    <div class="blog-card dimmed reveal"><div class="blog-img c4">🏜️<span class="soon-badge">Coming Soon</span></div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Luxury</span></div><h3 class="blog-title">Morocco: A Week in the Medinas and the Sahara</h3><p class="blog-excerpt">Spice-scented souks, Berber camps under the stars, and riad rooftop sunsets.</p></div></div>
-    <div class="blog-card dimmed reveal reveal-delay-1"><div class="blog-img c5">🏝️<span class="soon-badge">Coming Soon</span></div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Luxury</span></div><h3 class="blog-title">The Maldives: Is It Really Worth the Hype?</h3><p class="blog-excerpt">Overwater villas, bioluminescent beaches, and the honest truth.</p></div></div>
-    <div class="blog-card dimmed reveal reveal-delay-2"><div class="blog-img c6">🌿<span class="soon-badge">Coming Soon</span></div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Food &amp; Culture</span></div><h3 class="blog-title">Eating Your Way Through Vietnam</h3><p class="blog-excerpt">From Hanoi pho at dawn to Hoi An white rose dumplings.</p></div></div>
-    <div class="blog-card dimmed reveal"><div class="blog-img c7">🏛️<span class="soon-badge">Coming Soon</span></div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">City Breaks</span></div><h3 class="blog-title">48 Hours in Lisbon: The Perfect Weekend Guide</h3><p class="blog-excerpt">Pastéis de nata, cobblestone trams, and hilltop viewpoints.</p></div></div>
-    <div class="blog-card dimmed reveal reveal-delay-1"><div class="blog-img c8">🏔️<span class="soon-badge">Coming Soon</span></div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Adventure</span></div><h3 class="blog-title">Trekking the Inca Trail: What Nobody Tells You</h3><p class="blog-excerpt">Altitude sickness, porters, and one of the most emotional moments of my life.</p></div></div>
-    <div class="blog-card dimmed reveal reveal-delay-2"><div class="blog-img c9">🌺<span class="soon-badge">Coming Soon</span></div><div class="blog-body"><div class="blog-meta"><span class="blog-cat">Guides</span></div><h3 class="blog-title">Bali Beyond Canggu: Finding the Real Island</h3><p class="blog-excerpt">Away from the Instagram cafés — the Bali that still takes your breath away.</p></div></div>
+
+    <!-- Montenegro -->
+    <div class="blog-card soon reveal">
+      <div class="blog-img bg-montenegro">🌊<span class="soon-badge">Coming Soon</span></div>
+      <div class="blog-body">
+        <div class="blog-meta">
+          <span class="blog-cat">Hidden Gems</span>
+          <span class="blog-region">Europe · Balkans</span>
+        </div>
+        <h3 class="blog-title">Montenegro: The Adriatic's Best Kept Secret (Budva)</h3>
+        <p class="blog-excerpt">Medieval old towns, jaw-dropping bay views, and beaches that rival anywhere in Europe — at a fraction of the price. Budva is the one everyone's about to discover.</p>
+        <p class="coming-soon-note">✈️ Trip coming soon — guide to follow</p>
+      </div>
+    </div>
+
+    <!-- Marrakech -->
+    <div class="blog-card soon reveal reveal-delay-1">
+      <div class="blog-img bg-marrakech">🏮<span class="soon-badge">Coming Soon</span></div>
+      <div class="blog-body">
+        <div class="blog-meta">
+          <span class="blog-cat">City Breaks</span>
+          <span class="blog-region">Africa · Morocco</span>
+        </div>
+        <h3 class="blog-title">Marrakech: Navigating the Medina Without Losing Your Mind</h3>
+        <p class="blog-excerpt">Spice-scented souks, rooftop mint tea, and the organised chaos of Jemaa el-Fna. An honest guide to one of the world's most intoxicating cities.</p>
+        <p class="coming-soon-note">✈️ Trip coming soon — guide to follow</p>
+      </div>
+    </div>
+
+    <!-- Netherlands -->
+    <div class="blog-card soon reveal reveal-delay-2">
+      <div class="blog-img bg-netherlands">🚤<span class="soon-badge">Coming Soon</span></div>
+      <div class="blog-body">
+        <div class="blog-meta">
+          <span class="blog-cat">Hidden Gems</span>
+          <span class="blog-region">Europe · Netherlands</span>
+        </div>
+        <h3 class="blog-title">Beyond Amsterdam: Giethoorn &amp; Zwolle's Waterway Wonderland</h3>
+        <p class="blog-excerpt">The Venice of the North — punting through car-free canals in Giethoorn, then the charming Hanseatic streets of nearby Zwolle. The Netherlands most people never see.</p>
+        <p class="coming-soon-note">✈️ Trip coming soon — guide to follow</p>
+      </div>
+    </div>
+
+    <!-- Slovenia -->
+    <div class="blog-card soon reveal">
+      <div class="blog-img bg-slovenia">🏔️<span class="soon-badge">Coming Soon</span></div>
+      <div class="blog-body">
+        <div class="blog-meta">
+          <span class="blog-cat">Hidden Gems</span>
+          <span class="blog-region">Europe · Balkans</span>
+        </div>
+        <h3 class="blog-title">Slovenia: Europe's Most Underrated Country</h3>
+        <p class="blog-excerpt">Lake Bled's fairy-tale island church, the emerald Soča River, and Ljubljana's effortlessly cool capital. Slovenia punches so far above its weight it's almost unfair.</p>
+        <p class="coming-soon-note">✈️ Trip coming soon — guide to follow</p>
+      </div>
+    </div>
+
+    <!-- Finland -->
+    <div class="blog-card soon reveal reveal-delay-1">
+      <div class="blog-img bg-finland">🌌<span class="soon-badge">Coming Soon</span></div>
+      <div class="blog-body">
+        <div class="blog-meta">
+          <span class="blog-cat">Winter</span>
+          <span class="blog-region">Europe · Lapland</span>
+        </div>
+        <h3 class="blog-title">Finnish Lapland: Northern Lights &amp; Reindeer in Akaslompolo</h3>
+        <p class="blog-excerpt">Husky safaris, snow-buried forests, and falling asleep in a glass igloo waiting for the aurora. The tiny village of Akaslompolo is Lapland at its most magical.</p>
+        <p class="coming-soon-note">✈️ Trip coming soon — guide to follow</p>
+      </div>
+    </div>
+
+    <!-- Budapest -->
+    <div class="blog-card soon reveal reveal-delay-2">
+      <div class="blog-img bg-budapest">🛁<span class="soon-badge">Coming Soon</span></div>
+      <div class="blog-body">
+        <div class="blog-meta">
+          <span class="blog-cat">City Breaks</span>
+          <span class="blog-region">Europe · Hungary</span>
+        </div>
+        <h3 class="blog-title">Budapest: Thermal Baths, Ruin Bars &amp; the Danube at Dusk</h3>
+        <p class="blog-excerpt">One of Europe's most dramatic cities — grand architecture, legendary thermal spas, and a nightlife scene centred around some of the most unique bars in the world.</p>
+        <p class="coming-soon-note">✈️ Trip coming soon — guide to follow</p>
+      </div>
+    </div>
+
+    <!-- Sicily -->
+    <div class="blog-card soon reveal">
+      <div class="blog-img bg-sicily">🍋<span class="soon-badge">Coming Soon</span></div>
+      <div class="blog-body">
+        <div class="blog-meta">
+          <span class="blog-cat">Hidden Gems</span>
+          <span class="blog-region">Europe · Italy</span>
+        </div>
+        <h3 class="blog-title">Sicily: Ancient Temples, Volcanic Views &amp; the Best Food in Italy</h3>
+        <p class="blog-excerpt">The Greeks built temples here. The Arabs left their spices. The Normans added the grandeur. Sicily absorbs every civilisation and transforms it into something uniquely its own.</p>
+        <p class="coming-soon-note">✈️ Trip coming soon — guide to follow</p>
+      </div>
+    </div>
+
+    <!-- Hong Kong -->
+    <div class="blog-card soon reveal reveal-delay-1">
+      <div class="blog-img bg-hongkong">🏙️<span class="soon-badge">Coming Soon</span></div>
+      <div class="blog-body">
+        <div class="blog-meta">
+          <span class="blog-cat">City Breaks</span>
+          <span class="blog-region">Asia · China</span>
+        </div>
+        <h3 class="blog-title">Hong Kong: A City That Never Stops Moving</h3>
+        <p class="blog-excerpt">Dim sum at dawn, the Star Ferry crossing at dusk, and a skyline that genuinely takes your breath away. Hong Kong is one of the world's great cities — and it's back.</p>
+        <p class="coming-soon-note">✈️ Trip coming soon — guide to follow</p>
+      </div>
+    </div>
+
   </div>
+
+  <!-- Notify me -->
+  <div class="notify-banner reveal">
+    <h3>Be the First to Read</h3>
+    <p>Subscribe and get notified the moment a new guide drops — straight to your inbox, no spam ever.</p>
+    <form class="nl-form" action="https://formspree.io/f/mjgelkpz" method="POST">
+      <input type="hidden" name="_subject" value="New Blog Notification Signup — Drop Everything And Go"/>
+      <input type="email" name="email" placeholder="Your email address" required/>
+      <button type="submit">Notify Me</button>
+    </form>
+  </div>
+
 </section>
+
 <footer>
   <div class="footer-top">
-    <div class="footer-brand"><a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a><p>Honest travel stories and expert trip planning from someone who actually goes.</p><div class="footer-social"><a href="#" class="social-btn">📸</a><a href="#" class="social-btn">🎵</a><a href="#" class="social-btn">📌</a><a href="#" class="social-btn">▶</a></div></div>
-    <div class="footer-col"><h4>Explore</h4><ul><li><a href="destinations.html">Destinations</a></li><li><a href="blog.html">Blog</a></li><li><a href="about.html">About</a></li></ul></div>
-    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Trip Planning</a></li><li><a href="services.html">Hotel Curation</a></li><li><a href="contact.html">Get a Quote</a></li></ul></div>
-    <div class="footer-col"><h4>Legal</h4><ul><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="privacy.html#cookies">Cookie Policy</a></li><li><a href="privacy.html#terms">Terms of Use</a></li></ul></div>
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a>
+      <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn">📸</a><a href="#" class="social-btn">🎵</a>
+        <a href="#" class="social-btn">📌</a><a href="#" class="social-btn">▶</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><ul>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Services</h4><ul>
+      <li><a href="services.html">Trip Planning</a></li>
+      <li><a href="services.html">Hotel Curation</a></li>
+      <li><a href="contact.html">Get a Quote</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="privacy.html#cookies">Cookie Policy</a></li>
+      <li><a href="privacy.html#terms">Terms of Use</a></li>
+    </ul></div>
   </div>
-  <div class="footer-bottom"><p>© 2025 Drop Everything And Go. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="privacy.html#cookies">Cookies</a><a href="privacy.html#terms">Terms</a></div></div>
+  <div class="footer-bottom">
+    <p>© 2025 Drop Everything And Go. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="privacy.html#cookies">Cookies</a>
+      <a href="privacy.html#terms">Terms</a>
+    </div>
+  </div>
 </footer>
+
 <script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
 <script>
-  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
-  document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
-  const nav=document.getElementById('navbar');
-  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
-  const ham=document.getElementById('hamburger'),mob=document.getElementById('navMobile');
-  ham.addEventListener('click',()=>{ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
-  document.querySelectorAll('.filter-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');});});
+  const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), {threshold: 0.1});
+  document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
+  const nav = document.getElementById('navbar');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+  const ham = document.getElementById('hamburger'), mob = document.getElementById('navMobile');
+  ham.addEventListener('click', () => { ham.classList.toggle('open'); mob.classList.toggle('open'); document.body.style.overflow = mob.classList.contains('open') ? 'hidden' : ''; });
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => { document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); });
+  });
   function showCookie(){if(!localStorage.getItem('cookieChoice')){setTimeout(()=>document.getElementById('cookieBanner').classList.add('visible'),1200);}}
   function acceptCookies(){localStorage.setItem('cookieChoice','accepted');document.getElementById('cookieBanner').classList.remove('visible');}
   function declineCookies(){localStorage.setItem('cookieChoice','declined');document.getElementById('cookieBanner').classList.remove('visible');}
   showCookie();
 </script>
-</body></html>
+</body>
+</html>
