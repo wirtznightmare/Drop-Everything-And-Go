@@ -1,241 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Explore destinations worldwide with Drop Everything And Go — from European gems to exotic adventures."/>
   <title>Destinations — Drop Everything And Go</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
   <style>
-    .destinations-section { background: var(--white); }
-    .region-tabs {
-      display: flex; gap: 0.7rem; flex-wrap: wrap;
-      max-width: 1200px; margin: 0 auto 3.5rem; justify-content: center;
-    }
-    .region-tab {
-      padding: 0.55rem 1.5rem; border: 1.5px solid rgba(10,22,40,0.15);
-      border-radius: 50px; background: transparent; cursor: pointer;
-      font-family: 'DM Sans', sans-serif; font-size: 0.8rem;
-      font-weight: 500; letter-spacing: 0.08em; color: var(--light-text);
-      transition: all 0.2s;
-    }
-    .region-tab:hover, .region-tab.active { background: var(--navy); border-color: var(--navy); color: var(--white); }
-
-    .dest-big-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-      max-width: 1200px; margin: 0 auto;
-    }
-    .dest-big-card {
-      border-radius: 3px; overflow: hidden; position: relative;
-      height: 340px; cursor: pointer; text-decoration: none; display: block;
-    }
-    .dest-big-card:first-child { grid-column: span 2; }
-    .dest-card-img {
-      width: 100%; height: 100%;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 5rem; transition: transform 0.6s cubic-bezier(0.25,0.46,0.45,0.94);
-    }
-    .dest-big-card:hover .dest-card-img { transform: scale(1.05); }
-    .d1 { background: linear-gradient(135deg, #1a6b6b, #0a2a40); }
-    .d2 { background: linear-gradient(135deg, #2e4a7a, #1a3a6a); }
-    .d3 { background: linear-gradient(135deg, #1a4a3a, #0d3a2a); }
-    .d4 { background: linear-gradient(135deg, #4a2e1a, #3a1a0a); }
-    .d5 { background: linear-gradient(135deg, #2a1a4a, #1a0a3a); }
-    .d6 { background: linear-gradient(135deg, #1a5a3a, #0a3a2a); }
-    .d7 { background: linear-gradient(135deg, #5a3a1a, #3a2a0a); }
-    .d8 { background: linear-gradient(135deg, #3a1a4a, #2a0a3a); }
-    .d9 { background: linear-gradient(135deg, #1a3a6a, #0a2a4a); }
-    .dest-big-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to top, rgba(10,22,40,0.9) 0%, rgba(10,22,40,0.05) 60%);
-      display: flex; flex-direction: column; justify-content: flex-end;
-      padding: 2rem; transition: background 0.3s;
-    }
-    .dest-big-card:hover .dest-big-overlay { background: linear-gradient(to top, rgba(10,22,40,0.95) 0%, rgba(10,22,40,0.15) 60%); }
-    .dest-region-tag {
-      display: inline-block; background: rgba(201,169,110,0.9); color: var(--navy);
-      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; padding: 0.28rem 0.65rem; border-radius: 2px;
-      margin-bottom: 0.6rem; align-self: flex-start;
-    }
-    .dest-big-name {
-      font-family: 'Playfair Display', serif; font-size: 1.8rem;
-      font-weight: 700; color: var(--white); margin-bottom: 0.3rem;
-    }
-    .dest-big-card:first-child .dest-big-name { font-size: 2.6rem; }
-    .dest-big-desc { font-size: 0.85rem; color: rgba(200,230,245,0.8); line-height: 1.5; font-weight: 300; }
-    .dest-cta {
-      display: inline-block; margin-top: 0.8rem;
-      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--gold);
-      opacity: 0; transform: translateY(6px);
-      transition: opacity 0.3s, transform 0.3s;
-    }
-    .dest-big-card:hover .dest-cta { opacity: 1; transform: translateY(0); }
-
-    .plan-banner {
-      background: linear-gradient(135deg, var(--navy), var(--ocean));
-      padding: 5rem 4rem; text-align: center; margin-top: 5rem;
-    }
-    .plan-banner h2 { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 700; color: var(--white); margin-bottom: 0.8rem; }
-    .plan-banner p { color: rgba(200,230,245,0.7); max-width: 500px; margin: 0 auto 2rem; line-height: 1.7; }
-
-    @media (max-width: 900px) {
-      .dest-big-grid { grid-template-columns: 1fr 1fr; }
-      .dest-big-card:first-child { grid-column: span 2; }
-    }
-    @media (max-width: 600px) {
-      .dest-big-grid { grid-template-columns: 1fr; }
-      .dest-big-card:first-child { grid-column: span 1; }
-    }
+    .dest-section{background:var(--white);}
+    .region-tabs{display:flex;gap:0.6rem;flex-wrap:wrap;max-width:1200px;margin:0 auto 3.5rem;justify-content:center;}
+    .region-tab{padding:0.5rem 1.4rem;border:1.5px solid rgba(10,22,40,0.14);border-radius:50px;background:transparent;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.79rem;font-weight:500;letter-spacing:0.07em;color:var(--light-text);transition:all 0.2s;}
+    .region-tab:hover,.region-tab.active{background:var(--navy);border-color:var(--navy);color:var(--white);}
+    .dest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1200px;margin:0 auto;}
+    .dest-big{border-radius:var(--radius);overflow:hidden;position:relative;height:320px;cursor:pointer;text-decoration:none;display:block;}
+    .dest-big:first-child{grid-column:span 2;}
+    .dest-img{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem;transition:transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94);}
+    .dest-big:hover .dest-img{transform:scale(1.06);}
+    .d1{background:linear-gradient(135deg,#1a6b6b,#0a2a40);}.d2{background:linear-gradient(135deg,#2e4a7a,#1a3a6a);}
+    .d3{background:linear-gradient(135deg,#1a4a3a,#0d3a2a);}.d4{background:linear-gradient(135deg,#4a2e1a,#3a1a0a);}
+    .d5{background:linear-gradient(135deg,#2a1a4a,#1a0a3a);}.d6{background:linear-gradient(135deg,#1a5a3a,#0a3a2a);}
+    .d7{background:linear-gradient(135deg,#5a3a1a,#3a2a0a);}.d8{background:linear-gradient(135deg,#3a1a4a,#2a0a3a);}
+    .d9{background:linear-gradient(135deg,#1a3a6a,#0a2a4a);}
+    .dest-big-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,15,30,0.9) 0%,rgba(6,15,30,0.05) 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;transition:background 0.3s;}
+    .dest-big:hover .dest-big-overlay{background:linear-gradient(to top,rgba(6,15,30,0.95) 0%,rgba(6,15,30,0.15) 60%);}
+    .region-tag{display:inline-block;background:rgba(201,169,110,0.9);color:var(--navy);font-size:0.61rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.26rem 0.65rem;border-radius:2px;margin-bottom:0.55rem;align-self:flex-start;}
+    .dest-big-name{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:var(--white);margin-bottom:0.3rem;}
+    .dest-big:first-child .dest-big-name{font-size:2.5rem;}
+    .dest-big-desc{font-size:0.82rem;color:rgba(200,230,245,0.75);line-height:1.5;font-weight:300;}
+    .dest-cta-link{display:inline-block;margin-top:0.8rem;font-size:0.74rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);opacity:0;transform:translateY(5px);transition:opacity 0.3s,transform 0.3s;}
+    .dest-big:hover .dest-cta-link{opacity:1;transform:translateY(0);}
+    .plan-banner{background:linear-gradient(135deg,var(--navy),var(--ocean));padding:5rem 4rem;text-align:center;margin-top:5rem;border-radius:var(--radius);}
+    .plan-banner h2{font-family:'Playfair Display',serif;font-size:2.3rem;font-weight:700;color:var(--white);margin-bottom:0.8rem;}
+    .plan-banner p{color:rgba(200,230,245,0.68);max-width:480px;margin:0 auto 2rem;line-height:1.75;}
+    @media(max-width:900px){.dest-grid{grid-template-columns:1fr 1fr;}.dest-big:first-child{grid-column:span 2;}}
+    @media(max-width:600px){.dest-grid{grid-template-columns:1fr;}.dest-big:first-child{grid-column:span 1;}}
   </style>
 </head>
 <body>
-
+<div class="cookie-banner" id="cookieBanner">
+  <p class="cookie-text">🍪 We use cookies to improve your experience. By continuing, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
+  <div class="cookie-btns"><button class="cookie-accept" onclick="acceptCookies()">Accept All</button><button class="cookie-decline" onclick="declineCookies()">Decline</button></div>
+</div>
 <nav id="navbar">
-  <a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog & Services</span></a>
+  <a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a>
   <ul class="nav-links">
-    <li><a href="destinations.html" class="active">Destinations</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="about.html">About</a></li>
+    <li><a href="destinations.html" class="active">Destinations</a></li><li><a href="blog.html">Blog</a></li>
+    <li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li>
     <li><a href="contact.html" class="nav-cta">Plan My Trip</a></li>
   </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
-
+<ul class="nav-mobile" id="navMobile">
+  <li><a href="destinations.html" class="active">Destinations</a></li><li><a href="blog.html">Blog</a></li>
+  <li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li>
+  <li><a href="contact.html" class="mob-cta">Plan My Trip</a></li>
+</ul>
 <div class="page-hero">
   <div class="page-hero-content">
-    <p class="page-eyebrow">✦ The World is Waiting</p>
+    <p class="page-eyebrow">The World is Waiting</p>
     <h1 class="page-title">Explore <em>Destinations</em></h1>
     <p class="page-subtitle">From hidden European gems to exotic far-flung adventures — find your next journey here.</p>
   </div>
-  <div class="page-hero-wave">
-    <svg viewBox="0 0 1800 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0,40 C300,80 600,0 900,40 C1200,80 1500,0 1800,40 L1800,80 L0,80 Z" fill="var(--white)"/>
-    </svg>
-  </div>
+  <div class="page-hero-wave"><svg viewBox="0 0 1800 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,40 C300,80 600,0 900,40 C1200,80 1500,0 1800,40 L1800,80 L0,80 Z" fill="var(--white)"/></svg></div>
 </div>
-
-<section class="section destinations-section">
+<section class="section dest-section">
   <div class="region-tabs reveal">
-    <button class="region-tab active">All Destinations</button>
-    <button class="region-tab">Europe</button>
-    <button class="region-tab">Asia</button>
-    <button class="region-tab">Americas</button>
-    <button class="region-tab">Africa & Middle East</button>
-    <button class="region-tab">Oceania</button>
+    <button class="region-tab active">All Destinations</button><button class="region-tab">Europe</button>
+    <button class="region-tab">Asia</button><button class="region-tab">Americas</button>
+    <button class="region-tab">Africa &amp; Middle East</button><button class="region-tab">Oceania</button>
   </div>
-
-  <div class="dest-big-grid">
-    <a href="blog.html" class="dest-big-card reveal">
-      <div class="dest-card-img d1">🌊</div>
-      <div class="dest-big-overlay">
-        <span class="dest-region-tag">Europe</span>
-        <h3 class="dest-big-name">Santorini, Greece</h3>
-        <p class="dest-big-desc">Iconic white-washed cliffs, azure domes, and sunsets that stop time. The crown jewel of the Aegean.</p>
-        <span class="dest-cta">Explore Guides →</span>
-      </div>
-    </a>
-    <a href="blog.html" class="dest-big-card reveal reveal-delay-1">
-      <div class="dest-card-img d2">🗼</div>
-      <div class="dest-big-overlay">
-        <span class="dest-region-tag">Asia</span>
-        <h3 class="dest-big-name">Tokyo, Japan</h3>
-        <p class="dest-big-desc">Ancient temples meet neon-lit streets.</p>
-        <span class="dest-cta">Explore Guides →</span>
-      </div>
-    </a>
-    <a href="blog.html" class="dest-big-card reveal">
-      <div class="dest-card-img d3">🌿</div>
-      <div class="dest-big-overlay">
-        <span class="dest-region-tag">Americas</span>
-        <h3 class="dest-big-name">Costa Rica</h3>
-        <p class="dest-big-desc">Rainforests, volcanoes, and Pacific coastlines.</p>
-        <span class="dest-cta">Explore Guides →</span>
-      </div>
-    </a>
-    <a href="blog.html" class="dest-big-card reveal reveal-delay-1">
-      <div class="dest-card-img d4">🏜️</div>
-      <div class="dest-big-overlay">
-        <span class="dest-region-tag">Africa</span>
-        <h3 class="dest-big-name">Morocco</h3>
-        <p class="dest-big-desc">Spice-scented medinas and Saharan starscapes.</p>
-        <span class="dest-cta">Explore Guides →</span>
-      </div>
-    </a>
-    <a href="blog.html" class="dest-big-card reveal reveal-delay-2">
-      <div class="dest-card-img d5">🏝️</div>
-      <div class="dest-big-overlay">
-        <span class="dest-region-tag">Asia</span>
-        <h3 class="dest-big-name">Maldives</h3>
-        <p class="dest-big-desc">Crystal lagoons and overwater villas.</p>
-        <span class="dest-cta">Explore Guides →</span>
-      </div>
-    </a>
-    <a href="blog.html" class="dest-big-card reveal">
-      <div class="dest-card-img d6">🌺</div>
-      <div class="dest-big-overlay">
-        <span class="dest-region-tag">Asia</span>
-        <h3 class="dest-big-name">Bali, Indonesia</h3>
-        <p class="dest-big-desc">Rice terraces, temples, and surf culture.</p>
-        <span class="dest-cta">Explore Guides →</span>
-      </div>
-    </a>
-    <a href="blog.html" class="dest-big-card reveal reveal-delay-1">
-      <div class="dest-card-img d7">🏛️</div>
-      <div class="dest-big-overlay">
-        <span class="dest-region-tag">Europe</span>
-        <h3 class="dest-big-name">Lisbon, Portugal</h3>
-        <p class="dest-big-desc">Pastéis de nata, cobblestone trams, and hilltop views.</p>
-        <span class="dest-cta">Explore Guides →</span>
-      </div>
-    </a>
-    <a href="blog.html" class="dest-big-card reveal reveal-delay-2">
-      <div class="dest-card-img d8">🏔️</div>
-      <div class="dest-big-overlay">
-        <span class="dest-region-tag">Americas</span>
-        <h3 class="dest-big-name">Peru & Machu Picchu</h3>
-        <p class="dest-big-desc">Ancient civilisations and breathtaking mountain scenery.</p>
-        <span class="dest-cta">Explore Guides →</span>
-      </div>
-    </a>
-    <a href="blog.html" class="dest-big-card reveal">
-      <div class="dest-card-img d9">🌅</div>
-      <div class="dest-big-overlay">
-        <span class="dest-region-tag">Asia</span>
-        <h3 class="dest-big-name">Vietnam</h3>
-        <p class="dest-big-desc">Street food, emerald bays, and ancient lantern towns.</p>
-        <span class="dest-cta">Explore Guides →</span>
-      </div>
-    </a>
+  <div class="dest-grid">
+    <a href="blog.html" class="dest-big reveal"><div class="dest-img d1">🌊</div><div class="dest-big-overlay"><span class="region-tag">Europe</span><h3 class="dest-big-name">Santorini, Greece</h3><p class="dest-big-desc">Iconic white-washed cliffs, azure domes, and sunsets that stop time. The crown jewel of the Aegean.</p><span class="dest-cta-link">Read the Guide →</span></div></a>
+    <a href="blog.html" class="dest-big reveal reveal-delay-1"><div class="dest-img d2">🗼</div><div class="dest-big-overlay"><span class="region-tag">Asia</span><h3 class="dest-big-name">Tokyo, Japan</h3><p class="dest-big-desc">Ancient temples meet neon-lit streets.</p><span class="dest-cta-link">Read the Guide →</span></div></a>
+    <a href="blog.html" class="dest-big reveal"><div class="dest-img d3">🌿</div><div class="dest-big-overlay"><span class="region-tag">Americas</span><h3 class="dest-big-name">Costa Rica</h3><p class="dest-big-desc">Rainforests, volcanoes, and Pacific coastlines.</p><span class="dest-cta-link">Read the Guide →</span></div></a>
+    <a href="blog.html" class="dest-big reveal reveal-delay-1"><div class="dest-img d4">🏜️</div><div class="dest-big-overlay"><span class="region-tag">Africa</span><h3 class="dest-big-name">Morocco</h3><p class="dest-big-desc">Spice-scented medinas and Saharan starscapes.</p><span class="dest-cta-link">Read the Guide →</span></div></a>
+    <a href="blog.html" class="dest-big reveal reveal-delay-2"><div class="dest-img d5">🏝️</div><div class="dest-big-overlay"><span class="region-tag">Asia</span><h3 class="dest-big-name">Maldives</h3><p class="dest-big-desc">Crystal lagoons and overwater villas.</p><span class="dest-cta-link">Read the Guide →</span></div></a>
+    <a href="blog.html" class="dest-big reveal"><div class="dest-img d6">🌺</div><div class="dest-big-overlay"><span class="region-tag">Asia</span><h3 class="dest-big-name">Bali, Indonesia</h3><p class="dest-big-desc">Rice terraces, temples, and surf culture.</p><span class="dest-cta-link">Read the Guide →</span></div></a>
+    <a href="blog.html" class="dest-big reveal reveal-delay-1"><div class="dest-img d7">🏛️</div><div class="dest-big-overlay"><span class="region-tag">Europe</span><h3 class="dest-big-name">Lisbon, Portugal</h3><p class="dest-big-desc">Pastéis de nata, cobblestone trams, and hilltop views.</p><span class="dest-cta-link">Read the Guide →</span></div></a>
+    <a href="blog.html" class="dest-big reveal reveal-delay-2"><div class="dest-img d8">🏔️</div><div class="dest-big-overlay"><span class="region-tag">Americas</span><h3 class="dest-big-name">Peru &amp; Machu Picchu</h3><p class="dest-big-desc">Ancient civilisations and breathtaking mountain scenery.</p><span class="dest-cta-link">Read the Guide →</span></div></a>
+    <a href="blog.html" class="dest-big reveal"><div class="dest-img d9">🌅</div><div class="dest-big-overlay"><span class="region-tag">Asia</span><h3 class="dest-big-name">Vietnam</h3><p class="dest-big-desc">Street food, emerald bays, and ancient lantern towns.</p><span class="dest-cta-link">Read the Guide →</span></div></a>
   </div>
-
   <div class="plan-banner reveal">
     <h2>Can't Decide?</h2>
     <p>Tell us your travel style, budget, and wishlist — we'll recommend the perfect destination and plan the whole trip for you.</p>
     <a href="contact.html" class="btn-primary">Get a Personalised Recommendation</a>
   </div>
 </section>
-
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog & Services</span></a>
-      <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
-    </div>
+  <div class="footer-top">
+    <div class="footer-brand"><a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a><p>Honest travel stories and expert trip planning from someone who actually goes.</p><div class="footer-social"><a href="#" class="social-btn">📸</a><a href="#" class="social-btn">🎵</a><a href="#" class="social-btn">📌</a><a href="#" class="social-btn">▶</a></div></div>
     <div class="footer-col"><h4>Explore</h4><ul><li><a href="destinations.html">Destinations</a></li><li><a href="blog.html">Blog</a></li><li><a href="about.html">About</a></li></ul></div>
     <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Trip Planning</a></li><li><a href="services.html">Hotel Curation</a></li><li><a href="contact.html">Get a Quote</a></li></ul></div>
-    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="privacy.html#cookies">Cookie Policy</a></li><li><a href="privacy.html#terms">Terms of Use</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><p>© 2025 Drop Everything And Go. All rights reserved.</p><p>Made with ♡ for travellers everywhere</p></div>
+  <div class="footer-bottom"><p>© 2025 Drop Everything And Go. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="privacy.html#cookies">Cookies</a><a href="privacy.html#terms">Terms</a></div></div>
 </footer>
-
+<script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
 <script>
-  const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
-  window.addEventListener('scroll', () => { document.getElementById('navbar').style.background = window.scrollY > 60 ? 'rgba(10,22,40,0.97)' : 'rgba(10,22,40,0.92)'; });
-  document.querySelectorAll('.region-tab').forEach(btn => {
-    btn.addEventListener('click', () => { document.querySelectorAll('.region-tab').forEach(b => b.classList.remove('active')); btn.classList.add('active'); });
-  });
+  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
+  const nav=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
+  const ham=document.getElementById('hamburger'),mob=document.getElementById('navMobile');
+  ham.addEventListener('click',()=>{ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
+  document.querySelectorAll('.region-tab').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.region-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');});});
+  function showCookie(){if(!localStorage.getItem('cookieChoice')){setTimeout(()=>document.getElementById('cookieBanner').classList.add('visible'),1200);}}
+  function acceptCookies(){localStorage.setItem('cookieChoice','accepted');document.getElementById('cookieBanner').classList.remove('visible');}
+  function declineCookies(){localStorage.setItem('cookieChoice','declined');document.getElementById('cookieBanner').classList.remove('visible');}
+  showCookie();
 </script>
-</body>
-</html>
+</body></html>

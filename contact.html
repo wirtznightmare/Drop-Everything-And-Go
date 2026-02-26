@@ -1,142 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Contact Drop Everything And Go — get in touch for trip planning, enquiries, or collaborations."/>
   <title>Contact — Drop Everything And Go</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
   <style>
-    .contact-section { background: var(--white); }
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1.4fr; gap: 5rem;
-      max-width: 1100px; margin: 0 auto; align-items: start;
-    }
-    .contact-info h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem; line-height: 1.2; }
-    .contact-info h2 em { font-style: italic; color: var(--sky); }
-    .contact-info p { font-size: 0.95rem; color: var(--light-text); line-height: 1.8; margin-bottom: 2.5rem; }
-    .contact-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.8rem; }
-    .contact-item-icon { font-size: 1.5rem; margin-top: 0.1rem; }
-    .contact-item-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 0.2rem; }
-    .contact-item-value { font-size: 0.92rem; color: var(--navy); font-weight: 500; }
-    .contact-item-desc { font-size: 0.82rem; color: var(--light-text); margin-top: 0.2rem; }
-
-    .contact-form-box {
-      background: var(--navy); border-radius: 4px; padding: 3rem;
-    }
-    .contact-form-box h3 { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
-    .contact-form-box p { color: rgba(200,230,245,0.6); font-size: 0.85rem; margin-bottom: 2rem; }
-    .cf { display: flex; flex-direction: column; gap: 1rem; }
-    .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .cf-group { display: flex; flex-direction: column; gap: 0.4rem; }
-    .cf-group label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(200,230,245,0.55); font-weight: 500; }
-    .cf-group input, .cf-group select, .cf-group textarea {
-      background: rgba(255,255,255,0.07); border: 1px solid rgba(200,230,245,0.15);
-      border-radius: 2px; padding: 0.75rem 1rem; color: var(--white);
-      font-family: 'DM Sans', sans-serif; font-size: 0.9rem; outline: none;
-      transition: border-color 0.2s;
-    }
-    .cf-group input:focus, .cf-group select:focus, .cf-group textarea:focus { border-color: var(--gold); }
-    .cf-group input::placeholder, .cf-group textarea::placeholder { color: rgba(200,230,245,0.3); }
-    .cf-group select option { background: var(--navy); }
-    .cf-group textarea { resize: vertical; min-height: 120px; }
-    .cf-submit { background: var(--gold); color: var(--navy); border: none; padding: 1rem; border-radius: 2px; font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, transform 0.2s; }
-    .cf-submit:hover { background: #e0b97c; transform: translateY(-1px); }
-
-    .faq-section { background: var(--bg-light); }
-    .faq-section h2 { text-align: center; margin-bottom: 3rem; }
-    .faq-list { max-width: 750px; margin: 0 auto; }
-    .faq-item { border-bottom: 1px solid rgba(10,22,40,0.1); }
-    .faq-q { padding: 1.3rem 0; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 500; color: var(--navy); font-size: 0.95rem; }
-    .faq-q:hover { color: var(--sky); }
-    .faq-icon { color: var(--sky); font-size: 1.2rem; transition: transform 0.3s; font-style: normal; }
-    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.3s; font-size: 0.88rem; color: var(--light-text); line-height: 1.7; }
-    .faq-item.open .faq-a { max-height: 200px; padding-bottom: 1.2rem; }
-    .faq-item.open .faq-icon { transform: rotate(45deg); }
-
-    @media (max-width: 900px) {
-      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .cf-row { grid-template-columns: 1fr; }
-    }
+    .contact-section{background:var(--white);}
+    .contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;max-width:1100px;margin:0 auto;align-items:start;}
+    .contact-info h2{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:700;color:var(--navy);margin-bottom:1rem;line-height:1.15;}
+    .contact-info h2 em{font-style:italic;color:var(--sky);}
+    .contact-info > p{font-size:0.93rem;color:var(--light-text);line-height:1.8;margin-bottom:2.5rem;}
+    .contact-item{display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.8rem;}
+    .c-icon{font-size:1.5rem;flex-shrink:0;}
+    .c-label{font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.2rem;}
+    .c-value{font-size:0.92rem;color:var(--navy);font-weight:500;}
+    .c-desc{font-size:0.81rem;color:var(--light-text);margin-top:0.2rem;}
+    .contact-form-box{background:var(--navy);border-radius:var(--radius);padding:3rem;}
+    .contact-form-box h3{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:700;color:var(--white);margin-bottom:0.4rem;}
+    .contact-form-box > p{color:rgba(200,230,245,0.58);font-size:0.84rem;margin-bottom:2rem;}
+    .cf{display:flex;flex-direction:column;gap:1rem;}
+    .cf-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+    .cf-g{display:flex;flex-direction:column;gap:0.4rem;}
+    .cf-submit{background:var(--gold);color:var(--navy);border:none;padding:1rem;border-radius:var(--radius);font-family:'DM Sans',sans-serif;font-size:0.84rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:background 0.2s,transform 0.2s;}
+    .cf-submit:hover{background:var(--gold-dark);transform:translateY(-1px);}
+    .faq-section{background:var(--bg-light);}
+    .faq-list{max-width:750px;margin:3rem auto 0;}
+    .faq-item{border-bottom:1px solid rgba(10,22,40,0.09);}
+    .faq-q{padding:1.3rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:500;color:var(--navy);font-size:0.94rem;transition:color 0.2s;gap:1rem;}
+    .faq-q:hover{color:var(--sky);}
+    .faq-icon{color:var(--sky);font-size:1.3rem;font-style:normal;transition:transform 0.3s;flex-shrink:0;}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease;font-size:0.87rem;color:var(--light-text);line-height:1.75;}
+    .faq-item.open .faq-a{max-height:200px;padding-bottom:1.2rem;}
+    .faq-item.open .faq-icon{transform:rotate(45deg);}
+    @media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:3rem;}.cf-row{grid-template-columns:1fr;}.contact-form-box{padding:2rem 1.5rem;}}
   </style>
 </head>
 <body>
-
+<div class="cookie-banner" id="cookieBanner">
+  <p class="cookie-text">🍪 We use cookies to improve your experience. By continuing, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
+  <div class="cookie-btns"><button class="cookie-accept" onclick="acceptCookies()">Accept All</button><button class="cookie-decline" onclick="declineCookies()">Decline</button></div>
+</div>
 <nav id="navbar">
-  <a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog & Services</span></a>
+  <a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a>
   <ul class="nav-links">
-    <li><a href="destinations.html">Destinations</a></li>
-    <li><a href="blog.html">Blog</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html" class="nav-cta active">Plan My Trip</a></li>
+    <li><a href="destinations.html">Destinations</a></li><li><a href="blog.html">Blog</a></li>
+    <li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Plan My Trip</a></li>
   </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
 </nav>
+<ul class="nav-mobile" id="navMobile">
+  <li><a href="destinations.html">Destinations</a></li><li><a href="blog.html">Blog</a></li>
+  <li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li>
+  <li><a href="contact.html" class="mob-cta">Plan My Trip</a></li>
+</ul>
 
 <div class="page-hero">
   <div class="page-hero-content">
-    <p class="page-eyebrow">✦ Let's Plan Something Amazing</p>
+    <p class="page-eyebrow">Let's Plan Something Amazing</p>
     <h1 class="page-title">Get In <em>Touch</em></h1>
-    <p class="page-subtitle">Whether you have a trip in mind or just an idea — we'd love to hear from you.</p>
+    <p class="page-subtitle">Whether you have a trip in mind or just a vague idea — we'd love to hear from you.</p>
   </div>
-  <div class="page-hero-wave">
-    <svg viewBox="0 0 1800 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0,40 C300,80 600,0 900,40 C1200,80 1500,0 1800,40 L1800,80 L0,80 Z" fill="var(--white)"/>
-    </svg>
-  </div>
+  <div class="page-hero-wave"><svg viewBox="0 0 1800 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,40 C300,80 600,0 900,40 C1200,80 1500,0 1800,40 L1800,80 L0,80 Z" fill="var(--white)"/></svg></div>
 </div>
 
 <section class="section contact-section">
   <div class="contact-grid">
     <div class="contact-info reveal">
-      <p class="section-label">✦ Say Hello</p>
+      <p class="section-label">Say Hello</p>
       <h2>Let's make your <em>next trip</em> happen</h2>
-      <p>Have a destination in mind? A vague idea? Or no idea at all — that's fine too! Drop me a message and we'll figure out the perfect trip together.</p>
-      <div class="contact-item">
-        <div class="contact-item-icon">✉️</div>
-        <div>
-          <div class="contact-item-label">Email</div>
-          <div class="contact-item-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="e9818c858586a98d9b86998c9f8c9b909d8180878e88878d8e86c78a8684">[email&#160;protected]</a></div>
-          <div class="contact-item-desc">I reply to all enquiries within 24 hours</div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-item-icon">⏰</div>
-        <div>
-          <div class="contact-item-label">Response Time</div>
-          <div class="contact-item-value">Within 24 hours</div>
-          <div class="contact-item-desc">Usually much faster — I love talking travel!</div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="contact-item-icon">📍</div>
-        <div>
-          <div class="contact-item-label">Based In</div>
-          <div class="contact-item-value">United Kingdom</div>
-          <div class="contact-item-desc">Planning trips worldwide</div>
-        </div>
-      </div>
+      <p>Have a destination in mind? A vague idea? Or no idea at all — that's fine too. Drop me a message and we'll figure out the perfect trip together.</p>
+      <div class="contact-item"><div class="c-icon">✉️</div><div><div class="c-label">Email</div><div class="c-value">hello@dropeverythingandgo.com</div><div class="c-desc">I reply to all enquiries within 24 hours</div></div></div>
+      <div class="contact-item"><div class="c-icon">⏰</div><div><div class="c-label">Response Time</div><div class="c-value">Within 24 hours</div><div class="c-desc">Usually much faster — I love talking travel!</div></div></div>
+      <div class="contact-item"><div class="c-icon">📍</div><div><div class="c-label">Based In</div><div class="c-value">United Kingdom</div><div class="c-desc">Planning trips worldwide</div></div></div>
+      <div class="contact-item"><div class="c-icon">📸</div><div><div class="c-label">Follow Along</div><div class="c-value">@dropeverythingandgo</div><div class="c-desc">Instagram, TikTok &amp; Pinterest</div></div></div>
     </div>
-
     <div class="contact-form-box reveal reveal-delay-1">
       <h3>Send a Message</h3>
       <p>Fill in the form and I'll get back to you as soon as possible.</p>
       <form class="cf" action="https://formspree.io/f/mjgelkpz" method="POST">
-        <input type="hidden" name="_subject" value="New Contact Message — Drop Everything And Go" />
+        <input type="hidden" name="_subject" value="New Contact Message — Drop Everything And Go"/>
         <div class="cf-row">
-          <div class="cf-group"><label>First Name</label><input type="text" name="first_name" placeholder="Your first name" required /></div>
-          <div class="cf-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Your last name" required /></div>
+          <div class="cf-g"><label class="form-label">First Name</label><input class="form-input" type="text" name="first_name" placeholder="Your first name" required/></div>
+          <div class="cf-g"><label class="form-label">Last Name</label><input class="form-input" type="text" name="last_name" placeholder="Your last name" required/></div>
         </div>
-        <div class="cf-group"><label>Email</label><input type="email" name="email" placeholder="hello@email.com" required /></div>
-        <div class="cf-group">
-          <label>What's this about?</label>
-          <select name="enquiry_type">
+        <div class="cf-g"><label class="form-label">Email</label><input class="form-input" type="email" name="email" placeholder="hello@email.com" required/></div>
+        <div class="cf-g">
+          <label class="form-label">What's this about?</label>
+          <select class="form-select" name="enquiry_type">
             <option>I want help planning a trip</option>
             <option>I have a general travel question</option>
             <option>Collaboration / press enquiry</option>
             <option>Something else</option>
           </select>
         </div>
-        <div class="cf-group"><label>Your Message</label><textarea name="message" placeholder="Tell me what you're thinking..."></textarea></div>
+        <div class="cf-g"><label class="form-label">Your Message</label><textarea class="form-textarea" name="message" placeholder="Tell me what you're thinking..."></textarea></div>
         <button type="submit" class="cf-submit">Send Message</button>
       </form>
     </div>
@@ -144,53 +103,43 @@
 </section>
 
 <section class="section faq-section">
-  <div class="reveal"><p class="section-label" style="text-align:center">✦ Quick Answers</p><h2 class="section-title">Frequently Asked <em>Questions</em></h2></div>
-  <div class="faq-list reveal">
-    <div class="faq-item">
-      <div class="faq-q">How much does trip planning cost? <em class="faq-icon">+</em></div>
-      <div class="faq-a">Bespoke itinerary planning starts from £150. This covers a fully personalised day-by-day itinerary, accommodation recommendations, and transport advice. Full booking services are priced separately — get in touch for a quote.</div>
+  <div class="section-inner">
+    <div style="text-align:center;" class="reveal">
+      <p class="section-label section-label-center">Quick Answers</p>
+      <h2 class="section-title">Frequently Asked <em>Questions</em></h2>
     </div>
-    <div class="faq-item">
-      <div class="faq-q">How long does it take to plan a trip? <em class="faq-icon">+</em></div>
-      <div class="faq-a">I'll send you an initial itinerary within 24-48 hours of your enquiry. From there we refine and finalise together — most trips take 1-2 weeks from first contact to everything being booked.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Do you only plan trips to destinations on the blog? <em class="faq-icon">+</em></div>
-      <div class="faq-a">Not at all! I can plan trips to destinations worldwide. The blog just covers places I've personally visited, but my planning services aren't limited to those locations.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Can you help with last-minute trips? <em class="faq-icon">+</em></div>
-      <div class="faq-a">Yes! Drop everything and go, right? I can often turn around a last-minute itinerary very quickly. Get in touch and we'll see what we can do.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Do you offer refunds if my trip is cancelled? <em class="faq-icon">+</em></div>
-      <div class="faq-a">Planning fees are non-refundable, but I always recommend comprehensive travel insurance and will help guide you through the claims process if something goes wrong.</div>
+    <div class="faq-list">
+      <div class="faq-item reveal"><div class="faq-q">How much does trip planning cost? <em class="faq-icon">+</em></div><div class="faq-a">Bespoke itinerary planning starts from £150. This covers a fully personalised day-by-day plan, accommodation recommendations, and transport advice. Full booking services are priced separately — get in touch for a personalised quote.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">How long does it take to plan a trip? <em class="faq-icon">+</em></div><div class="faq-a">I'll send you an initial itinerary within 24-48 hours of your enquiry. From there we refine together — most trips take 1-2 weeks from first contact to everything being confirmed and booked.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Do you only plan luxury trips? <em class="faq-icon">+</em></div><div class="faq-a">Not at all! I plan trips across all budgets — from budget backpacking adventures to five-star luxury honeymoons. The goal is always the same: the best possible experience for your money.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Can you help with last-minute bookings? <em class="faq-icon">+</em></div><div class="faq-a">Yes — I'll always do my best, though lead time does affect what's available. For the best selection and prices, 4-8 weeks notice is ideal, especially for popular destinations in peak season.</div></div>
+      <div class="faq-item reveal"><div class="faq-q">Do you offer travel insurance? <em class="faq-icon">+</em></div><div class="faq-a">I don't sell insurance directly, but I provide honest guidance on the best policies for your trip type — and I strongly recommend all travellers have comprehensive cover before they go.</div></div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog & Services</span></a>
-      <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
-    </div>
+  <div class="footer-top">
+    <div class="footer-brand"><a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a><p>Honest travel stories and expert trip planning from someone who actually goes.</p><div class="footer-social"><a href="#" class="social-btn">📸</a><a href="#" class="social-btn">🎵</a><a href="#" class="social-btn">📌</a><a href="#" class="social-btn">▶</a></div></div>
     <div class="footer-col"><h4>Explore</h4><ul><li><a href="destinations.html">Destinations</a></li><li><a href="blog.html">Blog</a></li><li><a href="about.html">About</a></li></ul></div>
     <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Trip Planning</a></li><li><a href="services.html">Hotel Curation</a></li><li><a href="contact.html">Get a Quote</a></li></ul></div>
-    <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="privacy.html#cookies">Cookie Policy</a></li><li><a href="privacy.html#terms">Terms of Use</a></li></ul></div>
   </div>
-  <div class="footer-bottom"><p>© 2025 Drop Everything And Go. All rights reserved.</p><p>Made with ♡ for travellers everywhere</p></div>
+  <div class="footer-bottom"><p>© 2025 Drop Everything And Go. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="privacy.html#cookies">Cookies</a><a href="privacy.html#terms">Terms</a></div></div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
-  window.addEventListener('scroll', () => { document.getElementById('navbar').style.background = window.scrollY > 60 ? 'rgba(10,22,40,0.97)' : 'rgba(10,22,40,0.92)'; });
-  document.querySelectorAll('.faq-q').forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!wasOpen) item.classList.add('open');
-    });
-  
+<script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
+<script>
+  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
+  const nav=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
+  const ham=document.getElementById('hamburger'),mob=document.getElementById('navMobile');
+  ham.addEventListener('click',()=>{ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
+  document.querySelectorAll('.faq-item').forEach(item=>{item.querySelector('.faq-q').addEventListener('click',()=>{const wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!wasOpen)item.classList.add('open');});});
+  function showCookie(){if(!localStorage.getItem('cookieChoice')){setTimeout(()=>document.getElementById('cookieBanner').classList.add('visible'),1200);}}
+  function acceptCookies(){localStorage.setItem('cookieChoice','accepted');document.getElementById('cookieBanner').classList.remove('visible');}
+  function declineCookies(){localStorage.setItem('cookieChoice','declined');document.getElementById('cookieBanner').classList.remove('visible');}
+  showCookie();
+</script>
+</body></html>
