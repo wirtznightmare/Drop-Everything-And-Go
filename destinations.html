@@ -2,37 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Explore destinations worldwide with Drop Everything And Go — from European gems to exotic adventures."/>
   <title>Destinations — Drop Everything And Go</title>
   <link rel="stylesheet" href="style.css"/>
   <style>
     .dest-section{background:var(--white);}
-    .region-tabs{display:flex;gap:0.6rem;flex-wrap:wrap;max-width:1200px;margin:0 auto 3.5rem;justify-content:center;}
-    .region-tab{padding:0.5rem 1.4rem;border:1.5px solid rgba(10,22,40,0.14);border-radius:50px;background:transparent;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.79rem;font-weight:500;letter-spacing:0.07em;color:var(--light-text);transition:all 0.2s;}
-    .region-tab:hover,.region-tab.active{background:var(--navy);border-color:var(--navy);color:var(--white);}
+    .filter-bar{display:flex;gap:0.6rem;flex-wrap:wrap;max-width:1200px;margin:0 auto 2rem;justify-content:center;}
+    .filter-tab{padding:0.48rem 1.2rem;border:1.5px solid rgba(10,22,40,0.13);border-radius:50px;background:transparent;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.06em;color:var(--light-text);transition:all 0.2s;}
+    .filter-tab:hover{border-color:var(--sky);color:var(--sky);}
+    .filter-tab.active{background:var(--navy);border-color:var(--navy);color:var(--white);}
+    .result-count{text-align:center;font-size:0.82rem;color:var(--light-text);margin-bottom:2.5rem;}
     .dest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1200px;margin:0 auto;}
-    .dest-big{border-radius:var(--radius);overflow:hidden;position:relative;height:320px;cursor:pointer;text-decoration:none;display:block;}
-    .dest-big:first-child{grid-column:span 2;}
+    .dest-card{border-radius:var(--radius);overflow:hidden;position:relative;height:300px;text-decoration:none;display:block;transition:transform 0.35s,box-shadow 0.35s;}
+    .dest-card.featured{grid-column:span 2;height:380px;}
+    .dest-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(10,22,40,0.2);}
+    .dest-card.hidden{display:none;}
     .dest-img{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:5rem;transition:transform 0.65s cubic-bezier(0.25,0.46,0.45,0.94);}
-    .dest-big:hover .dest-img{transform:scale(1.06);}
-    .d1{background:linear-gradient(135deg,#1a6b6b,#0a2a40);}.d2{background:linear-gradient(135deg,#2e4a7a,#1a3a6a);}
-    .d3{background:linear-gradient(135deg,#1a4a3a,#0d3a2a);}.d4{background:linear-gradient(135deg,#4a2e1a,#3a1a0a);}
-    .d5{background:linear-gradient(135deg,#2a1a4a,#1a0a3a);}.d6{background:linear-gradient(135deg,#1a5a3a,#0a3a2a);}
-    .d7{background:linear-gradient(135deg,#5a3a1a,#3a2a0a);}.d8{background:linear-gradient(135deg,#3a1a4a,#2a0a3a);}
-    .d9{background:linear-gradient(135deg,#1a3a6a,#0a2a4a);}
-    .dest-big-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,15,30,0.9) 0%,rgba(6,15,30,0.05) 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;transition:background 0.3s;}
-    .dest-big:hover .dest-big-overlay{background:linear-gradient(to top,rgba(6,15,30,0.95) 0%,rgba(6,15,30,0.15) 60%);}
-    .region-tag{display:inline-block;background:rgba(201,169,110,0.9);color:var(--navy);font-size:0.61rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:0.26rem 0.65rem;border-radius:2px;margin-bottom:0.55rem;align-self:flex-start;}
-    .dest-big-name{font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:var(--white);margin-bottom:0.3rem;}
-    .dest-big:first-child .dest-big-name{font-size:2.5rem;}
-    .dest-big-desc{font-size:0.82rem;color:rgba(200,230,245,0.75);line-height:1.5;font-weight:300;}
-    .dest-cta-link{display:inline-block;margin-top:0.8rem;font-size:0.74rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);opacity:0;transform:translateY(5px);transition:opacity 0.3s,transform 0.3s;}
-    .dest-big:hover .dest-cta-link{opacity:1;transform:translateY(0);}
+    .dest-card:hover .dest-img{transform:scale(1.06);}
+    .g-santorini{background:linear-gradient(135deg,#1a7a7a,#0a3050);}
+    .g-tokyo{background:linear-gradient(135deg,#3a2a5a,#1a0a3a);}
+    .g-bali{background:linear-gradient(135deg,#1a5a3a,#0a3a1a);}
+    .g-dubai{background:linear-gradient(135deg,#5a3a0a,#3a1a00);}
+    .g-maldives{background:linear-gradient(135deg,#0a5a7a,#052a4a);}
+    .g-newyork{background:linear-gradient(135deg,#1a2a4a,#0a1020);}
+    .g-amalfi{background:linear-gradient(135deg,#1a5a2a,#0a3a0a);}
+    .g-cappadocia{background:linear-gradient(135deg,#6a2a0a,#3a0a00);}
+    .g-iceland{background:linear-gradient(135deg,#0a3a5a,#051a30);}
+    .g-thailand{background:linear-gradient(135deg,#4a1a3a,#2a0020);}
+    .g-patagonia{background:linear-gradient(135deg,#1a3a5a,#0a2030);}
+    .g-portugal{background:linear-gradient(135deg,#4a2a0a,#2a0a00);}
+    .g-zanzibar{background:linear-gradient(135deg,#0a4a3a,#052a1a);}
+    .g-peru{background:linear-gradient(135deg,#4a3a0a,#2a1a00);}
+    .g-vietnam{background:linear-gradient(135deg,#1a4a1a,#0a2a0a);}
+    .g-croatia{background:linear-gradient(135deg,#0a3a5a,#052030);}
+    .g-kenya{background:linear-gradient(135deg,#3a4a0a,#1a2a00);}
+    .g-georgia{background:linear-gradient(135deg,#5a1a1a,#3a0000);}
+    .dest-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,15,30,0.92) 0%,rgba(6,15,30,0.05) 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.8rem;transition:background 0.3s;}
+    .dest-card:hover .dest-overlay{background:linear-gradient(to top,rgba(6,15,30,0.97) 0%,rgba(6,15,30,0.15) 60%);}
+    .dest-card.featured .dest-overlay{padding:2.4rem;}
+    .dest-tags{display:flex;gap:0.4rem;flex-wrap:wrap;margin-bottom:0.5rem;}
+    .dest-tag{display:inline-block;background:rgba(201,169,110,0.88);color:var(--navy);font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.22rem 0.6rem;border-radius:2px;}
+    .dest-name{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--white);margin-bottom:0.25rem;line-height:1.1;}
+    .dest-card.featured .dest-name{font-size:2.4rem;}
+    .dest-tagline{font-size:0.82rem;color:rgba(200,230,245,0.72);font-weight:300;line-height:1.4;}
+    .dest-arrow{display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.8rem;font-size:0.74rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);opacity:0;transform:translateY(5px);transition:opacity 0.3s,transform 0.3s;}
+    .dest-card:hover .dest-arrow{opacity:1;transform:translateY(0);}
+    .no-results{display:none;text-align:center;padding:4rem 2rem;grid-column:1/-1;color:var(--light-text);}
+    .no-results.visible{display:block;}
     .plan-banner{background:linear-gradient(135deg,var(--navy),var(--ocean));padding:5rem 4rem;text-align:center;margin-top:5rem;border-radius:var(--radius);}
     .plan-banner h2{font-family:'Playfair Display',serif;font-size:2.3rem;font-weight:700;color:var(--white);margin-bottom:0.8rem;}
-    .plan-banner p{color:rgba(200,230,245,0.68);max-width:480px;margin:0 auto 2rem;line-height:1.75;}
-    @media(max-width:900px){.dest-grid{grid-template-columns:1fr 1fr;}.dest-big:first-child{grid-column:span 2;}}
-    @media(max-width:600px){.dest-grid{grid-template-columns:1fr;}.dest-big:first-child{grid-column:span 1;}}
+    .plan-banner p{color:rgba(200,230,245,0.65);max-width:480px;margin:0 auto 2rem;line-height:1.75;}
+    @media(max-width:900px){.dest-grid{grid-template-columns:1fr 1fr;}.dest-card.featured{grid-column:span 2;}}
+    @media(max-width:600px){.dest-grid{grid-template-columns:1fr;}.dest-card.featured{grid-column:span 1;height:280px;}.dest-card.featured .dest-name{font-size:1.8rem;}}
   </style>
 </head>
 <body>
@@ -58,30 +78,103 @@
   <div class="page-hero-content">
     <p class="page-eyebrow">The World is Waiting</p>
     <h1 class="page-title">Explore <em>Destinations</em></h1>
-    <p class="page-subtitle">From hidden European gems to exotic far-flung adventures — find your next journey here.</p>
+    <p class="page-subtitle">City breaks, honeymoons, adventure, family — find your perfect next journey.</p>
   </div>
   <div class="page-hero-wave"><svg viewBox="0 0 1800 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,40 C300,80 600,0 900,40 C1200,80 1500,0 1800,40 L1800,80 L0,80 Z" fill="var(--white)"/></svg></div>
 </div>
 <section class="section dest-section">
-  <div class="region-tabs reveal">
-    <button class="region-tab active">All Destinations</button><button class="region-tab">Europe</button>
-    <button class="region-tab">Asia</button><button class="region-tab">Americas</button>
-    <button class="region-tab">Africa &amp; Middle East</button><button class="region-tab">Oceania</button>
+  <div class="filter-bar reveal">
+    <button class="filter-tab active" data-filter="all">🌍 All</button>
+    <button class="filter-tab" data-filter="europe">🇪🇺 Europe</button>
+    <button class="filter-tab" data-filter="asia">🌏 Asia</button>
+    <button class="filter-tab" data-filter="americas">🌎 Americas</button>
+    <button class="filter-tab" data-filter="africa">🌍 Africa &amp; Middle East</button>
+    <button class="filter-tab" data-filter="city-break">🏙️ City Breaks</button>
+    <button class="filter-tab" data-filter="honeymoon">💑 Honeymoon</button>
+    <button class="filter-tab" data-filter="adventure">🧗 Adventure</button>
+    <button class="filter-tab" data-filter="luxury">✨ Luxury</button>
+    <button class="filter-tab" data-filter="family">👨‍👩‍👧 Family</button>
+    <button class="filter-tab" data-filter="hidden-gem">💎 Hidden Gems</button>
   </div>
-  <div class="dest-grid">
-    <a href="blog.html" class="dest-big reveal"><div class="dest-img d1">🌊</div><div class="dest-big-overlay"><span class="region-tag">Europe</span><h3 class="dest-big-name">Santorini, Greece</h3><p class="dest-big-desc">Iconic white-washed cliffs, azure domes, and sunsets that stop time. The crown jewel of the Aegean.</p><span class="dest-cta-link">Read the Guide →</span></div></a>
-    <a href="blog.html" class="dest-big reveal reveal-delay-1"><div class="dest-img d2">🗼</div><div class="dest-big-overlay"><span class="region-tag">Asia</span><h3 class="dest-big-name">Tokyo, Japan</h3><p class="dest-big-desc">Ancient temples meet neon-lit streets.</p><span class="dest-cta-link">Read the Guide →</span></div></a>
-    <a href="blog.html" class="dest-big reveal"><div class="dest-img d3">🌿</div><div class="dest-big-overlay"><span class="region-tag">Americas</span><h3 class="dest-big-name">Costa Rica</h3><p class="dest-big-desc">Rainforests, volcanoes, and Pacific coastlines.</p><span class="dest-cta-link">Read the Guide →</span></div></a>
-    <a href="blog.html" class="dest-big reveal reveal-delay-1"><div class="dest-img d4">🏜️</div><div class="dest-big-overlay"><span class="region-tag">Africa</span><h3 class="dest-big-name">Morocco</h3><p class="dest-big-desc">Spice-scented medinas and Saharan starscapes.</p><span class="dest-cta-link">Read the Guide →</span></div></a>
-    <a href="blog.html" class="dest-big reveal reveal-delay-2"><div class="dest-img d5">🏝️</div><div class="dest-big-overlay"><span class="region-tag">Asia</span><h3 class="dest-big-name">Maldives</h3><p class="dest-big-desc">Crystal lagoons and overwater villas.</p><span class="dest-cta-link">Read the Guide →</span></div></a>
-    <a href="blog.html" class="dest-big reveal"><div class="dest-img d6">🌺</div><div class="dest-big-overlay"><span class="region-tag">Asia</span><h3 class="dest-big-name">Bali, Indonesia</h3><p class="dest-big-desc">Rice terraces, temples, and surf culture.</p><span class="dest-cta-link">Read the Guide →</span></div></a>
-    <a href="blog.html" class="dest-big reveal reveal-delay-1"><div class="dest-img d7">🏛️</div><div class="dest-big-overlay"><span class="region-tag">Europe</span><h3 class="dest-big-name">Lisbon, Portugal</h3><p class="dest-big-desc">Pastéis de nata, cobblestone trams, and hilltop views.</p><span class="dest-cta-link">Read the Guide →</span></div></a>
-    <a href="blog.html" class="dest-big reveal reveal-delay-2"><div class="dest-img d8">🏔️</div><div class="dest-big-overlay"><span class="region-tag">Americas</span><h3 class="dest-big-name">Peru &amp; Machu Picchu</h3><p class="dest-big-desc">Ancient civilisations and breathtaking mountain scenery.</p><span class="dest-cta-link">Read the Guide →</span></div></a>
-    <a href="blog.html" class="dest-big reveal"><div class="dest-img d9">🌅</div><div class="dest-big-overlay"><span class="region-tag">Asia</span><h3 class="dest-big-name">Vietnam</h3><p class="dest-big-desc">Street food, emerald bays, and ancient lantern towns.</p><span class="dest-cta-link">Read the Guide →</span></div></a>
+  <p class="result-count" id="resultCount">Showing all 18 destinations</p>
+  <div class="dest-grid" id="destGrid">
+    <a href="destinations/santorini.html" class="dest-card featured reveal" data-tags="europe,honeymoon,luxury">
+      <div class="dest-img g-santorini">🌊</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Europe</span><span class="dest-tag">Honeymoon</span><span class="dest-tag">Luxury</span></div><h3 class="dest-name">Santorini, Greece</h3><p class="dest-tagline">Iconic white-washed cliffs, azure domes, and sunsets that genuinely stop time.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <a href="destinations/tokyo.html" class="dest-card reveal" data-tags="asia,city-break,adventure">
+      <div class="dest-img g-tokyo">🗼</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Asia</span><span class="dest-tag">City Break</span></div><h3 class="dest-name">Tokyo, Japan</h3><p class="dest-tagline">Ancient temples meet neon-lit streets. Nowhere on earth quite like it.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <a href="destinations/bali.html" class="dest-card reveal" data-tags="asia,honeymoon,adventure,family">
+      <div class="dest-img g-bali">🌺</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Asia</span><span class="dest-tag">Honeymoon</span></div><h3 class="dest-name">Bali, Indonesia</h3><p class="dest-tagline">Rice terraces, sacred temples, surf and soul.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <a href="destinations/dubai.html" class="dest-card reveal" data-tags="africa,luxury,city-break,honeymoon">
+      <div class="dest-img g-dubai">🌆</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Middle East</span><span class="dest-tag">Luxury</span></div><h3 class="dest-name">Dubai, UAE</h3><p class="dest-tagline">Desert luxury, record-breaking skylines, and world-class everything.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <a href="destinations/maldives.html" class="dest-card reveal" data-tags="asia,honeymoon,luxury">
+      <div class="dest-img g-maldives">🏝️</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Asia</span><span class="dest-tag">Honeymoon</span><span class="dest-tag">Luxury</span></div><h3 class="dest-name">Maldives</h3><p class="dest-tagline">Overwater villas, bioluminescent beaches, and utter silence.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <a href="destinations/new-york.html" class="dest-card reveal" data-tags="americas,city-break,family,adventure">
+      <div class="dest-img g-newyork">🗽</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Americas</span><span class="dest-tag">City Break</span></div><h3 class="dest-name">New York, USA</h3><p class="dest-tagline">The city that never sleeps — and never stops surprising you.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <a href="destinations/amalfi.html" class="dest-card reveal" data-tags="europe,honeymoon,luxury,hidden-gem">
+      <div class="dest-img g-amalfi">🍋</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Europe</span><span class="dest-tag">Honeymoon</span></div><h3 class="dest-name">Amalfi Coast, Italy</h3><p class="dest-tagline">Clifftop villages, crystal sea, and limoncello at sunset.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <a href="destinations/cappadocia.html" class="dest-card reveal" data-tags="europe,asia,adventure,honeymoon,hidden-gem">
+      <div class="dest-img g-cappadocia">🎈</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Turkey</span><span class="dest-tag">Hidden Gem</span></div><h3 class="dest-name">Cappadocia, Turkey</h3><p class="dest-tagline">Hot air balloons over fairy chimneys at sunrise. Pure magic.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <a href="destinations/iceland.html" class="dest-card reveal" data-tags="europe,adventure,honeymoon,hidden-gem">
+      <div class="dest-img g-iceland">🌌</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Europe</span><span class="dest-tag">Adventure</span></div><h3 class="dest-name">Iceland</h3><p class="dest-tagline">Northern lights, geysers, waterfalls, and glaciers — all in one country.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <a href="destinations/thailand.html" class="dest-card reveal" data-tags="asia,adventure,family,honeymoon">
+      <div class="dest-img g-thailand">🐘</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Asia</span><span class="dest-tag">Adventure</span><span class="dest-tag">Family</span></div><h3 class="dest-name">Thailand</h3><p class="dest-tagline">Jungle temples, beach islands, street food, and smiles everywhere.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <a href="destinations/patagonia.html" class="dest-card reveal" data-tags="americas,adventure,hidden-gem">
+      <div class="dest-img g-patagonia">🏔️</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Americas</span><span class="dest-tag">Adventure</span></div><h3 class="dest-name">Patagonia</h3><p class="dest-tagline">The end of the world — glaciers, condors, and wilderness beyond comprehension.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <a href="destinations/portugal.html" class="dest-card reveal" data-tags="europe,city-break,family,hidden-gem">
+      <div class="dest-img g-portugal">🎶</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Europe</span><span class="dest-tag">Family</span></div><h3 class="dest-name">Portugal</h3><p class="dest-tagline">Lisbon's hills, Porto's wine cellars, and the Algarve's golden cliffs.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <a href="destinations/zanzibar.html" class="dest-card reveal" data-tags="africa,honeymoon,luxury,hidden-gem,adventure">
+      <div class="dest-img g-zanzibar">🌴</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Africa</span><span class="dest-tag">Honeymoon</span></div><h3 class="dest-name">Zanzibar</h3><p class="dest-tagline">Turquoise water, powder sand, and Stone Town's labyrinth streets.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <a href="destinations/peru.html" class="dest-card reveal" data-tags="americas,adventure,hidden-gem">
+      <div class="dest-img g-peru">🦙</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Americas</span><span class="dest-tag">Adventure</span></div><h3 class="dest-name">Peru &amp; Machu Picchu</h3><p class="dest-tagline">Ancient Inca cities hidden in mountain clouds. A trip that changes you.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <a href="destinations/vietnam.html" class="dest-card reveal" data-tags="asia,adventure,family,hidden-gem">
+      <div class="dest-img g-vietnam">🛵</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Asia</span><span class="dest-tag">Adventure</span></div><h3 class="dest-name">Vietnam</h3><p class="dest-tagline">Emerald Halong Bay, ancient Hoi An, and pho at dawn in Hanoi.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <a href="destinations/croatia.html" class="dest-card reveal" data-tags="europe,city-break,honeymoon,adventure,hidden-gem">
+      <div class="dest-img g-croatia">⛵</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Europe</span><span class="dest-tag">Hidden Gem</span></div><h3 class="dest-name">Croatia</h3><p class="dest-tagline">Dubrovnik's walls, island-hopping the Dalmatian coast, crystal Plitvice lakes.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <a href="destinations/kenya.html" class="dest-card reveal" data-tags="africa,adventure,family,luxury">
+      <div class="dest-img g-kenya">🦁</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Africa</span><span class="dest-tag">Adventure</span></div><h3 class="dest-name">Kenya</h3><p class="dest-tagline">The Great Migration, Maasai Mara sunsets, and the best safari on earth.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <a href="destinations/georgia.html" class="dest-card reveal" data-tags="europe,hidden-gem,adventure,city-break">
+      <div class="dest-img g-georgia">🍷</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Europe</span><span class="dest-tag">Hidden Gem</span></div><h3 class="dest-name">Georgia (Tbilisi)</h3><p class="dest-tagline">Wine, mountains, cave cities, and Europe's most underrated food scene.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <div class="no-results" id="noResults">No destinations match that filter — <a href="contact.html" style="color:var(--sky)">get in touch</a> and we'll find somewhere perfect.</div>
   </div>
   <div class="plan-banner reveal">
-    <h2>Can't Decide?</h2>
-    <p>Tell us your travel style, budget, and wishlist — we'll recommend the perfect destination and plan the whole trip for you.</p>
+    <h2>Can't Decide Where to Go?</h2>
+    <p>Tell us your travel style, budget, and dream — we'll recommend the perfect destination and plan every detail.</p>
     <a href="contact.html" class="btn-primary">Get a Personalised Recommendation</a>
   </div>
 </section>
@@ -96,13 +189,28 @@
 </footer>
 <script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
 <script>
-  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
+  const tabs=document.querySelectorAll('.filter-tab');
+  const cards=document.querySelectorAll('.dest-card[data-tags]');
+  const countEl=document.getElementById('resultCount');
+  const noResults=document.getElementById('noResults');
+  function applyFilter(filter){
+    let visible=0;
+    cards.forEach(card=>{
+      const tags=card.dataset.tags.split(',');
+      const show=filter==='all'||tags.includes(filter);
+      card.classList.toggle('hidden',!show);
+      if(show)visible++;
+    });
+    noResults.classList.toggle('visible',visible===0);
+    countEl.textContent=filter==='all'?`Showing all 18 destinations`:`Showing ${visible} destination${visible!==1?'s':''}`;
+  }
+  tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));tab.classList.add('active');applyFilter(tab.dataset.filter);}));
+  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.08});
   document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
   const nav=document.getElementById('navbar');
   window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
   const ham=document.getElementById('hamburger'),mob=document.getElementById('navMobile');
   ham.addEventListener('click',()=>{ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
-  document.querySelectorAll('.region-tab').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.region-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');});});
   function showCookie(){if(!localStorage.getItem('cookieChoice')){setTimeout(()=>document.getElementById('cookieBanner').classList.add('visible'),1200);}}
   function acceptCookies(){localStorage.setItem('cookieChoice','accepted');document.getElementById('cookieBanner').classList.remove('visible');}
   function declineCookies(){localStorage.setItem('cookieChoice','declined');document.getElementById('cookieBanner').classList.remove('visible');}

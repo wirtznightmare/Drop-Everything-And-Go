@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Northern lights, midnight sun, geysers, waterfalls, glaciers — raw, elemental, and utterly unforgettable. Expert trip planning from Drop Everything And Go."/>
+  <title>Iceland — Drop Everything And Go</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    .dest-hero{min-height:60vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:9rem 2rem 5rem;}
+    .dest-hero-bg{position:absolute;inset:0;linear-gradient(135deg,#0a3a5a,#051a30);}
+    .dest-hero-content{position:relative;z-index:2;text-align:center;color:var(--white);}
+    .dest-emoji{font-size:5rem;margin-bottom:1rem;display:block;}
+    .dest-tags-row{display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.2rem;}
+    .dtag{background:rgba(201,169,110,0.85);color:var(--navy);font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.7rem;border-radius:2px;}
+    .dest-hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,7vw,5rem);font-weight:700;line-height:1.05;margin-bottom:1rem;}
+    .dest-hero-tagline{font-size:1rem;color:rgba(200,230,245,0.78);max-width:500px;margin:0 auto;line-height:1.75;font-weight:300;}
+    .dest-hero-wave{position:absolute;bottom:-1px;left:0;right:0;}
+    .dest-hero-wave svg{width:100%;display:block;}
+    .dest-intro{background:var(--white);}
+    .dest-intro-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;max-width:1100px;margin:0 auto;align-items:start;}
+    .dest-intro-text h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--navy);margin-bottom:1rem;line-height:1.2;}
+    .dest-intro-text h2 em{font-style:italic;color:var(--sky);}
+    .dest-intro-text p{font-size:0.94rem;color:var(--light-text);line-height:1.82;margin-bottom:1rem;}
+    .dest-facts{background:var(--bg-light);border-radius:var(--radius);padding:2rem;}
+    .dest-facts h4{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:1.2rem;}
+    .fact-row{display:flex;align-items:flex-start;gap:0.8rem;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(10,22,40,0.07);}
+    .fact-row:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+    .fact-icon{font-size:1.2rem;flex-shrink:0;margin-top:0.1rem;}
+    .fact-label{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.2rem;}
+    .fact-value{font-size:0.88rem;color:var(--navy);font-weight:500;}
+    .audiences-section{background:var(--white);}
+    .aud-header{text-align:center;margin-bottom:3rem;}
+    .aud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1000px;margin:0 auto;}
+    .aud-card{background:var(--bg-light);border-radius:var(--radius);padding:2.2rem 1.8rem;border-top:3px solid var(--sky);transition:transform 0.3s,box-shadow 0.3s;}
+    .aud-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(10,22,40,0.1);}
+    .aud-icon{font-size:2rem;margin-bottom:0.9rem;}
+    .aud-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;}
+    .aud-desc{font-size:0.86rem;color:var(--light-text);line-height:1.72;}
+    .things-section{background:var(--navy);}
+    .things-section h2{color:var(--white);text-align:center;margin-bottom:0.5rem;}
+    .things-sub{color:rgba(200,230,245,0.6);text-align:center;margin-bottom:3rem;font-size:0.92rem;}
+    .things-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.8rem;max-width:900px;margin:0 auto;}
+    .thing-item{display:flex;align-items:flex-start;gap:0.8rem;background:rgba(255,255,255,0.05);border:1px solid rgba(200,230,245,0.1);border-radius:var(--radius);padding:1rem 1.2rem;transition:background 0.2s;}
+    .thing-item:hover{background:rgba(255,255,255,0.09);}
+    .thing-num{color:var(--gold);font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;flex-shrink:0;min-width:1.5rem;}
+    .thing-text{font-size:0.86rem;color:rgba(200,230,245,0.8);line-height:1.6;}
+    .plan-cta{background:linear-gradient(140deg,var(--ocean),var(--deep));text-align:center;padding:5rem 4rem;}
+    .plan-cta h2{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--white);margin-bottom:0.8rem;}
+    .plan-cta p{color:rgba(200,230,245,0.65);max-width:480px;margin:0 auto 2rem;line-height:1.75;}
+    .back-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(200,230,245,0.5);text-decoration:none;margin-bottom:2rem;transition:color 0.2s;}
+    .back-link:hover{color:var(--gold);}
+    @media(max-width:900px){.dest-intro-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}}
+    @media(max-width:600px){.things-grid{grid-template-columns:1fr;}.plan-cta{padding:4rem 1.5rem;}}
+  </style>
+</head>
+<body>
+<div class="cookie-banner" id="cookieBanner">
+  <p class="cookie-text">🍪 We use cookies to improve your experience. By continuing, you agree to our <a href="../privacy.html">Privacy Policy</a>.</p>
+  <div class="cookie-btns"><button class="cookie-accept" onclick="acceptCookies()">Accept All</button><button class="cookie-decline" onclick="declineCookies()">Decline</button></div>
+</div>
+<nav id="navbar">
+  <a href="../index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a>
+  <ul class="nav-links">
+    <li><a href="../destinations.html" class="active">Destinations</a></li>
+    <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../services.html">Services</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html" class="nav-cta">Plan My Trip</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+<ul class="nav-mobile" id="navMobile">
+  <li><a href="../destinations.html">Destinations</a></li>
+  <li><a href="../blog.html">Blog</a></li>
+  <li><a href="../services.html">Services</a></li>
+  <li><a href="../about.html">About</a></li>
+  <li><a href="../contact.html" class="mob-cta">Plan My Trip</a></li>
+</ul>
+<div class="dest-hero">
+  <div class="dest-hero-bg"></div>
+  <div class="dest-hero-content">
+    <a href="../destinations.html" class="back-link">← All Destinations</a>
+    <span class="dest-emoji">🌌</span>
+    <div class="dest-tags-row"><span class="dtag">Europe</span> <span class="dtag">Adventure</span> <span class="dtag">Honeymoon</span> <span class="dtag">Hidden Gem</span></div>
+    <h1 class="dest-hero-title">Iceland</h1>
+    <p class="dest-hero-tagline">Northern lights, midnight sun, geysers, waterfalls, glaciers — raw, elemental, and utterly unforgettable.</p>
+  </div>
+  <div class="dest-hero-wave"><svg viewBox="0 0 1800 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,40 C300,80 600,0 900,40 C1200,80 1500,0 1800,40 L1800,80 L0,80 Z" fill="var(--white)"/></svg></div>
+</div>
+<section class="section dest-intro">
+  <div class="dest-intro-grid">
+    <div class="dest-intro-text reveal">
+      <p class="section-label">Europe · North Atlantic</p>
+      <h2>Why visit <em>Iceland</em>?</h2>
+      <p>Iceland is the most dramatic landscape in Europe, possibly the world. A young country still being formed by volcanic activity, it offers landscapes that feel extraterrestrial — black sand beaches, electric blue glaciers, spouting geysers, and lava fields as far as the eye can see. And in winter, the northern lights dance above all of it.</p>
+      <a href="../contact.html" class="btn-primary" style="margin-top:0.5rem;">Plan My Iceland Trip</a>
+    </div>
+    <div class="dest-facts reveal reveal-delay-1">
+      <h4>Quick Facts</h4>
+      <div class="fact-row"><div class="fact-icon">✈️</div><div><div class="fact-label">Region</div><div class="fact-value">Europe · North Atlantic</div></div></div>
+      <div class="fact-row"><div class="fact-icon">🎯</div><div><div class="fact-label">Best For</div><div class="fact-value">Adventurers, couples, northern lights seekers</div></div></div>
+      <div class="fact-row"><div class="fact-icon">📅</div><div><div class="fact-label">Best Time to Visit</div><div class="fact-value">Sep–Mar (northern lights); Jun–Aug (midnight sun, puffins)</div></div></div>
+      <div class="fact-row"><div class="fact-icon">💷</div><div><div class="fact-label">Budget Guide</div><div class="fact-value">£150–£350/night; self-drive ring road is best value</div></div></div>
+    </div>
+  </div>
+</section>
+<section class="section audiences-section">
+  <div class="aud-header reveal"><p class="section-label section-label-center">Who It's Perfect For</p><h2 class="section-title">Is This Trip <em>Right for You?</em></h2></div>
+  <div class="aud-grid">
+    <div class="aud-card reveal">
+      <div class="aud-icon">🌌</div>
+      <h3 class="aud-title">Northern Lights Chasers</h3>
+      <p class="aud-desc">Iceland is one of the world's best aurora destinations — dark winter nights, minimal light pollution, and a ring road that puts you in the wilderness fast. September to March is the season.</p>
+    </div>
+    <div class="aud-card reveal">
+      <div class="aud-icon">🧗</div>
+      <h3 class="aud-title">Adventure Seekers</h3>
+      <p class="aud-desc">Glacier hiking, ice cave exploration, snorkelling in Silfra fissure (between two tectonic plates), volcano tours, waterfall rappelling — Iceland is an adventure sport playground.</p>
+    </div>
+    <div class="aud-card reveal">
+      <div class="aud-icon">💑</div>
+      <h3 class="aud-title">Couples &amp; Honeymooners</h3>
+      <p class="aud-desc">Wild, elemental, and profoundly romantic — especially in a geothermal pool under the stars. The Blue Lagoon, the Golden Circle at golden hour, and a remote cabin with aurora views.</p>
+    </div>
+  </div>
+</section>
+<section class="section things-section">
+  <div style="position:relative;z-index:1;">
+    <p class="section-label section-label-center reveal" style="justify-content:center;color:var(--gold);">The Highlights</p>
+    <h2 class="reveal" style="font-family:'Playfair Display',serif;font-size:2.3rem;font-weight:700;color:var(--white);text-align:center;margin-bottom:0.5rem;">Things to Do in <em style="font-style:italic;color:var(--mist);">Iceland</em></h2>
+    <p class="things-sub reveal">A curated list — not exhaustive, just the ones that genuinely matter.</p>
+    <div class="things-grid">
