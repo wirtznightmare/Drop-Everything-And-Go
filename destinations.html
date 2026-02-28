@@ -170,6 +170,18 @@
       <div class="dest-img g-georgia">🍷</div>
       <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Europe</span><span class="dest-tag">Hidden Gem</span></div><h3 class="dest-name">Georgia (Tbilisi)</h3><p class="dest-tagline">Wine, mountains, cave cities, and Europe's most underrated food scene.</p><span class="dest-arrow">Explore Guide →</span></div>
     </a>
+    <a href="destinations/salzburg.html" class="dest-card reveal" data-tags="europe,city-break,family,hidden-gem">
+      <div class="dest-img" style="background:linear-gradient(135deg,#2a3a5a,#0a1a3a);">🎵</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Europe</span><span class="dest-tag">City Break</span><span class="dest-tag">Hidden Gem</span></div><h3 class="dest-name">Salzburg, Austria</h3><p class="dest-tagline">Mozart's birthplace, baroque old town, alpine backdrops, and The Sound of Music around every corner.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <a href="destinations/bogota.html" class="dest-card reveal" data-tags="americas,city-break,adventure,hidden-gem">
+      <div class="dest-img" style="background:linear-gradient(135deg,#4a1a0a,#2a0500);">🌺</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Americas</span><span class="dest-tag">City Break</span><span class="dest-tag">Hidden Gem</span></div><h3 class="dest-name">Bogotá, Colombia</h3><p class="dest-tagline">World-class street art, extraordinary coffee, and a food scene that's turning heads globally.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
+    <a href="destinations/ecuador.html" class="dest-card reveal" data-tags="americas,adventure,hidden-gem,family">
+      <div class="dest-img" style="background:linear-gradient(135deg,#1a4a1a,#053a05);">🌋</div>
+      <div class="dest-overlay"><div class="dest-tags"><span class="dest-tag">Americas</span><span class="dest-tag">Adventure</span><span class="dest-tag">Hidden Gem</span></div><h3 class="dest-name">Ecuador</h3><p class="dest-tagline">Galápagos wildlife, Amazon jungle, Andean volcanoes, and colonial Quito — four worlds in one tiny country.</p><span class="dest-arrow">Explore Guide →</span></div>
+    </a>
     <div class="no-results" id="noResults">No destinations match that filter — <a href="contact.html" style="color:var(--sky)">get in touch</a> and we'll find somewhere perfect.</div>
   </div>
   <div class="plan-banner reveal">
@@ -202,7 +214,7 @@
       if(show)visible++;
     });
     noResults.classList.toggle('visible',visible===0);
-    countEl.textContent=filter==='all'?`Showing all 18 destinations`:`Showing ${visible} destination${visible!==1?'s':''}`;
+    countEl.textContent=filter==='all'?`Showing all 21 destinations`:`Showing ${visible} destination${visible!==1?'s':''}`;
   }
   tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));tab.classList.add('active');applyFilter(tab.dataset.filter);}));
   const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.08});
