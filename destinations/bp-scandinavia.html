@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Backpacker guide to Scandinavia — Norway's fjords, Sweden's islands, Finland's lakes, and the northern lights — expensive but utterly spectacular."/>
+  <title>Scandinavia Backpacker Guide — Drop Everything And Go</title>
+  <link rel="stylesheet" href="../style.css"/>
+  <style>
+    .dest-hero{min-height:55vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:9rem 2rem 5rem;}
+    .dest-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#1a2a4a,#0a1020);}
+    .dest-hero-content{position:relative;z-index:2;text-align:center;color:var(--white);}
+    .dest-emoji{font-size:5rem;margin-bottom:1rem;display:block;}
+    .dest-tags-row{display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.2rem;}
+    .dtag{background:rgba(201,169,110,0.85);color:var(--navy);font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.22rem 0.65rem;border-radius:2px;}
+    .bp-badge{background:rgba(46,180,100,0.85);color:var(--white);font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.22rem 0.65rem;border-radius:2px;}
+    .dest-hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,7vw,5rem);font-weight:700;line-height:1.05;margin-bottom:0.5rem;}
+    .dest-hero-tagline{font-size:1rem;color:rgba(200,230,245,0.78);max-width:520px;margin:0 auto;line-height:1.75;font-weight:300;}
+    .dest-hero-wave{position:absolute;bottom:-1px;left:0;right:0;}
+    .dest-hero-wave svg{width:100%;display:block;}
+    .back-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(200,230,245,0.5);text-decoration:none;margin-bottom:1.5rem;transition:color 0.2s;}
+    .back-link:hover{color:var(--gold);}
+    .intro-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:4rem;max-width:1100px;margin:0 auto;align-items:start;}
+    .intro-text h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--navy);margin-bottom:1rem;line-height:1.2;}
+    .intro-text h2 em{font-style:italic;color:var(--sky);}
+    .intro-text p{font-size:0.94rem;color:var(--light-text);line-height:1.82;margin-bottom:1.5rem;}
+    .bp-facts{background:var(--navy);border-radius:var(--radius);padding:2rem;color:var(--white);}
+    .bp-facts h4{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:1.4rem;}
+    .bp-fact-row{display:flex;align-items:flex-start;gap:0.9rem;margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(200,230,245,0.1);}
+    .bp-fact-row:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+    .bp-fact-icon{font-size:1.2rem;flex-shrink:0;}
+    .bp-fact-label{font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(200,230,245,0.5);font-weight:700;margin-bottom:0.2rem;}
+    .bp-fact-value{font-size:0.88rem;color:var(--white);font-weight:500;line-height:1.4;}
+    .things-section{background:var(--navy);padding:5rem 4rem;}
+    .things-title{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--white);text-align:center;margin-bottom:0.5rem;}
+    .things-title em{font-style:italic;color:var(--mist);}
+    .things-sub{color:rgba(200,230,245,0.6);text-align:center;margin-bottom:3rem;font-size:0.92rem;}
+    .things-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.8rem;max-width:900px;margin:0 auto;}
+    .thing-item{display:flex;align-items:flex-start;gap:0.8rem;background:rgba(255,255,255,0.05);border:1px solid rgba(200,230,245,0.1);border-radius:var(--radius);padding:1rem 1.2rem;transition:background 0.2s;}
+    .thing-item:hover{background:rgba(255,255,255,0.09);}
+    .thing-num{color:var(--gold);font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;flex-shrink:0;min-width:1.5rem;}
+    .thing-text{font-size:0.86rem;color:rgba(200,230,245,0.8);line-height:1.6;}
+    .plan-cta{background:linear-gradient(140deg,var(--ocean),var(--deep));text-align:center;padding:5rem 4rem;}
+    .plan-cta h2{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--white);margin-bottom:0.8rem;}
+    .plan-cta p{color:rgba(200,230,245,0.65);max-width:480px;margin:0 auto 2rem;line-height:1.75;}
+    @media(max-width:900px){.intro-grid{grid-template-columns:1fr;}}
+    @media(max-width:600px){.things-grid{grid-template-columns:1fr;}.things-section{padding:4rem 1.5rem;}.plan-cta{padding:4rem 1.5rem;}}
+  </style>
+</head>
+<body>
+<div class="cookie-banner" id="cookieBanner">
+  <p class="cookie-text">&#x1F36A; We use cookies to improve your experience. By continuing, you agree to our <a href="../privacy.html">Privacy Policy</a>.</p>
+  <div class="cookie-btns"><button class="cookie-accept" onclick="acceptCookies()">Accept All</button><button class="cookie-decline" onclick="declineCookies()">Decline</button></div>
+</div>
+<nav id="navbar">
+  <a href="../index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a>
+  <ul class="nav-links">
+    <li><a href="../destinations.html" class="active">Destinations</a></li>
+    <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../services.html">Services</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html" class="nav-cta">Plan My Trip</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+</nav>
+<ul class="nav-mobile" id="navMobile">
+  <li><a href="../destinations.html">Destinations</a></li>
+  <li><a href="../blog.html">Blog</a></li>
+  <li><a href="../services.html">Services</a></li>
+  <li><a href="../about.html">About</a></li>
+  <li><a href="../contact.html" class="mob-cta">Plan My Trip</a></li>
+</ul>
+<div class="dest-hero">
+  <div class="dest-hero-bg"></div>
+  <div class="dest-hero-content">
+    <a href="../destinations.html" class="back-link">&#8592; All Destinations</a>
+    <span class="dest-emoji">🌊</span>
+    <div class="dest-tags-row"><span class="bp-badge">&#127464;&#127463; Backpacker Guide</span><span class="dtag">Europe</span> <span class="dtag">Adventure</span> <span class="dtag">Nature</span> <span class="dtag">Northern Lights</span> <span class="dtag">City Break</span> <span class="dtag">Budget Stretch</span></div>
+    <h1 class="dest-hero-title">Scandinavia</h1>
+    <p class="dest-hero-tagline">Norway's fjords, Sweden's islands, Finland's lakes, and the northern lights — expensive but utterly spectacular.</p>
+  </div>
+  <div class="dest-hero-wave"><svg viewBox="0 0 1800 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,40 C300,80 600,0 900,40 C1200,80 1500,0 1800,40 L1800,80 L0,80 Z" fill="var(--white)"/></svg></div>
+</div>
+<section class="section" style="background:var(--white);">
+  <div class="intro-grid">
+    <div class="intro-text reveal">
+      <p class="section-label">Europe</p>
+      <h2>Why backpack <em>Scandinavia?</em></h2>
+      <p>Scandinavia is expensive — there's no getting around it. But couchsurfing, camping, and working holiday visas make it more accessible than most travellers assume. Norway's fjord system is one of the world's great landscapes. Stockholm's archipelago is extraordinary in summer. And Finland's sauna culture and silence are a genuinely different way of experiencing the world. Budget smartly and it's worth every penny.</p>
+      <a href="../contact.html" class="btn-primary">Plan My Scandinavia Trip</a>
+    </div>
+    <div class="bp-facts reveal reveal-delay-1">
+      <h4>Backpacker Essentials</h4>
+      <div class="bp-fact-row"><div class="bp-fact-icon">&#x1F4B8;</div><div><div class="bp-fact-label">Daily Budget</div><div class="bp-fact-value">£70–£120/day</div></div></div>
+      <div class="bp-fact-row"><div class="bp-fact-icon">&#x1F3E8;</div><div><div class="bp-fact-label">Hostels &amp; Stays</div><div class="bp-fact-value">Anker Hostel Oslo; City Backpackers Stockholm; many HI hostels throughout</div></div></div>
+      <div class="bp-fact-row"><div class="bp-fact-icon">&#x1F68C;</div><div><div class="bp-fact-label">Getting Around</div><div class="bp-fact-value">Interrail pass for trains; Flixbus; overnight ferries between countries</div></div></div>
+      <div class="bp-fact-row"><div class="bp-fact-icon">&#x2B50;</div><div><div class="bp-fact-label">Don't Miss</div><div class="bp-fact-value">Norwegian fjords; northern lights; Finnish sauna culture</div></div></div>
+    </div>
+  </div>
+</section>
+<section class="things-section">
+  <p class="section-label section-label-center reveal" style="justify-content:center;color:var(--gold);">Backpacker Highlights</p>
+  <h2 class="things-title reveal">8 Things to Do in <em>Scandinavia</em></h2>
+  <p class="things-sub reveal">The experiences that make the trip — from the essential to the unexpected.</p>
+  <div class="things-grid">
+    <div class="thing-item reveal"><div class="thing-num">01</div><div class="thing-text">Take the Flåm Railway in Norway — the world's most spectacular train journey</div></div>
+    <div class="thing-item reveal"><div class="thing-num">02</div><div class="thing-text">Kayak through the Geirangerfjord or Nærøyfjord in Norway</div></div>
+    <div class="thing-item reveal"><div class="thing-num">03</div><div class="thing-text">Chase the northern lights in Tromsø, Norway in winter</div></div>
+    <div class="thing-item reveal"><div class="thing-num">04</div><div class="thing-text">Take a Stockholm archipelago ferry and camp on uninhabited islands</div></div>
+    <div class="thing-item reveal"><div class="thing-num">05</div><div class="thing-text">Visit Lofoten Islands in Norway — dramatic peaks rising from the sea</div></div>
+    <div class="thing-item reveal"><div class="thing-num">06</div><div class="thing-text">Cycle Copenhagen from end to end — the world's most bike-friendly city</div></div>
+    <div class="thing-item reveal"><div class="thing-num">07</div><div class="thing-text">Take a Finnish sauna and jump in a frozen lake (or the Baltic in summer)</div></div>
+    <div class="thing-item reveal"><div class="thing-num">08</div><div class="thing-text">Hike the Kungsleden (King's Trail) in Sweden — 440km through Arctic wilderness</div></div>
+
+  </div>
+</section>
+<div class="plan-cta">
+  <h2 class="reveal">Ready to backpack Scandinavia?</h2>
+  <p class="reveal">We can build you a full backpacker itinerary — routes, hostels, transport, and the experiences that matter.</p>
+  <div class="reveal" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+    <a href="../contact.html" class="btn-primary">Get a Free Itinerary</a>
+    <a href="../destinations.html" class="btn-outline-white">More Destinations</a>
+  </div>
+</div>
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="../index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a>
+      <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
+      <div class="footer-social">
+        <a href="#" class="social-btn">&#128248;</a><a href="#" class="social-btn">&#127925;</a>
+        <a href="#" class="social-btn">&#128204;</a><a href="#" class="social-btn">&#9654;</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Explore</h4><ul>
+      <li><a href="../destinations.html">Destinations</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Services</h4><ul>
+      <li><a href="../services.html">Trip Planning</a></li>
+      <li><a href="../services.html">Hotel Curation</a></li>
+      <li><a href="../contact.html">Get a Quote</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Legal</h4><ul>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../privacy.html">Privacy Policy</a></li>
+      <li><a href="../privacy.html#terms">Terms of Use</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Drop Everything And Go. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="../privacy.html">Privacy Policy</a>
+      <a href="../privacy.html#cookies">Cookies</a>
+      <a href="../privacy.html#terms">Terms</a>
+    </div>
+  </div>
+</footer>
+<script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
+<script>
+  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.08});
+  document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
+  const nav=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
+  const ham=document.getElementById('hamburger'),mob=document.getElementById('navMobile');
+  ham.addEventListener('click',()=>{ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';}); 
+  function showCookie(){if(!localStorage.getItem('cookieChoice')){setTimeout(()=>document.getElementById('cookieBanner').classList.add('visible'),1200);}}
+  function acceptCookies(){localStorage.setItem('cookieChoice','accepted');document.getElementById('cookieBanner').classList.remove('visible');}
+  function declineCookies(){localStorage.setItem('cookieChoice','declined');document.getElementById('cookieBanner').classList.remove('visible');}
+  showCookie();
+</script>
+</body>
+</html>
