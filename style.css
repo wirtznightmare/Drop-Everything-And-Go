@@ -45,7 +45,7 @@
   --r-lg: 22px;
   --r-xl: 36px;
 
-  --section-pad: clamp(5rem, 10vw, 9rem);
+  --section-pad: clamp(3.5rem, 7vw, 6rem);
   --gutter: clamp(1.5rem, 5vw, 5rem);
 }
 
@@ -137,7 +137,7 @@ button { cursor: pointer; }
 .nav-cta {
   background: var(--sky) !important; color: var(--white) !important;
   padding: 0.58rem 1.3rem !important; border-radius: var(--r-xs) !important;
-  font-weight: 800 !important;
+  font-weight: 700 !important; letter-spacing: 0.1em !important;
   transition: background 0.3s, transform 0.3s var(--ease-spring) !important;
 }
 .nav-cta::after { display: none !important; }
@@ -210,9 +210,9 @@ button { cursor: pointer; }
 /* ── BUTTONS ── */
 .btn {
   display: inline-flex; align-items: center; gap: 0.55rem;
-  font-family: var(--ff-ui); font-size: 0.68rem;
-  font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase;
-  padding: 0.85rem 1.9rem; border-radius: var(--r-xs); border: none;
+  font-family: var(--ff-ui); font-size: 0.72rem;
+  font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.88rem 2rem; border-radius: var(--r-sm); border: none;
   position: relative; overflow: hidden;
   transition: transform 0.35s var(--ease-spring), box-shadow 0.35s;
 }

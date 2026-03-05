@@ -119,8 +119,11 @@ var nav=document.getElementById('nav');
 if(nav)window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>60);},{passive:true});
 var ham=document.getElementById('ham'),mob=document.getElementById('mob');
 if(ham&&mob)ham.addEventListener('click',function(){ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
-var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0.06});
+// Lower threshold + rootMargin so items visible on page load reveal immediately
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+// Also immediately reveal anything already in viewport
+window.addEventListener('load',function(){document.querySelectorAll('.rv').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0)el.classList.add('vis');});});
 function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=document.getElementById('ck');if(c)c.classList.add('vis');},1400);}
 window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
 window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
