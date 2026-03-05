@@ -6,12 +6,12 @@
 <title>Destinations — Drop Everything And Go</title>
 <link rel="stylesheet" href="style.css"/>
 <style>
-.filt-bar{background:rgba(11,13,16,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:1.3rem var(--gutter);position:sticky;top:70px;z-index:100;}
+.filt-bar{background:rgba(11,23,40,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:1.3rem var(--gutter);position:sticky;top:70px;z-index:100;}
 .filt-inner{max-width:1300px;margin:0 auto;display:flex;gap:.55rem;flex-wrap:wrap;align-items:center;}
 .ft{background:rgba(245,239,224,.08);border:1px solid rgba(245,239,224,.2);border-radius:100px;padding:.45rem 1.15rem;font-family:var(--ff-mono);font-size:.6rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--parchment);transition:all .3s;white-space:nowrap;}
 .ft:hover,.ft.on{background:var(--gold);border-color:var(--gold);color:var(--ink);}
 .rc{font-family:var(--ff-mono);font-size:.65rem;color:var(--smoke);margin-left:auto;white-space:nowrap;}
-.dg-s{background:var(--ink);}
+.dg-s{background:linear-gradient(180deg,var(--ink) 0%,#0A1628 100%);}
 .d-grid{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
 .d-card{border-radius:var(--r-md);overflow:hidden;display:block;border:1px solid rgba(245,239,224,.07);transition:border-color .3s,transform .4s var(--ease-spring),box-shadow .4s;position:relative;}
 .d-card:hover{border-color:rgba(200,145,42,.3);transform:translateY(-6px);box-shadow:0 22px 55px rgba(0,0,0,.4);}
@@ -38,7 +38,6 @@
 @media(max-width:640px){.d-grid{grid-template-columns:1fr;}.d-card.feat{grid-column:1;}.bp-s2-in{grid-template-columns:1fr;}}
 </style>
 </head><body><div id="progress-bar"></div>
-<div id="c-dot"></div><div id="c-ring"></div>
 <div class="ck" id="ck">
   <p class="ck-text">We use cookies to enhance your journey. <a href="privacy.html">Privacy Policy</a></p>
   <div class="ck-btns"><button class="ck-acc" onclick="ckAccept()">Accept</button><button class="ck-dec" onclick="ckDecline()">Decline</button></div>
@@ -157,6 +156,23 @@ tabs.forEach(function(t){t.addEventListener('click',function(){
   noRes.classList.toggle('show',v===0);
 });});
 </script><script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
+<script>
+(function(){
+document.body.classList.add('js-ready');
+var pb=document.getElementById('progress-bar');
+if(pb)window.addEventListener('scroll',function(){pb.style.width=Math.min((scrollY/(document.body.scrollHeight-innerHeight))*100,100)+'%';},{passive:true});
+var nav=document.getElementById('nav');
+if(nav)window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>60);},{passive:true});
+var ham=document.getElementById('ham'),mob=document.getElementById('mob');
+if(ham&&mob)ham.addEventListener('click',function(){ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0.06});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=document.getElementById('ck');if(c)c.classList.add('vis');},1400);}
+window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+ckShow();
+})();
+</script>
 <script>
 (function(){
 document.body.classList.add('js-ready');

@@ -50,13 +50,13 @@
 .thing-num{font-family:var(--ff-display);font-size:1.1rem;font-weight:800;color:var(--gold);flex-shrink:0;min-width:1.8rem;font-variation-settings:'opsz' 24;}
 .thing-text{font-size:.86rem;color:rgba(200,190,170,.75);line-height:1.6;}
 
-.plan-s{background:linear-gradient(140deg,var(--ink-2),#0D1E34);text-align:center;padding:6rem var(--gutter);position:relative;overflow:hidden;}
+.plan-s{background:linear-gradient(140deg,#112038,#0D2040);text-align:center;padding:6rem var(--gutter);position:relative;overflow:hidden;}
 .plan-s::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(200,145,42,.06) 0%,transparent 65%);}
 .plan-s h2{font-family:var(--ff-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:var(--parchment);letter-spacing:-.02em;position:relative;z-index:1;}
 .plan-s p{color:var(--smoke);max-width:460px;margin:.9rem auto 2.5rem;line-height:1.75;position:relative;z-index:1;}
 .plan-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
 
-.bp-strip{background:var(--ink);border-top:1px solid rgba(14,191,184,.15);padding:3.5rem var(--gutter);}
+.bp-strip{background:var(--ink-2);border-top:1px solid rgba(14,191,184,.15);padding:3.5rem var(--gutter);}
 .bp-strip-in{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem;}
 
 @media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.aud-grid{grid-template-columns:1fr 1fr;}}
@@ -65,7 +65,6 @@
 </head>
 <body>
 <div id="progress-bar"></div>
-<div id="c-dot"></div><div id="c-ring"></div>
 <div class="ck" id="ck">
   <p class="ck-text">We use cookies to enhance your journey. <a href="../privacy.html">Privacy Policy</a></p>
   <div class="ck-btns"><button class="ck-acc" onclick="ckAccept()">Accept</button><button class="ck-dec" onclick="ckDecline()">Decline</button></div>
@@ -107,7 +106,7 @@
       <div class="eyebrow" style="color:var(--gold-dk)">Europe · Greece</div>
       <h2>Why visit <em>Santorini?</em></h2>
       <p>Santorini is the kind of place that doesn't look real until you're standing in it. Perched on the rim of a volcanic caldera, its whitewashed villages tumble dramatically towards the deep Aegean. It's romantic, spectacular, and endlessly photogenic — but also genuinely magical if you know where to look beyond the crowds.</p>
-      <div style="margin-top:1.5rem"><a href="../contact.html" class="btn btn-gold btn-arr">Plan My Santorini Trip</a></div>
+      <div style="margin-top:1.5rem"><a href="../contact.html" class="btn btn-coral btn-arr">Plan My Santorini Trip</a></div>
     </div>
     <div class="facts-card rv rv2">
       <h4>// Quick Facts</h4>
@@ -143,7 +142,7 @@
   <h2 class="rv">Ready to go to Santorini?</h2>
   <p class="rv">Tell us when, your budget, and who's going — we'll handle every last detail.</p>
   <div class="plan-btns rv">
-    <a href="../contact.html" class="btn btn-gold btn-arr">Get a Free Quote</a>
+    <a href="../contact.html" class="btn btn-coral btn-arr">Get a Free Quote</a>
     <a href="../destinations.html" class="btn btn-wire">More Destinations</a>
   </div>
 </div>
@@ -197,6 +196,23 @@
   </div>
 </footer>
 <script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
+<script>
+(function(){
+document.body.classList.add('js-ready');
+var pb=document.getElementById('progress-bar');
+if(pb)window.addEventListener('scroll',function(){pb.style.width=Math.min((scrollY/(document.body.scrollHeight-innerHeight))*100,100)+'%';},{passive:true});
+var nav=document.getElementById('nav');
+if(nav)window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>60);},{passive:true});
+var ham=document.getElementById('ham'),mob=document.getElementById('mob');
+if(ham&&mob)ham.addEventListener('click',function(){ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0.06});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=document.getElementById('ck');if(c)c.classList.add('vis');},1400);}
+window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+ckShow();
+})();
+</script>
 <script>
 (function(){
 document.body.classList.add('js-ready');
