@@ -67,9 +67,35 @@ button { cursor: pointer; }
   pointer-events: none;
 }
 
+/* ── ANNOUNCEMENT BANNER ── */
+.ann-bar {
+  background: linear-gradient(90deg, #0A2040, #112850, #0A2040);
+  border-bottom: 1px solid rgba(14,191,184,0.25);
+  padding: 0.7rem var(--gutter);
+  text-align: center;
+  position: relative; z-index: 901;
+}
+.ann-bar a {
+  display: inline-flex; align-items: center; gap: 0.7rem;
+  font-family: var(--ff-mono); font-size: 0.62rem; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--parchment); transition: color 0.2s;
+}
+.ann-bar a:hover { color: var(--teal); }
+.ann-badge {
+  background: var(--teal); color: var(--ink);
+  border-radius: 100px; padding: 0.18rem 0.6rem;
+  font-weight: 800; letter-spacing: 0.1em;
+}
+.ann-arr { color: var(--teal); font-size: 0.8rem; }
+@media (max-width: 768px) {
+  .ann-bar { padding: 0.6rem 1rem; }
+  .ann-bar a { font-size: 0.56rem; gap: 0.5rem; }
+}
+
 /* ── NAV ── */
 #nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+  position: fixed; top: 36px; left: 0; right: 0; z-index: 900;
   height: 70px;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 var(--gutter);
