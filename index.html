@@ -261,11 +261,11 @@
       <a href="destinations.html" class="btn btn-wire-dark btn-arr">All Destinations</a>
     </div>
     <div class="dest-grid">
-      <a href="destinations/maldives.html" class="dc rv"><div class="dc-bg db1">🏝️</div><div class="dc-ov"><div class="dc-tag">Most Desirable</div><div class="dc-name">Maldives</div><div class="dc-desc">Overwater villas, bioluminescent beaches, and silence so complete it feels like another planet.</div><div class="dc-arr">Explore Guide →</div></div></a>
-      <a href="destinations/kenya.html" class="dc rv rv1"><div class="dc-bg db3">🦁</div><div class="dc-ov"><div class="dc-tag">Safari</div><div class="dc-name">Kenya</div><div class="dc-arr">Explore →</div></div></a>
-      <a href="destinations/cappadocia.html" class="dc rv rv2"><div class="dc-bg db4">🎈</div><div class="dc-ov"><div class="dc-tag">Hidden Gem</div><div class="dc-name">Cappadocia</div><div class="dc-arr">Explore →</div></div></a>
-      <a href="destinations/amalfi.html" class="dc rv"><div class="dc-bg db2">🍋</div><div class="dc-ov"><div class="dc-tag">Romance</div><div class="dc-name">Amalfi Coast</div><div class="dc-arr">Explore →</div></div></a>
-      <a href="destinations/bali.html" class="dc rv rv1"><div class="dc-bg db5">🌺</div><div class="dc-ov"><div class="dc-tag">Escape</div><div class="dc-name">Bali</div><div class="dc-arr">Explore →</div></div></a>
+      <a href="destinations/maldives.html" class="dc rv"><div class="dc-bg db1"><div class="dc-bg-ov"></div><span class="dc-bg-emoji">🏝️</span></div><div class="dc-ov"><div class="dc-tag">Most Desirable</div><div class="dc-name">Maldives</div><div class="dc-desc">Overwater villas, bioluminescent beaches, and silence so complete it feels like another planet.</div><div class="dc-arr">Explore Guide →</div></div></a>
+      <a href="destinations/kenya.html" class="dc rv rv1"><div class="dc-bg db3"><div class="dc-bg-ov"></div><span class="dc-bg-emoji">🦁</span></div><div class="dc-ov"><div class="dc-tag">Safari</div><div class="dc-name">Kenya</div><div class="dc-arr">Explore →</div></div></a>
+      <a href="destinations/cappadocia.html" class="dc rv rv2"><div class="dc-bg db4"><div class="dc-bg-ov"></div><span class="dc-bg-emoji">🎈</span></div><div class="dc-ov"><div class="dc-tag">Hidden Gem</div><div class="dc-name">Cappadocia</div><div class="dc-arr">Explore →</div></div></a>
+      <a href="destinations/amalfi.html" class="dc rv"><div class="dc-bg db2"><div class="dc-bg-ov"></div><span class="dc-bg-emoji">🍋</span></div><div class="dc-ov"><div class="dc-tag">Romance</div><div class="dc-name">Amalfi Coast</div><div class="dc-arr">Explore →</div></div></a>
+      <a href="destinations/bali.html" class="dc rv rv1"><div class="dc-bg db5"><div class="dc-bg-ov"></div><span class="dc-bg-emoji">🌺</span></div><div class="dc-ov"><div class="dc-tag">Escape</div><div class="dc-name">Bali</div><div class="dc-arr">Explore →</div></div></a>
     </div>
   </div>
 </section>
@@ -300,15 +300,15 @@
     </div>
     <div class="guides-grid">
       <a href="destinations/maldives.html" class="guide-card rv">
-        <div class="gc-img gi1">🏝️<span class="gc-badge" style="background:var(--gold);color:var(--ink)">Luxury</span></div>
+        <div class="gc-img gi1"><div class="dc-bg-ov"></div><span class="dc-bg-emoji">🏝️</span><span class="gc-badge" style="background:var(--gold);color:var(--ink)">Luxury</span></div>
         <div class="gc-body"><div class="gc-meta"><span class="gc-cat">Destination Guide</span><span class="gc-sub">Honeymoon · Luxury</span></div><h3 class="gc-title">Maldives: Overwater Villas &amp; Total Escape</h3><p class="gc-exc">The ultimate bucket-list destination — how to plan it without getting ripped off.</p><span class="gc-read">Read Guide →</span></div>
       </a>
       <a href="destinations/bp-thailand.html" class="guide-card rv rv2">
-        <div class="gc-img gi2">🐘<span class="gc-badge" style="background:var(--teal);color:var(--ink)">Backpacker</span></div>
+        <div class="gc-img gi2"><div class="dc-bg-ov"></div><span class="dc-bg-emoji">🐘</span><span class="gc-badge" style="background:var(--teal);color:var(--ink)">Backpacker</span></div>
         <div class="gc-body"><div class="gc-meta"><span class="gc-cat">Backpacker Guide</span><span class="gc-sub">From £15/day</span></div><h3 class="gc-title">Thailand: The Ultimate Backpacker's Playbook</h3><p class="gc-exc">Islands, temples, street food — everything you need before you go.</p><span class="gc-read">Read Guide →</span></div>
       </a>
       <a href="destinations/kenya.html" class="guide-card rv rv4">
-        <div class="gc-img gi3">🦁<span class="gc-badge" style="background:var(--gold);color:var(--ink)">Safari</span></div>
+        <div class="gc-img gi3"><div class="dc-bg-ov"></div><span class="dc-bg-emoji">🦁</span><span class="gc-badge" style="background:var(--gold);color:var(--ink)">Safari</span></div>
         <div class="gc-body"><div class="gc-meta"><span class="gc-cat">Destination Guide</span><span class="gc-sub">Adventure · Safari</span></div><h3 class="gc-title">Kenya: The World's Greatest Safari</h3><p class="gc-exc">Maasai Mara, the Great Migration, and how to book it right.</p><span class="gc-read">Read Guide →</span></div>
       </a>
     </div>
@@ -403,45 +403,25 @@
 <script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
 <script>
 (function(){
-'use strict';
-// Progress bar
-const pb=document.getElementById('progress-bar');
-window.addEventListener('scroll',()=>{const p=(scrollY/(document.body.scrollHeight-innerHeight))*100;pb.style.width=Math.min(p,100)+'%';},{ passive:true });
-
-// Cursor
-const cd=document.getElementById('c-dot'),cr=document.getElementById('c-ring');
-let mx=0,my=0,rx=0,ry=0;
-document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px';},{passive:true});
+document.body.classList.add('js-ready');
+var pb=document.getElementById('progress-bar');
+if(pb)window.addEventListener('scroll',function(){pb.style.width=Math.min((scrollY/(document.body.scrollHeight-innerHeight))*100,100)+'%';},{passive:true});
+var cd=document.getElementById('c-dot'),cr=document.getElementById('c-ring');
+if(cd&&cr){var mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px';},{passive:true});
 (function lp(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(lp);})();
-document.querySelectorAll('a,button,.dc,.guide-card,.sc,.tc').forEach(el=>{
-  el.addEventListener('mouseenter',()=>{cd.classList.add('h');cr.classList.add('h');});
-  el.addEventListener('mouseleave',()=>{cd.classList.remove('h');cr.classList.remove('h');});
-});
-
-// Nav scroll
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>60),{passive:true});
-
-// Hamburger
-const ham=document.getElementById('ham'),mob=document.getElementById('mob');
-ham.addEventListener('click',()=>{ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
-
-// Scroll reveal + count-up
-const io=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(!e.isIntersecting)return;
-    e.target.classList.add('vis');
-    const n=e.target.querySelector('[data-count]');
-    if(n){const target=+n.dataset.count;const dur=1600;const start=performance.now();(function anim(t){const p=Math.min((t-start)/dur,1);const ease=1-Math.pow(1-p,4);n.textContent=Math.round(ease*target)+'+';if(p<1)requestAnimationFrame(anim);else n.textContent=target+'+';})(start);}
-    io.unobserve(e.target);
-  });
-},{threshold:0.1});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-
-// Cookie
-function ckShow(){if(!localStorage.getItem('ck'))setTimeout(()=>document.getElementById('ck').classList.add('vis'),1400);}
-window.ckAccept=()=>{localStorage.setItem('ck','y');document.getElementById('ck').classList.remove('vis');};
-window.ckDecline=()=>{localStorage.setItem('ck','n');document.getElementById('ck').classList.remove('vis');};
+document.querySelectorAll('a,button').forEach(function(el){
+  el.addEventListener('mouseenter',function(){cd.classList.add('h');cr.classList.add('h');});
+  el.addEventListener('mouseleave',function(){cd.classList.remove('h');cr.classList.remove('h');});});}
+var nav=document.getElementById('nav');
+if(nav)window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>60);},{passive:true});
+var ham=document.getElementById('ham'),mob=document.getElementById('mob');
+if(ham&&mob)ham.addEventListener('click',function(){ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0.06});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=document.getElementById('ck');if(c)c.classList.add('vis');},1400);}
+window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
 ckShow();
 })();
 </script>

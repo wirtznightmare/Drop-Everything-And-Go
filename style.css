@@ -130,12 +130,13 @@ button { cursor: none; }
 .nav-ham.open span:nth-child(3) { transform: rotate(-39deg); }
 
 .nav-mob {
-  position: fixed; inset: 0; z-index: 880; background: var(--ink);
-  list-style: none; display: flex; flex-direction: column;
+  position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 880; background: var(--ink);
+  list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column;
   align-items: center; justify-content: center; gap: 2rem;
   opacity: 0; pointer-events: none; transition: opacity 0.4s;
+  visibility: hidden;
 }
-.nav-mob.open { opacity: 1; pointer-events: all; }
+.nav-mob.open { opacity: 1; pointer-events: all; visibility: visible; }
 .nav-mob a {
   font-family: var(--ff-display); font-size: clamp(2rem, 7vw, 3.8rem);
   font-weight: 700; color: var(--parchment); letter-spacing: -0.02em;
@@ -151,9 +152,9 @@ button { cursor: none; }
 }
 
 /* ── REVEAL ANIMATIONS ── */
-.rv { opacity: 0; transform: translateY(32px);
+.js-ready .rv { opacity: 0; transform: translateY(32px);
       transition: opacity 0.9s var(--ease-expo), transform 0.9s var(--ease-expo); }
-.rv.vis { opacity: 1; transform: none; }
+.js-ready .rv.vis { opacity: 1; transform: none; }
 .rv1 { transition-delay: 0.1s; } .rv2 { transition-delay: 0.2s; }
 .rv3 { transition-delay: 0.3s; } .rv4 { transition-delay: 0.4s; }
 .rv5 { transition-delay: 0.5s; }

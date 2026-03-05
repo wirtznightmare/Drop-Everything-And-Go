@@ -199,6 +199,7 @@
 <script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
 <script>
 (function(){
+document.body.classList.add('js-ready');
 var pb=document.getElementById('progress-bar');
 if(pb)window.addEventListener('scroll',function(){pb.style.width=Math.min((scrollY/(document.body.scrollHeight-innerHeight))*100,100)+'%';},{passive:true});
 var cd=document.getElementById('c-dot'),cr=document.getElementById('c-ring');
@@ -212,7 +213,7 @@ var nav=document.getElementById('nav');
 if(nav)window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>60);},{passive:true});
 var ham=document.getElementById('ham'),mob=document.getElementById('mob');
 if(ham&&mob)ham.addEventListener('click',function(){ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
-var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0.08});
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0.06});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=document.getElementById('ck');if(c)c.classList.add('vis');},1400);}
 window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
