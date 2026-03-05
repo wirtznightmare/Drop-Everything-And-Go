@@ -1,384 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Travel blog — honest destination guides and adventure stories from Drop Everything And Go."/>
-  <title>Blog — Drop Everything And Go</title>
-  <link rel="stylesheet" href="style.css"/>
-  <style>
-    .blog-section { background: var(--bg-light); }
-
-    .blog-intro {
-      text-align: center; max-width: 620px; margin: 0 auto 4rem;
-    }
-    .blog-intro p {
-      font-size: 0.96rem; color: var(--light-text); line-height: 1.8; margin-top: 1rem;
-    }
-
-    .blog-filters {
-      display: flex; gap: 0.6rem; flex-wrap: wrap;
-      max-width: 1200px; margin: 0 auto 3.5rem; justify-content: center;
-    }
-    .filter-btn {
-      padding: 0.48rem 1.3rem; border: 1.5px solid rgba(10,22,40,0.14);
-      border-radius: 50px; background: transparent; cursor: pointer;
-      font-family: 'DM Sans', sans-serif; font-size: 0.79rem;
-      font-weight: 500; letter-spacing: 0.07em; color: var(--light-text);
-      transition: all 0.2s;
-    }
-    .filter-btn:hover, .filter-btn.active {
-      background: var(--navy); border-color: var(--navy); color: var(--white);
-    }
-
-    .blog-grid {
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      gap: 2rem; max-width: 1200px; margin: 0 auto;
-    }
-
-    .blog-card {
-      background: var(--white); border-radius: var(--radius); overflow: hidden;
-      box-shadow: 0 2px 20px rgba(10,22,40,0.07);
-      transition: transform 0.3s, box-shadow 0.3s;
-      border: 1px solid rgba(10,22,40,0.05);
-      display: flex; flex-direction: column;
-    }
-    .blog-card.live { cursor: pointer; text-decoration: none; color: inherit; }
-    .blog-card.live:hover { transform: translateY(-7px); box-shadow: 0 16px 48px rgba(10,22,40,0.13); }
-    .blog-card.soon { opacity: 0.75; }
-
-    .blog-img {
-      height: 200px; display: flex; align-items: center;
-      justify-content: center; font-size: 3.8rem; position: relative;
-      flex-shrink: 0;
-    }
-
-    /* Each destination gets its own gradient */
-    .bg-montenegro  { background: linear-gradient(135deg, #1a4a6a, #0a2a4a); }
-    .bg-marrakech   { background: linear-gradient(135deg, #7a3a0a, #4a1a00); }
-    .bg-netherlands { background: linear-gradient(135deg, #1a5a3a, #0a3a20); }
-    .bg-slovenia    { background: linear-gradient(135deg, #2a5a2a, #0a3a0a); }
-    .bg-finland     { background: linear-gradient(135deg, #0a3a5a, #051a30); }
-    .bg-budapest    { background: linear-gradient(135deg, #5a2a0a, #3a1000); }
-    .bg-sicily      { background: linear-gradient(135deg, #6a4a0a, #4a2a00); }
-    .bg-hongkong    { background: linear-gradient(135deg, #4a0a1a, #2a0010); }
-
-    .soon-badge {
-      position: absolute; top: 1rem; right: 1rem;
-      background: rgba(10,22,40,0.78); color: var(--foam);
-      font-size: 0.62rem; font-weight: 700; letter-spacing: 0.12em;
-      text-transform: uppercase; padding: 0.28rem 0.75rem;
-      border-radius: 50px; backdrop-filter: blur(8px);
-    }
-
-    .blog-body { padding: 1.7rem; flex: 1; display: flex; flex-direction: column; }
-    .blog-meta { display: flex; gap: 0.8rem; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap; }
-    .blog-cat {
-      font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase;
-      color: var(--sky); font-weight: 700;
-    }
-    .blog-region {
-      font-size: 0.66rem; letter-spacing: 0.1em; text-transform: uppercase;
-      color: var(--light-text); font-weight: 500;
-      border-left: 1px solid rgba(10,22,40,0.15); padding-left: 0.8rem;
-    }
-    .blog-title {
-      font-family: 'Playfair Display', serif; font-size: 1.22rem;
-      font-weight: 700; line-height: 1.3; color: var(--navy); margin-bottom: 0.6rem;
-    }
-    .blog-excerpt {
-      font-size: 0.84rem; color: var(--light-text); line-height: 1.72;
-      margin-bottom: 1.2rem; flex: 1;
-    }
-    .read-more {
-      font-size: 0.76rem; font-weight: 700; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--sky); align-self: flex-start;
-      transition: gap 0.2s; display: inline-flex; align-items: center; gap: 0.3rem;
-    }
-    .blog-card.live:hover .read-more { gap: 0.5rem; }
-
-    .coming-soon-note {
-      font-size: 0.78rem; color: var(--light-text); font-style: italic;
-      margin-top: auto; padding-top: 0.5rem;
-    }
-
-    .notify-banner {
-      background: var(--navy); border-radius: var(--radius);
-      padding: 3rem; text-align: center;
-      max-width: 700px; margin: 4rem auto 0;
-    }
-    .notify-banner h3 {
-      font-family: 'Playfair Display', serif; font-size: 1.7rem;
-      font-weight: 700; color: var(--white); margin-bottom: 0.5rem;
-    }
-    .notify-banner p {
-      color: rgba(200,230,245,0.62); font-size: 0.9rem; margin-bottom: 1.8rem; line-height: 1.65;
-    }
-    .nl-form { display: flex; max-width: 420px; margin: 0 auto; }
-    .nl-form input {
-      flex: 1; padding: 0.85rem 1.2rem;
-      background: rgba(255,255,255,0.09); border: 1px solid rgba(200,230,245,0.2);
-      border-right: none; border-radius: var(--radius) 0 0 var(--radius);
-      color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 0.88rem; outline: none;
-    }
-    .nl-form input::placeholder { color: rgba(200,230,245,0.35); }
-    .nl-form button {
-      background: var(--gold); color: var(--navy); border: none;
-      padding: 0.85rem 1.5rem; border-radius: 0 var(--radius) var(--radius) 0;
-      font-family: 'DM Sans', sans-serif; font-size: 0.77rem;
-      font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
-      cursor: pointer; transition: background 0.2s; white-space: nowrap;
-    }
-    .nl-form button:hover { background: var(--gold-dark); }
-
-    @media(max-width: 900px) { .blog-grid { grid-template-columns: 1fr 1fr; } }
-    @media(max-width: 600px) {
-      .blog-grid { grid-template-columns: 1fr; }
-      .nl-form { flex-direction: column; }
-      .nl-form input { border-right: 1px solid rgba(200,230,245,0.2); border-bottom: none; border-radius: var(--radius) var(--radius) 0 0; }
-      .nl-form button { border-radius: 0 0 var(--radius) var(--radius); }
-    }
-  </style>
-</head>
-<body>
-
-<div class="cookie-banner" id="cookieBanner">
-  <p class="cookie-text">🍪 We use cookies to improve your experience. By continuing, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
-  <div class="cookie-btns">
-    <button class="cookie-accept" onclick="acceptCookies()">Accept All</button>
-    <button class="cookie-decline" onclick="declineCookies()">Decline</button>
-  </div>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Honest travel stories, destination guides, and trip inspiration."/>
+<title>Blog — Drop Everything And Go</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.bg-s{background:var(--ink);}
+.bl-top{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;margin-bottom:4rem;}
+.bl-filters{display:flex;gap:.6rem;flex-wrap:wrap;}
+.bf{background:rgba(245,239,224,.05);border:1px solid rgba(245,239,224,.1);border-radius:100px;padding:.42rem 1.1rem;font-family:var(--ff-mono);font-size:.6rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--smoke);transition:all .3s;}
+.bf:hover,.bf.on{background:var(--gold);border-color:var(--gold);color:var(--ink);}
+.bl-grid{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.bl-card{background:rgba(245,239,224,.03);border:1px solid rgba(245,239,224,.07);border-radius:var(--r-md);overflow:hidden;display:block;transition:border-color .3s,transform .4s var(--ease-spring),box-shadow .4s;}
+.bl-card:hover{border-color:rgba(200,145,42,.3);transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,0,0,.3);}
+.bl-img{height:215px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative;}
+.bl-badge{position:absolute;top:1rem;left:1rem;font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;padding:.28rem .7rem;border-radius:var(--r-xs);}
+.bl-body{padding:1.8rem;}
+.bl-meta{display:flex;gap:.9rem;align-items:center;margin-bottom:.8rem;}
+.bl-cat{font-family:var(--ff-mono);font-size:.58rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);}
+.bl-reg{font-size:.73rem;color:var(--smoke);}
+.bl-title{font-family:var(--ff-display);font-size:1.2rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;line-height:1.22;margin-bottom:.65rem;}
+.bl-exc{font-size:.83rem;color:var(--smoke);line-height:1.7;margin-bottom:1.2rem;}
+.bl-read{font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:.4rem;transition:gap .3s;}
+.bl-card:hover .bl-read{gap:.8rem;}
+.adv-s{background:var(--ink-2);}
+.adv-intro{max-width:680px;margin:0 auto 4rem;text-align:center;}
+.adv-intro p{font-size:.94rem;color:var(--smoke);line-height:1.78;margin-top:.9rem;}
+.adv-grid{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.soon-c{background:rgba(245,239,224,.03);border:1px solid rgba(245,239,224,.06);border-radius:var(--r-md);overflow:hidden;opacity:.72;}
+.soon-img{height:200px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;}
+.soon-body{padding:1.6rem;}
+.soon-t{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);margin-bottom:.5rem;}
+.soon-lbl{font-family:var(--ff-mono);font-size:.58rem;letter-spacing:.14em;color:var(--teal);font-style:italic;}
+.nl2-s{background:var(--parchment);padding:5rem var(--gutter);text-align:center;}
+.nl2-box{max-width:500px;margin:0 auto;}
+.nl2-box h3{font-family:var(--ff-display);font-size:2rem;font-weight:700;color:var(--ink);letter-spacing:-.02em;margin-bottom:.5rem;}
+.nl2-box p{font-size:.93rem;color:#6A7080;margin-bottom:2rem;line-height:1.75;}
+@media(max-width:1024px){.bl-grid,.adv-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:640px){.bl-grid,.adv-grid{grid-template-columns:1fr;}}
+</style>
+</head><body><div id="progress-bar"></div>
+<div id="c-dot"></div><div id="c-ring"></div>
+<div class="ck" id="ck">
+  <p class="ck-text">We use cookies to enhance your journey. <a href="privacy.html">Privacy Policy</a></p>
+  <div class="ck-btns"><button class="ck-acc" onclick="ckAccept()">Accept</button><button class="ck-dec" onclick="ckDecline()">Decline</button></div>
 </div>
-
-<nav id="navbar">
-  <a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a>
-  <ul class="nav-links">
-    <li><a href="destinations.html">Destinations</a></li>
-    <li><a href="blog.html" class="active">Blog</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="contact.html" class="nav-cta">Plan My Trip</a></li>
-  </ul>
-  <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+<nav id="nav">
+  <a href="index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Bespoke Planning</span></a>
+  <ul class="nav-links"><li><a href="destinations.html">Destinations</a></li><li><a href="blog.html" class="active">Blog</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" class="nav-cta">Plan My Trip</a></li></ul>
+  <button class="nav-ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
-<ul class="nav-mobile" id="navMobile">
-  <li><a href="destinations.html">Destinations</a></li>
-  <li><a href="blog.html" class="active">Blog</a></li>
-  <li><a href="services.html">Services</a></li>
-  <li><a href="about.html">About</a></li>
-  <li><a href="contact.html" class="mob-cta">Plan My Trip</a></li>
+<ul class="nav-mob" id="mob">
+  <li><a href="destinations.html">Destinations</a></li><li><a href="blog.html">Blog</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li>
+  <li><a href="contact.html" class="mob-cta-btn">Plan My Trip</a></li>
 </ul>
-
-<div class="page-hero">
-  <div class="page-hero-content">
-    <p class="page-eyebrow">Honest Stories, Real Experiences</p>
-    <h1 class="page-title">The Travel <em>Journal</em></h1>
-    <p class="page-subtitle">Real guides from real trips — the good, the unexpected, and everything in between.</p>
+<div class="pg-hero">
+  <div class="pg-hero-bg"></div><div class="pg-hero-dots"></div>
+  <div class="pg-hero-content">
+    <div class="pg-eyebrow">From the Journal</div>
+    <h1 class="pg-title">The <em>Blog</em></h1>
+    <p class="pg-subtitle">Honest travel stories, destination guides, and the tips nobody else tells you.</p>
   </div>
-  <div class="page-hero-wave">
-    <svg viewBox="0 0 1800 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0,40 C300,80 600,0 900,40 C1200,80 1500,0 1800,40 L1800,80 L0,80 Z" fill="var(--bg-light)"/>
-    </svg>
-  </div>
+  <div class="pg-hero-rule"></div>
 </div>
-
-<section class="section blog-section">
-
-  <div class="blog-intro reveal">
-    <p class="section-label section-label-center">📍 Trips Planned — Guides Coming</p>
-    <h2 class="section-title">Adventures <em>In Progress</em></h2>
-    <p>These are real trips already booked or in the pipeline — not published guides yet. Full honest reviews, itineraries, and everything you need to know will drop here once each trip is done. <strong>Subscribe below</strong> to be the first to know when they go live.</p>
+<section class="s bg-s">
+  <div class="s-inner">
+    <div class="bl-top rv">
+      <div><div class="eyebrow">Destination Guides</div><h2 class="h-display">Latest <em>Stories</em></h2></div>
+      <div class="bl-filters">
+        <button class="bf on">All</button><button class="bf">Guides</button><button class="bf">Budget Travel</button><button class="bf">Luxury</button><button class="bf">Adventure</button>
+      </div>
+    </div>
+    <div class="bl-grid">
+      <a href="destinations/maldives.html" class="bl-card rv"><div class="bl-img" style="background:linear-gradient(145deg,#0D3A4A,#061820)">🏝️<span class="bl-badge" style="background:var(--gold);color:var(--ink)">Luxury</span></div><div class="bl-body"><div class="bl-meta"><span class="bl-cat">Destination Guide</span><span class="bl-reg">Indian Ocean · Honeymoon</span></div><h3 class="bl-title">Maldives: Overwater Villas &amp; Total Escape</h3><p class="bl-exc">The ultimate bucket-list destination — how to plan it without getting ripped off.</p><span class="bl-read">Read Guide →</span></div></a>
+      <a href="destinations/bp-thailand.html" class="bl-card rv rv2"><div class="bl-img" style="background:linear-gradient(145deg,#1A3A1A,#081808)">🐘<span class="bl-badge" style="background:var(--teal);color:var(--ink)">Backpacker</span></div><div class="bl-body"><div class="bl-meta"><span class="bl-cat">Budget Travel</span><span class="bl-reg">SE Asia · From £15/day</span></div><h3 class="bl-title">Thailand: The Ultimate Backpacker's Playbook</h3><p class="bl-exc">Islands, temples, street food — everything you need before you go.</p><span class="bl-read">Read Guide →</span></div></a>
+      <a href="destinations/kenya.html" class="bl-card rv rv4"><div class="bl-img" style="background:linear-gradient(145deg,#1A3A0A,#081500)">🦁<span class="bl-badge" style="background:var(--gold);color:var(--ink)">Adventure</span></div><div class="bl-body"><div class="bl-meta"><span class="bl-cat">Destination Guide</span><span class="bl-reg">Africa · Safari</span></div><h3 class="bl-title">Kenya: The World's Greatest Safari</h3><p class="bl-exc">Maasai Mara, Great Migration, and how to book it right.</p><span class="bl-read">Read Guide →</span></div></a>
+    </div>
   </div>
-
-  <div class="blog-filters reveal">
-    <button class="filter-btn active">All</button>
-    <button class="filter-btn">Europe</button>
-    <button class="filter-btn">Asia</button>
-    <button class="filter-btn">City Breaks</button>
-    <button class="filter-btn">Winter</button>
-    <button class="filter-btn">Hidden Gems</button>
+</section>
+<section class="s adv-s">
+  <div class="s-inner">
+    <div class="adv-intro rv"><div class="eyebrow teal" style="justify-content:center">Trips Booked — Guides Coming</div><h2 class="h-display">Adventures <em style="color:var(--teal)">In Progress</em></h2><p>Real trips already booked. Full honest guides drop once each one is done. Subscribe below to be first.</p></div>
+    <div class="adv-grid">
+      <div class="soon-c rv"><div class="soon-img" style="background:linear-gradient(145deg,#0A2A4A,#041020)">🌊<span class="bl-badge" style="background:rgba(14,191,184,.85);color:var(--ink)">Coming Soon</span></div><div class="soon-body"><div class="bl-meta"><span class="bl-cat">Hidden Gems</span><span class="bl-reg">Europe · Balkans</span></div><h4 class="soon-t">Montenegro: The Adriatic's Best Kept Secret</h4><p class="soon-lbl">✈️ Trip booked — guide to follow</p></div></div>
+      <div class="soon-c rv rv1"><div class="soon-img" style="background:linear-gradient(145deg,#2A1408,#100600)">🏮<span class="bl-badge" style="background:rgba(14,191,184,.85);color:var(--ink)">Coming Soon</span></div><div class="soon-body"><div class="bl-meta"><span class="bl-cat">City Breaks</span><span class="bl-reg">Africa · Morocco</span></div><h4 class="soon-t">Marrakech: Navigating the Medina</h4><p class="soon-lbl">✈️ Trip booked — guide to follow</p></div></div>
+      <div class="soon-c rv rv2"><div class="soon-img" style="background:linear-gradient(145deg,#0A1A3A,#040C1A)">🌌<span class="bl-badge" style="background:rgba(14,191,184,.85);color:var(--ink)">Coming Soon</span></div><div class="soon-body"><div class="bl-meta"><span class="bl-cat">Winter</span><span class="bl-reg">Europe · Lapland</span></div><h4 class="soon-t">Finnish Lapland: Northern Lights</h4><p class="soon-lbl">✈️ Trip booked — guide to follow</p></div></div>
+      <div class="soon-c rv"><div class="soon-img" style="background:linear-gradient(145deg,#0A2A3A,#041018)">🚤<span class="bl-badge" style="background:rgba(14,191,184,.85);color:var(--ink)">Coming Soon</span></div><div class="soon-body"><div class="bl-meta"><span class="bl-cat">Hidden Gems</span><span class="bl-reg">Europe · Netherlands</span></div><h4 class="soon-t">Beyond Amsterdam: Giethoorn</h4><p class="soon-lbl">✈️ Trip booked — guide to follow</p></div></div>
+      <div class="soon-c rv rv1"><div class="soon-img" style="background:linear-gradient(145deg,#0A1428,#040810)">🏔️<span class="bl-badge" style="background:rgba(14,191,184,.85);color:var(--ink)">Coming Soon</span></div><div class="soon-body"><div class="bl-meta"><span class="bl-cat">Hidden Gems</span><span class="bl-reg">Europe · Balkans</span></div><h4 class="soon-t">Slovenia: Europe's Most Underrated</h4><p class="soon-lbl">✈️ Trip booked — guide to follow</p></div></div>
+      <div class="soon-c rv rv2"><div class="soon-img" style="background:linear-gradient(145deg,#1A0A2A,#0A0414)">🛁<span class="bl-badge" style="background:rgba(14,191,184,.85);color:var(--ink)">Coming Soon</span></div><div class="soon-body"><div class="bl-meta"><span class="bl-cat">City Breaks</span><span class="bl-reg">Europe · Hungary</span></div><h4 class="soon-t">Budapest: Baths, Ruin Bars &amp; the Danube</h4><p class="soon-lbl">✈️ Trip booked — guide to follow</p></div></div>
+    </div>
   </div>
-
-  <div class="blog-grid">
-
-    <!-- Montenegro -->
-    <div class="blog-card soon reveal">
-      <div class="blog-img bg-montenegro">🌊<span class="soon-badge">Coming Soon</span></div>
-      <div class="blog-body">
-        <div class="blog-meta">
-          <span class="blog-cat">Hidden Gems</span>
-          <span class="blog-region">Europe · Balkans</span>
-        </div>
-        <h3 class="blog-title">Montenegro: The Adriatic's Best Kept Secret (Budva)</h3>
-        <p class="blog-excerpt">Medieval old towns, jaw-dropping bay views, and beaches that rival anywhere in Europe — at a fraction of the price. Budva is the one everyone's about to discover.</p>
-        <p class="coming-soon-note">✈️ Trip coming soon — guide to follow</p>
-      </div>
-    </div>
-
-    <!-- Marrakech -->
-    <div class="blog-card soon reveal reveal-delay-1">
-      <div class="blog-img bg-marrakech">🏮<span class="soon-badge">Coming Soon</span></div>
-      <div class="blog-body">
-        <div class="blog-meta">
-          <span class="blog-cat">City Breaks</span>
-          <span class="blog-region">Africa · Morocco</span>
-        </div>
-        <h3 class="blog-title">Marrakech: Navigating the Medina Without Losing Your Mind</h3>
-        <p class="blog-excerpt">Spice-scented souks, rooftop mint tea, and the organised chaos of Jemaa el-Fna. An honest guide to one of the world's most intoxicating cities.</p>
-        <p class="coming-soon-note">✈️ Trip coming soon — guide to follow</p>
-      </div>
-    </div>
-
-    <!-- Netherlands -->
-    <div class="blog-card soon reveal reveal-delay-2">
-      <div class="blog-img bg-netherlands">🚤<span class="soon-badge">Coming Soon</span></div>
-      <div class="blog-body">
-        <div class="blog-meta">
-          <span class="blog-cat">Hidden Gems</span>
-          <span class="blog-region">Europe · Netherlands</span>
-        </div>
-        <h3 class="blog-title">Beyond Amsterdam: Giethoorn &amp; Zwolle's Waterway Wonderland</h3>
-        <p class="blog-excerpt">The Venice of the North — punting through car-free canals in Giethoorn, then the charming Hanseatic streets of nearby Zwolle. The Netherlands most people never see.</p>
-        <p class="coming-soon-note">✈️ Trip coming soon — guide to follow</p>
-      </div>
-    </div>
-
-    <!-- Slovenia -->
-    <div class="blog-card soon reveal">
-      <div class="blog-img bg-slovenia">🏔️<span class="soon-badge">Coming Soon</span></div>
-      <div class="blog-body">
-        <div class="blog-meta">
-          <span class="blog-cat">Hidden Gems</span>
-          <span class="blog-region">Europe · Balkans</span>
-        </div>
-        <h3 class="blog-title">Slovenia: Europe's Most Underrated Country</h3>
-        <p class="blog-excerpt">Lake Bled's fairy-tale island church, the emerald Soča River, and Ljubljana's effortlessly cool capital. Slovenia punches so far above its weight it's almost unfair.</p>
-        <p class="coming-soon-note">✈️ Trip coming soon — guide to follow</p>
-      </div>
-    </div>
-
-    <!-- Finland -->
-    <div class="blog-card soon reveal reveal-delay-1">
-      <div class="blog-img bg-finland">🌌<span class="soon-badge">Coming Soon</span></div>
-      <div class="blog-body">
-        <div class="blog-meta">
-          <span class="blog-cat">Winter</span>
-          <span class="blog-region">Europe · Lapland</span>
-        </div>
-        <h3 class="blog-title">Finnish Lapland: Northern Lights &amp; Reindeer in Akaslompolo</h3>
-        <p class="blog-excerpt">Husky safaris, snow-buried forests, and falling asleep in a glass igloo waiting for the aurora. The tiny village of Akaslompolo is Lapland at its most magical.</p>
-        <p class="coming-soon-note">✈️ Trip coming soon — guide to follow</p>
-      </div>
-    </div>
-
-    <!-- Budapest -->
-    <div class="blog-card soon reveal reveal-delay-2">
-      <div class="blog-img bg-budapest">🛁<span class="soon-badge">Coming Soon</span></div>
-      <div class="blog-body">
-        <div class="blog-meta">
-          <span class="blog-cat">City Breaks</span>
-          <span class="blog-region">Europe · Hungary</span>
-        </div>
-        <h3 class="blog-title">Budapest: Thermal Baths, Ruin Bars &amp; the Danube at Dusk</h3>
-        <p class="blog-excerpt">One of Europe's most dramatic cities — grand architecture, legendary thermal spas, and a nightlife scene centred around some of the most unique bars in the world.</p>
-        <p class="coming-soon-note">✈️ Trip coming soon — guide to follow</p>
-      </div>
-    </div>
-
-    <!-- Sicily -->
-    <div class="blog-card soon reveal">
-      <div class="blog-img bg-sicily">🍋<span class="soon-badge">Coming Soon</span></div>
-      <div class="blog-body">
-        <div class="blog-meta">
-          <span class="blog-cat">Hidden Gems</span>
-          <span class="blog-region">Europe · Italy</span>
-        </div>
-        <h3 class="blog-title">Sicily: Ancient Temples, Volcanic Views &amp; the Best Food in Italy</h3>
-        <p class="blog-excerpt">The Greeks built temples here. The Arabs left their spices. The Normans added the grandeur. Sicily absorbs every civilisation and transforms it into something uniquely its own.</p>
-        <p class="coming-soon-note">✈️ Trip coming soon — guide to follow</p>
-      </div>
-    </div>
-
-    <!-- Hong Kong -->
-    <div class="blog-card soon reveal reveal-delay-1">
-      <div class="blog-img bg-hongkong">🏙️<span class="soon-badge">Coming Soon</span></div>
-      <div class="blog-body">
-        <div class="blog-meta">
-          <span class="blog-cat">City Breaks</span>
-          <span class="blog-region">Asia · China</span>
-        </div>
-        <h3 class="blog-title">Hong Kong: A City That Never Stops Moving</h3>
-        <p class="blog-excerpt">Dim sum at dawn, the Star Ferry crossing at dusk, and a skyline that genuinely takes your breath away. Hong Kong is one of the world's great cities — and it's back.</p>
-        <p class="coming-soon-note">✈️ Trip coming soon — guide to follow</p>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Notify me -->
-  <div class="notify-banner reveal">
-    <h3>Be the First to Read</h3>
-    <p>Subscribe and get notified the moment a new guide drops — straight to your inbox, no spam ever.</p>
-    <form class="nl-form" action="https://formspree.io/f/mjgelkpz" method="POST">
-      <input type="hidden" name="_subject" value="New Blog Notification Signup — Drop Everything And Go"/>
-      <input type="email" name="email" placeholder="Your email address" required/>
-      <button type="submit">Notify Me</button>
+</section>
+<div class="nl2-s">
+  <div class="nl2-box rv">
+    <div class="eyebrow" style="justify-content:center;color:var(--gold-dk)">Be First to Know</div>
+    <h3>New guides, straight to your inbox</h3>
+    <p>Get notified the moment a new guide drops — no spam, ever.</p>
+    <form style="display:flex;max-width:400px;margin:0 auto;" action="https://formspree.io/f/mjgelkpz" method="POST">
+      <input type="hidden" name="_subject" value="Newsletter Signup"/>
+      <input type="email" name="email" placeholder="Your email address" required style="flex:1;padding:.9rem 1.2rem;background:var(--white);border:1px solid rgba(11,13,16,.14);border-right:none;border-radius:var(--r-sm) 0 0 var(--r-sm);font-size:.88rem;color:var(--ink);outline:none;"/>
+      <button type="submit" style="background:var(--gold);color:var(--ink);border:none;border-radius:0 var(--r-sm) var(--r-sm) 0;padding:.9rem 1.4rem;font-size:.68rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;">Subscribe</button>
     </form>
   </div>
-
-</section>
-
+</div>
 <footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a href="index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Services</span></a>
       <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
-      <div class="footer-social">
-        <a href="#" class="social-btn">📸</a><a href="#" class="social-btn">🎵</a>
-        <a href="#" class="social-btn">📌</a><a href="#" class="social-btn">▶</a>
+      <div class="ft-social">
+        <a href="#" class="ft-soc-btn">📸</a><a href="#" class="ft-soc-btn">🎵</a>
+        <a href="#" class="ft-soc-btn">📌</a><a href="#" class="ft-soc-btn">▶</a>
       </div>
     </div>
-    <div class="footer-col"><h4>Explore</h4><ul>
+    <div class="ft-col"><h5>Explore</h5><ul>
       <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="destinations/backpacker-guides.html">Backpacker Guides</a></li>
       <li><a href="blog.html">Blog</a></li>
       <li><a href="about.html">About</a></li>
     </ul></div>
-    <div class="footer-col"><h4>Services</h4><ul>
+    <div class="ft-col"><h5>Services</h5><ul>
       <li><a href="services.html">Trip Planning</a></li>
       <li><a href="services.html">Hotel Curation</a></li>
-      <li><a href="contact.html">Get a Quote</a></li>
+      <li><a href="contact.html">Free Quote</a></li>
     </ul></div>
-    <div class="footer-col"><h4>Legal</h4><ul>
+    <div class="ft-col"><h5>Info</h5><ul>
       <li><a href="contact.html">Contact</a></li>
       <li><a href="privacy.html">Privacy Policy</a></li>
-      <li><a href="privacy.html#cookies">Cookie Policy</a></li>
-      <li><a href="privacy.html#terms">Terms of Use</a></li>
+      <li><a href="privacy.html#terms">Terms</a></li>
     </ul></div>
   </div>
-  <div class="footer-bottom">
-    <p>© 2025 Drop Everything And Go. All rights reserved.</p>
-    <div class="footer-bottom-links">
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="privacy.html#cookies">Cookies</a>
-      <a href="privacy.html#terms">Terms</a>
-    </div>
+  <div class="ft-badges">
+    <span class="ft-badge">🔒 Secure &amp; Trusted</span>
+    <span class="ft-badge">✈️ ATOL Protected Advice</span>
+    <span class="ft-badge">🌍 Worldwide Planning</span>
   </div>
-</footer>
-
-<script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
+  <div class="ft-bottom">
+    <p>© 2025 Drop Everything And Go. All rights reserved.</p>
+    <div class="ft-bottom-links"><a href="privacy.html">Privacy</a><a href="privacy.html#cookies">Cookies</a><a href="privacy.html#terms">Terms</a></div>
+  </div>
+</footer><script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
 <script>
-  const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }), {threshold: 0.1});
-  document.querySelectorAll('.reveal').forEach(r => observer.observe(r));
-  const nav = document.getElementById('navbar');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
-  const ham = document.getElementById('hamburger'), mob = document.getElementById('navMobile');
-  ham.addEventListener('click', () => { ham.classList.toggle('open'); mob.classList.toggle('open'); document.body.style.overflow = mob.classList.contains('open') ? 'hidden' : ''; });
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.addEventListener('click', () => { document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); });
-  });
-  function showCookie(){if(!localStorage.getItem('cookieChoice')){setTimeout(()=>document.getElementById('cookieBanner').classList.add('visible'),1200);}}
-  function acceptCookies(){localStorage.setItem('cookieChoice','accepted');document.getElementById('cookieBanner').classList.remove('visible');}
-  function declineCookies(){localStorage.setItem('cookieChoice','declined');document.getElementById('cookieBanner').classList.remove('visible');}
-  showCookie();
-</script>
-</body>
-</html>
+(function(){
+'use strict';
+var pb=document.getElementById('progress-bar');
+if(pb)window.addEventListener('scroll',function(){var p=(scrollY/(document.body.scrollHeight-innerHeight))*100;pb.style.width=Math.min(p,100)+'%';},{passive:true});
+var cd=document.getElementById('c-dot'),cr=document.getElementById('c-ring');
+if(cd&&cr){var mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px';},{passive:true});
+(function lp(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(lp);})();
+document.querySelectorAll('a,button').forEach(function(el){el.addEventListener('mouseenter',function(){cd.classList.add('h');cr.classList.add('h');});el.addEventListener('mouseleave',function(){cd.classList.remove('h');cr.classList.remove('h');});});}
+var nav=document.getElementById('nav');
+if(nav)window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>60);},{passive:true});
+var ham=document.getElementById('ham'),mob=document.getElementById('mob');
+if(ham&&mob)ham.addEventListener('click',function(){ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0.08});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=document.getElementById('ck');if(c)c.classList.add('vis');},1400);}
+window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+ckShow();
+})();
+</script></body></html>

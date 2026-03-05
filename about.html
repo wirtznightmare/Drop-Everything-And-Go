@@ -1,122 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="About Drop Everything And Go — the story behind the travel blog and trip planning service."/>
-  <title>About — Drop Everything And Go</title>
-  <link rel="stylesheet" href="style.css"/>
-  <style>
-    .about-section{background:var(--white);}
-    .about-intro{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;max-width:1100px;margin:0 auto;align-items:center;}
-    .about-img-wrap{position:relative;}
-    .about-img-placeholder{width:100%;aspect-ratio:4/5;background:linear-gradient(140deg,#1a4a7a,#0a2a50);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:7rem;}
-    .about-badge{position:absolute;bottom:-1.5rem;right:-1.5rem;background:var(--gold);color:var(--navy);padding:1.2rem 1.5rem;border-radius:var(--radius);text-align:center;font-family:'Playfair Display',serif;}
-    .about-badge span{display:block;font-size:2.2rem;font-weight:700;line-height:1;}
-    .about-badge small{font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;font-family:'DM Sans',sans-serif;font-weight:600;}
-    .about-text h2{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:700;color:var(--navy);margin-bottom:1.2rem;line-height:1.12;}
-    .about-text h2 em{font-style:italic;color:var(--sky);}
-    .about-text p{font-size:0.94rem;color:var(--light-text);line-height:1.82;margin-bottom:1.1rem;}
-    .about-stats{background:var(--navy);padding:4rem;}
-    .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;max-width:900px;margin:0 auto;text-align:center;}
-    .stat-num{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:var(--gold);}
-    .stat-lbl{font-size:0.78rem;color:rgba(200,230,245,0.45);letter-spacing:0.12em;text-transform:uppercase;margin-top:0.3rem;}
-    .values-section{background:var(--bg-light);}
-    .values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:1000px;margin:2.5rem auto 0;}
-    .value-card{background:var(--white);padding:2.5rem 2rem;border-radius:var(--radius);border-top:3px solid var(--sky);box-shadow:0 2px 16px rgba(10,22,40,0.05);transition:transform 0.3s,box-shadow 0.3s;}
-    .value-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(10,22,40,0.1);}
-    .value-icon{font-size:2rem;margin-bottom:1rem;}
-    .value-title{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:700;color:var(--navy);margin-bottom:0.6rem;}
-    .value-desc{font-size:0.86rem;color:var(--light-text);line-height:1.72;}
-    .cta-banner{background:linear-gradient(140deg,var(--navy),var(--ocean));padding:5rem 4rem;text-align:center;}
-    .cta-banner h2{font-family:'Playfair Display',serif;font-size:2.3rem;font-weight:700;color:var(--white);margin-bottom:0.8rem;}
-    .cta-banner p{color:rgba(200,230,245,0.68);max-width:460px;margin:0 auto 2rem;line-height:1.75;}
-    @media(max-width:900px){.about-intro{grid-template-columns:1fr;gap:3rem;}.about-img-wrap{max-width:380px;margin:0 auto;}.stats-grid{grid-template-columns:1fr 1fr;}.values-grid{grid-template-columns:1fr;}.cta-banner{padding:4rem 2rem;}}
-  </style>
-</head>
-<body>
-<div class="cookie-banner" id="cookieBanner">
-  <p class="cookie-text">🍪 We use cookies to improve your experience. By continuing, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
-  <div class="cookie-btns"><button class="cookie-accept" onclick="acceptCookies()">Accept All</button><button class="cookie-decline" onclick="declineCookies()">Decline</button></div>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="The story behind Drop Everything And Go — honest travel and expert trip planning."/>
+<title>About Me — Drop Everything And Go</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.av-split{display:grid;grid-template-columns:1fr 1.2fr;min-height:520px;}
+.av-img{background:linear-gradient(140deg,#0E2040,#1A4A7A);display:flex;align-items:center;justify-content:center;font-size:9rem;position:relative;overflow:hidden;}
+.av-img::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 35% 55%,rgba(200,145,42,.18) 0%,transparent 60%);}
+.av-badge{position:absolute;bottom:2rem;right:2rem;background:var(--gold);color:var(--ink);border-radius:var(--r-sm);padding:1.2rem 1.5rem;text-align:center;}
+.av-badge strong{display:block;font-family:var(--ff-display);font-size:2.6rem;font-weight:800;line-height:1;}
+.av-badge span{font-family:var(--ff-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;}
+.av-text{background:var(--parchment);padding:clamp(3rem,6vw,6rem);display:flex;flex-direction:column;justify-content:center;}
+.av-text p{font-size:.95rem;color:#4A5060;line-height:1.88;margin:1rem 0;}
+.stats-row{background:var(--ink-2);padding:4rem var(--gutter);}
+.stats-row-inner{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;}
+.sr-n{font-family:var(--ff-display);font-size:3.5rem;font-weight:800;color:var(--gold);line-height:1;font-variation-settings:'opsz' 48;}
+.sr-l{font-family:var(--ff-mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke);margin-top:.5rem;}
+.vals-s{background:var(--ink);}
+.vals-grid{max-width:1100px;margin:3.5rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.val-c{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:2.5rem 2rem;border-top:2px solid var(--gold);transition:transform .4s var(--ease-spring),border-top-color .3s;}
+.val-c:hover{transform:translateY(-6px);border-top-color:var(--teal);}
+.val-icon{font-size:2.1rem;margin-bottom:1.1rem;}
+.val-title{font-family:var(--ff-display);font-size:1.3rem;font-weight:700;color:var(--parchment);margin-bottom:.6rem;}
+.val-desc{font-size:.85rem;color:var(--smoke);line-height:1.72;}
+.acta{background:linear-gradient(140deg,var(--ink-2),#0D1E34);padding:6rem var(--gutter);text-align:center;}
+.acta p{font-size:.95rem;color:var(--smoke);max-width:460px;margin:1rem auto 2.5rem;line-height:1.75;}
+@media(max-width:900px){.av-split{grid-template-columns:1fr;}.av-img{min-height:300px;font-size:6rem;}.stats-row-inner{grid-template-columns:1fr 1fr;}.vals-grid{grid-template-columns:1fr;}}
+</style>
+</head><body><div id="progress-bar"></div>
+<div id="c-dot"></div><div id="c-ring"></div>
+<div class="ck" id="ck">
+  <p class="ck-text">We use cookies to enhance your journey. <a href="privacy.html">Privacy Policy</a></p>
+  <div class="ck-btns"><button class="ck-acc" onclick="ckAccept()">Accept</button><button class="ck-dec" onclick="ckDecline()">Decline</button></div>
 </div>
-<nav id="navbar">
-  <a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a>
-  <ul class="nav-links">
-    <li><a href="destinations.html">Destinations</a></li><li><a href="blog.html">Blog</a></li>
-    <li><a href="services.html">Services</a></li><li><a href="about.html" class="active">About</a></li>
-    <li><a href="contact.html" class="nav-cta">Plan My Trip</a></li>
-  </ul>
-  <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+<nav id="nav">
+  <a href="index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Bespoke Planning</span></a>
+  <ul class="nav-links"><li><a href="destinations.html">Destinations</a></li><li><a href="blog.html">Blog</a></li><li><a href="services.html">Services</a></li><li><a href="about.html" class="active">About</a></li><li><a href="contact.html" class="nav-cta">Plan My Trip</a></li></ul>
+  <button class="nav-ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
-<ul class="nav-mobile" id="navMobile">
-  <li><a href="destinations.html">Destinations</a></li><li><a href="blog.html">Blog</a></li>
-  <li><a href="services.html">Services</a></li><li><a href="about.html" class="active">About</a></li>
-  <li><a href="contact.html" class="mob-cta">Plan My Trip</a></li>
+<ul class="nav-mob" id="mob">
+  <li><a href="destinations.html">Destinations</a></li><li><a href="blog.html">Blog</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li>
+  <li><a href="contact.html" class="mob-cta-btn">Plan My Trip</a></li>
 </ul>
-<div class="page-hero">
-  <div class="page-hero-content">
-    <p class="page-eyebrow">The Story Behind the Blog</p>
-    <h1 class="page-title">About <em>Me</em></h1>
-    <p class="page-subtitle">Real traveller. Honest stories. No fluff.</p>
+<div class="pg-hero">
+  <div class="pg-hero-bg"></div><div class="pg-hero-dots"></div>
+  <div class="pg-hero-content">
+    <div class="pg-eyebrow">The Story Behind the Blog</div>
+    <h1 class="pg-title">About <em>Me</em></h1>
+    <p class="pg-subtitle">Real traveller. Honest stories. No fluff.</p>
   </div>
-  <div class="page-hero-wave"><svg viewBox="0 0 1800 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,40 C300,80 600,0 900,40 C1200,80 1500,0 1800,40 L1800,80 L0,80 Z" fill="var(--white)"/></svg></div>
+  <div class="pg-hero-rule"></div>
 </div>
-<section class="section about-section">
-  <div class="about-intro">
-    <div class="about-img-wrap reveal">
-      <div class="about-img-placeholder">🌍</div>
-      <div class="about-badge"><span>40+</span><small>Countries</small></div>
+<div class="av-split">
+  <div class="av-img rv"><span style="position:relative;z-index:1">🌍</span><div class="av-badge"><strong>40+</strong><span>Countries</span></div></div>
+  <div class="av-text rv rv2">
+    <div class="eyebrow" style="color:var(--gold-dk)">My Story</div>
+    <h2 class="h-display on-light">Hi, I'm the person who actually <em>drops everything</em></h2>
+    <p>This is where your story goes! Tell your visitors who you are, where your love of travel began, and what makes your perspective unique.</p>
+    <p>Share the moment that inspired you to start a travel blog — maybe it was a life-changing trip, a desire to help others travel smarter, or simply a passion you couldn't keep to yourself.</p>
+    <p>Let people know what they can expect — your honest, no-nonsense take on every destination, the tips that save money, and the experiences that make it all worthwhile.</p>
+    <div style="margin-top:1.5rem"><a href="contact.html" class="btn btn-wire-dark btn-arr">Work With Me</a></div>
+  </div>
+</div>
+<div class="stats-row">
+  <div class="stats-row-inner">
+    <div class="rv"><div class="sr-n">40+</div><div class="sr-l">Countries Visited</div></div>
+    <div class="rv rv1"><div class="sr-n">120+</div><div class="sr-l">Guides Published</div></div>
+    <div class="rv rv2"><div class="sr-n">500+</div><div class="sr-l">Trips Planned</div></div>
+    <div class="rv rv3"><div class="sr-n">5★</div><div class="sr-l">Average Rating</div></div>
+  </div>
+</div>
+<section class="s vals-s">
+  <div class="s-inner">
+    <div class="rv" style="text-align:center"><div class="eyebrow" style="justify-content:center">What I Stand For</div><h2 class="h-display">My <em>Values</em></h2></div>
+    <div class="vals-grid">
+      <div class="val-c rv"><div class="val-icon">🤝</div><h4 class="val-title">Honesty First</h4><p class="val-desc">No sponsored fluff. If somewhere didn't live up to the hype, I'll say so. You deserve the real picture before you spend your money.</p></div>
+      <div class="val-c rv rv2"><div class="val-icon">♻️</div><h4 class="val-title">Responsible Travel</h4><p class="val-desc">I care about the places I visit. My recommendations always consider local communities, sustainability, and leaving destinations better than I found them.</p></div>
+      <div class="val-c rv rv4"><div class="val-icon">💡</div><h4 class="val-title">Practical Advice</h4><p class="val-desc">Less dreamy photos, more useful information. Budget breakdowns, transport tips, what to actually pack — the stuff that matters when you're planning.</p></div>
     </div>
-    <div class="about-text reveal reveal-delay-1">
-      <p class="section-label">My Story</p>
-      <h2>Hi, I'm the person who actually <em>drops everything</em></h2>
-      <p>This is where your story goes! Tell your visitors who you are, where your love of travel began, and what makes your perspective unique.</p>
-      <p>Share the moment that inspired you to start a travel blog — maybe it was a life-changing trip, a desire to help others travel smarter, or simply a passion you couldn't keep to yourself.</p>
-      <p>Let people know what they can expect — your honest, no-nonsense take on every destination, the tips that save money, and the experiences that make it all worthwhile.</p>
-      <a href="contact.html" class="btn-primary" style="margin-top:0.5rem;">Work With Me</a>
-    </div>
   </div>
 </section>
-<section class="about-stats">
-  <div class="stats-grid">
-    <div class="stat-item reveal"><div class="stat-num">40+</div><div class="stat-lbl">Countries Visited</div></div>
-    <div class="stat-item reveal reveal-delay-1"><div class="stat-num">120+</div><div class="stat-lbl">Blog Posts</div></div>
-    <div class="stat-item reveal reveal-delay-2"><div class="stat-num">500+</div><div class="stat-lbl">Trips Planned</div></div>
-    <div class="stat-item reveal reveal-delay-3"><div class="stat-num">5★</div><div class="stat-lbl">Average Rating</div></div>
-  </div>
-</section>
-<section class="section values-section">
-  <div style="text-align:center;" class="reveal"><p class="section-label section-label-center">What I Stand For</p><h2 class="section-title">My <em>Values</em></h2></div>
-  <div class="values-grid">
-    <div class="value-card reveal"><div class="value-icon">🤝</div><h4 class="value-title">Honesty First</h4><p class="value-desc">No sponsored fluff. If somewhere didn't live up to the hype, I'll say so. You deserve the real picture before you spend your money.</p></div>
-    <div class="value-card reveal reveal-delay-1"><div class="value-icon">♻️</div><h4 class="value-title">Responsible Travel</h4><p class="value-desc">I care about the places I visit. My recommendations always consider local communities, sustainability, and leaving destinations better than I found them.</p></div>
-    <div class="value-card reveal reveal-delay-2"><div class="value-icon">💡</div><h4 class="value-title">Practical Advice</h4><p class="value-desc">Less dreamy photos, more useful information. Budget breakdowns, transport tips, what to actually pack — the stuff that matters when you're planning.</p></div>
-  </div>
-</section>
-<div class="cta-banner">
-  <h2 class="reveal">Ready to plan something amazing?</h2>
-  <p class="reveal">Whether you have a destination in mind or just a vague idea — let's make it happen.</p>
-  <div class="reveal"><a href="contact.html" class="btn-primary">Get in Touch</a></div>
+<div class="acta">
+  <div class="eyebrow rv" style="justify-content:center">Let's Talk</div>
+  <h2 class="h-display rv">Ready to plan something <em>amazing?</em></h2>
+  <p class="rv">Whether you have a destination in mind or just a vague idea — let's make it happen.</p>
+  <div class="rv"><a href="contact.html" class="btn btn-gold btn-arr">Get in Touch</a></div>
 </div>
 <footer>
-  <div class="footer-top">
-    <div class="footer-brand"><a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a><p>Honest travel stories and expert trip planning from someone who actually goes.</p><div class="footer-social"><a href="#" class="social-btn">📸</a><a href="#" class="social-btn">🎵</a><a href="#" class="social-btn">📌</a><a href="#" class="social-btn">▶</a></div></div>
-    <div class="footer-col"><h4>Explore</h4><ul><li><a href="destinations.html">Destinations</a></li><li><a href="blog.html">Blog</a></li><li><a href="about.html">About</a></li></ul></div>
-    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Trip Planning</a></li><li><a href="services.html">Hotel Curation</a></li><li><a href="contact.html">Get a Quote</a></li></ul></div>
-    <div class="footer-col"><h4>Legal</h4><ul><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="privacy.html#cookies">Cookie Policy</a></li><li><a href="privacy.html#terms">Terms of Use</a></li></ul></div>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a href="index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Services</span></a>
+      <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
+      <div class="ft-social">
+        <a href="#" class="ft-soc-btn">📸</a><a href="#" class="ft-soc-btn">🎵</a>
+        <a href="#" class="ft-soc-btn">📌</a><a href="#" class="ft-soc-btn">▶</a>
+      </div>
+    </div>
+    <div class="ft-col"><h5>Explore</h5><ul>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="destinations/backpacker-guides.html">Backpacker Guides</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul></div>
+    <div class="ft-col"><h5>Services</h5><ul>
+      <li><a href="services.html">Trip Planning</a></li>
+      <li><a href="services.html">Hotel Curation</a></li>
+      <li><a href="contact.html">Free Quote</a></li>
+    </ul></div>
+    <div class="ft-col"><h5>Info</h5><ul>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="privacy.html#terms">Terms</a></li>
+    </ul></div>
   </div>
-  <div class="footer-bottom"><p>© 2025 Drop Everything And Go. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="privacy.html#cookies">Cookies</a><a href="privacy.html#terms">Terms</a></div></div>
-</footer>
-<script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
+  <div class="ft-badges">
+    <span class="ft-badge">🔒 Secure &amp; Trusted</span>
+    <span class="ft-badge">✈️ ATOL Protected Advice</span>
+    <span class="ft-badge">🌍 Worldwide Planning</span>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2025 Drop Everything And Go. All rights reserved.</p>
+    <div class="ft-bottom-links"><a href="privacy.html">Privacy</a><a href="privacy.html#cookies">Cookies</a><a href="privacy.html#terms">Terms</a></div>
+  </div>
+</footer><script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
 <script>
-  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
-  document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
-  const nav=document.getElementById('navbar');
-  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
-  const ham=document.getElementById('hamburger'),mob=document.getElementById('navMobile');
-  ham.addEventListener('click',()=>{ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
-  function showCookie(){if(!localStorage.getItem('cookieChoice')){setTimeout(()=>document.getElementById('cookieBanner').classList.add('visible'),1200);}}
-  function acceptCookies(){localStorage.setItem('cookieChoice','accepted');document.getElementById('cookieBanner').classList.remove('visible');}
-  function declineCookies(){localStorage.setItem('cookieChoice','declined');document.getElementById('cookieBanner').classList.remove('visible');}
-  showCookie();
-</script>
-</body></html>
+(function(){
+'use strict';
+var pb=document.getElementById('progress-bar');
+if(pb)window.addEventListener('scroll',function(){var p=(scrollY/(document.body.scrollHeight-innerHeight))*100;pb.style.width=Math.min(p,100)+'%';},{passive:true});
+var cd=document.getElementById('c-dot'),cr=document.getElementById('c-ring');
+if(cd&&cr){var mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px';},{passive:true});
+(function lp(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(lp);})();
+document.querySelectorAll('a,button').forEach(function(el){el.addEventListener('mouseenter',function(){cd.classList.add('h');cr.classList.add('h');});el.addEventListener('mouseleave',function(){cd.classList.remove('h');cr.classList.remove('h');});});}
+var nav=document.getElementById('nav');
+if(nav)window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>60);},{passive:true});
+var ham=document.getElementById('ham'),mob=document.getElementById('mob');
+if(ham&&mob)ham.addEventListener('click',function(){ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0.08});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=document.getElementById('ck');if(c)c.classList.add('vis');},1400);}
+window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+ckShow();
+})();
+</script></body></html>

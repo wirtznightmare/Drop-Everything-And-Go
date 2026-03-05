@@ -1,63 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Fado music, pastel trams, Atlantic waves, world-class wine, and Europe's sunniest culture. Expert trip planning from Drop Everything And Go."/>
-  <title>Portugal — Drop Everything And Go</title>
-  <link rel="stylesheet" href="../style.css"/>
-  <style>
-    .dest-hero{min-height:58vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:9rem 2rem 5rem;}
-    .dest-hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#4a2a0a,#2a0a00);}
-    .dest-hero-content{position:relative;z-index:2;text-align:center;color:var(--white);}
-    .dest-emoji{font-size:5rem;margin-bottom:1rem;display:block;}
-    .dest-tags-row{display:flex;gap:0.5rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.2rem;}
-    .dtag{background:rgba(201,169,110,0.85);color:var(--navy);font-size:0.62rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:0.25rem 0.7rem;border-radius:2px;}
-    .dest-hero-title{font-family:'Playfair Display',serif;font-size:clamp(2.5rem,7vw,5rem);font-weight:700;line-height:1.05;margin-bottom:1rem;}
-    .dest-hero-tagline{font-size:1rem;color:rgba(200,230,245,0.78);max-width:500px;margin:0 auto;line-height:1.75;font-weight:300;}
-    .dest-hero-wave{position:absolute;bottom:-1px;left:0;right:0;}
-    .dest-hero-wave svg{width:100%;display:block;}
-    .dest-intro-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:4rem;max-width:1100px;margin:0 auto;align-items:start;}
-    .dest-intro-text h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--navy);margin-bottom:1rem;line-height:1.2;}
-    .dest-intro-text h2 em{font-style:italic;color:var(--sky);}
-    .dest-intro-text p{font-size:0.94rem;color:var(--light-text);line-height:1.82;margin-bottom:1rem;}
-    .dest-facts{background:var(--bg-light);border-radius:var(--radius);padding:2rem;}
-    .dest-facts h4{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:1.2rem;}
-    .fact-row{display:flex;align-items:flex-start;gap:0.8rem;margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid rgba(10,22,40,0.07);}
-    .fact-row:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
-    .fact-icon{font-size:1.2rem;flex-shrink:0;}
-    .fact-label{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.2rem;}
-    .fact-value{font-size:0.88rem;color:var(--navy);font-weight:500;}
-    .aud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1000px;margin:0 auto;}
-    .aud-card{background:var(--bg-light);border-radius:var(--radius);padding:2.2rem 1.8rem;border-top:3px solid var(--sky);transition:transform 0.3s,box-shadow 0.3s;}
-    .aud-card:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(10,22,40,0.1);}
-    .aud-icon{font-size:2rem;margin-bottom:0.9rem;}
-    .aud-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;}
-    .aud-desc{font-size:0.86rem;color:var(--light-text);line-height:1.72;}
-    .things-section{background:var(--navy);padding:5rem 4rem;}
-    .things-title{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--white);text-align:center;margin-bottom:0.5rem;}
-    .things-title em{font-style:italic;color:var(--mist);}
-    .things-sub{color:rgba(200,230,245,0.6);text-align:center;margin-bottom:3rem;font-size:0.92rem;}
-    .things-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0.8rem;max-width:900px;margin:0 auto;}
-    .thing-item{display:flex;align-items:flex-start;gap:0.8rem;background:rgba(255,255,255,0.05);border:1px solid rgba(200,230,245,0.1);border-radius:var(--radius);padding:1rem 1.2rem;transition:background 0.2s;}
-    .thing-item:hover{background:rgba(255,255,255,0.09);}
-    .thing-num{color:var(--gold);font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;flex-shrink:0;min-width:1.5rem;}
-    .thing-text{font-size:0.86rem;color:rgba(200,230,245,0.8);line-height:1.6;}
-    .plan-cta{background:linear-gradient(140deg,var(--ocean),var(--deep));text-align:center;padding:5rem 4rem;}
-    .plan-cta h2{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--white);margin-bottom:0.8rem;}
-    .plan-cta p{color:rgba(200,230,245,0.65);max-width:480px;margin:0 auto 2rem;line-height:1.75;}
-    .back-link{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.78rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:rgba(200,230,245,0.5);text-decoration:none;margin-bottom:1.5rem;transition:color 0.2s;}
-    .back-link:hover{color:var(--gold);}
-    @media(max-width:900px){.dest-intro-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}}
-    @media(max-width:600px){.things-grid{grid-template-columns:1fr;}.things-section{padding:4rem 1.5rem;}.plan-cta{padding:4rem 1.5rem;}}
-  </style>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Portugal travel guide — Melancholy fado, pastel tiles, Atlantic seafood, and the best value country in Western Europe."/>
+<title>Portugal — Drop Everything And Go</title>
+<link rel="stylesheet" href="../style.css"/>
+<style>
+.dh{min-height:70vh;display:flex;flex-direction:column;justify-content:flex-end;padding:9rem var(--gutter) 4rem;position:relative;overflow:hidden;}
+.dh-bg{position:absolute;inset:0;}
+.dh-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(200,145,42,.07) 1px,transparent 1px);background-size:35px 35px;mask-image:radial-gradient(ellipse at 80% 40%,black 20%,transparent 75%);}
+.dh-content{position:relative;z-index:2;max-width:1300px;width:100%;margin:0 auto;}
+.dh-back{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--ff-mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,239,224,.4);margin-bottom:1.5rem;transition:color .2s;}
+.dh-back:hover{color:var(--gold);}
+.dh-emoji{font-size:4.5rem;line-height:1;display:block;margin-bottom:1rem;}
+.dh-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem;}
+.dh-tag{font-family:var(--ff-mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;padding:.25rem .7rem;border-radius:100px;background:rgba(200,145,42,.15);color:var(--gold);border:1px solid rgba(200,145,42,.2);}
+.dh-h1{font-family:var(--ff-display);font-size:clamp(3rem,9vw,7.5rem);font-weight:800;letter-spacing:-.035em;line-height:.92;color:var(--parchment);}
+.dh-h1 em{font-style:italic;font-weight:300;color:var(--gold-lt);font-variation-settings:'opsz' 72;}
+.dh-tagline{font-size:1rem;color:rgba(200,190,170,.65);margin-top:1.2rem;max-width:520px;line-height:1.7;}
+.dh-rule{position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,var(--gold),transparent 60%);opacity:.35;}
+
+.intro-s{background:var(--parchment);}
+.intro-grid{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:5rem;align-items:start;}
+.intro-body h2{font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--ink);letter-spacing:-.02em;line-height:1.12;margin-bottom:1rem;}
+.intro-body h2 em{font-style:italic;font-weight:300;color:var(--gold-dk);}
+.intro-body p{font-size:.95rem;color:#4A5060;line-height:1.88;margin-bottom:1rem;}
+.facts-card{background:var(--ink);border-radius:var(--r-lg);padding:2rem;position:sticky;top:90px;}
+.facts-card h4{font-family:var(--ff-mono);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;}
+.fact-row{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.4rem;padding-bottom:1.4rem;border-bottom:1px solid rgba(245,239,224,.07);}
+.fact-row:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.fact-icon{font-size:1.1rem;flex-shrink:0;margin-top:.1rem;}
+.fact-label{font-family:var(--ff-mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--smoke);margin-bottom:.2rem;}
+.fact-value{font-size:.88rem;color:var(--parchment);font-weight:500;line-height:1.4;}
+
+.aud-s{background:var(--cream);}
+.aud-grid{max-width:1100px;margin:3rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.aud-c{background:var(--white);border-radius:var(--r-md);padding:2.2rem 1.8rem;border-top:2px solid var(--gold);box-shadow:0 2px 18px rgba(11,13,16,.05);transition:transform .4s var(--ease-spring),box-shadow .4s,border-top-color .3s;}
+.aud-c:hover{transform:translateY(-5px);box-shadow:0 16px 42px rgba(11,13,16,.1);border-top-color:var(--teal);}
+.aud-icon{font-size:2rem;margin-bottom:1rem;}
+.aud-title{font-family:var(--ff-display);font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;}
+.aud-desc{font-size:.86rem;color:#6A7080;line-height:1.72;}
+
+.things-s{background:var(--ink-2);}
+.things-s::before{content:'';position:absolute;top:-200px;right:-150px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(200,145,42,.05) 0%,transparent 65%);pointer-events:none;}
+.things-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1;}
+.things-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:2.5rem;}
+.thing-item{display:flex;align-items:flex-start;gap:.9rem;background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-sm);padding:1rem 1.2rem;transition:background .25s,border-color .25s;}
+.thing-item:hover{background:rgba(245,239,224,.07);border-color:rgba(200,145,42,.2);}
+.thing-num{font-family:var(--ff-display);font-size:1.1rem;font-weight:800;color:var(--gold);flex-shrink:0;min-width:1.8rem;font-variation-settings:'opsz' 24;}
+.thing-text{font-size:.86rem;color:rgba(200,190,170,.75);line-height:1.6;}
+
+.plan-s{background:linear-gradient(140deg,var(--ink-2),#0D1E34);text-align:center;padding:6rem var(--gutter);position:relative;overflow:hidden;}
+.plan-s::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(200,145,42,.06) 0%,transparent 65%);}
+.plan-s h2{font-family:var(--ff-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;color:var(--parchment);letter-spacing:-.02em;position:relative;z-index:1;}
+.plan-s p{color:var(--smoke);max-width:460px;margin:.9rem auto 2.5rem;line-height:1.75;position:relative;z-index:1;}
+.plan-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+
+.bp-strip{background:var(--ink);border-top:1px solid rgba(14,191,184,.15);padding:3.5rem var(--gutter);}
+.bp-strip-in{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem;}
+
+@media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.aud-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:640px){.things-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}.bp-strip-in{grid-template-columns:1fr;}.dh-emoji{font-size:3rem;}}
+</style>
 </head>
 <body>
-<div class="cookie-banner" id="cookieBanner">
-  <p class="cookie-text">&#x1F36A; We use cookies to improve your experience. By continuing, you agree to our <a href="../privacy.html">Privacy Policy</a>.</p>
-  <div class="cookie-btns"><button class="cookie-accept" onclick="acceptCookies()">Accept All</button><button class="cookie-decline" onclick="declineCookies()">Decline</button></div>
+<div id="progress-bar"></div>
+<div id="c-dot"></div><div id="c-ring"></div>
+<div class="ck" id="ck">
+  <p class="ck-text">We use cookies to enhance your journey. <a href="../privacy.html">Privacy Policy</a></p>
+  <div class="ck-btns"><button class="ck-acc" onclick="ckAccept()">Accept</button><button class="ck-dec" onclick="ckDecline()">Decline</button></div>
 </div>
-<nav id="navbar">
-  <a href="../index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a>
+<nav id="nav">
+  <a href="../index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Bespoke Planning</span></a>
   <ul class="nav-links">
     <li><a href="../destinations.html" class="active">Destinations</a></li>
     <li><a href="../blog.html">Blog</a></li>
@@ -65,149 +79,145 @@
     <li><a href="../about.html">About</a></li>
     <li><a href="../contact.html" class="nav-cta">Plan My Trip</a></li>
   </ul>
-  <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <button class="nav-ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
-<ul class="nav-mobile" id="navMobile">
+<ul class="nav-mob" id="mob">
   <li><a href="../destinations.html">Destinations</a></li>
   <li><a href="../blog.html">Blog</a></li>
   <li><a href="../services.html">Services</a></li>
   <li><a href="../about.html">About</a></li>
-  <li><a href="../contact.html" class="mob-cta">Plan My Trip</a></li>
+  <li><a href="../contact.html" class="mob-cta-btn">Plan My Trip</a></li>
 </ul>
-<div class="dest-hero">
-  <div class="dest-hero-bg"></div>
-  <div class="dest-hero-content">
-    <a href="../destinations.html" class="back-link">&#8592; All Destinations</a>
-    <span class="dest-emoji">🎶</span>
-    <div class="dest-tags-row"><span class="dtag">Europe</span> <span class="dtag">City Break</span> <span class="dtag">Family</span> <span class="dtag">Hidden Gem</span></div>
-    <h1 class="dest-hero-title">Portugal</h1>
-    <p class="dest-hero-tagline">Fado music, pastel trams, Atlantic waves, world-class wine, and Europe's sunniest culture.</p>
+<div class="dh">
+  <div class="dh-bg" style="background:linear-gradient(160deg,#2A1A0A,#100800)"></div>
+  <div class="dh-dots"></div>
+  <div class="dh-content">
+    <a href="../destinations.html" class="dh-back">← All Destinations</a>
+    <span class="dh-emoji">🎭</span>
+    <div class="dh-tags"><span class="dh-tag">Europe</span><span class="dh-tag">City Break</span><span class="dh-tag">Hidden Gem</span><span class="dh-tag">Budget Friendly</span></div>
+    <h1 class="dh-h1">Portugal</h1>
+    <p class="dh-tagline">Melancholy fado, pastel tiles, Atlantic seafood, and the best value country in Western Europe.</p>
   </div>
-  <div class="dest-hero-wave"><svg viewBox="0 0 1800 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,40 C300,80 600,0 900,40 C1200,80 1500,0 1800,40 L1800,80 L0,80 Z" fill="var(--white)"/></svg></div>
+  <div class="dh-rule"></div>
 </div>
-<section class="section" style="background:var(--white);">
-  <div class="dest-intro-grid">
-    <div class="reveal">
-      <p class="section-label">Europe · Iberian Peninsula</p>
-      <h2 class="dest-intro-text"><span style="font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--navy);line-height:1.2;">Why visit <em style="font-style:italic;color:var(--sky);">Portugal?</em></span></h2>
-      <p style="font-size:0.94rem;color:var(--light-text);line-height:1.82;margin:1rem 0 1.5rem;">Portugal is Europe's great overperformer — a small country that gives you big variety. Lisbon is one of the continent's most atmospheric capitals. Porto is intimate and achingly beautiful. The Algarve has some of Europe's finest coastal scenery. And everywhere, the food and wine overdeliver on price.</p>
-      <a href="../contact.html" class="btn-primary">Plan My Portugal Trip</a>
-    </div>
-    <div class="dest-facts reveal reveal-delay-1">
-      <h4>Quick Facts</h4>
-      <div class="fact-row"><div class="fact-icon">&#9992;&#65039;</div><div><div class="fact-label">Region</div><div class="fact-value">Europe · Iberian Peninsula</div></div></div>
-      <div class="fact-row"><div class="fact-icon">&#127919;</div><div><div class="fact-label">Best For</div><div class="fact-value">City breakers, families, surfers, foodies</div></div></div>
-      <div class="fact-row"><div class="fact-icon">&#128197;</div><div><div class="fact-label">Best Time to Visit</div><div class="fact-value">April–June, September–October</div></div></div>
-      <div class="fact-row"><div class="fact-icon">&#x1F4B7;</div><div><div class="fact-label">Budget Guide</div><div class="fact-value">£80–£200/night — excellent value for western Europe</div></div></div>
-    </div>
-  </div>
-</section>
-<section class="section" style="background:var(--white);">
-  <div style="text-align:center;margin-bottom:3rem;" class="reveal">
-    <p class="section-label section-label-center">Who It's Perfect For</p>
-    <h2 class="section-title">Is This Trip <em>Right for You?</em></h2>
-  </div>
-  <div class="aud-grid">
-    <div class="aud-card reveal">
-      <div class="aud-icon">🏙️</div>
-      <h3 class="aud-title">City Break Travellers</h3>
-      <p class="aud-desc">Lisbon and Porto are two of Europe's most satisfying city breaks — beautiful, walkable, affordable, sunny, and with fantastic food and nightlife.</p>
-    </div>
-    <div class="aud-card reveal">
-      <div class="aud-icon">👨‍👩‍👧</div>
-      <h3 class="aud-title">Families</h3>
-      <p class="aud-desc">Safe, easy, affordable, and child-friendly. Sintra's fairy-tale palaces, Lisbon's trams and castle, and the Algarve's beaches make it brilliant for families.</p>
-    </div>
-    <div class="aud-card reveal">
-      <div class="aud-icon">🏄</div>
-      <h3 class="aud-title">Surf &amp; Outdoor Lovers</h3>
-      <p class="aud-desc">Portugal has some of Europe's finest surf — Peniche, Ericeira, the Alentejo coast. The Douro Valley is extraordinary for walking, cycling, and wine touring.</p>
-    </div>
 
+<section class="s intro-s">
+  <div class="intro-grid">
+    <div class="rv">
+      <div class="eyebrow" style="color:var(--gold-dk)">Europe · Iberian Peninsula</div>
+      <h2>Why visit <em>Portugal?</em></h2>
+      <p>Portugal consistently tops "Europe's best kept secret" lists — and yet it still manages to deliver. Lisbon's tram-crossed hills are riddled with art galleries, fado clubs, and the world's greatest pastéis de nata. Porto's Ribeira riverside was born to be photographed. The Alentejo's cork oak plains stretch to the horizon. And the Algarve's sea-carved cliffs are genuinely among Europe's most dramatic coastline. It's also, remarkably, still affordable.</p>
+      <div style="margin-top:1.5rem"><a href="../contact.html" class="btn btn-gold btn-arr">Plan My Portugal Trip</a></div>
+    </div>
+    <div class="facts-card rv rv2">
+      <h4>// Quick Facts</h4>
+      <div class="fact-row"><div class="fact-icon">✈️</div><div><div class="fact-label">Region</div><div class="fact-value">Europe · Iberian Peninsula</div></div></div>
+      <div class="fact-row"><div class="fact-icon">🎯</div><div><div class="fact-label">Best For</div><div class="fact-value">City breakers, food lovers, surfers, slow travellers</div></div></div>
+      <div class="fact-row"><div class="fact-icon">📅</div><div><div class="fact-label">Best Time</div><div class="fact-value">April–June, September–October</div></div></div>
+      <div class="fact-row"><div class="fact-icon">💷</div><div><div class="fact-label">Budget Guide</div><div class="fact-value">£80–£200/night</div></div></div>
+    </div>
   </div>
 </section>
-<section class="things-section">
-  <p class="section-label section-label-center reveal" style="justify-content:center;color:var(--gold);">The Highlights</p>
-  <h2 class="things-title reveal">Things to Do in <em>Portugal</em></h2>
-  <p class="things-sub reveal">A curated list — not exhaustive, just the ones that genuinely matter.</p>
-  <div class="things-grid">
-    <div class="thing-item reveal"><div class="thing-num">01</div><div class="thing-text">Ride tram 28 through Lisbon's historic Alfama district</div></div>
-    <div class="thing-item reveal"><div class="thing-num">02</div><div class="thing-text">Take the cable car in Porto over the Douro river</div></div>
-    <div class="thing-item reveal"><div class="thing-num">03</div><div class="thing-text">Visit the palace-town of Sintra on a day trip from Lisbon</div></div>
-    <div class="thing-item reveal"><div class="thing-num">04</div><div class="thing-text">Explore the medieval walled village of Óbidos</div></div>
-    <div class="thing-item reveal"><div class="thing-num">05</div><div class="thing-text">Surf or watch big wave surfing at Nazaré</div></div>
-    <div class="thing-item reveal"><div class="thing-num">06</div><div class="thing-text">Take a river cruise through the Douro Valley wine region</div></div>
-    <div class="thing-item reveal"><div class="thing-num">07</div><div class="thing-text">Eat pastel de nata at the original Pastéis de Belém bakery</div></div>
-    <div class="thing-item reveal"><div class="thing-num">08</div><div class="thing-text">Drive the dramatic coastal road between Sagres and Lagos in the Algarve</div></div>
 
+<section class="s aud-s">
+  <div class="s-inner">
+    <div class="rv" style="text-align:center">
+      <div class="eyebrow light" style="justify-content:center;color:var(--gold-dk)">Who It's Perfect For</div>
+      <h2 class="h-display on-light">Is This Trip <em>Right for You?</em></h2>
+    </div>
+    <div class="aud-grid"><div class="aud-c rv"><div class="aud-icon">🍷</div><h3 class="aud-title">Food & Wine Lovers</h3><p class="aud-desc">Petiscos (Portuguese tapas), barnacles, bacalhau, pastel de nata, and Alentejo wines — Portugal's food culture is seriously underrated.</p></div><div class="aud-c rv"><div class="aud-icon">🏄</div><h3 class="aud-title">Surfers</h3><p class="aud-desc">The Atlantic coast around Peniche, Ericeira, and Sagres offers some of Europe's best and most consistent waves.</p></div><div class="aud-c rv"><div class="aud-icon">🏙️</div><h3 class="aud-title">City Breakers</h3><p class="aud-desc">Lisbon and Porto are two of Europe's most characterful cities — both compact enough to explore on foot in a long weekend.</p></div></div>
   </div>
 </section>
-<div class="plan-cta">
-  <h2 class="reveal">Ready to go to Portugal?</h2>
-  <p class="reveal">Tell us when, your budget, and who's going — we'll handle every last detail.</p>
-  <div class="reveal" style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
-    <a href="../contact.html" class="btn-primary">Get a Free Quote</a>
-    <a href="../destinations.html" class="btn-outline-white">More Destinations</a>
+
+<section class="s things-s">
+  <div class="things-inner">
+    <div class="rv" style="text-align:center">
+      <div class="eyebrow" style="justify-content:center">The Highlights</div>
+      <h2 class="h-display">Things to <em>Do &amp; See</em></h2>
+    </div>
+    <div class="things-grid"><div class="thing-item rv rv0"><div class="thing-num">01</div><div class="thing-text">Ride Tram 28 through Lisbon's Alfama district at sunrise</div></div><div class="thing-item rv rv1"><div class="thing-num">02</div><div class="thing-text">Eat a pastel de nata fresh from the oven at Pastéis de Belém</div></div><div class="thing-item rv rv2"><div class="thing-num">03</div><div class="thing-text">Take the train to Sintra and climb to the Pena Palace</div></div><div class="thing-item rv rv0"><div class="thing-num">04</div><div class="thing-text">Watch a live fado performance in an Alfama cellar restaurant</div></div><div class="thing-item rv rv1"><div class="thing-num">05</div><div class="thing-text">Spend a day in Porto exploring the Ribeira and wine cellars of Vila Nova de Gaia</div></div><div class="thing-item rv rv2"><div class="thing-num">06</div><div class="thing-text">Take the Douro Valley wine train for the most beautiful rail journey in Europe</div></div><div class="thing-item rv rv0"><div class="thing-num">07</div><div class="thing-text">Explore the white villages of Alentejo and drink local wine with the farmers</div></div><div class="thing-item rv rv1"><div class="thing-num">08</div><div class="thing-text">Watch the sunset from Sagres point — the edge of the medieval world</div></div></div>
+  </div>
+</section>
+
+<div class="plan-s">
+  <h2 class="rv">Ready to plan your Portugal trip?</h2>
+  <p class="rv">Tell us when, your budget, and who's going — we'll handle every last detail.</p>
+  <div class="plan-btns rv">
+    <a href="../contact.html" class="btn btn-gold btn-arr">Get a Free Quote</a>
+    <a href="../destinations.html" class="btn btn-wire">More Destinations</a>
   </div>
 </div>
-<section style="background:var(--navy);padding:3.5rem 4rem;">
-  <div style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem;flex-wrap:wrap;">
-    <div>
-      <p style="font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.6rem;">&#127890; Travelling on a Budget?</p>
-      <h2 style="font-family:'Playfair Display',serif;font-size:1.7rem;font-weight:700;color:var(--white);margin-bottom:0.5rem;line-height:1.25;">Explore Our <em style="font-style:italic;color:var(--mist);">Backpacker Guides</em></h2>
-      <p style="color:rgba(200,230,245,0.65);font-size:0.9rem;line-height:1.75;max-width:560px;">59 destinations covered with daily budgets from &pound;12, hostel picks, best transport, and the highlights that matter. SE Asia, South America, Europe, Africa and beyond.</p>
+
+<div class="bp-strip">
+  <div class="bp-strip-in">
+    <div class="rv">
+      <div class="eyebrow teal">🎒 Travelling on a Budget?</div>
+      <h2 class="h-display" style="font-size:clamp(1.6rem,3vw,2.4rem)">59 <em style="color:var(--teal)">Backpacker Guides</em> Available</h2>
+      <p style="color:var(--smoke);font-size:.88rem;margin-top:.6rem">From £12/day — SE Asia, South America, Europe, Africa and beyond.</p>
     </div>
-    <a href="backpacker-guides.html" class="btn-primary" style="white-space:nowrap;flex-shrink:0;">See Backpacker Guides &rarr;</a>
+    <div class="rv rv2"><a href="backpacker-guides.html" class="btn btn-teal btn-arr">Browse Guides</a></div>
   </div>
-</section>
+</div>
+
 <footer>
-  <div class="footer-top">
-    <div class="footer-brand">
-      <a href="../index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a href="../index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Services</span></a>
       <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
-      <div class="footer-social">
-        <a href="#" class="social-btn">&#128248;</a><a href="#" class="social-btn">&#127925;</a>
-        <a href="#" class="social-btn">&#128204;</a><a href="#" class="social-btn">&#9654;</a>
+      <div class="ft-social">
+        <a href="#" class="ft-soc-btn">📸</a><a href="#" class="ft-soc-btn">🎵</a>
+        <a href="#" class="ft-soc-btn">📌</a><a href="#" class="ft-soc-btn">▶</a>
       </div>
     </div>
-    <div class="footer-col"><h4>Explore</h4><ul>
-      <li><a href="../destinations.html">Destinations</a></li>
+    <div class="ft-col"><h5>Explore</h5><ul>
+      <li><a href="../destinations.html">All Destinations</a></li>
+      <li><a href="../destinations/backpacker-guides.html">Backpacker Guides</a></li>
       <li><a href="../blog.html">Blog</a></li>
       <li><a href="../about.html">About</a></li>
     </ul></div>
-    <div class="footer-col"><h4>Services</h4><ul>
+    <div class="ft-col"><h5>Services</h5><ul>
       <li><a href="../services.html">Trip Planning</a></li>
       <li><a href="../services.html">Hotel Curation</a></li>
-      <li><a href="../contact.html">Get a Quote</a></li>
+      <li><a href="../contact.html">Free Quote</a></li>
     </ul></div>
-    <div class="footer-col"><h4>Legal</h4><ul>
+    <div class="ft-col"><h5>Info</h5><ul>
       <li><a href="../contact.html">Contact</a></li>
       <li><a href="../privacy.html">Privacy Policy</a></li>
-      <li><a href="../privacy.html#cookies">Cookie Policy</a></li>
-      <li><a href="../privacy.html#terms">Terms of Use</a></li>
+      <li><a href="../privacy.html#terms">Terms</a></li>
     </ul></div>
   </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 Drop Everything And Go. All rights reserved.</p>
-    <div class="footer-bottom-links">
-      <a href="../privacy.html">Privacy Policy</a>
-      <a href="../privacy.html#cookies">Cookies</a>
-      <a href="../privacy.html#terms">Terms</a>
-    </div>
+  <div class="ft-badges">
+    <span class="ft-badge">🔒 Secure &amp; Trusted</span>
+    <span class="ft-badge">✈️ ATOL Protected Advice</span>
+    <span class="ft-badge">🌍 Worldwide Planning</span>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2025 Drop Everything And Go. All rights reserved.</p>
+    <div class="ft-bottom-links"><a href="../privacy.html">Privacy</a><a href="../privacy.html#cookies">Cookies</a><a href="../privacy.html#terms">Terms</a></div>
   </div>
 </footer>
 <script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
 <script>
-  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.08});
-  document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
-  const nav=document.getElementById('navbar');
-  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
-  const ham=document.getElementById('hamburger'),mob=document.getElementById('navMobile');
-  ham.addEventListener('click',()=>{ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';}); 
-  function showCookie(){if(!localStorage.getItem('cookieChoice')){setTimeout(()=>document.getElementById('cookieBanner').classList.add('visible'),1200);}}
-  function acceptCookies(){localStorage.setItem('cookieChoice','accepted');document.getElementById('cookieBanner').classList.remove('visible');}
-  function declineCookies(){localStorage.setItem('cookieChoice','declined');document.getElementById('cookieBanner').classList.remove('visible');}
-  showCookie();
+(function(){
+var pb=document.getElementById('progress-bar');
+if(pb)window.addEventListener('scroll',function(){pb.style.width=Math.min((scrollY/(document.body.scrollHeight-innerHeight))*100,100)+'%';},{passive:true});
+var cd=document.getElementById('c-dot'),cr=document.getElementById('c-ring');
+if(cd&&cr){var mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px';},{passive:true});
+(function lp(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(lp);})();
+document.querySelectorAll('a,button').forEach(function(el){
+  el.addEventListener('mouseenter',function(){cd.classList.add('h');cr.classList.add('h');});
+  el.addEventListener('mouseleave',function(){cd.classList.remove('h');cr.classList.remove('h');});});}
+var nav=document.getElementById('nav');
+if(nav)window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>60);},{passive:true});
+var ham=document.getElementById('ham'),mob=document.getElementById('mob');
+if(ham&&mob)ham.addEventListener('click',function(){ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0.08});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=document.getElementById('ck');if(c)c.classList.add('vis');},1400);}
+window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+ckShow();
+})();
 </script>
-</body>
-</html>
+</body></html>

@@ -1,47 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Backpacker travel guides — 50+ destinations with budgets, hostels, transport tips and the highlights that matter."/>
-  <title>Backpacker Guides — Drop Everything And Go</title>
-  <link rel="stylesheet" href="../style.css"/>
-  <style>
-    .bp-hero-bg{background:linear-gradient(135deg,#0a1a2a,#1a0a2a);}
-    .filter-bar{display:flex;gap:0.6rem;flex-wrap:wrap;max-width:1200px;margin:0 auto 2rem;justify-content:center;}
-    .filter-tab{padding:0.48rem 1.2rem;border:1.5px solid rgba(10,22,40,0.13);border-radius:50px;background:transparent;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.06em;color:var(--light-text);transition:all 0.2s;}
-    .filter-tab:hover{border-color:var(--sky);color:var(--sky);}
-    .filter-tab.active{background:var(--navy);border-color:var(--navy);color:var(--white);}
-    .result-count{text-align:center;font-size:0.82rem;color:var(--light-text);margin-bottom:2.5rem;}
-    .bp-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;max-width:1200px;margin:0 auto;}
-    .bp-card{border-radius:var(--radius);overflow:hidden;position:relative;height:220px;text-decoration:none;display:block;transition:transform 0.3s,box-shadow 0.3s;}
-    .bp-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(10,22,40,0.18);}
-    .bp-card.hidden{display:none;}
-    .bp-img{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3.5rem;transition:transform 0.5s;}
-    .bp-card:hover .bp-img{transform:scale(1.07);}
-    .bp-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(6,15,30,0.95) 0%,rgba(6,15,30,0.1) 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem;transition:background 0.3s;}
-    .bp-card:hover .bp-overlay{background:linear-gradient(to top,rgba(6,15,30,0.98) 0%,rgba(6,15,30,0.2) 60%);}
-    .bp-region{font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.3rem;}
-    .bp-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--white);line-height:1.15;margin-bottom:0.3rem;}
-    .bp-budget{font-size:0.72rem;color:rgba(200,230,245,0.65);}
-    .bp-arrow{font-size:0.7rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);opacity:0;transform:translateY(4px);transition:all 0.25s;margin-top:0.4rem;display:block;}
-    .bp-card:hover .bp-arrow{opacity:1;transform:translateY(0);}
-    .no-results{display:none;text-align:center;padding:4rem;grid-column:1/-1;color:var(--light-text);}
-    .no-results.visible{display:block;}
-    .intro-banner{background:var(--navy);border-radius:var(--radius);padding:3rem;max-width:1200px;margin:0 auto 4rem;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem;text-align:center;}
-    .intro-stat .stat-num{font-family:'Playfair Display',serif;font-size:2.5rem;font-weight:700;color:var(--gold);}
-    .intro-stat .stat-label{font-size:0.8rem;color:rgba(200,230,245,0.6);margin-top:0.2rem;}
-    @media(max-width:1000px){.bp-grid{grid-template-columns:repeat(3,1fr);}}
-    @media(max-width:700px){.bp-grid{grid-template-columns:repeat(2,1fr);}.intro-banner{grid-template-columns:1fr;gap:1.5rem;}}
-    @media(max-width:400px){.bp-grid{grid-template-columns:1fr;}}
-  </style>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="59 backpacker guides — daily budgets from £12, hostel picks, and everything that matters for budget travel worldwide."/>
+<title>Backpacker Guides — Drop Everything And Go</title>
+<link rel="stylesheet" href="../style.css"/>
+<style>
+.bg-hero-bg{background:linear-gradient(160deg,#08141E 0%,#040A0C 60%);}
+.bg-filter-bar{background:rgba(4,8,10,.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(14,191,184,.12);padding:1.2rem var(--gutter);position:sticky;top:70px;z-index:100;}
+.bg-filter-inner{max-width:1300px;margin:0 auto;display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;}
+.bg-ft{background:rgba(14,191,184,.06);border:1px solid rgba(14,191,184,.12);border-radius:100px;padding:.4rem 1.1rem;font-family:var(--ff-mono);font-size:.58rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:rgba(14,191,184,.65);transition:all .3s;white-space:nowrap;}
+.bg-ft:hover,.bg-ft.on{background:var(--teal);border-color:var(--teal);color:var(--ink);}
+.bg-rc{font-family:var(--ff-mono);font-size:.62rem;color:var(--smoke);margin-left:auto;white-space:nowrap;}
+.bg-s{background:var(--ink);padding:var(--section-pad) var(--gutter);}
+.bg-region{max-width:1300px;margin:0 auto 4.5rem;}
+.bg-region-title{display:flex;align-items:center;justify-content:space-between;font-family:var(--ff-display);font-size:1.6rem;font-weight:700;color:var(--parchment);letter-spacing:-.02em;margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid rgba(14,191,184,.15);}
+.bg-region-count{font-family:var(--ff-mono);font-size:.62rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);}
+.bg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+.bg-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.07);border-radius:var(--r-md);padding:1.4rem;display:block;transition:background .3s,border-color .3s,transform .4s var(--ease-spring);}
+.bg-card:hover{background:rgba(14,191,184,.07);border-color:rgba(14,191,184,.25);transform:translateY(-4px);}
+.bg-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem;}
+.bg-emoji{font-size:1.8rem;}
+.bg-budget{font-family:var(--ff-mono);font-size:.6rem;font-weight:500;letter-spacing:.12em;background:rgba(14,191,184,.12);color:var(--teal);padding:.2rem .55rem;border-radius:100px;white-space:nowrap;}
+.bg-card-name{font-family:var(--ff-display);font-size:1rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;line-height:1.2;margin-bottom:.35rem;}
+.bg-card-tag{font-family:var(--ff-mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(14,191,184,.55);}
+.bg-stats{background:var(--ink-2);border-top:1px solid rgba(14,191,184,.1);border-bottom:1px solid rgba(14,191,184,.1);padding:3.5rem var(--gutter);}
+.bg-stats-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;}
+.bg-stat-n{font-family:var(--ff-display);font-size:3rem;font-weight:800;color:var(--teal);line-height:1;font-variation-settings:'opsz' 48;}
+.bg-stat-l{font-family:var(--ff-mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--smoke);margin-top:.4rem;}
+.bg-cta{background:linear-gradient(140deg,#081820,#061020);padding:5rem var(--gutter);text-align:center;}
+.bg-cta p{font-size:.93rem;color:var(--smoke);max-width:480px;margin:1rem auto 2.5rem;line-height:1.75;}
+@media(max-width:1100px){.bg-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:760px){.bg-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.bg-grid{grid-template-columns:1fr;}}
+</style>
 </head>
 <body>
-<div class="cookie-banner" id="cookieBanner">
-  <p class="cookie-text">&#x1F36A; We use cookies. See our <a href="../privacy.html">Privacy Policy</a>.</p>
-  <div class="cookie-btns"><button class="cookie-accept" onclick="acceptCookies()">Accept</button><button class="cookie-decline" onclick="declineCookies()">Decline</button></div>
+<div id="progress-bar"></div>
+<div id="c-dot"></div><div id="c-ring"></div>
+<div class="ck" id="ck">
+  <p class="ck-text">We use cookies. <a href="../privacy.html">Privacy Policy</a></p>
+  <div class="ck-btns"><button class="ck-acc" onclick="ckAccept()">Accept</button><button class="ck-dec" onclick="ckDecline()">Decline</button></div>
 </div>
-<nav id="navbar">
-  <a href="../index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a>
+<nav id="nav">
+  <a href="../index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Bespoke Planning</span></a>
   <ul class="nav-links">
     <li><a href="../destinations.html" class="active">Destinations</a></li>
     <li><a href="../blog.html">Blog</a></li>
@@ -49,175 +51,584 @@
     <li><a href="../about.html">About</a></li>
     <li><a href="../contact.html" class="nav-cta">Plan My Trip</a></li>
   </ul>
-  <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  <button class="nav-ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
-<ul class="nav-mobile" id="navMobile">
+<ul class="nav-mob" id="mob">
   <li><a href="../destinations.html">Destinations</a></li>
   <li><a href="../blog.html">Blog</a></li>
   <li><a href="../services.html">Services</a></li>
   <li><a href="../about.html">About</a></li>
-  <li><a href="../contact.html" class="mob-cta">Plan My Trip</a></li>
+  <li><a href="../contact.html" class="mob-cta-btn">Plan My Trip</a></li>
 </ul>
 
-<div class="page-hero" style="background:linear-gradient(135deg,#0a1a2a,#1a0a2a);">
-  <div class="page-hero-content">
-    <p class="page-eyebrow">Pack Light, Go Far</p>
-    <h1 class="page-title">Backpacker <em>Guides</em></h1>
-    <p class="page-subtitle">50+ destinations — daily budgets, best hostels, transport tips, and the experiences that actually matter.</p>
+<div class="pg-hero bg-hero-bg">
+  <div class="pg-hero-bg" style="background:linear-gradient(155deg,#0A1C14 0%,#040A0C 65%)"></div>
+  <div class="pg-hero-dots" style="background-image:radial-gradient(rgba(14,191,184,.07) 1px,transparent 1px)"></div>
+  <div class="pg-hero-content">
+    <div class="pg-eyebrow" style="color:var(--teal)">Budget Travel · 59 Destinations</div>
+    <h1 class="pg-title" style="color:var(--parchment)">Backpacker <em style="color:rgba(14,191,184,.85)">Guides</em></h1>
+    <p class="pg-subtitle">Daily budgets from £12. Hostel picks. Transport tips. Everything that actually matters — across 10 regions, 59 countries.</p>
   </div>
-  <div class="page-hero-wave"><svg viewBox="0 0 1800 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,40 C300,80 600,0 900,40 C1200,80 1500,0 1800,40 L1800,80 L0,80 Z" fill="var(--bg-light)"/></svg></div>
+  <div class="pg-hero-rule" style="background:linear-gradient(to right,var(--teal),transparent 60%)"></div>
 </div>
 
-<section class="section" style="background:var(--bg-light);">
-
-  <div class="intro-banner reveal">
-    <div class="intro-stat"><div class="stat-num">59</div><div class="stat-label">Destinations Covered</div></div>
-    <div class="intro-stat"><div class="stat-num">£12</div><div class="stat-label">Cheapest Daily Budget</div></div>
-    <div class="intro-stat"><div class="stat-num">6</div><div class="stat-label">Continents</div></div>
+<div class="bg-stats">
+  <div class="bg-stats-inner">
+    <div class="rv"><div class="bg-stat-n">59</div><div class="bg-stat-l">Destination Guides</div></div>
+    <div class="rv rv1"><div class="bg-stat-n">10</div><div class="bg-stat-l">Regions Covered</div></div>
+    <div class="rv rv2"><div class="bg-stat-n">£12</div><div class="bg-stat-l">Lowest Daily Budget</div></div>
+    <div class="rv rv3"><div class="bg-stat-n">100%</div><div class="bg-stat-l">No Fluff</div></div>
   </div>
+</div>
 
-  <div class="filter-bar reveal">
-    <button class="filter-tab active" data-filter="all">🌍 All</button>
-    <button class="filter-tab" data-filter="sea">🌏 SE Asia</button>
-    <button class="filter-tab" data-filter="sa">🌎 South America</button>
-    <button class="filter-tab" data-filter="ca">🌮 Central America</button>
-    <button class="filter-tab" data-filter="eu">🇪🇺 Europe</button>
-    <button class="filter-tab" data-filter="af">🌍 Africa</button>
-    <button class="filter-tab" data-filter="me">🕌 Middle East</button>
-    <button class="filter-tab" data-filter="ea">🏯 East Asia</button>
-    <button class="filter-tab" data-filter="oc">🦘 Oceania</button>
-    <button class="filter-tab" data-filter="cas">🏔️ Central Asia</button>
-    <button class="filter-tab" data-filter="budget">💰 Ultra Budget</button>
+<div class="bg-filter-bar">
+  <div class="bg-filter-inner">
+    <button class="bg-ft on" data-region="all">All Regions</button>
+    <button class="bg-ft" data-region="Southeast Asia">SE Asia</button>
+    <button class="bg-ft" data-region="South Asia">South Asia</button>
+    <button class="bg-ft" data-region="East Asia">East Asia</button>
+    <button class="bg-ft" data-region="Central Asia">Central Asia</button>
+    <button class="bg-ft" data-region="Middle East">Middle East</button>
+    <button class="bg-ft" data-region="Europe">Europe</button>
+    <button class="bg-ft" data-region="Africa">Africa</button>
+    <button class="bg-ft" data-region="South America">South America</button>
+    <button class="bg-ft" data-region="Central America &amp; Caribbean">Central America</button>
+    <button class="bg-ft" data-region="Oceania &amp; Pacific">Oceania</button>
+    <span class="bg-rc" id="bg-rc">59 guides</span>
   </div>
+</div>
 
-  <p class="result-count" id="resultCount">Showing all 59 destinations</p>
+<section class="bg-s" id="guides-container">
 
-  <div class="bp-grid" id="bpGrid">
-
-    <!-- SE ASIA -->
-    <a href="bp-thailand.html" class="bp-card" data-region="sea" data-budget="15"><div class="bp-img" style="background:linear-gradient(135deg,#4a1a3a,#2a0020);">🐘</div><div class="bp-overlay"><div class="bp-region">Southeast Asia</div><div class="bp-name">Thailand</div><div class="bp-budget">From £15/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-vietnam.html" class="bp-card" data-region="sea" data-budget="15"><div class="bp-img" style="background:linear-gradient(135deg,#1a4a1a,#0a2a0a);">🛵</div><div class="bp-overlay"><div class="bp-region">Southeast Asia</div><div class="bp-name">Vietnam</div><div class="bp-budget">From £15/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-cambodia.html" class="bp-card" data-region="sea" data-budget="12"><div class="bp-img" style="background:linear-gradient(135deg,#4a2a0a,#2a0a00);">🏛️</div><div class="bp-overlay"><div class="bp-region">Southeast Asia</div><div class="bp-name">Cambodia</div><div class="bp-budget">From £12/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-indonesia.html" class="bp-card" data-region="sea" data-budget="15"><div class="bp-img" style="background:linear-gradient(135deg,#1a5a3a,#0a3a1a);">🌋</div><div class="bp-overlay"><div class="bp-region">Southeast Asia</div><div class="bp-name">Indonesia</div><div class="bp-budget">From £15/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-laos.html" class="bp-card" data-region="sea" data-budget="12"><div class="bp-img" style="background:linear-gradient(135deg,#1a3a5a,#0a1a30);">🛶</div><div class="bp-overlay"><div class="bp-region">Southeast Asia</div><div class="bp-name">Laos</div><div class="bp-budget">From £12/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-myanmar.html" class="bp-card" data-region="sea" data-budget="15"><div class="bp-img" style="background:linear-gradient(135deg,#3a1a0a,#1a0500);">🏯</div><div class="bp-overlay"><div class="bp-region">Southeast Asia</div><div class="bp-name">Myanmar</div><div class="bp-budget">From £15/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-malaysia.html" class="bp-card" data-region="sea" data-budget="18"><div class="bp-img" style="background:linear-gradient(135deg,#0a3a1a,#052a0a);">🦧</div><div class="bp-overlay"><div class="bp-region">Southeast Asia</div><div class="bp-name">Malaysia</div><div class="bp-budget">From £18/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-philippines.html" class="bp-card" data-region="sea" data-budget="15"><div class="bp-img" style="background:linear-gradient(135deg,#0a3a5a,#052a40);">🏝️</div><div class="bp-overlay"><div class="bp-region">Southeast Asia</div><div class="bp-name">Philippines</div><div class="bp-budget">From £15/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-
-    <!-- SOUTH ASIA -->
-    <a href="bp-india.html" class="bp-card" data-region="sa2" data-budget="12"><div class="bp-img" style="background:linear-gradient(135deg,#5a2a0a,#3a0a00);">🕌</div><div class="bp-overlay"><div class="bp-region">South Asia</div><div class="bp-name">India</div><div class="bp-budget">From £12/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-nepal.html" class="bp-card" data-region="sa2 cas" data-budget="15"><div class="bp-img" style="background:linear-gradient(135deg,#0a2a4a,#051020);">🏔️</div><div class="bp-overlay"><div class="bp-region">South Asia</div><div class="bp-name">Nepal</div><div class="bp-budget">From £15/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-sri-lanka.html" class="bp-card" data-region="sa2" data-budget="20"><div class="bp-img" style="background:linear-gradient(135deg,#3a1a0a,#1a0500);">🐘</div><div class="bp-overlay"><div class="bp-region">South Asia</div><div class="bp-name">Sri Lanka</div><div class="bp-budget">From £20/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-india-goa.html" class="bp-card" data-region="sa2" data-budget="15"><div class="bp-img" style="background:linear-gradient(135deg,#0a3a3a,#051a1a);">🌊</div><div class="bp-overlay"><div class="bp-region">South Asia</div><div class="bp-name">India — Goa &amp; South</div><div class="bp-budget">From £15/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-nepal-bp.html" class="bp-card" data-region="sa2 cas" data-budget="15"><div class="bp-img" style="background:linear-gradient(135deg,#0a2a4a,#051020);">⛰️</div><div class="bp-overlay"><div class="bp-region">South Asia</div><div class="bp-name">Nepal Trekking</div><div class="bp-budget">From £15/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-
-    <!-- CENTRAL AMERICA -->
-    <a href="bp-guatemala.html" class="bp-card" data-region="ca" data-budget="18"><div class="bp-img" style="background:linear-gradient(135deg,#1a4a1a,#0a2a0a);">🌋</div><div class="bp-overlay"><div class="bp-region">Central America</div><div class="bp-name">Guatemala</div><div class="bp-budget">From £18/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-mexico.html" class="bp-card" data-region="ca" data-budget="20"><div class="bp-img" style="background:linear-gradient(135deg,#5a2a0a,#3a0a00);">🌮</div><div class="bp-overlay"><div class="bp-region">Central America</div><div class="bp-name">Mexico</div><div class="bp-budget">From £20/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-costa-rica.html" class="bp-card" data-region="ca" data-budget="35"><div class="bp-img" style="background:linear-gradient(135deg,#1a5a1a,#0a3a0a);">🦥</div><div class="bp-overlay"><div class="bp-region">Central America</div><div class="bp-name">Costa Rica</div><div class="bp-budget">From £35/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-nicaragua.html" class="bp-card" data-region="ca" data-budget="15"><div class="bp-img" style="background:linear-gradient(135deg,#1a3a5a,#0a1a30);">🌊</div><div class="bp-overlay"><div class="bp-region">Central America</div><div class="bp-name">Nicaragua</div><div class="bp-budget">From £15/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-panama.html" class="bp-card" data-region="ca" data-budget="25"><div class="bp-img" style="background:linear-gradient(135deg,#0a3a4a,#051a2a);">⚓</div><div class="bp-overlay"><div class="bp-region">Central America</div><div class="bp-name">Panama</div><div class="bp-budget">From £25/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-
-    <!-- SOUTH AMERICA -->
-    <a href="bp-colombia.html" class="bp-card" data-region="sa" data-budget="20"><div class="bp-img" style="background:linear-gradient(135deg,#4a1a0a,#2a0500);">☕</div><div class="bp-overlay"><div class="bp-region">South America</div><div class="bp-name">Colombia</div><div class="bp-budget">From £20/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-bolivia.html" class="bp-card" data-region="sa" data-budget="12"><div class="bp-img" style="background:linear-gradient(135deg,#3a3a0a,#1a1a00);">🧂</div><div class="bp-overlay"><div class="bp-region">South America</div><div class="bp-name">Bolivia</div><div class="bp-budget">From £12/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-argentina.html" class="bp-card" data-region="sa" data-budget="20"><div class="bp-img" style="background:linear-gradient(135deg,#1a2a5a,#0a1030);">🥩</div><div class="bp-overlay"><div class="bp-region">South America</div><div class="bp-name">Argentina</div><div class="bp-budget">From £20/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-chile.html" class="bp-card" data-region="sa" data-budget="25"><div class="bp-img" style="background:linear-gradient(135deg,#2a1a4a,#100a20);">🌋</div><div class="bp-overlay"><div class="bp-region">South America</div><div class="bp-name">Chile</div><div class="bp-budget">From £25/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-ecuador-bp.html" class="bp-card" data-region="sa" data-budget="18"><div class="bp-img" style="background:linear-gradient(135deg,#1a4a1a,#053a05);">🐢</div><div class="bp-overlay"><div class="bp-region">South America</div><div class="bp-name">Ecuador</div><div class="bp-budget">From £18/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-brazil.html" class="bp-card" data-region="sa" data-budget="25"><div class="bp-img" style="background:linear-gradient(135deg,#1a4a0a,#0a2a00);">🌴</div><div class="bp-overlay"><div class="bp-region">South America</div><div class="bp-name">Brazil</div><div class="bp-budget">From £25/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-peru-bp.html" class="bp-card" data-region="sa" data-budget="18"><div class="bp-img" style="background:linear-gradient(135deg,#4a3a0a,#2a1a00);">🦙</div><div class="bp-overlay"><div class="bp-region">South America</div><div class="bp-name">Peru</div><div class="bp-budget">From £18/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-
-    <!-- EUROPE -->
-    <a href="bp-portugal-bp.html" class="bp-card" data-region="eu" data-budget="35"><div class="bp-img" style="background:linear-gradient(135deg,#4a2a0a,#2a0a00);">🎶</div><div class="bp-overlay"><div class="bp-region">Europe</div><div class="bp-name">Portugal</div><div class="bp-budget">From £35/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-spain.html" class="bp-card" data-region="eu" data-budget="40"><div class="bp-img" style="background:linear-gradient(135deg,#6a1a0a,#3a0000);">💃</div><div class="bp-overlay"><div class="bp-region">Europe</div><div class="bp-name">Spain</div><div class="bp-budget">From £40/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-italy.html" class="bp-card" data-region="eu" data-budget="45"><div class="bp-img" style="background:linear-gradient(135deg,#3a1a0a,#1a0500);">🍕</div><div class="bp-overlay"><div class="bp-region">Europe</div><div class="bp-name">Italy</div><div class="bp-budget">From £45/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-greece.html" class="bp-card" data-region="eu" data-budget="35"><div class="bp-img" style="background:linear-gradient(135deg,#1a3a6a,#0a1a40);">🏛️</div><div class="bp-overlay"><div class="bp-region">Europe</div><div class="bp-name">Greece</div><div class="bp-budget">From £35/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-balkans.html" class="bp-card" data-region="eu" data-budget="25"><div class="bp-img" style="background:linear-gradient(135deg,#1a2a4a,#0a1020);">🏰</div><div class="bp-overlay"><div class="bp-region">Europe</div><div class="bp-name">The Balkans</div><div class="bp-budget">From £25/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-eastern-europe.html" class="bp-card" data-region="eu" data-budget="25"><div class="bp-img" style="background:linear-gradient(135deg,#2a1a4a,#100a20);">🏯</div><div class="bp-overlay"><div class="bp-region">Europe</div><div class="bp-name">Eastern Europe</div><div class="bp-budget">From £25/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-turkey.html" class="bp-card" data-region="eu me" data-budget="20"><div class="bp-img" style="background:linear-gradient(135deg,#5a2a0a,#3a0a00);">🕌</div><div class="bp-overlay"><div class="bp-region">Europe / Asia</div><div class="bp-name">Turkey</div><div class="bp-budget">From £20/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-georgia-bp.html" class="bp-card" data-region="eu cas" data-budget="18"><div class="bp-img" style="background:linear-gradient(135deg,#5a1a1a,#3a0000);">🍷</div><div class="bp-overlay"><div class="bp-region">Caucasus</div><div class="bp-name">Georgia</div><div class="bp-budget">From £18/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-iceland-bp.html" class="bp-card" data-region="eu" data-budget="65"><div class="bp-img" style="background:linear-gradient(135deg,#0a3a5a,#051a30);">🌋</div><div class="bp-overlay"><div class="bp-region">Europe</div><div class="bp-name">Iceland</div><div class="bp-budget">From £65/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-scandinavia.html" class="bp-card" data-region="eu" data-budget="70"><div class="bp-img" style="background:linear-gradient(135deg,#1a2a4a,#0a1020);">🌊</div><div class="bp-overlay"><div class="bp-region">Europe</div><div class="bp-name">Scandinavia</div><div class="bp-budget">From £70/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-balkans-albania.html" class="bp-card" data-region="eu" data-budget="20"><div class="bp-img" style="background:linear-gradient(135deg,#2a1a0a,#100500);">🦅</div><div class="bp-overlay"><div class="bp-region">Europe</div><div class="bp-name">Albania</div><div class="bp-budget">From £20/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-
-    <!-- AFRICA -->
-    <a href="bp-morocco-bp.html" class="bp-card" data-region="af" data-budget="20"><div class="bp-img" style="background:linear-gradient(135deg,#5a2a0a,#2a0a00);">🏮</div><div class="bp-overlay"><div class="bp-region">Africa</div><div class="bp-name">Morocco</div><div class="bp-budget">From £20/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-kenya-bp.html" class="bp-card" data-region="af" data-budget="30"><div class="bp-img" style="background:linear-gradient(135deg,#3a4a0a,#1a2a00);">🦁</div><div class="bp-overlay"><div class="bp-region">Africa</div><div class="bp-name">Kenya</div><div class="bp-budget">From £30/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-tanzania.html" class="bp-card" data-region="af" data-budget="30"><div class="bp-img" style="background:linear-gradient(135deg,#3a2a0a,#1a1000);">🦒</div><div class="bp-overlay"><div class="bp-region">Africa</div><div class="bp-name">Tanzania</div><div class="bp-budget">From £30/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-south-africa.html" class="bp-card" data-region="af" data-budget="25"><div class="bp-img" style="background:linear-gradient(135deg,#1a3a1a,#0a1a0a);">🦅</div><div class="bp-overlay"><div class="bp-region">Africa</div><div class="bp-name">South Africa</div><div class="bp-budget">From £25/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-ethiopia.html" class="bp-card" data-region="af" data-budget="18"><div class="bp-img" style="background:linear-gradient(135deg,#3a1a0a,#1a0500);">☕</div><div class="bp-overlay"><div class="bp-region">Africa</div><div class="bp-name">Ethiopia</div><div class="bp-budget">From £18/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-east-africa.html" class="bp-card" data-region="af" data-budget="25"><div class="bp-img" style="background:linear-gradient(135deg,#1a3a0a,#0a1a00);">🌍</div><div class="bp-overlay"><div class="bp-region">Africa</div><div class="bp-name">East Africa</div><div class="bp-budget">From £25/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-morocco-south.html" class="bp-card" data-region="af" data-budget="18"><div class="bp-img" style="background:linear-gradient(135deg,#4a2a0a,#1a0a00);">🐪</div><div class="bp-overlay"><div class="bp-region">Africa</div><div class="bp-name">Morocco — Desert &amp; Atlas</div><div class="bp-budget">From £18/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-
-    <!-- MIDDLE EAST -->
-    <a href="bp-jordan.html" class="bp-card" data-region="me" data-budget="30"><div class="bp-img" style="background:linear-gradient(135deg,#5a3a0a,#3a1a00);">🏜️</div><div class="bp-overlay"><div class="bp-region">Middle East</div><div class="bp-name">Jordan</div><div class="bp-budget">From £30/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-iran.html" class="bp-card" data-region="me" data-budget="15"><div class="bp-img" style="background:linear-gradient(135deg,#4a1a0a,#2a0a00);">🏛️</div><div class="bp-overlay"><div class="bp-region">Middle East</div><div class="bp-name">Iran</div><div class="bp-budget">From £15/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-egypt.html" class="bp-card" data-region="af me" data-budget="20"><div class="bp-img" style="background:linear-gradient(135deg,#4a3a0a,#2a1a00);">🏺</div><div class="bp-overlay"><div class="bp-region">North Africa</div><div class="bp-name">Egypt</div><div class="bp-budget">From £20/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-israel-palestine.html" class="bp-card" data-region="me" data-budget="40"><div class="bp-img" style="background:linear-gradient(135deg,#1a2a4a,#0a1020);">🕍</div><div class="bp-overlay"><div class="bp-region">Middle East</div><div class="bp-name">Israel &amp; Palestine</div><div class="bp-budget">From £40/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-
-    <!-- EAST ASIA -->
-    <a href="bp-china.html" class="bp-card" data-region="ea" data-budget="25"><div class="bp-img" style="background:linear-gradient(135deg,#5a0a0a,#2a0000);">🐉</div><div class="bp-overlay"><div class="bp-region">East Asia</div><div class="bp-name">China</div><div class="bp-budget">From £25/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-japan.html" class="bp-card" data-region="ea" data-budget="50"><div class="bp-img" style="background:linear-gradient(135deg,#3a0a1a,#1a0010);">⛩️</div><div class="bp-overlay"><div class="bp-region">East Asia</div><div class="bp-name">Japan</div><div class="bp-budget">From £50/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-south-korea.html" class="bp-card" data-region="ea" data-budget="35"><div class="bp-img" style="background:linear-gradient(135deg,#1a1a4a,#0a0a20);">🏯</div><div class="bp-overlay"><div class="bp-region">East Asia</div><div class="bp-name">South Korea</div><div class="bp-budget">From £35/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-mongolia.html" class="bp-card" data-region="ea" data-budget="20"><div class="bp-img" style="background:linear-gradient(135deg,#1a3a5a,#0a1a30);">🐎</div><div class="bp-overlay"><div class="bp-region">East Asia</div><div class="bp-name">Mongolia</div><div class="bp-budget">From £20/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-
-    <!-- CENTRAL ASIA -->
-    <a href="bp-uzbekistan.html" class="bp-card" data-region="cas" data-budget="18"><div class="bp-img" style="background:linear-gradient(135deg,#3a2a0a,#1a1000);">🕌</div><div class="bp-overlay"><div class="bp-region">Central Asia</div><div class="bp-name">Uzbekistan</div><div class="bp-budget">From £18/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-tajikistan.html" class="bp-card" data-region="cas" data-budget="15"><div class="bp-img" style="background:linear-gradient(135deg,#1a1a3a,#0a0a1a);">🏔️</div><div class="bp-overlay"><div class="bp-region">Central Asia</div><div class="bp-name">Tajikistan &amp; Pamirs</div><div class="bp-budget">From £15/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-kyrgyzstan.html" class="bp-card" data-region="cas" data-budget="15"><div class="bp-img" style="background:linear-gradient(135deg,#1a2a3a,#0a1020);">🐴</div><div class="bp-overlay"><div class="bp-region">Central Asia</div><div class="bp-name">Kyrgyzstan</div><div class="bp-budget">From £15/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-
-    <!-- OCEANIA & CARIBBEAN -->
-    <a href="bp-australia.html" class="bp-card" data-region="oc" data-budget="60"><div class="bp-img" style="background:linear-gradient(135deg,#4a2a0a,#2a0a00);">🦘</div><div class="bp-overlay"><div class="bp-region">Oceania</div><div class="bp-name">Australia</div><div class="bp-budget">From £60/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-new-zealand.html" class="bp-card" data-region="oc" data-budget="55"><div class="bp-img" style="background:linear-gradient(135deg,#1a3a4a,#0a1a20);">🏔️</div><div class="bp-overlay"><div class="bp-region">Oceania</div><div class="bp-name">New Zealand</div><div class="bp-budget">From £55/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-fiji.html" class="bp-card" data-region="oc" data-budget="35"><div class="bp-img" style="background:linear-gradient(135deg,#0a3a5a,#052030);">🌺</div><div class="bp-overlay"><div class="bp-region">Oceania</div><div class="bp-name">Fiji</div><div class="bp-budget">From £35/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-pacific-islands.html" class="bp-card" data-region="oc" data-budget="35"><div class="bp-img" style="background:linear-gradient(135deg,#0a3a5a,#051a30);">🌺</div><div class="bp-overlay"><div class="bp-region">Oceania</div><div class="bp-name">Pacific Islands</div><div class="bp-budget">From £35/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-    <a href="bp-cuba.html" class="bp-card" data-region="ca" data-budget="35"><div class="bp-img" style="background:linear-gradient(135deg,#3a0a1a,#1a0010);">🎺</div><div class="bp-overlay"><div class="bp-region">Caribbean</div><div class="bp-name">Cuba</div><div class="bp-budget">From £35/day</div><span class="bp-arrow">Read Guide →</span></div></a>
-
-    <div class="no-results" id="noResults">No destinations match that filter — <a href="../contact.html" style="color:var(--sky)">get in touch</a> and we'll plan the perfect backpacker route.</div>
+<div class="bg-region rv" id="southeastasia" data-region="Southeast Asia">
+  <h3 class="bg-region-title"><span>Southeast Asia</span><span class="bg-region-count">8 guides</span></h3>
+  <div class="bg-grid"><a href="bp-thailand.html" class="bg-card rv rv0">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🐘</span>
+    <span class="bg-budget">£15–£35/day</span>
   </div>
+  <div class="bg-card-name">Thailand</div>
+  <div class="bg-card-tag">SE Asia</div>
+</a><a href="bp-vietnam.html" class="bg-card rv rv1">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🛵</span>
+    <span class="bg-budget">£15–£30/day</span>
+  </div>
+  <div class="bg-card-name">Vietnam</div>
+  <div class="bg-card-tag">SE Asia</div>
+</a><a href="bp-cambodia.html" class="bg-card rv rv2">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🏛️</span>
+    <span class="bg-budget">£12–£25/day</span>
+  </div>
+  <div class="bg-card-name">Cambodia</div>
+  <div class="bg-card-tag">SE Asia</div>
+</a><a href="bp-laos.html" class="bg-card rv rv3">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🛶</span>
+    <span class="bg-budget">£12–£22/day</span>
+  </div>
+  <div class="bg-card-name">Laos</div>
+  <div class="bg-card-tag">SE Asia</div>
+</a><a href="bp-malaysia.html" class="bg-card rv rv0">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🦧</span>
+    <span class="bg-budget">£18–£35/day</span>
+  </div>
+  <div class="bg-card-name">Malaysia</div>
+  <div class="bg-card-tag">SE Asia</div>
+</a><a href="bp-indonesia.html" class="bg-card rv rv1">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🌋</span>
+    <span class="bg-budget">£15–£35/day</span>
+  </div>
+  <div class="bg-card-name">Indonesia</div>
+  <div class="bg-card-tag">SE Asia</div>
+</a><a href="bp-myanmar.html" class="bg-card rv rv2">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🏯</span>
+    <span class="bg-budget">£15–£30/day</span>
+  </div>
+  <div class="bg-card-name">Myanmar</div>
+  <div class="bg-card-tag">SE Asia</div>
+</a><a href="bp-philippines.html" class="bg-card rv rv3">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🏝️</span>
+    <span class="bg-budget">£15–£30/day</span>
+  </div>
+  <div class="bg-card-name">Philippines</div>
+  <div class="bg-card-tag">SE Asia</div>
+</a></div>
+</div>
+<div class="bg-region rv" id="southasia" data-region="South Asia">
+  <h3 class="bg-region-title"><span>South Asia</span><span class="bg-region-count">5 guides</span></h3>
+  <div class="bg-grid"><a href="bp-india.html" class="bg-card rv rv0">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🕌</span>
+    <span class="bg-budget">£12–£25/day</span>
+  </div>
+  <div class="bg-card-name">India</div>
+  <div class="bg-card-tag">South Asia</div>
+</a><a href="bp-india-goa.html" class="bg-card rv rv1">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🌊</span>
+    <span class="bg-budget">£15–£30/day</span>
+  </div>
+  <div class="bg-card-name">India — Goa & South</div>
+  <div class="bg-card-tag">South Asia</div>
+</a><a href="bp-nepal.html" class="bg-card rv rv2">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🏔️</span>
+    <span class="bg-budget">£15–£30/day</span>
+  </div>
+  <div class="bg-card-name">Nepal</div>
+  <div class="bg-card-tag">South Asia</div>
+</a><a href="bp-nepal-bp.html" class="bg-card rv rv3">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🏔️</span>
+    <span class="bg-budget">£15–£30/day</span>
+  </div>
+  <div class="bg-card-name">Nepal</div>
+  <div class="bg-card-tag">South Asia</div>
+</a><a href="bp-sri-lanka.html" class="bg-card rv rv0">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🐘</span>
+    <span class="bg-budget">£20–£40/day</span>
+  </div>
+  <div class="bg-card-name">Sri Lanka</div>
+  <div class="bg-card-tag">South Asia</div>
+</a></div>
+</div>
+<div class="bg-region rv" id="eastasia" data-region="East Asia">
+  <h3 class="bg-region-title"><span>East Asia</span><span class="bg-region-count">4 guides</span></h3>
+  <div class="bg-grid"><a href="bp-japan.html" class="bg-card rv rv0">
+  <div class="bg-card-top">
+    <span class="bg-emoji">⛩️</span>
+    <span class="bg-budget">£50–£90/day</span>
+  </div>
+  <div class="bg-card-name">Japan</div>
+  <div class="bg-card-tag">East Asia</div>
+</a><a href="bp-south-korea.html" class="bg-card rv rv1">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🏯</span>
+    <span class="bg-budget">£35–£60/day</span>
+  </div>
+  <div class="bg-card-name">South Korea</div>
+  <div class="bg-card-tag">East Asia</div>
+</a><a href="bp-china.html" class="bg-card rv rv2">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🐉</span>
+    <span class="bg-budget">£25–£50/day</span>
+  </div>
+  <div class="bg-card-name">China</div>
+  <div class="bg-card-tag">East Asia</div>
+</a><a href="bp-mongolia.html" class="bg-card rv rv3">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🐎</span>
+    <span class="bg-budget">£20–£40/day</span>
+  </div>
+  <div class="bg-card-name">Mongolia</div>
+  <div class="bg-card-tag">East Asia</div>
+</a></div>
+</div>
+<div class="bg-region rv" id="centralasia" data-region="Central Asia">
+  <h3 class="bg-region-title"><span>Central Asia</span><span class="bg-region-count">5 guides</span></h3>
+  <div class="bg-grid"><a href="bp-kyrgyzstan.html" class="bg-card rv rv0">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🐴</span>
+    <span class="bg-budget">£15–£28/day</span>
+  </div>
+  <div class="bg-card-name">Kyrgyzstan</div>
+  <div class="bg-card-tag">Central Asia</div>
+</a><a href="bp-uzbekistan.html" class="bg-card rv rv1">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🕌</span>
+    <span class="bg-budget">£18–£30/day</span>
+  </div>
+  <div class="bg-card-name">Uzbekistan</div>
+  <div class="bg-card-tag">Central Asia</div>
+</a><a href="bp-tajikistan.html" class="bg-card rv rv2">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🏔️</span>
+    <span class="bg-budget">£15–£28/day</span>
+  </div>
+  <div class="bg-card-name">Tajikistan & the Pamirs</div>
+  <div class="bg-card-tag">Central Asia</div>
+</a><a href="bp-georgia-bp.html" class="bg-card rv rv3">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🍷</span>
+    <span class="bg-budget">£18–£35/day</span>
+  </div>
+  <div class="bg-card-name">Georgia</div>
+  <div class="bg-card-tag">Europe</div>
+</a><a href="bp-iran.html" class="bg-card rv rv0">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🏛️</span>
+    <span class="bg-budget">£15–£25/day</span>
+  </div>
+  <div class="bg-card-name">Iran</div>
+  <div class="bg-card-tag">Middle East</div>
+</a></div>
+</div>
+<div class="bg-region rv" id="middleeast" data-region="Middle East">
+  <h3 class="bg-region-title"><span>Middle East</span><span class="bg-region-count">4 guides</span></h3>
+  <div class="bg-grid"><a href="bp-jordan.html" class="bg-card rv rv0">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🏜️</span>
+    <span class="bg-budget">£30–£55/day</span>
+  </div>
+  <div class="bg-card-name">Jordan</div>
+  <div class="bg-card-tag">Middle East</div>
+</a><a href="bp-israel-palestine.html" class="bg-card rv rv1">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🕍</span>
+    <span class="bg-budget">£40–£70/day</span>
+  </div>
+  <div class="bg-card-name">Israel & Palestine</div>
+  <div class="bg-card-tag">Middle East</div>
+</a><a href="bp-egypt.html" class="bg-card rv rv2">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🏺</span>
+    <span class="bg-budget">£20–£40/day</span>
+  </div>
+  <div class="bg-card-name">Egypt</div>
+  <div class="bg-card-tag">North Africa</div>
+</a><a href="bp-turkey.html" class="bg-card rv rv3">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🕌</span>
+    <span class="bg-budget">£20–£40/day</span>
+  </div>
+  <div class="bg-card-name">Turkey</div>
+  <div class="bg-card-tag">Europe</div>
+</a></div>
+</div>
+<div class="bg-region rv" id="europe" data-region="Europe">
+  <h3 class="bg-region-title"><span>Europe</span><span class="bg-region-count">9 guides</span></h3>
+  <div class="bg-grid"><a href="bp-eastern-europe.html" class="bg-card rv rv0">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🏯</span>
+    <span class="bg-budget">£25–£50/day</span>
+  </div>
+  <div class="bg-card-name">Eastern Europe</div>
+  <div class="bg-card-tag">Europe</div>
+</a><a href="bp-balkans.html" class="bg-card rv rv1">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🏰</span>
+    <span class="bg-budget">£25–£45/day</span>
+  </div>
+  <div class="bg-card-name">The Balkans</div>
+  <div class="bg-card-tag">Europe</div>
+</a><a href="bp-balkans-albania.html" class="bg-card rv rv2">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🦅</span>
+    <span class="bg-budget">£20–£35/day</span>
+  </div>
+  <div class="bg-card-name">Albania</div>
+  <div class="bg-card-tag">Europe</div>
+</a><a href="bp-greece.html" class="bg-card rv rv3">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🏛️</span>
+    <span class="bg-budget">£35–£65/day</span>
+  </div>
+  <div class="bg-card-name">Greece</div>
+  <div class="bg-card-tag">Europe</div>
+</a><a href="bp-portugal-bp.html" class="bg-card rv rv0">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🎶</span>
+    <span class="bg-budget">£35–£60/day</span>
+  </div>
+  <div class="bg-card-name">Portugal</div>
+  <div class="bg-card-tag">Europe</div>
+</a><a href="bp-spain.html" class="bg-card rv rv1">
+  <div class="bg-card-top">
+    <span class="bg-emoji">💃</span>
+    <span class="bg-budget">£40–£70/day</span>
+  </div>
+  <div class="bg-card-name">Spain</div>
+  <div class="bg-card-tag">Europe</div>
+</a><a href="bp-italy.html" class="bg-card rv rv2">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🍕</span>
+    <span class="bg-budget">£45–£75/day</span>
+  </div>
+  <div class="bg-card-name">Italy</div>
+  <div class="bg-card-tag">Europe</div>
+</a><a href="bp-scandinavia.html" class="bg-card rv rv3">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🌊</span>
+    <span class="bg-budget">£70–£120/day</span>
+  </div>
+  <div class="bg-card-name">Scandinavia</div>
+  <div class="bg-card-tag">Europe</div>
+</a><a href="bp-iceland-bp.html" class="bg-card rv rv0">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🌋</span>
+    <span class="bg-budget">£65–£100/day</span>
+  </div>
+  <div class="bg-card-name">Iceland</div>
+  <div class="bg-card-tag">Europe</div>
+</a></div>
+</div>
+<div class="bg-region rv" id="africa" data-region="Africa">
+  <h3 class="bg-region-title"><span>Africa</span><span class="bg-region-count">7 guides</span></h3>
+  <div class="bg-grid"><a href="bp-morocco-bp.html" class="bg-card rv rv0">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🏮</span>
+    <span class="bg-budget">£20–£40/day</span>
+  </div>
+  <div class="bg-card-name">Morocco</div>
+  <div class="bg-card-tag">Africa</div>
+</a><a href="bp-morocco-south.html" class="bg-card rv rv1">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🐪</span>
+    <span class="bg-budget">£18–£35/day</span>
+  </div>
+  <div class="bg-card-name">Morocco — Desert & Atlas</div>
+  <div class="bg-card-tag">Africa</div>
+</a><a href="bp-east-africa.html" class="bg-card rv rv2">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🌍</span>
+    <span class="bg-budget">£25–£60/day</span>
+  </div>
+  <div class="bg-card-name">East Africa</div>
+  <div class="bg-card-tag">Africa</div>
+</a><a href="bp-ethiopia.html" class="bg-card rv rv3">
+  <div class="bg-card-top">
+    <span class="bg-emoji">☕</span>
+    <span class="bg-budget">£18–£35/day</span>
+  </div>
+  <div class="bg-card-name">Ethiopia</div>
+  <div class="bg-card-tag">Africa</div>
+</a><a href="bp-kenya-bp.html" class="bg-card rv rv0">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🦁</span>
+    <span class="bg-budget">£30–£70/day</span>
+  </div>
+  <div class="bg-card-name">Kenya</div>
+  <div class="bg-card-tag">Africa</div>
+</a><a href="bp-tanzania.html" class="bg-card rv rv1">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🦒</span>
+    <span class="bg-budget">£30–£70/day</span>
+  </div>
+  <div class="bg-card-name">Tanzania</div>
+  <div class="bg-card-tag">Africa</div>
+</a><a href="bp-south-africa.html" class="bg-card rv rv2">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🦅</span>
+    <span class="bg-budget">£25–£55/day</span>
+  </div>
+  <div class="bg-card-name">South Africa</div>
+  <div class="bg-card-tag">Africa</div>
+</a></div>
+</div>
+<div class="bg-region rv" id="southamerica" data-region="South America">
+  <h3 class="bg-region-title"><span>South America</span><span class="bg-region-count">7 guides</span></h3>
+  <div class="bg-grid"><a href="bp-colombia.html" class="bg-card rv rv0">
+  <div class="bg-card-top">
+    <span class="bg-emoji">☕</span>
+    <span class="bg-budget">£20–£40/day</span>
+  </div>
+  <div class="bg-card-name">Colombia</div>
+  <div class="bg-card-tag">South America</div>
+</a><a href="bp-ecuador-bp.html" class="bg-card rv rv1">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🐢</span>
+    <span class="bg-budget">£18–£35/day</span>
+  </div>
+  <div class="bg-card-name">Ecuador</div>
+  <div class="bg-card-tag">South America</div>
+</a><a href="bp-peru-bp.html" class="bg-card rv rv2">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🦙</span>
+    <span class="bg-budget">£18–£35/day</span>
+  </div>
+  <div class="bg-card-name">Peru</div>
+  <div class="bg-card-tag">South America</div>
+</a><a href="bp-bolivia.html" class="bg-card rv rv3">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🧂</span>
+    <span class="bg-budget">£12–£22/day</span>
+  </div>
+  <div class="bg-card-name">Bolivia</div>
+  <div class="bg-card-tag">South America</div>
+</a><a href="bp-argentina.html" class="bg-card rv rv0">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🥩</span>
+    <span class="bg-budget">£20–£40/day</span>
+  </div>
+  <div class="bg-card-name">Argentina</div>
+  <div class="bg-card-tag">South America</div>
+</a><a href="bp-chile.html" class="bg-card rv rv1">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🌋</span>
+    <span class="bg-budget">£25–£50/day</span>
+  </div>
+  <div class="bg-card-name">Chile</div>
+  <div class="bg-card-tag">South America</div>
+</a><a href="bp-brazil.html" class="bg-card rv rv2">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🌴</span>
+    <span class="bg-budget">£25–£55/day</span>
+  </div>
+  <div class="bg-card-name">Brazil</div>
+  <div class="bg-card-tag">South America</div>
+</a></div>
+</div>
+<div class="bg-region rv" id="centralamericacaribbean" data-region="Central America & Caribbean">
+  <h3 class="bg-region-title"><span>Central America & Caribbean</span><span class="bg-region-count">6 guides</span></h3>
+  <div class="bg-grid"><a href="bp-mexico.html" class="bg-card rv rv0">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🌮</span>
+    <span class="bg-budget">£20–£45/day</span>
+  </div>
+  <div class="bg-card-name">Mexico</div>
+  <div class="bg-card-tag">Central America</div>
+</a><a href="bp-guatemala.html" class="bg-card rv rv1">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🌋</span>
+    <span class="bg-budget">£18–£35/day</span>
+  </div>
+  <div class="bg-card-name">Guatemala</div>
+  <div class="bg-card-tag">Central America</div>
+</a><a href="bp-nicaragua.html" class="bg-card rv rv2">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🌊</span>
+    <span class="bg-budget">£15–£28/day</span>
+  </div>
+  <div class="bg-card-name">Nicaragua</div>
+  <div class="bg-card-tag">Central America</div>
+</a><a href="bp-costa-rica.html" class="bg-card rv rv3">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🦥</span>
+    <span class="bg-budget">£35–£65/day</span>
+  </div>
+  <div class="bg-card-name">Costa Rica</div>
+  <div class="bg-card-tag">Central America</div>
+</a><a href="bp-panama.html" class="bg-card rv rv0">
+  <div class="bg-card-top">
+    <span class="bg-emoji">⚓</span>
+    <span class="bg-budget">£25–£50/day</span>
+  </div>
+  <div class="bg-card-name">Panama</div>
+  <div class="bg-card-tag">Central America</div>
+</a><a href="bp-cuba.html" class="bg-card rv rv1">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🎺</span>
+    <span class="bg-budget">£35–£65/day</span>
+  </div>
+  <div class="bg-card-name">Cuba</div>
+  <div class="bg-card-tag">Caribbean</div>
+</a></div>
+</div>
+<div class="bg-region rv" id="oceaniapacific" data-region="Oceania & Pacific">
+  <h3 class="bg-region-title"><span>Oceania & Pacific</span><span class="bg-region-count">4 guides</span></h3>
+  <div class="bg-grid"><a href="bp-australia.html" class="bg-card rv rv0">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🦘</span>
+    <span class="bg-budget">£60–£100/day</span>
+  </div>
+  <div class="bg-card-name">Australia</div>
+  <div class="bg-card-tag">Oceania</div>
+</a><a href="bp-new-zealand.html" class="bg-card rv rv1">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🏔️</span>
+    <span class="bg-budget">£55–£90/day</span>
+  </div>
+  <div class="bg-card-name">New Zealand</div>
+  <div class="bg-card-tag">Oceania</div>
+</a><a href="bp-fiji.html" class="bg-card rv rv2">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🌺</span>
+    <span class="bg-budget">£35–£70/day</span>
+  </div>
+  <div class="bg-card-name">Fiji</div>
+  <div class="bg-card-tag">Oceania</div>
+</a><a href="bp-pacific-islands.html" class="bg-card rv rv3">
+  <div class="bg-card-top">
+    <span class="bg-emoji">🌺</span>
+    <span class="bg-budget">£35–£70/day</span>
+  </div>
+  <div class="bg-card-name">Pacific Islands</div>
+  <div class="bg-card-tag">Oceania</div>
+</a></div>
+</div>
 </section>
 
+<div class="bg-cta">
+  <div class="eyebrow teal rv" style="justify-content:center">Want More Than a Guide?</div>
+  <h2 class="h-display rv">Let us plan your <em style="color:var(--teal)">backpacker route</em></h2>
+  <p class="rv">We'll build a full itinerary — hostels, transport, and the must-dos — so you can just show up.</p>
+  <div class="rv"><a href="../contact.html" class="btn btn-teal btn-arr">Get a Free Itinerary</a></div>
+</div>
+
 <footer>
-  <div class="footer-top">
-    <div class="footer-brand"><a href="../index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a><p>Honest travel stories and expert trip planning from someone who actually goes.</p><div class="footer-social"><a href="#" class="social-btn">📸</a><a href="#" class="social-btn">🎵</a><a href="#" class="social-btn">📌</a><a href="#" class="social-btn">▶</a></div></div>
-    <div class="footer-col"><h4>Explore</h4><ul><li><a href="../destinations.html">Destinations</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../about.html">About</a></li></ul></div>
-    <div class="footer-col"><h4>Services</h4><ul><li><a href="../services.html">Trip Planning</a></li><li><a href="../contact.html">Get a Quote</a></li></ul></div>
-    <div class="footer-col"><h4>Legal</h4><ul><li><a href="../privacy.html">Privacy Policy</a></li><li><a href="../privacy.html#terms">Terms of Use</a></li></ul></div>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a href="../index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Services</span></a>
+      <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
+      <div class="ft-social"><a href="#" class="ft-soc-btn">📸</a><a href="#" class="ft-soc-btn">🎵</a><a href="#" class="ft-soc-btn">📌</a><a href="#" class="ft-soc-btn">▶</a></div>
+    </div>
+    <div class="ft-col"><h5>Explore</h5><ul>
+      <li><a href="../destinations.html">All Destinations</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul></div>
+    <div class="ft-col"><h5>Services</h5><ul>
+      <li><a href="../services.html">Trip Planning</a></li>
+      <li><a href="../contact.html">Free Quote</a></li>
+    </ul></div>
+    <div class="ft-col"><h5>Info</h5><ul>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../privacy.html">Privacy Policy</a></li>
+    </ul></div>
   </div>
-  <div class="footer-bottom"><p>&copy; 2025 Drop Everything And Go. All rights reserved.</p><div class="footer-bottom-links"><a href="../privacy.html">Privacy</a><a href="../privacy.html#terms">Terms</a></div></div>
+  <div class="ft-bottom">
+    <p>© 2025 Drop Everything And Go. All rights reserved.</p>
+    <div class="ft-bottom-links"><a href="../privacy.html">Privacy</a><a href="../privacy.html#terms">Terms</a></div>
+  </div>
 </footer>
+<script>
+var ftabs=document.querySelectorAll('.bg-ft');
+var sections=document.querySelectorAll('.bg-region');
+var rc=document.getElementById('bg-rc');
+ftabs.forEach(function(t){
+  t.addEventListener('click',function(){
+    ftabs.forEach(function(x){x.classList.remove('on');});
+    t.classList.add('on');
+    var r=t.dataset.region;
+    var v=0;
+    sections.forEach(function(s){
+      var show=r==='all'||s.dataset.region===r;
+      s.style.display=show?'':'none';
+      if(show)v+=s.querySelectorAll('.bg-card').length;
+    });
+    rc.textContent=v+' guide'+(v!==1?'s':'');
+  });
+});
+</script>
 <script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
 <script>
-  const tabs=document.querySelectorAll('.filter-tab');
-  const cards=document.querySelectorAll('.bp-card[data-region]');
-  const countEl=document.getElementById('resultCount');
-  const noResults=document.getElementById('noResults');
-  const TOTAL=59;
-  const FILTER_MAP={sea:'sea',sa:'sa',ca:'ca',eu:'eu',af:'af',me:'me',ea:'ea',oc:'oc',cas:'cas',budget:'budget'};
-  function applyFilter(filter){
-    let visible=0;
-    cards.forEach(card=>{
-      let show=false;
-      if(filter==='all'){show=true;}
-      else if(filter==='budget'){show=parseInt(card.dataset.budget||999)<=20;}
-      else{show=(card.dataset.region||'').split(' ').includes(filter);}
-      card.classList.toggle('hidden',!show);
-      if(show)visible++;
-    });
-    noResults.classList.toggle('visible',visible===0);
-    countEl.textContent=filter==='all'?`Showing all ${TOTAL} destinations`:`Showing ${visible} destination${visible!==1?'s':''}`;
-  }
-  tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));tab.classList.add('active');applyFilter(tab.dataset.filter);}));
-  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.06});
-  document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
-  const nav=document.getElementById('navbar');
-  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
-  const ham=document.getElementById('hamburger'),mob=document.getElementById('navMobile');
-  ham.addEventListener('click',()=>{ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
-  function showCookie(){if(!localStorage.getItem('cookieChoice')){setTimeout(()=>document.getElementById('cookieBanner').classList.add('visible'),1200);}}
-  function acceptCookies(){localStorage.setItem('cookieChoice','accepted');document.getElementById('cookieBanner').classList.remove('visible');}
-  function declineCookies(){localStorage.setItem('cookieChoice','declined');document.getElementById('cookieBanner').classList.remove('visible');}
-  showCookie();
+(function(){
+var pb=document.getElementById('progress-bar');
+if(pb)window.addEventListener('scroll',function(){pb.style.width=Math.min((scrollY/(document.body.scrollHeight-innerHeight))*100,100)+'%';},{passive:true});
+var cd=document.getElementById('c-dot'),cr=document.getElementById('c-ring');
+if(cd&&cr){var mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px';},{passive:true});
+(function lp(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(lp);})();
+document.querySelectorAll('a,button').forEach(function(el){
+  el.addEventListener('mouseenter',function(){cd.classList.add('h');cr.classList.add('h');});
+  el.addEventListener('mouseleave',function(){cd.classList.remove('h');cr.classList.remove('h');});});}
+var nav=document.getElementById('nav');
+if(nav)window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>60);},{passive:true});
+var ham=document.getElementById('ham'),mob=document.getElementById('mob');
+if(ham&&mob)ham.addEventListener('click',function(){ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0.08});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=document.getElementById('ck');if(c)c.classList.add('vis');},1400);}
+window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+ckShow();
+})();
 </script>
-</body>
-</html>
+</body></html>

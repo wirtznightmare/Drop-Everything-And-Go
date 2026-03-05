@@ -1,136 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Bespoke travel planning services from Drop Everything And Go — itineraries, hotel curation, honeymoons and more."/>
-  <title>Services — Drop Everything And Go</title>
-  <link rel="stylesheet" href="style.css"/>
-  <style>
-    .svc-dark{background:var(--navy);}
-    .svc-header{text-align:center;margin-bottom:4rem;position:relative;z-index:1;}
-    .svc-subtitle{font-size:0.96rem;color:rgba(200,230,245,0.6);max-width:500px;margin:1rem auto 0;line-height:1.75;}
-    .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1200px;margin:0 auto 4rem;position:relative;z-index:1;}
-    .svc-card{background:rgba(255,255,255,0.04);border:1px solid rgba(200,230,245,0.1);border-radius:var(--radius);padding:2.5rem 2rem;position:relative;overflow:hidden;transition:background 0.3s,transform 0.3s;}
-    .svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,var(--sky),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform 0.4s;}
-    .svc-card:hover{background:rgba(255,255,255,0.07);transform:translateY(-4px);}
-    .svc-card:hover::before{transform:scaleX(1);}
-    .svc-icon{font-size:2.4rem;margin-bottom:1.2rem;}
-    .svc-name{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--white);margin-bottom:0.7rem;}
-    .svc-desc{font-size:0.85rem;color:rgba(200,230,245,0.58);line-height:1.72;margin-bottom:1.5rem;}
-    .svc-price{font-size:0.74rem;color:var(--gold);letter-spacing:0.1em;font-weight:700;text-transform:uppercase;}
-    .process-section{background:var(--bg-light);}
-    .process-section h2{text-align:center;margin-bottom:3.5rem;}
-    .process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;max-width:1100px;margin:0 auto;}
-    .process-step{text-align:center;padding:1rem;}
-    .step-num{width:54px;height:54px;border-radius:50%;background:var(--navy);color:var(--gold);font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;display:flex;align-items:center;justify-content:center;margin:0 auto 1.1rem;}
-    .step-title{font-family:'Playfair Display',serif;font-size:1.12rem;font-weight:700;color:var(--navy);margin-bottom:0.5rem;}
-    .step-desc{font-size:0.84rem;color:var(--light-text);line-height:1.65;}
-    .quote-section{background:var(--white);}
-    .quote-box{max-width:720px;margin:0 auto;background:linear-gradient(140deg,var(--navy),var(--ocean));border-radius:var(--radius);padding:3.5rem;}
-    .quote-box h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:700;color:var(--white);margin-bottom:0.6rem;}
-    .quote-box p{color:rgba(200,230,245,0.65);margin-bottom:2.2rem;line-height:1.65;font-size:0.92rem;}
-    .qf{display:flex;flex-direction:column;gap:1rem;}
-    .qf-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
-    .qf-g{display:flex;flex-direction:column;gap:0.4rem;}
-    .qf-submit{background:var(--gold);color:var(--navy);border:none;padding:1rem;border-radius:var(--radius);font-family:'DM Sans',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:background 0.2s,transform 0.2s;}
-    .qf-submit:hover{background:var(--gold-dark);transform:translateY(-1px);}
-    @media(max-width:900px){.svc-grid{grid-template-columns:1fr 1fr;}.process-steps{grid-template-columns:1fr 1fr;}.qf-row{grid-template-columns:1fr;}}
-    @media(max-width:600px){.svc-grid{grid-template-columns:1fr;}.process-steps{grid-template-columns:1fr;}.quote-box{padding:2rem 1.5rem;}}
-  </style>
-</head>
-<body>
-<div class="cookie-banner" id="cookieBanner">
-  <p class="cookie-text">🍪 We use cookies to improve your experience. By continuing, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
-  <div class="cookie-btns"><button class="cookie-accept" onclick="acceptCookies()">Accept All</button><button class="cookie-decline" onclick="declineCookies()">Decline</button></div>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Bespoke travel planning — itineraries, hotel curation, honeymoons and more."/>
+<title>Services — Drop Everything And Go</title>
+<link rel="stylesheet" href="style.css"/>
+<style>
+.svc-main{background:var(--ink-2);}
+.svc-main-inner{max-width:1300px;margin:0 auto;position:relative;z-index:1;}
+.svc-cards{max-width:1300px;margin:3.5rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.sv-c{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:2.5rem 2rem;position:relative;overflow:hidden;transition:background .3s,border-color .3s,transform .4s var(--ease-spring);}
+.sv-c::before{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:linear-gradient(to right,var(--teal),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease-expo);}
+.sv-c:hover{background:rgba(245,239,224,.07);border-color:rgba(200,145,42,.22);transform:translateY(-5px);}
+.sv-c:hover::before{transform:scaleX(1);}
+.sv-icon{font-size:2.3rem;margin-bottom:1.3rem;}
+.sv-name{font-family:var(--ff-display);font-size:1.35rem;font-weight:700;color:var(--parchment);margin-bottom:.65rem;}
+.sv-desc{font-size:.85rem;color:var(--smoke);line-height:1.72;margin-bottom:1.4rem;}
+.sv-price{font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+.proc-s{background:var(--cream);}
+.proc-steps{max-width:1100px;margin:3.5rem auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;position:relative;}
+.proc-steps::before{content:'';position:absolute;top:2rem;left:8%;right:8%;height:1px;background:linear-gradient(to right,var(--gold),var(--teal),var(--gold));opacity:.25;}
+.ps{text-align:center;padding:1rem;}
+.ps-num{width:54px;height:54px;border-radius:50%;background:var(--ink);color:var(--gold);font-family:var(--ff-display);font-size:1.3rem;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 1.3rem;border:1px solid rgba(200,145,42,.25);position:relative;z-index:1;}
+.ps-title{font-family:var(--ff-display);font-size:1.1rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;}
+.ps-desc{font-size:.83rem;color:#6A7080;line-height:1.68;}
+.qf-s{background:var(--ink);}
+.qf-box{max-width:780px;margin:0 auto;background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.1);border-radius:var(--r-xl);padding:4rem;}
+.qf-box h2{font-family:var(--ff-display);font-size:2.2rem;font-weight:700;color:var(--parchment);margin-bottom:.5rem;}
+.qf-box>p{color:var(--smoke);margin-bottom:2.5rem;line-height:1.7;font-size:.93rem;}
+.qf{display:flex;flex-direction:column;gap:1.2rem;}
+.qf-submit{background:var(--gold);color:var(--ink);border:none;padding:1.1rem;border-radius:var(--r-sm);font-size:.75rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;transition:background .3s,transform .3s var(--ease-spring);}
+.qf-submit:hover{background:var(--gold-lt);transform:translateY(-2px);}
+@media(max-width:1024px){.svc-cards{grid-template-columns:1fr 1fr;}.proc-steps{grid-template-columns:1fr 1fr;}.proc-steps::before{display:none;}}
+@media(max-width:640px){.svc-cards,.proc-steps{grid-template-columns:1fr;}.qf-box{padding:2.5rem 1.8rem;}}
+</style>
+</head><body><div id="progress-bar"></div>
+<div id="c-dot"></div><div id="c-ring"></div>
+<div class="ck" id="ck">
+  <p class="ck-text">We use cookies to enhance your journey. <a href="privacy.html">Privacy Policy</a></p>
+  <div class="ck-btns"><button class="ck-acc" onclick="ckAccept()">Accept</button><button class="ck-dec" onclick="ckDecline()">Decline</button></div>
 </div>
-<nav id="navbar">
-  <a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a>
-  <ul class="nav-links">
-    <li><a href="destinations.html">Destinations</a></li><li><a href="blog.html">Blog</a></li>
-    <li><a href="services.html" class="active">Services</a></li><li><a href="about.html">About</a></li>
-    <li><a href="contact.html" class="nav-cta">Plan My Trip</a></li>
-  </ul>
-  <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+<nav id="nav">
+  <a href="index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Bespoke Planning</span></a>
+  <ul class="nav-links"><li><a href="destinations.html">Destinations</a></li><li><a href="blog.html">Blog</a></li><li><a href="services.html" class="active">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" class="nav-cta">Plan My Trip</a></li></ul>
+  <button class="nav-ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
-<ul class="nav-mobile" id="navMobile">
-  <li><a href="destinations.html">Destinations</a></li><li><a href="blog.html">Blog</a></li>
-  <li><a href="services.html" class="active">Services</a></li><li><a href="about.html">About</a></li>
-  <li><a href="contact.html" class="mob-cta">Plan My Trip</a></li>
+<ul class="nav-mob" id="mob">
+  <li><a href="destinations.html">Destinations</a></li><li><a href="blog.html">Blog</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li>
+  <li><a href="contact.html" class="mob-cta-btn">Plan My Trip</a></li>
 </ul>
-<div class="page-hero">
-  <div class="page-hero-content">
-    <p class="page-eyebrow">More Than Just a Blog</p>
-    <h1 class="page-title">Travel <em>Services</em></h1>
-    <p class="page-subtitle">We don't just inspire your next trip — we plan and book it for you, start to finish.</p>
+<div class="pg-hero">
+  <div class="pg-hero-bg"></div><div class="pg-hero-dots"></div>
+  <div class="pg-hero-content">
+    <div class="pg-eyebrow">More Than Just a Blog</div>
+    <h1 class="pg-title">Travel <em>Services</em></h1>
+    <p class="pg-subtitle">We don't just inspire your next trip — we plan and book it, start to finish.</p>
   </div>
-  <div class="page-hero-wave"><svg viewBox="0 0 1800 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,40 C300,80 600,0 900,40 C1200,80 1500,0 1800,40 L1800,80 L0,80 Z" fill="var(--navy)"/></svg></div>
+  <div class="pg-hero-rule"></div>
 </div>
-<section class="section svc-dark">
-  <div class="svc-header reveal">
-    <p class="section-label section-label-center" style="justify-content:center;color:var(--gold);">What We Offer</p>
-    <h2 class="section-title section-title-white">Our <em>Services</em></h2>
-    <p class="svc-subtitle">Every service is handled personally — no call centres, no automated responses. Just great travel planning.</p>
+<section class="s svc-main">
+  <div class="svc-main-inner rv">
+    <div class="eyebrow">What We Offer</div>
+    <h2 class="h-display">Our <em>Services</em></h2>
+    <p style="font-size:.95rem;color:var(--smoke);max-width:480px;line-height:1.75;margin-top:.8rem">Every service handled personally — no call centres, no automated responses.</p>
   </div>
-  <div class="svc-grid">
-    <div class="svc-card reveal"><div class="svc-icon">✈️</div><h3 class="svc-name">Bespoke Trip Planning</h3><p class="svc-desc">Fully personalised itineraries built around your budget, travel style, and wish list. No templates, no shortcuts — every trip is unique.</p><p class="svc-price">From £150 per trip</p></div>
-    <div class="svc-card reveal reveal-delay-1"><div class="svc-icon">🏨</div><h3 class="svc-name">Hotel &amp; Villa Curation</h3><p class="svc-desc">We find the perfect place to stay — from boutique B&Bs to five-star resorts — so you don't have to trawl through hundreds of listings.</p><p class="svc-price">Free with full itinerary</p></div>
-    <div class="svc-card reveal reveal-delay-2"><div class="svc-icon">💑</div><h3 class="svc-name">Honeymoon Packages</h3><p class="svc-desc">Specialist honeymoon planning with romantic upgrades, surprise touches, and real attention to detail for the most important trip of your life.</p><p class="svc-price">Custom pricing</p></div>
-    <div class="svc-card reveal"><div class="svc-icon">👥</div><h3 class="svc-name">Group Travel</h3><p class="svc-desc">Planning a group holiday, birthday trip, or hen/stag do? We coordinate everything so nobody has to be the designated organiser.</p><p class="svc-price">From £75 per person</p></div>
-    <div class="svc-card reveal reveal-delay-1"><div class="svc-icon">🛡️</div><h3 class="svc-name">Travel Insurance Advice</h3><p class="svc-desc">We'll guide you through the best cover options for your trip — clearly, without jargon, so you know you're properly protected.</p><p class="svc-price">Complimentary</p></div>
-    <div class="svc-card reveal reveal-delay-2"><div class="svc-icon">📱</div><h3 class="svc-name">24/7 On-Trip Support</h3><p class="svc-desc">Flight cancelled? Hotel issue? We're on hand around the clock to help with rebookings, emergencies, and anything in between.</p><p class="svc-price">Included in packages</p></div>
+  <div class="svc-cards">
+    <div class="sv-c rv"><div class="sv-icon">✈️</div><h3 class="sv-name">Bespoke Trip Planning</h3><p class="sv-desc">Fully personalised itineraries built around your budget, travel style, and wish list. No templates, no shortcuts.</p><p class="sv-price">From £150 per trip</p></div>
+    <div class="sv-c rv rv2"><div class="sv-icon">🏨</div><h3 class="sv-name">Hotel &amp; Villa Curation</h3><p class="sv-desc">We find the perfect place to stay — boutique B&amp;Bs to five-star resorts — so you don't have to trawl through hundreds of listings.</p><p class="sv-price">Free with full itinerary</p></div>
+    <div class="sv-c rv rv4"><div class="sv-icon">💑</div><h3 class="sv-name">Honeymoon Packages</h3><p class="sv-desc">Specialist honeymoon planning with romantic upgrades and real attention to detail for the most important trip of your life.</p><p class="sv-price">Custom pricing</p></div>
+    <div class="sv-c rv"><div class="sv-icon">👥</div><h3 class="sv-name">Group Travel</h3><p class="sv-desc">Planning a group holiday or birthday trip? We coordinate everything so nobody has to be the designated organiser.</p><p class="sv-price">From £75 per person</p></div>
+    <div class="sv-c rv rv2"><div class="sv-icon">🛡️</div><h3 class="sv-name">Insurance Advice</h3><p class="sv-desc">Honest guidance on the best cover options for your trip — clearly, without jargon.</p><p class="sv-price">Complimentary</p></div>
+    <div class="sv-c rv rv4"><div class="sv-icon">📱</div><h3 class="sv-name">24/7 On-Trip Support</h3><p class="sv-desc">Flight cancelled? Hotel issue? We're on hand around the clock with rebookings and emergencies.</p><p class="sv-price">Included in packages</p></div>
   </div>
 </section>
-<section class="section process-section">
-  <div class="section-inner">
-    <div class="reveal" style="text-align:center;"><p class="section-label section-label-center">Simple Process</p><h2 class="section-title">How It <em>Works</em></h2></div>
-    <div class="process-steps" style="margin-top:3rem;">
-      <div class="process-step reveal"><div class="step-num">1</div><h4 class="step-title">Tell Us Your Dream</h4><p class="step-desc">Fill in our short enquiry form — where you want to go, your budget, travel style, and dates.</p></div>
-      <div class="process-step reveal reveal-delay-1"><div class="step-num">2</div><h4 class="step-title">We Create Your Plan</h4><p class="step-desc">Within 24 hours we'll send you a personalised itinerary and quote, completely tailored to you.</p></div>
-      <div class="process-step reveal reveal-delay-2"><div class="step-num">3</div><h4 class="step-title">We Refine &amp; Book</h4><p class="step-desc">We tweak until it's perfect, then handle all bookings, confirmations, and documents.</p></div>
-      <div class="process-step reveal reveal-delay-3"><div class="step-num">4</div><h4 class="step-title">You Just Show Up</h4><p class="step-desc">Everything is ready. Pack your bags, get to the airport, and enjoy every single moment.</p></div>
+<section class="s proc-s">
+  <div class="s-inner">
+    <div class="rv" style="text-align:center"><div class="eyebrow light" style="justify-content:center;color:var(--gold-dk)">Simple Process</div><h2 class="h-display on-light">How It <em>Works</em></h2></div>
+    <div class="proc-steps">
+      <div class="ps rv"><div class="ps-num">1</div><h4 class="ps-title">Tell Us Your Dream</h4><p class="ps-desc">Fill in our short form — where you want to go, budget, style, and dates.</p></div>
+      <div class="ps rv rv1"><div class="ps-num">2</div><h4 class="ps-title">We Create Your Plan</h4><p class="ps-desc">Within 24 hours: a personalised itinerary and quote, tailored to you.</p></div>
+      <div class="ps rv rv2"><div class="ps-num">3</div><h4 class="ps-title">Refine &amp; Book</h4><p class="ps-desc">We tweak until perfect, then handle all bookings and documents.</p></div>
+      <div class="ps rv rv3"><div class="ps-num">4</div><h4 class="ps-title">You Just Show Up</h4><p class="ps-desc">Everything is ready. Pack your bags and enjoy every single moment.</p></div>
     </div>
   </div>
 </section>
-<section class="section quote-section" id="quote">
-  <div class="quote-box reveal">
+<section class="s qf-s" id="quote">
+  <div class="qf-box rv">
     <h2>Get a Free Quote</h2>
-    <p>Tell us about your dream trip and we'll come back to you with a personalised quote within 24 hours. No commitment, no pressure.</p>
+    <p>Tell us about your dream trip and we'll come back within 24 hours. No commitment, no pressure.</p>
     <form class="qf" action="https://formspree.io/f/mjgelkpz" method="POST">
-      <input type="hidden" name="_subject" value="New Trip Enquiry — Drop Everything And Go"/>
-      <div class="qf-row">
-        <div class="qf-g"><label class="form-label">First Name</label><input class="form-input" type="text" name="first_name" placeholder="Your first name" required/></div>
-        <div class="qf-g"><label class="form-label">Last Name</label><input class="form-input" type="text" name="last_name" placeholder="Your last name" required/></div>
-      </div>
-      <div class="qf-g"><label class="form-label">Email Address</label><input class="form-input" type="email" name="email" placeholder="hello@email.com" required/></div>
-      <div class="qf-row">
-        <div class="qf-g"><label class="form-label">Destination</label><input class="form-input" type="text" name="destination" placeholder="Where do you want to go?"/></div>
-        <div class="qf-g"><label class="form-label">Approx. Budget</label><select class="form-select" name="budget"><option>Under £1,000</option><option>£1,000 – £2,500</option><option>£2,500 – £5,000</option><option>£5,000 – £10,000</option><option>£10,000+</option></select></div>
-      </div>
-      <div class="qf-g"><label class="form-label">Tell us more</label><textarea class="form-textarea" name="message" placeholder="Dates, number of travellers, special occasions, any wishes..."></textarea></div>
-      <button type="submit" class="qf-submit">Send My Enquiry</button>
+      <input type="hidden" name="_subject" value="New Trip Enquiry"/>
+      <div class="f-row"><div class="f-group"><label class="f-label">First Name</label><input class="f-input" type="text" name="first_name" placeholder="Your first name" required/></div><div class="f-group"><label class="f-label">Last Name</label><input class="f-input" type="text" name="last_name" placeholder="Your last name" required/></div></div>
+      <div class="f-group"><label class="f-label">Email</label><input class="f-input" type="email" name="email" placeholder="hello@email.com" required/></div>
+      <div class="f-row"><div class="f-group"><label class="f-label">Destination</label><input class="f-input" type="text" name="destination" placeholder="Where do you want to go?"/></div><div class="f-group"><label class="f-label">Budget</label><select class="f-select" name="budget"><option>Under £1,000</option><option>£1,000 – £2,500</option><option>£2,500 – £5,000</option><option>£5,000 – £10,000</option><option>£10,000+</option></select></div></div>
+      <div class="f-group"><label class="f-label">Tell us more</label><textarea class="f-textarea" name="message" placeholder="Dates, travellers, special occasions, any wishes..."></textarea></div>
+      <button type="submit" class="qf-submit">Send My Enquiry →</button>
     </form>
   </div>
 </section>
 <footer>
-  <div class="footer-top">
-    <div class="footer-brand"><a href="index.html" class="nav-logo">Drop Everything And Go <span>Travel Blog &amp; Services</span></a><p>Honest travel stories and expert trip planning from someone who actually goes.</p><div class="footer-social"><a href="#" class="social-btn">📸</a><a href="#" class="social-btn">🎵</a><a href="#" class="social-btn">📌</a><a href="#" class="social-btn">▶</a></div></div>
-    <div class="footer-col"><h4>Explore</h4><ul><li><a href="destinations.html">Destinations</a></li><li><a href="blog.html">Blog</a></li><li><a href="about.html">About</a></li></ul></div>
-    <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">Trip Planning</a></li><li><a href="services.html">Hotel Curation</a></li><li><a href="contact.html">Get a Quote</a></li></ul></div>
-    <div class="footer-col"><h4>Legal</h4><ul><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="privacy.html#cookies">Cookie Policy</a></li><li><a href="privacy.html#terms">Terms of Use</a></li></ul></div>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a href="index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Services</span></a>
+      <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
+      <div class="ft-social">
+        <a href="#" class="ft-soc-btn">📸</a><a href="#" class="ft-soc-btn">🎵</a>
+        <a href="#" class="ft-soc-btn">📌</a><a href="#" class="ft-soc-btn">▶</a>
+      </div>
+    </div>
+    <div class="ft-col"><h5>Explore</h5><ul>
+      <li><a href="destinations.html">Destinations</a></li>
+      <li><a href="destinations/backpacker-guides.html">Backpacker Guides</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul></div>
+    <div class="ft-col"><h5>Services</h5><ul>
+      <li><a href="services.html">Trip Planning</a></li>
+      <li><a href="services.html">Hotel Curation</a></li>
+      <li><a href="contact.html">Free Quote</a></li>
+    </ul></div>
+    <div class="ft-col"><h5>Info</h5><ul>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="privacy.html#terms">Terms</a></li>
+    </ul></div>
   </div>
-  <div class="footer-bottom"><p>© 2025 Drop Everything And Go. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="privacy.html#cookies">Cookies</a><a href="privacy.html#terms">Terms</a></div></div>
-</footer>
-<script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
+  <div class="ft-badges">
+    <span class="ft-badge">🔒 Secure &amp; Trusted</span>
+    <span class="ft-badge">✈️ ATOL Protected Advice</span>
+    <span class="ft-badge">🌍 Worldwide Planning</span>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2025 Drop Everything And Go. All rights reserved.</p>
+    <div class="ft-bottom-links"><a href="privacy.html">Privacy</a><a href="privacy.html#cookies">Cookies</a><a href="privacy.html#terms">Terms</a></div>
+  </div>
+</footer><script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
 <script>
-  const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');}),{threshold:0.1});
-  document.querySelectorAll('.reveal').forEach(r=>observer.observe(r));
-  const nav=document.getElementById('navbar');
-  window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>60));
-  const ham=document.getElementById('hamburger'),mob=document.getElementById('navMobile');
-  ham.addEventListener('click',()=>{ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
-  function showCookie(){if(!localStorage.getItem('cookieChoice')){setTimeout(()=>document.getElementById('cookieBanner').classList.add('visible'),1200);}}
-  function acceptCookies(){localStorage.setItem('cookieChoice','accepted');document.getElementById('cookieBanner').classList.remove('visible');}
-  function declineCookies(){localStorage.setItem('cookieChoice','declined');document.getElementById('cookieBanner').classList.remove('visible');}
-  showCookie();
-</script>
-</body></html>
+(function(){
+'use strict';
+var pb=document.getElementById('progress-bar');
+if(pb)window.addEventListener('scroll',function(){var p=(scrollY/(document.body.scrollHeight-innerHeight))*100;pb.style.width=Math.min(p,100)+'%';},{passive:true});
+var cd=document.getElementById('c-dot'),cr=document.getElementById('c-ring');
+if(cd&&cr){var mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px';},{passive:true});
+(function lp(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(lp);})();
+document.querySelectorAll('a,button').forEach(function(el){el.addEventListener('mouseenter',function(){cd.classList.add('h');cr.classList.add('h');});el.addEventListener('mouseleave',function(){cd.classList.remove('h');cr.classList.remove('h');});});}
+var nav=document.getElementById('nav');
+if(nav)window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>60);},{passive:true});
+var ham=document.getElementById('ham'),mob=document.getElementById('mob');
+if(ham&&mob)ham.addEventListener('click',function(){ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0.08});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=document.getElementById('ck');if(c)c.classList.add('vis');},1400);}
+window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+ckShow();
+})();
+</script></body></html>
