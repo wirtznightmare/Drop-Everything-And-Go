@@ -157,7 +157,14 @@ function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=doc
 window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
 window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
 ckShow();
-})();
-</script><script>
+// FAQ accordion
 document.querySelectorAll('.faq-q').forEach(function(q){
   q.addEventListener('click',function(){
+    var item=q.parentElement;
+    var isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+    if(!isOpen)item.classList.add('open');
+  });
+});
+})();
+</script>
