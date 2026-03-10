@@ -151,7 +151,9 @@
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){
   .hero-inner{grid-template-columns:1fr;}.hero-cards{display:none;}
-  .dest-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;}
+  .dest-grid{grid-template-columns:1fr 1fr;grid-template-rows:none;}
+  .dest-grid .dc{height:200px;}
+  .dest-grid .dc:first-child{grid-column:1/-1;height:280px;}
   .dc:first-child{grid-column:1/-1;grid-row:auto;height:280px;}
   .about-grid{grid-template-columns:1fr;}.about-vis{min-height:280px;font-size:6rem;border-radius:var(--r-lg) var(--r-lg) 0 0;}
   .about-text{border-radius:0 0 var(--r-lg) var(--r-lg);}
@@ -162,7 +164,9 @@
   .stats-inner{grid-template-columns:1fr 1fr;}
   .stat{border-right:none;border-bottom:1px solid rgba(245,239,224,.07);padding:1rem;}
   .stat:nth-child(2n){border-bottom-color:transparent;}
-  .dest-grid{grid-template-columns:1fr;}
+  .dest-grid{grid-template-columns:1fr;grid-template-rows:none;}
+  .dest-grid .dc{height:220px;}
+  .dest-grid .dc:first-child{height:280px;}
   .dc:first-child{height:260px;}
   .guides-grid,.svc-grid,.testi-grid{grid-template-columns:1fr;}
   .nl-form{flex-direction:column;}
