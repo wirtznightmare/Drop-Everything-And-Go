@@ -61,6 +61,25 @@
 
 @media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.aud-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:640px){.things-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}.bp-strip-in{grid-template-columns:1fr;}.dh-emoji{font-size:3rem;}}
+
+.areas-s{background:var(--ink-2);}
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem;}
+.area-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:2rem;transition:transform .4s var(--ease-spring),border-color .3s;}
+.area-card:hover{transform:translateY(-5px);border-color:rgba(200,145,42,.25);}
+.area-top{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;}
+.area-icon{font-size:2rem;line-height:1;flex-shrink:0;}
+.area-name{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;}
+.area-best{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.25rem;}
+.area-desc{font-size:.87rem;color:var(--smoke);line-height:1.78;}
+.insider-s{background:var(--parchment);}
+.insider-s .h-display{color:var(--ink);}
+.insider-s .eyebrow{color:var(--gold-dk)!important;}
+.tips-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;}
+.tip-item{display:flex;align-items:flex-start;gap:1.1rem;padding:1.2rem 1.5rem;background:rgba(11,23,40,.05);border-radius:var(--r-sm);border-left:3px solid var(--gold);}
+.tip-bullet{font-family:var(--ff-mono);font-size:.9rem;color:var(--gold-dk);flex-shrink:0;margin-top:.1rem;}
+.tip-item p{font-size:.9rem;color:#4A5060;line-height:1.78;margin:0;}
+@media(max-width:900px){.areas-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.areas-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -112,7 +131,7 @@
     <div class="rv">
       <div class="eyebrow" style="color:var(--gold-dk)">Africa · East Africa</div>
       <h2>Why visit <em>Zanzibar?</em></h2>
-      <p>Zanzibar sits 25 miles off the Tanzanian coast in the Indian Ocean — and feels like a different world. The old Stone Town, a UNESCO World Heritage site, is a labyrinth of carved wooden doors, spice markets, and rooftop cafes where Arab, African, Indian, and European influences have been mixing for centuries. The beaches — particularly on the north and east coasts — are genuinely among Africa's finest: talcum-white sand, turquoise water, and swaying palms.</p>
+      <p>Zanzibar is the Indian Ocean distilled — white sand beaches, turquoise shallows, warm water, swaying palms, and a Stone Town that is one of the most historically rich and architecturally fascinating old cities in Africa. It's also a spice island with a food culture shaped by Arab, Indian, Persian and African influences simultaneously. It works as a beach holiday, a cultural trip, or a safari add-on from mainland Tanzania. Most people do all three.</p>
       <div style="margin-top:1.5rem"><a href="../contact.html" class="btn btn-coral btn-arr">Plan My Zanzibar Trip</a></div>
     </div>
     <div class="facts-card rv rv2">
@@ -145,6 +164,64 @@
   </div>
 </section>
 
+<section class="s areas-s">
+  <div class="s-inner">
+    <div class="rv" style="text-align:center;margin-bottom:2.5rem">
+      <div class="eyebrow" style="justify-content:center">Know Before You Go</div>
+      <h2 class="h-display">Where to Base Yourself in <em>Zanzibar</em></h2>
+      <p style="color:var(--smoke);max-width:580px;margin:.8rem auto 0;line-height:1.8">Zanzibar isn't one-size-fits-all. Each area has a completely different character — here's how to choose.</p>
+    </div>
+    <div class="areas-grid"><div class="area-card rvrv">
+  <div class="area-top"><span class="area-icon">🏛️</span><div>
+    <h4 class="area-name">Stone Town</h4>
+    <div class="area-best">Best for: History lovers, foodies, photographers, culture seekers</div>
+  </div></div>
+  <p class="area-desc">UNESCO World Heritage Site and the most atmospheric old city in East Africa. The medina of carved wooden doors (each telling the status of the original owner through its design), narrow alleyways, Ottoman-era mansions, the former slave market (now the site of a cathedral), and the old fort. The Forodhani Gardens seafood night market on the waterfront is essential — fresh lobster, octopus and Zanzibar pizza for a few pounds.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🌅</span><div>
+    <h4 class="area-name">Nungwi & Kendwa (North)</h4>
+    <div class="area-best">Best for: Beach lovers, snorkellers, those wanting nightlife and social atmosphere</div>
+  </div></div>
+  <p class="area-desc">The north coast has the best beaches on the island — Nungwi and Kendwa benefit from tides that keep water accessible all day (unlike some east coast beaches that empty at low tide). Nungwi has a traditional dhow-building village where wooden boats are still made by hand. The nightlife here is the most active on the island. Kendwa Rocks beach parties are a Zanzibar institution.</p>
+</div>
+<div class="area-card rvrv2">
+  <div class="area-top"><span class="area-icon">🏄</span><div>
+    <h4 class="area-name">East Coast (Paje, Jambiani)</h4>
+    <div class="area-best">Best for: Kite surfers, those seeking quiet beaches, travellers wanting local culture</div>
+  </div></div>
+  <p class="area-desc">The windy east coast is kite surfing territory — Paje is the global kite surfing capital between June and September when the Kaskazi trade wind blows consistently. Out of kite season it's supremely beautiful and very quiet — white sand beaches stretching for kilometres with local fishing villages behind them. Jambiani is the most authentic east coast village with excellent locally-run guesthouses.</p>
+</div>
+<div class="area-card rvrv0">
+  <div class="area-top"><span class="area-icon">🐒</span><div>
+    <h4 class="area-name">Jozani Forest</h4>
+    <div class="area-best">Best for: Nature lovers, wildlife enthusiasts, families</div>
+  </div></div>
+  <p class="area-desc">The island's only national park protects the last population of the endangered Zanzibar red colobus monkey — found nowhere else on earth. The forest also has bushbabies, elephant shrews and over 50 bird species. Mangrove boardwalk walks through the coastal forest give excellent views of the root systems. A half-day trip from any part of the island.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🐢</span><div>
+    <h4 class="area-name">Prison Island (Changuu)</h4>
+    <div class="area-best">Best for: Families, wildlife lovers, snorkellers, those wanting a short adventure from Stone Town</div>
+  </div></div>
+  <p class="area-desc">A 20-minute boat trip from Stone Town brings you to a small island that was never actually used as a prison — it was converted instead to a giant tortoise sanctuary. Aldabra giant tortoises, some over 100 years old, roam the beach. The coral reef around the island has excellent snorkelling. A morning trip from Stone Town combines both.</p>
+</div>
+</div>
+  </div>
+</section>
+<section class="s insider-s">
+  <div class="s-inner">
+    <div class="rv" style="max-width:760px;margin:0 auto">
+      <div class="eyebrow" style="color:var(--gold-dk)">Insider Knowledge</div>
+      <h2 class="h-display on-light">5 Things to Know Before You Go to <em>Zanzibar</em></h2>
+      <ul class="tips-list"><li class="tip-item rv"><span class="tip-bullet">→</span><p>Hire a dala-dala (shared minibus) to travel between Stone Town and the beaches — around 3,000 shillings (£1) rather than £15–25 for a tourist taxi</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Seafood in Zanzibar is extraordinary — octopus grilled over charcoal with chilli and lime at Forodhani Gardens costs less than £3</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>The spice tour (half day, around £20) visits working plantations and is one of the best value experiences on the island — the variety of spices grown here is astonishing</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>East coast beaches are affected by tides — at low tide the sea retreats 300–500m. North coast beaches (Nungwi, Kendwa) are unaffected</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Zanzibar combines perfectly with a Tanzania safari (Serengeti, Ngorongoro) — fly from Kilimanjaro or Arusha to Zanzibar as the final leg</p></li></ul>
+    </div>
+  </div>
+</section>
 <div class="plan-s">
   <h2 class="rv">Ready to plan your Zanzibar escape?</h2>
   <p class="rv">Tell us when, your budget, and who's going — we'll handle every last detail.</p>

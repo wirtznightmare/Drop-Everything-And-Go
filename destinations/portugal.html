@@ -61,6 +61,25 @@
 
 @media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.aud-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:640px){.things-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}.bp-strip-in{grid-template-columns:1fr;}.dh-emoji{font-size:3rem;}}
+
+.areas-s{background:var(--ink-2);}
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem;}
+.area-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:2rem;transition:transform .4s var(--ease-spring),border-color .3s;}
+.area-card:hover{transform:translateY(-5px);border-color:rgba(200,145,42,.25);}
+.area-top{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;}
+.area-icon{font-size:2rem;line-height:1;flex-shrink:0;}
+.area-name{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;}
+.area-best{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.25rem;}
+.area-desc{font-size:.87rem;color:var(--smoke);line-height:1.78;}
+.insider-s{background:var(--parchment);}
+.insider-s .h-display{color:var(--ink);}
+.insider-s .eyebrow{color:var(--gold-dk)!important;}
+.tips-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;}
+.tip-item{display:flex;align-items:flex-start;gap:1.1rem;padding:1.2rem 1.5rem;background:rgba(11,23,40,.05);border-radius:var(--r-sm);border-left:3px solid var(--gold);}
+.tip-bullet{font-family:var(--ff-mono);font-size:.9rem;color:var(--gold-dk);flex-shrink:0;margin-top:.1rem;}
+.tip-item p{font-size:.9rem;color:#4A5060;line-height:1.78;margin:0;}
+@media(max-width:900px){.areas-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.areas-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -112,7 +131,7 @@
     <div class="rv">
       <div class="eyebrow" style="color:var(--gold-dk)">Europe · Iberian Peninsula</div>
       <h2>Why visit <em>Portugal?</em></h2>
-      <p>Portugal consistently tops "Europe's best kept secret" lists — and yet it still manages to deliver. Lisbon's tram-crossed hills are riddled with art galleries, fado clubs, and the world's greatest pastéis de nata. Porto's Ribeira riverside was born to be photographed. The Alentejo's cork oak plains stretch to the horizon. And the Algarve's sea-carved cliffs are genuinely among Europe's most dramatic coastline. It's also, remarkably, still affordable.</p>
+      <p>Portugal punches above its weight in almost every category — food, wine, architecture, coastline, warmth, and value for money. It's western Europe's most accessible and affordable destination, with a culture that feels genuinely distinctive. Lisbon is one of the world's great walking cities. Porto is arguably even better. The Alentejo wine region, the medieval villages of central Portugal, and the Algarve cliffs are all world-class. It's small enough to see a lot in two weeks.</p>
       <div style="margin-top:1.5rem"><a href="../contact.html" class="btn btn-coral btn-arr">Plan My Portugal Trip</a></div>
     </div>
     <div class="facts-card rv rv2">
@@ -145,6 +164,71 @@
   </div>
 </section>
 
+<section class="s areas-s">
+  <div class="s-inner">
+    <div class="rv" style="text-align:center;margin-bottom:2.5rem">
+      <div class="eyebrow" style="justify-content:center">Know Before You Go</div>
+      <h2 class="h-display">Where to Base Yourself in <em>Portugal</em></h2>
+      <p style="color:var(--smoke);max-width:580px;margin:.8rem auto 0;line-height:1.8">Portugal isn't one-size-fits-all. Each area has a completely different character — here's how to choose.</p>
+    </div>
+    <div class="areas-grid"><div class="area-card rvrv">
+  <div class="area-top"><span class="area-icon">🚋</span><div>
+    <h4 class="area-name">Lisbon</h4>
+    <div class="area-best">Best for: Everyone — Lisbon is a perfect city</div>
+  </div></div>
+  <p class="area-desc">Hills, trams, azulejo tiles, fado music and pastéis de nata — Lisbon's ingredients are famous but the city is greater than the sum of them. Walk from Alfama (the old Moorish quarter) down to the waterfront, cross to Belém for the Tower and Jerónimos Monastery, then eat dinner in the Bairro Alto or LX Factory. The 28 tram line is a tourist attraction but also genuinely useful. Sintra is 40 minutes by train.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🍷</span><div>
+    <h4 class="area-name">Porto</h4>
+    <div class="area-best">Best for: Those wanting the less-touristy Portugal, wine lovers, architecture enthusiasts</div>
+  </div></div>
+  <p class="area-desc">Many people who visit both prefer Porto. It's grittier, less polished and more genuinely itself than Lisbon. The Ribeira waterfront is UNESCO-listed. The São Bento train station has the most beautiful azulejo tiles in Portugal. Port wine lodges in Vila Nova de Gaia across the river offer tours and tastings (Graham's and Ramos Pinto are the best). The Livraria Lello bookshop (book ahead) inspired JK Rowling.</p>
+</div>
+<div class="area-card rvrv2">
+  <div class="area-top"><span class="area-icon">🏯</span><div>
+    <h4 class="area-name">Sintra</h4>
+    <div class="area-best">Best for: Day trippers from Lisbon, architecture lovers, families, photographers</div>
+  </div></div>
+  <p class="area-desc">A fairytale town 40 minutes from Lisbon where 19th-century Portuguese royalty built their summer palaces on forested hills above the Atlantic. The Pena Palace (bright red and yellow, absurdly photogenic) and the Moorish Castle are the main sights. The Quinta da Regaleira has a mysterious initiation well that spirals underground. Book tickets well in advance — it gets very crowded.</p>
+</div>
+<div class="area-card rvrv0">
+  <div class="area-top"><span class="area-icon">🏖️</span><div>
+    <h4 class="area-name">Algarve</h4>
+    <div class="area-best">Best for: Beach lovers, families, water sports enthusiasts, those wanting sun</div>
+  </div></div>
+  <p class="area-desc">Southern Portugal's coastline is genuinely one of the finest in Europe — golden limestone cliffs sculpted into arches, caves and sea stacks by Atlantic waves. Lagos and Sagres in the west are the standout bases (skip Albufeira). The Ponta da Piedade sea stacks near Lagos and Praia de Benagil cave (best seen by kayak) are the iconic images. Summer is crowded; May and September are perfect.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🍇</span><div>
+    <h4 class="area-name">Douro Valley</h4>
+    <div class="area-best">Best for: Wine lovers, couples, those wanting slow travel, photographers</div>
+  </div></div>
+  <p class="area-desc">The valley where Port wine is made — terraced vineyards stepping down to the Douro River, quintas (wine estates) you can stay in, and train journeys and river cruises between Porto and the Spanish border that rank among the most scenic in Europe. Harvest time (September–October) is the most beautiful and the most social — the grapes are still foot-trodden in some quintas.</p>
+</div>
+<div class="area-card rvrv2">
+  <div class="area-top"><span class="area-icon">🌻</span><div>
+    <h4 class="area-name">Alentejo</h4>
+    <div class="area-best">Best for: Those wanting off-the-beaten-path Portugal, food and wine lovers, those preferring slow travel</div>
+  </div></div>
+  <p class="area-desc">The vast cork oak and olive plains of southern Portugal — Portugal's bread basket and arguably its finest food and wine region. Évora (Roman temple, medieval cathedral, and the bone chapel) is the region's capital. The marble villages of the northeast (Estremoz, Vila Viçosa) are as beautiful as anything in France. Slow, hot, and deeply agricultural — the antithesis of Lisbon's pace.</p>
+</div>
+</div>
+  </div>
+</section>
+<section class="s insider-s">
+  <div class="s-inner">
+    <div class="rv" style="max-width:760px;margin:0 auto">
+      <div class="eyebrow" style="color:var(--gold-dk)">Insider Knowledge</div>
+      <h2 class="h-display on-light">5 Things to Know Before You Go to <em>Portugal</em></h2>
+      <ul class="tips-list"><li class="tip-item rv"><span class="tip-bullet">→</span><p>The Lisboa Card (24/48/72 hours) covers all public transport including trains to Sintra and Cascais — good value if you're moving around a lot</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Pastéis de nata are best eaten warm from the oven — Pastéis de Belém (the original) has a queue but it moves fast</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Porto's restaurants serve genuinely enormous portions — a meia dose (half portion) is usually more than enough for one person</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>The Vinho Verde wine region (northwest Portugal) produces a light, slightly sparkling white wine that's outstanding and almost unknown outside Portugal</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Night trains between Lisbon and Porto (2.5 hours) run late — book in advance as seats sell out, especially on weekends</p></li></ul>
+    </div>
+  </div>
+</section>
 <div class="plan-s">
   <h2 class="rv">Ready to plan your Portugal trip?</h2>
   <p class="rv">Tell us when, your budget, and who's going — we'll handle every last detail.</p>

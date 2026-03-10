@@ -61,6 +61,25 @@
 
 @media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.aud-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:640px){.things-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}.bp-strip-in{grid-template-columns:1fr;}.dh-emoji{font-size:3rem;}}
+
+.areas-s{background:var(--ink-2);}
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem;}
+.area-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:2rem;transition:transform .4s var(--ease-spring),border-color .3s;}
+.area-card:hover{transform:translateY(-5px);border-color:rgba(200,145,42,.25);}
+.area-top{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;}
+.area-icon{font-size:2rem;line-height:1;flex-shrink:0;}
+.area-name{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;}
+.area-best{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.25rem;}
+.area-desc{font-size:.87rem;color:var(--smoke);line-height:1.78;}
+.insider-s{background:var(--parchment);}
+.insider-s .h-display{color:var(--ink);}
+.insider-s .eyebrow{color:var(--gold-dk)!important;}
+.tips-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;}
+.tip-item{display:flex;align-items:flex-start;gap:1.1rem;padding:1.2rem 1.5rem;background:rgba(11,23,40,.05);border-radius:var(--r-sm);border-left:3px solid var(--gold);}
+.tip-bullet{font-family:var(--ff-mono);font-size:.9rem;color:var(--gold-dk);flex-shrink:0;margin-top:.1rem;}
+.tip-item p{font-size:.9rem;color:#4A5060;line-height:1.78;margin:0;}
+@media(max-width:900px){.areas-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.areas-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -112,7 +131,7 @@
     <div class="rv">
       <div class="eyebrow" style="color:var(--gold-dk)">Asia · UAE</div>
       <h2>Why visit <em>Dubai?</em></h2>
-      <p>Dubai is a city that refuses to accept the word "impossible." In four decades it transformed from a fishing village into a global metropolis with the world's tallest building, indoor ski slopes in the desert, and artificial islands shaped like palm trees. It divides opinion — some find it soulless, others find it endlessly exciting. Whatever you think, it delivers experiences unlike anywhere else on earth.</p>
+      <p>Dubai is an exercise in the extreme — the tallest building, the largest mall, the most ambitious artificial islands, the most lavish hotels. But dismiss it as soulless and you miss what's genuinely interesting: a city built from desert in 50 years, where 200 nationalities coexist, where the old gold souk and Creek district survive alongside the futurism of Downtown, and where the food scene (reflecting all those nationalities) is extraordinary. It works best as a stopover or short break.</p>
       <div style="margin-top:1.5rem"><a href="../contact.html" class="btn btn-coral btn-arr">Plan My Dubai Trip</a></div>
     </div>
     <div class="facts-card rv rv2">
@@ -145,6 +164,64 @@
   </div>
 </section>
 
+<section class="s areas-s">
+  <div class="s-inner">
+    <div class="rv" style="text-align:center;margin-bottom:2.5rem">
+      <div class="eyebrow" style="justify-content:center">Know Before You Go</div>
+      <h2 class="h-display">Where to Base Yourself in <em>Dubai</em></h2>
+      <p style="color:var(--smoke);max-width:580px;margin:.8rem auto 0;line-height:1.8">Dubai isn't one-size-fits-all. Each area has a completely different character — here's how to choose.</p>
+    </div>
+    <div class="areas-grid"><div class="area-card rvrv">
+  <div class="area-top"><span class="area-icon">🏙️</span><div>
+    <h4 class="area-name">Downtown Dubai</h4>
+    <div class="area-best">Best for: First-time visitors, those wanting to experience Dubai's signature scale</div>
+  </div></div>
+  <p class="area-desc">Burj Khalifa, Dubai Mall (the world's largest by total area), the Dubai Fountain and the Dubai Opera. This is Dubai at its most ambitious and most impressive. The Burj Khalifa At The Top observation deck (book online — much cheaper than queuing) at sunset is spectacular. The Fountain show runs every 30 minutes after dark from the mall's lakeside boardwalk — free and extraordinary.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🕌</span><div>
+    <h4 class="area-name">Old Dubai (Deira & Bur Dubai)</h4>
+    <div class="area-best">Best for: Those wanting history and culture, photographers, those seeking authenticity</div>
+  </div></div>
+  <p class="area-desc">The real Dubai that existed before the oil money. Al Fahidi Historical Neighbourhood is a perfectly preserved wind-tower district — the Sheikh Mohammed Centre for Cultural Understanding here offers excellent 'Open Doors, Open Minds' breakfasts that give genuine insight into Emirati culture. Cross the Creek by abra (traditional wooden water taxi, 1 dirham) to the Gold Souk and Spice Souk.</p>
+</div>
+<div class="area-card rvrv2">
+  <div class="area-top"><span class="area-icon">🌊</span><div>
+    <h4 class="area-name">Jumeirah & Dubai Marina</h4>
+    <div class="area-best">Best for: Beach lovers, families, those wanting a European-style neighbourhood feel</div>
+  </div></div>
+  <p class="area-desc">The beach. Jumeirah Public Beach is free and excellent. The Marina is the most liveable neighbourhood for visitors — waterfront restaurants, a yacht-lined canal, and the pedestrianised Marina Walk. The Palm Jumeirah's Atlantis resort and the Ain Dubai observation wheel (world's largest Ferris wheel) are here. JBR (Jumeirah Beach Residence) has the best street food market at weekends.</p>
+</div>
+<div class="area-card rvrv0">
+  <div class="area-top"><span class="area-icon">🌶️</span><div>
+    <h4 class="area-name">Dubai Creek & Spice Souk</h4>
+    <div class="area-best">Best for: Shoppers, culture lovers, photographers, those wanting the historic city</div>
+  </div></div>
+  <p class="area-desc">This is the heart of Dubai's trading heritage — dhows still unload goods from Pakistan and Iran along the Creek, the same way they have for 150 years. The Gold Souk has 25 tonnes of gold on display at any given time. The Spice Souk sells frankincense, cardamom and saffron from wooden sacks. Bargain, but start at 40% of the asking price.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🏜️</span><div>
+    <h4 class="area-name">Desert Safari</h4>
+    <div class="area-best">Best for: Everyone — a desert experience is uniquely Dubai</div>
+  </div></div>
+  <p class="area-desc">A dune bash in a 4WD at sunset, followed by a desert camp dinner with falconry, henna, camel rides and shisha is cheesy but magnificent. The Lahbab dunes (red dunes, 45 minutes from the city) are the most dramatic. Book with a smaller operator rather than the large companies — the experience is more personal and the food is significantly better.</p>
+</div>
+</div>
+  </div>
+</section>
+<section class="s insider-s">
+  <div class="s-inner">
+    <div class="rv" style="max-width:760px;margin:0 auto">
+      <div class="eyebrow" style="color:var(--gold-dk)">Insider Knowledge</div>
+      <h2 class="h-display on-light">5 Things to Know Before You Go to <em>Dubai</em></h2>
+      <ul class="tips-list"><li class="tip-item rv"><span class="tip-bullet">→</span><p>Dubai is very hot June–September (45°C+) — visit October–April. The upside of summer is that luxury hotels drop to 30% of their peak-season prices</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Alcohol is served in hotels and licensed restaurants but not in the souks or old town — plan accordingly</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>The Metro Red Line covers Downtown, Dubai Marina and the airport — cheap (from 2 dirhams) and air-conditioned</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Eating in the workers' districts around Deira (Al Rigga area) costs a fraction of the Marina restaurants and the food (Pakistani, Indian, Yemeni) is outstanding</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Friday and Saturday are the weekend here — government buildings and many shops close on Friday morning for Jumu'ah prayers</p></li></ul>
+    </div>
+  </div>
+</section>
 <div class="plan-s">
   <h2 class="rv">Ready to plan your Dubai trip?</h2>
   <p class="rv">Tell us when, your budget, and who's going — we'll handle every last detail.</p>

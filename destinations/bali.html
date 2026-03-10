@@ -61,6 +61,25 @@
 
 @media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.aud-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:640px){.things-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}.bp-strip-in{grid-template-columns:1fr;}.dh-emoji{font-size:3rem;}}
+
+.areas-s{background:var(--ink-2);}
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem;}
+.area-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:2rem;transition:transform .4s var(--ease-spring),border-color .3s;}
+.area-card:hover{transform:translateY(-5px);border-color:rgba(200,145,42,.25);}
+.area-top{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;}
+.area-icon{font-size:2rem;line-height:1;flex-shrink:0;}
+.area-name{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;}
+.area-best{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.25rem;}
+.area-desc{font-size:.87rem;color:var(--smoke);line-height:1.78;}
+.insider-s{background:var(--parchment);}
+.insider-s .h-display{color:var(--ink);}
+.insider-s .eyebrow{color:var(--gold-dk)!important;}
+.tips-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;}
+.tip-item{display:flex;align-items:flex-start;gap:1.1rem;padding:1.2rem 1.5rem;background:rgba(11,23,40,.05);border-radius:var(--r-sm);border-left:3px solid var(--gold);}
+.tip-bullet{font-family:var(--ff-mono);font-size:.9rem;color:var(--gold-dk);flex-shrink:0;margin-top:.1rem;}
+.tip-item p{font-size:.9rem;color:#4A5060;line-height:1.78;margin:0;}
+@media(max-width:900px){.areas-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.areas-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -112,7 +131,7 @@
     <div class="rv">
       <div class="eyebrow" style="color:var(--gold-dk)">Asia · Indonesia</div>
       <h2>Why visit <em>Bali?</em></h2>
-      <p>Bali defies easy description. It's the island of Gods — a place where ancient Hindu ceremonies share space with world-class surf breaks and boutique wellness retreats. The terraced rice fields of Tegalalang glow emerald green, the temples of Uluwatu hang from sea cliffs at sunset, and Ubud's art market buzzes with creative energy. It's incredibly popular, but still manages to feel utterly magical if you know where to look.</p>
+      <p>Bali is one of those rare places that manages to be simultaneously overrun with tourists and still genuinely magical. The secret is understanding that there are effectively multiple Balis — Ubud in the forested interior is completely different from Seminyak's beach clubs, which is nothing like the surf breaks of Canggu, which bears no resemblance to the quiet temples of the east. The mistake is trying to do all of it. Pick your Bali and go deep.</p>
       <div style="margin-top:1.5rem"><a href="../contact.html" class="btn btn-coral btn-arr">Plan My Bali Trip</a></div>
     </div>
     <div class="facts-card rv rv2">
@@ -145,6 +164,64 @@
   </div>
 </section>
 
+<section class="s areas-s">
+  <div class="s-inner">
+    <div class="rv" style="text-align:center;margin-bottom:2.5rem">
+      <div class="eyebrow" style="justify-content:center">Know Before You Go</div>
+      <h2 class="h-display">Where to Base Yourself in <em>Bali</em></h2>
+      <p style="color:var(--smoke);max-width:580px;margin:.8rem auto 0;line-height:1.8">Bali isn't one-size-fits-all. Each area has a completely different character — here's how to choose.</p>
+    </div>
+    <div class="areas-grid"><div class="area-card rvrv">
+  <div class="area-top"><span class="area-icon">🌿</span><div>
+    <h4 class="area-name">Ubud</h4>
+    <div class="area-best">Best for: Culture lovers, yogis, digital nomads, those wanting to understand Bali properly</div>
+  </div></div>
+  <p class="area-desc">The cultural heart of Bali. Rice terraces, Hindu temples, traditional dance performances, art galleries, and the best food scene on the island — Ubud is where Bali's soul is. It's become very popular (Eat Pray Love did a lot of damage) but still delivers if you get up early. The Sacred Monkey Forest, Tegallalang rice terraces, and the nightly Kecak fire dance at Uluwatu are non-negotiable.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🏄</span><div>
+    <h4 class="area-name">Canggu</h4>
+    <div class="area-best">Best for: Surfers, younger travellers, digital nomads, food enthusiasts</div>
+  </div></div>
+  <p class="area-desc">Bali's coolest neighbourhood — a sprawling beach town popular with surfers, creatives and digital nomads. The waves at Echo Beach and Batu Bolong are genuinely excellent for intermediate surfers. The café scene is world-class. It's lost some of its edge to gentrification but remains the best place for younger travellers and those who want good coffee and fast wifi alongside the rice paddies.</p>
+</div>
+<div class="area-card rvrv2">
+  <div class="area-top"><span class="area-icon">🍹</span><div>
+    <h4 class="area-name">Seminyak</h4>
+    <div class="area-best">Best for: Luxury travellers, couples, those wanting beach club culture</div>
+  </div></div>
+  <p class="area-desc">Upmarket beach clubs, designer boutiques, excellent restaurants and the most sophisticated nightlife on the island. Seminyak is where you come to eat, drink and watch the sunset from a sunlounger with a cocktail. Ku De Ta (now Akademi) and Potato Head Beach Club are iconic for a reason. It's expensive by Bali standards but relatively affordable by any Western comparison.</p>
+</div>
+<div class="area-card rvrv0">
+  <div class="area-top"><span class="area-icon">🌊</span><div>
+    <h4 class="area-name">Uluwatu</h4>
+    <div class="area-best">Best for: Surfers, sunset lovers, those seeking drama and culture</div>
+  </div></div>
+  <p class="area-desc">The dramatic southern tip of Bali — clifftop temples, world-class surf breaks, and a completely different feel from the north. The Uluwatu Temple at sunset with the Kecak dance performance is one of the great travel experiences in Asia. The surf here (Padang Padang, Uluwatu break) is among the best in the world — but experienced surfers only.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🤿</span><div>
+    <h4 class="area-name">Amed & East Bali</h4>
+    <div class="area-best">Best for: Divers, snorkellers, those wanting authentic Bali, off-the-beaten-path travellers</div>
+  </div></div>
+  <p class="area-desc">The quiet, undeveloped east coast is everything the tourist trail is not. Black volcanic sand beaches, the best snorkelling and diving on the island (including the USAT Liberty shipwreck at Tulamben), traditional fishing villages and views of Mount Agung across the water. If you want real Bali without the Instagram crowds — this is it.</p>
+</div>
+</div>
+  </div>
+</section>
+<section class="s insider-s">
+  <div class="s-inner">
+    <div class="rv" style="max-width:760px;margin:0 auto">
+      <div class="eyebrow" style="color:var(--gold-dk)">Insider Knowledge</div>
+      <h2 class="h-display on-light">5 Things to Know Before You Go to <em>Bali</em></h2>
+      <ul class="tips-list"><li class="tip-item rv"><span class="tip-bullet">→</span><p>Rent a scooter (£3–5/day) — it's genuinely the best way to get around and most roads outside Seminyak are quiet enough to be safe</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Temple dress code applies everywhere — carry a sarong or borrow one at the entrance</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>The Tegallalang rice terraces are stunning but the access road has become a tourist trap — pay the entrance and walk the lower paths for the real views</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Nasi goreng from a warung (local food stall) costs £1–2 and is frequently better than anything in a restaurant</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Visit Tirta Gangga water palace at sunrise — almost empty and one of the most beautiful gardens in Asia</p></li></ul>
+    </div>
+  </div>
+</section>
 <div class="plan-s">
   <h2 class="rv">Ready to plan your Bali adventure?</h2>
   <p class="rv">Tell us when, your budget, and who's going — we'll handle every last detail.</p>

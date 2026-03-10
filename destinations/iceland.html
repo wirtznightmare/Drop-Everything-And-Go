@@ -61,6 +61,25 @@
 
 @media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.aud-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:640px){.things-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}.bp-strip-in{grid-template-columns:1fr;}.dh-emoji{font-size:3rem;}}
+
+.areas-s{background:var(--ink-2);}
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem;}
+.area-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:2rem;transition:transform .4s var(--ease-spring),border-color .3s;}
+.area-card:hover{transform:translateY(-5px);border-color:rgba(200,145,42,.25);}
+.area-top{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;}
+.area-icon{font-size:2rem;line-height:1;flex-shrink:0;}
+.area-name{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;}
+.area-best{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.25rem;}
+.area-desc{font-size:.87rem;color:var(--smoke);line-height:1.78;}
+.insider-s{background:var(--parchment);}
+.insider-s .h-display{color:var(--ink);}
+.insider-s .eyebrow{color:var(--gold-dk)!important;}
+.tips-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;}
+.tip-item{display:flex;align-items:flex-start;gap:1.1rem;padding:1.2rem 1.5rem;background:rgba(11,23,40,.05);border-radius:var(--r-sm);border-left:3px solid var(--gold);}
+.tip-bullet{font-family:var(--ff-mono);font-size:.9rem;color:var(--gold-dk);flex-shrink:0;margin-top:.1rem;}
+.tip-item p{font-size:.9rem;color:#4A5060;line-height:1.78;margin:0;}
+@media(max-width:900px){.areas-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.areas-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -112,7 +131,7 @@
     <div class="rv">
       <div class="eyebrow" style="color:var(--gold-dk)">Europe · North Atlantic</div>
       <h2>Why visit <em>Iceland?</em></h2>
-      <p>Iceland is where the earth still feels new. Geysers erupt on schedule, glaciers calve into black-sand lagoons, and the northern lights paint the sky in colours that don't seem real. In summer, the midnight sun means you can hike the Fimmvörðuháls at 2am in full daylight. In winter, the darkness brings the aurora. There is genuinely no bad time to visit — just different kinds of extraordinary.</p>
+      <p>Iceland is elemental — and that word means something different here. It's the only place on earth where you can walk between tectonic plates, stand inside a volcano, snorkel in glacial water, watch geysers erupt on a schedule, and see the northern lights, all within a week. It's also the most accessible true wilderness in Europe. The ring road circles the island and virtually anyone can drive it independently.</p>
       <div style="margin-top:1.5rem"><a href="../contact.html" class="btn btn-coral btn-arr">Plan My Iceland Trip</a></div>
     </div>
     <div class="facts-card rv rv2">
@@ -145,6 +164,64 @@
   </div>
 </section>
 
+<section class="s areas-s">
+  <div class="s-inner">
+    <div class="rv" style="text-align:center;margin-bottom:2.5rem">
+      <div class="eyebrow" style="justify-content:center">Know Before You Go</div>
+      <h2 class="h-display">Where to Base Yourself in <em>Iceland</em></h2>
+      <p style="color:var(--smoke);max-width:580px;margin:.8rem auto 0;line-height:1.8">Iceland isn't one-size-fits-all. Each area has a completely different character — here's how to choose.</p>
+    </div>
+    <div class="areas-grid"><div class="area-card rvrv">
+  <div class="area-top"><span class="area-icon">🏙️</span><div>
+    <h4 class="area-name">Reykjavík</h4>
+    <div class="area-best">Best for: Culture lovers, food enthusiasts, those using it as a base for day trips</div>
+  </div></div>
+  <p class="area-desc">The world's northernmost capital is compact, walkable, and genuinely excellent. Hallgrímskirkja church is the obvious landmark. The Harpa concert hall on the harbour is one of Europe's most beautiful modern buildings. The hot dog stand (Bæjarins Beztu Pylsur) near the harbour has been serving the best hot dogs in the world since 1937. The nightlife is late-starting, expensive, and worth it.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">⭕</span><div>
+    <h4 class="area-name">Golden Circle</h4>
+    <div class="area-best">Best for: Everyone — it's the essential Iceland introduction</div>
+  </div></div>
+  <p class="area-desc">The classic day trip from Reykjavík — three extraordinary natural sites in 300km. Þingvellir National Park is where the Eurasian and North American tectonic plates are visibly separating (and where you can snorkel between them in Silfra fissure). Geysir has the most reliable geyser in the world (Strokkur erupts every 5–8 minutes). Gullfoss waterfall drops 32 metres into a canyon.</p>
+</div>
+<div class="area-card rvrv2">
+  <div class="area-top"><span class="area-icon">🖤</span><div>
+    <h4 class="area-name">South Coast</h4>
+    <div class="area-best">Best for: Photographers, nature lovers, road trippers</div>
+  </div></div>
+  <p class="area-desc">Iceland's most dramatic drive — Seljalandsfoss and Skógafoss waterfalls, Reynisfjara black sand beach with its columnar basalt stacks, the village of Vík, and beyond it the Vatnajökull glacier reaching the sea. Jökulsárlón glacier lagoon (floating blue icebergs calving from the glacier into the sea) is the most photographed spot in Iceland and deserves its reputation.</p>
+</div>
+<div class="area-card rvrv0">
+  <div class="area-top"><span class="area-icon">🌋</span><div>
+    <h4 class="area-name">Snæfellsnes Peninsula</h4>
+    <div class="area-best">Best for: Photographers, those wanting fewer tourists, those interested in Icelandic mythology</div>
+  </div></div>
+  <p class="area-desc">A miniature Iceland in 100km — the Snæfellsjökull glacier-capped volcano (Jules Verne set Journey to the Centre of the Earth here), lava fields, sea cliffs, fishing villages, and Kirkjufell mountain (the most photographed mountain in Iceland). Less visited than the south coast and significantly more dramatic in certain conditions.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🦅</span><div>
+    <h4 class="area-name">Westfjords</h4>
+    <div class="area-best">Best for: Adventurous travellers, hikers, those wanting the real Iceland without the tour buses</div>
+  </div></div>
+  <p class="area-desc">The least-visited region of Iceland — dramatic fjords cutting deep into the northwestern peninsula, the Dynjandi waterfall (Iceland's most beautiful), arctic foxes in the Hornstrandir nature reserve, and villages where you might be the only visitor. Accessible by ferry from Stykkishólmur or by a very long drive. It's genuinely remote in a way that the ring road is not.</p>
+</div>
+</div>
+  </div>
+</section>
+<section class="s insider-s">
+  <div class="s-inner">
+    <div class="rv" style="max-width:760px;margin:0 auto">
+      <div class="eyebrow" style="color:var(--gold-dk)">Insider Knowledge</div>
+      <h2 class="h-display on-light">5 Things to Know Before You Go to <em>Iceland</em></h2>
+      <ul class="tips-list"><li class="tip-item rv"><span class="tip-bullet">→</span><p>Book the Blue Lagoon online in advance — it sells out weeks ahead and walk-ins are rarely possible</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>The northern lights forecast (vedur.is) gives 1–3 hour advance notice — check it every evening from September to April</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Renting a 4WD (rather than a regular car) opens up the highland interior F-roads in summer — worth every extra penny</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Lamb is Iceland's finest food — slow-cooked kjötsúpa (lamb soup) in a roadside restaurant is the best £10 you'll spend</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Camping with the Camping Card (£120 for the season) covers 40+ campsites — the best way to afford Iceland on a budget</p></li></ul>
+    </div>
+  </div>
+</section>
 <div class="plan-s">
   <h2 class="rv">Ready to plan your Iceland adventure?</h2>
   <p class="rv">Tell us when, your budget, and who's going — we'll handle every last detail.</p>

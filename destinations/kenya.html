@@ -61,6 +61,25 @@
 
 @media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.aud-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:640px){.things-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}.bp-strip-in{grid-template-columns:1fr;}.dh-emoji{font-size:3rem;}}
+
+.areas-s{background:var(--ink-2);}
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem;}
+.area-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:2rem;transition:transform .4s var(--ease-spring),border-color .3s;}
+.area-card:hover{transform:translateY(-5px);border-color:rgba(200,145,42,.25);}
+.area-top{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;}
+.area-icon{font-size:2rem;line-height:1;flex-shrink:0;}
+.area-name{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;}
+.area-best{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.25rem;}
+.area-desc{font-size:.87rem;color:var(--smoke);line-height:1.78;}
+.insider-s{background:var(--parchment);}
+.insider-s .h-display{color:var(--ink);}
+.insider-s .eyebrow{color:var(--gold-dk)!important;}
+.tips-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;}
+.tip-item{display:flex;align-items:flex-start;gap:1.1rem;padding:1.2rem 1.5rem;background:rgba(11,23,40,.05);border-radius:var(--r-sm);border-left:3px solid var(--gold);}
+.tip-bullet{font-family:var(--ff-mono);font-size:.9rem;color:var(--gold-dk);flex-shrink:0;margin-top:.1rem;}
+.tip-item p{font-size:.9rem;color:#4A5060;line-height:1.78;margin:0;}
+@media(max-width:900px){.areas-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.areas-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -112,7 +131,7 @@
     <div class="rv">
       <div class="eyebrow" style="color:var(--gold-dk)">Africa · East Africa</div>
       <h2>Why visit <em>Kenya?</em></h2>
-      <p>Kenya is the safari benchmark against which everything else is measured. The Maasai Mara alone — with its vast golden savannah, big five wildlife, and the spectacle of the Great Migration — is reason enough to go. But Kenya offers so much more: the dramatic landscapes of the Laikipia Plateau, the flamingo-ringed shores of Lake Nakuru, and the chance to trek with Maasai warriors across the land they've called home for centuries.</p>
+      <p>Kenya is safari at its finest — and the safari experience here is unlike anything else on earth. The Maasai Mara in particular, especially during the Great Migration (July–October), delivers scenes of such scale and drama that photographs genuinely don't do it justice. But Kenya is not only wildlife: Nairobi is one of Africa's most dynamic cities, the coast around Malindi and Diani Beach is spectacular, and the Rift Valley offers landscapes that feel genuinely prehistoric.</p>
       <div style="margin-top:1.5rem"><a href="../contact.html" class="btn btn-coral btn-arr">Plan My Kenya Trip</a></div>
     </div>
     <div class="facts-card rv rv2">
@@ -145,6 +164,64 @@
   </div>
 </section>
 
+<section class="s areas-s">
+  <div class="s-inner">
+    <div class="rv" style="text-align:center;margin-bottom:2.5rem">
+      <div class="eyebrow" style="justify-content:center">Know Before You Go</div>
+      <h2 class="h-display">Where to Base Yourself in <em>Kenya</em></h2>
+      <p style="color:var(--smoke);max-width:580px;margin:.8rem auto 0;line-height:1.8">Kenya isn't one-size-fits-all. Each area has a completely different character — here's how to choose.</p>
+    </div>
+    <div class="areas-grid"><div class="area-card rvrv">
+  <div class="area-top"><span class="area-icon">🦁</span><div>
+    <h4 class="area-name">Masai Mara</h4>
+    <div class="area-best">Best for: Wildlife lovers, photographers, bucket-list travellers, honeymoons</div>
+  </div></div>
+  <p class="area-desc">The greatest wildlife reserve on earth. Year-round game viewing is excellent — lion prides, elephant herds, giraffe, cheetah, leopard — but the Great Migration (July–October) elevates it to something else entirely. Over a million wildebeest and zebra crossing the Mara River, pursued by crocodiles and big cats. Stay in a tented camp inside or adjacent to the reserve for early morning game drives before the day-trippers arrive.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🐘</span><div>
+    <h4 class="area-name">Amboseli</h4>
+    <div class="area-best">Best for: Elephant lovers, photographers, those wanting big cat sightings with fewer tourists</div>
+  </div></div>
+  <p class="area-desc">Elephant country. Amboseli has the largest elephants in Africa and the best backdrop in Kenya — Mount Kilimanjaro rising behind every frame on clear mornings. The big cats are here too, and the wide open plains make it far easier to spot wildlife than the thicker bush of other parks. Smaller and less famous than the Mara, which means significantly fewer vehicles around every sighting.</p>
+</div>
+<div class="area-card rvrv2">
+  <div class="area-top"><span class="area-icon">🏙️</span><div>
+    <h4 class="area-name">Nairobi</h4>
+    <div class="area-best">Best for: City lovers, foodies, those in transit to safari, anyone curious about modern Africa</div>
+  </div></div>
+  <p class="area-desc">Africa's most interesting capital — Nairobi has a food scene that's genuinely world-class, a tech startup culture that's earned it the nickname 'Silicon Savannah', and a street art scene centred on the Mathare neighbourhood that rivals anything in Europe. The Karen Blixen Museum, the elephant orphanage at the David Sheldrick Wildlife Trust, and Karura Forest (urban forest inside the city) are the highlights.</p>
+</div>
+<div class="area-card rvrv0">
+  <div class="area-top"><span class="area-icon">🏖️</span><div>
+    <h4 class="area-name">Diani Beach</h4>
+    <div class="area-best">Best for: Beach lovers, divers, families, those combining safari with coast</div>
+  </div></div>
+  <p class="area-desc">Kenya's finest beach — 17km of white sand on the south coast, fringed by coral reef and Indian Ocean. The snorkelling and diving is excellent (book with a local operator). Shimba Hills National Reserve is 20 minutes inland and home to the rare sable antelope. Diani has a good range of accommodation from beach shacks to boutique resorts — far less developed than Zanzibar but equally beautiful.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🦒</span><div>
+    <h4 class="area-name">Samburu</h4>
+    <div class="area-best">Best for: Those wanting off-the-beaten-path safari, wildlife enthusiasts, cultural travellers</div>
+  </div></div>
+  <p class="area-desc">Northern Kenya's dramatic, arid landscape feels completely different from the Mara. The Ewaso Ng'iro river attracts wildlife to its banks — reticulated giraffe, Grevy's zebra, Beisa oryx and the Somali ostrich are species only found in the north. The Samburu people maintain their traditional way of life more visibly here than almost anywhere else in Kenya.</p>
+</div>
+</div>
+  </div>
+</section>
+<section class="s insider-s">
+  <div class="s-inner">
+    <div class="rv" style="max-width:760px;margin:0 auto">
+      <div class="eyebrow" style="color:var(--gold-dk)">Insider Knowledge</div>
+      <h2 class="h-display on-light">5 Things to Know Before You Go to <em>Kenya</em></h2>
+      <ul class="tips-list"><li class="tip-item rv"><span class="tip-bullet">→</span><p>Flying between parks (rather than driving) saves days and the small aircraft views of Kenya are spectacular — budget £150–250 per leg</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>The Mara is best July–October for the Migration, but January–February has fewer tourists and excellent big cat sightings around river crossings</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>David Sheldrick Wildlife Trust in Nairobi lets you adopt an orphaned elephant online and visit during feeding — book months in advance</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Community conservancies adjacent to the Mara (Mara Naboisho, Ol Kinyei) have fewer vehicles per sighting and the game viewing is equally good</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Kenya's coast was a major Swahili trading port — Lamu Island (accessed by small plane from Nairobi) is one of the best-preserved medieval towns in East Africa</p></li></ul>
+    </div>
+  </div>
+</section>
 <div class="plan-s">
   <h2 class="rv">Ready to plan your Kenya safari?</h2>
   <p class="rv">Tell us when, your budget, and who's going — we'll handle every last detail.</p>

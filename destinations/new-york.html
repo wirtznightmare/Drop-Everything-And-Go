@@ -61,6 +61,25 @@
 
 @media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.aud-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:640px){.things-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}.bp-strip-in{grid-template-columns:1fr;}.dh-emoji{font-size:3rem;}}
+
+.areas-s{background:var(--ink-2);}
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem;}
+.area-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:2rem;transition:transform .4s var(--ease-spring),border-color .3s;}
+.area-card:hover{transform:translateY(-5px);border-color:rgba(200,145,42,.25);}
+.area-top{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;}
+.area-icon{font-size:2rem;line-height:1;flex-shrink:0;}
+.area-name{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;}
+.area-best{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.25rem;}
+.area-desc{font-size:.87rem;color:var(--smoke);line-height:1.78;}
+.insider-s{background:var(--parchment);}
+.insider-s .h-display{color:var(--ink);}
+.insider-s .eyebrow{color:var(--gold-dk)!important;}
+.tips-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;}
+.tip-item{display:flex;align-items:flex-start;gap:1.1rem;padding:1.2rem 1.5rem;background:rgba(11,23,40,.05);border-radius:var(--r-sm);border-left:3px solid var(--gold);}
+.tip-bullet{font-family:var(--ff-mono);font-size:.9rem;color:var(--gold-dk);flex-shrink:0;margin-top:.1rem;}
+.tip-item p{font-size:.9rem;color:#4A5060;line-height:1.78;margin:0;}
+@media(max-width:900px){.areas-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.areas-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -112,7 +131,7 @@
     <div class="rv">
       <div class="eyebrow" style="color:var(--gold-dk)">Americas · USA</div>
       <h2>Why visit <em>New York City?</em></h2>
-      <p>New York is the city that wrote the template for "world city." It's simultaneously the most overhyped and underrated destination on earth — because however many films you've seen set here, however many photographs you've scrolled through, the actual experience of walking those streets is still completely overwhelming. Every neighbourhood is its own world. Every borough deserves a week. And the food scene is, genuinely, the best on the planet.</p>
+      <p>New York is one of those cities that works as a myth before you arrive — and then somehow exceeds the myth. The energy is real. The food (every cuisine on earth, at every price point) is real. The architecture is real. The neighbourhoods, each with their own culture, are real. It rewards repeat visits and deep exploration far more than a checklist approach. First-timers: don't try to see everything. Pick a few neighbourhoods and actually live in them for a few days.</p>
       <div style="margin-top:1.5rem"><a href="../contact.html" class="btn btn-coral btn-arr">Plan My New York City Trip</a></div>
     </div>
     <div class="facts-card rv rv2">
@@ -145,6 +164,64 @@
   </div>
 </section>
 
+<section class="s areas-s">
+  <div class="s-inner">
+    <div class="rv" style="text-align:center;margin-bottom:2.5rem">
+      <div class="eyebrow" style="justify-content:center">Know Before You Go</div>
+      <h2 class="h-display">Where to Base Yourself in <em>New York</em></h2>
+      <p style="color:var(--smoke);max-width:580px;margin:.8rem auto 0;line-height:1.8">New York isn't one-size-fits-all. Each area has a completely different character — here's how to choose.</p>
+    </div>
+    <div class="areas-grid"><div class="area-card rvrv">
+  <div class="area-top"><span class="area-icon">🗽</span><div>
+    <h4 class="area-name">Manhattan (Midtown)</h4>
+    <div class="area-best">Best for: First-time visitors, those wanting the iconic New York experience</div>
+  </div></div>
+  <p class="area-desc">The classic New York of Times Square, Rockefeller Center, Fifth Avenue and Central Park. The Empire State Building and One World Observatory are the essential viewpoints. The High Line (an elevated park on a former rail line) is genuinely excellent and connects the Meatpacking District to Hudson Yards. Grand Central Terminal is one of the world's great buildings — go during rush hour to watch the choreography.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🌉</span><div>
+    <h4 class="area-name">Lower Manhattan & Brooklyn Bridge</h4>
+    <div class="area-best">Best for: History lovers, photographers, those wanting free New York experiences</div>
+  </div></div>
+  <p class="area-desc">Wall Street, the 9/11 Memorial (book in advance), the Oculus transit hub, and the Staten Island Ferry (free, best views of the Statue of Liberty without paying for the tour). Walk the Brooklyn Bridge — the view of lower Manhattan from the bridge's midpoint is the best free view in the city. DUMBO (Down Under the Manhattan Bridge Overpass) has the famous cobblestone-street-through-bridge-arch photograph.</p>
+</div>
+<div class="area-card rvrv2">
+  <div class="area-top"><span class="area-icon">🎨</span><div>
+    <h4 class="area-name">Brooklyn</h4>
+    <div class="area-best">Best for: Those wanting off-the-tourist-trail New York, food lovers, art enthusiasts, nightlife</div>
+  </div></div>
+  <p class="area-desc">New York's most interesting borough — Williamsburg (music venues, vintage markets, excellent food), Bushwick (the largest outdoor street art gallery in the world), Park Slope (family-friendly brownstones and Prospect Park), and Red Hook (repurposed warehouses, the best tacos in the city at Red Hook ballfields). Brooklyn is where New York actually lives.</p>
+</div>
+<div class="area-card rvrv0">
+  <div class="area-top"><span class="area-icon">🎷</span><div>
+    <h4 class="area-name">Harlem & Upper Manhattan</h4>
+    <div class="area-best">Best for: Culture lovers, jazz enthusiasts, those wanting New York's cultural history</div>
+  </div></div>
+  <p class="area-desc">The spiritual home of African-American culture in New York — jazz was born here, the Harlem Renaissance happened here, and the neighbourhood is experiencing a renaissance of its own. The Apollo Theater still hosts Amateur Night. Sylvia's Restaurant on Lenox Avenue is the legendary soul food institution. The Cloisters museum (medieval art in a medieval building reconstructed on a Hudson River hilltop) is extraordinary.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🌍</span><div>
+    <h4 class="area-name">Queens & The Bronx</h4>
+    <div class="area-best">Best for: Food lovers, those wanting authentic immigrant New York, the genuinely curious traveller</div>
+  </div></div>
+  <p class="area-desc">The most ethnically diverse borough on earth (Queens) and the birthplace of hip-hop (the Bronx). Jackson Heights in Queens has the best Indian and Bangladeshi food outside South Asia. Flushing is the finest Chinatown in America. The New York Botanical Garden in the Bronx is world-class. Arthur Avenue in the Bronx is the real Italian-American neighbourhood that Little Italy in Manhattan pretends to be.</p>
+</div>
+</div>
+  </div>
+</section>
+<section class="s insider-s">
+  <div class="s-inner">
+    <div class="rv" style="max-width:760px;margin:0 auto">
+      <div class="eyebrow" style="color:var(--gold-dk)">Insider Knowledge</div>
+      <h2 class="h-display on-light">5 Things to Know Before You Go to <em>New York</em></h2>
+      <ul class="tips-list"><li class="tip-item rv"><span class="tip-bullet">→</span><p>The subway runs 24 hours — buy an OMNY card (tap with contactless) rather than MetroCard and you're capped at £34/week</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>The best pizza is a subject of genuine religion in New York — Di Fara in Brooklyn and Lucali are worth the queues, but any corner slice joint will do for lunch</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>MoMA (Museum of Modern Art) is free every Friday evening from 5:30pm — arrive at 5pm to queue</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>The Staten Island Ferry is completely free and gives 25 minutes of open-deck Manhattan skyline views each way</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>New York restaurant reservations: book on Resy or OpenTable 2–4 weeks ahead for popular spots; walk-in at the bar for anywhere to sit immediately</p></li></ul>
+    </div>
+  </div>
+</section>
 <div class="plan-s">
   <h2 class="rv">Ready to plan your New York trip?</h2>
   <p class="rv">Tell us when, your budget, and who's going — we'll handle every last detail.</p>

@@ -61,6 +61,25 @@
 
 @media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.aud-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:640px){.things-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}.bp-strip-in{grid-template-columns:1fr;}.dh-emoji{font-size:3rem;}}
+
+.areas-s{background:var(--ink-2);}
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem;}
+.area-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:2rem;transition:transform .4s var(--ease-spring),border-color .3s;}
+.area-card:hover{transform:translateY(-5px);border-color:rgba(200,145,42,.25);}
+.area-top{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;}
+.area-icon{font-size:2rem;line-height:1;flex-shrink:0;}
+.area-name{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;}
+.area-best{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.25rem;}
+.area-desc{font-size:.87rem;color:var(--smoke);line-height:1.78;}
+.insider-s{background:var(--parchment);}
+.insider-s .h-display{color:var(--ink);}
+.insider-s .eyebrow{color:var(--gold-dk)!important;}
+.tips-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;}
+.tip-item{display:flex;align-items:flex-start;gap:1.1rem;padding:1.2rem 1.5rem;background:rgba(11,23,40,.05);border-radius:var(--r-sm);border-left:3px solid var(--gold);}
+.tip-bullet{font-family:var(--ff-mono);font-size:.9rem;color:var(--gold-dk);flex-shrink:0;margin-top:.1rem;}
+.tip-item p{font-size:.9rem;color:#4A5060;line-height:1.78;margin:0;}
+@media(max-width:900px){.areas-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.areas-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -112,7 +131,7 @@
     <div class="rv">
       <div class="eyebrow" style="color:var(--gold-dk)">Europe · Croatia</div>
       <h2>Why visit <em>Croatia?</em></h2>
-      <p>Croatia has graduated from hidden gem to must-visit, and for good reason. The Dalmatian coast stretches over 1,000 islands, its water is an impossible shade of turquoise, and cities like Dubrovnik and Split contain some of the best-preserved medieval architecture in Europe. Skip the August hordes and visit in May, June, or September — you'll have the same scenery with a fraction of the crowds.</p>
+      <p>Croatia's Adriatic coast is the Mediterranean at its most dramatic — a thousand islands, crystal-clear water so transparent that boats appear to float in mid-air, medieval walled cities, and national parks with waterfalls and lakes. It's become very popular (peak summer is genuinely overwhelming in Dubrovnik and Hvar) but it remains beautiful and rewarding if you time and choose your bases carefully. May, June, and September are close to perfect.</p>
       <div style="margin-top:1.5rem"><a href="../contact.html" class="btn btn-coral btn-arr">Plan My Croatia Trip</a></div>
     </div>
     <div class="facts-card rv rv2">
@@ -145,6 +164,64 @@
   </div>
 </section>
 
+<section class="s areas-s">
+  <div class="s-inner">
+    <div class="rv" style="text-align:center;margin-bottom:2.5rem">
+      <div class="eyebrow" style="justify-content:center">Know Before You Go</div>
+      <h2 class="h-display">Where to Base Yourself in <em>Croatia</em></h2>
+      <p style="color:var(--smoke);max-width:580px;margin:.8rem auto 0;line-height:1.8">Croatia isn't one-size-fits-all. Each area has a completely different character — here's how to choose.</p>
+    </div>
+    <div class="areas-grid"><div class="area-card rvrv">
+  <div class="area-top"><span class="area-icon">🏰</span><div>
+    <h4 class="area-name">Dubrovnik</h4>
+    <div class="area-best">Best for: History lovers, couples, photographers, those wanting the full Croatia experience</div>
+  </div></div>
+  <p class="area-desc">One of the most complete medieval walled cities in Europe — the Old Town is entirely enclosed by 13th-century walls that you can walk in their entirety (2km, 1 hour, genuinely spectacular views). Game of Thrones was filmed extensively here (King's Landing). It's extremely crowded July–August (cruise ships disgorge 10,000 visitors per day). Visit in May or October and it's magical. The cable car to Mount Srđ gives the panoramic view.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🏛️</span><div>
+    <h4 class="area-name">Split</h4>
+    <div class="area-best">Best for: History lovers, those wanting a real city alongside culture, ferry hub for islands</div>
+  </div></div>
+  <p class="area-desc">Croatia's second city — and the most lived-in UNESCO World Heritage Site in the world. Diocletian's Palace (built by the Roman Emperor Diocletian in 305 AD) is not a ruin to be visited — it's the city centre, with restaurants, bars, apartments and the Cathedral (converted from Diocletian's mausoleum) packed within its walls. Split is also the transport hub for the Dalmatian islands.</p>
+</div>
+<div class="area-card rvrv2">
+  <div class="area-top"><span class="area-icon">🌞</span><div>
+    <h4 class="area-name">Hvar</h4>
+    <div class="area-best">Best for: Nightlife lovers, luxury travellers, sun seekers, island hoppers</div>
+  </div></div>
+  <p class="area-desc">Croatia's most glamorous island — lavender fields, excellent wine (Hvar has more sunshine hours than anywhere in Croatia), and a nightlife that's made it the party island of the Adriatic. Hvar Town has the most upmarket bars and restaurants. The Pakleni Islands (10 minutes by water taxi) have the best nudist beaches and clear water for snorkelling. The Fortress above town has panoramic views.</p>
+</div>
+<div class="area-card rvrv0">
+  <div class="area-top"><span class="area-icon">🌊</span><div>
+    <h4 class="area-name">Plitvice Lakes</h4>
+    <div class="area-best">Best for: Nature lovers, photographers, families, those combining Zagreb with the coast</div>
+  </div></div>
+  <p class="area-desc">Croatia's most visited national park — 16 terraced lakes connected by waterfalls, with water ranging from blue to green depending on minerals and light. The walkways between the lakes are extraordinary (wooden boardwalks at water level, trails above). It's crowded at peak times — arrive when the gates open (7am) or in the late afternoon. Approximately halfway between Zagreb and Split.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🍷</span><div>
+    <h4 class="area-name">Korčula & Pelješac</h4>
+    <div class="area-best">Best for: Wine lovers, foodies, those wanting Dubrovnik without the crowds</div>
+  </div></div>
+  <p class="area-desc">Croatia's finest wine peninsula (Pelješac grows Plavac Mali, the precursor to Zinfandel) combined with the charming island of Korčula — claimed (without definitive evidence) as the birthplace of Marco Polo. The walled town is smaller and quieter than Dubrovnik, the wine tastings at Dingač and Postup vineyards are outstanding, and the oysters from Mali Ston bay are among the best in Europe.</p>
+</div>
+</div>
+  </div>
+</section>
+<section class="s insider-s">
+  <div class="s-inner">
+    <div class="rv" style="max-width:760px;margin:0 auto">
+      <div class="eyebrow" style="color:var(--gold-dk)">Insider Knowledge</div>
+      <h2 class="h-display on-light">5 Things to Know Before You Go to <em>Croatia</em></h2>
+      <ul class="tips-list"><li class="tip-item rv"><span class="tip-bullet">→</span><p>The Jadrolinija ferry network connects all the major islands — buy tickets in advance in July and August, or travel foot-passenger and book accommodation with multiple options</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Peka (lamb or octopus cooked under a bell-shaped lid covered in embers) must be ordered 24 hours ahead at most restaurants — worth the planning</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>The Pelješac Bridge (opened 2022) connects the southern Croatian mainland without passing through Bosnia-Herzegovina — it's changed the drive to Dubrovnik significantly</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Lokrum island (10 minutes by ferry from Dubrovnik, £5 return) is a nature reserve with peacocks, a botanical garden and the only 'sea' swimming pool in Croatia</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Croatian wine (particularly Plavac Mali from Pelješac and Graševina from Slavonia) is extraordinary and almost unknown internationally — buy directly from wineries</p></li></ul>
+    </div>
+  </div>
+</section>
 <div class="plan-s">
   <h2 class="rv">Ready to plan your Croatia adventure?</h2>
   <p class="rv">Tell us when, your budget, and who's going — we'll handle every last detail.</p>

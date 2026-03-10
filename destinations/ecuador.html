@@ -61,6 +61,25 @@
 
 @media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.aud-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:640px){.things-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}.bp-strip-in{grid-template-columns:1fr;}.dh-emoji{font-size:3rem;}}
+
+.areas-s{background:var(--ink-2);}
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem;}
+.area-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:2rem;transition:transform .4s var(--ease-spring),border-color .3s;}
+.area-card:hover{transform:translateY(-5px);border-color:rgba(200,145,42,.25);}
+.area-top{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;}
+.area-icon{font-size:2rem;line-height:1;flex-shrink:0;}
+.area-name{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;}
+.area-best{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.25rem;}
+.area-desc{font-size:.87rem;color:var(--smoke);line-height:1.78;}
+.insider-s{background:var(--parchment);}
+.insider-s .h-display{color:var(--ink);}
+.insider-s .eyebrow{color:var(--gold-dk)!important;}
+.tips-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;}
+.tip-item{display:flex;align-items:flex-start;gap:1.1rem;padding:1.2rem 1.5rem;background:rgba(11,23,40,.05);border-radius:var(--r-sm);border-left:3px solid var(--gold);}
+.tip-bullet{font-family:var(--ff-mono);font-size:.9rem;color:var(--gold-dk);flex-shrink:0;margin-top:.1rem;}
+.tip-item p{font-size:.9rem;color:#4A5060;line-height:1.78;margin:0;}
+@media(max-width:900px){.areas-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.areas-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -112,7 +131,7 @@
     <div class="rv">
       <div class="eyebrow" style="color:var(--gold-dk)">Americas · South America</div>
       <h2>Why visit <em>Ecuador?</em></h2>
-      <p>Ecuador is astonishingly compact for the variety it contains. In a country smaller than the UK, you can island-hop with Galápagos giant tortoises, canoe through Amazon jungle, summit Cotopaxi volcano (5,897m), and eat ceviche in the UNESCO-listed streets of Quito — all within a few days of each other. The Galápagos Islands alone, where animals have never learned to fear humans, are among the most extraordinary wildlife experiences on the planet.</p>
+      <p>Ecuador is the best-value country in South America for natural diversity — it contains four distinct worlds (the Galápagos Islands, the Amazon, the Andes highlands, and the Pacific coast) within the smallest Andean country. The Galápagos is the headliner, but mainland Ecuador more than holds its own: Quito is one of the finest colonial cities in Latin America, the Quilotoa crater lake is extraordinary, and the Amazon lodges in the Napo region are world-class.</p>
       <div style="margin-top:1.5rem"><a href="../contact.html" class="btn btn-coral btn-arr">Plan My Ecuador Trip</a></div>
     </div>
     <div class="facts-card rv rv2">
@@ -145,6 +164,64 @@
   </div>
 </section>
 
+<section class="s areas-s">
+  <div class="s-inner">
+    <div class="rv" style="text-align:center;margin-bottom:2.5rem">
+      <div class="eyebrow" style="justify-content:center">Know Before You Go</div>
+      <h2 class="h-display">Where to Base Yourself in <em>Ecuador</em></h2>
+      <p style="color:var(--smoke);max-width:580px;margin:.8rem auto 0;line-height:1.8">Ecuador isn't one-size-fits-all. Each area has a completely different character — here's how to choose.</p>
+    </div>
+    <div class="areas-grid"><div class="area-card rvrv">
+  <div class="area-top"><span class="area-icon">🦎</span><div>
+    <h4 class="area-name">Galápagos Islands</h4>
+    <div class="area-best">Best for: Wildlife lovers, divers, snorkellers, bucket-list travellers</div>
+  </div></div>
+  <p class="area-desc">One of the most important natural environments on earth — where Darwin's observations led to the theory of evolution. The wildlife here has no fear of humans: blue-footed boobies display inches from your feet, sea lions sleep across footpaths, marine iguanas bask on black lava. It's unlike anywhere else on earth. It's expensive to reach (flights + park fee + boat or guesthouse) but delivers completely.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🏛️</span><div>
+    <h4 class="area-name">Quito</h4>
+    <div class="area-best">Best for: History lovers, city enthusiasts, those acclimatising before the Galápagos</div>
+  </div></div>
+  <p class="area-desc">South America's highest capital (2,850m) and arguably its most beautiful colonial old town — 40 churches, 16 plazas and convents built from volcanic stone by indigenous craftsmen under Spanish colonial rule. La Compañía de Jesús church interior is the most ornate in South America. The Teleférifo cable car rises from 2,950m to 4,050m in eight minutes — panoramic views of the city and Pichincha volcano.</p>
+</div>
+<div class="area-card rvrv2">
+  <div class="area-top"><span class="area-icon">🌋</span><div>
+    <h4 class="area-name">Quilotoa Loop</h4>
+    <div class="area-best">Best for: Trekkers, those wanting indigenous culture, budget travellers</div>
+  </div></div>
+  <p class="area-desc">A 3–4 day trekking circuit through the central Andes highland villages — the Quilotoa crater lake (a deep turquoise lagoon in an extinct volcano's caldera) is the centrepiece, surrounded by a circuit of indigenous market towns. Zumbahua's Saturday market and Pujilí's Corpus Christi festival are the cultural highlights. Altitude (3,900m at the lake rim) is the main consideration.</p>
+</div>
+<div class="area-card rvrv0">
+  <div class="area-top"><span class="area-icon">🌿</span><div>
+    <h4 class="area-name">Amazon (Napo Region)</h4>
+    <div class="area-best">Best for: Nature lovers, birdwatchers, those wanting the Amazon experience without Brazil's crowds</div>
+  </div></div>
+  <p class="area-desc">Ecuador's Amazon is one of the most biodiverse on earth — Yasuní National Park has more tree species per hectare than the entire North American continent. The Napo Wildlife Center (accessible only by motor canoe from Coca) is the outstanding lodge — jaguars, giant otters, tapir, harpy eagles and thousands of bird species. Stays in indigenous Kichwa communities are a meaningful alternative.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🎨</span><div>
+    <h4 class="area-name">Cuenca</h4>
+    <div class="area-best">Best for: Culture lovers, those wanting a quieter Ecuador experience, retirees and slow travellers</div>
+  </div></div>
+  <p class="area-desc">Ecuador's most beautiful colonial city — a UNESCO World Heritage Site with a slower pace than Quito, an excellent local food scene, and the Cajas National Park (a high-altitude moorland of lakes and tussock grass) 30 minutes away. The original Panama hats (misnamed — they were made here and exported through Panama) are still woven in the villages around Cuenca.</p>
+</div>
+</div>
+  </div>
+</section>
+<section class="s insider-s">
+  <div class="s-inner">
+    <div class="rv" style="max-width:760px;margin:0 auto">
+      <div class="eyebrow" style="color:var(--gold-dk)">Insider Knowledge</div>
+      <h2 class="h-display on-light">5 Things to Know Before You Go to <em>Ecuador</em></h2>
+      <ul class="tips-list"><li class="tip-item rv"><span class="tip-bullet">→</span><p>Ecuador uses the US dollar — a significant advantage for budgeting (and means no currency exchange hassle)</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Book Galápagos trips well in advance — last-minute live-aboard cruises do exist but are rare and the best itineraries sell out months ahead</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>The Avenue of the Volcanoes (Quito to Riobamba by train or road) passes within sight of Cotopaxi, Chimborazo and six other Andean peaks on a clear day</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Ceviche in Ecuador is different from Peru's — it's cooked (not acid-cured) and served with popcorn and plantain chips</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Altitude sickness is a real concern — spend 48 hours in Quito before heading higher</p></li></ul>
+    </div>
+  </div>
+</section>
 <div class="plan-s">
   <h2 class="rv">Ready to plan your Ecuador adventure?</h2>
   <p class="rv">Tell us when, your budget, and who's going — we'll handle every last detail.</p>

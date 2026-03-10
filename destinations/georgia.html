@@ -61,6 +61,25 @@
 
 @media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.aud-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:640px){.things-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}.bp-strip-in{grid-template-columns:1fr;}.dh-emoji{font-size:3rem;}}
+
+.areas-s{background:var(--ink-2);}
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem;}
+.area-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:2rem;transition:transform .4s var(--ease-spring),border-color .3s;}
+.area-card:hover{transform:translateY(-5px);border-color:rgba(200,145,42,.25);}
+.area-top{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;}
+.area-icon{font-size:2rem;line-height:1;flex-shrink:0;}
+.area-name{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;}
+.area-best{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.25rem;}
+.area-desc{font-size:.87rem;color:var(--smoke);line-height:1.78;}
+.insider-s{background:var(--parchment);}
+.insider-s .h-display{color:var(--ink);}
+.insider-s .eyebrow{color:var(--gold-dk)!important;}
+.tips-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;}
+.tip-item{display:flex;align-items:flex-start;gap:1.1rem;padding:1.2rem 1.5rem;background:rgba(11,23,40,.05);border-radius:var(--r-sm);border-left:3px solid var(--gold);}
+.tip-bullet{font-family:var(--ff-mono);font-size:.9rem;color:var(--gold-dk);flex-shrink:0;margin-top:.1rem;}
+.tip-item p{font-size:.9rem;color:#4A5060;line-height:1.78;margin:0;}
+@media(max-width:900px){.areas-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.areas-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -112,7 +131,7 @@
     <div class="rv">
       <div class="eyebrow" style="color:var(--gold-dk)">Europe · Caucasus</div>
       <h2>Why visit <em>Georgia?</em></h2>
-      <p>Georgia is one of the world's great overlooked destinations. Wedged between the Greater and Lesser Caucasus ranges, it's a country of extraordinary contrasts — medieval monasteries clinging to mountain peaks, a capital (Tbilisi) with one of Europe's most atmospheric old towns, and a wine tradition dating back 8,000 years. It's warm, welcoming, almost impossible to afford on an unreasonable budget, and genuinely unlike anywhere else.</p>
+      <p>Georgia (the country) is one of Europe's most underrated travel destinations — a place where ancient cave monasteries cling to mountain cliffs, where wine has been made in clay qvevri vessels for 8,000 years, where the Caucasus mountains provide some of the continent's most dramatic scenery, and where the hospitality is almost overwhelming in its generosity. Tbilisi's old town is one of the most photogenic cities in Europe. It's very cheap, very safe, and very welcoming.</p>
       <div style="margin-top:1.5rem"><a href="../contact.html" class="btn btn-coral btn-arr">Plan My Georgia Trip</a></div>
     </div>
     <div class="facts-card rv rv2">
@@ -145,6 +164,64 @@
   </div>
 </section>
 
+<section class="s areas-s">
+  <div class="s-inner">
+    <div class="rv" style="text-align:center;margin-bottom:2.5rem">
+      <div class="eyebrow" style="justify-content:center">Know Before You Go</div>
+      <h2 class="h-display">Where to Base Yourself in <em>Georgia</em></h2>
+      <p style="color:var(--smoke);max-width:580px;margin:.8rem auto 0;line-height:1.8">Georgia isn't one-size-fits-all. Each area has a completely different character — here's how to choose.</p>
+    </div>
+    <div class="areas-grid"><div class="area-card rvrv">
+  <div class="area-top"><span class="area-icon">🏘️</span><div>
+    <h4 class="area-name">Tbilisi</h4>
+    <div class="area-best">Best for: Everyone — Tbilisi is unmissable</div>
+  </div></div>
+  <p class="area-desc">One of the most characterful capital cities in Europe — a tangle of Ottoman-era balconied houses in the old town, an extraordinary art nouveau district, a Soviet modernist television tower, a Persian bath district (Abanotubani) where you can rent a sulphur bath private room for £15/hour, and a food and wine scene that's been attracting international chefs for a decade. Walk the old town slowly.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">⛰️</span><div>
+    <h4 class="area-name">Kazbegi (Stepantsminda)</h4>
+    <div class="area-best">Best for: Hikers, photographers, those wanting dramatic mountain scenery close to the capital</div>
+  </div></div>
+  <p class="area-desc">The mountain town at the foot of Mount Kazbek (5,047m) — a 2.5-hour drive from Tbilisi through increasingly dramatic scenery. The Gergeti Trinity Church on its hilltop above the town (with Kazbek behind it) is one of the iconic images of the Caucasus. Hiking to the church takes 2 hours. The serious trekkers go higher — the base camp for Kazbek summit attempts is a day's hike from town.</p>
+</div>
+<div class="area-card rvrv2">
+  <div class="area-top"><span class="area-icon">🍷</span><div>
+    <h4 class="area-name">Kakheti (Wine Region)</h4>
+    <div class="area-best">Best for: Wine lovers, those interested in food culture, couples</div>
+  </div></div>
+  <p class="area-desc">Georgia invented wine — amphorae containing wine residue found here date to 6,000 BCE. The Kakheti region in the east is where most Georgian wine is produced, from the Rkatsiteli and Saperavi grapes that are almost unknown outside the country. Signagi is the prettiest town (completely restored historic centre, views over the Alazani valley). Winery visits are cheap and generous with the pours.</p>
+</div>
+<div class="area-card rvrv0">
+  <div class="area-top"><span class="area-icon">⛪</span><div>
+    <h4 class="area-name">Mtskheta</h4>
+    <div class="area-best">Best for: History lovers, religious culture enthusiasts, those wanting to understand Georgia's significance</div>
+  </div></div>
+  <p class="area-desc">Georgia's ancient capital, 20km from Tbilisi — the spiritual heart of the country. The Svetitskhoveli Cathedral (dating to the 5th century AD, built on what Georgians believe is one of the most sacred spots on earth) and the Jvari Monastery on the hill above (where two rivers converge) are essential. The whole town is UNESCO-listed and takes a comfortable half day from Tbilisi.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🗼</span><div>
+    <h4 class="area-name">Svaneti</h4>
+    <div class="area-best">Best for: Adventurous travellers, hikers, photographers, those seeking remote mountain culture</div>
+  </div></div>
+  <p class="area-desc">The most remote and dramatic region of Georgia — a highland valley in the northwest where medieval defensive towers built by families still stand in every village. The UNESCO-listed village of Ushguli (one of the highest continuously inhabited settlements in Europe) has 13th-century towers against a backdrop of the Caucasus' highest peaks. The drive or flight from Tbilisi is an experience in itself.</p>
+</div>
+</div>
+  </div>
+</section>
+<section class="s insider-s">
+  <div class="s-inner">
+    <div class="rv" style="max-width:760px;margin:0 auto">
+      <div class="eyebrow" style="color:var(--gold-dk)">Insider Knowledge</div>
+      <h2 class="h-display on-light">5 Things to Know Before You Go to <em>Georgia</em></h2>
+      <ul class="tips-list"><li class="tip-item rv"><span class="tip-bullet">→</span><p>Georgians will not let you pay for food or wine in their home — if invited for dinner, bring wine and accept that you will not go hungry</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>The marshrutka (shared minibus) network connects virtually everywhere and costs almost nothing — £3–8 for most intercity routes</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Georgian bread (shoti) baked in a tone clay oven is genuinely one of the world's great breads — eat it at every opportunity</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Natural wine produced in qvevri clay vessels (amber wine) is extraordinary — completely different from anything produced in Western winemaking</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Visa-free for most nationalities and the lari is very weak against sterling — budget £25–35/day including accommodation, food and transport</p></li></ul>
+    </div>
+  </div>
+</section>
 <div class="plan-s">
   <h2 class="rv">Ready to discover Georgia?</h2>
   <p class="rv">Tell us when, your budget, and who's going — we'll handle every last detail.</p>

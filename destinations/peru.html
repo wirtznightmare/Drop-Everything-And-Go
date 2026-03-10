@@ -61,6 +61,25 @@
 
 @media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.aud-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:640px){.things-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}.bp-strip-in{grid-template-columns:1fr;}.dh-emoji{font-size:3rem;}}
+
+.areas-s{background:var(--ink-2);}
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem;}
+.area-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:2rem;transition:transform .4s var(--ease-spring),border-color .3s;}
+.area-card:hover{transform:translateY(-5px);border-color:rgba(200,145,42,.25);}
+.area-top{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;}
+.area-icon{font-size:2rem;line-height:1;flex-shrink:0;}
+.area-name{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;}
+.area-best{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.25rem;}
+.area-desc{font-size:.87rem;color:var(--smoke);line-height:1.78;}
+.insider-s{background:var(--parchment);}
+.insider-s .h-display{color:var(--ink);}
+.insider-s .eyebrow{color:var(--gold-dk)!important;}
+.tips-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;}
+.tip-item{display:flex;align-items:flex-start;gap:1.1rem;padding:1.2rem 1.5rem;background:rgba(11,23,40,.05);border-radius:var(--r-sm);border-left:3px solid var(--gold);}
+.tip-bullet{font-family:var(--ff-mono);font-size:.9rem;color:var(--gold-dk);flex-shrink:0;margin-top:.1rem;}
+.tip-item p{font-size:.9rem;color:#4A5060;line-height:1.78;margin:0;}
+@media(max-width:900px){.areas-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.areas-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -116,7 +135,7 @@
     <div class="rv">
       <div class="eyebrow" style="color:var(--gold-dk)">Americas · South America</div>
       <h2>Why visit <em>Peru?</em></h2>
-      <p>Peru delivers on every level. Machu Picchu remains one of the most extraordinary human achievements visible from the ground — a lost Incan city hidden in the clouds, rediscovered only in 1911. But Peru is far more than its headline attraction. The Sacred Valley rewards days of exploration. Lake Titicaca on the Bolivian border is genuinely sacred. And Lima has become one of the world's great food cities, home to Central, Maido, and Astrid & Gastón.</p>
+      <p>Peru contains multitudes — one of the Seven Wonders of the World, South America's most acclaimed food scene, the world's highest navigable lake, Amazon rainforest, Pacific coastline, and a cultural depth that spans 5,000 years of civilisation. It's also one of the most trekking-obsessed destinations on earth: the Inca Trail is the most famous but not the most beautiful. Give Peru at least two weeks — ideally three.</p>
       <div style="margin-top:1.5rem"><a href="../contact.html" class="btn btn-coral btn-arr">Plan My Peru Trip</a></div>
     </div>
     <div class="facts-card rv rv2">
@@ -149,6 +168,71 @@
   </div>
 </section>
 
+<section class="s areas-s">
+  <div class="s-inner">
+    <div class="rv" style="text-align:center;margin-bottom:2.5rem">
+      <div class="eyebrow" style="justify-content:center">Know Before You Go</div>
+      <h2 class="h-display">Where to Base Yourself in <em>Peru</em></h2>
+      <p style="color:var(--smoke);max-width:580px;margin:.8rem auto 0;line-height:1.8">Peru isn't one-size-fits-all. Each area has a completely different character — here's how to choose.</p>
+    </div>
+    <div class="areas-grid"><div class="area-card rvrv">
+  <div class="area-top"><span class="area-icon">🏛️</span><div>
+    <h4 class="area-name">Cusco</h4>
+    <div class="area-best">Best for: Everyone visiting Machu Picchu — it's the essential base</div>
+  </div></div>
+  <p class="area-desc">The ancient Inca capital sits at 3,400 metres — give yourself 48 hours to acclimatise before doing anything strenuous. The Plaza de Armas is surrounded by Spanish colonial architecture built on top of Inca stone walls (you can see the join). The San Pedro Market is the city's real kitchen. The nightlife on Calle del Medio is surprisingly good. Cusco is the base for all Sacred Valley and Machu Picchu trips.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🏔️</span><div>
+    <h4 class="area-name">Machu Picchu</h4>
+    <div class="area-best">Best for: Everyone — it's as good as the photographs suggest</div>
+  </div></div>
+  <p class="area-desc">The most spectacular archaeological site in the Americas — a 15th-century Inca city built on a ridge between two mountain peaks, hidden from the Spanish and forgotten for 400 years. Take the bus from Aguas Calientes (the town below) or hike the Sun Gate trail. The site opens at 6am — the first two hours are the best, before the tour groups arrive. Sun Gate at dawn gives the classic panoramic view.</p>
+</div>
+<div class="area-card rvrv2">
+  <div class="area-top"><span class="area-icon">🌄</span><div>
+    <h4 class="area-name">Sacred Valley</h4>
+    <div class="area-best">Best for: History lovers, those wanting the context around Machu Picchu, photographers</div>
+  </div></div>
+  <p class="area-desc">The valley between Cusco and Machu Picchu is not just a transit route — it's one of the most beautiful landscapes in South America. The Inca salt pans of Maras (hundreds of terraced pools that have been harvesting salt since Inca times), the circular terraces of Moray (possibly an agricultural research station), and the enormous fortress of Ollantaytambo (still inhabited on its ancient Inca street plan) are all essential.</p>
+</div>
+<div class="area-card rvrv0">
+  <div class="area-top"><span class="area-icon">🍽️</span><div>
+    <h4 class="area-name">Lima</h4>
+    <div class="area-best">Best for: Food lovers, city enthusiasts, those arriving or departing internationally</div>
+  </div></div>
+  <p class="area-desc">South America's food capital — Central (consistently in the world's top 10 restaurants), Maido, Astrid & Gastón, and a street food scene built around ceviche, tiradito and causa. The Miraflores clifftop district has excellent walkways above the Pacific. Barranco is the artists' quarter — a neighbourhood of painted colonial mansions, craft beer bars and the best independent galleries in the city.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">⛵</span><div>
+    <h4 class="area-name">Lake Titicaca</h4>
+    <div class="area-best">Best for: Cultural travellers, those interested in indigenous communities, photographers</div>
+  </div></div>
+  <p class="area-desc">The highest navigable lake in the world, shared between Peru and Bolivia. The Uros floating reed islands are extraordinary — man-made islands built entirely from totora reeds, where Uros communities have lived since pre-Inca times. The island of Taquile has a textile tradition that's a UNESCO Cultural Heritage — the men here knit, not the women, and the hats encode information about the wearer's marital status.</p>
+</div>
+<div class="area-card rvrv2">
+  <div class="area-top"><span class="area-icon">🌿</span><div>
+    <h4 class="area-name">Amazon (Iquitos & Puerto Maldonado)</h4>
+    <div class="area-best">Best for: Nature lovers, wildlife enthusiasts, adventurous travellers</div>
+  </div></div>
+  <p class="area-desc">Two very different Amazons. Iquitos (reached only by plane or boat) is the world's largest city with no road access — a genuinely isolated jungle city. Puerto Maldonado (southeast, near Bolivia) is more accessible and has the Tambopata National Reserve with excellent lodge-based wildlife watching. Macaws, giant river otters, tapir and over 600 bird species.</p>
+</div>
+</div>
+  </div>
+</section>
+<section class="s insider-s">
+  <div class="s-inner">
+    <div class="rv" style="max-width:760px;margin:0 auto">
+      <div class="eyebrow" style="color:var(--gold-dk)">Insider Knowledge</div>
+      <h2 class="h-display on-light">5 Things to Know Before You Go to <em>Peru</em></h2>
+      <ul class="tips-list"><li class="tip-item rv"><span class="tip-bullet">→</span><p>Altitude sickness hits many visitors in Cusco — rest for the first 24 hours, drink coca tea, avoid alcohol, and book accommodation with oxygen available</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>The Inca Trail must be booked 6+ months in advance (only 500 people per day). The Salkantay Trek is wilder, longer and available without a permit</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Ceviche should be eaten at lunch, not dinner — the best cevicherías in Lima close by 4pm</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Book the Huayna Picchu mountain hike (above Machu Picchu) when you book the site entry — only 400 spaces per day</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>The scenic train from Cusco to Puno along Lake Titicaca (Andean Explorer) is one of South America's great rail journeys</p></li></ul>
+    </div>
+  </div>
+</section>
 <div class="plan-s">
   <h2 class="rv">Ready to plan your Peru adventure?</h2>
   <p class="rv">Tell us when, your budget, and who's going — we'll handle every last detail.</p>

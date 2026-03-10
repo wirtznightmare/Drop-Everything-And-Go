@@ -61,6 +61,25 @@
 
 @media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.aud-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:640px){.things-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}.bp-strip-in{grid-template-columns:1fr;}.dh-emoji{font-size:3rem;}}
+
+.areas-s{background:var(--ink-2);}
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem;}
+.area-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:2rem;transition:transform .4s var(--ease-spring),border-color .3s;}
+.area-card:hover{transform:translateY(-5px);border-color:rgba(200,145,42,.25);}
+.area-top{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;}
+.area-icon{font-size:2rem;line-height:1;flex-shrink:0;}
+.area-name{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;}
+.area-best{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.25rem;}
+.area-desc{font-size:.87rem;color:var(--smoke);line-height:1.78;}
+.insider-s{background:var(--parchment);}
+.insider-s .h-display{color:var(--ink);}
+.insider-s .eyebrow{color:var(--gold-dk)!important;}
+.tips-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;}
+.tip-item{display:flex;align-items:flex-start;gap:1.1rem;padding:1.2rem 1.5rem;background:rgba(11,23,40,.05);border-radius:var(--r-sm);border-left:3px solid var(--gold);}
+.tip-bullet{font-family:var(--ff-mono);font-size:.9rem;color:var(--gold-dk);flex-shrink:0;margin-top:.1rem;}
+.tip-item p{font-size:.9rem;color:#4A5060;line-height:1.78;margin:0;}
+@media(max-width:900px){.areas-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.areas-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -112,7 +131,7 @@
     <div class="rv">
       <div class="eyebrow" style="color:var(--gold-dk)">Americas · Chile & Argentina</div>
       <h2>Why visit <em>Patagonia?</em></h2>
-      <p>Patagonia is where the earth runs out. At the southern tip of South America, the land fractures into glaciers, fjords, and granite towers so dramatic they look digitally enhanced. Torres del Paine in Chilean Patagonia is one of the great trekking destinations — the W Trek and the O Circuit are bucket-list routes. In Argentine Patagonia, Perito Moreno glacier advances and calves with thunderous regularity. It's raw, wild, and completely unforgettable.</p>
+      <p>Patagonia is wilderness at scale — the southern tip of South America where the Andes meet the Atlantic and Pacific simultaneously, where glaciers calve into turquoise lakes, where condors ride thermals above peaks that look designed rather than formed. It's shared between Chile and Argentina and the best routes cross both. It's not easy or cheap to reach, but it delivers some of the most dramatic landscapes accessible by foot on earth.</p>
       <div style="margin-top:1.5rem"><a href="../contact.html" class="btn btn-coral btn-arr">Plan My Patagonia Trip</a></div>
     </div>
     <div class="facts-card rv rv2">
@@ -145,6 +164,64 @@
   </div>
 </section>
 
+<section class="s areas-s">
+  <div class="s-inner">
+    <div class="rv" style="text-align:center;margin-bottom:2.5rem">
+      <div class="eyebrow" style="justify-content:center">Know Before You Go</div>
+      <h2 class="h-display">Where to Base Yourself in <em>Patagonia</em></h2>
+      <p style="color:var(--smoke);max-width:580px;margin:.8rem auto 0;line-height:1.8">Patagonia isn't one-size-fits-all. Each area has a completely different character — here's how to choose.</p>
+    </div>
+    <div class="areas-grid"><div class="area-card rvrv">
+  <div class="area-top"><span class="area-icon">🏔️</span><div>
+    <h4 class="area-name">Torres del Paine (Chile)</h4>
+    <div class="area-best">Best for: Trekkers, photographers, nature lovers, those with at least a week</div>
+  </div></div>
+  <p class="area-desc">The centrepiece of Chilean Patagonia — three granite towers rising 2,800 metres above the Patagonian steppe, surrounded by lakes, glaciers, and guanaco-dotted plains. The W Trek (4–5 days) and the full Circuit (8–10 days) are among the world's great multi-day hikes. Book refuge accommodation 6–12 months in advance. The park's weather changes within hours — pack for everything.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🧊</span><div>
+    <h4 class="area-name">El Calafate & Perito Moreno (Argentina)</h4>
+    <div class="area-best">Best for: Those wanting the glacier experience, non-hikers, those with limited time</div>
+  </div></div>
+  <p class="area-desc">Perito Moreno glacier is the world's most accessible and most dramatic glacier — 5km wide, 60 metres tall, constantly calving house-sized blocks of ice into Lago Argentino. You watch it from raised walkways 200 metres away. El Calafate is the gateway town. The Los Glaciares National Park also contains the Upsala and Spegazzini glaciers, accessible by boat.</p>
+</div>
+<div class="area-card rvrv2">
+  <div class="area-top"><span class="area-icon">⛰️</span><div>
+    <h4 class="area-name">El Chaltén (Argentina)</h4>
+    <div class="area-best">Best for: Serious trekkers, photographers, those wanting rugged adventure on a budget</div>
+  </div></div>
+  <p class="area-desc">The trekking capital of Argentina — a small village at the base of Cerro Fitz Roy and Cerro Torre, two of the most technically demanding peaks in the world. But non-climbers can reach stunning viewpoints on day hikes from the village (Laguna de los Tres, Laguna Torre) that are among the finest in Patagonia. No entrance fee to the national park. Camping is free.</p>
+</div>
+<div class="area-card rvrv0">
+  <div class="area-top"><span class="area-icon">🛶</span><div>
+    <h4 class="area-name">Puerto Natales (Chile)</h4>
+    <div class="area-best">Best for: Trekkers staging for Torres del Paine, those arriving by ferry from Puerto Montt</div>
+  </div></div>
+  <p class="area-desc">The gateway to Torres del Paine — a small port town on the Última Esperanza Sound that has transformed into an excellent base of gear shops, restaurants and accommodation for trekkers. The Navimag ferry from Puerto Montt (three nights sailing through the fjords) arrives here — one of South America's great journeys. The Milodon Cave nearby contains giant ground sloth remains.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🌊</span><div>
+    <h4 class="area-name">Tierra del Fuego</h4>
+    <div class="area-best">Best for: Adventurous travellers, those combining with Antarctica, end-of-the-world seekers</div>
+  </div></div>
+  <p class="area-desc">The end of the world — an archipelago shared between Chile and Argentina at the very southern tip of South America. Ushuaia (Argentina) is the southernmost city on earth and the departure point for Antarctic cruises. The Tierra del Fuego National Park has excellent hiking. The Beagle Channel (where Darwin made his observations) can be explored by catamaran.</p>
+</div>
+</div>
+  </div>
+</section>
+<section class="s insider-s">
+  <div class="s-inner">
+    <div class="rv" style="max-width:760px;margin:0 auto">
+      <div class="eyebrow" style="color:var(--gold-dk)">Insider Knowledge</div>
+      <h2 class="h-display on-light">5 Things to Know Before You Go to <em>Patagonia</em></h2>
+      <ul class="tips-list"><li class="tip-item rv"><span class="tip-bullet">→</span><p>Book Torres del Paine accommodation 6–12 months ahead — refuges fill up for the full October–April season very quickly</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>The best photos of the Torres are from Laguna Amarga at sunrise — the light on the granite face is extraordinary</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Mate (Argentine herbal tea) culture is real — if someone offers you their mate gourd, accept it graciously</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Chilean and Argentine Patagonia have different currencies, national parks and entry fees — plan your route to cross only once to minimise border hassle</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>October and March are the shoulder months — weather is more stable, accommodation is easier to book, and there are fewer people on the trails</p></li></ul>
+    </div>
+  </div>
+</section>
 <div class="plan-s">
   <h2 class="rv">Ready to plan your Patagonia expedition?</h2>
   <p class="rv">Tell us when, your budget, and who's going — we'll handle every last detail.</p>

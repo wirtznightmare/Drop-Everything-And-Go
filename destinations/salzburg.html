@@ -61,6 +61,25 @@
 
 @media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.aud-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:640px){.things-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}.bp-strip-in{grid-template-columns:1fr;}.dh-emoji{font-size:3rem;}}
+
+.areas-s{background:var(--ink-2);}
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem;}
+.area-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:2rem;transition:transform .4s var(--ease-spring),border-color .3s;}
+.area-card:hover{transform:translateY(-5px);border-color:rgba(200,145,42,.25);}
+.area-top{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;}
+.area-icon{font-size:2rem;line-height:1;flex-shrink:0;}
+.area-name{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;}
+.area-best{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.25rem;}
+.area-desc{font-size:.87rem;color:var(--smoke);line-height:1.78;}
+.insider-s{background:var(--parchment);}
+.insider-s .h-display{color:var(--ink);}
+.insider-s .eyebrow{color:var(--gold-dk)!important;}
+.tips-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;}
+.tip-item{display:flex;align-items:flex-start;gap:1.1rem;padding:1.2rem 1.5rem;background:rgba(11,23,40,.05);border-radius:var(--r-sm);border-left:3px solid var(--gold);}
+.tip-bullet{font-family:var(--ff-mono);font-size:.9rem;color:var(--gold-dk);flex-shrink:0;margin-top:.1rem;}
+.tip-item p{font-size:.9rem;color:#4A5060;line-height:1.78;margin:0;}
+@media(max-width:900px){.areas-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.areas-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -112,7 +131,7 @@
     <div class="rv">
       <div class="eyebrow" style="color:var(--gold-dk)">Europe · Austria</div>
       <h2>Why visit <em>Salzburg?</em></h2>
-      <p>Salzburg is the kind of city that makes you feel like you've walked into a film set — which you literally have, since The Sound of Music used most of it. But beyond the movie locations, this is one of Europe's finest Baroque cities, birthplace of Mozart, and gateway to the Austrian Alps. The old town is UNESCO-listed, the coffee houses are exceptional, and in July its classical music festival draws the world's greatest performers.</p>
+      <p>Salzburg is a baroque city so perfectly preserved it looks like a stage set — which is appropriate, given that it was essentially the childhood backdrop for The Sound of Music and the birthplace of Mozart. But beyond the tourism, it's a genuinely extraordinary city: the historic old town on both sides of the Salzach River is UNESCO-listed, the fortress above it is the best-preserved medieval castle in Central Europe, and the surrounding lake district (the Salzkammergut) is among Austria's most beautiful landscapes.</p>
       <div style="margin-top:1.5rem"><a href="../contact.html" class="btn btn-coral btn-arr">Plan My Salzburg Trip</a></div>
     </div>
     <div class="facts-card rv rv2">
@@ -145,6 +164,64 @@
   </div>
 </section>
 
+<section class="s areas-s">
+  <div class="s-inner">
+    <div class="rv" style="text-align:center;margin-bottom:2.5rem">
+      <div class="eyebrow" style="justify-content:center">Know Before You Go</div>
+      <h2 class="h-display">Where to Base Yourself in <em>Salzburg</em></h2>
+      <p style="color:var(--smoke);max-width:580px;margin:.8rem auto 0;line-height:1.8">Salzburg isn't one-size-fits-all. Each area has a completely different character — here's how to choose.</p>
+    </div>
+    <div class="areas-grid"><div class="area-card rvrv">
+  <div class="area-top"><span class="area-icon">🏰</span><div>
+    <h4 class="area-name">Altstadt (Old Town)</h4>
+    <div class="area-best">Best for: Everyone — the old town is the reason to visit Salzburg</div>
+  </div></div>
+  <p class="area-desc">The baroque heart of Salzburg — the Dom (cathedral), the Residenz (archbishop's palace), Getreidegasse (Mozart's birthplace at No. 9, and the most photographed street in Austria), and the Franciscan Church. All within a 20-minute walk. The Christmas market here (November–December) is consistently ranked the finest in Austria. The whole area is UNESCO World Heritage.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🏯</span><div>
+    <h4 class="area-name">Hohensalzburg Fortress</h4>
+    <div class="area-best">Best for: History lovers, families, photographers</div>
+  </div></div>
+  <p class="area-desc">The city's hilltop fortress, built in 1077 and never successfully attacked or conquered — the best-preserved medieval castle in Central Europe. Take the funicular from the old town (or walk up in 20 minutes) and spend two hours inside. The State Rooms, the torture chamber, and the panoramic views from the ramparts over the city and Alps beyond are all worth the entrance fee.</p>
+</div>
+<div class="area-card rvrv2">
+  <div class="area-top"><span class="area-icon">🌸</span><div>
+    <h4 class="area-name">Mirabell Palace & Gardens</h4>
+    <div class="area-best">Best for: Music lovers, families, those wanting the classic Salzburg photograph</div>
+  </div></div>
+  <p class="area-desc">Built by the Archbishop of Salzburg for his mistress in 1606 — the Mirabell Gardens are where Julie Andrews filmed the Do-Re-Mi sequence in The Sound of Music, and the Marble Hall inside is one of Austria's most beautiful baroque interiors (free to enter). The gardens are immaculately maintained and free year-round. Excellent views of the fortress from the garden's hedged terraces.</p>
+</div>
+<div class="area-card rvrv0">
+  <div class="area-top"><span class="area-icon">🏔️</span><div>
+    <h4 class="area-name">Salzkammergut Lake District</h4>
+    <div class="area-best">Best for: Nature lovers, photographers, those combining Salzburg with a wider Austrian trip</div>
+  </div></div>
+  <p class="area-desc">The lake district east of Salzburg — Hallstatt (the most photographed village in Austria, on a lakeside with Alps behind), Wolfgangsee, and the Dachstein glacier. St. Gilgen and St. Wolfgang are quieter and equally beautiful. The lakes are warm enough to swim in from June to September. Hallstatt gets crowded (day-trippers from Vienna and Salzburg); stay overnight to experience it at dawn.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🦅</span><div>
+    <h4 class="area-name">Berchtesgaden (Cross-Border Day Trip)</h4>
+    <div class="area-best">Best for: History enthusiasts, nature lovers, those with a car or joining a day trip</div>
+  </div></div>
+  <p class="area-desc">A 30-minute drive into Germany (but culturally and visually part of the same alpine world). The Eagle's Nest (Hitler's mountaintop retreat) is open April–October and reached by bus and lift — the panoramic views alone justify the trip. The Königssee fjord lake is one of the most spectacular in the Alps, with electric boat tours to St. Bartholomew chapel on the far shore.</p>
+</div>
+</div>
+  </div>
+</section>
+<section class="s insider-s">
+  <div class="s-inner">
+    <div class="rv" style="max-width:760px;margin:0 auto">
+      <div class="eyebrow" style="color:var(--gold-dk)">Insider Knowledge</div>
+      <h2 class="h-display on-light">5 Things to Know Before You Go to <em>Salzburg</em></h2>
+      <ul class="tips-list"><li class="tip-item rv"><span class="tip-bullet">→</span><p>The Salzburg Card (24/48/72 hours) covers all museums, the fortress, the funicular, and public transport — good value if you're visiting multiple sites</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Mozart Balls (the chocolate confection) are made by three competing companies — the original (Fürst, in green wrapping) is sold only at Fürst shops, not in tourist shops</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>The Sound of Music tour is genuinely enjoyable even for those who haven't seen the film — the Salzkammergut scenery justifies it alone</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Café Tomaselli on Alter Markt has been open since 1705 — the Viennese coffee and apple strudel are excellent and the prices are remarkably reasonable</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>October and November are quiet and the autumn light on the baroque buildings is extraordinary — avoid school holiday periods if possible</p></li></ul>
+    </div>
+  </div>
+</section>
 <div class="plan-s">
   <h2 class="rv">Ready to plan your Salzburg visit?</h2>
   <p class="rv">Tell us when, your budget, and who's going — we'll handle every last detail.</p>

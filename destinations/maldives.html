@@ -61,6 +61,25 @@
 
 @media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.aud-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:640px){.things-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}.bp-strip-in{grid-template-columns:1fr;}.dh-emoji{font-size:3rem;}}
+
+.areas-s{background:var(--ink-2);}
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem;}
+.area-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:2rem;transition:transform .4s var(--ease-spring),border-color .3s;}
+.area-card:hover{transform:translateY(-5px);border-color:rgba(200,145,42,.25);}
+.area-top{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;}
+.area-icon{font-size:2rem;line-height:1;flex-shrink:0;}
+.area-name{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;}
+.area-best{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.25rem;}
+.area-desc{font-size:.87rem;color:var(--smoke);line-height:1.78;}
+.insider-s{background:var(--parchment);}
+.insider-s .h-display{color:var(--ink);}
+.insider-s .eyebrow{color:var(--gold-dk)!important;}
+.tips-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;}
+.tip-item{display:flex;align-items:flex-start;gap:1.1rem;padding:1.2rem 1.5rem;background:rgba(11,23,40,.05);border-radius:var(--r-sm);border-left:3px solid var(--gold);}
+.tip-bullet{font-family:var(--ff-mono);font-size:.9rem;color:var(--gold-dk);flex-shrink:0;margin-top:.1rem;}
+.tip-item p{font-size:.9rem;color:#4A5060;line-height:1.78;margin:0;}
+@media(max-width:900px){.areas-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.areas-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -112,7 +131,7 @@
     <div class="rv">
       <div class="eyebrow" style="color:var(--gold-dk)">Indian Ocean · South Asia</div>
       <h2>Why visit <em>Maldives?</em></h2>
-      <p>The Maldives is the kind of place that doesn't look real until you're standing in the water, watching bioluminescent plankton light up the waves at your feet. Made up of 1,200 coral islands grouped into 26 atolls, it's one of the world's lowest-lying nations — and one of its most extraordinary. The overwater bungalows are real, the underwater world is real, and the sense of complete escape from everything is absolutely real.</p>
+      <p>The Maldives is the Indian Ocean at its most extreme — an archipelago of 1,200 coral islands spread across 800km, most of them barely above sea level. It's one of the most biodiverse marine environments on earth, with a coral reef system that's home to whale sharks, manta rays, and over a thousand species of fish. It's undeniably expensive, but it's worth understanding that the price range is huge — from budget guesthouses on local islands to £5,000-per-night overwater villas.</p>
       <div style="margin-top:1.5rem"><a href="../contact.html" class="btn btn-coral btn-arr">Plan My Maldives Trip</a></div>
     </div>
     <div class="facts-card rv rv2">
@@ -145,6 +164,64 @@
   </div>
 </section>
 
+<section class="s areas-s">
+  <div class="s-inner">
+    <div class="rv" style="text-align:center;margin-bottom:2.5rem">
+      <div class="eyebrow" style="justify-content:center">Know Before You Go</div>
+      <h2 class="h-display">Where to Base Yourself in <em>the Maldives</em></h2>
+      <p style="color:var(--smoke);max-width:580px;margin:.8rem auto 0;line-height:1.8">the Maldives isn't one-size-fits-all. Each area has a completely different character — here's how to choose.</p>
+    </div>
+    <div class="areas-grid"><div class="area-card rvrv">
+  <div class="area-top"><span class="area-icon">🏘️</span><div>
+    <h4 class="area-name">Malé & Local Islands</h4>
+    <div class="area-best">Best for: Budget travellers, those wanting to experience Maldivian culture, divers on a budget</div>
+  </div></div>
+  <p class="area-desc">Malé is the world's most densely populated capital — extraordinary to walk through, with mosques and coloured buildings packed onto a tiny island. More importantly, the local island scene (Maafushi, Guraidhoo, Dhigurah) has transformed Maldives accessibility. Budget guesthouses from £30–60/night, local restaurants serving fish curry for £5, and the same water you'd pay thousands for on a resort island.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🤿</span><div>
+    <h4 class="area-name">North Malé Atoll</h4>
+    <div class="area-best">Best for: Luxury travellers, divers, honeymooners, first-time visitors</div>
+  </div></div>
+  <p class="area-desc">The most accessible region from the airport — luxury resorts on private islands (Soneva Jani, Gili Lankanfushi, Velaa) as well as mid-range options. The dive sites here (Banana Reef, HP Reef, Manta Point) are world-class. Speedboat transfers from the airport take 20–45 minutes. This is where most first-time visitors base themselves.</p>
+</div>
+<div class="area-card rvrv2">
+  <div class="area-top"><span class="area-icon">🐋</span><div>
+    <h4 class="area-name">Baa Atoll</h4>
+    <div class="area-best">Best for: Snorkellers, marine life lovers, bucket-list experiences, nature photographers</div>
+  </div></div>
+  <p class="area-desc">UNESCO Biosphere Reserve. Hanifaru Bay is the single most important manta ray and whale shark feeding site in the world — during June–November, the plankton bloom draws hundreds of mantas in a single bay simultaneously. You snorkel with them rather than diving. Stay on a nearby local island (Dharavandhoo) or splash out on the Conrad or Four Seasons.</p>
+</div>
+<div class="area-card rvrv0">
+  <div class="area-top"><span class="area-icon">🦈</span><div>
+    <h4 class="area-name">Ari Atoll</h4>
+    <div class="area-best">Best for: Divers, whale shark enthusiasts, those combining local island stays with resort nights</div>
+  </div></div>
+  <p class="area-desc">Whale shark territory. The south side of Ari Atoll has year-round whale shark aggregations — more consistent than almost anywhere else on earth. The atoll also has excellent house reefs, wreck diving (Halaveli Wreck), and a mix of local island guesthouses and private resort islands. Slightly longer seaplane transfer from Malé but worth the journey.</p>
+</div>
+<div class="area-card rvrv1">
+  <div class="area-top"><span class="area-icon">🌊</span><div>
+    <h4 class="area-name">Remote Atolls (Addu, Fuvahmulah)</h4>
+    <div class="area-best">Best for: Adventurous divers, those wanting untouched Maldives, off-the-beaten-path seekers</div>
+  </div></div>
+  <p class="area-desc">The southernmost atolls are genuinely off the tourist trail — accessible by domestic flight rather than seaplane. Fuvahmulah has a freshwater lake (unique in the Maldives), tiger shark dives, and almost no visitors. Addu Atoll has a British World War II RAF base, a causeway connecting multiple islands, and some of the best diving in the country.</p>
+</div>
+</div>
+  </div>
+</section>
+<section class="s insider-s">
+  <div class="s-inner">
+    <div class="rv" style="max-width:760px;margin:0 auto">
+      <div class="eyebrow" style="color:var(--gold-dk)">Insider Knowledge</div>
+      <h2 class="h-display on-light">5 Things to Know Before You Go to <em>the Maldives</em></h2>
+      <ul class="tips-list"><li class="tip-item rv"><span class="tip-bullet">→</span><p>Local island guesthouses charge 10–15% of resort prices — the water is identical, the experience is just more real</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Seaplane transfers are spectacular (you fly low over the atolls) but cost £200–500 return — speedboat to a North Malé resort is £50 and barely slower</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Alcohol is not served on local islands — resorts have it freely. Plan which experience you want before booking</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>June–November is officially low season (monsoon on the west side) but Baa Atoll has its best manta season at this time — and prices drop 30–40%</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>The Maldives is at sea level — it's the country most threatened by climate change. Supporting local island stays directly funds the communities adapting to this</p></li></ul>
+    </div>
+  </div>
+</section>
 <div class="plan-s">
   <h2 class="rv">Ready to plan your Maldives honeymoon or escape?</h2>
   <p class="rv">Tell us when, your budget, and who's going — we'll handle every last detail.</p>
