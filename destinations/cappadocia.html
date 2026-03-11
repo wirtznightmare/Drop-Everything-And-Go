@@ -62,24 +62,7 @@
 @media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.aud-grid{grid-template-columns:1fr 1fr;}}
 @media(max-width:640px){.things-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}.bp-strip-in{grid-template-columns:1fr;}.dh-emoji{font-size:3rem;}}
 
-.areas-s{background:var(--ink-2);}
-.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2rem;}
-.area-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:2rem;transition:transform .4s var(--ease-spring),border-color .3s;}
-.area-card:hover{transform:translateY(-5px);border-color:rgba(200,145,42,.25);}
-.area-top{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1rem;}
-.area-icon{font-size:2rem;line-height:1;flex-shrink:0;}
-.area-name{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;}
-.area-best{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.25rem;}
-.area-desc{font-size:.87rem;color:var(--smoke);line-height:1.78;}
-.insider-s{background:var(--parchment);}
-.insider-s .h-display{color:var(--ink);}
-.insider-s .eyebrow{color:var(--gold-dk)!important;}
-.tips-list{list-style:none;margin-top:2rem;display:flex;flex-direction:column;gap:1.2rem;}
-.tip-item{display:flex;align-items:flex-start;gap:1.1rem;padding:1.2rem 1.5rem;background:rgba(11,23,40,.05);border-radius:var(--r-sm);border-left:3px solid var(--gold);}
-.tip-bullet{font-family:var(--ff-mono);font-size:.9rem;color:var(--gold-dk);flex-shrink:0;margin-top:.1rem;}
-.tip-item p{font-size:.9rem;color:#4A5060;line-height:1.78;margin:0;}
-@media(max-width:900px){.areas-grid{grid-template-columns:1fr 1fr;}}
-@media(max-width:600px){.areas-grid{grid-template-columns:1fr;}}
+
 </style>
 </head>
 <body>
@@ -166,11 +149,7 @@
 
 <section class="s areas-s">
   <div class="s-inner">
-    <div class="rv" style="text-align:center;margin-bottom:2.5rem">
-      <div class="eyebrow" style="justify-content:center">Know Before You Go</div>
-      <h2 class="h-display">Where to Base Yourself in <em>Cappadocia</em></h2>
-      <p style="color:var(--smoke);max-width:580px;margin:.8rem auto 0;line-height:1.8">Cappadocia isn't one-size-fits-all. Each area has a completely different character — here's how to choose.</p>
-    </div>
+    <div class="areas-intro rv"><div class="eyebrow" style="justify-content:center">Where to Stay</div><h2 class="h-display">Base Yourself in <em>Cappadocia</em></h2><p>Cappadocia isn't one-size-fits-all. Each area has a completely different character — here's how to choose.</p></div>
     <div class="areas-grid"><div class="area-card rvrv">
   <div class="area-top"><span class="area-icon">🏠</span><div>
     <h4 class="area-name">Göreme</h4>
@@ -211,9 +190,7 @@
 </section>
 <section class="s insider-s">
   <div class="s-inner">
-    <div class="rv" style="max-width:760px;margin:0 auto">
-      <div class="eyebrow" style="color:var(--gold-dk)">Insider Knowledge</div>
-      <h2 class="h-display on-light">5 Things to Know Before You Go to <em>Cappadocia</em></h2>
+    <div class="rv"><div class="eyebrow">Insider Knowledge</div><h2 class="h-display on-light">5 Things to Know About <em>Cappadocia</em></h2>
       <ul class="tips-list"><li class="tip-item rv"><span class="tip-bullet">→</span><p>Book balloon flights months in advance — the 6am flights fill up fast and cost £150–250; the best operators are Royal Balloon and Butterfly Balloons</p></li>
 <li class="tip-item rv"><span class="tip-bullet">→</span><p>Cave hotels stay 5–8°C cooler than outside in summer — an advantage in a region that gets very hot in July and August</p></li>
 <li class="tip-item rv"><span class="tip-bullet">→</span><p>The valleys between Göreme and Üçhisar (Rose Valley, Red Valley) are best explored on foot or horseback — the views are extraordinary and almost no vehicles can access them</p></li>

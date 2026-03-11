@@ -56,28 +56,7 @@
 @media(max-width:1000px){.bp-intro-grid{grid-template-columns:1fr;}.bp-facts-card{position:static;}}
 @media(max-width:640px){.bp-things-grid{grid-template-columns:1fr;}.bp-more-in{grid-template-columns:1fr;}.bp-emoji{font-size:3rem;}}
 
-.bp-regions-s{background:var(--ink);}
-.bp-regions-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem;}
-.bp-region-card{background:rgba(14,191,184,.04);border:1px solid rgba(14,191,184,.1);border-radius:var(--r-md);padding:1.8rem;transition:border-color .3s,transform .4s var(--ease-spring);}
-.bp-region-card:hover{border-color:rgba(14,191,184,.3);transform:translateY(-4px);}
-.bp-region-top{display:flex;align-items:center;gap:.8rem;margin-bottom:.8rem;}
-.bp-region-icon{font-size:1.6rem;}
-.bp-region-name{font-family:var(--ff-display);font-size:1.1rem;font-weight:700;color:var(--parchment);}
-.bp-region-desc{font-size:.86rem;color:var(--smoke);line-height:1.78;}
-.bp-route-s{background:var(--ink-2);border-top:1px solid rgba(14,191,184,.1);}
-.bp-route-box{max-width:760px;margin:0 auto;}
-.bp-route-box h3{font-family:var(--ff-display);font-size:1.5rem;font-weight:700;color:var(--parchment);margin-bottom:1rem;}
-.bp-route-text{font-size:.9rem;color:var(--smoke);line-height:1.85;padding:1.5rem;background:rgba(14,191,184,.05);border-radius:var(--r-sm);border-left:3px solid var(--teal);}
-.bp-money-s{background:var(--parchment);}
-.bp-money-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem;max-width:900px;}
-.bp-money-item{padding:1.2rem 1.5rem;background:rgba(11,23,40,.05);border-radius:var(--r-sm);border-left:3px solid var(--gold);}
-.bp-money-item strong{font-family:var(--ff-mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dk);display:block;margin-bottom:.4rem;}
-.bp-money-item p{font-size:.87rem;color:#4A5060;line-height:1.7;margin:0;}
-.bp-eco-s{background:var(--ink-2);border-top:1px solid rgba(14,191,184,.12);}
-.bp-eco-box{max-width:760px;margin:0 auto;}
-.bp-eco-box h3{font-family:var(--ff-display);font-size:1.4rem;font-weight:700;color:var(--parchment);margin-bottom:.8rem;}
-.bp-eco-box p{font-size:.9rem;color:var(--smoke);line-height:1.82;}
-@media(max-width:700px){.bp-regions-grid,.bp-money-grid{grid-template-columns:1fr;}}
+
 </style>
 </head>
 <body>
@@ -156,11 +135,7 @@
 
 <section class="s bp-regions-s">
   <div class="s-inner">
-    <div class="rv" style="text-align:center;margin-bottom:2rem">
-      <div class="eyebrow teal" style="justify-content:center">Where to Go</div>
-      <h2 class="h-display">Breaking Down <em>Morocco</em></h2>
-      <p style="color:var(--smoke);max-width:560px;margin:.8rem auto 0;line-height:1.8">Each region has a completely different character. Here's what to expect from each area.</p>
-    </div>
+    <div class="bp-regions-intro rv"><div class="eyebrow teal" style="justify-content:center">Where to Go</div><h2 class="h-display">Breaking Down <em>Morocco</em></h2><p>Each region has a completely different character. Here's what to expect from each area.</p></div>
     <div class="bp-regions-grid"><div class="bp-region-card rv"><div class="bp-region-top"><span class="bp-region-icon">🏮</span><span class="bp-region-name">Marrakech</span></div><p class="bp-region-desc">The medina is a sensory assault — Djemaa el-Fna square (food stalls, musicians, storytellers, acrobats, all evening), the souks (leather, spices, ceramics, lamps), and the extraordinary Bahia Palace and Saadian Tombs. Stay inside the medina in a riad (courtyard house) for the full experience. Budget riads cost from £25/night.</p></div>
 <div class="bp-region-card rv1"><div class="bp-region-top"><span class="bp-region-icon">🌀</span><span class="bp-region-name">Fez</span></div><p class="bp-region-desc">The world's largest car-free urban area — the Fez medina has 9,400 streets, 54 hammams, 800 mosques, and the world's oldest working university (Al Quaraouiyine, founded 859 AD). Getting lost is mandatory. The Chouara Tannery view from the leather shop rooftops is one of Morocco's defining images.</p></div>
 <div class="bp-region-card rv0"><div class="bp-region-top"><span class="bp-region-icon">💙</span><span class="bp-region-name">Chefchaouen</span></div><p class="bp-region-desc">The Blue City — a small mountain town where everything is painted in shades of blue and white. Still charming early morning. The hike to the Spanish Mosque above the town takes 30 minutes and gives the panoramic photograph.</p></div>
@@ -170,7 +145,7 @@
   </div>
 </section>
 <section class="s bp-route-s"><div class="s-inner"><div class="bp-route-box rv"><div class="eyebrow teal">Suggested Route</div><h3>How to structure your trip</h3><p class="bp-route-text">Fly Marrakech → Marrakech (3 nights) → bus to Fez (2 nights) → bus to Chefchaouen (2 nights) → bus south to Merzouga desert (2 nights) → Todgha Gorge → bus back to Marrakech. 14–16 days.</p></div></div></section>
-<section class="s bp-money-s"><div class="s-inner"><div class="rv"><div class="eyebrow" style="color:var(--gold-dk)">Money Breakdown</div><h2 class="h-display on-light">What to <em>Budget For</em></h2></div><div class="bp-money-grid"><div class="bp-money-item"><strong>Daily Budget</strong><p>£20–35/day.</p></div>
+<section class="s bp-money-s"><div class="s-inner"><div class="rv"><div class="eyebrow">Money Breakdown</div><h2 class="h-display on-light">What to <em>Budget For</em></h2></div><div class="bp-money-grid"><div class="bp-money-item"><strong>Daily Budget</strong><p>£20–35/day.</p></div>
 <div class="bp-money-item"><strong>Food & Drink</strong><p>Street food (harira soup, msemen flatbread, kefta sandwich): £1–2.</p></div>
 <div class="bp-money-item"><strong>Accommodation</strong><p>Restaurant tagine: £5–10.</p></div>
 <div class="bp-money-item"><strong>Getting Around</strong><p>Riad dorm: £8–15.</p></div>

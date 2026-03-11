@@ -56,28 +56,7 @@
 @media(max-width:1000px){.bp-intro-grid{grid-template-columns:1fr;}.bp-facts-card{position:static;}}
 @media(max-width:640px){.bp-things-grid{grid-template-columns:1fr;}.bp-more-in{grid-template-columns:1fr;}.bp-emoji{font-size:3rem;}}
 
-.bp-regions-s{background:var(--ink);}
-.bp-regions-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:2rem;}
-.bp-region-card{background:rgba(14,191,184,.04);border:1px solid rgba(14,191,184,.1);border-radius:var(--r-md);padding:1.8rem;transition:border-color .3s,transform .4s var(--ease-spring);}
-.bp-region-card:hover{border-color:rgba(14,191,184,.3);transform:translateY(-4px);}
-.bp-region-top{display:flex;align-items:center;gap:.8rem;margin-bottom:.8rem;}
-.bp-region-icon{font-size:1.6rem;}
-.bp-region-name{font-family:var(--ff-display);font-size:1.1rem;font-weight:700;color:var(--parchment);}
-.bp-region-desc{font-size:.86rem;color:var(--smoke);line-height:1.78;}
-.bp-route-s{background:var(--ink-2);border-top:1px solid rgba(14,191,184,.1);}
-.bp-route-box{max-width:760px;margin:0 auto;}
-.bp-route-box h3{font-family:var(--ff-display);font-size:1.5rem;font-weight:700;color:var(--parchment);margin-bottom:1rem;}
-.bp-route-text{font-size:.9rem;color:var(--smoke);line-height:1.85;padding:1.5rem;background:rgba(14,191,184,.05);border-radius:var(--r-sm);border-left:3px solid var(--teal);}
-.bp-money-s{background:var(--parchment);}
-.bp-money-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.5rem;max-width:900px;}
-.bp-money-item{padding:1.2rem 1.5rem;background:rgba(11,23,40,.05);border-radius:var(--r-sm);border-left:3px solid var(--gold);}
-.bp-money-item strong{font-family:var(--ff-mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-dk);display:block;margin-bottom:.4rem;}
-.bp-money-item p{font-size:.87rem;color:#4A5060;line-height:1.7;margin:0;}
-.bp-eco-s{background:var(--ink-2);border-top:1px solid rgba(14,191,184,.12);}
-.bp-eco-box{max-width:760px;margin:0 auto;}
-.bp-eco-box h3{font-family:var(--ff-display);font-size:1.4rem;font-weight:700;color:var(--parchment);margin-bottom:.8rem;}
-.bp-eco-box p{font-size:.9rem;color:var(--smoke);line-height:1.82;}
-@media(max-width:700px){.bp-regions-grid,.bp-money-grid{grid-template-columns:1fr;}}
+
 </style>
 </head>
 <body>
@@ -156,11 +135,7 @@
 
 <section class="s bp-regions-s">
   <div class="s-inner">
-    <div class="rv" style="text-align:center;margin-bottom:2rem">
-      <div class="eyebrow teal" style="justify-content:center">Where to Go</div>
-      <h2 class="h-display">Breaking Down <em>Indonesia</em></h2>
-      <p style="color:var(--smoke);max-width:560px;margin:.8rem auto 0;line-height:1.8">Each region has a completely different character. Here's what to expect from each area.</p>
-    </div>
+    <div class="bp-regions-intro rv"><div class="eyebrow teal" style="justify-content:center">Where to Go</div><h2 class="h-display">Breaking Down <em>Indonesia</em></h2><p>Each region has a completely different character. Here's what to expect from each area.</p></div>
     <div class="bp-regions-grid"><div class="bp-region-card rv">
   <div class="bp-region-top"><span class="bp-region-icon">🌺</span><span class="bp-region-name">Bali</span></div>
   <p class="bp-region-desc">The obvious start — and for good reason. Canggu for surfing and the digital nomad café scene, Ubud for culture and rice terraces, Amed for diving and the real Bali. Rent a scooter for £4/day and go further than the tour buses. The Tegallalang rice terraces are best at 7am before the Instagram crowds.</p>
@@ -197,8 +172,7 @@
 
 <section class="s bp-money-s">
   <div class="s-inner">
-    <div class="rv"><div class="eyebrow" style="color:var(--gold-dk)">Money Breakdown</div>
-    <h2 class="h-display on-light">What to <em>Budget For</em></h2></div>
+    <div class="rv"><div class="eyebrow">Money Breakdown</div><h2 class="h-display on-light">What to <em>Budget For</em></h2></div>
     <div class="bp-money-grid"><div class="bp-money-item"><strong>Daily Budget</strong><p>£20–35/day in Bali and Java.</p></div>
 <div class="bp-money-item"><strong>Food & Drink</strong><p>More in remote areas (Raja Ampat, £50+/day).</p></div>
 <div class="bp-money-item"><strong>Accommodation</strong><p>Warung (local food stall) meal: £1–3.</p></div>
@@ -210,8 +184,7 @@
 
 <section class="s bp-eco-s">
   <div class="s-inner">
-    <div class="bp-eco-box rv">
-      <div class="eyebrow teal">Travel Responsibly</div>
+    <div class="bp-eco-box rv"><div class="eyebrow teal">Travel Responsibly</div>
       <h3>Eco & Community Tips</h3>
       <p>Indonesia's coral reefs are among the most threatened by tourism — choose dive operators who practice no-touch policies and avoid operators who allow feeding. Support locally-owned warungs rather than international chains. The Komodo National Park entrance fee (significantly increased in 2023) goes directly to conservation.</p>
     </div>
