@@ -409,7 +409,7 @@ footer {
 .areas-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
+  gap: 1.2rem;
   align-items: stretch;
 }
 .area-card {
@@ -654,7 +654,7 @@ footer {
    RESPONSIVE — NEW SECTIONS
    ═══════════════════════════════════════════════════════════ */
 
-@media (max-width: 1100px) {
+@media (max-width: 900px) {
   .areas-grid {
     grid-template-columns: repeat(2, 1fr);
   }

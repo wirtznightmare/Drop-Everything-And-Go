@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Cappadocia, Turkey travel guide — Hot air balloons at dawn over fairy chimneys — one of earth's most otherworldly landscapes."/>
+<title>Cappadocia, Turkey — Drop Everything And Go</title>
+<link rel="stylesheet" href="../style.css"/>
+<style>
+.dh{min-height:70vh;display:flex;flex-direction:column;justify-content:flex-end;padding:10rem var(--gutter) 4rem;position:relative;overflow:hidden;}
+.dh-bg{position:absolute;inset:0;}
+.dh-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(200,145,42,.07) 1px,transparent 1px);background-size:35px 35px;mask-image:radial-gradient(ellipse at 80% 40%,black 20%,transparent 75%);}
+.dh-content{position:relative;z-index:2;max-width:1300px;width:100%;margin:0 auto;}
+.dh-back{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--ff-mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,239,224,.4);margin-bottom:1.5rem;transition:color .2s;}
+.dh-back:hover{color:var(--gold);}
+.dh-emoji{font-size:4.5rem;line-height:1;display:block;margin-bottom:1rem;}
+.dh-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem;}
+.dh-tag{font-family:var(--ff-mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;padding:.25rem .7rem;border-radius:100px;background:rgba(200,145,42,.15);color:var(--gold);border:1px solid rgba(200,145,42,.2);}
+.dh-h1{font-family:var(--ff-display);font-size:clamp(3rem,9vw,7.5rem);font-weight:800;letter-spacing:-.035em;line-height:.92;color:var(--parchment);}
+.dh-h1 em{font-style:italic;font-weight:300;color:var(--gold-lt);font-variation-settings:'opsz' 72;}
+.dh-tagline{font-size:1rem;color:rgba(200,190,170,.65);margin-top:1.2rem;max-width:520px;line-height:1.7;}
+.dh-rule{position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,var(--gold),transparent 60%);opacity:.35;}
+
+.intro-s{background:var(--parchment);}
+.intro-grid{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:3.5rem;align-items:start;}
+.intro-body h2{font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--ink);letter-spacing:-.02em;line-height:1.12;margin-bottom:.7rem;}
+.intro-body h2 em{font-style:italic;font-weight:300;color:var(--gold-dk);}
+.intro-body p{font-size:.95rem;color:#4A5060;line-height:1.88;margin-bottom:1rem;}
+.facts-card{background:var(--ink);border-radius:var(--r-lg);padding:2rem;position:sticky;top:90px;}
+.facts-card h4{font-family:var(--ff-mono);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;}
+.fact-row{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.4rem;padding-bottom:1.4rem;border-bottom:1px solid rgba(245,239,224,.07);}
+.fact-row:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.fact-icon{font-size:1.1rem;flex-shrink:0;margin-top:.1rem;}
+.fact-label{font-family:var(--ff-mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--smoke);margin-bottom:.2rem;}
+.fact-value{font-size:.88rem;color:var(--parchment);font-weight:500;line-height:1.4;}
+
+.aud-s{background:var(--cream);}
+.aud-grid{max-width:1100px;margin:3rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.aud-c{background:var(--white);border-radius:var(--r-md);padding:2.2rem 1.8rem;border-top:2px solid var(--gold);box-shadow:0 2px 18px rgba(11,13,16,.05);transition:transform .4s var(--ease-spring),box-shadow .4s,border-top-color .3s;}
+.aud-c:hover{transform:translateY(-5px);box-shadow:0 16px 42px rgba(11,13,16,.1);border-top-color:var(--teal);}
+.aud-icon{font-size:2rem;margin-bottom:1rem;}
+.aud-title{font-family:var(--ff-display);font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;}
+.aud-desc{font-size:.86rem;color:#6A7080;line-height:1.72;}
+
+.things-s{background:var(--ink-2);}
+
+.things-inner{max-width:1000px;margin:0 auto;}
+.things-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:2.5rem;}
+.thing-item{display:flex;align-items:flex-start;gap:.9rem;background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-sm);padding:1rem 1.2rem;transition:background .25s,border-color .25s;}
+.thing-item:hover{background:rgba(245,239,224,.07);border-color:rgba(200,145,42,.2);}
+.thing-num{font-family:var(--ff-display);font-size:1.1rem;font-weight:800;color:var(--gold);flex-shrink:0;min-width:1.8rem;font-variation-settings:'opsz' 24;}
+.thing-text{font-size:.86rem;color:rgba(200,190,170,.75);line-height:1.6;}
+
+.plan-s{background:linear-gradient(140deg,#112038,#0D2040);text-align:center;padding:3.5rem var(--gutter);}
+
+.plan-s h2{font-family:var(--ff-ui);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--parchment);letter-spacing:-.02em;position:relative;z-index:1;}
+.plan-s p{color:var(--smoke);max-width:460px;margin:.9rem auto 2.5rem;line-height:1.75;position:relative;z-index:1;}
+.plan-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+
+.bp-strip{background:var(--ink-2);border-top:1px solid rgba(14,191,184,.15);padding:3.5rem var(--gutter);}
+.bp-strip-in{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem;}
+
+@media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.aud-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:640px){.things-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}.bp-strip-in{grid-template-columns:1fr;}.dh-emoji{font-size:3rem;}}
+
+
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+<div class="ck" id="ck">
+  <p class="ck-text">We use cookies to enhance your journey. <a href="../privacy.html">Privacy Policy</a></p>
+  <div class="ck-btns"><button class="ck-acc" onclick="ckAccept()">Accept</button><button class="ck-dec" onclick="ckDecline()">Decline</button></div>
+</div>
+<div class="ann-bar">
+  <a href="backpacker-guides.html">
+    <span class="ann-badge">🎒 NEW</span>
+    59 Backpacker Guides Live — SE Asia, South America, Europe &amp; more · From £12/day
+    <span class="ann-arr">→</span>
+  </a>
+</div>
+<nav id="nav">
+  <a href="../index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Bespoke Planning</span></a>
+  <ul class="nav-links">
+    <li><a href="../destinations.html" class="active">Destinations</a></li>
+    <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../services.html">Services</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html" class="nav-cta">Plan My Trip</a></li>
+  </ul>
+  <button class="nav-ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<ul class="nav-mob" id="mob">
+  <li><a href="../destinations.html">Destinations</a></li>
+  <li><a href="../blog.html">Blog</a></li>
+  <li><a href="../services.html">Services</a></li>
+  <li><a href="../about.html">About</a></li>
+  <li><a href="../contact.html" class="mob-cta-btn">Plan My Trip</a></li>
+</ul>
+<div class="dh">
+  <div class="dh-bg" style="background:linear-gradient(160deg,#3A1808,#180800)"></div>
+  <div class="dh-dots"></div>
+  <div class="dh-content">
+    <a href="../destinations.html" class="dh-back">← All Destinations</a>
+    <span class="dh-emoji">🎈</span>
+    <div class="dh-tags"><span class="dh-tag">Asia</span><span class="dh-tag">Hidden Gem</span><span class="dh-tag">Adventure</span><span class="dh-tag">Unique</span></div>
+    <h1 class="dh-h1">Cappadocia<br><em></em> Turkey</h1>
+    <p class="dh-tagline">Hot air balloons at dawn over fairy chimneys — one of earth's most otherworldly landscapes.</p>
+  </div>
+  <div class="dh-rule"></div>
+</div>
+
+<section class="s intro-s">
+  <div class="intro-grid">
+    <div class="rv">
+      <div class="eyebrow" style="color:var(--gold-dk)">Asia · Turkey</div>
+      <h2>Why visit <em>Cappadocia?</em></h2>
+      <p>Cappadocia is one of those destinations where the reality genuinely exceeds the photographs — and that's saying something given how extraordinary those photographs are. The fairy chimneys, cave churches, underground cities and rock-carved landscapes of central Anatolia are the result of millions of years of volcanic activity and thousands of years of human habitation. The dawn hot air balloon flights over it are among the most beautiful experiences available anywhere on earth.</p>
+      <div style="margin-top:1.5rem"><a href="../contact.html" class="btn btn-coral btn-arr">Plan My Cappadocia Trip</a></div>
+    </div>
+    <div class="facts-card rv rv2">
+      <h4>// Quick Facts</h4>
+      <div class="fact-row"><div class="fact-icon">✈️</div><div><div class="fact-label">Region</div><div class="fact-value">Asia · Turkey</div></div></div>
+      <div class="fact-row"><div class="fact-icon">🎯</div><div><div class="fact-label">Best For</div><div class="fact-value">Adventurers, photographers, couples</div></div></div>
+      <div class="fact-row"><div class="fact-icon">📅</div><div><div class="fact-label">Best Time</div><div class="fact-value">April–June, September–November</div></div></div>
+      <div class="fact-row"><div class="fact-icon">💷</div><div><div class="fact-label">Budget Guide</div><div class="fact-value">£60–£250/night (cave hotels)</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="s aud-s">
+  <div class="s-inner">
+    <div class="rv" style="text-align:center">
+      <div class="eyebrow light" style="justify-content:center;color:var(--gold-dk)">Who It's Perfect For</div>
+      <h2 class="h-display on-light">Is This Trip <em>Right for You?</em></h2>
+    </div>
+    <div class="aud-grid"><div class="aud-c rv"><div class="aud-icon">🎈</div><h3 class="aud-title">Adventure Travellers</h3><p class="aud-desc">Hot air ballooning, ATV riding through the valleys, and hiking between ancient cave churches.</p></div><div class="aud-c rv"><div class="aud-icon">📸</div><h3 class="aud-title">Photographers</h3><p class="aud-desc">Sunrise balloons, fairy chimney silhouettes, and underground cities — every frame is extraordinary.</p></div><div class="aud-c rv"><div class="aud-icon">💑</div><h3 class="aud-title">Romantic Couples</h3><p class="aud-desc">Stay in a carved cave suite, sip local wine at a rooftop terrace, and watch the balloon launch at first light.</p></div></div>
+  </div>
+</section>
+
+<section class="s things-s">
+  <div class="things-inner">
+    <div class="rv" style="text-align:center">
+      <div class="eyebrow" style="justify-content:center">The Highlights</div>
+      <h2 class="h-display">Things to <em>Do &amp; See</em></h2>
+    </div>
+    <div class="things-grid"><div class="thing-item rv rv0"><div class="thing-num">01</div><div class="thing-text">Book a hot air balloon flight for sunrise — book months ahead in peak season</div></div><div class="thing-item rv rv1"><div class="thing-num">02</div><div class="thing-text">Stay at least one night in a genuine cave hotel</div></div><div class="thing-item rv rv2"><div class="thing-num">03</div><div class="thing-text">Explore the underground city of Derinkuyu (deeper) or Kaymakli</div></div><div class="thing-item rv rv0"><div class="thing-num">04</div><div class="thing-text">Hike through Ihlara Valley along the river between ancient churches</div></div><div class="thing-item rv rv1"><div class="thing-num">05</div><div class="thing-text">Visit the Open Air Museum at Göreme for frescoed cave churches</div></div><div class="thing-item rv rv2"><div class="thing-num">06</div><div class="thing-text">ATV or horse trek through the Rose and Red Valleys</div></div><div class="thing-item rv rv0"><div class="thing-num">07</div><div class="thing-text">Taste local Cappadocian wine — the volcanic soil produces excellent grapes</div></div><div class="thing-item rv rv1"><div class="thing-num">08</div><div class="thing-text">Watch the sunset from the Uçhisar fortress</div></div></div>
+  </div>
+</section>
+
+</div>
+
+<section class="s areas-s">
+  <div class="s-inner">
+    <div class="areas-intro rv">
+      <div class="eyebrow" style="justify-content:center">Where to Stay</div>
+      <h2 class="h-display">Base Yourself in <em>Cappadocia Turkey</em></h2>
+      <p>Six distinct areas — each with a different character, price point and experience.</p>
+    </div>
+    <div class="areas-grid">
+<div class="area-card rv">
+  <div class="area-top">
+    <span class="area-icon">🏰</span>
+    <div>
+      <h4 class="area-name">Göreme</h4>
+      <div class="area-best">Central Cave Village</div>
+    </div>
+  </div>
+  <p class="area-desc">The main base — surrounded by fairy chimneys and within walking distance of open-air museums and the best viewpoints. Cave hotels at every price point from £30/night dormitories to boutique cave suites with private terraces. The most atmospheric place to stay in Turkey.</p>
+</div>
+<div class="area-card rv">
+  <div class="area-top">
+    <span class="area-icon">🌄</span>
+    <div>
+      <h4 class="area-name">Ürgüp</h4>
+      <div class="area-best">Mid-Range Town Base</div>
+    </div>
+  </div>
+  <p class="area-desc">A larger town with more restaurants, shops and a more lived-in feel than Göreme. Beautiful old stone houses converted into hotels. Better infrastructure and more evening options. 20-minute drive to the main sites.</p>
+</div>
+<div class="area-card rv">
+  <div class="area-top">
+    <span class="area-icon">🍷</span>
+    <div>
+      <h4 class="area-name">Avanos</h4>
+      <div class="area-best">Pottery Village Stay</div>
+    </div>
+  </div>
+  <p class="area-desc">On the Red River — famous for its pottery workshops and a slightly off-the-beaten-track feel. Quieter than Göreme and cheaper. The Saruhan Caravanserai is nearby. A good base if Göreme feels too touristy.</p>
+</div>
+<div class="area-card rv">
+  <div class="area-top">
+    <span class="area-icon">🏡</span>
+    <div>
+      <h4 class="area-name">Uçhisar</h4>
+      <div class="area-best">Castle Village</div>
+    </div>
+  </div>
+  <p class="area-desc">The highest village in Cappadocia — built around a rock castle with panoramic valley views. Fewer tourists than Göreme, excellent boutique hotels, and the valleys stretch below you in every direction. Museum Hotel here is one of Turkey's finest.</p>
+</div>
+<div class="area-card rv">
+  <div class="area-top">
+    <span class="area-icon">🌋</span>
+    <div>
+      <h4 class="area-name">Ortahisar</h4>
+      <div class="area-best">Quiet Valley Base</div>
+    </div>
+  </div>
+  <p class="area-desc">A village built around another rock fortress, quieter than all the above and very local in character. Some excellent small guesthouses. Walking access to Pigeon Valley without tour groups.</p>
+</div>
+<div class="area-card rv">
+  <div class="area-top">
+    <span class="area-icon">🦺</span>
+    <div>
+      <h4 class="area-name">Mustafapaşa</h4>
+      <div class="area-best">Off-Grid Greek Heritage</div>
+    </div>
+  </div>
+  <p class="area-desc">A former Greek village with extraordinary carved stone mansions — most converted into small pensions. Almost no tourists, genuinely beautiful architecture and very cheap. Best for independent travellers wanting solitude.</p>
+</div>
+    </div>
+  </div>
+</section>
+<section class="s insider-s">
+  <div class="s-inner">
+    <div class="rv">
+      <div class="eyebrow">Insider Knowledge</div>
+      <h2 class="h-display on-light">What Most Guides Don't Tell You About <em>Cappadocia Turkey</em></h2>
+    </div>
+    <ul class="tips-list">
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Hot air balloon flights cost £120–200 but the prices vary wildly — book through Royal Balloon or Butterfly Balloons directly, not through hotel concierge who add 30%</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>The balloon flights are weather-cancelled frequently in winter — book refundable rates only and have a backup day built in</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Göreme's cave hotels get genuinely cold at night even in summer — the thermal mass of rock means room temperatures drop sharply after midnight</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>The Love Valley hike (3 hours circular, free) gives better fairy chimney scenery than any tour — go at 7am before the ATV groups arrive</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Turkish breakfast (kahvaltı) at a proper lokanta rather than your hotel costs £3–5 and is significantly better than what most hotels serve</p></li>
+    </ul>
+  </div>
+</section>
+<div class="bp-strip">
+  <div class="bp-strip-in">
+    <div class="rv">
+      <div class="eyebrow teal">🎒 Travelling on a Budget?</div>
+      <h2 class="h-display" style="font-size:clamp(1.6rem,3vw,2.4rem)">59 <em style="color:var(--teal)">Backpacker Guides</em> Available</h2>
+      <p style="color:var(--smoke);font-size:.88rem;margin-top:.6rem">From £12/day — SE Asia, South America, Europe, Africa and beyond.</p>
+    </div>
+    <div class="rv rv2"><a href="backpacker-guides.html" class="btn btn-teal btn-arr">Browse Guides</a></div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a href="../index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Services</span></a>
+      <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
+      <div class="ft-social">
+        <a href="#" class="ft-soc-btn">📸</a><a href="#" class="ft-soc-btn">🎵</a>
+        <a href="#" class="ft-soc-btn">📌</a><a href="#" class="ft-soc-btn">▶</a>
+      </div>
+    </div>
+    <div class="ft-col"><h5>Explore</h5><ul>
+      <li><a href="../destinations.html">All Destinations</a></li>
+      <li><a href="../destinations/backpacker-guides.html">Backpacker Guides</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul></div>
+    <div class="ft-col"><h5>Services</h5><ul>
+      <li><a href="../services.html">Trip Planning</a></li>
+      <li><a href="../services.html">Hotel Curation</a></li>
+      <li><a href="../contact.html">Free Quote</a></li>
+    </ul></div>
+    <div class="ft-col"><h5>Info</h5><ul>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../privacy.html">Privacy Policy</a></li>
+      <li><a href="../privacy.html#terms">Terms</a></li>
+    </ul></div>
+  </div>
+  <div class="ft-badges">
+    <span class="ft-badge">🔒 Secure &amp; Trusted</span>
+    <span class="ft-badge">✈️ ATOL Protected Advice</span>
+    <span class="ft-badge">🌍 Worldwide Planning</span>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2025 Drop Everything And Go. All rights reserved.</p>
+    <div class="ft-bottom-links"><a href="../privacy.html">Privacy</a><a href="../privacy.html#cookies">Cookies</a><a href="../privacy.html#terms">Terms</a></div>
+  </div>
+</footer>
+<script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
+<script>
+(function(){
+document.body.classList.add('js-ready');
+var pb=document.getElementById('progress-bar');
+if(pb)window.addEventListener('scroll',function(){pb.style.width=Math.min((scrollY/(document.body.scrollHeight-innerHeight))*100,100)+'%';},{passive:true});
+var nav=document.getElementById('nav');
+if(nav)window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>60);},{passive:true});
+var ham=document.getElementById('ham'),mob=document.getElementById('mob');
+if(ham&&mob)ham.addEventListener('click',function(){ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
+// Lower threshold + rootMargin so items visible on page load reveal immediately
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+// Also immediately reveal anything already in viewport
+window.addEventListener('load',function(){document.querySelectorAll('.rv').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0)el.classList.add('vis');});});
+function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=document.getElementById('ck');if(c)c.classList.add('vis');},1400);}
+window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+ckShow();
+})();
+</script>
+</body></html>
