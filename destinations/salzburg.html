@@ -33,9 +33,9 @@
 .fact-label{font-family:var(--ff-mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--smoke);margin-bottom:.2rem;}
 .fact-value{font-size:.88rem;color:var(--parchment);font-weight:500;line-height:1.4;}
 
-.aud-s{background:var(--cream);}
+.aud-s{background:var(--parchment);}
 .aud-grid{max-width:1100px;margin:3rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
-.aud-c{background:var(--white);border-radius:var(--r-md);padding:2.2rem 1.8rem;border-top:2px solid var(--gold);box-shadow:0 2px 18px rgba(11,13,16,.05);transition:transform .4s var(--ease-spring),box-shadow .4s,border-top-color .3s;}
+.aud-c{background:rgba(11,23,40,0.04);border-top-color:var(--gold);box-shadow:none;border-radius:var(--r-md);padding:2.2rem 1.8rem;border-top:2px solid var(--gold);box-shadow:0 2px 18px rgba(11,13,16,.05);transition:transform .4s var(--ease-spring),box-shadow .4s,border-top-color .3s;}
 .aud-c:hover{transform:translateY(-5px);box-shadow:0 16px 42px rgba(11,13,16,.1);border-top-color:var(--teal);}
 .aud-icon{font-size:2rem;margin-bottom:1rem;}
 .aud-title{font-family:var(--ff-display);font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;}
@@ -109,40 +109,76 @@
   <div class="dh-rule"></div>
 </div>
 
-<section class="s intro-s">
+<section class="s intro-s" style="padding-top:2.5rem;padding-bottom:2rem">
   <div class="intro-grid">
     <div>
       <div class="eyebrow" style="color:var(--gold-dk)">Europe · Austria</div>
       <h2>Why visit <em>Salzburg?</em></h2>
       <p>Salzburg is a baroque city so perfectly preserved it looks like a stage set — which is appropriate, given that it was essentially the childhood backdrop for The Sound of Music and the birthplace of Mozart. But beyond the tourism, it's a genuinely extraordinary city: the historic old town on both sides of the Salzach River is UNESCO-listed, the fortress above it is the best-preserved medieval castle in Central Europe, and the surrounding lake district (the Salzkammergut) is among Austria's most beautiful landscapes.</p>
-      </div>
-    <div class="facts-card rv rv2">
+    </div>
+    <div class="facts-card">
       <h4>// Quick Facts</h4>
-      <div class="fact-row"><div class="fact-icon">✈️</div><div><div class="fact-label">Region</div><div class="fact-value">Europe · Austria</div></div></div>
-      <div class="fact-row"><div class="fact-icon">🎯</div><div><div class="fact-label">Best For</div><div class="fact-value">Culture lovers, music fans, families, weekend breakers</div></div></div>
-      <div class="fact-row"><div class="fact-icon">📅</div><div><div class="fact-label">Best Time</div><div class="fact-value">Year-round — magical in summer and winter equally</div></div></div>
-      <div class="fact-row"><div class="fact-icon">💷</div><div><div class="fact-label">Budget Guide</div><div class="fact-value">£120–£300/night</div></div></div>
+      <div class="fact-row">
+        <div class="fact-icon">✈️</div>
+        <div>
+          <div class="fact-label">Region</div>
+          <div class="fact-value">Europe · Central Austria</div>
+        </div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-icon">🎯</div>
+        <div>
+          <div class="fact-label">Best For</div>
+          <div class="fact-value">Music lovers, families, culture seekers</div>
+        </div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-icon">📅</div>
+        <div>
+          <div class="fact-label">Best Time</div>
+          <div class="fact-value">May–September, December</div>
+        </div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-icon">💷</div>
+        <div>
+          <div class="fact-label">Budget Guide</div>
+          <div class="fact-value">£80–220/night</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:2.5rem;border-top:1px solid rgba(11,23,40,0.08);padding-top:2rem">
+    <div style="text-align:center;margin-bottom:1.8rem">
+      <div class="eyebrow" style="justify-content:center;color:var(--gold-dk)">Who It's Perfect For</div>
+    </div>
+    <div class="aud-grid">
+      <div class="aud-c">
+        <div class="aud-icon">🎼</div>
+        <h3 class="aud-title">Music Lovers</h3>
+        <p class="aud-desc">Mozart was born here. The Salzburg Festival (July–August) is one of the world's greatest classical music events. Book accommodation a year ahead.</p>
+      </div>
+      <div class="aud-c">
+        <div class="aud-icon">👨‍👩‍👧</div>
+        <h3 class="aud-title">Families</h3>
+        <p class="aud-desc">Sound of Music tours, the Hellbrunn Palace trick fountains, the Salzburg Zoo, and cable car to the fortress — it's excellent for families.</p>
+      </div>
+      <div class="aud-c">
+        <div class="aud-icon">🏔️</div>
+        <h3 class="aud-title">Alpine Adventurers</h3>
+        <p class="aud-desc">The Salzkammergut lake district, Berchtesgaden across the German border, and ski resorts within easy reach make this a mountain gateway.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="highlights-bar">
-  <div class="s-inner">
-<div class="hl-item"><span class="hl-icon">✈️</span><div><div class="hl-label">Best Time</div><div class="hl-value">May–Sep, Dec</div></div></div>
+<div class="hl-value">May–Sep, Dec</div></div></div>
 <div class="hl-item"><span class="hl-icon">💷</span><div><div class="hl-label">Daily Budget</div><div class="hl-value">£80–220/night</div></div></div>
 <div class="hl-item"><span class="hl-icon">🕐</span><div><div class="hl-label">Min Stay</div><div class="hl-value">2–3 days</div></div></div>
 <div class="hl-item"><span class="hl-icon">🌡️</span><div><div class="hl-label">Festival</div><div class="hl-value">Jul–Aug Salzburg Festival</div></div></div>
   </div>
 </div>
-<section class="s aud-s">
-  <div class="s-inner">
-    <div class="rv" style="text-align:center">
-      <div class="eyebrow light" style="justify-content:center;color:var(--gold-dk)">Who It's Perfect For</div>
-      <h2 class="h-display on-light">Is This Trip <em>Right for You?</em></h2>
-    </div>
-    <div class="aud-grid"><div class="aud-c rv"><div class="aud-icon">🎼</div><h3 class="aud-title">Music Lovers</h3><p class="aud-desc">Mozart was born here. The Salzburg Festival (July–August) is one of the world's greatest classical music events. Book accommodation a year ahead.</p></div><div class="aud-c rv"><div class="aud-icon">👨‍👩‍👧</div><h3 class="aud-title">Families</h3><p class="aud-desc">Sound of Music tours, the Hellbrunn Palace trick fountains, the Salzburg Zoo, and cable car to the fortress — it's excellent for families.</p></div><div class="aud-c rv"><div class="aud-icon">🏔️</div><h3 class="aud-title">Alpine Adventurers</h3><p class="aud-desc">The Salzkammergut lake district, Berchtesgaden across the German border, and ski resorts within easy reach make this a mountain gateway.</p></div></div>
-  </div>
-</section>
+
 
 <section class="s things-s">
   <div class="things-inner">

@@ -33,9 +33,9 @@
 .fact-label{font-family:var(--ff-mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--smoke);margin-bottom:.2rem;}
 .fact-value{font-size:.88rem;color:var(--parchment);font-weight:500;line-height:1.4;}
 
-.aud-s{background:var(--cream);}
+.aud-s{background:var(--parchment);}
 .aud-grid{max-width:1100px;margin:3rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
-.aud-c{background:var(--white);border-radius:var(--r-md);padding:2.2rem 1.8rem;border-top:2px solid var(--gold);box-shadow:0 2px 18px rgba(11,13,16,.05);transition:transform .4s var(--ease-spring),box-shadow .4s,border-top-color .3s;}
+.aud-c{background:rgba(11,23,40,0.04);border-top-color:var(--gold);box-shadow:none;border-radius:var(--r-md);padding:2.2rem 1.8rem;border-top:2px solid var(--gold);box-shadow:0 2px 18px rgba(11,13,16,.05);transition:transform .4s var(--ease-spring),box-shadow .4s,border-top-color .3s;}
 .aud-c:hover{transform:translateY(-5px);box-shadow:0 16px 42px rgba(11,13,16,.1);border-top-color:var(--teal);}
 .aud-icon{font-size:2rem;margin-bottom:1rem;}
 .aud-title{font-family:var(--ff-display);font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;}
@@ -109,40 +109,76 @@
   <div class="dh-rule"></div>
 </div>
 
-<section class="s intro-s">
+<section class="s intro-s" style="padding-top:2.5rem;padding-bottom:2rem">
   <div class="intro-grid">
     <div>
       <div class="eyebrow" style="color:var(--gold-dk)">Europe · Italy</div>
       <h2>Why visit <em>Amalfi Coast?</em></h2>
       <p>The Amalfi Coast is 50 kilometres of the most dramatic coastal road in Europe — sheer cliffs plunging into turquoise water, pastel-coloured villages stacked impossibly on hillsides, lemon groves perfuming the air, and food so good it might be the best reason to visit Italy. It's deservedly famous, which means summer can be overwhelming. The secret is timing and knowing which towns to choose. Go in May or September, base yourself wisely, and it delivers completely.</p>
-      </div>
-    <div class="facts-card rv rv2">
+    </div>
+    <div class="facts-card">
       <h4>// Quick Facts</h4>
-      <div class="fact-row"><div class="fact-icon">✈️</div><div><div class="fact-label">Region</div><div class="fact-value">Europe · Italy</div></div></div>
-      <div class="fact-row"><div class="fact-icon">🎯</div><div><div class="fact-label">Best For</div><div class="fact-value">Couples, honeymooners, luxury travellers</div></div></div>
-      <div class="fact-row"><div class="fact-icon">📅</div><div><div class="fact-label">Best Time</div><div class="fact-value">May–June, September–October</div></div></div>
-      <div class="fact-row"><div class="fact-icon">💷</div><div><div class="fact-label">Budget Guide</div><div class="fact-value">£150–£400/night mid-range hotels</div></div></div>
+      <div class="fact-row">
+        <div class="fact-icon">✈️</div>
+        <div>
+          <div class="fact-label">Region</div>
+          <div class="fact-value">Europe · Southern Italy</div>
+        </div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-icon">🎯</div>
+        <div>
+          <div class="fact-label">Best For</div>
+          <div class="fact-value">Couples, foodies, beach lovers</div>
+        </div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-icon">📅</div>
+        <div>
+          <div class="fact-label">Best Time</div>
+          <div class="fact-value">May–June, September</div>
+        </div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-icon">💷</div>
+        <div>
+          <div class="fact-label">Budget Guide</div>
+          <div class="fact-value">£100–350/night</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:2.5rem;border-top:1px solid rgba(11,23,40,0.08);padding-top:2rem">
+    <div style="text-align:center;margin-bottom:1.8rem">
+      <div class="eyebrow" style="justify-content:center;color:var(--gold-dk)">Who It's Perfect For</div>
+    </div>
+    <div class="aud-grid">
+      <div class="aud-c">
+        <div class="aud-icon">💑</div>
+        <h3 class="aud-title">Honeymooners</h3>
+        <p class="aud-desc">Sunset terraces, private boat trips, and some of Italy's most romantic restaurants — the Amalfi Coast is made for couples.</p>
+      </div>
+      <div class="aud-c">
+        <div class="aud-icon">🍝</div>
+        <h3 class="aud-title">Food Lovers</h3>
+        <p class="aud-desc">Sfogliatella, limoncello, fresh seafood, and handmade pasta using lemons so good they're protected by law.</p>
+      </div>
+      <div class="aud-c">
+        <div class="aud-icon">📸</div>
+        <h3 class="aud-title">Photographers</h3>
+        <p class="aud-desc">Every village is a composition — from Positano's tumbling pastel houses to the clifftop views from Ravello.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="highlights-bar">
-  <div class="s-inner">
-<div class="hl-item"><span class="hl-icon">✈️</span><div><div class="hl-label">Best Time</div><div class="hl-value">May–Jun, Sep</div></div></div>
+<div class="hl-value">May–Jun, Sep</div></div></div>
 <div class="hl-item"><span class="hl-icon">💷</span><div><div class="hl-label">Daily Budget</div><div class="hl-value">£100–350/night</div></div></div>
 <div class="hl-item"><span class="hl-icon">🕐</span><div><div class="hl-label">Min Stay</div><div class="hl-value">5 days</div></div></div>
 <div class="hl-item"><span class="hl-icon">🌡️</span><div><div class="hl-label">Peak Season</div><div class="hl-value">Jul–Aug — very busy</div></div></div>
   </div>
 </div>
-<section class="s aud-s">
-  <div class="s-inner">
-    <div class="rv" style="text-align:center">
-      <div class="eyebrow light" style="justify-content:center;color:var(--gold-dk)">Who It's Perfect For</div>
-      <h2 class="h-display on-light">Is This Trip <em>Right for You?</em></h2>
-    </div>
-    <div class="aud-grid"><div class="aud-c rv"><div class="aud-icon">💑</div><h3 class="aud-title">Honeymooners</h3><p class="aud-desc">Sunset terraces, private boat trips, and some of Italy's most romantic restaurants — the Amalfi Coast is made for couples.</p></div><div class="aud-c rv"><div class="aud-icon">🍝</div><h3 class="aud-title">Food Lovers</h3><p class="aud-desc">Sfogliatella, limoncello, fresh seafood, and handmade pasta using lemons so good they're protected by law.</p></div><div class="aud-c rv"><div class="aud-icon">📸</div><h3 class="aud-title">Photographers</h3><p class="aud-desc">Every village is a composition — from Positano's tumbling pastel houses to the clifftop views from Ravello.</p></div></div>
-  </div>
-</section>
+
 
 <section class="s things-s">
   <div class="things-inner">

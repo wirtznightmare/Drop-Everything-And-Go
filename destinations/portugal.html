@@ -33,9 +33,9 @@
 .fact-label{font-family:var(--ff-mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--smoke);margin-bottom:.2rem;}
 .fact-value{font-size:.88rem;color:var(--parchment);font-weight:500;line-height:1.4;}
 
-.aud-s{background:var(--cream);}
+.aud-s{background:var(--parchment);}
 .aud-grid{max-width:1100px;margin:3rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
-.aud-c{background:var(--white);border-radius:var(--r-md);padding:2.2rem 1.8rem;border-top:2px solid var(--gold);box-shadow:0 2px 18px rgba(11,13,16,.05);transition:transform .4s var(--ease-spring),box-shadow .4s,border-top-color .3s;}
+.aud-c{background:rgba(11,23,40,0.04);border-top-color:var(--gold);box-shadow:none;border-radius:var(--r-md);padding:2.2rem 1.8rem;border-top:2px solid var(--gold);box-shadow:0 2px 18px rgba(11,13,16,.05);transition:transform .4s var(--ease-spring),box-shadow .4s,border-top-color .3s;}
 .aud-c:hover{transform:translateY(-5px);box-shadow:0 16px 42px rgba(11,13,16,.1);border-top-color:var(--teal);}
 .aud-icon{font-size:2rem;margin-bottom:1rem;}
 .aud-title{font-family:var(--ff-display);font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;}
@@ -109,40 +109,76 @@
   <div class="dh-rule"></div>
 </div>
 
-<section class="s intro-s">
+<section class="s intro-s" style="padding-top:2.5rem;padding-bottom:2rem">
   <div class="intro-grid">
     <div>
       <div class="eyebrow" style="color:var(--gold-dk)">Europe · Iberian Peninsula</div>
       <h2>Why visit <em>Portugal?</em></h2>
       <p>Portugal punches above its weight in almost every category — food, wine, architecture, coastline, warmth, and value for money. It's western Europe's most accessible and affordable destination, with a culture that feels genuinely distinctive. Lisbon is one of the world's great walking cities. Porto is arguably even better. The Alentejo wine region, the medieval villages of central Portugal, and the Algarve cliffs are all world-class. It's small enough to see a lot in two weeks.</p>
-      </div>
-    <div class="facts-card rv rv2">
+    </div>
+    <div class="facts-card">
       <h4>// Quick Facts</h4>
-      <div class="fact-row"><div class="fact-icon">✈️</div><div><div class="fact-label">Region</div><div class="fact-value">Europe · Iberian Peninsula</div></div></div>
-      <div class="fact-row"><div class="fact-icon">🎯</div><div><div class="fact-label">Best For</div><div class="fact-value">City breakers, food lovers, surfers, slow travellers</div></div></div>
-      <div class="fact-row"><div class="fact-icon">📅</div><div><div class="fact-label">Best Time</div><div class="fact-value">April–June, September–October</div></div></div>
-      <div class="fact-row"><div class="fact-icon">💷</div><div><div class="fact-label">Budget Guide</div><div class="fact-value">£80–£200/night</div></div></div>
+      <div class="fact-row">
+        <div class="fact-icon">✈️</div>
+        <div>
+          <div class="fact-label">Region</div>
+          <div class="fact-value">Europe · Iberian Peninsula</div>
+        </div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-icon">🎯</div>
+        <div>
+          <div class="fact-label">Best For</div>
+          <div class="fact-value">Culture lovers, foodies, city breakers</div>
+        </div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-icon">📅</div>
+        <div>
+          <div class="fact-label">Best Time</div>
+          <div class="fact-value">April–June, September–October</div>
+        </div>
+      </div>
+      <div class="fact-row">
+        <div class="fact-icon">💷</div>
+        <div>
+          <div class="fact-label">Budget Guide</div>
+          <div class="fact-value">£60–180/night</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:2.5rem;border-top:1px solid rgba(11,23,40,0.08);padding-top:2rem">
+    <div style="text-align:center;margin-bottom:1.8rem">
+      <div class="eyebrow" style="justify-content:center;color:var(--gold-dk)">Who It's Perfect For</div>
+    </div>
+    <div class="aud-grid">
+      <div class="aud-c">
+        <div class="aud-icon">🍷</div>
+        <h3 class="aud-title">Food & Wine Lovers</h3>
+        <p class="aud-desc">Petiscos (Portuguese tapas), barnacles, bacalhau, pastel de nata, and Alentejo wines — Portugal's food culture is seriously underrated.</p>
+      </div>
+      <div class="aud-c">
+        <div class="aud-icon">🏄</div>
+        <h3 class="aud-title">Surfers</h3>
+        <p class="aud-desc">The Atlantic coast around Peniche, Ericeira, and Sagres offers some of Europe's best and most consistent waves.</p>
+      </div>
+      <div class="aud-c">
+        <div class="aud-icon">🏙️</div>
+        <h3 class="aud-title">City Breakers</h3>
+        <p class="aud-desc">Lisbon and Porto are two of Europe's most characterful cities — both compact enough to explore on foot in a long weekend.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<div class="highlights-bar">
-  <div class="s-inner">
-<div class="hl-item"><span class="hl-icon">✈️</span><div><div class="hl-label">Best Time</div><div class="hl-value">Apr–Jun, Sep–Oct</div></div></div>
+<div class="hl-value">Apr–Jun, Sep–Oct</div></div></div>
 <div class="hl-item"><span class="hl-icon">💷</span><div><div class="hl-label">Daily Budget</div><div class="hl-value">£60–180/night</div></div></div>
 <div class="hl-item"><span class="hl-icon">🕐</span><div><div class="hl-label">Min Stay</div><div class="hl-value">7 days</div></div></div>
 <div class="hl-item"><span class="hl-icon">🌡️</span><div><div class="hl-label">Climate</div><div class="hl-value">Warm Apr–Oct</div></div></div>
   </div>
 </div>
-<section class="s aud-s">
-  <div class="s-inner">
-    <div class="rv" style="text-align:center">
-      <div class="eyebrow light" style="justify-content:center;color:var(--gold-dk)">Who It's Perfect For</div>
-      <h2 class="h-display on-light">Is This Trip <em>Right for You?</em></h2>
-    </div>
-    <div class="aud-grid"><div class="aud-c rv"><div class="aud-icon">🍷</div><h3 class="aud-title">Food & Wine Lovers</h3><p class="aud-desc">Petiscos (Portuguese tapas), barnacles, bacalhau, pastel de nata, and Alentejo wines — Portugal's food culture is seriously underrated.</p></div><div class="aud-c rv"><div class="aud-icon">🏄</div><h3 class="aud-title">Surfers</h3><p class="aud-desc">The Atlantic coast around Peniche, Ericeira, and Sagres offers some of Europe's best and most consistent waves.</p></div><div class="aud-c rv"><div class="aud-icon">🏙️</div><h3 class="aud-title">City Breakers</h3><p class="aud-desc">Lisbon and Porto are two of Europe's most characterful cities — both compact enough to explore on foot in a long weekend.</p></div></div>
-  </div>
-</section>
+
 
 <section class="s things-s">
   <div class="things-inner">
