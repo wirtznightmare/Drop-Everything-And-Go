@@ -21,11 +21,11 @@
 .bp-tagline{font-size:1rem;color:rgba(200,190,170,.6);margin-top:1.1rem;max-width:540px;line-height:1.7;}
 .bp-hero-rule{position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,var(--teal),transparent 60%);opacity:.35;}
 
-.bp-intro-s{background:var(--parchment);}
+.bp-intro-s{background:var(--ink);}
 .bp-intro-grid{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:5rem;align-items:start;}
-.bp-intro-body h2{font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--ink);letter-spacing:-.02em;line-height:1.12;margin-bottom:1rem;}
+.bp-intro-body h2{font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--parchment);letter-spacing:-.02em;line-height:1.12;margin-bottom:1rem;}
 .bp-intro-body h2 em{font-style:italic;font-weight:300;color:var(--teal-dk);}
-.bp-intro-body p{font-size:.95rem;color:#4A5060;line-height:1.88;margin-bottom:1rem;}
+.bp-intro-body p{font-size:.95rem;color:rgba(246,238,224,0.7);line-height:1.88;margin-bottom:1rem;}
 .bp-facts-card{background:var(--ink-3);border-radius:var(--r-lg);padding:2rem;position:sticky;top:90px;border:1px solid rgba(14,191,184,.12);}
 .bp-facts-card h4{font-family:var(--ff-mono);font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:1.4rem;}
 .bpf-row{display:flex;align-items:flex-start;gap:.9rem;margin-bottom:1.3rem;padding-bottom:1.3rem;border-bottom:1px solid rgba(245,239,224,.07);}
@@ -105,7 +105,7 @@
 </div>
 
 <section class="s bp-intro-s">
-  <div class="bp-intro-grid">
+  <div class="intro-wrap">
     <div class="bp-intro-body">
       <div class="eyebrow teal">South Asia</div>
       <div class="bp-vibe-tags"><span class="bp-vibe-tag">🍵 Tea Plantations</span><span class="bp-vibe-tag">🏄 Surf</span><span class="bp-vibe-tag">🐘 Elephant Safaris</span><span class="bp-vibe-tag">🏛️ Ancient Cities</span></div>
@@ -116,12 +116,38 @@
         <span class="bp-budget-bar-label">avg daily budget</span>
       </div>
     </div>
-    <div class="bp-essentials-card">
-      <h4>// Backpacker Essentials</h4>
-      <div class="bpe-row"><div class="bpe-icon">🛏️</div><div><div class="bpe-label">Where to Sleep</div><div class="bpe-val">Funky Monkey Hostel Mirissa, Mad Monkey Hostel Colombo, Hangover Hostel Ella</div></div></div>
-      <div class="bpe-row"><div class="bpe-icon">🚌</div><div><div class="bpe-label">Getting Around</div><div class="bpe-val">The scenic Kandy to Ella train is one of the world's great rail journeys — book the observation car. Tuk-tuks for everything local.</div></div></div>
-      <div class="bpe-row"><div class="bpe-icon">⚡</div><div><div class="bpe-label">Don't Miss</div><div class="bpe-val"><strong>The train from Kandy to Ella — tea estates, waterfalls, misty hills, the best £3 journey on earth</strong></div></div></div>
+    <div class="info-strip">
+  <div class="iw iw-key">
+    <div class="iw-title">Key Info</div>
+    <div class="iw-tags"><span class="iw-pill">Rupee (LKR)</span><span class="iw-pill">Sinhala & Tamil (English widely spoken)</span><span class="iw-pill">Type D/G</span><span class="iw-pill">Drive Left</span></div>
+    <div class="iw-note">Not obligatory — 10% appreciated</div>
+  </div>
+  <div class="iw iw-weather">
+    <div class="iw-title">Weather</div>
+    <div class="iw-tags"><span class="iw-pill">Best: Dec–Mar (west/south), Jun–Sep (east)</span></div>
+    <div class="iw-peak"><strong>Dec–Mar (west coast)</strong>Best beach and surf weather on the popular south and west coasts</div>
+    <div class="iw-note">Two monsoon seasons affect different coasts. West and south coast best Dec–March.</div>
+  </div>
+  <div class="iw iw-health">
+    <div class="iw-title">Health</div>
+    <div class="iw-water"><span class="iw-water-icon">⚠️</span><span class="iw-water-text"><strong>Use bottled water</strong> — Bottled water only throughout Sri Lanka</span></div>
+    <div class="iw-vax"><div class="iw-vax-row"><span class="iw-vax-name">Hepatitis A</span><span class="iw-badge recommended">recommended</span></div><div class="iw-vax-row"><span class="iw-vax-name">Typhoid</span><span class="iw-badge recommended">recommended</span></div></div>
+  </div>
+  <div class="iw iw-transport">
+    <div class="iw-title">Transport</div>
+    <div class="iw-tags"><span class="iw-pill">PickMe app</span><span class="iw-pill">local tuk-tuks</span><span class="iw-pill">Sri Lanka Railways</span></div>
+    <div class="iw-note"><strong>✈️ Colombo Bandaranaike (CMB)</strong></div>
+    <div class="iw-note" style="margin-top:0.3rem">No metro — trains are the highlight transport, tuk-tuks for local</div>
+  </div>
+  <div class="iw iw-emergency">
+    <div class="iw-title">Emergency</div>
+    <div class="iw-emerg-list">
+      <div class="iw-emerg-row"><span class="iw-emerg-label">👮 Police</span><span class="iw-emerg-num">119</span></div>
+      <div class="iw-emerg-row"><span class="iw-emerg-label">🚑 Ambulance</span><span class="iw-emerg-num">110</span></div>
+      <div class="iw-emerg-row"><span class="iw-emerg-label">🔥 Fire</span><span class="iw-emerg-num">111</span></div>
     </div>
+  </div>
+</div>
   </div>
 </section>
 

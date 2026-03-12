@@ -21,11 +21,11 @@
 .bp-tagline{font-size:1rem;color:rgba(200,190,170,.6);margin-top:1.1rem;max-width:540px;line-height:1.7;}
 .bp-hero-rule{position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,var(--teal),transparent 60%);opacity:.35;}
 
-.bp-intro-s{background:var(--parchment);}
+.bp-intro-s{background:var(--ink);}
 .bp-intro-grid{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 360px;gap:5rem;align-items:start;}
-.bp-intro-body h2{font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--ink);letter-spacing:-.02em;line-height:1.12;margin-bottom:1rem;}
+.bp-intro-body h2{font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--parchment);letter-spacing:-.02em;line-height:1.12;margin-bottom:1rem;}
 .bp-intro-body h2 em{font-style:italic;font-weight:300;color:var(--teal-dk);}
-.bp-intro-body p{font-size:.95rem;color:#4A5060;line-height:1.88;margin-bottom:1rem;}
+.bp-intro-body p{font-size:.95rem;color:rgba(246,238,224,0.7);line-height:1.88;margin-bottom:1rem;}
 .bp-facts-card{background:var(--ink-3);border-radius:var(--r-lg);padding:2rem;position:sticky;top:90px;border:1px solid rgba(14,191,184,.12);}
 .bp-facts-card h4{font-family:var(--ff-mono);font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:1.4rem;}
 .bpf-row{display:flex;align-items:flex-start;gap:.9rem;margin-bottom:1.3rem;padding-bottom:1.3rem;border-bottom:1px solid rgba(245,239,224,.07);}
@@ -105,7 +105,7 @@
 </div>
 
 <section class="s bp-intro-s">
-  <div class="bp-intro-grid">
+  <div class="intro-wrap">
     <div class="bp-intro-body">
       <div class="eyebrow teal">Central America</div>
       <div class="bp-vibe-tags"><span class="bp-vibe-tag">⛵ Canal</span><span class="bp-vibe-tag">🏝️ San Blas</span><span class="bp-vibe-tag">🌿 Jungle</span><span class="bp-vibe-tag">🎉 City Life</span></div>
@@ -116,12 +116,38 @@
         <span class="bp-budget-bar-label">avg daily budget</span>
       </div>
     </div>
-    <div class="bp-essentials-card">
-      <h4>// Backpacker Essentials</h4>
-      <div class="bpe-row"><div class="bpe-icon">🛏️</div><div><div class="bpe-label">Where to Sleep</div><div class="bpe-val">Magnolia Inn (Panama City), Casa Cayuco (Bocas del Toro), San Blas sailing boat</div></div></div>
-      <div class="bpe-row"><div class="bpe-icon">🚌</div><div><div class="bpe-label">Getting Around</div><div class="bpe-val">Sailing to Colombia is the primary route — book 2–3 months ahead in high season. Buses and taxis within Panama. Bocas del Toro ferry from Almirante.</div></div></div>
-      <div class="bpe-row"><div class="bpe-icon">⚡</div><div><div class="bpe-label">Don't Miss</div><div class="bpe-val"><strong>The 5-day sailing trip to Colombia through the San Blas Islands — hammocks, snorkelling, uninhabited islands</strong></div></div></div>
+    <div class="info-strip">
+  <div class="iw iw-key">
+    <div class="iw-title">Key Info</div>
+    <div class="iw-tags"><span class="iw-pill">Balboa / USD</span><span class="iw-pill">Spanish</span><span class="iw-pill">Type A/B (US)</span><span class="iw-pill">Drive Right</span></div>
+    <div class="iw-note">10% at restaurants appreciated</div>
+  </div>
+  <div class="iw iw-weather">
+    <div class="iw-title">Weather</div>
+    <div class="iw-tags"><span class="iw-pill">Best: Jan–Apr</span></div>
+    <div class="iw-peak"><strong>Dry Season (Jan–Apr)</strong>Best time to sail to Colombia and visit the San Blas islands</div>
+    <div class="iw-note">Dry season January–April in Panama City. Caribbean coast different — rainier.</div>
+  </div>
+  <div class="iw iw-health">
+    <div class="iw-title">Health</div>
+    <div class="iw-water"><span class="iw-water-icon">✅</span><span class="iw-water-text"><strong>Tap water safe</strong> — Tap water safe throughout Panama</span></div>
+    <div class="iw-vax"><div class="iw-vax-row"><span class="iw-vax-name">Hepatitis A</span><span class="iw-badge recommended">recommended</span></div><div class="iw-vax-row"><span class="iw-vax-name">Typhoid</span><span class="iw-badge recommended">recommended</span></div></div>
+  </div>
+  <div class="iw iw-transport">
+    <div class="iw-title">Transport</div>
+    <div class="iw-tags"><span class="iw-pill">Uber</span><span class="iw-pill">Metro Bus</span><span class="iw-pill">sailing boats to Colombia</span></div>
+    <div class="iw-note"><strong>✈️ Panama City (PTY)</strong></div>
+    <div class="iw-note" style="margin-top:0.3rem">Panama City has a metro — buses and taxis everywhere else</div>
+  </div>
+  <div class="iw iw-emergency">
+    <div class="iw-title">Emergency</div>
+    <div class="iw-emerg-list">
+      <div class="iw-emerg-row"><span class="iw-emerg-label">👮 Police</span><span class="iw-emerg-num">104</span></div>
+      <div class="iw-emerg-row"><span class="iw-emerg-label">🚑 Ambulance</span><span class="iw-emerg-num">911</span></div>
+      <div class="iw-emerg-row"><span class="iw-emerg-label">🔥 Fire</span><span class="iw-emerg-num">103</span></div>
     </div>
+  </div>
+</div>
   </div>
 </section>
 
