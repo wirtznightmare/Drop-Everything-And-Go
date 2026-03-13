@@ -888,3 +888,24 @@ footer {
 .aud-title { font-family: var(--ff-display); font-size: 1.15rem; font-weight: 700; color: var(--ink); margin-bottom: 0.5rem; letter-spacing: -0.01em; }
 .aud-desc { font-size: 0.82rem; color: #4A5060; line-height: 1.7; }
 @media (max-width: 800px) { .aud-grid { grid-template-columns: 1fr; } }
+
+/* ═══════════════════════════════════════════════
+   SCENE STRIP — mid-page photo break
+   ═══════════════════════════════════════════════ */
+.scene-strip {
+  height: 360px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  overflow: hidden;
+}
+.scene-strip::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(11,23,40,0.15), rgba(11,23,40,0.35));
+}
+@media (max-width: 768px) {
+  .scene-strip { background-attachment: scroll; height: 260px; }
+}
