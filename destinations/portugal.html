@@ -104,6 +104,25 @@
 .intro-wrap{max-width:1240px;margin:0 auto;padding:0 2rem;}
 @media(max-width:1100px){.info-strip{grid-template-columns:1fr 1fr;}.iw-emergency{grid-column:span 2;}.iw-emerg-list{flex-direction:row;gap:1.5rem;}}
 @media(max-width:600px){.info-strip{grid-template-columns:1fr;}.iw-emergency{grid-column:1;}.iw-emerg-list{flex-direction:column;}}
+
+/* ── Intro photo pair ── */
+.intro-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-top: 1.8rem;
+}
+.intro-photos img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+@media (max-width: 640px) {
+  .intro-photos { grid-template-columns: 1fr; }
+  .intro-photos img { height: 180px; }
+}
 </style>
 </head>
 <body>
@@ -140,7 +159,6 @@
 <div class="dh">
     <div class="dh-bg"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422381/lisbon-portugal-yellow-tram-street-with-colorful-houses-flowers-balconies-bica-elevator-going-down-hill-chiado_1028938-407435_jgzoda.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top"></div>
   <div class="dh-bg" style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(0,0,0,0.6) 0%,rgba(0,0,0,0.35) 60%,rgba(0,0,0,0.15) 100%)"></div>
-  <div class="dh-fade" style="position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(246,238,224,0.4) 80%,var(--parchment) 100%);z-index:1;pointer-events:none"></div>
   <div class="dh-dots"></div>
   <div class="dh-content">
     <a href="../destinations.html" class="dh-back">← All Destinations</a>
@@ -158,8 +176,8 @@
       <div class="eyebrow" style="color:var(--gold-dk)">Europe · Iberian Peninsula</div>
       <h2>Why visit <em>Portugal?</em></h2>
       <p>Portugal punches above its weight in almost every category — food, wine, architecture, coastline, warmth, and value for money. It's western Europe's most accessible and affordable destination, with a culture that feels genuinely distinctive. Lisbon is one of the world's great walking cities. Porto is arguably even better. The Alentejo wine region, the medieval villages of central Portugal, and the Algarve cliffs are all world-class. It's small enough to see a lot in two weeks.</p>
-    
-    <figure class="intro-photo" style="margin:1.5rem 0 0;border-radius:12px;overflow:hidden;max-height:280px"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422417/TAL-Zambujeira-do-Mar-PORTUGALBEACHES0323-04c91b273a3a42f0baa9dde3b220a8ce_pbnrjz.jpg" alt="" style="width:100%;height:280px;object-fit:cover;display:block"></figure>
+  
+    <div class="intro-photos"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422381/lisbon-portugal-yellow-tram-street-with-colorful-houses-flowers-balconies-bica-elevator-going-down-hill-chiado_1028938-407435_jgzoda.jpg" alt="" loading="lazy"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422417/TAL-Zambujeira-do-Mar-PORTUGALBEACHES0323-04c91b273a3a42f0baa9dde3b220a8ce_pbnrjz.jpg" alt="" loading="lazy"></div>
   </div>
     <div class="info-strip">
   <div class="iw iw-key">
