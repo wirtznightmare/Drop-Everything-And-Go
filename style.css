@@ -918,13 +918,17 @@ footer {
   margin-top: 1.8rem;
 }
 .intro-photos img {
-  width: 100%;
-  height: 220px;
+  width: 100%; height: 220px;
   object-fit: cover;
-  border-radius: 10px;
+  object-position: center center;
   display: block;
 }
 @media (max-width: 640px) {
   .intro-photos { grid-template-columns: 1fr; }
-  .intro-photos img { height: 180px; }
+  .intro-photos img {
+  width: 100%; height: 220px;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
 }
