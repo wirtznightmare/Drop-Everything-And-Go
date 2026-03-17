@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Les Deux Alpes ski resort guide — lift pass prices, piste stats, accommodation costs and insider tips for skiing in France."/>
+<title>Les Deux Alpes Ski Resort — Drop Everything And Go</title>
+<link rel="stylesheet" href="../style.css"/>
+<style>
+.dh{min-height:75vh;display:flex;flex-direction:column;justify-content:flex-end;padding:9rem var(--gutter) 4rem;position:relative;overflow:hidden;background:linear-gradient(160deg,#0A1A2E,#0D2440);}
+.dh-bg{position:absolute;inset:0;}
+.dh-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;}
+.dh-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.35) 60%,rgba(0,0,0,0.15) 100%);}
+.dh-fade{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(11,23,40,0.5) 85%,var(--ink) 100%);z-index:1;}
+.dh-content{position:relative;z-index:2;max-width:1300px;width:100%;margin:0 auto;}
+.dh-back{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--ff-mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,239,224,.4);margin-bottom:1.5rem;transition:color .2s;text-decoration:none;}
+.dh-back:hover{color:var(--teal);}
+.dh-crumbs{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,239,224,.35);margin-bottom:.75rem;}
+.dh-crumbs a{color:rgba(245,239,224,.35);text-decoration:none;}
+.dh-crumbs a:hover{color:var(--teal);}
+.dh-h1{font-family:var(--ff-display);font-size:clamp(2.8rem,7vw,6rem);font-weight:800;letter-spacing:-.035em;line-height:.92;color:var(--parchment);margin-bottom:.8rem;}
+.dh-h1 em{font-style:italic;font-weight:300;color:#A8D4F8;}
+.dh-tagline{font-size:.95rem;color:rgba(200,190,170,.6);max-width:540px;line-height:1.7;}
+.dh-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem;}
+.dh-tag{font-family:var(--ff-mono);font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;padding:.22rem .7rem;border-radius:100px;background:rgba(14,191,184,.15);color:var(--teal);border:1px solid rgba(14,191,184,.2);}
+
+/* ── STATS STRIP ── */
+.sk-strip-s{background:var(--ink);padding:3rem var(--gutter) 2.5rem;}
+.sk-strip{max-width:1260px;margin:0 auto;display:grid;grid-template-columns:repeat(5,1fr);gap:.65rem;}
+.sk-sw{border-radius:12px;padding:1rem 1.1rem;min-width:0;}
+.sk-sw-mountain{background:var(--ink-2);border:1px solid rgba(245,239,224,.07);}
+.sk-sw-pistes{background:#EDF7ED;}
+.sk-sw-lifts{background:#FFF3D6;}
+.sk-sw-price{background:#EEF4FF;}
+.sk-sw-access{background:var(--ink-3);color:var(--parchment);}
+.sw-title{font-family:var(--ff-mono);font-size:.46rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.65rem;color:rgba(11,23,40,.4);}
+.sk-sw-mountain .sw-title,.sk-sw-access .sw-title{color:rgba(245,239,224,.35);}
+.sw-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:.35rem;}
+.sw-label{font-size:.65rem;color:rgba(11,23,40,.6);}
+.sk-sw-mountain .sw-label,.sk-sw-access .sw-label{color:rgba(245,239,224,.55);}
+.sw-val{font-family:var(--ff-mono);font-size:.72rem;font-weight:700;color:var(--ink);}
+.sk-sw-mountain .sw-val,.sk-sw-access .sw-val{color:var(--parchment);}
+.sw-big{font-family:var(--ff-display);font-size:1.6rem;font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1;}
+.sk-sw-price .sw-big{color:var(--sky);}
+.sw-sub{font-size:.62rem;color:rgba(11,23,40,.5);margin-top:.1rem;}
+
+/* ── PISTE BAR ── */
+.piste-s{background:var(--ink);padding:2.5rem var(--gutter);}
+.piste-wrap{max-width:1260px;margin:0 auto;}
+.piste-bar{height:28px;border-radius:100px;overflow:hidden;display:flex;margin-bottom:.75rem;}
+.pb-seg{display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:.48rem;font-weight:700;color:#fff;transition:width .5s;}
+.pb-seg span{opacity:.85;}
+.pb-green{background:#22C55E;}
+.pb-blue{background:#3B82F6;}
+.pb-red{background:#EF4444;}
+.pb-black{background:#1F2937;}
+.pb-legend{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.pb-l{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.1em;}
+.pb-l.pb-green{color:#22C55E;}
+.pb-l.pb-blue{color:#3B82F6;}
+.pb-l.pb-red{color:#EF4444;}
+.pb-l.pb-black{color:#9CA3AF;}
+
+/* ── ACCOMMODATION PRICING ── */
+.accom-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem;}
+.accom-card{border-radius:12px;padding:1.4rem 1.5rem;}
+.accom-budget{background:rgba(245,239,224,.05);border:1px solid rgba(245,239,224,.1);}
+.accom-mid{background:rgba(14,191,184,.08);border:1px solid rgba(14,191,184,.15);}
+.accom-luxury{background:rgba(224,148,32,.08);border:1px solid rgba(224,148,32,.15);}
+.accom-tier{font-family:var(--ff-mono);font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.5rem;}
+.accom-budget .accom-tier{color:var(--smoke);}
+.accom-mid .accom-tier{color:var(--teal);}
+.accom-luxury .accom-tier{color:var(--gold);}
+.accom-price{font-family:var(--ff-display);font-size:2rem;font-weight:800;color:var(--parchment);letter-spacing:-.02em;line-height:1;}
+.accom-unit{font-size:.72rem;color:var(--smoke);margin-top:.3rem;}
+.accom-eg{font-size:.7rem;color:rgba(200,190,170,.55);margin-top:.6rem;line-height:1.5;}
+
+/* ── RATINGS SECTION ── */
+.ratings-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem;margin-top:1.5rem;}
+.rating-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.07);border-radius:12px;padding:1.2rem 1rem;text-align:center;}
+.rating-name{font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.15em;text-transform:uppercase;color:var(--smoke);margin-bottom:.7rem;}
+.rating-dots{display:flex;gap:4px;justify-content:center;margin-bottom:.5rem;}
+.sk-dot{width:8px;height:8px;border-radius:50%;background:rgba(245,239,224,.12);}
+.sk-dot.on{background:var(--teal);}
+.rating-num{font-family:var(--ff-display);font-size:1.4rem;font-weight:800;color:var(--parchment);}
+
+/* ── HIGHLIGHTS ── */
+.highlights-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.5rem;}
+.hl-item{display:flex;align-items:flex-start;gap:.9rem;background:rgba(245,239,224,.03);border:1px solid rgba(245,239,224,.07);border-radius:10px;padding:.9rem 1.1rem;}
+.hl-num{font-family:var(--ff-display);font-size:1.1rem;font-weight:800;color:var(--teal);flex-shrink:0;min-width:1.5rem;}
+.hl-text{font-size:.82rem;color:rgba(200,190,170,.75);line-height:1.6;}
+
+/* ── INSIDER TIP ── */
+.insider-s{background:var(--ink-2);}
+.insider-box{max-width:780px;margin:0 auto;background:rgba(14,191,184,.07);border:1px solid rgba(14,191,184,.2);border-radius:16px;padding:2.2rem 2.5rem;}
+.insider-label{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:block;}
+.insider-text{font-size:.95rem;color:rgba(200,190,170,.8);line-height:1.85;}
+
+/* ── SECTION TITLES ── */
+.ski-s-title{font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:var(--parchment);letter-spacing:-.02em;margin-bottom:.5rem;}
+.ski-s-title em{font-style:italic;font-weight:300;color:var(--teal);}
+
+@media(max-width:900px){.sk-strip{grid-template-columns:1fr 1fr 1fr;}.accom-grid{grid-template-columns:1fr;}.ratings-grid{grid-template-columns:repeat(3,1fr);}.highlights-grid{grid-template-columns:1fr;}}
+@media(max-width:600px){.sk-strip{grid-template-columns:1fr 1fr;}.ratings-grid{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+<nav id="nav">
+  <a href="../index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Bespoke Planning</span></a>
+  <ul class="nav-links">
+    <li><a href="../destinations.html">Destinations</a></li>
+    <li><a href="../ski.html" class="active">Ski</a></li>
+    <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../services.html">Services</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html" class="nav-cta">Plan My Trip</a></li>
+  </ul>
+  <button class="nav-ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<ul class="nav-mob" id="mob">
+  <li><a href="../destinations.html">Destinations</a></li>
+  <li><a href="../ski.html">Ski</a></li>
+  <li><a href="../blog.html">Blog</a></li>
+  <li><a href="../services.html">Services</a></li>
+  <li><a href="../about.html">About</a></li>
+  <li><a href="../contact.html" class="nav-cta btn btn-coral">Plan My Trip</a></li>
+</ul>
+
+<header>
+  <div class="dh">
+    <div class="dh-bg"><img src="" alt="Les Deux Alpes" class="dh-hero-img" data-resort="les-deux-alpes"></div>
+    <div class="dh-overlay"></div>
+    <div class="dh-fade"></div>
+    <div class="dh-content">
+      <a href="../ski.html" class="dh-back">← All Ski Resorts</a>
+      <div class="dh-crumbs"><a href="../ski.html">Ski</a> · France · French Alps (Dauphiné)</div>
+      <div class="dh-tags"><span class="dh-tag">Intermediate</span> <span class="dh-tag">Snowpark</span> <span class="dh-tag">Glacier</span> <span class="dh-tag">Beginners</span></div>
+      <h1 class="dh-h1">🌡️ Les<br><em>Deux Alpes</em></h1>
+      <p class="dh-tagline">Summer and winter glacier skiing. A huge accessible area with Europe's largest skiable glacier and one of the best snowparks.</p>
+    </div>
+  </div>
+</header>
+
+<!-- STATS STRIP -->
+<section class="ski-strip-s" style="background:var(--ink);padding:3rem var(--gutter) 2.5rem;">
+  <div style="max-width:1260px;margin:0 auto;">
+    <div class="eyebrow" style="color:var(--teal);margin-bottom:1.5rem">// Mountain Stats</div>
+    <div class="sk-strip">
+      <div class="sk-sw sk-sw-mountain">
+        <div class="sw-title">Altitude</div>
+        <div class="sw-row"><span class="sw-label">Summit</span><span class="sw-val">3,600m</span></div>
+        <div class="sw-row"><span class="sw-label">Base</span><span class="sw-val">1,650m</span></div>
+        <div class="sw-row"><span class="sw-label">Vertical</span><span class="sw-val">1,950m</span></div>
+      </div>
+      <div class="sk-sw sk-sw-pistes">
+        <div class="sw-title">Terrain</div>
+        <div class="sw-row"><span class="sw-label">Total pistes</span><span class="sw-val">200km</span></div>
+        <div class="sw-row"><span class="sw-label">Runs</span><span class="sw-val">96</span></div>
+        <div class="sw-row"><span class="sw-label">Lifts</span><span class="sw-val">55</span></div>
+      </div>
+      <div class="sk-sw sk-sw-lifts">
+        <div class="sw-title">Season</div>
+        <div class="sw-row"><span class="sw-label">Opens</span><span class="sw-val">Dec</span></div>
+        <div class="sw-row"><span class="sw-label">Closes</span><span class="sw-val">Apr</span></div>
+        <div class="sw-row"><span class="sw-label">Airport</span><span class="sw-val">GNB</span></div>
+      </div>
+      <div class="sk-sw sk-sw-price">
+        <div class="sw-title">Lift Passes</div>
+        <div class="sw-big">£52</div>
+        <div class="sw-sub">Day pass</div>
+        <div style="margin-top:.8rem">
+          <div class="sw-row"><span class="sw-label">6-day pass</span><span class="sw-val">£258</span></div>
+        </div>
+      </div>
+      <div class="sk-sw sk-sw-access">
+        <div class="sw-title">Getting There</div>
+        <div class="sw-row"><span class="sw-label">Nearest airport</span><span class="sw-val">GNB</span></div>
+        <div class="sw-row"><span class="sw-label">Transfer</span><span class="sw-val">1h 30m</span></div>
+        <div style="margin-top:.6rem;font-size:.65rem;color:rgba(245,239,224,.45);line-height:1.5">Grenoble</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PISTE BREAKDOWN -->
+<section class="piste-s">
+  <div class="piste-wrap">
+    <div class="eyebrow" style="color:var(--teal);margin-bottom:1.2rem">// Run Distribution</div>
+    <h2 class="ski-s-title">200km across <em>96 runs</em></h2>
+    <p style="font-size:.85rem;color:var(--smoke);line-height:1.7;margin-bottom:1.5rem;max-width:600px">22% green · 42% blue · 28% red · 8% black</p>
+    <div class="piste-bar">
+  <div class="pb-seg pb-green" style="width:22%" title="Green 22%"><span>22%</span></div>
+  <div class="pb-seg pb-blue"  style="width:42%"  title="Blue 42%"><span>42%</span></div>
+  <div class="pb-seg pb-red"   style="width:28%"   title="Red 28%"><span>28%</span></div>
+  <div class="pb-seg pb-black" style="width:8%" title="Black 8%"><span>8%</span></div>
+</div>
+<div class="pb-legend">
+  <span class="pb-l pb-green">● Green 22%</span>
+  <span class="pb-l pb-blue">● Blue 42%</span>
+  <span class="pb-l pb-red">● Red 28%</span>
+  <span class="pb-l pb-black">● Black 8%</span>
+</div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="s" style="background:var(--parchment);">
+  <div style="max-width:1260px;margin:0 auto;">
+    <div class="eyebrow" style="color:var(--gold-dk);margin-bottom:1rem">// French Alps (Dauphiné)</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+      <div>
+        <h2 style="font-family:var(--ff-display);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--ink);letter-spacing:-.025em;margin-bottom:1.2rem;line-height:1.1;">Why ski <em style="font-style:italic;font-weight:300;color:var(--gold-dk)">Les Deux Alpes?</em></h2>
+        <p style="font-size:.95rem;line-height:1.9;color:#4A5060;">Les Deux Alpes sits at the top of the Romanche valley and centres on the Jandri Express, which whisks skiers up to the 3,600m glacier in 20 minutes. The glacier enables skiing from July to September in the summer season, making it popular with training camps and powder enthusiasts. In winter the 200km of pistes cover excellent intermediate terrain and the snowpark at the top is one of the best in Europe.</p>
+      </div>
+      <div>
+        <div class="eyebrow" style="color:var(--gold-dk);margin-bottom:1rem">// Ratings</div>
+        <div class="ratings-grid">
+          <div class="rating-card">
+            <div class="rating-name">Beginner</div>
+            <div class="rating-dots"><span class="sk-dot  on"></span><span class="sk-dot  on"></span><span class="sk-dot  on"></span><span class="sk-dot  on"></span><span class="sk-dot"></span></div>
+            <div class="rating-num">4/5</div>
+          </div>
+          <div class="rating-card">
+            <div class="rating-name">Off-Piste</div>
+            <div class="rating-dots"><span class="sk-dot  on"></span><span class="sk-dot  on"></span><span class="sk-dot  on"></span><span class="sk-dot"></span><span class="sk-dot"></span></div>
+            <div class="rating-num">3/5</div>
+          </div>
+          <div class="rating-card">
+            <div class="rating-name">Après</div>
+            <div class="rating-dots"><span class="sk-dot  on"></span><span class="sk-dot  on"></span><span class="sk-dot  on"></span><span class="sk-dot  on"></span><span class="sk-dot"></span></div>
+            <div class="rating-num">4/5</div>
+          </div>
+          <div class="rating-card">
+            <div class="rating-name">Snowpark</div>
+            <div class="rating-dots"><span class="sk-dot  on"></span><span class="sk-dot  on"></span><span class="sk-dot  on"></span><span class="sk-dot  on"></span><span class="sk-dot  on"></span></div>
+            <div class="rating-num">5/5</div>
+          </div>
+          <div class="rating-card">
+            <div class="rating-name">Family</div>
+            <div class="rating-dots"><span class="sk-dot  on"></span><span class="sk-dot  on"></span><span class="sk-dot  on"></span><span class="sk-dot  on"></span><span class="sk-dot"></span></div>
+            <div class="rating-num">4/5</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="s" style="background:var(--ink-2);">
+  <div style="max-width:1260px;margin:0 auto;">
+    <div class="eyebrow" style="color:var(--teal);margin-bottom:1rem">// The Highlights</div>
+    <h2 class="ski-s-title">What makes <em>Les Deux Alpes special</em></h2>
+    <div class="highlights-grid" style="margin-top:1.5rem;">
+      <div class="hl-item rv"><span class="hl-num">01</span><span class="hl-text">Jandri Express to 3,600m glacier — fastest ascent in the French Alps</span></div>
+<div class="hl-item rv"><span class="hl-num">02</span><span class="hl-text">Summer skiing July–September on the glacier — rare outside Scandinavia</span></div>
+<div class="hl-item rv"><span class="hl-num">03</span><span class="hl-text">Snowpark at glacier altitude — one of Europe's best freestyle areas</span></div>
+<div class="hl-item rv"><span class="hl-num">04</span><span class="hl-text">Village nightlife — livelier than many French resort towns</span></div>
+<div class="hl-item rv"><span class="hl-num">05</span><span class="hl-text">Accessible via Grenoble — one of the cheapest airports to fly into for French skiing</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCOMMODATION PRICING -->
+<section class="s" style="background:var(--ink);">
+  <div style="max-width:1260px;margin:0 auto;">
+    <div class="eyebrow" style="color:var(--teal);margin-bottom:1rem">// Where to Stay</div>
+    <h2 class="ski-s-title">Accommodation <em>price guide</em></h2>
+    <p style="font-size:.82rem;color:var(--smoke);margin-top:.4rem;margin-bottom:1.5rem">Per person per night, based on shared twin/double room in ski chalet or hotel. Prices vary significantly by season.</p>
+    <div class="accom-grid">
+      <div class="accom-card accom-budget">
+        <div class="accom-tier">Budget</div>
+        <div class="accom-price">£48</div>
+        <div class="accom-unit">per person / night</div>
+        <div class="accom-eg">Shared rooms in ski chalets, basic hotel B&amp;B, self-catered apartments on the periphery of the resort.</div>
+      </div>
+      <div class="accom-card accom-mid">
+        <div class="accom-tier">Mid-Range</div>
+        <div class="accom-price">£120</div>
+        <div class="accom-unit">per person / night</div>
+        <div class="accom-eg">3–4 star hotels, comfortable chalets with half board, ski-in/ski-out apartments at accessible locations.</div>
+      </div>
+      <div class="accom-card accom-luxury">
+        <div class="accom-tier">Luxury</div>
+        <div class="accom-price">£310</div>
+        <div class="accom-unit">per person / night</div>
+        <div class="accom-eg">Premium chalets with catered service, 5-star hotels, ski-in/ski-out penthouses in the best locations.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSIDER TIP -->
+<section class="s insider-s">
+  <div style="max-width:1260px;margin:0 auto;">
+    <div class="insider-box rv">
+      <span class="insider-label">// Insider Knowledge</span>
+      <p class="insider-text">The village layout is awkward — one long street with lifts at both ends — so choose your accommodation carefully based on which lift sector you want to be near. The Glacier end is quicker to the glacier (obviously), but the village end has better après.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="s" style="background:linear-gradient(140deg,#112038,#0D2040);text-align:center;">
+  <div style="max-width:600px;margin:0 auto;">
+    <div class="eyebrow" style="color:var(--teal);justify-content:center;margin-bottom:1.2rem">// Bespoke Ski Planning</div>
+    <h2 style="font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--parchment);letter-spacing:-.02em;margin-bottom:1rem;">Want to ski Les Deux Alpes?</h2>
+    <p style="color:var(--smoke);line-height:1.8;margin-bottom:2rem;">We can handle everything — accommodation, lift passes, transfers, lessons and ski hire. Just tell us your dates and budget.</p>
+    <a href="../contact.html" class="btn btn-teal btn-arr">Plan This Trip →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a href="../index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Services</span></a>
+      <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
+    </div>
+    <div class="ft-links">
+      <div><h4>Explore</h4><a href="../destinations.html">Destinations</a><a href="../ski.html">Ski Resorts</a><a href="../destinations/backpacker-guides.html">Backpacker Guides</a><a href="../blog.html">Blog</a></div>
+      <div><h4>Plan</h4><a href="../services.html">Services</a><a href="../contact.html">Get in Touch</a><a href="../about.html">About</a></div>
+    </div>
+  </div>
+  <div class="ft-bot"><span>© 2025 Drop Everything And Go</span><a href="../privacy.html">Privacy</a></div>
+</footer>
+
+<script>
+var pb=document.getElementById('progress-bar');
+if(pb){window.addEventListener('scroll',function(){var s=document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;pb.style.width=(s/h*100)+'%';});}
+var ham=document.getElementById('ham'),mob=document.getElementById('mob');
+if(ham)ham.addEventListener('click',function(){this.classList.toggle('open');mob.classList.toggle('open');});
+// Scroll reveal
+document.querySelectorAll('.rv').forEach(function(el){
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.1});
+  io.observe(el);
+});
+</script>
+</body>
+</html>
