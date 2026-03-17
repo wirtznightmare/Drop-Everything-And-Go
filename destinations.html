@@ -11,12 +11,12 @@
 .ft{background:rgba(245,239,224,.08);border:1px solid rgba(245,239,224,.2);border-radius:100px;padding:.45rem 1.15rem;font-family:var(--ff-mono);font-size:.6rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--parchment);transition:all .3s;white-space:nowrap;}
 .ft:hover,.ft.on{background:var(--gold);border-color:var(--gold);color:var(--ink);}
 .rc{font-family:var(--ff-mono);font-size:.65rem;color:var(--smoke);margin-left:auto;white-space:nowrap;}
-.dg-s{background:linear-gradient(180deg,var(--ink) 0%,#0A1628 100%);}
+.dg-s{background:linear-gradient(180deg,var(--ink) 0%,#0A1628 100%);padding:3rem 0 5rem;}
 .d-grid{max-width:1260px;margin:2rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
-.d-card{border-radius:var(--r-md);overflow:hidden;display:block;border:1px solid rgba(245,239,224,.07);transition:border-color .3s,transform .4s var(--ease-spring),box-shadow .4s;position:relative;}
+.d-card{border-radius:var(--r-md);overflow:hidden;display:block;min-width:0;border:1px solid rgba(245,239,224,.07);transition:border-color .3s,transform .4s var(--ease-spring),box-shadow .4s;position:relative;}
 .d-card:hover{border-color:rgba(200,145,42,.3);transform:translateY(-6px);box-shadow:0 22px 55px rgba(0,0,0,.4);}
 
-.d-img{height:220px;position:relative;overflow:hidden;transition:transform .7s var(--ease-expo);}
+.d-img{height:240px;position:relative;overflow:hidden;transition:transform .7s var(--ease-expo);}
 .d-img-emoji{position:absolute;font-size:8rem;opacity:.18;bottom:-10px;right:-10px;line-height:1;transform:rotate(-8deg);filter:saturate(0.7);transition:transform .7s var(--ease-expo),opacity .4s;}
 .d-card:hover .d-img-emoji{transform:rotate(-5deg) scale(1.1);opacity:.25;}
 
@@ -34,8 +34,8 @@
 .no-res.show{display:block;}
 .bp-s2{background:linear-gradient(135deg,#08101C 0%,#0B1828 50%,#08101C 100%);border-top:1px solid rgba(14,191,184,.15);border-bottom:1px solid rgba(14,191,184,.15);padding:5rem var(--gutter);}
 .bp-s2-in{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem;}
-@media(max-width:1000px){.d-grid{grid-template-columns:repeat(2,1fr);}}@media(max-width:580px){.d-grid{grid-template-columns:1fr;}}
-@media(max-width:640px){.d-grid{grid-template-columns:1fr;}.bp-s2-in{grid-template-columns:1fr;}}
+@media(max-width:960px){.d-grid{grid-template-columns:repeat(2,1fr)!important;}}@media(max-width:560px){.d-grid{grid-template-columns:1fr!important;}}
+@media(max-width:640px){.bp-s2-in{grid-template-columns:1fr;}}
 </style>
 </head><body><div id="progress-bar"></div>
 <div class="ck" id="ck">
@@ -51,7 +51,9 @@
 </div>
 <nav id="nav">
   <a href="index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Bespoke Planning</span></a>
-  <ul class="nav-links"><li><a href="destinations.html" class="active">Destinations</a></li><li><a href="blog.html">Blog</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" class="nav-cta">Plan My Trip</a></li></ul>
+  <ul class="nav-links"><li><a href="destinations.html" class="active">Destinations</a></li><li><a href="ski.html">Ski</a></li>
+    <li><a href="ski.html">Ski</a></li>
+  <li><a href="blog.html">Blog</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" class="nav-cta">Plan My Trip</a></li></ul>
   <button class="nav-ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <ul class="nav-mob" id="mob">
@@ -84,7 +86,7 @@
   </div>
 </div>
 <section class="s dg-s">
-  <div class="d-grid" id="dg">
+  <div class="d-grid" id="dg" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:1260px;margin:2rem auto 0;padding:0 var(--gutter,2rem)">
 <a href="destinations/santorini.html" class="d-card rv" data-tags="europe,honeymoon,luxury">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423170/01-santorini-caldera-greece_qchzdf.jpg" alt="Santorini, Greece" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
 <div class="d-body"><div class="d-tags"><span class="d-tag">Europe</span><span class="d-tag">Honeymoon</span><span class="d-tag">Luxury</span></div><div class="d-name">Santorini, Greece</div><p class="d-tl">Iconic white-washed cliffs, azure domes, and sunsets that genuinely stop time.</p><span class="d-arr">Explore →</span></div>
