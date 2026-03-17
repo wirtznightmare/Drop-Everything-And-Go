@@ -74,30 +74,15 @@
 .accom-unit{font-size:.72rem;color:var(--smoke);margin-top:.3rem;}
 .accom-eg{font-size:.7rem;color:rgba(200,190,170,.55);margin-top:.6rem;line-height:1.5;}
 
-/* ── RATINGS SECTION ── */
-.ratings-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.8rem;margin-top:1.5rem;}
-.rating-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.07);border-radius:12px;padding:1.2rem 1rem;text-align:center;}
-.rating-name{font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.15em;text-transform:uppercase;color:var(--smoke);margin-bottom:.7rem;}
+
+/* Ratings on dark background */
+.ratings-section-wrap { background: var(--ink-2); }
+.rating-card{background:rgba(245,239,224,.05);border:1px solid rgba(245,239,224,.1);border-radius:12px;padding:1.2rem 1rem;text-align:center;}
+.rating-name{font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(200,190,170,.5);margin-bottom:.7rem;}
 .rating-dots{display:flex;gap:4px;justify-content:center;margin-bottom:.5rem;}
-.sk-dot{width:8px;height:8px;border-radius:50%;background:rgba(245,239,224,.12);}
+.sk-dot{width:8px;height:8px;border-radius:50%;background:rgba(245,239,224,.15);}
 .sk-dot.on{background:var(--teal);}
 .rating-num{font-family:var(--ff-display);font-size:1.4rem;font-weight:800;color:var(--parchment);}
-
-/* ── HIGHLIGHTS ── */
-.highlights-grid{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.5rem;}
-.hl-item{display:flex;align-items:flex-start;gap:.9rem;background:rgba(245,239,224,.03);border:1px solid rgba(245,239,224,.07);border-radius:10px;padding:.9rem 1.1rem;}
-.hl-num{font-family:var(--ff-display);font-size:1.1rem;font-weight:800;color:var(--teal);flex-shrink:0;min-width:1.5rem;}
-.hl-text{font-size:.82rem;color:rgba(200,190,170,.75);line-height:1.6;}
-
-/* ── INSIDER TIP ── */
-.insider-s{background:var(--ink-2);}
-.insider-box{max-width:780px;margin:0 auto;background:rgba(14,191,184,.07);border:1px solid rgba(14,191,184,.2);border-radius:16px;padding:2.2rem 2.5rem;}
-.insider-label{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;display:block;}
-.insider-text{font-size:.95rem;color:rgba(200,190,170,.8);line-height:1.85;}
-
-/* ── SECTION TITLES ── */
-.ski-s-title{font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:700;color:var(--parchment);letter-spacing:-.02em;margin-bottom:.5rem;}
-.ski-s-title em{font-style:italic;font-weight:300;color:var(--teal);}
 
 @media(max-width:900px){.sk-strip{grid-template-columns:1fr 1fr 1fr;}.accom-grid{grid-template-columns:1fr;}.ratings-grid{grid-template-columns:repeat(3,1fr);}.highlights-grid{grid-template-columns:1fr;}}
 @media(max-width:600px){.sk-strip{grid-template-columns:1fr 1fr;}.ratings-grid{grid-template-columns:1fr 1fr;}}
@@ -204,13 +189,13 @@
 </section>
 
 <!-- ABOUT -->
-<section class="s" style="background:var(--parchment);">
+<section class="s" style="background:var(--ink-2);">
   <div style="max-width:1260px;margin:0 auto;">
     <div class="eyebrow" style="color:var(--gold-dk);margin-bottom:1rem">// Hokkaido</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
       <div>
-        <h2 style="font-family:var(--ff-display);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--ink);letter-spacing:-.025em;margin-bottom:1.2rem;line-height:1.1;">Why ski <em style="font-style:italic;font-weight:300;color:var(--gold-dk)">Niseko United?</em></h2>
-        <p style="font-size:.95rem;line-height:1.9;color:#4A5060;">Niseko is a pilgrimage destination for powder skiers. Hokkaido's unique position — cold Siberian air mass picking up moisture as it crosses the Sea of Japan — produces snowfall of a consistency and lightness that simply doesn't exist in the Alps or Rockies. The mountain receives an average of 15 metres of snow per season. Four connected resorts (Grand Hirafu, Hanazono, Niseko Village and Annupuri) share a joint lift pass across 60 runs. Add the onsen culture and extraordinary Japanese food, and it's unlike any ski trip you'll take in Europe.</p>
+        <h2 style="font-family:var(--ff-display);font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:700;color:var(--parchment);letter-spacing:-.025em;margin-bottom:1.2rem;line-height:1.1;">Why ski <em style="font-style:italic;font-weight:300;color:var(--gold-dk)">Niseko United?</em></h2>
+        <p style="font-size:.95rem;line-height:1.9;color:rgba(200,190,170,.75);">Niseko is a pilgrimage destination for powder skiers. Hokkaido's unique position — cold Siberian air mass picking up moisture as it crosses the Sea of Japan — produces snowfall of a consistency and lightness that simply doesn't exist in the Alps or Rockies. The mountain receives an average of 15 metres of snow per season. Four connected resorts (Grand Hirafu, Hanazono, Niseko Village and Annupuri) share a joint lift pass across 60 runs. Add the onsen culture and extraordinary Japanese food, and it's unlike any ski trip you'll take in Europe.</p>
       </div>
       <div>
         <div class="eyebrow" style="color:var(--gold-dk);margin-bottom:1rem">// Ratings</div>
@@ -300,32 +285,6 @@
   </div>
 </section>
 
-<!-- PISTE MAP -->
-<section class="s" style="background:var(--ink-2);">
-  <div style="max-width:1260px;margin:0 auto;">
-    <div class="eyebrow" style="color:var(--teal);margin-bottom:1rem">// Piste Map</div>
-    <h2 class="ski-s-title">Find your <em>runs</em></h2>
-    <p style="font-size:.82rem;color:var(--smoke);margin-top:.4rem;margin-bottom:2rem;max-width:580px">The official piste map shows all runs, lifts and terrain — opens on the resort's website so you always see the most current version.</p>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:center;">
-      <div style="border-radius:16px;overflow:hidden;height:340px;position:relative;">
-        <img src="https://images.unsplash.com/photo-1580587771525-4dd613e641f0?w=1200&q=85&auto=format&fit=crop" alt="Mountain terrain" style="width:100%;height:100%;object-fit:cover;object-position:center">
-        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(11,23,40,.7) 0%,transparent 50%)"></div>
-        <div style="position:absolute;bottom:1.5rem;left:1.5rem;font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,239,224,.5);">Mountain overview</div>
-      </div>
-      <div style="display:flex;flex-direction:column;gap:1rem;">
-        <div style="background:rgba(14,191,184,.07);border:1px solid rgba(14,191,184,.2);border-radius:14px;padding:1.8rem 2rem;">
-          <div style="font-family:var(--ff-mono);font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem;">Official Resort Map</div>
-          <p style="font-size:.82rem;color:rgba(200,190,170,.7);line-height:1.65;margin-bottom:1.5rem;">View the full interactive piste map with run difficulty, lift status, snowpack depth and webcam feeds directly on the resort's website.</p>
-          <a href="https://www.niseko.ne.jp/en/mountain/trail-map/" target="_blank" rel="noopener" class="btn btn-teal btn-arr" style="display:inline-flex;">View Official Piste Map →</a>
-        </div>
-        <div style="background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:14px;padding:1.5rem 2rem;">
-          <div style="font-family:var(--ff-mono);font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:var(--smoke);margin-bottom:.6rem;">Interactive Mapping</div>
-          <p style="font-size:.78rem;color:rgba(200,190,170,.55);line-height:1.6;">Fatmap and Piste Pro both offer detailed 3D piste maps for most major resorts — excellent for planning your runs before you arrive.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- CTA -->
 <section class="s" style="background:linear-gradient(140deg,#112038,#0D2040);text-align:center;">
