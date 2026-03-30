@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Vietnam travel guide — Halong Bay's limestone karsts, Hoi An's lantern-lit streets, and the world's best banh mi."/>
+<title>Vietnam — Drop Everything And Go</title>
+<link rel="stylesheet" href="../style.css"/>
+<style>
+.dh{min-height:82vh;display:flex;flex-direction:column;justify-content:flex-end;padding:10rem var(--gutter) 4rem;position:relative;overflow:hidden;}
+.dh-bg{position:absolute;inset:0;}
+.dh-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(200,145,42,.07) 1px,transparent 1px);background-size:35px 35px;mask-image:radial-gradient(ellipse at 80% 40%,black 20%,transparent 75%);}
+.dh-content{position:relative;z-index:2;max-width:1300px;width:100%;margin:0 auto;}
+.dh-back{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--ff-mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,239,224,.4);margin-bottom:1.5rem;transition:color .2s;}
+.dh-back:hover{color:var(--gold);}
+.dh-emoji{font-size:4.5rem;line-height:1;display:block;margin-bottom:1rem;}
+.dh-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem;}
+.dh-tag{font-family:var(--ff-mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;padding:.25rem .7rem;border-radius:100px;background:rgba(200,145,42,.15);color:var(--gold);border:1px solid rgba(200,145,42,.2);}
+.dh-h1{font-family:var(--ff-display);font-size:clamp(3rem,9vw,7.5rem);font-weight:800;letter-spacing:-.035em;line-height:.92;color:var(--parchment);}
+.dh-h1 em{font-style:italic;font-weight:300;color:var(--gold-lt);font-variation-settings:'opsz' 72;}
+.dh-tagline{font-size:1rem;color:rgba(200,190,170,.65);margin-top:1.2rem;max-width:520px;line-height:1.7;}
+.dh-rule{position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(to right,var(--gold),transparent 60%);opacity:.35;}
+
+.intro-s{background:var(--parchment);}
+.intro-grid{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 380px;gap:3.5rem;align-items:start;}
+.intro-body h2{font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;color:var(--ink);letter-spacing:-.02em;line-height:1.12;margin-bottom:.7rem;}
+.intro-body h2 em{font-style:italic;font-weight:300;color:var(--gold-dk);}
+.intro-body p{font-size:.95rem;color:#4A5060;line-height:1.88;margin-bottom:1rem;}
+.facts-card{background:var(--ink);border-radius:var(--r-lg);padding:2rem;position:sticky;top:90px;}
+.facts-card h4{font-family:var(--ff-mono);font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;}
+.fact-row{display:flex;align-items:flex-start;gap:1rem;margin-bottom:1.4rem;padding-bottom:1.4rem;border-bottom:1px solid rgba(245,239,224,.07);}
+.fact-row:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none;}
+.fact-icon{font-size:1.1rem;flex-shrink:0;margin-top:.1rem;}
+.fact-label{font-family:var(--ff-mono);font-size:.56rem;letter-spacing:.16em;text-transform:uppercase;color:var(--smoke);margin-bottom:.2rem;}
+.fact-value{font-size:.88rem;color:var(--parchment);font-weight:500;line-height:1.4;}
+
+.aud-s{background:var(--parchment);}
+.aud-grid{max-width:1100px;margin:3rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
+.aud-c{background:rgba(11,23,40,0.04);border-top-color:var(--gold);box-shadow:none;border-radius:var(--r-md);padding:2.2rem 1.8rem;border-top:2px solid var(--gold);box-shadow:0 2px 18px rgba(11,13,16,.05);transition:transform .4s var(--ease-spring),box-shadow .4s,border-top-color .3s;}
+.aud-c:hover{transform:translateY(-5px);box-shadow:0 16px 42px rgba(11,13,16,.1);border-top-color:var(--teal);}
+.aud-icon{font-size:2rem;margin-bottom:1rem;}
+.aud-title{font-family:var(--ff-display);font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:.5rem;}
+.aud-desc{font-size:.86rem;color:#6A7080;line-height:1.72;}
+
+.things-s{background:var(--ink-2);}
+
+.things-inner{max-width:1000px;margin:0 auto;}
+.things-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;margin-top:2.5rem;}
+.thing-item{display:flex;align-items:flex-start;gap:.9rem;background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-sm);padding:1rem 1.2rem;transition:background .25s,border-color .25s;}
+.thing-item:hover{background:rgba(245,239,224,.07);border-color:rgba(200,145,42,.2);}
+.thing-num{font-family:var(--ff-display);font-size:1.1rem;font-weight:800;color:var(--gold);flex-shrink:0;min-width:1.8rem;font-variation-settings:'opsz' 24;}
+.thing-text{font-size:.86rem;color:rgba(200,190,170,.75);line-height:1.6;}
+
+.plan-s{background:linear-gradient(140deg,#112038,#0D2040);text-align:center;padding:3.5rem var(--gutter);}
+
+.plan-s h2{font-family:var(--ff-ui);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--parchment);letter-spacing:-.02em;position:relative;z-index:1;}
+.plan-s p{color:var(--smoke);max-width:460px;margin:.9rem auto 2.5rem;line-height:1.75;position:relative;z-index:1;}
+.plan-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+
+.bp-strip{background:var(--ink-2);border-top:1px solid rgba(14,191,184,.15);padding:3.5rem var(--gutter);}
+.bp-strip-in{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:2rem;}
+
+@media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.aud-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:640px){.things-grid{grid-template-columns:1fr;}.aud-grid{grid-template-columns:1fr;}.bp-strip-in{grid-template-columns:1fr;}.dh-emoji{font-size:3rem;}}
+
+
+
+/* ── INFO STRIP ── */
+.info-strip{display:grid;grid-template-columns:1.3fr 1.1fr 1.5fr 1.1fr 0.75fr;gap:.65rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(11,23,40,.08);}
+.iw{border-radius:12px;padding:1rem 1.1rem;min-width:0;}
+.iw-key{background:var(--ink);color:var(--parchment);}
+.iw-weather{background:#FFF3D6;}
+.iw-health{background:#EDF7ED;}
+.iw-transport{background:#fff;border:1px solid rgba(11,23,40,.08);}
+.iw-emergency{background:#F3F4F6;}
+.iw-title{font-family:var(--ff-mono);font-size:.49rem;letter-spacing:.18em;text-transform:uppercase;margin-bottom:.7rem;color:rgba(11,23,40,.38);}
+.iw-key .iw-title{color:rgba(246,238,224,.38);}
+.iw-tags{display:flex;flex-wrap:wrap;gap:.28rem;margin-bottom:.5rem;}
+.iw-pill{font-size:.59rem;font-weight:600;padding:.2rem .55rem;border-radius:100px;white-space:nowrap;line-height:1.4;}
+.iw-key .iw-pill{background:rgba(246,238,224,.13);color:var(--parchment);}
+.iw-weather .iw-pill{background:#E09420;color:#fff;}
+.iw-health .iw-pill{background:var(--ink);color:#fff;}
+.iw-transport .iw-pill{background:var(--ink);color:#fff;}
+.iw-note{font-size:.69rem;line-height:1.5;color:rgba(11,23,40,.62);}
+.iw-key .iw-note{color:rgba(246,238,224,.62);}
+.iw-peak{background:rgba(255,255,255,.65);border-radius:8px;padding:.4rem .6rem;margin:.45rem 0;font-size:.65rem;line-height:1.4;color:var(--ink);}
+.iw-peak strong{display:block;font-weight:700;font-size:.63rem;margin-bottom:.1rem;color:var(--ink);}
+.iw-water{display:flex;align-items:flex-start;gap:.35rem;margin-bottom:.45rem;}
+.iw-water-icon{font-size:.85rem;flex-shrink:0;margin-top:.05rem;}
+.iw-water-text{font-size:.67rem;line-height:1.4;color:rgba(11,23,40,.72);}
+.iw-water-text strong{color:rgba(11,23,40,.9);}
+.iw-vax{display:flex;flex-direction:column;gap:.2rem;}
+.iw-vax-row{display:flex;align-items:center;justify-content:space-between;font-size:.62rem;padding-bottom:.2rem;border-bottom:1px solid rgba(11,23,40,.05);gap:.4rem;}
+.iw-vax-row:last-child{border-bottom:none;padding-bottom:0;}
+.iw-vax-name{color:rgba(11,23,40,.78);}
+.iw-badge{font-size:.48rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.13rem .42rem;border-radius:100px;white-space:nowrap;flex-shrink:0;}
+.iw-badge.required{background:#FEE2E2;color:#DC2626;}
+.iw-badge.recommended{background:#DCFCE7;color:#16A34A;}
+.iw-badge.consider{background:#FEF9C3;color:#CA8A04;}
+.iw-emerg-list{display:flex;flex-direction:column;gap:.35rem;}
+.iw-emerg-row{display:flex;align-items:center;justify-content:space-between;font-size:.62rem;padding-bottom:.35rem;border-bottom:1px solid rgba(11,23,40,.07);}
+.iw-emerg-row:last-child{border-bottom:none;padding-bottom:0;}
+.iw-emerg-label{color:rgba(11,23,40,.5);font-size:.59rem;}
+.iw-emerg-num{font-family:var(--ff-mono);font-weight:700;font-size:.8rem;color:var(--ink);}
+.intro-wrap{max-width:1240px;margin:0 auto;padding:0 2rem;}
+@media(max-width:1100px){.info-strip{grid-template-columns:1fr 1fr;}.iw-emergency{grid-column:span 2;}.iw-emerg-list{flex-direction:row;gap:1.5rem;}}
+@media(max-width:600px){.info-strip{grid-template-columns:1fr;}.iw-emergency{grid-column:1;}.iw-emerg-list{flex-direction:column;}}
+
+/* ── Intro photo pair ── */
+
+
+
+/* ── Intro photo pair ── */
+.intro-photos{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-top:1.6rem;}
+.intro-photos img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center center;display:block;border-radius:10px;}
+@media(max-width:640px){.intro-photos{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div id="progress-bar"></div>
+<div class="ck" id="ck">
+  <p class="ck-text">We use cookies to enhance your journey. <a href="../privacy.html">Privacy Policy</a></p>
+  <div class="ck-btns"><button class="ck-acc" onclick="ckAccept()">Accept</button><button class="ck-dec" onclick="ckDecline()">Decline</button></div>
+</div>
+<div class="ann-bar">
+  <a href="backpacker-guides.html">
+    <span class="ann-badge">🎒 NEW</span>
+    59 Backpacker Guides Live — SE Asia, South America, Europe &amp; more · From £12/day
+    <span class="ann-arr">→</span>
+  </a>
+</div>
+<nav id="nav">
+  <a href="../index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Bespoke Planning</span></a>
+  <ul class="nav-links">
+    <li><a href="../destinations.html" class="active">Destinations</a></li>
+    <li><a href="../ski.html">Ski</a></li>
+    
+  <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../services.html">Services</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html" class="nav-cta">Plan My Trip</a></li>
+  </ul>
+  <button class="nav-ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<ul class="nav-mob" id="mob">
+  <li><a href="../destinations.html">Destinations</a></li>
+  <li><a href="../ski.html">Ski</a></li>
+  <li><a href="../blog.html">Blog</a></li>
+  <li><a href="../services.html">Services</a></li>
+  <li><a href="../about.html">About</a></li>
+  <li><a href="../contact.html" class="mob-cta-btn">Plan My Trip</a></li>
+</ul>
+<div class="dh">
+    <div class="dh-bg"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423310/murray-mccallum-ha-long-bay-vietnam-tourist-boat-cruising-among-limestone-karsts-and-islets-in-unesco-site_u-l-q1tc1ej0_jif5kq.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"></div>
+  <div class="dh-bg" style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(0,0,0,0.72) 0%,rgba(0,0,0,0.55) 60%,rgba(0,0,0,0.3) 100%)"></div>
+  <div class="dh-dots"></div>
+  <div class="dh-content">
+    <a href="../destinations.html" class="dh-back">← All Destinations</a>
+    <span class="dh-emoji">🛵</span>
+    <div class="dh-tags"><span class="dh-tag">Asia</span><span class="dh-tag">Adventure</span><span class="dh-tag">Culture</span><span class="dh-tag">Budget Friendly</span></div>
+    <h1 class="dh-h1">Vietnam</h1>
+    <p class="dh-tagline">Halong Bay's limestone karsts, Hoi An's lantern-lit streets, and the world's best banh mi.</p>
+  </div>
+  <div class="dh-rule"></div>
+</div>
+
+<section class="s intro-s" style="padding-top:2.5rem;padding-bottom:2.5rem">
+  <div class="intro-wrap">
+    <div class="intro-body">
+      <div class="eyebrow" style="color:var(--gold-dk)">Asia · Southeast Asia</div>
+      <h2>Why visit <em>Vietnam?</em></h2>
+      <p>Vietnam is one of the great travel countries — 1,600km of coastline, a cuisine that varies dramatically between north and south, jaw-dropping natural scenery, and a culture that's simultaneously ancient and electric with new energy. It rewards slow travel. The mistake is rushing it. Spend three weeks minimum if you want to understand more than the surface.</p>
+  
+    <div class="intro-photos"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423344/sapa-lao-cai-vietnam_zqafeq.webp" alt="" loading="lazy"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423325/1_iqezls.jpg" alt="" loading="lazy"></div>
+  </div>
+    <div class="info-strip">
+  <div class="iw iw-key">
+    <div class="iw-title">Key Info</div>
+    <div class="iw-tags"><span class="iw-pill">Vietnamese Dong (VND)</span><span class="iw-pill">Vietnamese (English in tourist areas)</span><span class="iw-pill">Type A/C/F</span><span class="iw-pill">Drive Right</span></div>
+    <div class="iw-note">Not traditional — increasingly expected in tourist areas</div>
+  </div>
+  <div class="iw iw-weather">
+    <div class="iw-title">Weather</div>
+    <div class="iw-tags"><span class="iw-pill">Best: Feb–Apr</span></div>
+    <div class="iw-peak"><strong>Dry Season (Feb–Apr)</strong>Best weather for the full north-to-south route</div>
+    <div class="iw-note">North and south have different weather. Best across the whole country Feb–April.</div>
+  </div>
+  <div class="iw iw-health">
+    <div class="iw-title">Health</div>
+    <div class="iw-water"><span class="iw-water-icon">⚠️</span><span class="iw-water-text"><strong>Use bottled water</strong> — Never drink tap water — tourist ice usually safe, street ice not</span></div>
+    <div class="iw-vax"><div class="iw-vax-row"><span class="iw-vax-name">Hepatitis A</span><span class="iw-badge recommended">recommended</span></div><div class="iw-vax-row"><span class="iw-vax-name">Typhoid</span><span class="iw-badge recommended">recommended</span></div><div class="iw-vax-row"><span class="iw-vax-name">Rabies</span><span class="iw-badge recommended">recommended — long stays</span></div><div class="iw-vax-row"><span class="iw-vax-name">Malaria</span><span class="iw-badge consider">consider — rural areas</span></div></div>
+  </div>
+  <div class="iw iw-transport">
+    <div class="iw-title">Transport</div>
+    <div class="iw-tags"><span class="iw-pill">Grab</span><span class="iw-pill">Be app</span><span class="iw-pill">Xanh SM</span></div>
+    <div class="iw-note"><strong>✈️ Hanoi (HAN) / Da Nang (DAD) / HCMC (SGN)</strong></div>
+    <div class="iw-note" style="margin-top:0.3rem">Hanoi and HCMC have new metro lines — motorbike taxis for everything else</div>
+  </div>
+  <div class="iw iw-emergency">
+    <div class="iw-title">Emergency</div>
+    <div class="iw-emerg-list">
+      <div class="iw-emerg-row"><span class="iw-emerg-label">👮 Police</span><span class="iw-emerg-num">113</span></div>
+      <div class="iw-emerg-row"><span class="iw-emerg-label">🚑 Ambulance</span><span class="iw-emerg-num">115</span></div>
+      <div class="iw-emerg-row"><span class="iw-emerg-label">🔥 Fire</span><span class="iw-emerg-num">114</span></div>
+    </div>
+  </div>
+</div>
+  </div>
+</section>
+
+  </div>
+</div>
+
+
+<section class="s aud-s">
+  <div class="aud-s-inner">
+    <div class="eyebrow" style="justify-content:center;color:var(--gold-dk)">Who It's Perfect For</div>
+    <div class="aud-grid">
+      <div class="aud-c rv">
+        <span class="aud-icon">🏍️</span>
+        <h3 class="aud-title">Adventurers</h3>
+        <p class="aud-desc">Renting a motorbike and riding the Hai Van Pass, the Ho Chi Minh Trail, or the full north-to-south route is one of Southeast Asia's great travel experiences.</p>
+      </div>      <div class="aud-c rv">
+        <span class="aud-icon">🍜</span>
+        <h3 class="aud-title">Foodies</h3>
+        <p class="aud-desc">Pho, banh mi, bun cha, cao lau — Vietnamese cuisine varies dramatically by region and every dish is extraordinary. Hoi An's food scene in particular is world-class.</p>
+      </div>      <div class="aud-c rv">
+        <span class="aud-icon">🏛️</span>
+        <h3 class="aud-title">History Lovers</h3>
+        <p class="aud-desc">The Cu Chi Tunnels, the DMZ, Hue's Imperial Citadel, and My Son's Cham temples give Vietnam a layered, complex history that rewards anyone who engages with it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s things-s">
+  <div class="things-inner">
+    <div class="rv" style="text-align:center">
+      <div class="eyebrow" style="justify-content:center">The Highlights</div>
+      <h2 class="h-display">Things to <em>Do &amp; See</em></h2>
+    </div>
+    <div class="things-grid"><div class="thing-item rv rv0"><div class="thing-num">01</div><div class="thing-text">Take an overnight junk boat cruise in Halong Bay — choose a small operator</div></div><div class="thing-item rv rv1"><div class="thing-num">02</div><div class="thing-text">Rent a bicycle and spend a sunset in Hoi An's ancient town</div></div><div class="thing-item rv rv2"><div class="thing-num">03</div><div class="thing-text">Eat bun cha in a tiny Hanoi shophouse (make it Obama's bun cha spot)</div></div><div class="thing-item rv rv0"><div class="thing-num">04</div><div class="thing-text">Take the Reunification Express train between Hue and Da Nang for views</div></div><div class="thing-item rv rv1"><div class="thing-num">05</div><div class="thing-text">Hire a motorbike and ride the Hai Van Pass — one of Asia's great roads</div></div><div class="thing-item rv rv2"><div class="thing-num">06</div><div class="thing-text">Visit the War Remnants Museum in HCMC — important and harrowing</div></div><div class="thing-item rv rv0"><div class="thing-num">07</div><div class="thing-text">Walk to a Hmong village from Sapa in the northern highlands</div></div><div class="thing-item rv rv1"><div class="thing-num">08</div><div class="thing-text">Spend a week on Phu Quoc island before it gets any more developed</div></div></div>
+  </div>
+</section>
+
+<section class="s areas-s">
+  <div class="s-inner">
+    <div class="areas-intro rv">
+      <div class="eyebrow" style="justify-content:center">Where to Stay</div>
+      <h2 class="h-display">Base Yourself in <em>Vietnam</em></h2>
+      <p>Six distinct areas — each with a different character, price point and experience.</p>
+    </div>
+    <div class="areas-grid">
+<div class="area-card rv">
+  <div class="area-top">
+    <span class="area-icon">🏛️</span>
+    <div>
+      <h4 class="area-name">Hanoi Old Quarter</h4>
+      <div class="area-best">Historic Capital Stay</div>
+    </div>
+  </div>
+  <p class="area-desc">The 36-guild streets of the Old Quarter — each street originally dedicated to a single trade. Guesthouses from £15/night tucked into the narrow houses. Walking distance to Hoan Kiem Lake, the Temple of Literature and the best bia hoi (fresh beer) corners in the country.</p>
+</div>
+<div class="area-card rv">
+  <div class="area-top">
+    <span class="area-icon">🌊</span>
+    <div>
+      <h4 class="area-name">Hoi An Old Town</h4>
+      <div class="area-best">Lantern Town Stay</div>
+    </div>
+  </div>
+  <p class="area-desc">The UNESCO Ancient Town — yellow-washed merchant houses, the Japanese Covered Bridge, tailor shops and the best food city in Vietnam. Stay within the old town itself (not in the newer beach resort strip) for the lantern-lit evenings. Mid-range guesthouses throughout.</p>
+</div>
+<div class="area-card rv">
+  <div class="area-top">
+    <span class="area-icon">🏖️</span>
+    <div>
+      <h4 class="area-name">Da Nang</h4>
+      <div class="area-best">Beach City Base</div>
+    </div>
+  </div>
+  <p class="area-desc">The modern city between Hanoi and Ho Chi Minh City — excellent beach, the Dragon Bridge (breathes fire on weekends), and the base for day trips to Hoi An (30km) and the Marble Mountains. More value for money than either city on the central coast.</p>
+</div>
+<div class="area-card rv">
+  <div class="area-top">
+    <span class="area-icon">🌿</span>
+    <div>
+      <h4 class="area-name">Hoi An Beach (An Bang)</h4>
+      <div class="area-best">Central Coast Beach</div>
+    </div>
+  </div>
+  <p class="area-desc">4km from the Ancient Town — a proper beach without the resort overdevelopment of Da Nang's My Khe. Eco-friendly guesthouses, excellent seafood shacks and the same lantern evenings a short bicycle ride away.</p>
+</div>
+<div class="area-card rv">
+  <div class="area-top">
+    <span class="area-icon">🏙️</span>
+    <div>
+      <h4 class="area-name">Ho Chi Minh City D1/D3</h4>
+      <div class="area-best">Saigon Central</div>
+    </div>
+  </div>
+  <p class="area-desc">The buzzing central districts of Saigon — Ben Thanh Market, the War Remnants Museum, the Notre-Dame Cathedral and the best rooftop bars in Vietnam. Budget to luxury hotels. A completely different energy from Hanoi.</p>
+</div>
+<div class="area-card rv">
+  <div class="area-top">
+    <span class="area-icon">🚤</span>
+    <div>
+      <h4 class="area-name">Ninh Binh</h4>
+      <div class="area-best">Dry Ha Long Bay Base</div>
+    </div>
+  </div>
+  <p class="area-desc">The inland version of Ha Long Bay — limestone karst scenery with rice paddies at the base instead of water. Cycling between the karsts, boat trips through flooded caves, and very affordable guesthouses. Far fewer tourists than Ha Long Bay itself.</p>
+</div>
+    </div>
+  </div>
+</section>
+<section class="s insider-s">
+  <div class="s-inner">
+    <div class="rv">
+      <div class="eyebrow">Insider Knowledge</div>
+      <h2 class="h-display on-light">What Most Guides Don't Tell You About <em>Vietnam</em></h2>
+    </div>
+    <ul class="tips-list">
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Bargaining is expected at markets but not in restaurants — offer 60% of the first price asked at any market stall, expect to settle around 70–75%</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>The Open Tour Bus (a hop-on hop-off sleeper bus from Hanoi to Ho Chi Minh City) costs £25–40 and is the default backpacker route — it's slow but covers the coast with maximum flexibility</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Vietnamese coffee (cà phê trứng in Hanoi, cà phê sữa đá everywhere) is among the best in the world — the Robusta beans give a strength and body that Arabica doesn't. Drink it from the pavement plastic stools, not an air-conditioned café</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Crossing a Saigon road as a pedestrian: walk slowly and steadily, don't run and don't stop suddenly. Motorbikes navigate around you. Stopping or accelerating unexpectedly is what causes accidents</p></li>
+<li class="tip-item rv"><span class="tip-bullet">→</span><p>Ha Long Bay cruise quality varies enormously — 2-day overnight cruises on budget boats (£50) and luxury junks (£200) visit the same bays. The difference is the food, cabins and whether your fellow guests are having fun or complaining</p></li>
+    </ul>
+  </div>
+</section>
+<div class="plan-s">
+  <h2>Ready to visit <em style="font-style:italic;color:var(--gold-lt)">Vietnam?</em></h2>
+  <p>Tell us your dates, budget and travel style — we'll handle every detail.</p>
+  <div class="plan-btns">
+    <a href="../contact.html" class="btn btn-coral btn-arr">Get a Free Quote</a>
+    <a href="../destinations.html" class="btn btn-wire">More Destinations</a>
+  </div>
+</div>
+<div class="bp-strip">
+  <div class="bp-strip-in">
+    <div class="rv">
+      <div class="eyebrow teal">🎒 Travelling on a Budget?</div>
+      <h2 class="h-display" style="font-size:clamp(1.6rem,3vw,2.4rem)">59 <em style="color:var(--teal)">Backpacker Guides</em> Available</h2>
+      <p style="color:var(--smoke);font-size:.88rem;margin-top:.6rem">From £12/day — SE Asia, South America, Europe, Africa and beyond.</p>
+    </div>
+    <div class="rv rv2"><a href="backpacker-guides.html" class="btn btn-teal btn-arr">Browse Guides</a></div>
+  </div>
+</div>
+
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a href="../index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Services</span></a>
+      <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
+      <div class="ft-social">
+        <a href="#" class="ft-soc-btn">📸</a><a href="#" class="ft-soc-btn">🎵</a>
+        <a href="#" class="ft-soc-btn">📌</a><a href="#" class="ft-soc-btn">▶</a>
+      </div>
+    </div>
+    <div class="ft-col"><h5>Explore</h5><ul>
+      <li><a href="../destinations.html">All Destinations</a></li>
+      <li><a href="../destinations/backpacker-guides.html">Backpacker Guides</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
+    </ul></div>
+    <div class="ft-col"><h5>Services</h5><ul>
+      <li><a href="../services.html">Trip Planning</a></li>
+      <li><a href="../services.html">Hotel Curation</a></li>
+      <li><a href="../contact.html">Free Quote</a></li>
+    </ul></div>
+    <div class="ft-col"><h5>Info</h5><ul>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../privacy.html">Privacy Policy</a></li>
+      <li><a href="../privacy.html#terms">Terms</a></li>
+    </ul></div>
+  </div>
+  <div class="ft-badges">
+    <span class="ft-badge">🔒 Secure &amp; Trusted</span>
+    <span class="ft-badge">✈️ ATOL Protected Advice</span>
+    <span class="ft-badge">🌍 Worldwide Planning</span>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2025 Drop Everything And Go. All rights reserved.</p>
+    <div class="ft-bottom-links"><a href="../privacy.html">Privacy</a><a href="../privacy.html#cookies">Cookies</a><a href="../privacy.html#terms">Terms</a></div>
+  </div>
+</footer>
+<script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
+<script>
+(function(){
+document.body.classList.add('js-ready');
+var pb=document.getElementById('progress-bar');
+if(pb)window.addEventListener('scroll',function(){pb.style.width=Math.min((scrollY/(document.body.scrollHeight-innerHeight))*100,100)+'%';},{passive:true});
+var nav=document.getElementById('nav');
+if(nav)window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>60);},{passive:true});
+var ham=document.getElementById('ham'),mob=document.getElementById('mob');
+if(ham&&mob)ham.addEventListener('click',function(){ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
+// Lower threshold + rootMargin so items visible on page load reveal immediately
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+// Also immediately reveal anything already in viewport
+window.addEventListener('load',function(){document.querySelectorAll('.rv').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0)el.classList.add('vis');});});
+function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=document.getElementById('ck');if(c)c.classList.add('vis');},1400);}
+window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+ckShow();
+})();
+</script>
+</body></html>
