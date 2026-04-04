@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<meta name="description" content="Ecuador travel guide — Galápagos wildlife, Amazon jungle, Andean volcanoes, and colonial Quito — four worlds in one country."/>
-<title>Ecuador — Drop Everything And Go</title>
+<meta name="description" content="Ecuador travel guide — Galápagos Islands boat tours, Amazon jungle lodges, Quito city guide and the incredible Quilotoa crater loop."/>
+<title>Ecuador Travel Guide — Galápagos, Amazon & the Avenue of Volcanoes</title>
 <link rel="stylesheet" href="../style.css"/>
 <style>
 .dh{min-height:82vh;display:flex;flex-direction:column;justify-content:flex-end;padding:10rem var(--gutter) 4rem;position:relative;overflow:hidden;}
@@ -113,6 +113,18 @@
 .intro-photos{display:grid;grid-template-columns:1fr 1fr;gap:.65rem;margin-top:1.6rem;}
 .intro-photos img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center center;display:block;border-radius:10px;}
 @media(max-width:640px){.intro-photos{grid-template-columns:1fr;}}
+
+/* ── GetYourGuide Activity Cards ── */
+.gyg-grid{display:flex;flex-direction:column;gap:.75rem;}
+.gyg-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:12px;text-decoration:none;transition:background .25s,border-color .25s,transform .3s var(--ease-spring);}
+.gyg-card:hover{background:rgba(14,191,184,.07);border-color:rgba(14,191,184,.25);transform:translateX(4px);}
+.gyg-card-inner{display:flex;align-items:flex-start;gap:1rem;padding:1.1rem 1.3rem;}
+.gyg-icon{font-size:1.4rem;flex-shrink:0;margin-top:.1rem;}
+.gyg-title{font-family:var(--ff-display);font-size:.98rem;font-weight:700;color:var(--parchment);margin-bottom:.3rem;}
+.gyg-desc{font-size:.74rem;color:var(--smoke);line-height:1.6;margin:0;}
+.gyg-arr{font-family:var(--ff-mono);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);flex-shrink:0;margin-left:auto;align-self:center;padding-left:.8rem;white-space:nowrap;}
+.gyg-card:hover .gyg-arr{color:#fff;}
+
 </style>
 </head>
 <body>
@@ -336,6 +348,49 @@
     <a href="../destinations.html" class="btn btn-wire">More Destinations</a>
   </div>
 </div>
+
+<!-- ACTIVITIES -->
+<section class="s" style="background:var(--ink);">
+  <div style="max-width:1260px;margin:0 auto;">
+    <div class="eyebrow" style="color:var(--teal);margin-bottom:.8rem">// Book Activities</div>
+    <h2 style="font-family:var(--ff-display);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--parchment);letter-spacing:-.02em;margin-bottom:.5rem;">Things to book ahead</h2>
+    <p style="font-size:.8rem;color:var(--smoke);line-height:1.65;margin-bottom:1.8rem;max-width:560px;">Curated activities worth booking in advance — via GetYourGuide. We only recommend things worth your time and money.</p>
+    <div class="gyg-grid">
+      <a href="https://www.getyourguide.com/s/?partner_id=YHIEWDZ&cmp=share_to_earn&q=galapagos+islands+tour+ecuador" target="_blank" rel="noopener sponsored" class="gyg-card rv">
+        <div class="gyg-card-inner">
+          <div class="gyg-icon">🎟️</div>
+          <div>
+            <div class="gyg-title">Galápagos Islands Small Group Tour</div>
+            <p class="gyg-desc">Marine iguanas, blue-footed boobies and giant tortoises on islands that changed how we understand life on earth.</p>
+          </div>
+          <span class="gyg-arr">Book →</span>
+        </div>
+      </a>
+      <a href="https://www.getyourguide.com/s/?partner_id=YHIEWDZ&cmp=share_to_earn&q=ecuador+amazon+jungle+tour" target="_blank" rel="noopener sponsored" class="gyg-card rv">
+        <div class="gyg-card-inner">
+          <div class="gyg-icon">🎟️</div>
+          <div>
+            <div class="gyg-title">Amazon Jungle Lodge Tour</div>
+            <p class="gyg-desc">Cuyabeno or Yasuni — two or three nights in a floating lodge with a naturalist guide.</p>
+          </div>
+          <span class="gyg-arr">Book →</span>
+        </div>
+      </a>
+      <a href="https://www.getyourguide.com/s/?partner_id=YHIEWDZ&cmp=share_to_earn&q=quilotoa+crater+lake+hike+ecuador" target="_blank" rel="noopener sponsored" class="gyg-card rv">
+        <div class="gyg-card-inner">
+          <div class="gyg-icon">🎟️</div>
+          <div>
+            <div class="gyg-title">Quilotoa Crater Loop Hike</div>
+            <p class="gyg-desc">The turquoise volcanic lake and the ridge walk between indigenous villages — Ecuador's best day hike.</p>
+          </div>
+          <span class="gyg-arr">Book →</span>
+        </div>
+      </a>
+    </div>
+    <p style="font-family:var(--ff-mono);font-size:.46rem;letter-spacing:.1em;color:rgba(200,190,170,.25);margin-top:1.2rem;">Affiliate link — we earn a small commission if you book. Same price for you either way. <a href="../privacy.html" style="color:rgba(200,190,170,.35);">Disclosure →</a></p>
+  </div>
+</section>
+
 <div class="bp-strip">
   <div class="bp-strip-in">
     <div class="rv">
