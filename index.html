@@ -4,6 +4,20 @@
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
 <meta name="description" content="Honest travel guides, backpacker routes and bespoke trip planning from someone who actually goes. 40+ countries, 80+ guides, zero fluff."/>
 <title>Drop Everything And Go — Travel Blog & Bespoke Trip Planning UK</title>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Drop Everything And Go — Travel Blog & Bespoke Trip Planning UK"/>
+  <meta property="og:description" content="Honest travel stories and bespoke trip planning. 40+ countries, 80+ guides, zero fluff."/>
+  <meta property="og:url" content="https://www.dropeverythingandgo.com/"/>
+  <meta property="og:image" content="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422058/activemaldives_GettyImages-86477634_HR_f9khtp.jpg"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:site_name" content="Drop Everything And Go"/>
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Drop Everything And Go — Travel Blog & Bespoke Trip Planning UK"/>
+  <meta name="twitter:description" content="Honest travel stories and bespoke trip planning. 40+ countries, 80+ guides, zero fluff."/>
+  <meta name="twitter:image" content="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422058/activemaldives_GettyImages-86477634_HR_f9khtp.jpg"/>
+  <!-- Canonical -->
+  <link rel="canonical" href="https://www.dropeverythingandgo.com/"/>
 <link rel="stylesheet" href="style.css"/>
 <style>
 /* ── HERO ── */
@@ -174,6 +188,26 @@
   .nl-form button{border-radius:0 0 var(--r-sm) var(--r-sm);}
 }
 </style>
+
+  <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Drop Everything And Go",
+    "url": "https://www.dropeverythingandgo.com",
+    "description": "UK travel blog and bespoke trip planning service. Honest travel stories and expert itineraries for every budget.",
+    "publisher": {
+      "@type": "Person",
+      "name": "Blake Wirtz",
+      "url": "https://www.dropeverythingandgo.com/about.html"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.dropeverythingandgo.com/destinations.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 </head>
 <body>
 <div id="progress-bar"></div>
@@ -354,7 +388,11 @@
     <h2 class="h-display on-light rv" style="color:var(--ink)">Fresh stories,<br><em>straight to you.</em></h2>
     <p class="rv">Destination guides, honest tips, and exclusive deals. No spam, ever.</p>
     <form class="nl-form rv" action="https://formspree.io/f/mjgelkpz" method="POST">
-      <input type="hidden" name="_subject" value="Newsletter Signup"/>
+      <input type="hidden" name="_subject" value="New Subscriber — Drop Everything And Go"/>
+      <input type="hidden" name="_replyto" value="dropeverythingandgo2026@gmail.com"/>
+      <input type="hidden" name="_autoresponse" value="Thanks for subscribing to Drop Everything And Go! You'll get honest travel stories, destination guides and trip planning tips straight to your inbox. No spam, ever. — Blake"/>
+      <input type="hidden" name="_next" value="https://www.dropeverythingandgo.com/index.html#subscribed"/>
+      <input type="text" name="_gotcha" style="display:none"/>
       <input type="email" name="email" placeholder="Your email address" required/>
       <button type="submit">Subscribe</button>
     </form>
