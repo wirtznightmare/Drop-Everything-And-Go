@@ -58,6 +58,20 @@
 .bp-s2-in{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem;}
 @media(max-width:960px){.d-grid{grid-template-columns:repeat(2,1fr)!important;}}@media(max-width:560px){.d-grid{grid-template-columns:1fr!important;}}
 @media(max-width:640px){.bp-s2-in{grid-template-columns:1fr;}}
+
+/* ── DESTINATION SEARCH ── */
+.search-wrap{max-width:560px;margin:0 auto 1.5rem;position:relative;}
+.dest-search{width:100%;background:rgba(245,239,224,.07);border:1px solid rgba(245,239,224,.18);border-radius:100px;padding:.75rem 1.4rem .75rem 3rem;font-family:var(--ff-sans);font-size:.88rem;color:var(--parchment);outline:none;transition:border-color .25s,background .25s;}
+.dest-search::placeholder{color:rgba(200,190,170,.35);}
+.dest-search:focus{border-color:rgba(224,148,32,.5);background:rgba(245,239,224,.1);}
+.search-icon{position:absolute;left:1.1rem;top:50%;transform:translateY(-50%);color:rgba(200,190,170,.35);pointer-events:none;font-size:.9rem;}
+.search-clear{position:absolute;right:1.1rem;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(200,190,170,.35);cursor:pointer;font-size:.85rem;padding:.2rem;display:none;transition:color .2s;}
+.search-clear:hover{color:var(--gold);}
+.search-clear.vis{display:block;}
+.no-results{text-align:center;padding:4rem 1rem;display:none;}
+.no-results.vis{display:block;}
+.no-results p{font-family:var(--ff-display);font-size:1.4rem;color:var(--smoke);margin-bottom:.5rem;}
+.no-results span{font-size:.82rem;color:rgba(200,190,170,.4);}
 </style>
 </head><body><div id="progress-bar"></div>
 <div class="ck" id="ck">
@@ -92,93 +106,99 @@
   </div>
   <div class="pg-hero-rule"></div>
 </div>
-<div class="filt-bar">
+<div class="filt-bar" id="filtBar">
   <div class="filt-inner">
-    <button class="ft on" data-f="all">All</button>
-    <button class="ft" data-f="europe">Europe</button>
-    <button class="ft" data-f="asia">Asia</button>
-    <button class="ft" data-f="americas">Americas</button>
-    <button class="ft" data-f="africa">Africa</button>
-    <button class="ft" data-f="city-break">City Breaks</button>
-    <button class="ft" data-f="honeymoon">Honeymoon</button>
-    <button class="ft" data-f="adventure">Adventure</button>
-    <button class="ft" data-f="luxury">Luxury</button>
-    <button class="ft" data-f="family">Family</button>
-    <button class="ft" data-f="hidden-gem">Hidden Gems</button>
-    <span class="rc" id="rc">18 destinations</span>
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input class="dest-search" id="destSearch" type="text" placeholder="Search — Bali, safari, honeymoon, city break…" autocomplete="off"/>
+      <button class="search-clear" id="searchClear" aria-label="Clear">✕</button>
+    </div>
+    <div id="filterRow" style="display:flex;gap:.55rem;flex-wrap:wrap;align-items:center;">
+      <button class="ft on" data-f="all">All</button>
+      <button class="ft" data-f="europe">Europe</button>
+      <button class="ft" data-f="asia">Asia</button>
+      <button class="ft" data-f="americas">Americas</button>
+      <button class="ft" data-f="africa">Africa</button>
+      <button class="ft" data-f="city-break">City Breaks</button>
+      <button class="ft" data-f="honeymoon">Honeymoon</button>
+      <button class="ft" data-f="adventure">Adventure</button>
+      <button class="ft" data-f="luxury">Luxury</button>
+      <button class="ft" data-f="family">Family</button>
+      <button class="ft" data-f="hidden-gems">Hidden Gems</button>
+      <span class="rc" id="rc">18 destinations</span>
+    </div>
   </div>
-</div>
-<section class="s dg-s">
+</div><section class="s dg-s">
   <div class="d-grid" id="dg" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:1260px;margin:2rem auto 0;padding:0 var(--gutter,2rem)">
-<a href="destinations/santorini.html" class="d-card rv" data-tags="europe,honeymoon,luxury">
+<a href="destinations/santorini.html" class="d-card rv" data-search="santorini greece europe island honeymoon luxury sunset caldera oia aegean mediterranean" data-tags="europe,honeymoon,luxury">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423170/01-santorini-caldera-greece_qchzdf.jpg" alt="Santorini, Greece" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
 <div class="d-body"><div class="d-tags"><span class="d-tag">Europe</span><span class="d-tag">Honeymoon</span><span class="d-tag">Luxury</span></div><div class="d-name">Santorini, Greece</div><p class="d-tl">Iconic white-washed cliffs, azure domes, and sunsets that genuinely stop time.</p><span class="d-arr">Explore →</span></div>
 </a>
-<a href="destinations/maldives.html" class="d-card rv" data-tags="asia,honeymoon,luxury">
+<a href="destinations/maldives.html" class="d-card rv" data-search="maldives asia indian ocean island honeymoon luxury overwater villa tropical beach" data-tags="asia,honeymoon,luxury">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422058/activemaldives_GettyImages-86477634_HR_f9khtp.jpg" alt="Maldives" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
 <div class="d-body"><div class="d-tags"><span class="d-tag">Asia</span><span class="d-tag">Honeymoon</span><span class="d-tag">Luxury</span></div><div class="d-name">Maldives</div><p class="d-tl">Overwater villas, bioluminescent beaches, and a silence so complete it feels like another planet.</p><span class="d-arr">Explore →</span></div>
 </a>
-<a href="destinations/amalfi.html" class="d-card rv" data-tags="europe,romance">
+<a href="destinations/amalfi.html" class="d-card rv" data-search="amalfi coast italy europe positano romance cliff coastline mediterranean food" data-tags="europe,romance">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773174321/fe1ae1081933147527d277649c44277e_molrxf.jpg" alt="Amalfi Coast" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
 <div class="d-body"><div class="d-tags"><span class="d-tag">Europe</span><span class="d-tag">Romance</span></div><div class="d-name">Amalfi Coast</div><p class="d-tl">Clifftop villages cascading into the sea and la dolce vita at its finest.</p><span class="d-arr">Explore →</span></div>
 </a>
-<a href="destinations/kenya.html" class="d-card rv" data-tags="africa,adventure">
+<a href="destinations/kenya.html" class="d-card rv" data-search="kenya africa safari masai mara wildlife adventure great migration nairobi" data-tags="africa,adventure">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773421993/masai-mara-great-migration-river-crossing-kenya-small_tvchpp.jpg" alt="Kenya" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
 <div class="d-body"><div class="d-tags"><span class="d-tag">Africa</span><span class="d-tag">Adventure</span></div><div class="d-name">Kenya</div><p class="d-tl">The Great Migration, Maasai Mara sunsets, and the best safari on earth.</p><span class="d-arr">Explore →</span></div>
 </a>
-<a href="destinations/bali.html" class="d-card rv" data-tags="asia,escape">
+<a href="destinations/bali.html" class="d-card rv" data-search="bali indonesia asia temples rice terraces ubud surf beach escape spiritual" data-tags="asia,escape">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773174541/67de721a9834260c076e97be_Tegallalang_20Rice_20Terraces_lnfzfx.webp" alt="Bali" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
 <div class="d-body"><div class="d-tags"><span class="d-tag">Asia</span><span class="d-tag">Escape</span></div><div class="d-name">Bali</div><p class="d-tl">Rice terraces, sacred temples, surf breaks, and a spiritual pull that keeps people coming back.</p><span class="d-arr">Explore →</span></div>
 </a>
-<a href="destinations/cappadocia.html" class="d-card rv" data-tags="europe,hidden-gems">
+<a href="destinations/cappadocia.html" class="d-card rv" data-search="cappadocia turkey europe hidden gem balloon cave hotel fairy chimneys anatolia" data-tags="europe,hidden-gems">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773174891/sunrise-9328_qjh2bn.jpg" alt="Cappadocia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
 <div class="d-body"><div class="d-tags"><span class="d-tag">Europe</span><span class="d-tag">Hidden Gem</span></div><div class="d-name">Cappadocia</div><p class="d-tl">Fairy chimneys, sunrise balloon rides, and cave hotels carved into ancient rock.</p><span class="d-arr">Explore →</span></div>
 </a>
-<a href="destinations/croatia.html" class="d-card rv" data-tags="europe,adventure">
+<a href="destinations/croatia.html" class="d-card rv" data-search="croatia europe dubrovnik adriatic island adventure sailing dalmatian coast" data-tags="europe,adventure">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773175144/croatia-banje-beach-coast-aerial_dtfkpq.jpg" alt="Croatia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
 <div class="d-body"><div class="d-tags"><span class="d-tag">Europe</span><span class="d-tag">Adventure</span></div><div class="d-name">Croatia</div><p class="d-tl">A thousand islands, Adriatic waters, and walled cities that have survived two millennia.</p><span class="d-arr">Explore →</span></div>
 </a>
-<a href="destinations/tokyo.html" class="d-card rv" data-tags="asia,city-break">
+<a href="destinations/tokyo.html" class="d-card rv" data-search="tokyo japan asia city break culture food ramen fuji neon anime technology" data-tags="asia,city-break">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423265/1701836232-fujiyoshida-japan-at-chureito-pagoda-and-mt-fuji_ut7ybj.jpg" alt="Tokyo, Japan" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
 <div class="d-body"><div class="d-tags"><span class="d-tag">Asia</span><span class="d-tag">City Break</span></div><div class="d-name">Tokyo, Japan</div><p class="d-tl">The world's most extraordinary city — ancient temples, world-leading food, total sensory overload.</p><span class="d-arr">Explore →</span></div>
 </a>
-<a href="destinations/zanzibar.html" class="d-card rv" data-tags="africa,escape">
+<a href="destinations/zanzibar.html" class="d-card rv" data-search="zanzibar tanzania africa island beach spice escape stone town indian ocean" data-tags="africa,escape">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423414/aerial-view-zanzibar-pristine-nungwi-beach-where-crystal-clear-turquoise-waters-meet-soft-white-sand-traditional-wooden-365168956_fa49uu.jpg" alt="Zanzibar" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
 <div class="d-body"><div class="d-tags"><span class="d-tag">Africa</span><span class="d-tag">Escape</span></div><div class="d-name">Zanzibar</div><p class="d-tl">White sand beaches, spice markets, and the Indian Ocean's clearest water.</p><span class="d-arr">Explore →</span></div>
 </a>
-<a href="destinations/portugal.html" class="d-card rv" data-tags="europe,city-break">
+<a href="destinations/portugal.html" class="d-card rv" data-search="portugal europe lisbon porto sintra city break wine food atlantic affordable" data-tags="europe,city-break">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422400/Sintra_Castles_Palaces_portugal_magik_tours_2509681399_js3ibk.webp" alt="Portugal" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
 <div class="d-body"><div class="d-tags"><span class="d-tag">Europe</span><span class="d-tag">City Break</span></div><div class="d-name">Portugal</div><p class="d-tl">Fado music, Atlantic surf, and two of Europe's most characterful cities.</p><span class="d-arr">Explore →</span></div>
 </a>
-<a href="destinations/iceland.html" class="d-card rv" data-tags="europe,adventure,hidden-gems">
+<a href="destinations/iceland.html" class="d-card rv" data-search="iceland europe northern lights aurora adventure golden circle glacier volcano" data-tags="europe,adventure,hidden-gems">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773421883/northern_lights_above_glacier_lagoon_v2osk_unsplash_7d39ca647f_x2fxsc.jpg" alt="Iceland" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
 <div class="d-body"><div class="d-tags"><span class="d-tag">Europe</span><span class="d-tag">Adventure</span></div><div class="d-name">Iceland</div><p class="d-tl">Northern lights, midnight sun, and landscapes so dramatic they barely look real.</p><span class="d-arr">Explore →</span></div>
 </a>
-<a href="destinations/patagonia.html" class="d-card rv" data-tags="americas,adventure">
+<a href="destinations/patagonia.html" class="d-card rv" data-search="patagonia south america chile argentina torres del paine adventure trekking wilderness" data-tags="americas,adventure">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422176/Torres_20del_20Paine_20in_20Patagonia_2C_20Chile_20Tour_shutterstock_699918793_yyqhbf.jpg" alt="Patagonia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
 <div class="d-body"><div class="d-tags"><span class="d-tag">Americas</span><span class="d-tag">Adventure</span></div><div class="d-name">Patagonia</div><p class="d-tl">The end of the world — Torres del Paine, glaciers, and wind that will test your resolve.</p><span class="d-arr">Explore →</span></div>
 </a>
-<a href="destinations/new-york.html" class="d-card rv" data-tags="americas,city-break">
+<a href="destinations/new-york.html" class="d-card rv" data-search="new york usa americas city break manhattan brooklyn skyline culture food" data-tags="americas,city-break">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422120/lower-manhattan-skyline-and-brooklyn-bridge_pfon1f.jpg" alt="New York" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
 <div class="d-body"><div class="d-tags"><span class="d-tag">Americas</span><span class="d-tag">City Break</span></div><div class="d-name">New York</div><p class="d-tl">The city that never sleeps — and somehow always has one more thing to show you.</p><span class="d-arr">Explore →</span></div>
 </a>
-<a href="destinations/vietnam.html" class="d-card rv" data-tags="asia,adventure,city-break">
+<a href="destinations/vietnam.html" class="d-card rv" data-search="vietnam asia adventure ha long bay hoi an mekong delta food culture backpacking" data-tags="asia,adventure,city-break">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423310/murray-mccallum-ha-long-bay-vietnam-tourist-boat-cruising-among-limestone-karsts-and-islets-in-unesco-site_u-l-q1tc1ej0_jif5kq.jpg" alt="Vietnam" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
 <div class="d-body"><div class="d-tags"><span class="d-tag">Asia</span><span class="d-tag">Adventure</span></div><div class="d-name">Vietnam</div><p class="d-tl">Ha Long Bay, Hoi An lanterns, Sapa rice terraces, and street food on every corner.</p><span class="d-arr">Explore →</span></div>
 </a>
-<a href="destinations/georgia.html" class="d-card rv" data-tags="europe,hidden-gems">
+<a href="destinations/georgia.html" class="d-card rv" data-search="georgia caucasus europe hidden gem tbilisi wine mountains kazbegi culture affordable" data-tags="europe,hidden-gems">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773421844/Gergeti_Trinity_Church_-_Outside_Kazbegi_guapou.jpg" alt="Georgia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
 <div class="d-body"><div class="d-tags"><span class="d-tag">Europe</span><span class="d-tag">Hidden Gem</span></div><div class="d-name">Georgia</div><p class="d-tl">Ancient monasteries, Caucasus mountain trails, and wine older than civilisation.</p><span class="d-arr">Explore →</span></div>
 </a>
-<a href="destinations/peru.html" class="d-card rv" data-tags="americas,adventure">
+<a href="destinations/peru.html" class="d-card rv" data-search="peru south america americas machu picchu inca trail cusco andes adventure" data-tags="americas,adventure">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773085766/machu-picchu.webp" alt="Peru" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
 <div class="d-body"><div class="d-tags"><span class="d-tag">Americas</span><span class="d-tag">Adventure</span></div><div class="d-name">Peru</div><p class="d-tl">Machu Picchu, the Inca Trail, and Lima's extraordinary food scene.</p><span class="d-arr">Explore →</span></div>
 </a>
-<a href="destinations/salzburg.html" class="d-card rv" data-tags="europe,city-break,family">
+<a href="destinations/salzburg.html" class="d-card rv" data-search="salzburg austria europe city break mozart fortress hallstatt sound of music family" data-tags="europe,city-break,family">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422432/salzburg-austria-aerial-view-historic-600nw-2647183381_uk5c2a.jpg" alt="Salzburg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
 <div class="d-body"><div class="d-tags"><span class="d-tag">Europe</span><span class="d-tag">City Break</span></div><div class="d-name">Salzburg</div><p class="d-tl">Mozart, baroque architecture, and the Alps on your doorstep.</p><span class="d-arr">Explore →</span></div>
 </a>
-<a href="destinations/ecuador.html" class="d-card rv" data-tags="americas,adventure,wildlife">
+<a href="destinations/ecuador.html" class="d-card rv" data-search="ecuador south america americas galapagos amazon wildlife adventure volcano islands" data-tags="americas,adventure,wildlife">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773176813/Galapagos-Seal.jpg" alt="Ecuador & Galápagos" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
 <div class="d-body"><div class="d-tags"><span class="d-tag">Americas</span><span class="d-tag">Wildlife</span></div><div class="d-name">Ecuador & Galápagos</div><p class="d-tl">Wildlife encounters found nowhere else on earth — Galápagos plus Amazon rainforest.</p><span class="d-arr">Explore →</span></div>
 </a>
@@ -229,34 +249,69 @@
   </div>
 </footer>
 <script>
+
 var tabs=document.querySelectorAll('.ft');
 var cards=document.querySelectorAll('.d-card');
-var noRes=document.getElementById('noRes');
 var rc=document.getElementById('rc');
-tabs.forEach(function(t){t.addEventListener('click',function(){
-  tabs.forEach(function(x){x.classList.remove('on');});
-  t.classList.add('on');
-  var f=t.dataset.f;var v=0;
-  cards.forEach(function(c){var show=f==='all'||( c.dataset.tags&&c.dataset.tags.includes(f));c.style.display=show?'':'none';if(show)v++;});
+var noRes2=document.getElementById('noRes2');
+var searchInput=document.getElementById('destSearch');
+var searchClear=document.getElementById('searchClear');
+var activeFilter='all';
+var activeSearch='';
+
+function applyFilters(){
+  var q=activeSearch.toLowerCase().trim();
+  var f=activeFilter;
+  var v=0;
+  cards.forEach(function(card){
+    var tags=(card.dataset.tags||'').toLowerCase();
+    var search=(card.dataset.search||'').toLowerCase();
+    var name=(card.querySelector('.d-name')||{}).textContent||'';
+    name=name.toLowerCase();
+    var matchFilter=f==='all'||tags.includes(f);
+    var matchSearch=!q||name.includes(q)||tags.includes(q)||search.includes(q);
+    var show=matchFilter&&matchSearch;
+    card.style.display=show?'':'none';
+    if(show)v++;
+  });
   rc.textContent=v+' destination'+(v!==1?'s':'');
-  noRes.classList.toggle('show',v===0);
-});});
-</script><script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
-<script>
-(function(){
-document.body.classList.add('js-ready');
-var pb=document.getElementById('progress-bar');
-if(pb)window.addEventListener('scroll',function(){pb.style.width=Math.min((scrollY/(document.body.scrollHeight-innerHeight))*100,100)+'%';},{passive:true});
-var nav=document.getElementById('nav');
-if(nav)window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>60);},{passive:true});
-var ham=document.getElementById('ham'),mob=document.getElementById('mob');
-if(ham&&mob)ham.addEventListener('click',function(){ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
-// Lower threshold + rootMargin so items visible on page load reveal immediately
-var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -20px 0px'});
-document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
-// Also immediately reveal anything already in viewport
-window.addEventListener('load',function(){document.querySelectorAll('.rv').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0)el.classList.add('vis');});});
-function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=document.getElementById('ck');if(c)c.classList.add('vis');},1400);}
+  if(noRes2)noRes2.classList.toggle('vis',v===0);
+}
+
+tabs.forEach(function(t){
+  t.addEventListener('click',function(){
+    tabs.forEach(function(x){x.classList.remove('on');});
+    t.classList.add('on');
+    activeFilter=t.dataset.f;
+    applyFilters();
+  });
+});
+
+if(searchInput){
+  searchInput.addEventListener('input',function(){
+    activeSearch=this.value;
+    searchClear.classList.toggle('vis',this.value.length>0);
+    // Reset filter to all when searching
+    if(this.value.length>0&&activeFilter!=='all'){
+      tabs.forEach(function(x){x.classList.remove('on');});
+      document.querySelector('.ft[data-f="all"]').classList.add('on');
+      activeFilter='all';
+    }
+    applyFilters();
+  });
+}
+
+if(searchClear){
+  searchClear.addEventListener('click',function(){
+    searchInput.value='';
+    activeSearch='';
+    this.classList.remove('vis');
+    searchInput.focus();
+    applyFilters();
+  });
+}
+
+
 window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
 window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
 ckShow();
