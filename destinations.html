@@ -59,19 +59,20 @@
 @media(max-width:960px){.d-grid{grid-template-columns:repeat(2,1fr)!important;}}@media(max-width:560px){.d-grid{grid-template-columns:1fr!important;}}
 @media(max-width:640px){.bp-s2-in{grid-template-columns:1fr;}}
 
-/* ── DESTINATION SEARCH ── */
-.search-wrap{max-width:560px;margin:0 auto 1.5rem;position:relative;}
-.dest-search{width:100%;background:rgba(245,239,224,.07);border:1px solid rgba(245,239,224,.18);border-radius:100px;padding:.75rem 1.4rem .75rem 3rem;font-family:var(--ff-sans);font-size:.88rem;color:var(--parchment);outline:none;transition:border-color .25s,background .25s;}
-.dest-search::placeholder{color:rgba(200,190,170,.35);}
-.dest-search:focus{border-color:rgba(224,148,32,.5);background:rgba(245,239,224,.1);}
-.search-icon{position:absolute;left:1.1rem;top:50%;transform:translateY(-50%);color:rgba(200,190,170,.35);pointer-events:none;font-size:.9rem;}
-.search-clear{position:absolute;right:1.1rem;top:50%;transform:translateY(-50%);background:none;border:none;color:rgba(200,190,170,.35);cursor:pointer;font-size:.85rem;padding:.2rem;display:none;transition:color .2s;}
-.search-clear:hover{color:var(--gold);}
-.search-clear.vis{display:block;}
-.no-results{text-align:center;padding:4rem 1rem;display:none;}
-.no-results.vis{display:block;}
-.no-results p{font-family:var(--ff-display);font-size:1.4rem;color:var(--smoke);margin-bottom:.5rem;}
-.no-results span{font-size:.82rem;color:rgba(200,190,170,.4);}
+
+
+
+
+/* ── REGIONAL HUB CARDS ── */
+.reg-card{border-radius:var(--r-md);overflow:hidden;display:block;text-decoration:none;transition:transform .35s var(--ease-spring),box-shadow .35s;}
+.reg-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(0,0,0,.5);}
+.reg-inner{padding:1.5rem 1.7rem;border:1px solid rgba(255,255,255,.07);border-radius:var(--r-md);transition:border-color .25s;height:100%;}
+.reg-card:hover .reg-inner{border-color:rgba(255,255,255,.18);}
+.reg-emoji{font-size:2rem;margin-bottom:.7rem;}
+.reg-name{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);letter-spacing:-.015em;margin-bottom:.25rem;}
+.reg-sub{font-size:.74rem;color:rgba(200,190,170,.5);line-height:1.5;margin-bottom:.55rem;}
+.reg-count{font-family:var(--ff-mono);font-size:.45rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(14,191,184,.5);}
+
 </style>
 </head><body><div id="progress-bar"></div>
 <div class="ck" id="ck">
@@ -108,80 +109,20 @@
 </div>
 <div class="filt-bar" id="filtBar">
   <div class="filt-inner">
-    <div class="search-wrap">
-      <span class="search-icon">🔍</span>
-      <input class="dest-search" id="destSearch" type="text" placeholder="Search — Bali, safari, honeymoon, city break…" autocomplete="off"/>
-      <button class="search-clear" id="searchClear" aria-label="Clear">✕</button>
-    </div>
-    <div id="filterRow" style="display:flex;gap:.55rem;flex-wrap:wrap;align-items:center;">
-      <button class="ft on" data-f="all">All</button>
-      <button class="ft" data-f="europe">Europe</button>
-      <button class="ft" data-f="asia">Asia</button>
-      <button class="ft" data-f="americas">Americas</button>
-      <button class="ft" data-f="africa">Africa</button>
-      <button class="ft" data-f="city-break">City Breaks</button>
-      <button class="ft" data-f="honeymoon">Honeymoon</button>
-      <button class="ft" data-f="adventure">Adventure</button>
-      <button class="ft" data-f="luxury">Luxury</button>
-      <button class="ft" data-f="family">Family</button>
-      <button class="ft" data-f="hidden-gems">Hidden Gems</button>
-      <span class="rc" id="rc">18 destinations</span>
-    </div>
+    <button class="ft on" data-f="all">All</button>
+    <button class="ft" data-f="europe">Europe</button>
+    <button class="ft" data-f="asia">Asia</button>
+    <button class="ft" data-f="americas">Americas</button>
+    <button class="ft" data-f="africa">Africa</button>
+    <button class="ft" data-f="city-break">City Breaks</button>
+    <button class="ft" data-f="honeymoon">Honeymoon</button>
+    <button class="ft" data-f="adventure">Adventure</button>
+    <button class="ft" data-f="luxury">Luxury</button>
+    <button class="ft" data-f="family">Family</button>
+    <button class="ft" data-f="hidden-gems">Hidden Gems</button>
+    <span class="rc" id="rc">18 destinations</span>
   </div>
-</div><section class="s" style="background:var(--ink-2);">
-  <div style="max-width:1260px;margin:0 auto;padding:0 var(--gutter)">
-    <div class="eyebrow" style="color:var(--teal);margin-bottom:.8rem">// Explore by Region</div>
-    <h2 style="font-family:var(--ff-display);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--parchment);letter-spacing:-.02em;margin-bottom:.4rem;">Regional Hubs</h2>
-    <p style="font-size:.8rem;color:var(--smoke);margin-bottom:1.5rem">Full guides, backpacker routes, activity ideas and ski resorts — by region.</p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;max-width:1260px;margin:0 auto;">
-      <a href="destinations/japan.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220);height:180px;">
-  <div class="dc-ov" style="background:linear-gradient(to top,rgba(11,13,16,.92) 0%,rgba(11,13,16,.3) 100%);">
-    <div style="font-size:1.8rem;margin-bottom:.4rem">🇯🇵</div>
-    <div class="dc-name" style="font-size:1.2rem">Japan</div>
-    <div style="font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,190,170,.5);margin-top:.2rem">Tokyo, Kyoto & Beyond</div>
-    <div class="dc-arr" style="opacity:1;transform:none;margin-top:.5rem">Region Guide →</div>
-  </div>
-</a><a href="destinations/southeast-asia.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220);height:180px;">
-  <div class="dc-ov" style="background:linear-gradient(to top,rgba(11,13,16,.92) 0%,rgba(11,13,16,.3) 100%);">
-    <div style="font-size:1.8rem;margin-bottom:.4rem">🌏</div>
-    <div class="dc-name" style="font-size:1.2rem">Southeast Asia</div>
-    <div style="font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,190,170,.5);margin-top:.2rem">Thailand, Bali, Vietnam & More</div>
-    <div class="dc-arr" style="opacity:1;transform:none;margin-top:.5rem">Region Guide →</div>
-  </div>
-</a><a href="destinations/china.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220);height:180px;">
-  <div class="dc-ov" style="background:linear-gradient(to top,rgba(11,13,16,.92) 0%,rgba(11,13,16,.3) 100%);">
-    <div style="font-size:1.8rem;margin-bottom:.4rem">🐉</div>
-    <div class="dc-name" style="font-size:1.2rem">China</div>
-    <div style="font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,190,170,.5);margin-top:.2rem">Beijing, Shanghai & the Silk Road</div>
-    <div class="dc-arr" style="opacity:1;transform:none;margin-top:.5rem">Region Guide →</div>
-  </div>
-</a><a href="destinations/south-america.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220);height:180px;">
-  <div class="dc-ov" style="background:linear-gradient(to top,rgba(11,13,16,.92) 0%,rgba(11,13,16,.3) 100%);">
-    <div style="font-size:1.8rem;margin-bottom:.4rem">🦙</div>
-    <div class="dc-name" style="font-size:1.2rem">South America</div>
-    <div style="font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,190,170,.5);margin-top:.2rem">Patagonia, Peru & the Andes</div>
-    <div class="dc-arr" style="opacity:1;transform:none;margin-top:.5rem">Region Guide →</div>
-  </div>
-</a><a href="destinations/africa.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220);height:180px;">
-  <div class="dc-ov" style="background:linear-gradient(to top,rgba(11,13,16,.92) 0%,rgba(11,13,16,.3) 100%);">
-    <div style="font-size:1.8rem;margin-bottom:.4rem">🦁</div>
-    <div class="dc-name" style="font-size:1.2rem">Africa</div>
-    <div style="font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,190,170,.5);margin-top:.2rem">Safari, Islands & Ancient Wonders</div>
-    <div class="dc-arr" style="opacity:1;transform:none;margin-top:.5rem">Region Guide →</div>
-  </div>
-</a><a href="destinations/middle-east-central-asia.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220);height:180px;">
-  <div class="dc-ov" style="background:linear-gradient(to top,rgba(11,13,16,.92) 0%,rgba(11,13,16,.3) 100%);">
-    <div style="font-size:1.8rem;margin-bottom:.4rem">🕌</div>
-    <div class="dc-name" style="font-size:1.2rem">Middle East & Central Asia</div>
-    <div style="font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(200,190,170,.5);margin-top:.2rem">Petra, Georgia & the Silk Road</div>
-    <div class="dc-arr" style="opacity:1;transform:none;margin-top:.5rem">Region Guide →</div>
-  </div>
-</a>
-    </div>
-  </div>
-</section>
-
-<section class="s dg-s">
+</div>s<section class="s dg-s">
   <div class="d-grid" id="dg" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:1260px;margin:2rem auto 0;padding:0 var(--gutter,2rem)">
 <a href="destinations/santorini.html" class="d-card rv" data-search="santorini greece europe island honeymoon luxury sunset caldera oia aegean mediterranean" data-tags="europe,honeymoon,luxury">
 <div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423170/01-santorini-caldera-greece_qchzdf.jpg" alt="Santorini, Greece" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
@@ -258,6 +199,30 @@
 <div class="no-res" id="noRes">No destinations match that filter. <a href="contact.html" style="color:var(--gold)">Get in touch</a> and we'll find somewhere perfect.</div>
   </div>
 </section>
+
+<section class="s" style="background:var(--ink-3);border-top:1px solid var(--border);">
+  <div style="max-width:1260px;margin:0 auto;">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div class="eyebrow" style="color:var(--teal);margin-bottom:.6rem">// Explore by Region</div>
+        <h2 style="font-family:var(--ff-display);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:var(--parchment);letter-spacing:-.03em;line-height:1;">Regional <em style="font-style:italic;font-weight:300;color:var(--teal)">Travel Hubs</em></h2>
+      </div>
+      <p style="font-size:.82rem;color:var(--smoke);line-height:1.65;max-width:360px;">Full guides, backpacker routes, activities &amp; ski resorts — by region.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
+      <a href="destinations/japan.html" class="reg-card rv"><div class="reg-inner" style="background:linear-gradient(135deg,#1A0A12,#2E1020)"><div class="reg-emoji">🇯🇵</div><div class="reg-name">Japan</div><div class="reg-sub">Tokyo, Kyoto &amp; Powder Snow</div><div class="reg-count">1 guide · 2 BP routes · 3 ski resorts</div></div></a>
+      <a href="destinations/southeast-asia.html" class="reg-card rv"><div class="reg-inner" style="background:linear-gradient(135deg,#0A1E0A,#122A12)"><div class="reg-emoji">🌏</div><div class="reg-name">Southeast Asia</div><div class="reg-sub">Thailand, Bali, Vietnam &amp; More</div><div class="reg-count">3 guides · 7 BP routes</div></div></a>
+      <a href="destinations/china.html" class="reg-card rv"><div class="reg-inner" style="background:linear-gradient(135deg,#1A0A0A,#300A0A)"><div class="reg-emoji">🐉</div><div class="reg-name">China</div><div class="reg-sub">Beijing, Shanghai &amp; the Silk Road</div><div class="reg-count">1 BP route · more coming</div></div></a>
+      <a href="destinations/south-america.html" class="reg-card rv rv1"><div class="reg-inner" style="background:linear-gradient(135deg,#0A1E10,#122814)"><div class="reg-emoji">🦙</div><div class="reg-name">South America</div><div class="reg-sub">Patagonia, Peru &amp; the Andes</div><div class="reg-count">3 guides · 5 BP routes · 4 ski resorts</div></div></a>
+      <a href="destinations/africa.html" class="reg-card rv rv1"><div class="reg-inner" style="background:linear-gradient(135deg,#1A1200,#2E2000)"><div class="reg-emoji">🦁</div><div class="reg-name">Africa</div><div class="reg-sub">Safari, Islands &amp; Ancient Wonders</div><div class="reg-count">2 guides · 4 BP routes</div></div></a>
+      <a href="destinations/middle-east-central-asia.html" class="reg-card rv rv1"><div class="reg-inner" style="background:linear-gradient(135deg,#1A100A,#2E1A0A)"><div class="reg-emoji">🕌</div><div class="reg-name">Middle East &amp; Central Asia</div><div class="reg-sub">Petra, Georgia &amp; the Silk Road</div><div class="reg-count">1 guide · 4 BP routes · 2 ski resorts</div></div></a>
+      <a href="destinations/europe.html" class="reg-card rv rv2"><div class="reg-inner" style="background:linear-gradient(135deg,#0A0D1E,#101530)"><div class="reg-emoji">🏰</div><div class="reg-name">Europe</div><div class="reg-sub">Cities, Coasts &amp; Mountains</div><div class="reg-count">8 guides · 10 BP routes · 30+ ski resorts</div></div></a>
+      <a href="destinations/south-asia.html" class="reg-card rv rv2"><div class="reg-inner" style="background:linear-gradient(135deg,#1A0E0A,#2E1A10)"><div class="reg-emoji">🕉️</div><div class="reg-name">South Asia</div><div class="reg-sub">India, Nepal &amp; Sri Lanka</div><div class="reg-count">3 BP routes · more coming</div></div></a>
+      <a href="destinations/oceania.html" class="reg-card rv rv2"><div class="reg-inner" style="background:linear-gradient(135deg,#0A1A1E,#102530)"><div class="reg-emoji">🦘</div><div class="reg-name">Oceania &amp; Pacific</div><div class="reg-sub">Australia, New Zealand &amp; Fiji</div><div class="reg-count">2 BP routes · 4 ski resorts</div></div></a>
+    </div>
+  </div>
+</section>
+
 <div class="bp-s2">
   <div class="bp-s2-in">
     <div class="rv"><div class="eyebrow teal">🎒 Budget Travel</div><h2 class="h-display">59 <em style="color:var(--teal)">Backpacker Guides</em> Now Live</h2><p style="color:var(--smoke);font-size:.93rem;margin-top:.8rem;max-width:480px;line-height:1.75">Daily budgets from £12, hostel picks, and what actually matters — SE Asia, South America, Europe, Africa and beyond.</p></div>
@@ -306,63 +271,13 @@
 var tabs=document.querySelectorAll('.ft');
 var cards=document.querySelectorAll('.d-card');
 var rc=document.getElementById('rc');
-var noRes2=document.getElementById('noRes2');
-var searchInput=document.getElementById('destSearch');
-var searchClear=document.getElementById('searchClear');
-var activeFilter='all';
-var activeSearch='';
-
-function applyFilters(){
-  var q=activeSearch.toLowerCase().trim();
-  var f=activeFilter;
-  var v=0;
-  cards.forEach(function(card){
-    var tags=(card.dataset.tags||'').toLowerCase();
-    var search=(card.dataset.search||'').toLowerCase();
-    var name=(card.querySelector('.d-name')||{}).textContent||'';
-    name=name.toLowerCase();
-    var matchFilter=f==='all'||tags.includes(f);
-    var matchSearch=!q||name.includes(q)||tags.includes(q)||search.includes(q);
-    var show=matchFilter&&matchSearch;
-    card.style.display=show?'':'none';
-    if(show)v++;
-  });
+tabs.forEach(function(t){t.addEventListener('click',function(){
+  tabs.forEach(function(x){x.classList.remove('on');});
+  t.classList.add('on');
+  var f=t.dataset.f;var v=0;
+  cards.forEach(function(c){var show=f==='all'||(c.dataset.tags&&c.dataset.tags.includes(f));c.style.display=show?'':'none';if(show)v++;});
   rc.textContent=v+' destination'+(v!==1?'s':'');
-  if(noRes2)noRes2.classList.toggle('vis',v===0);
-}
-
-tabs.forEach(function(t){
-  t.addEventListener('click',function(){
-    tabs.forEach(function(x){x.classList.remove('on');});
-    t.classList.add('on');
-    activeFilter=t.dataset.f;
-    applyFilters();
-  });
-});
-
-if(searchInput){
-  searchInput.addEventListener('input',function(){
-    activeSearch=this.value;
-    searchClear.classList.toggle('vis',this.value.length>0);
-    // Reset filter to all when searching
-    if(this.value.length>0&&activeFilter!=='all'){
-      tabs.forEach(function(x){x.classList.remove('on');});
-      document.querySelector('.ft[data-f="all"]').classList.add('on');
-      activeFilter='all';
-    }
-    applyFilters();
-  });
-}
-
-if(searchClear){
-  searchClear.addEventListener('click',function(){
-    searchInput.value='';
-    activeSearch='';
-    this.classList.remove('vis');
-    searchInput.focus();
-    applyFilters();
-  });
-}
+});});
 
 
 window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
