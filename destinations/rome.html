@@ -4,17 +4,81 @@
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S59LVL96RN"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S59LVL96RN');</script>
-<meta name="description" content="Rome travel guide coming soon — Drop Everything And Go. Sign up to be notified when this guide launches."/>
-<title>Rome Travel Guide — Drop Everything And Go</title>
+<meta name="description" content="Honest Rome travel guide — Colosseum, Vatican Museums, Pantheon, Trastevere neighbourhood and the best carbonara in the world. Book ahead, go early."/>
+<title>Rome Travel Guide — Colosseum, Vatican & What's Actually Worth Doing | DEAG</title>
+<meta property="og:title" content="Rome Travel Guide — Colosseum, Vatican & What's Actually Worth Doing | DEAG"/>
+<meta property="og:description" content="Honest Rome travel guide — Colosseum, Vatican Museums, Pantheon, Trastevere neighbourhood and the best carbonara in the world. Book ahead, go early."/>
+<meta property="og:image" content=""/>
+<meta property="og:type" content="website"/>
 <link rel="canonical" href="https://www.dropeverythingandgo.com/destinations/rome.html"/>
 <link rel="stylesheet" href="../style.css"/>
+<style>
+.dh{min-height:70vh;display:flex;flex-direction:column;justify-content:flex-end;padding:9rem var(--gutter) 4rem;position:relative;overflow:hidden;}
+.dh-bg{position:absolute;inset:0;background-size:cover;background-position:center;}
+.dh-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,10,18,.96) 30%,rgba(8,10,18,.4) 70%,transparent 100%);}
+.dh-content{position:relative;z-index:2;max-width:1300px;width:100%;margin:0 auto;}
+.dh-back{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--ff-mono);font-size:.54rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,239,224,.35);margin-bottom:1.3rem;text-decoration:none;transition:color .2s;}
+.dh-back:hover{color:var(--gold);}
+.dh-region{font-family:var(--ff-mono);font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.7rem;}
+.dh-h1{font-family:var(--ff-display);font-size:clamp(2.8rem,8vw,7rem);font-weight:800;letter-spacing:-.04em;line-height:.92;color:var(--parchment);margin-bottom:.9rem;}
+.dh-h1 em{font-style:italic;font-weight:300;color:var(--gold-lt);}
+.dh-tagline{font-size:.95rem;color:rgba(200,190,170,.55);max-width:560px;line-height:1.7;}
+.dh-meta{display:flex;gap:2rem;flex-wrap:wrap;margin-top:1.5rem;}
+.dh-pill{font-family:var(--ff-mono);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(245,239,224,.08);border:1px solid rgba(245,239,224,.14);border-radius:100px;padding:.3rem .85rem;color:rgba(245,239,224,.6);}
+.dh-pill strong{color:var(--parchment);}
+
+.intro-grid{max-width:1260px;margin:0 auto;display:grid;grid-template-columns:1.15fr .85fr;gap:4rem;align-items:start;}
+.intro-body p{font-size:.95rem;color:#4A5060;line-height:1.9;margin-bottom:1rem;}
+.intro-body h2{font-family:var(--ff-display);font-size:clamp(1.5rem,2.5vw,2rem);font-weight:700;color:var(--ink);letter-spacing:-.02em;margin-bottom:.7rem;}
+.intro-body h2 em{font-style:italic;font-weight:300;color:var(--gold-dk);}
+
+.facts-card{background:var(--ink);border-radius:var(--r-lg);padding:1.8rem;position:sticky;top:90px;}
+.facts-card h4{font-family:var(--ff-mono);font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;}
+.fact-row{display:flex;align-items:flex-start;gap:.8rem;margin-bottom:1.1rem;padding-bottom:1.1rem;border-bottom:1px solid rgba(245,239,224,.07);}
+.fact-row:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.fact-ico{font-size:1rem;flex-shrink:0;margin-top:.1rem;}
+.fact-lbl{font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.14em;text-transform:uppercase;color:var(--smoke);margin-bottom:.15rem;}
+.fact-val{font-size:.84rem;color:var(--parchment);font-weight:500;line-height:1.4;}
+
+.exp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem;}
+.exp-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:12px;padding:1.4rem;transition:background .25s,border-color .25s,transform .3s var(--ease-spring);}
+.exp-card:hover{background:rgba(245,239,224,.07);border-color:rgba(200,145,42,.2);transform:translateY(-3px);}
+.exp-num{font-family:var(--ff-display);font-size:1.4rem;font-weight:800;color:rgba(200,145,42,.2);line-height:1;margin-bottom:.6rem;}
+.exp-title{font-family:var(--ff-display);font-size:.98rem;font-weight:700;color:var(--parchment);margin-bottom:.4rem;}
+.exp-desc{font-size:.76rem;color:var(--smoke);line-height:1.65;}
+
+.area-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem;}
+.area-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:12px;padding:1.4rem;}
+.area-name{font-family:var(--ff-display);font-size:1rem;font-weight:700;color:var(--parchment);margin-bottom:.3rem;}
+.area-sub{font-family:var(--ff-mono);font-size:.46rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem;}
+.area-desc{font-size:.76rem;color:var(--smoke);line-height:1.65;}
+
+.gyg-grid{display:flex;flex-direction:column;gap:.7rem;margin-top:1.2rem;}
+.gyg-card{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:11px;text-decoration:none;transition:background .25s,border-color .25s,transform .3s;}
+.gyg-card:hover{background:rgba(14,191,184,.07);border-color:rgba(14,191,184,.25);transform:translateX(4px);}
+.gyg-inner{display:flex;align-items:flex-start;gap:.9rem;padding:1rem 1.2rem;}
+.gyg-ico{font-size:1.3rem;flex-shrink:0;margin-top:.05rem;}
+.gyg-ttl{font-family:var(--ff-display);font-size:.93rem;font-weight:700;color:var(--parchment);margin-bottom:.22rem;}
+.gyg-dsc{font-size:.72rem;color:var(--smoke);line-height:1.6;margin:0;}
+.gyg-arr{font-family:var(--ff-mono);font-size:.46rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);flex-shrink:0;margin-left:auto;align-self:center;padding-left:.7rem;white-space:nowrap;}
+
+.need-list{display:flex;flex-direction:column;gap:0;}
+.need-row{display:flex;gap:.8rem;padding:.8rem 0;border-bottom:1px solid rgba(11,23,40,.07);}
+.need-row:last-child{border-bottom:none;}
+.need-ico{font-size:.95rem;flex-shrink:0;margin-top:.1rem;}
+.need-txt{font-size:.83rem;color:#5A6070;line-height:1.7;margin:0;}
+
+@media(max-width:1000px){.intro-grid{grid-template-columns:1fr;}.facts-card{position:static;}.exp-grid{grid-template-columns:1fr 1fr;}.area-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:560px){.exp-grid{grid-template-columns:1fr;}.area-grid{grid-template-columns:1fr;}.dh-meta{gap:1rem;}}
+</style>
 </head>
 <body>
 <div id="progress-bar"></div>
 <div class="ck" id="ck">
-  <p class="ck-text">We use cookies to enhance your journey. <a href="../privacy.html">Privacy Policy</a></p>
+  <p class="ck-text">We use cookies to enhance your journey. <a href="../privacy.html">Privacy Policy</a> — we never sell your data.</p>
   <div class="ck-btns"><button class="ck-acc" onclick="ckAccept()">Accept</button><button class="ck-dec" onclick="ckDecline()">Decline</button></div>
 </div>
+
 <div class="ann-bar">
   <a href="../destinations/backpacker-guides.html">
     <span class="ann-badge">🎒 NEW</span>
@@ -24,30 +88,124 @@
 </div>
 <nav id="nav">
   <a href="../index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Bespoke Planning</span></a>
-  <ul class="nav-links"><li><a href="../destinations.html">Destinations</a></li><li><a href="../ski.html">Ski</a></li>
+  <ul class="nav-links">
+    <li><a href="../destinations.html">Destinations</a></li>
+    <li><a href="../ski.html">Ski</a></li>
     
-  <li><a href="../blog.html">Blog</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html" class="active">About</a></li><li><a href="../contact.html" class="nav-cta">Plan My Trip</a></li></ul>
+  <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../services.html">Services</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../contact.html" class="nav-cta">Plan My Trip</a></li>
+  </ul>
   <button class="nav-ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <ul class="nav-mob" id="mob">
   <li><a href="../destinations.html">Destinations</a></li>
-  <li><a href="../ski.html">Ski</a></li><li><a href="../blog.html">Blog</a></li><li><a href="../services.html">Services</a></li><li><a href="../about.html">About</a></li>
+  <li><a href="../ski.html">Ski</a></li>
+  <li><a href="../blog.html">Blog</a></li>
+  <li><a href="../services.html">Services</a></li>
+  <li><a href="../about.html">About</a></li>
   <li><a href="../contact.html" class="mob-cta-btn">Plan My Trip</a></li>
 </ul>
-<section style="min-height:55vh;background:linear-gradient(160deg,#08091E,#0E1030);display:flex;align-items:center;justify-content:center;text-align:center;padding:6rem var(--gutter) 4rem;position:relative;overflow:hidden;">
-  <div style="position:relative;z-index:2;max-width:640px;margin:0 auto;">
-    <div style="font-size:4rem;margin-bottom:1.2rem;">🏛️</div>
-    <div style="font-family:var(--ff-mono);font-size:.56rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(200,190,170,.45);margin-bottom:.9rem;">// Europe</div>
-    <h1 style="font-family:var(--ff-display);font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;letter-spacing:-.04em;line-height:.92;color:var(--parchment);margin-bottom:1.1rem;">Rome</h1>
-    <p style="font-size:.95rem;color:rgba(200,190,170,.55);line-height:1.72;margin-bottom:2rem;">The Eternal City — Colosseum, Vatican, Trastevere and carbonara in the birthplace of Western civilisation.</p>
-    <div style="background:rgba(245,239,224,.06);border:1px solid rgba(245,239,224,.12);border-radius:14px;padding:2rem 2.2rem;margin-bottom:2rem;">
-      <div style="font-family:var(--ff-mono);font-size:.54rem;letter-spacing:.16em;text-transform:uppercase;color:#818CF8;margin-bottom:.8rem;">Guide in progress</div>
-      <p style="font-size:.85rem;color:rgba(200,190,170,.55);line-height:1.7;margin-bottom:1.2rem;">We're writing this guide now. Subscribe to the newsletter to be notified when it launches.</p>
-      <a href="../index.html#newsletter" class="btn btn-coral" style="display:inline-flex;">Notify Me →</a>
+
+<header>
+  <div class="dh">
+    <div class="dh-bg" style="background:linear-gradient(160deg,#1A0606,#2E0E0E)"></div>
+    <div class="dh-content">
+      <a href="../destinations/western-europe.html" class="dh-back">← Western Europe</a>
+      <div class="dh-region">// Western Europe · Italy</div>
+      <h1 class="dh-h1">Rome</h1>
+      <p class="dh-tagline">The Eternal City — 3,000 years of history that you can walk through in an afternoon.</p>
+      <div class="dh-meta">
+        <span class="dh-pill">💰 <strong>£60–£100</strong>/day</span>
+        <span class="dh-pill">🗓️ Best: <strong>Apr–Jun & Sep–Oct</strong></span>
+        <span class="dh-pill">🛂 <strong>No visa (Schengen, 90 days)</strong></span>
+        <span class="dh-pill">💬 <strong>Italian (English in tourist areas)</strong></span>
+      </div>
     </div>
-    <a href="../destinations/europe.html" style="font-family:var(--ff-mono);font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;color:#818CF8;text-decoration:none;">← Back to Europe Hub</a>
+  </div>
+</header>
+
+<section class="s" style="background:var(--parchment);">
+  <div class="intro-grid">
+    <div class="intro-body">
+      <h2>Living history, <em>every corner</em></h2>
+      <p>Rome works through layering. A 2,000-year-old Roman temple becomes a church becomes a piazza with a Renaissance fountain. You turn a corner and a ruined amphitheatre fills your entire field of vision. You eat carbonara in a restaurant that has been making the same recipe since 1948. This is not a museum — it is a living city where all of Western civilisation is simply the backdrop to daily life.</p><p>The key to Rome is booking ahead and getting up early. The Colosseum sells out days in advance. The Vatican queue without pre-booking can be 2 hours. The Spanish Steps at 7am are completely empty. Trastevere on a Tuesday evening is the best version of Rome.</p>
+    </div>
+    <div>
+      <div class="facts-card">
+        <h4>// Quick Facts</h4>
+        <div class="fact-row"><span class="fact-ico">💰</span><div><div class="fact-lbl">Daily Budget</div><div class="fact-val">£60–100. Pre-booking attractions saves both money and queuing time.</div></div></div><div class="fact-row"><span class="fact-ico">🎫</span><div><div class="fact-lbl">Pre-book</div><div class="fact-val">Colosseum, Vatican Museums, Borghese Gallery — all sell out. Book 2+ weeks ahead.</div></div></div><div class="fact-row"><span class="fact-ico">🚇</span><div><div class="fact-lbl">Transport</div><div class="fact-val">Roma Pass (48hr, £25) covers free metro and one free museum.</div></div></div><div class="fact-row"><span class="fact-ico">🍝</span><div><div class="fact-lbl">Food Rule</div><div class="fact-val">Romans do not add parmesan to seafood pasta or drink cappuccino after lunch. Not rules — signals.</div></div></div><div class="fact-row"><span class="fact-ico">👔</span><div><div class="fact-lbl">Churches</div><div class="fact-val">Free entry but covered shoulders and knees required. Carry a scarf.</div></div></div>
+      </div>
+    </div>
   </div>
 </section>
+
+<section class="s" style="background:var(--ink-2);">
+  <div style="max-width:1260px;margin:0 auto;">
+    <div class="eyebrow" style="color:var(--teal);margin-bottom:.7rem">// Top Experiences</div>
+    <h2 style="font-family:var(--ff-display);font-size:clamp(1.4rem,2.2vw,2rem);font-weight:700;color:var(--parchment);letter-spacing:-.02em;">What to actually do</h2>
+    <div class="exp-grid"><div class="exp-card"><div class="exp-num">01</div><div class="exp-title">Colosseum Underground & Arena Floor</div><div class="exp-desc">Book online for the underground option — the animal pens and gladiator corridors beneath the arena floor are extraordinary. Arrive at 9am opening.</div></div><div class="exp-card"><div class="exp-num">02</div><div class="exp-title">Vatican Museums & Sistine Chapel Early Entry</div><div class="exp-desc">The 8am first slot with a guide — the Raphael Rooms and Sistine Chapel ceiling before the coaches arrive. St Peter's and the dome are separate (free entry, long queue).</div></div><div class="exp-card"><div class="exp-num">03</div><div class="exp-title">Pantheon at Opening — 9am</div><div class="exp-desc">The best-preserved ancient building in the world — the 2,000-year-old concrete dome with its oculus open to the sky. Free entry, no booking needed. Go at 9am opening.</div></div><div class="exp-card"><div class="exp-num">04</div><div class="exp-title">Trastevere Evening Food Walk</div><div class="exp-desc">The medieval neighbourhood across the river — no big monuments, just cobblestones, ivy walls and the most authentic restaurants in Rome. Via della Scala for dinner.</div></div><div class="exp-card"><div class="exp-num">05</div><div class="exp-title">Borghese Gallery — Bernini Sculptures</div><div class="exp-desc">The most spectacular baroque sculpture collection in existence — Bernini's Apollo and Daphne alone is reason to visit Rome. Book 2 weeks ahead (only 360 visitors per 2-hour slot).</div></div><div class="exp-card"><div class="exp-num">06</div><div class="exp-title">Campo de'Fiori Market at 7am</div><div class="exp-desc">The daily food and flower market before the tourist crush — then walk to Campo Sant'Angelo for the best cornetto e caffè in Rome.</div></div></div>
+  </div>
+</section>
+
+<section class="s" style="background:var(--parchment);">
+  <div style="max-width:1260px;margin:0 auto;">
+    <div class="eyebrow light" style="margin-bottom:.7rem">// Areas & Neighbourhoods</div>
+    <h2 style="font-family:var(--ff-display);font-size:clamp(1.4rem,2.2vw,2rem);font-weight:700;color:var(--ink);letter-spacing:-.02em;">Where to base yourself</h2>
+    <div class="area-grid"><div class="area-card"><div class="area-name">Centro Storico</div><div class="area-sub">Maximum sightseeing, central</div><div class="area-desc">The Pantheon, Piazza Navona and Campo de'Fiori — the postcard Rome. Beautiful and walkable. Expensive to stay but worth it for location.</div></div><div class="area-card"><div class="area-name">Trastevere</div><div class="area-sub">Food, bars, neighbourhood feel</div><div class="area-desc">The most atmospheric neighbourhood — medieval lanes, ivy walls, the best restaurants. Further from major sights but 20 min walk from everything.</div></div><div class="area-card"><div class="area-name">Testaccio</div><div class="area-sub">Authentic food, local market</div><div class="area-desc">The working-class neighbourhood with Rome's best food market and some of the finest traditional restaurants — cacio e pepe and coda alla vaccinara territory.</div></div></div>
+  </div>
+</section>
+
+<section class="s" style="background:var(--ink);">
+  <div style="max-width:1260px;margin:0 auto;">
+    <div class="eyebrow" style="color:var(--teal);margin-bottom:.7rem">// Book Activities</div>
+    <h2 style="font-family:var(--ff-display);font-size:clamp(1.4rem,2.2vw,2rem);font-weight:700;color:var(--parchment);letter-spacing:-.02em;margin-bottom:.4rem;">Experiences worth booking ahead</h2>
+    <p style="font-size:.78rem;color:var(--smoke);margin-bottom:0;">Via GetYourGuide — we only link things worth your time.</p>
+    <div class="gyg-grid"><a href="https://www.getyourguide.com/s/?partner_id=YHIEWDZ&cmp=share_to_earn&q=colosseum+underground+skip+the+line+guided+tour+rome" target="_blank" rel="noopener sponsored" class="gyg-card">
+  <div class="gyg-inner"><div class="gyg-ico">🎟️</div><div><div class="gyg-ttl">Colosseum Underground Skip-the-Line Tour</div><p class="gyg-dsc">The arena floor and animal pens with a guide — the most complete Colosseum experience available.</p></div><span class="gyg-arr">Book →</span></div></a><a href="https://www.getyourguide.com/s/?partner_id=YHIEWDZ&cmp=share_to_earn&q=vatican+museums+early+access+guided+tour+rome" target="_blank" rel="noopener sponsored" class="gyg-card">
+  <div class="gyg-inner"><div class="gyg-ico">🎟️</div><div><div class="gyg-ttl">Vatican Museums Early Access Guided Tour</div><p class="gyg-dsc">8am entry — the Raphael Rooms and Sistine Chapel before the coaches. Transforms the experience.</p></div><span class="gyg-arr">Book →</span></div></a><a href="https://www.getyourguide.com/s/?partner_id=YHIEWDZ&cmp=share_to_earn&q=rome+food+tour+trastevere+testaccio" target="_blank" rel="noopener sponsored" class="gyg-card">
+  <div class="gyg-inner"><div class="gyg-ico">🎟️</div><div><div class="gyg-ttl">Rome Food Tour — Trastevere & Testaccio</div><p class="gyg-dsc">Supplì, cacio e pepe, tiramisu and aperitivo — the best Roman food culture in the best neighbourhoods.</p></div><span class="gyg-arr">Book →</span></div></a><a href="https://www.getyourguide.com/s/?partner_id=YHIEWDZ&cmp=share_to_earn&q=borghese+gallery+guided+tour+rome" target="_blank" rel="noopener sponsored" class="gyg-card">
+  <div class="gyg-inner"><div class="gyg-ico">🎟️</div><div><div class="gyg-ttl">Borghese Gallery Guided Tour</div><p class="gyg-dsc">Bernini's marble sculptures with a guide who explains the extraordinary technical skill — book 2 weeks ahead.</p></div><span class="gyg-arr">Book →</span></div></a></div>
+    <p style="font-family:var(--ff-mono);font-size:.44rem;letter-spacing:.1em;color:rgba(200,190,170,.22);margin-top:1rem;">Affiliate link — same price for you. <a href="../privacy.html" style="color:rgba(200,190,170,.32);">Disclosure →</a></p>
+  </div>
+</section>
+
+<section class="s" style="background:var(--parchment);">
+  <div style="max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;">
+    <div>
+      <div class="eyebrow light" style="margin-bottom:.7rem">// When to Go</div>
+      <h2 style="font-family:var(--ff-display);font-size:clamp(1.3rem,2vw,1.7rem);font-weight:700;color:var(--ink);letter-spacing:-.02em;margin-bottom:.9rem;">Season guide</h2>
+      <p style="font-size:.86rem;color:#5A6070;line-height:1.85;"><strong>Apr–Jun:</strong> The best window — warm, long days, pre-peak crowds. May is arguably perfect. <strong>Sep–Oct:</strong> Excellent — summer heat drops, warmth remains, golden light. <strong>Jul–Aug:</strong> Very hot (35–38°C), extremely crowded, hotels double in price. Many Romans leave. <strong>Nov–Mar:</strong> Quieter, cooler, museum queues short — Christmas is genuinely beautiful in Rome.</p>
+    </div>
+    <div>
+      <div class="eyebrow light" style="margin-bottom:.7rem">// Need to Know</div>
+      <h2 style="font-family:var(--ff-display);font-size:clamp(1.3rem,2vw,1.7rem);font-weight:700;color:var(--ink);letter-spacing:-.02em;margin-bottom:.9rem;">Before you go</h2>
+      <div class="need-list"><div class="need-row"><span class="need-ico">🎫</span><p class="need-txt">Book Colosseum, Vatican Museums and Borghese Gallery at least 2 weeks ahead — the queues without pre-booking are genuinely awful.</p></div><div class="need-row"><span class="need-ico">🍝</span><p class="need-txt">The menù del giorno (set lunch menu) in non-tourist trattorie is typically £10–15 for three courses with wine. Ask if it's not posted outside.</p></div><div class="need-row"><span class="need-ico">🚇</span><p class="need-txt">The Roma Pass (48hr, £25) includes free metro travel and one free museum — worth it if using public transport.</p></div><div class="need-row"><span class="need-ico">👜</span><p class="need-txt">Pickpockets active around the Colosseum, Vatican and major transport hubs. Use cross-body bags.</p></div><div class="need-row"><span class="need-ico">⛪</span><p class="need-txt">Many churches are free — Santa Maria Maggiore, San Giovanni in Laterano and Santa Maria Sopra Minerva contain extraordinary art at no cost.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="s" style="background:var(--ink-2);">
+  <div style="max-width:1260px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;">
+    <div>
+      <div class="eyebrow" style="color:var(--teal);margin-bottom:.5rem">// Travelling on a Budget?</div>
+      <h2 style="font-family:var(--ff-display);font-size:1.3rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;">Italy Backpacker Guide — £45–75/day</h2>
+      <p style="font-size:.8rem;color:var(--smoke);margin-top:.3rem;">Daily budgets, hostel picks, transport tips and the things other guides miss.</p>
+    </div>
+    <a href="bp-italy.html" class="btn btn-wire">Read the Guide →</a>
+  </div>
+</section>
+
+<section class="s" style="background:linear-gradient(140deg,#112038,#0D2040);text-align:center;">
+  <div style="max-width:520px;margin:0 auto;">
+    <div class="eyebrow" style="color:var(--teal);justify-content:center;margin-bottom:.8rem">// Bespoke Planning</div>
+    <h2 style="font-family:var(--ff-display);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--parchment);letter-spacing:-.02em;margin-bottom:.8rem;">Want this trip planned for you?</h2>
+    <p style="color:var(--smoke);line-height:1.7;margin-bottom:1.5rem;font-size:.85rem;">Tell us where you want to go and we handle everything else.</p>
+    <a href="../contact.html" class="btn btn-coral btn-arr">Plan My Trip →</a>
+  </div>
+</section>
+
 <footer>
   <div class="ft-top">
     <div class="ft-brand">
@@ -59,7 +217,7 @@
       </div>
     </div>
     <div class="ft-col"><h5>Explore</h5><ul>
-      <li><a href="../destinations.html">Destinations</a></li>
+      <li><a href="../destinations.html">All Destinations</a></li>
       <li><a href="../destinations/backpacker-guides.html">Backpacker Guides</a></li>
       <li><a href="../blog.html">Blog</a></li>
       <li><a href="../about.html">About</a></li>
@@ -72,7 +230,7 @@
     <div class="ft-col"><h5>Info</h5><ul>
       <li><a href="../contact.html">Contact</a></li>
       <li><a href="../privacy.html">Privacy Policy</a></li>
-      <li><a href="privacy.html#terms">Terms</a></li>
+      <li><a href="../privacy.html#terms">Terms</a></li>
     </ul></div>
   </div>
   <div class="ft-badges">
@@ -82,7 +240,7 @@
   </div>
   <div class="ft-bottom">
     <p>© 2025 Drop Everything And Go. All rights reserved.</p>
-    <div class="ft-bottom-links"><a href="../privacy.html">Privacy</a><a href="privacy.html#cookies">Cookies</a><a href="privacy.html#terms">Terms</a></div>
+    <div class="ft-bottom-links"><a href="../privacy.html">Privacy</a><a href="../privacy.html#cookies">Cookies</a><a href="../privacy.html#terms">Terms</a></div>
   </div>
 </footer>
 <script>
@@ -104,6 +262,6 @@ window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElem
 window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
 ckShow();
 })();
-</script></body>
+</script>
 </body>
 </html>
