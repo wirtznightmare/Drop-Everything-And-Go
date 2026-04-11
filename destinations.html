@@ -1,84 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S59LVL96RN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-S59LVL96RN');
-</script>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<meta name="description" content="Destination guides for 18 countries — Bali, Maldives, Cappadocia, Iceland, Kenya and more. When to go, where to stay, what's worth it."/>
-<title>Travel Destinations — Guides, Itineraries & Honest Reviews | DEAG</title>
-  <!-- Open Graph -->
-  <meta property="og:title" content="Travel Destinations — Guides & Honest Reviews | Drop Everything And Go"/>
-  <meta property="og:description" content="Destination guides for 18 countries — when to go, where to stay, what to skip."/>
-  <meta property="og:url" content="https://www.dropeverythingandgo.com/destinations.html"/>
-  <meta property="og:image" content="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423170/01-santorini-caldera-greece_qchzdf.jpg"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:site_name" content="Drop Everything And Go"/>
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Travel Destinations — Guides & Honest Reviews | Drop Everything And Go"/>
-  <meta name="twitter:description" content="Destination guides for 18 countries — when to go, where to stay, what to skip."/>
-  <meta name="twitter:image" content="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423170/01-santorini-caldera-greece_qchzdf.jpg"/>
-  <!-- Canonical -->
-  <link rel="canonical" href="https://www.dropeverythingandgo.com/destinations.html"/>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S59LVL96RN"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S59LVL96RN');</script>
+<meta name="description" content="Every destination Drop Everything And Go covers — 59 guides across 13 regions, from Southeast Asia to South America. Find your next trip."/>
+<title>All Destinations — Drop Everything And Go</title>
+<meta property="og:title" content="All Destinations — Drop Everything And Go"/>
+<meta property="og:description" content="59 destination guides across 13 regions. Find your next trip."/>
+<meta property="og:type" content="website"/>
+<link rel="canonical" href="https://www.dropeverythingandgo.com/destinations.html"/>
 <link rel="stylesheet" href="style.css"/>
 <style>
-.filt-bar{background:rgba(11,23,40,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:1.3rem var(--gutter);position:sticky;top:106px;z-index:100;}
-.filt-inner{max-width:1300px;margin:0 auto;display:flex;gap:.55rem;flex-wrap:wrap;align-items:center;}
-.ft{background:rgba(245,239,224,.08);border:1px solid rgba(245,239,224,.2);border-radius:100px;padding:.45rem 1.15rem;font-family:var(--ff-mono);font-size:.6rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--parchment);transition:all .3s;white-space:nowrap;}
-.ft:hover,.ft.on{background:var(--gold);border-color:var(--gold);color:var(--ink);}
-.rc{font-family:var(--ff-mono);font-size:.65rem;color:var(--smoke);margin-left:auto;white-space:nowrap;}
-.dg-s{background:linear-gradient(180deg,var(--ink) 0%,#0A1628 100%);padding:3rem 0 5rem;}
-.d-grid{max-width:1260px;margin:2rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
-.d-card{border-radius:var(--r-md);overflow:hidden;display:block;min-width:0;border:1px solid rgba(245,239,224,.07);transition:border-color .3s,transform .4s var(--ease-spring),box-shadow .4s;position:relative;}
-.d-card:hover{border-color:rgba(200,145,42,.3);transform:translateY(-6px);box-shadow:0 22px 55px rgba(0,0,0,.4);}
+/* ── Destination cards ── */
+.d-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
+.d-card{position:relative;overflow:hidden;border-radius:var(--r-md);display:block;border:1px solid rgba(245,239,224,.07);transition:border-color .3s,transform .4s var(--ease-spring),box-shadow .4s;height:200px;text-decoration:none;}
+.d-card:hover{border-color:rgba(200,145,42,.3);transform:translateY(-5px);box-shadow:0 18px 45px rgba(0,0,0,.4);}
+.dc-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,13,16,.92) 0%,transparent 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.1rem;}
+.dc-tag{font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem;}
+.dc-name{font-family:var(--ff-display);font-size:1.25rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;}
+.dc-arr{font-family:var(--ff-mono);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.35rem;opacity:0;transform:translateX(-4px);transition:opacity .3s,transform .3s;}
+.d-card:hover .dc-arr{opacity:1;transform:translateX(0);}
 
-.d-img{height:240px;position:relative;overflow:hidden;transition:transform .7s var(--ease-expo);}
-.d-img-emoji{position:absolute;font-size:8rem;opacity:.18;bottom:-10px;right:-10px;line-height:1;transform:rotate(-8deg);filter:saturate(0.7);transition:transform .7s var(--ease-expo),opacity .4s;}
-.d-card:hover .d-img-emoji{transform:rotate(-5deg) scale(1.1);opacity:.25;}
+/* ── Hub cards ── */
+.hub-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.85rem;}
+.reg-card{display:block;border-radius:var(--r-md);overflow:hidden;text-decoration:none;transition:transform .35s var(--ease-spring),box-shadow .35s;}
+.reg-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(0,0,0,.45);}
+.reg-inner{padding:1.4rem 1.2rem;height:110px;display:flex;flex-direction:column;justify-content:space-between;}
+.reg-emoji{font-size:1.5rem;}
+.reg-name{font-family:var(--ff-display);font-size:.98rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;}
+.reg-count{font-family:var(--ff-mono);font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(14,191,184,.55);}
 
-.d-card:hover .d-img{transform:scale(1.02);}
-.d-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,13,16,.7) 0%,rgba(11,13,16,.1) 60%,transparent 100%);}
-.d-body{padding:1.6rem;}
-.d-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.8rem;}
-.d-tag{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;padding:.22rem .65rem;border-radius:100px;background:rgba(200,145,42,.13);color:var(--gold);}
-.d-name{font-family:var(--ff-display);font-size:1.4rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;margin-bottom:.5rem;}
+/* ── Region groups ── */
+.region-group{margin-bottom:3.5rem;}
+.rg-header{display:flex;align-items:center;margin-bottom:1rem;}
+.rg-title{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-family:var(--ff-display);font-size:1.25rem;font-weight:700;color:var(--ink);letter-spacing:-.02em;transition:color .2s;}
+.rg-title:hover{color:var(--gold-dk);}
+.rg-emoji{font-size:1.3rem;}
+.rg-arr{font-family:var(--ff-mono);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dk);margin-left:.5rem;}
+.rg-grid{grid-template-columns:repeat(4,1fr)!important;}
 
-.d-tl{font-size:.83rem;color:var(--smoke);line-height:1.6;margin-bottom:1.2rem;}
-.d-arr{font-family:var(--ff-mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:.4rem;transition:gap .3s;}
-.d-card:hover .d-arr{gap:.8rem;}
-.no-res{display:none;text-align:center;padding:6rem 2rem;grid-column:1/-1;color:var(--smoke);}
-.no-res.show{display:block;}
-.bp-s2{background:linear-gradient(135deg,#08101C 0%,#0B1828 50%,#08101C 100%);border-top:1px solid rgba(14,191,184,.15);border-bottom:1px solid rgba(14,191,184,.15);padding:5rem var(--gutter);}
-.bp-s2-in{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem;}
-@media(max-width:960px){.d-grid{grid-template-columns:repeat(2,1fr)!important;}}@media(max-width:560px){.d-grid{grid-template-columns:1fr!important;}}
-@media(max-width:640px){.bp-s2-in{grid-template-columns:1fr;}}
+/* ── Search / filter ── */
+.dest-search{width:100%;max-width:480px;background:rgba(245,239,224,.06);border:1px solid rgba(245,239,224,.12);border-radius:9px;padding:.75rem 1.1rem;font-family:var(--ff-body);font-size:.88rem;color:var(--parchment);outline:none;transition:border-color .2s;}
+.dest-search::placeholder{color:rgba(245,239,224,.3);}
+.dest-search:focus{border-color:rgba(14,191,184,.4);}
+.filter-btns{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;}
+.fb{font-family:var(--ff-mono);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;padding:.3rem .85rem;border-radius:100px;border:1px solid rgba(245,239,224,.12);background:rgba(245,239,224,.05);color:rgba(245,239,224,.5);cursor:pointer;transition:all .2s;}
+.fb:hover,.fb.on{background:rgba(14,191,184,.12);border-color:rgba(14,191,184,.3);color:var(--teal);}
 
-
-
-
-
-/* ── REGIONAL HUB CARDS ── */
-.reg-card{border-radius:var(--r-md);overflow:hidden;display:block;text-decoration:none;transition:transform .35s var(--ease-spring),box-shadow .35s;}
-.reg-card:hover{transform:translateY(-5px);box-shadow:0 18px 45px rgba(0,0,0,.5);}
-.reg-inner{padding:1.5rem 1.7rem;border:1px solid rgba(255,255,255,.07);border-radius:var(--r-md);transition:border-color .25s;height:100%;}
-.reg-card:hover .reg-inner{border-color:rgba(255,255,255,.18);}
-.reg-emoji{font-size:2rem;margin-bottom:.7rem;}
-.reg-name{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);letter-spacing:-.015em;margin-bottom:.25rem;}
-.reg-sub{font-size:.74rem;color:rgba(200,190,170,.5);line-height:1.5;margin-bottom:.55rem;}
-.reg-count{font-family:var(--ff-mono);font-size:.42rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(14,191,184,.5);}
-
+@media(max-width:1100px){.d-grid{grid-template-columns:repeat(3,1fr);}.hub-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:760px){.d-grid{grid-template-columns:repeat(2,1fr);}.hub-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.d-grid{grid-template-columns:1fr;}.hub-grid{grid-template-columns:1fr;}}
 </style>
-</head><body><div id="progress-bar"></div>
+</head>
+<body>
+<div id="progress-bar"></div>
 <div class="ck" id="ck">
-  <p class="ck-text">We use cookies to enhance your journey. <a href="privacy.html">Privacy Policy</a></p>
+  <p class="ck-text">We use cookies to enhance your journey. <a href="privacy.html">Privacy Policy</a> — we never sell your data.</p>
   <div class="ck-btns"><button class="ck-acc" onclick="ckAccept()">Accept</button><button class="ck-dec" onclick="ckDecline()">Decline</button></div>
 </div>
+
 <div class="ann-bar">
   <a href="destinations/backpacker-guides.html">
     <span class="ann-badge">🎒 NEW</span>
@@ -88,155 +69,774 @@
 </div>
 <nav id="nav">
   <a href="index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Bespoke Planning</span></a>
-  <ul class="nav-links"><li><a href="destinations.html" class="active">Destinations</a></li><li><a href="ski.html">Ski</a></li>
+  <ul class="nav-links">
+    <li><a href="destinations.html">Destinations</a></li>
+    <li><a href="ski.html">Ski</a></li>
     
-  <li><a href="blog.html">Blog</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li><li><a href="contact.html" class="nav-cta">Plan My Trip</a></li></ul>
+  <li><a href="blog.html">Blog</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html" class="nav-cta">Plan My Trip</a></li>
+  </ul>
   <button class="nav-ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <ul class="nav-mob" id="mob">
   <li><a href="destinations.html">Destinations</a></li>
-  <li><a href="ski.html">Ski</a></li><li><a href="blog.html">Blog</a></li><li><a href="services.html">Services</a></li><li><a href="about.html">About</a></li>
+  <li><a href="ski.html">Ski</a></li>
+  <li><a href="blog.html">Blog</a></li>
+  <li><a href="services.html">Services</a></li>
+  <li><a href="about.html">About</a></li>
   <li><a href="contact.html" class="mob-cta-btn">Plan My Trip</a></li>
 </ul>
-<div class="pg-hero">
-  <div class="pg-hero-bg"></div><div class="pg-hero-dots"></div>
-  <div class="pg-hero-content">
-    <div class="pg-eyebrow">Where to Next?</div>
-    <h1 class="pg-title">Destinations</h1>
-    <p class="pg-subtitle">From overwater villas to backpacker trails — every style, every budget.</p>
-  </div>
-  <div class="pg-hero-rule"></div>
-</div>
-<div class="filt-bar" id="filtBar">
-  <div class="filt-inner">
-    <button class="ft on" data-f="all">All</button>
-    <button class="ft" data-f="europe">Europe</button>
-    <button class="ft" data-f="asia">Asia</button>
-    <button class="ft" data-f="americas">Americas</button>
-    <button class="ft" data-f="africa">Africa</button>
-    <button class="ft" data-f="city-break">City Breaks</button>
-    <button class="ft" data-f="honeymoon">Honeymoon</button>
-    <button class="ft" data-f="adventure">Adventure</button>
-    <button class="ft" data-f="luxury">Luxury</button>
-    <button class="ft" data-f="family">Family</button>
-    <button class="ft" data-f="hidden-gems">Hidden Gems</button>
-    <span class="rc" id="rc">18 destinations</span>
-  </div>
-</div>s<section class="s dg-s">
-  <div class="d-grid" id="dg" style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:1260px;margin:2rem auto 0;padding:0 var(--gutter,2rem)">
-<a href="destinations/santorini.html" class="d-card rv" data-search="santorini greece europe island honeymoon luxury sunset caldera oia aegean mediterranean" data-tags="europe,honeymoon,luxury">
-<div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423170/01-santorini-caldera-greece_qchzdf.jpg" alt="Santorini, Greece" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
-<div class="d-body"><div class="d-tags"><span class="d-tag">Europe</span><span class="d-tag">Honeymoon</span><span class="d-tag">Luxury</span></div><div class="d-name">Santorini, Greece</div><p class="d-tl">Iconic white-washed cliffs, azure domes, and sunsets that genuinely stop time.</p><span class="d-arr">Explore →</span></div>
-</a>
-<a href="destinations/maldives.html" class="d-card rv" data-search="maldives asia indian ocean island honeymoon luxury overwater villa tropical beach" data-tags="asia,honeymoon,luxury">
-<div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422058/activemaldives_GettyImages-86477634_HR_f9khtp.jpg" alt="Maldives" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
-<div class="d-body"><div class="d-tags"><span class="d-tag">Asia</span><span class="d-tag">Honeymoon</span><span class="d-tag">Luxury</span></div><div class="d-name">Maldives</div><p class="d-tl">Overwater villas, bioluminescent beaches, and a silence so complete it feels like another planet.</p><span class="d-arr">Explore →</span></div>
-</a>
-<a href="destinations/amalfi.html" class="d-card rv" data-search="amalfi coast italy europe positano romance cliff coastline mediterranean food" data-tags="europe,romance">
-<div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773174321/fe1ae1081933147527d277649c44277e_molrxf.jpg" alt="Amalfi Coast" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
-<div class="d-body"><div class="d-tags"><span class="d-tag">Europe</span><span class="d-tag">Romance</span></div><div class="d-name">Amalfi Coast</div><p class="d-tl">Clifftop villages cascading into the sea and la dolce vita at its finest.</p><span class="d-arr">Explore →</span></div>
-</a>
-<a href="destinations/kenya.html" class="d-card rv" data-search="kenya africa safari masai mara wildlife adventure great migration nairobi" data-tags="africa,adventure">
-<div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773421993/masai-mara-great-migration-river-crossing-kenya-small_tvchpp.jpg" alt="Kenya" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
-<div class="d-body"><div class="d-tags"><span class="d-tag">Africa</span><span class="d-tag">Adventure</span></div><div class="d-name">Kenya</div><p class="d-tl">The Great Migration, Maasai Mara sunsets, and the best safari on earth.</p><span class="d-arr">Explore →</span></div>
-</a>
-<a href="destinations/bali.html" class="d-card rv" data-search="bali indonesia asia temples rice terraces ubud surf beach escape spiritual" data-tags="asia,escape">
-<div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773174541/67de721a9834260c076e97be_Tegallalang_20Rice_20Terraces_lnfzfx.webp" alt="Bali" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
-<div class="d-body"><div class="d-tags"><span class="d-tag">Asia</span><span class="d-tag">Escape</span></div><div class="d-name">Bali</div><p class="d-tl">Rice terraces, sacred temples, surf breaks, and a spiritual pull that keeps people coming back.</p><span class="d-arr">Explore →</span></div>
-</a>
-<a href="destinations/cappadocia.html" class="d-card rv" data-search="cappadocia turkey europe hidden gem balloon cave hotel fairy chimneys anatolia" data-tags="europe,hidden-gems">
-<div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773174891/sunrise-9328_qjh2bn.jpg" alt="Cappadocia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
-<div class="d-body"><div class="d-tags"><span class="d-tag">Europe</span><span class="d-tag">Hidden Gem</span></div><div class="d-name">Cappadocia</div><p class="d-tl">Fairy chimneys, sunrise balloon rides, and cave hotels carved into ancient rock.</p><span class="d-arr">Explore →</span></div>
-</a>
-<a href="destinations/croatia.html" class="d-card rv" data-search="croatia europe dubrovnik adriatic island adventure sailing dalmatian coast" data-tags="europe,adventure">
-<div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773175144/croatia-banje-beach-coast-aerial_dtfkpq.jpg" alt="Croatia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
-<div class="d-body"><div class="d-tags"><span class="d-tag">Europe</span><span class="d-tag">Adventure</span></div><div class="d-name">Croatia</div><p class="d-tl">A thousand islands, Adriatic waters, and walled cities that have survived two millennia.</p><span class="d-arr">Explore →</span></div>
-</a>
-<a href="destinations/tokyo.html" class="d-card rv" data-search="tokyo japan asia city break culture food ramen fuji neon anime technology" data-tags="asia,city-break">
-<div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423265/1701836232-fujiyoshida-japan-at-chureito-pagoda-and-mt-fuji_ut7ybj.jpg" alt="Tokyo, Japan" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
-<div class="d-body"><div class="d-tags"><span class="d-tag">Asia</span><span class="d-tag">City Break</span></div><div class="d-name">Tokyo, Japan</div><p class="d-tl">The world's most extraordinary city — ancient temples, world-leading food, total sensory overload.</p><span class="d-arr">Explore →</span></div>
-</a>
-<a href="destinations/zanzibar.html" class="d-card rv" data-search="zanzibar tanzania africa island beach spice escape stone town indian ocean" data-tags="africa,escape">
-<div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423414/aerial-view-zanzibar-pristine-nungwi-beach-where-crystal-clear-turquoise-waters-meet-soft-white-sand-traditional-wooden-365168956_fa49uu.jpg" alt="Zanzibar" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
-<div class="d-body"><div class="d-tags"><span class="d-tag">Africa</span><span class="d-tag">Escape</span></div><div class="d-name">Zanzibar</div><p class="d-tl">White sand beaches, spice markets, and the Indian Ocean's clearest water.</p><span class="d-arr">Explore →</span></div>
-</a>
-<a href="destinations/portugal.html" class="d-card rv" data-search="portugal europe lisbon porto sintra city break wine food atlantic affordable" data-tags="europe,city-break">
-<div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422400/Sintra_Castles_Palaces_portugal_magik_tours_2509681399_js3ibk.webp" alt="Portugal" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
-<div class="d-body"><div class="d-tags"><span class="d-tag">Europe</span><span class="d-tag">City Break</span></div><div class="d-name">Portugal</div><p class="d-tl">Fado music, Atlantic surf, and two of Europe's most characterful cities.</p><span class="d-arr">Explore →</span></div>
-</a>
-<a href="destinations/iceland.html" class="d-card rv" data-search="iceland europe northern lights aurora adventure golden circle glacier volcano" data-tags="europe,adventure,hidden-gems">
-<div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773421883/northern_lights_above_glacier_lagoon_v2osk_unsplash_7d39ca647f_x2fxsc.jpg" alt="Iceland" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
-<div class="d-body"><div class="d-tags"><span class="d-tag">Europe</span><span class="d-tag">Adventure</span></div><div class="d-name">Iceland</div><p class="d-tl">Northern lights, midnight sun, and landscapes so dramatic they barely look real.</p><span class="d-arr">Explore →</span></div>
-</a>
-<a href="destinations/patagonia.html" class="d-card rv" data-search="patagonia south america chile argentina torres del paine adventure trekking wilderness" data-tags="americas,adventure">
-<div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422176/Torres_20del_20Paine_20in_20Patagonia_2C_20Chile_20Tour_shutterstock_699918793_yyqhbf.jpg" alt="Patagonia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
-<div class="d-body"><div class="d-tags"><span class="d-tag">Americas</span><span class="d-tag">Adventure</span></div><div class="d-name">Patagonia</div><p class="d-tl">The end of the world — Torres del Paine, glaciers, and wind that will test your resolve.</p><span class="d-arr">Explore →</span></div>
-</a>
-<a href="destinations/new-york.html" class="d-card rv" data-search="new york usa americas city break manhattan brooklyn skyline culture food" data-tags="americas,city-break">
-<div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422120/lower-manhattan-skyline-and-brooklyn-bridge_pfon1f.jpg" alt="New York" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
-<div class="d-body"><div class="d-tags"><span class="d-tag">Americas</span><span class="d-tag">City Break</span></div><div class="d-name">New York</div><p class="d-tl">The city that never sleeps — and somehow always has one more thing to show you.</p><span class="d-arr">Explore →</span></div>
-</a>
-<a href="destinations/vietnam.html" class="d-card rv" data-search="vietnam asia adventure ha long bay hoi an mekong delta food culture backpacking" data-tags="asia,adventure,city-break">
-<div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423310/murray-mccallum-ha-long-bay-vietnam-tourist-boat-cruising-among-limestone-karsts-and-islets-in-unesco-site_u-l-q1tc1ej0_jif5kq.jpg" alt="Vietnam" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
-<div class="d-body"><div class="d-tags"><span class="d-tag">Asia</span><span class="d-tag">Adventure</span></div><div class="d-name">Vietnam</div><p class="d-tl">Ha Long Bay, Hoi An lanterns, Sapa rice terraces, and street food on every corner.</p><span class="d-arr">Explore →</span></div>
-</a>
-<a href="destinations/georgia.html" class="d-card rv" data-search="georgia caucasus europe hidden gem tbilisi wine mountains kazbegi culture affordable" data-tags="europe,hidden-gems">
-<div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773421844/Gergeti_Trinity_Church_-_Outside_Kazbegi_guapou.jpg" alt="Georgia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
-<div class="d-body"><div class="d-tags"><span class="d-tag">Europe</span><span class="d-tag">Hidden Gem</span></div><div class="d-name">Georgia</div><p class="d-tl">Ancient monasteries, Caucasus mountain trails, and wine older than civilisation.</p><span class="d-arr">Explore →</span></div>
-</a>
-<a href="destinations/peru.html" class="d-card rv" data-search="peru south america americas machu picchu inca trail cusco andes adventure" data-tags="americas,adventure">
-<div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773085766/machu-picchu.webp" alt="Peru" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
-<div class="d-body"><div class="d-tags"><span class="d-tag">Americas</span><span class="d-tag">Adventure</span></div><div class="d-name">Peru</div><p class="d-tl">Machu Picchu, the Inca Trail, and Lima's extraordinary food scene.</p><span class="d-arr">Explore →</span></div>
-</a>
-<a href="destinations/salzburg.html" class="d-card rv" data-search="salzburg austria europe city break mozart fortress hallstatt sound of music family" data-tags="europe,city-break,family">
-<div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422432/salzburg-austria-aerial-view-historic-600nw-2647183381_uk5c2a.jpg" alt="Salzburg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
-<div class="d-body"><div class="d-tags"><span class="d-tag">Europe</span><span class="d-tag">City Break</span></div><div class="d-name">Salzburg</div><p class="d-tl">Mozart, baroque architecture, and the Alps on your doorstep.</p><span class="d-arr">Explore →</span></div>
-</a>
-<a href="destinations/ecuador.html" class="d-card rv" data-search="ecuador south america americas galapagos amazon wildlife adventure volcano islands" data-tags="americas,adventure,wildlife">
-<div class="d-img"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773176813/Galapagos-Seal.jpg" alt="Ecuador & Galápagos" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center"><div class="d-img-overlay"></div></div>
-<div class="d-body"><div class="d-tags"><span class="d-tag">Americas</span><span class="d-tag">Wildlife</span></div><div class="d-name">Ecuador & Galápagos</div><p class="d-tl">Wildlife encounters found nowhere else on earth — Galápagos plus Amazon rainforest.</p><span class="d-arr">Explore →</span></div>
-</a>
-<div class="no-res" id="noRes">No destinations match that filter. <a href="contact.html" style="color:var(--gold)">Get in touch</a> and we'll find somewhere perfect.</div>
-  </div>
-</section>
 
-<section class="s" style="background:var(--ink-3);border-top:1px solid var(--border);">
+<!-- Hero -->
+<section style="background:var(--ink);padding:7rem var(--gutter) 3.5rem;border-bottom:1px solid var(--border);">
   <div style="max-width:1260px;margin:0 auto;">
-    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2rem;flex-wrap:wrap;gap:1rem;">
-      <div>
-        <div class="eyebrow" style="color:var(--teal);margin-bottom:.6rem">// Explore by Region</div>
-        <h2 style="font-family:var(--ff-display);font-size:clamp(1.8rem,3vw,2.6rem);font-weight:800;color:var(--parchment);letter-spacing:-.03em;line-height:1;">Regional <em style="font-style:italic;font-weight:300;color:var(--teal)">Travel Hubs</em></h2>
-      </div>
-      <p style="font-size:.82rem;color:var(--smoke);line-height:1.65;max-width:360px;">Full guides, backpacker routes, activities and ski resorts — organised by region.</p>
+    <div class="eyebrow" style="color:var(--teal);margin-bottom:.8rem">// Every destination we cover</div>
+    <h1 style="font-family:var(--ff-display);font-size:clamp(2.4rem,6vw,5rem);font-weight:800;color:var(--parchment);letter-spacing:-.04em;line-height:.92;margin-bottom:1.2rem;">
+      Where do you want<br><em style="font-style:italic;font-weight:300;color:var(--gold-lt);">to go?</em>
+    </h1>
+    <p style="font-size:.92rem;color:var(--smoke);max-width:480px;line-height:1.75;margin-bottom:2rem;">59 destination guides across 13 regions — from Southeast Asia street food to Patagonian glaciers.</p>
+    <div style="display:flex;align-items:center;gap:1rem;flex-wrap:wrap;">
+      <input class="dest-search" id="dest-search" type="text" placeholder="Search destinations..."/>
+      <a href="destinations/backpacker-guides.html" class="btn btn-wire" style="flex-shrink:0;">Backpacker Guides →</a>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:.85rem;">
-      <a href="destinations/southeast-asia.html" class="reg-card rv"><div class="reg-inner" style="background:linear-gradient(135deg,#061A0C,#0E2A14)"><div class="reg-emoji">🌏</div><div class="reg-name">Southeast Asia</div><div class="reg-sub">Thailand, Bali &amp; Vietnam</div><div class="reg-count">3 guides · 7 BP routes</div></div></a>
-      <a href="destinations/south-asia.html" class="reg-card rv"><div class="reg-inner" style="background:linear-gradient(135deg,#1A0A06,#2E1408)"><div class="reg-emoji">🕉️</div><div class="reg-name">South Asia</div><div class="reg-sub">India, Nepal &amp; Sri Lanka</div><div class="reg-count">1 guide · 4 BP routes</div></div></a>
-      <a href="destinations/east-asia.html" class="reg-card rv"><div class="reg-inner" style="background:linear-gradient(135deg,#12061A,#200A2E)"><div class="reg-emoji">🏯</div><div class="reg-name">East Asia</div><div class="reg-sub">Japan, Korea &amp; China</div><div class="reg-count">1 guide · 3 BP routes · 3 ski</div></div></a>
-      <a href="destinations/central-asia.html" class="reg-card rv"><div class="reg-inner" style="background:linear-gradient(135deg,#1A0A06,#2E1A06)"><div class="reg-emoji">🏰</div><div class="reg-name">Central Asia</div><div class="reg-sub">Georgia, Uzbekistan &amp; Caucasus</div><div class="reg-count">1 guide · 1 BP route · 2 ski</div></div></a>
-      <a href="destinations/middle-east.html" class="reg-card rv"><div class="reg-inner" style="background:linear-gradient(135deg,#1A0C06,#2E1606)"><div class="reg-emoji">🕌</div><div class="reg-name">Middle East</div><div class="reg-sub">Jordan, Morocco &amp; Turkey</div><div class="reg-count">1 guide · 4 BP routes</div></div></a>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:.85rem;margin-top:.85rem;">
-      <a href="destinations/europe.html" class="reg-card rv rv1"><div class="reg-inner" style="background:linear-gradient(135deg,#08091E,#0E1030)"><div class="reg-emoji">🏰</div><div class="reg-name">Europe</div><div class="reg-sub">Cities, Coasts &amp; Mountains</div><div class="reg-count">6 guides · 8 BP routes · 30+ ski</div></div></a>
-      <a href="destinations/africa.html" class="reg-card rv rv1"><div class="reg-inner" style="background:linear-gradient(135deg,#140E00,#241A00)"><div class="reg-emoji">🦁</div><div class="reg-name">Africa</div><div class="reg-sub">Safari &amp; Ancient Wonders</div><div class="reg-count">2 guides · 4 BP routes</div></div></a>
-      <a href="destinations/south-america.html" class="reg-card rv rv1"><div class="reg-inner" style="background:linear-gradient(135deg,#061A0C,#0E2A14)"><div class="reg-emoji">🦙</div><div class="reg-name">South America</div><div class="reg-sub">Patagonia, Peru &amp; Beyond</div><div class="reg-count">3 guides · 5 BP routes · 4 ski</div></div></a>
-      <a href="destinations/central-america.html" class="reg-card rv rv1"><div class="reg-inner" style="background:linear-gradient(135deg,#180812,#281020)"><div class="reg-emoji">🌮</div><div class="reg-name">Central America</div><div class="reg-sub">Mexico, Cuba &amp; Costa Rica</div><div class="reg-count">5 BP routes</div></div></a>
-      <a href="destinations/oceania.html" class="reg-card rv rv1"><div class="reg-inner" style="background:linear-gradient(135deg,#061520,#0E2030)"><div class="reg-emoji">🦘</div><div class="reg-name">Oceania &amp; Pacific</div><div class="reg-sub">Australia &amp; New Zealand</div><div class="reg-count">2 BP routes · 4 ski resorts</div></div></a>
+    <div class="filter-btns" id="filter-btns">
+      <button class="fb on" data-hub="all">All</button>
+      <button class="fb" data-hub="southeast-asia">SE Asia</button>
+      <button class="fb" data-hub="south-asia">South Asia</button>
+      <button class="fb" data-hub="east-asia">East Asia</button>
+      <button class="fb" data-hub="central-asia">Central Asia</button>
+      <button class="fb" data-hub="middle-east">Middle East</button>
+      <button class="fb" data-hub="western-europe">W Europe</button>
+      <button class="fb" data-hub="eastern-europe">E Europe</button>
+      <button class="fb" data-hub="northern-europe">N Europe</button>
+      <button class="fb" data-hub="north-america">N America</button>
+      <button class="fb" data-hub="central-america">C America</button>
+      <button class="fb" data-hub="south-america">S America</button>
+      <button class="fb" data-hub="africa">Africa</button>
+      <button class="fb" data-hub="oceania">Oceania</button>
     </div>
   </div>
 </section>
 
-
-<div class="bp-s2">
-  <div class="bp-s2-in">
-    <div class="rv"><div class="eyebrow teal">🎒 Budget Travel</div><h2 class="h-display">59 <em style="color:var(--teal)">Backpacker Guides</em> Now Live</h2><p style="color:var(--smoke);font-size:.93rem;margin-top:.8rem;max-width:480px;line-height:1.75">Daily budgets from £12, hostel picks, and what actually matters — SE Asia, South America, Europe, Africa and beyond.</p></div>
-    <div class="rv rv2"><a href="destinations/backpacker-guides.html" class="btn btn-teal btn-arr">Browse All Guides</a></div>
+<!-- Regional Hubs -->
+<section class="s" style="background:var(--ink-2);">
+  <div style="max-width:1260px;margin:0 auto;">
+    <div class="eyebrow" style="color:var(--teal);margin-bottom:.7rem">// Browse by region</div>
+    <h2 style="font-family:var(--ff-display);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--parchment);letter-spacing:-.02em;margin-bottom:1.4rem;">13 Regional Travel Hubs</h2>
+    <div class="hub-grid"><a href="destinations/southeast-asia.html" class="reg-card rv">
+  <div class="reg-inner" style="background:linear-gradient(135deg,#061A0C,#0E2A14)">
+    <div class="reg-emoji">🌏</div>
+    <div class="reg-name">Southeast Asia</div>
+    <div class="reg-count">6 destinations · 7 BP guides</div>
   </div>
+</a>
+<a href="destinations/south-asia.html" class="reg-card rv">
+  <div class="reg-inner" style="background:linear-gradient(135deg,#1A0A06,#2E1408)">
+    <div class="reg-emoji">🕉️</div>
+    <div class="reg-name">South Asia</div>
+    <div class="reg-count">4 destinations · 4 BP guides</div>
+  </div>
+</a>
+<a href="destinations/east-asia.html" class="reg-card rv">
+  <div class="reg-inner" style="background:linear-gradient(135deg,#12061A,#200A2E)">
+    <div class="reg-emoji">🏯</div>
+    <div class="reg-name">East Asia</div>
+    <div class="reg-count">5 destinations · 3 BP guides · ski</div>
+  </div>
+</a>
+<a href="destinations/central-asia.html" class="reg-card rv">
+  <div class="reg-inner" style="background:linear-gradient(135deg,#1A0A06,#2E1A06)">
+    <div class="reg-emoji">🏔️</div>
+    <div class="reg-name">Central Asia</div>
+    <div class="reg-count">2 destinations · ski</div>
+  </div>
+</a>
+<a href="destinations/middle-east.html" class="reg-card rv">
+  <div class="reg-inner" style="background:linear-gradient(135deg,#1A0C06,#2E1606)">
+    <div class="reg-emoji">🕌</div>
+    <div class="reg-name">Middle East</div>
+    <div class="reg-count">4 destinations · 4 BP guides</div>
+  </div>
+</a>
+<a href="destinations/western-europe.html" class="reg-card rv">
+  <div class="reg-inner" style="background:linear-gradient(135deg,#08091E,#0E1030)">
+    <div class="reg-emoji">🗼</div>
+    <div class="reg-name">Western Europe</div>
+    <div class="reg-count">8 destinations · ski</div>
+  </div>
+</a>
+<a href="destinations/eastern-europe.html" class="reg-card rv">
+  <div class="reg-inner" style="background:linear-gradient(135deg,#060E1E,#0C1830)">
+    <div class="reg-emoji">🏰</div>
+    <div class="reg-name">Eastern Europe</div>
+    <div class="reg-count">5 destinations · ski</div>
+  </div>
+</a>
+<a href="destinations/northern-europe.html" class="reg-card rv">
+  <div class="reg-inner" style="background:linear-gradient(135deg,#061418,#0A2028)">
+    <div class="reg-emoji">🌊</div>
+    <div class="reg-name">Northern Europe</div>
+    <div class="reg-count">2 destinations · ski</div>
+  </div>
+</a>
+<a href="destinations/north-america.html" class="reg-card rv">
+  <div class="reg-inner" style="background:linear-gradient(135deg,#1A0612,#2E0E20)">
+    <div class="reg-emoji">🗽</div>
+    <div class="reg-name">North America</div>
+    <div class="reg-count">3 destinations · ski</div>
+  </div>
+</a>
+<a href="destinations/central-america.html" class="reg-card rv">
+  <div class="reg-inner" style="background:linear-gradient(135deg,#180812,#281020)">
+    <div class="reg-emoji">🌮</div>
+    <div class="reg-name">Central America</div>
+    <div class="reg-count">4 destinations · 5 BP guides</div>
+  </div>
+</a>
+<a href="destinations/south-america.html" class="reg-card rv">
+  <div class="reg-inner" style="background:linear-gradient(135deg,#061A0C,#0E2A14)">
+    <div class="reg-emoji">🦙</div>
+    <div class="reg-name">South America</div>
+    <div class="reg-count">8 destinations · 5 BP guides · ski</div>
+  </div>
+</a>
+<a href="destinations/africa.html" class="reg-card rv">
+  <div class="reg-inner" style="background:linear-gradient(135deg,#140E00,#241A00)">
+    <div class="reg-emoji">🦁</div>
+    <div class="reg-name">Africa</div>
+    <div class="reg-count">5 destinations · 4 BP guides</div>
+  </div>
+</a>
+<a href="destinations/oceania.html" class="reg-card rv">
+  <div class="reg-inner" style="background:linear-gradient(135deg,#061520,#0E2030)">
+    <div class="reg-emoji">🦘</div>
+    <div class="reg-name">Oceania</div>
+    <div class="reg-count">3 destinations · 2 BP guides · ski</div>
+  </div>
+</a></div>
+  </div>
+</section>
+
+<!-- All Destinations by Region -->
+<section class="s" style="background:var(--parchment);">
+  <div style="max-width:1260px;margin:0 auto;">
+    <div class="eyebrow light" style="margin-bottom:.7rem">// All 59 destination guides</div>
+    <h2 style="font-family:var(--ff-display);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--ink);letter-spacing:-.02em;margin-bottom:2rem;">Every destination, by region</h2>
+    <div id="region-groups">
+<div class="region-group" data-hub="southeast-asia">
+  <div class="rg-header">
+    <a href="destinations/southeast-asia.html" class="rg-title">
+      <span class="rg-emoji">🌏</span>
+      <span>Southeast Asia</span>
+      <span class="rg-arr">Full Hub →</span>
+    </a>
+  </div>
+  <div class="d-grid rg-grid"><a href="destinations/bali.html" class="d-card rv">
+  <img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773174541/67de721a9834260c076e97be_Tegallalang_20Rice_20Terraces_lnfzfx.webp" alt="Bali" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+  <div class="dc-ov">
+    <div class="dc-tag">Indonesia</div>
+    <div class="dc-name">Bali</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/vietnam.html" class="d-card rv">
+  <img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423310/murray-mccallum-ha-long-bay-vietnam-tourist-boat-cruising-among-limestone-karsts-and-islets-in-unesco-site_u-l-q1tc1ej0_jif5kq.jpg" alt="Vietnam" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+  <div class="dc-ov">
+    <div class="dc-tag">Southeast Asia</div>
+    <div class="dc-name">Vietnam</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/thailand.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Southeast Asia</div>
+    <div class="dc-name">Thailand</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/cambodia.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Cambodia</div>
+    <div class="dc-name">Angkor Wat</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/singapore.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Southeast Asia</div>
+    <div class="dc-name">Singapore</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/philippines.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Philippines</div>
+    <div class="dc-name">El Nido & Palawan</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a></div>
 </div>
+<div class="region-group" data-hub="south-asia">
+  <div class="rg-header">
+    <a href="destinations/south-asia.html" class="rg-title">
+      <span class="rg-emoji">🕉️</span>
+      <span>South Asia</span>
+      <span class="rg-arr">Full Hub →</span>
+    </a>
+  </div>
+  <div class="d-grid rg-grid"><a href="destinations/maldives.html" class="d-card rv">
+  <img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422058/activemaldives_GettyImages-86477634_HR_f9khtp.jpg" alt="Maldives" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+  <div class="dc-ov">
+    <div class="dc-tag">Indian Ocean</div>
+    <div class="dc-name">Maldives</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/golden-triangle.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">South Asia</div>
+    <div class="dc-name">India — Golden Triangle</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/kathmandu-everest.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">South Asia</div>
+    <div class="dc-name">Nepal — Everest</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/sri-lanka.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">South Asia</div>
+    <div class="dc-name">Sri Lanka</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a></div>
+</div>
+<div class="region-group" data-hub="east-asia">
+  <div class="rg-header">
+    <a href="destinations/east-asia.html" class="rg-title">
+      <span class="rg-emoji">🏯</span>
+      <span>East Asia</span>
+      <span class="rg-arr">Full Hub →</span>
+    </a>
+  </div>
+  <div class="d-grid rg-grid"><a href="destinations/tokyo.html" class="d-card rv">
+  <img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423265/1701836232-fujiyoshida-japan-at-chureito-pagoda-and-mt-fuji_ut7ybj.jpg" alt="Tokyo" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+  <div class="dc-ov">
+    <div class="dc-tag">Japan</div>
+    <div class="dc-name">Tokyo</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/kyoto.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Japan</div>
+    <div class="dc-name">Kyoto</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/seoul.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">South Korea</div>
+    <div class="dc-name">Seoul</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/beijing.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">China</div>
+    <div class="dc-name">Beijing</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/shanghai.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">China</div>
+    <div class="dc-name">Shanghai</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a></div>
+</div>
+<div class="region-group" data-hub="central-asia">
+  <div class="rg-header">
+    <a href="destinations/central-asia.html" class="rg-title">
+      <span class="rg-emoji">🏔️</span>
+      <span>Central Asia</span>
+      <span class="rg-arr">Full Hub →</span>
+    </a>
+  </div>
+  <div class="d-grid rg-grid"><a href="destinations/georgia.html" class="d-card rv">
+  <img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773421844/Gergeti_Trinity_Church_-_Outside_Kazbegi_guapou.jpg" alt="Georgia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+  <div class="dc-ov">
+    <div class="dc-tag">Caucasus</div>
+    <div class="dc-name">Georgia</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/cappadocia.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Turkey</div>
+    <div class="dc-name">Cappadocia</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a></div>
+</div>
+<div class="region-group" data-hub="middle-east">
+  <div class="rg-header">
+    <a href="destinations/middle-east.html" class="rg-title">
+      <span class="rg-emoji">🕌</span>
+      <span>Middle East</span>
+      <span class="rg-arr">Full Hub →</span>
+    </a>
+  </div>
+  <div class="d-grid rg-grid"><a href="destinations/petra-wadi-rum.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Jordan</div>
+    <div class="dc-name">Petra & Wadi Rum</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/marrakech.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Morocco</div>
+    <div class="dc-name">Marrakech & Morocco</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/cairo-luxor.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Egypt</div>
+    <div class="dc-name">Cairo & Luxor</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/dubai.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">UAE</div>
+    <div class="dc-name">Dubai</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a></div>
+</div>
+<div class="region-group" data-hub="western-europe">
+  <div class="rg-header">
+    <a href="destinations/western-europe.html" class="rg-title">
+      <span class="rg-emoji">🗼</span>
+      <span>Western Europe</span>
+      <span class="rg-arr">Full Hub →</span>
+    </a>
+  </div>
+  <div class="d-grid rg-grid"><a href="destinations/rome.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Italy</div>
+    <div class="dc-name">Rome</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/paris.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">France</div>
+    <div class="dc-name">Paris</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/barcelona.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Spain</div>
+    <div class="dc-name">Barcelona</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/amsterdam.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Netherlands</div>
+    <div class="dc-name">Amsterdam</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/amalfi.html" class="d-card rv">
+  <img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773174321/fe1ae1081933147527d277649c44277e_molrxf.jpg" alt="Amalfi Coast" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+  <div class="dc-ov">
+    <div class="dc-tag">Italy</div>
+    <div class="dc-name">Amalfi Coast</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/santorini.html" class="d-card rv">
+  <img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423170/01-santorini-caldera-greece_qchzdf.jpg" alt="Santorini" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+  <div class="dc-ov">
+    <div class="dc-tag">Greece</div>
+    <div class="dc-name">Santorini</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/portugal.html" class="d-card rv">
+  <img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422400/Sintra_Castles_Palaces_portugal_magik_tours_2509681399_js3ibk.webp" alt="Portugal" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+  <div class="dc-ov">
+    <div class="dc-tag">Western Europe</div>
+    <div class="dc-name">Portugal</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/iceland.html" class="d-card rv">
+  <img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773421883/northern_lights_above_glacier_lagoon_v2osk_unsplash_7d39ca647f_x2fxsc.jpg" alt="Iceland" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+  <div class="dc-ov">
+    <div class="dc-tag">Northern Europe</div>
+    <div class="dc-name">Iceland</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a></div>
+</div>
+<div class="region-group" data-hub="eastern-europe">
+  <div class="rg-header">
+    <a href="destinations/eastern-europe.html" class="rg-title">
+      <span class="rg-emoji">🏰</span>
+      <span>Eastern Europe</span>
+      <span class="rg-arr">Full Hub →</span>
+    </a>
+  </div>
+  <div class="d-grid rg-grid"><a href="destinations/croatia.html" class="d-card rv">
+  <img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773175144/croatia-banje-beach-coast-aerial_dtfkpq.jpg" alt="Croatia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+  <div class="dc-ov">
+    <div class="dc-tag">Balkans</div>
+    <div class="dc-name">Croatia</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/dubrovnik.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Croatia</div>
+    <div class="dc-name">Dubrovnik</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/prague.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Czech Republic</div>
+    <div class="dc-name">Prague</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/budapest.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Hungary</div>
+    <div class="dc-name">Budapest</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/salzburg.html" class="d-card rv">
+  <img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422432/salzburg-austria-aerial-view-historic-600nw-2647183381_uk5c2a.jpg" alt="Salzburg" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+  <div class="dc-ov">
+    <div class="dc-tag">Austria</div>
+    <div class="dc-name">Salzburg</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a></div>
+</div>
+<div class="region-group" data-hub="northern-europe">
+  <div class="rg-header">
+    <a href="destinations/northern-europe.html" class="rg-title">
+      <span class="rg-emoji">🌊</span>
+      <span>Northern Europe</span>
+      <span class="rg-arr">Full Hub →</span>
+    </a>
+  </div>
+  <div class="d-grid rg-grid"><a href="destinations/edinburgh.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Scotland</div>
+    <div class="dc-name">Edinburgh</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/london.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">UK</div>
+    <div class="dc-name">London</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a></div>
+</div>
+<div class="region-group" data-hub="north-america">
+  <div class="rg-header">
+    <a href="destinations/north-america.html" class="rg-title">
+      <span class="rg-emoji">🗽</span>
+      <span>North America</span>
+      <span class="rg-arr">Full Hub →</span>
+    </a>
+  </div>
+  <div class="d-grid rg-grid"><a href="destinations/new-york.html" class="d-card rv">
+  <img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422120/lower-manhattan-skyline-and-brooklyn-bridge_pfon1f.jpg" alt="New York City" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+  <div class="dc-ov">
+    <div class="dc-tag">North America</div>
+    <div class="dc-name">New York City</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/los-angeles.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">North America</div>
+    <div class="dc-name">Los Angeles</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/vancouver-banff.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Canada</div>
+    <div class="dc-name">Vancouver & Banff</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a></div>
+</div>
+<div class="region-group" data-hub="central-america">
+  <div class="rg-header">
+    <a href="destinations/central-america.html" class="rg-title">
+      <span class="rg-emoji">🌮</span>
+      <span>Central America</span>
+      <span class="rg-arr">Full Hub →</span>
+    </a>
+  </div>
+  <div class="d-grid rg-grid"><a href="destinations/mexico-city.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Mexico</div>
+    <div class="dc-name">Mexico City & Oaxaca</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/havana.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Cuba</div>
+    <div class="dc-name">Havana & Trinidad</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/costa-rica.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Central America</div>
+    <div class="dc-name">Costa Rica</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/guatemala.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Central America</div>
+    <div class="dc-name">Guatemala</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a></div>
+</div>
+<div class="region-group" data-hub="south-america">
+  <div class="rg-header">
+    <a href="destinations/south-america.html" class="rg-title">
+      <span class="rg-emoji">🦙</span>
+      <span>South America</span>
+      <span class="rg-arr">Full Hub →</span>
+    </a>
+  </div>
+  <div class="d-grid rg-grid"><a href="destinations/patagonia.html" class="d-card rv">
+  <img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422176/Torres_20del_20Paine_20in_20Patagonia_2C_20Chile_20Tour_shutterstock_699918793_yyqhbf.jpg" alt="Patagonia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+  <div class="dc-ov">
+    <div class="dc-tag">South America</div>
+    <div class="dc-name">Patagonia</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/peru.html" class="d-card rv">
+  <img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773085766/machu-picchu.webp" alt="Peru" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+  <div class="dc-ov">
+    <div class="dc-tag">South America</div>
+    <div class="dc-name">Peru</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/ecuador.html" class="d-card rv">
+  <img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773176813/Galapagos-Seal.jpg" alt="Ecuador & Galápagos" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+  <div class="dc-ov">
+    <div class="dc-tag">South America</div>
+    <div class="dc-name">Ecuador & Galápagos</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/buenos-aires.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Argentina</div>
+    <div class="dc-name">Buenos Aires</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/rio-de-janeiro.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Brazil</div>
+    <div class="dc-name">Rio de Janeiro</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/medellin-cartagena.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Colombia</div>
+    <div class="dc-name">Medellín & Cartagena</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/atacama-patagonia.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Chile</div>
+    <div class="dc-name">Atacama & Patagonia</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/uyuni-salt-flats.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Bolivia</div>
+    <div class="dc-name">Uyuni Salt Flats</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a></div>
+</div>
+<div class="region-group" data-hub="africa">
+  <div class="rg-header">
+    <a href="destinations/africa.html" class="rg-title">
+      <span class="rg-emoji">🦁</span>
+      <span>Africa</span>
+      <span class="rg-arr">Full Hub →</span>
+    </a>
+  </div>
+  <div class="d-grid rg-grid"><a href="destinations/kenya.html" class="d-card rv">
+  <img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773421993/masai-mara-great-migration-river-crossing-kenya-small_tvchpp.jpg" alt="Kenya" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+  <div class="dc-ov">
+    <div class="dc-tag">East Africa</div>
+    <div class="dc-name">Kenya</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/zanzibar.html" class="d-card rv">
+  <img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423414/aerial-view-zanzibar-pristine-nungwi-beach-where-crystal-clear-turquoise-waters-meet-soft-white-sand-traditional-wooden-365168956_fa49uu.jpg" alt="Zanzibar" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">
+  <div class="dc-ov">
+    <div class="dc-tag">East Africa</div>
+    <div class="dc-name">Zanzibar</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/cape-town.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">South Africa</div>
+    <div class="dc-name">Cape Town</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/serengeti-kilimanjaro.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Tanzania</div>
+    <div class="dc-name">Serengeti & Kilimanjaro</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/rwanda-gorillas.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Africa</div>
+    <div class="dc-name">Rwanda — Gorillas</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a></div>
+</div>
+<div class="region-group" data-hub="oceania">
+  <div class="rg-header">
+    <a href="destinations/oceania.html" class="rg-title">
+      <span class="rg-emoji">🦘</span>
+      <span>Oceania</span>
+      <span class="rg-arr">Full Hub →</span>
+    </a>
+  </div>
+  <div class="d-grid rg-grid"><a href="destinations/sydney-great-barrier-reef.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Australia</div>
+    <div class="dc-name">Sydney & the Reef</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/queenstown-south-island.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">New Zealand</div>
+    <div class="dc-name">Queenstown & South Island</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a>
+<a href="destinations/fiji.html" class="d-card rv" style="background:linear-gradient(145deg,#0D1A2E,#0A1220)">
+  
+  <div class="dc-ov">
+    <div class="dc-tag">Pacific</div>
+    <div class="dc-name">Fiji</div>
+    <div class="dc-arr">Explore →</div>
+  </div>
+</a></div>
+</div></div>
+    <div id="search-results" style="display:none;">
+      <div class="d-grid" id="search-grid"></div>
+      <p id="no-results" style="display:none;color:var(--smoke);font-size:.9rem;padding:2rem 0;">No destinations match your search.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BP Strip -->
+<section class="s" style="background:var(--ink);">
+  <div style="max-width:1260px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:2rem;">
+    <div>
+      <div class="eyebrow" style="color:var(--teal);margin-bottom:.5rem">// Budget Travel</div>
+      <h2 style="font-family:var(--ff-display);font-size:clamp(1.2rem,2vw,1.6rem);font-weight:700;color:var(--parchment);">39 Backpacker Guides — from £12/day</h2>
+      <p style="font-size:.82rem;color:var(--smoke);margin-top:.3rem;">Daily budgets, hostel picks, transport hacks and no-fluff advice.</p>
+    </div>
+    <a href="destinations/backpacker-guides.html" class="btn btn-coral btn-arr">Browse All Guides →</a>
+  </div>
+</section>
+
 <footer>
   <div class="ft-top">
     <div class="ft-brand">
-      <a href="index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Services</span></a>
+      <a href="../index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Services</span></a>
       <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
       <div class="ft-social">
         <a href="#" class="ft-soc-btn">📸</a><a href="#" class="ft-soc-btn">🎵</a>
@@ -244,20 +844,20 @@
       </div>
     </div>
     <div class="ft-col"><h5>Explore</h5><ul>
-      <li><a href="destinations.html">Destinations</a></li>
-      <li><a href="destinations/backpacker-guides.html">Backpacker Guides</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="about.html">About</a></li>
+      <li><a href="../destinations.html">All Destinations</a></li>
+      <li><a href="../destinations/backpacker-guides.html">Backpacker Guides</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      <li><a href="../about.html">About</a></li>
     </ul></div>
     <div class="ft-col"><h5>Services</h5><ul>
-      <li><a href="services.html">Trip Planning</a></li>
-      <li><a href="services.html">Hotel Curation</a></li>
-      <li><a href="contact.html">Free Quote</a></li>
+      <li><a href="../services.html">Trip Planning</a></li>
+      <li><a href="../services.html">Hotel Curation</a></li>
+      <li><a href="../contact.html">Free Quote</a></li>
     </ul></div>
     <div class="ft-col"><h5>Info</h5><ul>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="privacy.html">Privacy Policy</a></li>
-      <li><a href="privacy.html#terms">Terms</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../privacy.html">Privacy Policy</a></li>
+      <li><a href="../privacy.html#terms">Terms</a></li>
     </ul></div>
   </div>
   <div class="ft-badges">
@@ -267,25 +867,97 @@
   </div>
   <div class="ft-bottom">
     <p>© 2025 Drop Everything And Go. All rights reserved.</p>
-    <div class="ft-bottom-links"><a href="privacy.html">Privacy</a><a href="privacy.html#cookies">Cookies</a><a href="privacy.html#terms">Terms</a></div>
+    <div class="ft-bottom-links"><a href="../privacy.html">Privacy</a><a href="../privacy.html#cookies">Cookies</a><a href="../privacy.html#terms">Terms</a></div>
   </div>
 </footer>
 <script>
-
-var tabs=document.querySelectorAll('.ft');
-var cards=document.querySelectorAll('.d-card');
-var rc=document.getElementById('rc');
-tabs.forEach(function(t){t.addEventListener('click',function(){
-  tabs.forEach(function(x){x.classList.remove('on');});
-  t.classList.add('on');
-  var f=t.dataset.f;var v=0;
-  cards.forEach(function(c){var show=f==='all'||(c.dataset.tags&&c.dataset.tags.includes(f));c.style.display=show?'':'none';if(show)v++;});
-  rc.textContent=v+' destination'+(v!==1?'s':'');
-});});
-
-
+(function(){
+document.body.classList.add('js-ready');
+var pb=document.getElementById('progress-bar');
+if(pb)window.addEventListener('scroll',function(){pb.style.width=Math.min((scrollY/(document.body.scrollHeight-innerHeight))*100,100)+'%';},{passive:true});
+var nav=document.getElementById('nav');
+if(nav)window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>60);},{passive:true});
+var ham=document.getElementById('ham'),mob=document.getElementById('mob');
+if(ham&&mob)ham.addEventListener('click',function(){ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
+// Lower threshold + rootMargin so items visible on page load reveal immediately
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+// Also immediately reveal anything already in viewport
+window.addEventListener('load',function(){document.querySelectorAll('.rv').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0)el.classList.add('vis');});});
+function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=document.getElementById('ck');if(c)c.classList.add('vis');},1400);}
 window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
 window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
 ckShow();
 })();
-</script></body></html>
+</script>
+
+<script>
+// ── Search + filter logic ──
+const allDests = [{"slug": "bali", "name": "Bali", "tag": "Indonesia", "hub": "southeast-asia", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773174541/67de721a9834260c076e97be_Tegallalang_20Rice_20Terraces_lnfzfx.webp"}, {"slug": "vietnam", "name": "Vietnam", "tag": "Southeast Asia", "hub": "southeast-asia", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423310/murray-mccallum-ha-long-bay-vietnam-tourist-boat-cruising-among-limestone-karsts-and-islets-in-unesco-site_u-l-q1tc1ej0_jif5kq.jpg"}, {"slug": "thailand", "name": "Thailand", "tag": "Southeast Asia", "hub": "southeast-asia", "img": ""}, {"slug": "cambodia", "name": "Angkor Wat", "tag": "Cambodia", "hub": "southeast-asia", "img": ""}, {"slug": "singapore", "name": "Singapore", "tag": "Southeast Asia", "hub": "southeast-asia", "img": ""}, {"slug": "philippines", "name": "El Nido & Palawan", "tag": "Philippines", "hub": "southeast-asia", "img": ""}, {"slug": "maldives", "name": "Maldives", "tag": "Indian Ocean", "hub": "south-asia", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422058/activemaldives_GettyImages-86477634_HR_f9khtp.jpg"}, {"slug": "golden-triangle", "name": "India — Golden Triangle", "tag": "South Asia", "hub": "south-asia", "img": ""}, {"slug": "kathmandu-everest", "name": "Nepal — Everest", "tag": "South Asia", "hub": "south-asia", "img": ""}, {"slug": "sri-lanka", "name": "Sri Lanka", "tag": "South Asia", "hub": "south-asia", "img": ""}, {"slug": "tokyo", "name": "Tokyo", "tag": "Japan", "hub": "east-asia", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423265/1701836232-fujiyoshida-japan-at-chureito-pagoda-and-mt-fuji_ut7ybj.jpg"}, {"slug": "kyoto", "name": "Kyoto", "tag": "Japan", "hub": "east-asia", "img": ""}, {"slug": "seoul", "name": "Seoul", "tag": "South Korea", "hub": "east-asia", "img": ""}, {"slug": "beijing", "name": "Beijing", "tag": "China", "hub": "east-asia", "img": ""}, {"slug": "shanghai", "name": "Shanghai", "tag": "China", "hub": "east-asia", "img": ""}, {"slug": "georgia", "name": "Georgia", "tag": "Caucasus", "hub": "central-asia", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773421844/Gergeti_Trinity_Church_-_Outside_Kazbegi_guapou.jpg"}, {"slug": "cappadocia", "name": "Cappadocia", "tag": "Turkey", "hub": "central-asia", "img": ""}, {"slug": "petra-wadi-rum", "name": "Petra & Wadi Rum", "tag": "Jordan", "hub": "middle-east", "img": ""}, {"slug": "marrakech", "name": "Marrakech & Morocco", "tag": "Morocco", "hub": "middle-east", "img": ""}, {"slug": "cairo-luxor", "name": "Cairo & Luxor", "tag": "Egypt", "hub": "middle-east", "img": ""}, {"slug": "dubai", "name": "Dubai", "tag": "UAE", "hub": "middle-east", "img": ""}, {"slug": "rome", "name": "Rome", "tag": "Italy", "hub": "western-europe", "img": ""}, {"slug": "paris", "name": "Paris", "tag": "France", "hub": "western-europe", "img": ""}, {"slug": "barcelona", "name": "Barcelona", "tag": "Spain", "hub": "western-europe", "img": ""}, {"slug": "amsterdam", "name": "Amsterdam", "tag": "Netherlands", "hub": "western-europe", "img": ""}, {"slug": "amalfi", "name": "Amalfi Coast", "tag": "Italy", "hub": "western-europe", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773174321/fe1ae1081933147527d277649c44277e_molrxf.jpg"}, {"slug": "santorini", "name": "Santorini", "tag": "Greece", "hub": "western-europe", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423170/01-santorini-caldera-greece_qchzdf.jpg"}, {"slug": "portugal", "name": "Portugal", "tag": "Western Europe", "hub": "western-europe", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422400/Sintra_Castles_Palaces_portugal_magik_tours_2509681399_js3ibk.webp"}, {"slug": "iceland", "name": "Iceland", "tag": "Northern Europe", "hub": "western-europe", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773421883/northern_lights_above_glacier_lagoon_v2osk_unsplash_7d39ca647f_x2fxsc.jpg"}, {"slug": "croatia", "name": "Croatia", "tag": "Balkans", "hub": "eastern-europe", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773175144/croatia-banje-beach-coast-aerial_dtfkpq.jpg"}, {"slug": "dubrovnik", "name": "Dubrovnik", "tag": "Croatia", "hub": "eastern-europe", "img": ""}, {"slug": "prague", "name": "Prague", "tag": "Czech Republic", "hub": "eastern-europe", "img": ""}, {"slug": "budapest", "name": "Budapest", "tag": "Hungary", "hub": "eastern-europe", "img": ""}, {"slug": "salzburg", "name": "Salzburg", "tag": "Austria", "hub": "eastern-europe", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422432/salzburg-austria-aerial-view-historic-600nw-2647183381_uk5c2a.jpg"}, {"slug": "edinburgh", "name": "Edinburgh", "tag": "Scotland", "hub": "northern-europe", "img": ""}, {"slug": "london", "name": "London", "tag": "UK", "hub": "northern-europe", "img": ""}, {"slug": "new-york", "name": "New York City", "tag": "North America", "hub": "north-america", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422120/lower-manhattan-skyline-and-brooklyn-bridge_pfon1f.jpg"}, {"slug": "los-angeles", "name": "Los Angeles", "tag": "North America", "hub": "north-america", "img": ""}, {"slug": "vancouver-banff", "name": "Vancouver & Banff", "tag": "Canada", "hub": "north-america", "img": ""}, {"slug": "mexico-city", "name": "Mexico City & Oaxaca", "tag": "Mexico", "hub": "central-america", "img": ""}, {"slug": "havana", "name": "Havana & Trinidad", "tag": "Cuba", "hub": "central-america", "img": ""}, {"slug": "costa-rica", "name": "Costa Rica", "tag": "Central America", "hub": "central-america", "img": ""}, {"slug": "guatemala", "name": "Guatemala", "tag": "Central America", "hub": "central-america", "img": ""}, {"slug": "patagonia", "name": "Patagonia", "tag": "South America", "hub": "south-america", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422176/Torres_20del_20Paine_20in_20Patagonia_2C_20Chile_20Tour_shutterstock_699918793_yyqhbf.jpg"}, {"slug": "peru", "name": "Peru", "tag": "South America", "hub": "south-america", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773085766/machu-picchu.webp"}, {"slug": "ecuador", "name": "Ecuador & Galápagos", "tag": "South America", "hub": "south-america", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773176813/Galapagos-Seal.jpg"}, {"slug": "buenos-aires", "name": "Buenos Aires", "tag": "Argentina", "hub": "south-america", "img": ""}, {"slug": "rio-de-janeiro", "name": "Rio de Janeiro", "tag": "Brazil", "hub": "south-america", "img": ""}, {"slug": "medellin-cartagena", "name": "Medellín & Cartagena", "tag": "Colombia", "hub": "south-america", "img": ""}, {"slug": "atacama-patagonia", "name": "Atacama & Patagonia", "tag": "Chile", "hub": "south-america", "img": ""}, {"slug": "uyuni-salt-flats", "name": "Uyuni Salt Flats", "tag": "Bolivia", "hub": "south-america", "img": ""}, {"slug": "kenya", "name": "Kenya", "tag": "East Africa", "hub": "africa", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773421993/masai-mara-great-migration-river-crossing-kenya-small_tvchpp.jpg"}, {"slug": "zanzibar", "name": "Zanzibar", "tag": "East Africa", "hub": "africa", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423414/aerial-view-zanzibar-pristine-nungwi-beach-where-crystal-clear-turquoise-waters-meet-soft-white-sand-traditional-wooden-365168956_fa49uu.jpg"}, {"slug": "cape-town", "name": "Cape Town", "tag": "South Africa", "hub": "africa", "img": ""}, {"slug": "serengeti-kilimanjaro", "name": "Serengeti & Kilimanjaro", "tag": "Tanzania", "hub": "africa", "img": ""}, {"slug": "rwanda-gorillas", "name": "Rwanda — Gorillas", "tag": "Africa", "hub": "africa", "img": ""}, {"slug": "sydney-great-barrier-reef", "name": "Sydney & the Reef", "tag": "Australia", "hub": "oceania", "img": ""}, {"slug": "queenstown-south-island", "name": "Queenstown & South Island", "tag": "New Zealand", "hub": "oceania", "img": ""}, {"slug": "fiji", "name": "Fiji", "tag": "Pacific", "hub": "oceania", "img": ""}];
+
+const searchInput = document.getElementById('dest-search');
+const filterBtns  = document.querySelectorAll('.fb');
+const regionGroups = document.getElementById('region-groups');
+const searchResults = document.getElementById('search-results');
+const searchGrid  = document.getElementById('search-grid');
+const noResults   = document.getElementById('no-results');
+
+let activeHub = 'all';
+let searchTerm = '';
+
+function makeCard(d) {
+  const bg = d.img ? '' : ' style="background:linear-gradient(145deg,#0D1A2E,#0A1220)"';
+  const img = d.img ? `<img src="${d.img}" alt="${d.name}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">` : '';
+  return `<a href="destinations/${d.slug}.html" class="d-card rv"${bg}>${img}<div class="dc-ov"><div class="dc-tag">${d.tag}</div><div class="dc-name">${d.name}</div><div class="dc-arr">Explore →</div></div></a>`;
+}
+
+function render() {
+  const q = searchTerm.toLowerCase().trim();
+
+  if (q) {
+    // Search mode — show flat grid of matches
+    regionGroups.style.display = 'none';
+    searchResults.style.display = '';
+    const matches = allDests.filter(d =>
+      d.name.toLowerCase().includes(q) ||
+      d.tag.toLowerCase().includes(q) ||
+      d.hub.toLowerCase().includes(q)
+    );
+    searchGrid.innerHTML = matches.map(makeCard).join('');
+    noResults.style.display = matches.length ? 'none' : '';
+    return;
+  }
+
+  // Filter mode
+  regionGroups.style.display = '';
+  searchResults.style.display = 'none';
+  document.querySelectorAll('.region-group').forEach(g => {
+    const show = activeHub === 'all' || g.dataset.hub === activeHub;
+    g.style.display = show ? '' : 'none';
+  });
+}
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    activeHub = btn.dataset.hub;
+    searchTerm = '';
+    searchInput.value = '';
+    render();
+  });
+});
+
+searchInput.addEventListener('input', e => {
+  searchTerm = e.target.value;
+  if (searchTerm) {
+    filterBtns.forEach(b => b.classList.remove('on'));
+  } else {
+    filterBtns[0].classList.add('on');
+    activeHub = 'all';
+  }
+  render();
+});
+</script>
+</body>
+</html>
