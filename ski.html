@@ -67,7 +67,7 @@
 
 /* ratings stars */
 .sk-ratings{display:flex;gap:.6rem;margin:.8rem 0;}
-.sk-r{display:flex;flex-direction:column;align-items:center;gap:.15rem;}
+.sk-r{display:flex;align-items:center;justify-content:space-between;gap:.5rem;}
 .sk-r-label{font-family:var(--ff-mono);font-size:.4rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(200,190,170,.4);}
 .sk-r-dots{display:flex;gap:2px;}
 .sk-dot{width:6px;height:6px;border-radius:50%;background:rgba(245,239,224,.15);}
@@ -1016,18 +1016,6 @@
 </footer>
 
 <script>
-// Add 5th dot to each rating row
-document.querySelectorAll('.sk-dots').forEach(function(dots){
-  var spans=dots.querySelectorAll('span');
-  var color=spans[0].style.background;
-  var allFilled=true;
-  spans.forEach(function(s){if(s.style.background.includes('255,255,255'))allFilled=false;});
-  var n=document.createElement('span');
-  n.style.cssText='width:8px;height:8px;border-radius:2px;display:inline-block;margin-right:2px';
-  n.style.background=allFilled?color:'rgba(255,255,255,.12)';
-  dots.appendChild(n);
-});
-
 var tabs=document.querySelectorAll('.sft');
 var cards=document.querySelectorAll('.sk-card');
 var rc=document.getElementById('skiRc');
