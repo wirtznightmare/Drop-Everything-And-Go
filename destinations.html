@@ -60,9 +60,9 @@
 .fb{font-family:var(--ff-mono);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;padding:.3rem .85rem;border-radius:100px;border:1px solid rgba(245,239,224,.12);background:rgba(245,239,224,.05);color:rgba(245,239,224,.5);cursor:pointer;transition:all .2s;}
 .fb:hover,.fb.on{background:rgba(14,191,184,.12);border-color:rgba(14,191,184,.3);color:var(--teal);}
 
-@media(max-width:1100px){.d-grid{grid-template-columns:repeat(3,1fr);}.hub-grid{grid-template-columns:repeat(3,1fr);}}
-@media(max-width:760px){.d-grid{grid-template-columns:repeat(2,1fr);}.hub-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:480px){.d-grid{grid-template-columns:1fr;}.hub-grid{grid-template-columns:1fr;}}
+@media(max-width:1100px){.d-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:760px){.d-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:480px){.d-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -132,102 +132,153 @@
   </div>
 </section>
 
-<!-- Regional Hubs -->
-<section class="s" style="background:var(--ink-2);">
-  <div style="max-width:1260px;margin:0 auto;">
-    <div class="eyebrow" style="color:var(--teal);margin-bottom:.7rem">// Browse by region</div>
-    <h2 style="font-family:var(--ff-display);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--parchment);letter-spacing:-.02em;margin-bottom:1.4rem;">13 Regional Travel Hubs</h2>
-    <div class="hub-grid"><a href="destinations/southeast-asia.html" class="reg-card rv">
-  <div class="reg-inner" style="background:linear-gradient(135deg,#061A0C,#0E2A14)">
-    <div class="reg-emoji">🌏</div>
-    <div class="reg-name">Southeast Asia</div>
-    <div class="reg-count">6 destinations · 7 BP guides</div>
+<section class="hub-section">
+  <div class="hub-section-inner">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;">
+      <div>
+        <div class="eyebrow" style="color:var(--teal);margin-bottom:.5rem">// Explore by region</div>
+        <h2 style="font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:var(--parchment);letter-spacing:-.03em;line-height:1;">13 Regional <em style="font-style:italic;font-weight:300;color:var(--teal)">Travel Hubs</em></h2>
+      </div>
+      <p style="font-size:.8rem;color:var(--smoke);line-height:1.65;max-width:320px;">Full guides, backpacker routes, activities and ski resorts — organised by region.</p>
+    </div>
+    
+<div class="cont-group">
+  <div class="cont-label">Asia</div>
+  <div class="cont-grid" style="grid-template-columns:repeat(5,1fr)"><a href="destinations/southeast-asia.html" class="hub-card rv">
+  <div class="hub-card-inner" style="background:linear-gradient(135deg,#061A0C,#0E2A14)">
+    <div class="hub-card-top">
+      <span class="hub-emoji">🌏</span>
+      <span class="hub-arr">→</span>
+    </div>
+    <div class="hub-name">Southeast Asia</div>
+    <div class="hub-dests"><span class="hc-dest">Bali</span><span class="hc-dest">Vietnam</span><span class="hc-dest">Thailand</span><span class="hc-dest">Cambodia</span><span class="hc-dest">Singapore</span><span class="hc-dest">Philippines</span></div>
   </div>
-</a>
-<a href="destinations/south-asia.html" class="reg-card rv">
-  <div class="reg-inner" style="background:linear-gradient(135deg,#1A0A06,#2E1408)">
-    <div class="reg-emoji">🕉️</div>
-    <div class="reg-name">South Asia</div>
-    <div class="reg-count">4 destinations · 4 BP guides</div>
+</a><a href="destinations/south-asia.html" class="hub-card rv">
+  <div class="hub-card-inner" style="background:linear-gradient(135deg,#1A0A06,#2E1408)">
+    <div class="hub-card-top">
+      <span class="hub-emoji">🕉️</span>
+      <span class="hub-arr">→</span>
+    </div>
+    <div class="hub-name">South Asia</div>
+    <div class="hub-dests"><span class="hc-dest">Maldives</span><span class="hc-dest">India</span><span class="hc-dest">Nepal</span><span class="hc-dest">Sri Lanka</span></div>
   </div>
-</a>
-<a href="destinations/east-asia.html" class="reg-card rv">
-  <div class="reg-inner" style="background:linear-gradient(135deg,#12061A,#200A2E)">
-    <div class="reg-emoji">🏯</div>
-    <div class="reg-name">East Asia</div>
-    <div class="reg-count">5 destinations · 3 BP guides · ski</div>
+</a><a href="destinations/east-asia.html" class="hub-card rv">
+  <div class="hub-card-inner" style="background:linear-gradient(135deg,#12061A,#200A2E)">
+    <div class="hub-card-top">
+      <span class="hub-emoji">🏯</span>
+      <span class="hub-arr">→</span>
+    </div>
+    <div class="hub-name">East Asia</div>
+    <div class="hub-dests"><span class="hc-dest">Tokyo</span><span class="hc-dest">Kyoto</span><span class="hc-dest">Seoul</span><span class="hc-dest">Beijing</span><span class="hc-dest">Shanghai</span></div>
   </div>
-</a>
-<a href="destinations/central-asia.html" class="reg-card rv">
-  <div class="reg-inner" style="background:linear-gradient(135deg,#1A0A06,#2E1A06)">
-    <div class="reg-emoji">🏔️</div>
-    <div class="reg-name">Central Asia</div>
-    <div class="reg-count">2 destinations · ski</div>
+</a><a href="destinations/central-asia.html" class="hub-card rv">
+  <div class="hub-card-inner" style="background:linear-gradient(135deg,#1A0A06,#2E1A06)">
+    <div class="hub-card-top">
+      <span class="hub-emoji">🏔️</span>
+      <span class="hub-arr">→</span>
+    </div>
+    <div class="hub-name">Central Asia</div>
+    <div class="hub-dests"><span class="hc-dest">Georgia</span><span class="hc-dest">Cappadocia</span></div>
   </div>
-</a>
-<a href="destinations/middle-east.html" class="reg-card rv">
-  <div class="reg-inner" style="background:linear-gradient(135deg,#1A0C06,#2E1606)">
-    <div class="reg-emoji">🕌</div>
-    <div class="reg-name">Middle East</div>
-    <div class="reg-count">4 destinations · 4 BP guides</div>
-  </div>
-</a>
-<a href="destinations/western-europe.html" class="reg-card rv">
-  <div class="reg-inner" style="background:linear-gradient(135deg,#08091E,#0E1030)">
-    <div class="reg-emoji">🗼</div>
-    <div class="reg-name">Western Europe</div>
-    <div class="reg-count">8 destinations · ski</div>
-  </div>
-</a>
-<a href="destinations/eastern-europe.html" class="reg-card rv">
-  <div class="reg-inner" style="background:linear-gradient(135deg,#060E1E,#0C1830)">
-    <div class="reg-emoji">🏰</div>
-    <div class="reg-name">Eastern Europe</div>
-    <div class="reg-count">5 destinations · ski</div>
-  </div>
-</a>
-<a href="destinations/northern-europe.html" class="reg-card rv">
-  <div class="reg-inner" style="background:linear-gradient(135deg,#061418,#0A2028)">
-    <div class="reg-emoji">🌊</div>
-    <div class="reg-name">Northern Europe</div>
-    <div class="reg-count">2 destinations · ski</div>
-  </div>
-</a>
-<a href="destinations/north-america.html" class="reg-card rv">
-  <div class="reg-inner" style="background:linear-gradient(135deg,#1A0612,#2E0E20)">
-    <div class="reg-emoji">🗽</div>
-    <div class="reg-name">North America</div>
-    <div class="reg-count">3 destinations · ski</div>
-  </div>
-</a>
-<a href="destinations/central-america.html" class="reg-card rv">
-  <div class="reg-inner" style="background:linear-gradient(135deg,#180812,#281020)">
-    <div class="reg-emoji">🌮</div>
-    <div class="reg-name">Central America</div>
-    <div class="reg-count">4 destinations · 5 BP guides</div>
-  </div>
-</a>
-<a href="destinations/south-america.html" class="reg-card rv">
-  <div class="reg-inner" style="background:linear-gradient(135deg,#061A0C,#0E2A14)">
-    <div class="reg-emoji">🦙</div>
-    <div class="reg-name">South America</div>
-    <div class="reg-count">8 destinations · 5 BP guides · ski</div>
-  </div>
-</a>
-<a href="destinations/africa.html" class="reg-card rv">
-  <div class="reg-inner" style="background:linear-gradient(135deg,#140E00,#241A00)">
-    <div class="reg-emoji">🦁</div>
-    <div class="reg-name">Africa</div>
-    <div class="reg-count">5 destinations · 4 BP guides</div>
-  </div>
-</a>
-<a href="destinations/oceania.html" class="reg-card rv">
-  <div class="reg-inner" style="background:linear-gradient(135deg,#061520,#0E2030)">
-    <div class="reg-emoji">🦘</div>
-    <div class="reg-name">Oceania</div>
-    <div class="reg-count">3 destinations · 2 BP guides · ski</div>
+</a><a href="destinations/middle-east.html" class="hub-card rv">
+  <div class="hub-card-inner" style="background:linear-gradient(135deg,#1A0C06,#2E1606)">
+    <div class="hub-card-top">
+      <span class="hub-emoji">🕌</span>
+      <span class="hub-arr">→</span>
+    </div>
+    <div class="hub-name">Middle East</div>
+    <div class="hub-dests"><span class="hc-dest">Petra</span><span class="hc-dest">Marrakech</span><span class="hc-dest">Cairo</span><span class="hc-dest">Dubai</span></div>
   </div>
 </a></div>
+</div>
+<div class="cont-group">
+  <div class="cont-label">Europe</div>
+  <div class="cont-grid" style="grid-template-columns:repeat(3,1fr)"><a href="destinations/western-europe.html" class="hub-card rv">
+  <div class="hub-card-inner" style="background:linear-gradient(135deg,#08091E,#0E1030)">
+    <div class="hub-card-top">
+      <span class="hub-emoji">🗼</span>
+      <span class="hub-arr">→</span>
+    </div>
+    <div class="hub-name">Western Europe</div>
+    <div class="hub-dests"><span class="hc-dest">Rome</span><span class="hc-dest">Paris</span><span class="hc-dest">Barcelona</span><span class="hc-dest">Amsterdam</span><span class="hc-dest">Amalfi</span><span class="hc-dest">Santorini</span></div>
+  </div>
+</a><a href="destinations/eastern-europe.html" class="hub-card rv">
+  <div class="hub-card-inner" style="background:linear-gradient(135deg,#060E1E,#0C1830)">
+    <div class="hub-card-top">
+      <span class="hub-emoji">🏰</span>
+      <span class="hub-arr">→</span>
+    </div>
+    <div class="hub-name">Eastern Europe</div>
+    <div class="hub-dests"><span class="hc-dest">Croatia</span><span class="hc-dest">Dubrovnik</span><span class="hc-dest">Prague</span><span class="hc-dest">Budapest</span><span class="hc-dest">Salzburg</span></div>
+  </div>
+</a><a href="destinations/northern-europe.html" class="hub-card rv">
+  <div class="hub-card-inner" style="background:linear-gradient(135deg,#061418,#0A2028)">
+    <div class="hub-card-top">
+      <span class="hub-emoji">🌊</span>
+      <span class="hub-arr">→</span>
+    </div>
+    <div class="hub-name">Northern Europe</div>
+    <div class="hub-dests"><span class="hc-dest">Edinburgh</span><span class="hc-dest">London</span></div>
+  </div>
+</a></div>
+</div>
+<div class="cont-group">
+  <div class="cont-label">Americas</div>
+  <div class="cont-grid" style="grid-template-columns:repeat(3,1fr)"><a href="destinations/north-america.html" class="hub-card rv">
+  <div class="hub-card-inner" style="background:linear-gradient(135deg,#1A0612,#2E0E20)">
+    <div class="hub-card-top">
+      <span class="hub-emoji">🗽</span>
+      <span class="hub-arr">→</span>
+    </div>
+    <div class="hub-name">North America</div>
+    <div class="hub-dests"><span class="hc-dest">New York</span><span class="hc-dest">Los Angeles</span><span class="hc-dest">Vancouver & Banff</span></div>
+  </div>
+</a><a href="destinations/central-america.html" class="hub-card rv">
+  <div class="hub-card-inner" style="background:linear-gradient(135deg,#180812,#281020)">
+    <div class="hub-card-top">
+      <span class="hub-emoji">🌮</span>
+      <span class="hub-arr">→</span>
+    </div>
+    <div class="hub-name">Central America & Caribbean</div>
+    <div class="hub-dests"><span class="hc-dest">Mexico City</span><span class="hc-dest">Havana</span><span class="hc-dest">Costa Rica</span><span class="hc-dest">Guatemala</span></div>
+  </div>
+</a><a href="destinations/south-america.html" class="hub-card rv">
+  <div class="hub-card-inner" style="background:linear-gradient(135deg,#061A0C,#0E2A14)">
+    <div class="hub-card-top">
+      <span class="hub-emoji">🦙</span>
+      <span class="hub-arr">→</span>
+    </div>
+    <div class="hub-name">South America</div>
+    <div class="hub-dests"><span class="hc-dest">Patagonia</span><span class="hc-dest">Peru</span><span class="hc-dest">Ecuador</span><span class="hc-dest">Buenos Aires</span><span class="hc-dest">Rio</span></div>
+  </div>
+</a></div>
+</div>
+<div class="cont-group">
+  <div class="cont-label">Africa</div>
+  <div class="cont-grid" style="grid-template-columns:repeat(1,1fr)"><a href="destinations/africa.html" class="hub-card rv">
+  <div class="hub-card-inner" style="background:linear-gradient(135deg,#140E00,#241A00)">
+    <div class="hub-card-top">
+      <span class="hub-emoji">🦁</span>
+      <span class="hub-arr">→</span>
+    </div>
+    <div class="hub-name">Africa</div>
+    <div class="hub-dests"><span class="hc-dest">Kenya</span><span class="hc-dest">Zanzibar</span><span class="hc-dest">Cape Town</span><span class="hc-dest">Serengeti</span><span class="hc-dest">Rwanda</span></div>
+  </div>
+</a></div>
+</div>
+<div class="cont-group">
+  <div class="cont-label">Oceania</div>
+  <div class="cont-grid" style="grid-template-columns:repeat(1,1fr)"><a href="destinations/oceania.html" class="hub-card rv">
+  <div class="hub-card-inner" style="background:linear-gradient(135deg,#061520,#0E2030)">
+    <div class="hub-card-top">
+      <span class="hub-emoji">🦘</span>
+      <span class="hub-arr">→</span>
+    </div>
+    <div class="hub-name">Oceania & Pacific</div>
+    <div class="hub-dests"><span class="hc-dest">Sydney & Reef</span><span class="hc-dest">Queenstown</span><span class="hc-dest">Fiji</span></div>
+  </div>
+</a></div>
+</div>
   </div>
 </section>
 
@@ -834,155 +885,7 @@
 </section>
 
 <!-- BP Strip -->
-<section class="hub-section">
-  <div class="hub-section-inner">
-    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;">
-      <div>
-        <div class="eyebrow" style="color:var(--teal);margin-bottom:.5rem">// Explore by region</div>
-        <h2 style="font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:var(--parchment);letter-spacing:-.03em;line-height:1;">13 Regional <em style="font-style:italic;font-weight:300;color:var(--teal)">Travel Hubs</em></h2>
-      </div>
-      <p style="font-size:.8rem;color:var(--smoke);line-height:1.65;max-width:320px;">Full guides, backpacker routes, activities and ski resorts — organised by region.</p>
-    </div>
-    
-<div class="cont-group">
-  <div class="cont-label">Asia</div>
-  <div class="cont-grid" style="grid-template-columns:repeat(5,1fr)"><a href="destinations/southeast-asia.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#061A0C,#0E2A14)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🌏</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">Southeast Asia</div>
-    <div class="hub-dests"><span class="hc-dest">Bali</span><span class="hc-dest">Vietnam</span><span class="hc-dest">Thailand</span><span class="hc-dest">Cambodia</span><span class="hc-dest">Singapore</span><span class="hc-dest">Philippines</span></div>
-  </div>
-</a><a href="destinations/south-asia.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#1A0A06,#2E1408)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🕉️</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">South Asia</div>
-    <div class="hub-dests"><span class="hc-dest">Maldives</span><span class="hc-dest">India</span><span class="hc-dest">Nepal</span><span class="hc-dest">Sri Lanka</span></div>
-  </div>
-</a><a href="destinations/east-asia.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#12061A,#200A2E)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🏯</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">East Asia</div>
-    <div class="hub-dests"><span class="hc-dest">Tokyo</span><span class="hc-dest">Kyoto</span><span class="hc-dest">Seoul</span><span class="hc-dest">Beijing</span><span class="hc-dest">Shanghai</span></div>
-  </div>
-</a><a href="destinations/central-asia.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#1A0A06,#2E1A06)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🏔️</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">Central Asia</div>
-    <div class="hub-dests"><span class="hc-dest">Georgia</span><span class="hc-dest">Cappadocia</span></div>
-  </div>
-</a><a href="destinations/middle-east.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#1A0C06,#2E1606)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🕌</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">Middle East</div>
-    <div class="hub-dests"><span class="hc-dest">Petra</span><span class="hc-dest">Marrakech</span><span class="hc-dest">Cairo</span><span class="hc-dest">Dubai</span></div>
-  </div>
-</a></div>
-</div>
-<div class="cont-group">
-  <div class="cont-label">Europe</div>
-  <div class="cont-grid" style="grid-template-columns:repeat(3,1fr)"><a href="destinations/western-europe.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#08091E,#0E1030)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🗼</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">Western Europe</div>
-    <div class="hub-dests"><span class="hc-dest">Rome</span><span class="hc-dest">Paris</span><span class="hc-dest">Barcelona</span><span class="hc-dest">Amsterdam</span><span class="hc-dest">Amalfi</span><span class="hc-dest">Santorini</span></div>
-  </div>
-</a><a href="destinations/eastern-europe.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#060E1E,#0C1830)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🏰</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">Eastern Europe</div>
-    <div class="hub-dests"><span class="hc-dest">Croatia</span><span class="hc-dest">Dubrovnik</span><span class="hc-dest">Prague</span><span class="hc-dest">Budapest</span><span class="hc-dest">Salzburg</span></div>
-  </div>
-</a><a href="destinations/northern-europe.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#061418,#0A2028)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🌊</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">Northern Europe</div>
-    <div class="hub-dests"><span class="hc-dest">Edinburgh</span><span class="hc-dest">London</span></div>
-  </div>
-</a></div>
-</div>
-<div class="cont-group">
-  <div class="cont-label">Americas</div>
-  <div class="cont-grid" style="grid-template-columns:repeat(3,1fr)"><a href="destinations/north-america.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#1A0612,#2E0E20)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🗽</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">North America</div>
-    <div class="hub-dests"><span class="hc-dest">New York</span><span class="hc-dest">Los Angeles</span><span class="hc-dest">Vancouver & Banff</span></div>
-  </div>
-</a><a href="destinations/central-america.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#180812,#281020)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🌮</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">Central America & Caribbean</div>
-    <div class="hub-dests"><span class="hc-dest">Mexico City</span><span class="hc-dest">Havana</span><span class="hc-dest">Costa Rica</span><span class="hc-dest">Guatemala</span></div>
-  </div>
-</a><a href="destinations/south-america.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#061A0C,#0E2A14)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🦙</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">South America</div>
-    <div class="hub-dests"><span class="hc-dest">Patagonia</span><span class="hc-dest">Peru</span><span class="hc-dest">Ecuador</span><span class="hc-dest">Buenos Aires</span><span class="hc-dest">Rio</span></div>
-  </div>
-</a></div>
-</div>
-<div class="cont-group">
-  <div class="cont-label">Africa</div>
-  <div class="cont-grid" style="grid-template-columns:repeat(1,1fr)"><a href="destinations/africa.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#140E00,#241A00)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🦁</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">Africa</div>
-    <div class="hub-dests"><span class="hc-dest">Kenya</span><span class="hc-dest">Zanzibar</span><span class="hc-dest">Cape Town</span><span class="hc-dest">Serengeti</span><span class="hc-dest">Rwanda</span></div>
-  </div>
-</a></div>
-</div>
-<div class="cont-group">
-  <div class="cont-label">Oceania</div>
-  <div class="cont-grid" style="grid-template-columns:repeat(1,1fr)"><a href="destinations/oceania.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#061520,#0E2030)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🦘</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">Oceania & Pacific</div>
-    <div class="hub-dests"><span class="hc-dest">Sydney & Reef</span><span class="hc-dest">Queenstown</span><span class="hc-dest">Fiji</span></div>
-  </div>
-</a></div>
-</div>
-  </div>
-</section>
+
 
 <footer>
   <div class="ft-top">
