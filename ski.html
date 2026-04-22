@@ -1058,11 +1058,7 @@ tabs.forEach(function(t){
       if(show) v++;
     });
     rc.textContent = v + ' resort' + (v !== 1 ? 's' : '');
-    // Scroll to just below filter bar when filtering
-    if(f !== 'all'){
-      var filtBottom = filtBar.getBoundingClientRect().bottom + window.scrollY;
-      window.scrollTo({ top: filtBottom - 20, behavior: 'smooth' });
-    }
+
   });
 });
 

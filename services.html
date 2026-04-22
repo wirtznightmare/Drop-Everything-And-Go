@@ -51,6 +51,8 @@
 @media(max-width:860px){
   #newsletter > div { grid-template-columns: 1fr !important; gap: 2.5rem !important; }
 }
+@media(max-width:860px){.what-grid{grid-template-columns:1fr 1fr!important;}}
+@media(max-width:520px){.what-grid{grid-template-columns:1fr!important;}}
 </style>
 </head>
 <body>
@@ -174,86 +176,52 @@
 </section>
 
 <!-- Newsletter signup -->
-<section class="s" id="newsletter" style="background:var(--ink-2);padding:5rem var(--gutter);">
-  <div style="max-width:1260px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
-
-    <!-- Left: what you get -->
-    <div>
-      <div class="eyebrow" style="color:var(--teal);margin-bottom:.8rem">// The DEAG Newsletter</div>
-      <h2 style="font-family:var(--ff-display);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;color:var(--parchment);letter-spacing:-.04em;line-height:.95;margin-bottom:1.4rem;">
-        Get the itineraries<br><em style="font-weight:300;font-style:italic;color:var(--teal)">before anyone else.</em>
-      </h2>
-      <p style="font-size:.9rem;color:var(--smoke);line-height:1.85;margin-bottom:2rem;">The plan is simple — share everything it takes to plan a great trip, and eventually sell complete ready-to-use itineraries for people who want the research done for them. Subscribe now and you'll get all of it first.</p>
-
-      <!-- What subscribers get -->
-      <div style="display:flex;flex-direction:column;gap:.85rem;">
-        <div style="display:flex;align-items:flex-start;gap:1rem;">
-          <span style="font-size:1.1rem;flex-shrink:0;margin-top:.1rem;">📍</span>
-          <div>
-            <div style="font-family:var(--ff-display);font-size:.9rem;font-weight:700;color:var(--parchment);">Destination deep-dives</div>
-            <p style="font-size:.78rem;color:var(--smoke);line-height:1.65;margin-top:.2rem;">New destination guides as they go live — with real costs, honest opinions and the things most travel blogs leave out.</p>
-          </div>
-        </div>
-        <div style="display:flex;align-items:flex-start;gap:1rem;">
-          <span style="font-size:1.1rem;flex-shrink:0;margin-top:.1rem;">🗓️</span>
-          <div>
-            <div style="font-family:var(--ff-display);font-size:.9rem;font-weight:700;color:var(--parchment);">Complete trip itineraries <span style="font-family:var(--ff-mono);font-size:.42rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(14,191,184,.15);color:var(--teal);border-radius:100px;padding:.15rem .55rem;vertical-align:middle;">Coming Soon</span></div>
-            <p style="font-size:.78rem;color:var(--smoke);line-height:1.65;margin-top:.2rem;">Day-by-day plans built from real trips — accommodation, transport, timings, costs. Ready to use. Subscribers get early access and a discounted rate when they launch.</p>
-          </div>
-        </div>
-        <div style="display:flex;align-items:flex-start;gap:1rem;">
-          <span style="font-size:1.1rem;flex-shrink:0;margin-top:.1rem;">🎿</span>
-          <div>
-            <div style="font-family:var(--ff-display);font-size:.9rem;font-weight:700;color:var(--parchment);">Ski & city break coverage</div>
-            <p style="font-size:.78rem;color:var(--smoke);line-height:1.65;margin-top:.2rem;">The Salzburg and Austrian Alps trip reports, plus UK city breaks that are genuinely worth the weekend — as they get written.</p>
-          </div>
-        </div>
-        <div style="display:flex;align-items:flex-start;gap:1rem;">
-          <span style="font-size:1.1rem;flex-shrink:0;margin-top:.1rem;">🔕</span>
-          <div>
-            <div style="font-family:var(--ff-display);font-size:.9rem;font-weight:700;color:var(--parchment);">No spam, no brand deals</div>
-            <p style="font-size:.78rem;color:var(--smoke);line-height:1.65;margin-top:.2rem;">No sponsored content, no paid-for hotel reviews, no affiliate-driven recommendations dressed up as editorial. Just the actual trip reports.</p>
-          </div>
-        </div>
+<section class="s" style="background:var(--ink);">
+  <div style="max-width:1260px;margin:0 auto;">
+    <div class="eyebrow" style="color:var(--teal);margin-bottom:.8rem">// The DEAG Newsletter</div>
+    <h2 style="font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--parchment);letter-spacing:-.04em;line-height:.95;margin-bottom:1rem;">
+      Get the itineraries<br><em style="font-weight:300;font-style:italic;color:var(--teal)">before anyone else.</em>
+    </h2>
+    <p style="font-size:.9rem;color:var(--smoke);line-height:1.85;max-width:680px;margin-bottom:2.5rem;">The plan is simple — share everything it takes to plan a great trip, and eventually sell complete ready-to-use itineraries for people who want the research done for them. Subscribe now and you'll get all of it first.</p>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-bottom:3rem;">
+      <div style="background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:1.3rem;">
+        <div style="font-size:1.3rem;margin-bottom:.7rem;">📍</div>
+        <div style="font-family:var(--ff-display);font-size:.9rem;font-weight:700;color:var(--parchment);margin-bottom:.4rem;">Destination deep-dives</div>
+        <p style="font-size:.76rem;color:var(--smoke);line-height:1.65;">New guides as they go live — real costs, honest opinions, what most travel blogs won't tell you.</p>
+      </div>
+      <div style="background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:1.3rem;">
+        <div style="font-size:1.3rem;margin-bottom:.7rem;">🎿</div>
+        <div style="font-family:var(--ff-display);font-size:.9rem;font-weight:700;color:var(--parchment);margin-bottom:.4rem;">Ski & Alps coverage</div>
+        <p style="font-size:.76rem;color:var(--smoke);line-height:1.65;">Salzburg, the Austrian Alps and ski resort trip reports as they get written.</p>
+      </div>
+      <div style="background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:1.3rem;">
+        <div style="font-size:1.3rem;margin-bottom:.7rem;">🏙️</div>
+        <div style="font-family:var(--ff-display);font-size:.9rem;font-weight:700;color:var(--parchment);margin-bottom:.4rem;">UK city breaks</div>
+        <p style="font-size:.76rem;color:var(--smoke);line-height:1.65;">The city breaks that are actually worth the weekend — and how to do them properly.</p>
+      </div>
+      <div style="background:rgba(14,191,184,.06);border:1px solid rgba(14,191,184,.2);border-radius:var(--r-md);padding:1.3rem;position:relative;">
+        <div style="position:absolute;top:.7rem;right:.7rem;font-family:var(--ff-mono);font-size:.4rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(14,191,184,.2);color:var(--teal);border-radius:100px;padding:.15rem .5rem;">Soon</div>
+        <div style="font-size:1.3rem;margin-bottom:.7rem;">🗓️</div>
+        <div style="font-family:var(--ff-display);font-size:.9rem;font-weight:700;color:var(--parchment);margin-bottom:.4rem;">Ready-to-use itineraries</div>
+        <p style="font-size:.76rem;color:var(--smoke);line-height:1.65;">Complete day-by-day trip plans built from real trips. Subscribers get early access and a lower price.</p>
       </div>
     </div>
-
-    <!-- Right: sign-up form -->
-    <div>
-      <div style="background:var(--parchment);border-radius:var(--r-lg);padding:2.5rem 2rem;">
-        <div style="font-family:var(--ff-display);font-size:1.3rem;font-weight:800;color:var(--ink);letter-spacing:-.02em;margin-bottom:.4rem;">Join the list</div>
-        <p style="font-size:.82rem;color:#5A6070;line-height:1.7;margin-bottom:1.8rem;">Free to subscribe. Unsubscribe any time. When paid itineraries launch, subscribers get first access and a lower price.</p>
-
-        <form action="https://formspree.io/f/mjgelkpz" method="POST" style="display:flex;flex-direction:column;gap:.9rem;">
-          <input type="hidden" name="_subject" value="New Subscriber — Drop Everything And Go"/>
-          <input type="hidden" name="_replyto" value="dropeverythingandgo2026@gmail.com"/>
-          <input type="hidden" name="_autoresponse" value="Thanks for subscribing to Drop Everything And Go! You'll get honest travel stories, destination guides and — when it launches — complete trip itineraries. No spam, ever. — Blake"/>
-          <input type="hidden" name="_next" value="https://www.dropeverythingandgo.com/services.html#subscribed"/>
-          <input type="text" name="_gotcha" style="display:none"/>
-
-          <div style="display:flex;flex-direction:column;gap:.4rem;">
-            <label style="font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.14em;text-transform:uppercase;color:#6A7080;">Email address</label>
-            <input type="email" name="email" placeholder="you@example.com" required
-              style="padding:.85rem 1rem;border:1.5px solid rgba(11,13,16,.15);border-radius:8px;font-size:.88rem;color:var(--ink);outline:none;transition:border-color .2s;font-family:var(--ff-body);"
-              onfocus="this.style.borderColor='var(--gold-dk)'" onblur="this.style.borderColor='rgba(11,13,16,.15)'"/>
-          </div>
-
-          <button type="submit"
-            style="background:var(--ink);color:var(--parchment);border:none;border-radius:8px;padding:.95rem 1.5rem;font-family:var(--ff-mono);font-size:.58rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:background .25s;">
-            Subscribe — it's free →
-          </button>
-        </form>
-
-        <p style="font-size:.7rem;color:#9AA0AC;line-height:1.6;margin-top:1.2rem;text-align:center;">No spam. No brand deals. Unsubscribe any time.<br>When paid itineraries launch — subscribers get first access.</p>
-      </div>
-
-      <!-- Social proof — honest version -->
-      <div style="margin-top:1.5rem;padding:1.2rem 1.5rem;background:rgba(14,191,184,.06);border:1px solid rgba(14,191,184,.15);border-radius:var(--r-md);">
-        <p style="font-size:.78rem;color:var(--smoke);line-height:1.7;margin:0;font-style:italic;">"The blog alone saved me hundreds on my Japan trip — the budget breakdown was more useful than anything else I found online."</p>
-        <div style="font-family:var(--ff-mono);font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(14,191,184,.6);margin-top:.5rem;">Reader feedback</div>
-      </div>
-    </div>
-
+  </div>
+</section>
+<section class="s nl-s">
+  <div class="nl-inner">
+    <div class="eyebrow rv" style="justify-content:center;color:var(--gold-dk)">The DEAG Newsletter</div>
+    <h2 class="h-display on-light rv" style="color:var(--ink)">Itineraries and stories,<br><em>straight to your inbox.</em></h2>
+    <p class="rv">Real trip reports, destination guides and — coming soon — complete ready-to-use itineraries you can buy. No sponsored content, no spam.</p>
+    <form class="nl-form rv" action="https://formspree.io/f/mjgelkpz" method="POST">
+      <input type="hidden" name="_subject" value="New Subscriber — Drop Everything And Go"/>
+      <input type="hidden" name="_replyto" value="dropeverythingandgo2026@gmail.com"/>
+      <input type="hidden" name="_autoresponse" value="Thanks for subscribing to Drop Everything And Go! You'll get honest travel stories, destination guides and trip planning tips straight to your inbox. No spam, ever. — Blake"/>
+      <input type="hidden" name="_next" value="https://www.dropeverythingandgo.com/services.html#subscribed"/>
+      <input type="text" name="_gotcha" style="display:none"/>
+      <input type="email" name="email" placeholder="Your email address" required/>
+      <button type="submit">Subscribe</button>
+    </form>
   </div>
 </section>
 
