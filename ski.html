@@ -43,7 +43,7 @@
 .ski-stat-label{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(200,190,170,.45);margin-top:.2rem;}
 
 /* ── FILTER BAR ── */
-.ski-filt-bar{background:rgba(11,23,40,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:1.2rem var(--gutter);position:sticky;top:68px;z-index:100;}
+.ski-filt-bar{background:rgba(11,23,40,.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:1.2rem var(--gutter);position:sticky;top:70px;z-index:100;}
 .ski-filt-inner{max-width:1300px;margin:0 auto;display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;}
 .sft{background:rgba(245,239,224,.08);border:1px solid rgba(245,239,224,.18);border-radius:100px;padding:.4rem 1.1rem;font-family:var(--ff-mono);font-size:.58rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--parchment);cursor:pointer;transition:all .25s;white-space:nowrap;}
 .sft:hover,.sft.on{background:var(--teal);border-color:var(--teal);color:var(--ink);}
@@ -1040,28 +1040,57 @@
 </footer>
 
 <script>
-var tabs=document.querySelectorAll('.sft');
-var cards=document.querySelectorAll('.sk-card');
-var rc=document.getElementById('skiRc');
-tabs.forEach(function(t){t.addEventListener('click',function(){
-  tabs.forEach(function(x){x.classList.remove('on');});
-  t.classList.add('on');
-  var f=t.dataset.f; var v=0;
-  cards.forEach(function(c){
-    var show=f==='all'||(c.dataset.tags&&c.dataset.tags.includes(f));
-    c.style.display=show?'':'none';
-    if(show)v++;
+// Filter tabs
+var tabs  = document.querySelectorAll('.sft');
+var cards = document.querySelectorAll('.sk-card');
+var rc    = document.getElementById('skiRc');
+var filtBar = document.querySelector('.ski-filt-bar');
+
+tabs.forEach(function(t){
+  t.addEventListener('click', function(){
+    tabs.forEach(function(x){ x.classList.remove('on'); });
+    t.classList.add('on');
+    var f = t.dataset.f;
+    var v = 0;
+    cards.forEach(function(c){
+      var show = f === 'all' || (c.dataset.tags && c.dataset.tags.includes(f));
+      c.style.display = show ? '' : 'none';
+      if(show) v++;
+    });
+    rc.textContent = v + ' resort' + (v !== 1 ? 's' : '');
+    // Scroll to just below filter bar when filtering
+    if(f !== 'all'){
+      var filtBottom = filtBar.getBoundingClientRect().bottom + window.scrollY;
+      window.scrollTo({ top: filtBottom - 20, behavior: 'smooth' });
+    }
   });
-  rc.textContent=v+' resort'+(v!==1?'s':'');
-});});
+});
+
+// Sticky filter bar — adjust top dynamically based on scroll position
+var nav = document.getElementById('nav');
+function updateFilterTop(){
+  if(!filtBar || !nav) return;
+  var navBottom = nav.getBoundingClientRect().bottom;
+  // navBottom is always the current bottom of the nav in the viewport
+  filtBar.style.top = Math.max(navBottom, 0) + 'px';
+}
+window.addEventListener('scroll', updateFilterTop, { passive: true });
+window.addEventListener('resize', updateFilterTop, { passive: true });
+// Run once on load
+updateFilterTop();
 
 // Progress bar
-var pb=document.getElementById('progress-bar');
-if(pb){window.addEventListener('scroll',function(){var s=document.documentElement.scrollTop,h=document.documentElement.scrollHeight-document.documentElement.clientHeight;pb.style.width=(s/h*100)+'%';});}
+var pb = document.getElementById('progress-bar');
+if(pb) window.addEventListener('scroll', function(){
+  var s = document.documentElement.scrollTop;
+  var h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  pb.style.width = Math.min((s/h*100), 100) + '%';
+}, { passive: true });
 
-// Nav
-var ham=document.getElementById('ham'),mob=document.getElementById('mob');
-if(ham)ham.addEventListener('click',function(){this.classList.toggle('open');mob.classList.toggle('open');});
+// Nav scroll class + mobile menu
+if(nav) window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', scrollY > 60); }, { passive: true });
+var ham = document.getElementById('ham'), mob = document.getElementById('mob');
+if(ham && mob) ham.addEventListener('click', function(){ ham.classList.toggle('open'); mob.classList.toggle('open'); });
 </script>
 </body>
 </html>
