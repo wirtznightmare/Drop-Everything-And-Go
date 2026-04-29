@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Analytics -->
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S59LVL96RN"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -9,204 +9,274 @@
   gtag('js', new Date());
   gtag('config', 'G-S59LVL96RN');
 </script>
-<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<meta name="description" content="Honest travel guides, backpacker routes and bespoke trip planning from someone who actually goes. 40+ countries, 80+ guides, zero fluff."/>
-<title>Drop Everything And Go — Travel Blog & Bespoke Trip Planning UK</title>
-  <!-- Open Graph -->
-  <meta property="og:title" content="Drop Everything And Go — Travel Blog & Bespoke Trip Planning UK"/>
-  <meta property="og:description" content="Honest travel stories and bespoke trip planning. 40+ countries, 80+ guides, zero fluff."/>
-  <meta property="og:url" content="https://www.dropeverythingandgo.com/"/>
-  <meta property="og:image" content="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422058/activemaldives_GettyImages-86477634_HR_f9khtp.jpg"/>
-  <meta property="og:type" content="website"/>
-  <meta property="og:site_name" content="Drop Everything And Go"/>
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Drop Everything And Go — Travel Blog & Bespoke Trip Planning UK"/>
-  <meta name="twitter:description" content="Honest travel stories and bespoke trip planning. 40+ countries, 80+ guides, zero fluff."/>
-  <meta name="twitter:image" content="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422058/activemaldives_GettyImages-86477634_HR_f9khtp.jpg"/>
-  <!-- Canonical -->
-  <link rel="canonical" href="https://www.dropeverythingandgo.com/"/>
+<meta name="description" content="Drop Everything And Go — a university student's honest travel guides. Real trip reports, real costs, real opinions. Written by Blake from the places I've actually been."/>
+<title>Drop Everything And Go — Honest Travel by Blake</title>
+<meta property="og:title" content="Drop Everything And Go — Honest Travel by Blake"/>
+<meta property="og:description" content="Real trip reports, honest costs and destination deep-dives written by a university student who actually goes."/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="https://www.dropeverythingandgo.com/blake-hallstatt.jpg"/>
+<link rel="canonical" href="https://www.dropeverythingandgo.com/"/>
 <link rel="stylesheet" href="style.css"/>
 <style>
-/* ── HERO ── */
-.hero{height:100svh;min-height:680px;display:flex;align-items:center;position:relative;overflow:hidden;background:var(--ink);}
-.hero-mesh{position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 70% 30%,rgba(200,145,42,0.07) 0%,transparent 55%),radial-gradient(ellipse 60% 80% at 10% 80%,rgba(14,191,184,0.05) 0%,transparent 50%),linear-gradient(160deg,#0E1320 0%,var(--ink) 55%);}
-.hero-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(200,145,42,0.06) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(ellipse at 20% 50%,black 20%,transparent 70%);}
-.hero-inner{position:relative;z-index:2;padding:0 var(--gutter);width:100%;max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;align-items:center;gap:3rem;}
-.hero-tag{font-family:var(--ff-mono);font-size:0.6rem;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:0.6rem;margin-bottom:2rem;opacity:0;animation:aSlide .8s .2s var(--ease-expo) both;}
-.hero-tag::before{content:'';width:28px;height:1px;background:var(--gold);}
-.hero-h1{font-family:var(--ff-display);font-size:clamp(4rem,9.5vw,9.5rem);font-weight:800;line-height:.91;letter-spacing:-.04em;color:var(--parchment);opacity:0;animation:aUp 1s .4s var(--ease-expo) both;}
-.hero-h1 em{display:block;font-style:italic;font-weight:300;color:var(--gold-lt);font-variation-settings:'opsz' 80;}
-.hero-body{font-size:1rem;color:rgba(200,190,170,.65);line-height:1.78;max-width:360px;margin:1.8rem 0 2.8rem;opacity:0;animation:aUp .9s .65s var(--ease-expo) both;}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:aUp .9s .85s var(--ease-expo) both;}
-.hero-coords{position:absolute;bottom:2.5rem;left:var(--gutter);font-family:var(--ff-mono);font-size:0.55rem;letter-spacing:.2em;color:rgba(138,143,158,.3);opacity:0;animation:aFade 1s 1.6s both;}
-.hero-scroll{position:absolute;bottom:2rem;right:var(--gutter);display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:0;animation:aFade 1s 1.9s both;}
-.hero-scroll span{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(138,143,158,.35);writing-mode:vertical-rl;}
-.hero-scroll::after{content:'';width:1px;height:50px;background:linear-gradient(to bottom,rgba(200,145,42,.45),transparent);animation:sPulse 2.2s 2.5s ease-in-out infinite;}
-@keyframes sPulse{0%,100%{height:50px;opacity:.5}50%{height:70px;opacity:1}}
+/* ── INTRO HERO ── */
+.intro-hero{
+  min-height:100vh;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  position:relative;
+  overflow:hidden;
+}
+.ih-left{
+  background:var(--ink);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:clamp(5rem,8vw,7rem) clamp(2rem,5vw,5rem) 4rem;
+  position:relative;
+  z-index:2;
+}
+.ih-right{
+  position:relative;
+  overflow:hidden;
+}
+.ih-right img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center 20%;
+  filter:brightness(.92) saturate(1.05);
+}
+.ih-right::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to right, var(--ink) 0%, transparent 18%),
+             linear-gradient(to top, rgba(11,13,16,.5) 0%, transparent 40%);
+  z-index:1;
+}
+.ih-location{
+  position:absolute;
+  bottom:1.5rem;
+  right:1.5rem;
+  z-index:2;
+  font-family:var(--ff-mono);
+  font-size:.46rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(245,239,224,.6);
+  background:rgba(11,13,16,.55);
+  backdrop-filter:blur(8px);
+  padding:.4rem .8rem;
+  border-radius:100px;
+  border:1px solid rgba(245,239,224,.1);
+}
+.ih-tag{
+  font-family:var(--ff-mono);
+  font-size:.52rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--teal);
+  margin-bottom:1.4rem;
+}
+.ih-h1{
+  font-family:var(--ff-display);
+  font-size:clamp(3.2rem,6vw,5.5rem);
+  font-weight:800;
+  color:var(--parchment);
+  letter-spacing:-.04em;
+  line-height:.92;
+  margin-bottom:1.8rem;
+}
+.ih-h1 em{
+  font-style:italic;
+  font-weight:300;
+  color:var(--gold-lt);
+  display:block;
+}
+.ih-bio{
+  font-size:.95rem;
+  color:var(--smoke);
+  line-height:1.9;
+  max-width:480px;
+  margin-bottom:2.2rem;
+}
+.ih-bio strong{
+  color:var(--parchment);
+  font-weight:600;
+}
+.ih-btns{
+  display:flex;
+  gap:.85rem;
+  flex-wrap:wrap;
+}
+.ih-stats{
+  display:flex;
+  gap:2rem;
+  margin-top:3rem;
+  padding-top:2rem;
+  border-top:1px solid rgba(245,239,224,.08);
+  flex-wrap:wrap;
+}
+.ih-stat-n{
+  font-family:var(--ff-display);
+  font-size:1.8rem;
+  font-weight:800;
+  color:var(--parchment);
+  letter-spacing:-.03em;
+  line-height:1;
+}
+.ih-stat-l{
+  font-family:var(--ff-mono);
+  font-size:.44rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:rgba(245,239,224,.35);
+  margin-top:.2rem;
+}
 
-/* Hero right — stacked cards */
-.hero-cards{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:310px 210px;gap:10px;opacity:0;animation:aUp 1.1s .6s var(--ease-expo) both;}
-.hc{position:relative;overflow:hidden;border-radius:var(--r-md);display:block;min-height:220px;}
-.hc:first-child{grid-row:1/3;}
-.hc-bg{width:100%;height:100%;min-height:220px;display:flex;align-items:center;justify-content:center;font-size:2.8rem;background-size:cover;background-position:center;transition:transform .7s var(--ease-expo);opacity:0.7;}
-.hc:hover .hc-bg{transform:scale(1.07);}
-.hc-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,13,16,.93) 0%,transparent 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem;}
-.hc-label{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem;}
-.hc-name{font-family:var(--ff-display);font-size:1.4rem;font-weight:700;color:var(--parchment);}
-.hc:first-child .hc-name{font-size:1.9rem;}
-.g1{background:linear-gradient(145deg,#0F3B2E,#061A14);}
-.g2{background:linear-gradient(145deg,#30150A,#180A03);}
-.g3{background:linear-gradient(145deg,#151840,#08091E);}
+/* ── BLOG SECTION ── */
+.blog-s{background:var(--parchment);}
+.blog-grid{
+  display:grid;
+  grid-template-columns:1.6fr 1fr 1fr;
+  gap:1.4rem;
+  margin-top:2rem;
+}
+.blog-card{
+  display:block;
+  text-decoration:none;
+  border-radius:var(--r-md);
+  overflow:hidden;
+  background:var(--ink);
+  border:1px solid rgba(245,239,224,.07);
+  transition:transform .35s var(--ease-spring),box-shadow .35s;
+  position:relative;
+}
+.blog-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 50px rgba(0,0,0,.35);
+}
+.blog-card-img{
+  width:100%;
+  aspect-ratio:16/9;
+  object-fit:cover;
+  object-position:center;
+  display:block;
+}
+.blog-card-body{
+  padding:1.4rem 1.5rem 1.6rem;
+}
+.blog-card-tag{
+  font-family:var(--ff-mono);
+  font-size:.44rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--teal);
+  margin-bottom:.5rem;
+}
+.blog-card-title{
+  font-family:var(--ff-display);
+  font-size:1.1rem;
+  font-weight:700;
+  color:var(--parchment);
+  letter-spacing:-.015em;
+  line-height:1.25;
+  margin-bottom:.6rem;
+}
+.blog-card--featured .blog-card-title{font-size:1.4rem;}
+.blog-card-desc{
+  font-size:.8rem;
+  color:var(--smoke);
+  line-height:1.72;
+}
+.blog-card-arr{
+  font-family:var(--ff-mono);
+  font-size:.46rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--gold-dk);
+  margin-top:.9rem;
+  display:inline-block;
+}
+.blog-coming{
+  border-style:dashed;
+  border-color:rgba(245,239,224,.1);
+  background:rgba(245,239,224,.02);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:2rem;
+  min-height:220px;
+}
+.blog-coming-label{
+  font-family:var(--ff-mono);
+  font-size:.46rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:rgba(245,239,224,.25);
+  margin-bottom:.7rem;
+}
+.blog-coming-title{
+  font-family:var(--ff-display);
+  font-size:1rem;
+  font-weight:700;
+  color:rgba(245,239,224,.2);
+}
 
-/* ── TICKER ── */
-.ticker{background:var(--gold);padding:.8rem 0;overflow:hidden;}
-.ticker-track{display:flex;width:max-content;animation:tick 35s linear infinite;}
-.ticker-item{display:inline-flex;align-items:center;gap:1.5rem;padding:0 2.5rem;font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);white-space:nowrap;}
-.ticker-item::before{content:'◆';font-size:.4rem;}
-@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-/* ── STATS ── */
-.stats-bar{background:var(--ink-2);border-bottom:1px solid var(--border);padding:3rem var(--gutter);}
-.stats-inner{max-width:980px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);}
-.stat{text-align:center;border-right:1px solid rgba(245,239,224,.07);padding:0 1rem;}
-.stat:last-child{border-right:none;}
-.stat-n{font-family:var(--ff-display);font-size:3.2rem;font-weight:800;color:var(--gold);line-height:1;font-variation-settings:'opsz' 48;}
-.stat-l{font-family:var(--ff-mono);font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--smoke);margin-top:.5rem;}
-
-/* ── DESTINATIONS MOSAIC ── */
-.dest-s{background:var(--parchment);}
-.dest-grid{max-width:1300px;margin:3.5rem auto 0;display:grid;grid-template-columns:2.2fr 1fr 1fr;grid-template-rows:310px 210px;gap:12px;}
-.dc{position:relative;overflow:hidden;border-radius:var(--r-md);display:block;}
-.dc:first-child{grid-row:1/3;}
-
-.dc:hover 
-.dc-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,13,16,.88) 0%,rgba(11,13,16,0) 50%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.8rem;transition:background .4s;}
-.dc:hover .dc-ov{background:linear-gradient(to top,rgba(11,13,16,.97) 0%,rgba(11,13,16,.3) 60%,transparent 100%);}
-.dc-tag{font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem;}
-.dc-name{font-family:var(--ff-display);font-size:1.7rem;font-weight:700;color:var(--parchment);letter-spacing:-.015em;}
-.dc:first-child .dc-name{font-size:clamp(2rem,3.5vw,3.2rem);}
-.dc-desc{font-size:.83rem;color:rgba(200,190,170,.7);margin-top:.4rem;line-height:1.55;max-height:0;overflow:hidden;transition:max-height .5s var(--ease-expo),opacity .4s;opacity:0;}
-.dc:hover .dc-desc{max-height:80px;opacity:1;}
-.dc-arr{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--ff-mono);font-size:.6rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.7rem;opacity:0;transform:translateX(-8px);transition:opacity .35s,transform .35s var(--ease-spring);}
-.dc:hover .dc-arr{opacity:1;transform:translateX(0);}
-.db1{background:linear-gradient(145deg,#0D3A4A,#051A26);}
-.db2{background:linear-gradient(145deg,#3A1A08,#1A0C04);}
-.db3{background:linear-gradient(145deg,#1A3A10,#0A1808);}
-.db4{background:linear-gradient(145deg,#3A1A08,#180800);}
-.db5{background:linear-gradient(145deg,#1A0A3A,#0A0420);}
-
-/* ── ABOUT ── */
-.about-s{background:var(--ink-3);clip-path:polygon(0 4%,100% 0,100% 100%,0 100%);margin-top:-3%;padding-top:calc(var(--section-pad) + 4%);}
-.about-grid{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr 1.15fr;min-height:460px;gap:0;}
-.about-vis{background:linear-gradient(140deg,#0E2040,#1A4A80);display:flex;align-items:center;justify-content:center;font-size:8rem;position:relative;overflow:hidden;border-radius:var(--r-lg) 0 0 var(--r-lg);}
-.about-vis::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 35% 55%,rgba(200,145,42,.2) 0%,transparent 60%);}
-.about-badge{position:absolute;bottom:2rem;right:2rem;background:var(--gold);color:var(--ink);border-radius:var(--r-sm);padding:1.2rem 1.5rem;text-align:center;}
-.about-badge strong{display:block;font-family:var(--ff-display);font-size:2.5rem;font-weight:800;line-height:1;}
-.about-badge span{font-family:var(--ff-mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;}
-.about-text{background:var(--parchment);padding:clamp(3rem,6vw,6rem);display:flex;flex-direction:column;justify-content:center;border-radius:0 var(--r-lg) var(--r-lg) 0;}
-.about-text p{font-size:.95rem;color:#4A5060;line-height:1.88;margin:1.2rem 0 2.2rem;}
-
-/* ── GUIDES ── */
-.guides-s{background:var(--cream);}
-.guides-grid{max-width:1300px;margin:2rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem;}
-.guide-card{background:var(--white);border-radius:var(--r-md);overflow:hidden;display:block;border:1px solid rgba(11,13,16,.06);box-shadow:0 2px 22px rgba(11,13,16,.05);transition:transform .4s var(--ease-spring),box-shadow .4s;}
-.guide-card:hover{transform:translateY(-8px);box-shadow:0 22px 55px rgba(11,13,16,.11);}
-.gc-img{height:215px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;position:relative;}
-.gc-badge{position:absolute;top:1rem;left:1rem;font-family:var(--ff-mono);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;padding:.28rem .7rem;border-radius:var(--r-xs);}
-.gc-body{padding:1.8rem;}
-.gc-meta{display:flex;gap:.9rem;align-items:center;margin-bottom:.8rem;}
-.gc-cat{font-family:var(--ff-mono);font-size:.58rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);}
-.gc-sub{font-size:.73rem;color:#8A8F9E;}
-.gc-title{font-family:var(--ff-display);font-size:1.2rem;font-weight:700;color:var(--ink);letter-spacing:-.01em;line-height:1.22;margin-bottom:.65rem;}
-.gc-exc{font-size:.84rem;color:#6A7080;line-height:1.7;margin-bottom:1.2rem;}
-.gc-read{font-family:var(--ff-mono);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dk);display:inline-flex;align-items:center;gap:.4rem;transition:gap .3s;}
-.guide-card:hover .gc-read{gap:.8rem;}
-.gi1{background:linear-gradient(135deg,#0D3A4A,#061820);}
-.gi2{background:linear-gradient(135deg,#163A14,#081808);}
-.gi3{background:linear-gradient(135deg,#3A1808,#1A0800);}
-
-/* ── SERVICES ── */
-.svc-s{background:var(--ink-2);clip-path:polygon(0 3%,100% 0,100% 97%,0 100%);margin:-2% 0;padding:calc(var(--section-pad) + 4%) var(--gutter);}
-.svc-s::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(200,145,42,.05) 0%,transparent 65%);pointer-events:none;}
-.svc-grid{max-width:1300px;margin:3.5rem auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;}
-.sc{background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:2.3rem 1.9rem;position:relative;overflow:hidden;transition:background .3s,border-color .3s,transform .4s var(--ease-spring);}
-.sc::after{content:'';position:absolute;top:0;left:0;right:0;height:1.5px;background:linear-gradient(to right,var(--teal),var(--gold));transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease-expo);}
-.sc:hover{background:rgba(245,239,224,.07);border-color:rgba(200,145,42,.22);transform:translateY(-5px);}
-.sc:hover::after{transform:scaleX(1);}
-.sc-icon{font-size:2.2rem;margin-bottom:1.3rem;}
-.sc-name{font-family:var(--ff-display);font-size:1.3rem;font-weight:700;color:var(--parchment);margin-bottom:.65rem;letter-spacing:-.01em;}
-.sc-desc{font-size:.84rem;color:var(--smoke);line-height:1.72;}
-
-/* ── BP BANNER ── */
-.bp-s{background:linear-gradient(135deg,#090E1C 0%,#0C1A2E 50%,#090E1C 100%);border-top:1px solid rgba(14,191,184,.18);border-bottom:1px solid rgba(14,191,184,.18);padding:4.5rem var(--gutter);position:relative;overflow:hidden;}
-.bp-s::before{content:'';position:absolute;top:-120px;right:-80px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(14,191,184,.06) 0%,transparent 60%);}
-.bp-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:1fr auto;align-items:center;gap:3rem;}
-
-/* ── NEWSLETTER ── */
-.nl-s{background:var(--cream);text-align:center;}
-.nl-inner{max-width:540px;margin:0 auto;}
-.nl-inner p{font-size:.95rem;color:#6A7080;line-height:1.78;margin:1.1rem 0 2.5rem;}
-.nl-form{display:flex;max-width:440px;margin:0 auto;}
-.nl-form input{flex:1;padding:.9rem 1.3rem;background:var(--white);border:1px solid rgba(11,13,16,.14);border-right:none;border-radius:var(--r-sm) 0 0 var(--r-sm);font-size:.88rem;color:var(--ink);outline:none;transition:border-color .3s;}
-.nl-form input:focus{border-color:var(--gold-dk);}
-.nl-form input::placeholder{color:#A0A8B0;}
-.nl-form button{background:var(--gold);color:var(--ink);border:none;border-radius:0 var(--r-sm) var(--r-sm) 0;padding:.9rem 1.6rem;font-size:.68rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;transition:background .3s;white-space:nowrap;}
-.nl-form button:hover{background:var(--gold-dk);}
-
-/* ── KEYFRAMES ── */
-@keyframes aUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-@keyframes aFade{from{opacity:0}to{opacity:1}}
-@keyframes aSlide{from{opacity:0;transform:translateX(-14px)}to{opacity:1;transform:translateX(0)}}
+/* ── GUIDES STRIP ── */
+.guides-strip{
+  background:var(--ink-2);
+  padding:3rem var(--gutter);
+}
+.gs-inner{
+  max-width:1260px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:2rem;
+  flex-wrap:wrap;
+}
+.gs-text{}
+.gs-title{
+  font-family:var(--ff-display);
+  font-size:clamp(1rem,2vw,1.3rem);
+  font-weight:700;
+  color:var(--parchment);
+  letter-spacing:-.01em;
+  margin-bottom:.3rem;
+}
+.gs-sub{
+  font-size:.8rem;
+  color:var(--smoke);
+  line-height:1.65;
+  max-width:500px;
+}
+.gs-links{
+  display:flex;
+  gap:.75rem;
+  flex-wrap:wrap;
+  flex-shrink:0;
+}
 
 /* ── RESPONSIVE ── */
-@media(max-width:1100px){
-  .hero-inner{grid-template-columns:1fr;}.hero-cards{display:none;}
-  .dest-grid{grid-template-columns:1fr 1fr;grid-template-rows:none;}
-  .dest-grid .dc{height:200px;}
-  .dest-grid .dc:first-child{grid-column:1/-1;height:280px;}
-  .dc:first-child{grid-column:1/-1;grid-row:auto;height:280px;}
-  .about-grid{grid-template-columns:1fr;}.about-vis{min-height:280px;font-size:6rem;border-radius:var(--r-lg) var(--r-lg) 0 0;}
-  .about-text{border-radius:0 0 var(--r-lg) var(--r-lg);}
-  .guides-grid,.svc-grid,.testi-grid{grid-template-columns:1fr 1fr;}
-  .bp-inner{grid-template-columns:1fr;}
+@media(max-width:900px){
+  .intro-hero{grid-template-columns:1fr;min-height:auto;}
+  .ih-right{height:60vw;min-height:300px;}
+  .ih-right::after{background:linear-gradient(to top,rgba(11,13,16,.7) 0%,transparent 50%);}
+  .blog-grid{grid-template-columns:1fr 1fr;}
 }
-@media(max-width:640px){
-  .stats-inner{grid-template-columns:1fr 1fr;}
-  .stat{border-right:none;border-bottom:1px solid rgba(245,239,224,.07);padding:1rem;}
-  .stat:nth-child(2n){border-bottom-color:transparent;}
-  .dest-grid{grid-template-columns:1fr;grid-template-rows:none;}
-  .dest-grid .dc{height:220px;}
-  .dest-grid .dc:first-child{height:280px;}
-  .dc:first-child{height:260px;}
-  .guides-grid,.svc-grid,.testi-grid{grid-template-columns:1fr;}
-  .nl-form{flex-direction:column;}
-  .nl-form input{border-right:1px solid rgba(11,13,16,.14);border-bottom:none;border-radius:var(--r-sm) var(--r-sm) 0 0;}
-  .nl-form button{border-radius:0 0 var(--r-sm) var(--r-sm);}
+@media(max-width:600px){
+  .blog-grid{grid-template-columns:1fr;}
+  .ih-stats{gap:1.5rem;}
 }
 </style>
-
-  <script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Drop Everything And Go",
-    "url": "https://www.dropeverythingandgo.com",
-    "description": "UK travel blog and bespoke trip planning service. Honest travel stories and expert itineraries for every budget.",
-    "publisher": {
-      "@type": "Person",
-      "name": "Blake Wirtz",
-      "url": "https://www.dropeverythingandgo.com/about.html"
-    },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://www.dropeverythingandgo.com/destinations.html?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
 </head>
 <body>
+<div id="progress-bar"></div>
+
 <div id="progress-bar"></div>
 
 <div class="ck" id="ck">
@@ -244,129 +314,144 @@
 </ul>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-mesh"></div>
-  <div class="hero-dots"></div>
-  <div class="hero-inner">
-    <div>
-      <div class="hero-tag">Honest Travel · Real Destinations</div>
-      <h1 class="hero-h1">Drop<br>Everything<br><em>And Go</em></h1>
-      <p class="hero-body">Genuine guides, honest opinions and destination deep-dives — written by someone who actually goes.</p>
-      <div class="hero-btns">
-        <a href="blog.html" class="btn btn-coral btn-arr">Read the Blog</a>
-        <a href="journeys.html" class="btn btn-wire">Explore Destinations</a>
-      </div>
+
+
+<!-- ── INTRO HERO ── -->
+<section class="intro-hero">
+  <div class="ih-left">
+    <div class="ih-tag">// Drop Everything And Go</div>
+    <h1 class="ih-h1">
+      Hi, I'm Blake.<br>
+      <em>Let's go somewhere.</em>
+    </h1>
+    <p class="ih-bio">
+      I'm a university student who figured out early on that the best education doesn't happen in a lecture theatre.
+      <strong>This is where I write about the places I've actually been</strong> — with real costs, honest opinions
+      and the things most travel guides leave out.
+    </p>
+    <p class="ih-bio" style="margin-top:-.8rem;">
+      No sponsored hotels. No paid placements. No fluff. Just the trip reports, the budget breakdowns and the
+      moments that made it worth going.
+    </p>
+    <div class="ih-btns">
+      <a href="blog.html" class="btn btn-coral btn-arr">Read the Blog</a>
+      <a href="journeys.html" class="btn btn-wire">Explore Destinations</a>
     </div>
-    <div class="hero-cards">
-      <a href="destinations/maldives.html" class="hc">
-        <div class="hc-bg" style="position:absolute;inset:0"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422058/activemaldives_GettyImages-86477634_HR_f9khtp.jpg" alt="Maldives" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0"><span style="position:relative;z-index:1;opacity:0.15;font-size:5rem">🏝️</span></div>
-        <div class="hc-ov"><div class="hc-label">Most Desirable</div><div class="hc-name">Maldives</div></div>
-      </a>
-      <a href="destinations/cappadocia.html" class="hc">
-        <div class="hc-bg" style="position:absolute;inset:0"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773174891/sunrise-9328_qjh2bn.jpg" alt="Cappadocia" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0"><span style="position:relative;z-index:1;opacity:0.15;font-size:5rem">🎈</span></div>
-        <div class="hc-ov"><div class="hc-label">Hidden Gem</div><div class="hc-name">Cappadocia</div></div>
-      </a>
-      <a href="destinations/tokyo.html" class="hc">
-        <div class="hc-bg" style="position:absolute;inset:0"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423265/1701836232-fujiyoshida-japan-at-chureito-pagoda-and-mt-fuji_ut7ybj.jpg" alt="Thailand" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center center;z-index:0"><span style="position:relative;z-index:1;opacity:0.15;font-size:5rem">🐘</span></div>
-        <div class="hc-ov"><div class="hc-label">Hidden Gem</div><div class="hc-name">Tokyo, Japan</div></div>
-      </a>
-    </div>
-  </div>
-  <div class="hero-coords">51.5074°N 0.1278°W &nbsp;·&nbsp; 40+ Countries &nbsp;·&nbsp; Honest Since Day One</div>
-  <div class="hero-scroll"><span>Scroll</span></div>
-</section>
-
-<!-- TICKER -->
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    <span class="ticker-item">Maldives</span><span class="ticker-item">Bali</span><span class="ticker-item">Cappadocia</span><span class="ticker-item">Santorini</span><span class="ticker-item">Kenya Safari</span><span class="ticker-item">Amalfi Coast</span><span class="ticker-item">Tokyo</span><span class="ticker-item">Patagonia</span><span class="ticker-item">Morocco</span><span class="ticker-item">Vietnam</span><span class="ticker-item">Colombia</span><span class="ticker-item">Iceland</span><span class="ticker-item">Thailand</span><span class="ticker-item">Croatia</span><span class="ticker-item">Zanzibar</span><span class="ticker-item">New York</span>
-    <span class="ticker-item">Maldives</span><span class="ticker-item">Bali</span><span class="ticker-item">Cappadocia</span><span class="ticker-item">Santorini</span><span class="ticker-item">Kenya Safari</span><span class="ticker-item">Amalfi Coast</span><span class="ticker-item">Tokyo</span><span class="ticker-item">Patagonia</span><span class="ticker-item">Morocco</span><span class="ticker-item">Vietnam</span><span class="ticker-item">Colombia</span><span class="ticker-item">Iceland</span><span class="ticker-item">Thailand</span><span class="ticker-item">Croatia</span><span class="ticker-item">Zanzibar</span><span class="ticker-item">New York</span>
-  </div>
-</div>
-
-<!-- STATS -->
-<div class="stats-bar">
-  <div class="stats-inner">
-    <div class="stat rv"><div class="stat-n" data-count="40">0</div><div class="stat-l">Countries Visited</div></div>
-    <div class="stat rv rv1"><div class="stat-n" data-count="59">0</div><div class="stat-l">Destination Guides</div></div>
-    <div class="stat rv rv2"><div class="stat-n" data-count="61">0</div><div class="stat-l">Backpacker Guides</div></div>
-    <div class="stat rv rv3"><div class="stat-n" data-count="50">0</div><div class="stat-l">Ski Resorts Covered</div></div>
-  </div>
-</div>
-
-<!-- DESTINATIONS -->
-<section class="s dest-s">
-  <div class="s-inner">
-    <div class="s-top rv">
+    <div class="ih-stats">
       <div>
-        <div class="eyebrow light">Where to Next?</div>
-        <h2 class="h-display on-light">Featured <em>Destinations</em></h2>
+        <div class="ih-stat-n" data-count="40">0</div>
+        <div class="ih-stat-l">Countries visited</div>
       </div>
-      <a href="journeys.html" class="btn btn-wire-dark btn-arr">All Destinations</a>
+      <div>
+        <div class="ih-stat-n" data-count="59">0</div>
+        <div class="ih-stat-l">Destination guides</div>
+      </div>
+      <div>
+        <div class="ih-stat-n" data-count="61">0</div>
+        <div class="ih-stat-l">Backpacker guides</div>
+      </div>
+      <div>
+        <div class="ih-stat-n">0</div>
+        <div class="ih-stat-l">Paid endorsements</div>
+      </div>
     </div>
-    <div class="dest-grid">
-      <a href="destinations/maldives.html" class="dc rv"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422042/breathtaking-sunset-aerial-view-of-maldives-island-with-overwater-villas-stretching-across-a-turquoise-lagoon-surrounded-by-white-sandy-beaches-serene-tropical-paradise-for-luxury-relaxation-escape-photo_ednpzy.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"><span class="dc-bg-emoji">🏝️</span><div class="dc-ov"><div class="dc-tag">Most Desirable</div><div class="dc-name">Maldives</div><div class="dc-desc">Overwater villas, bioluminescent beaches, and silence so complete it feels like another planet.</div><div class="dc-arr">Explore Guide →</div></div></a>
-      <a href="destinations/kenya.html" class="dc rv rv1"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773421993/masai-mara-great-migration-river-crossing-kenya-small_tvchpp.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"><span class="dc-bg-emoji">🦁</span><div class="dc-ov"><div class="dc-tag">Safari</div><div class="dc-name">Kenya</div><div class="dc-arr">Explore →</div></div></a>
-      <a href="destinations/cappadocia.html" class="dc rv rv2"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773174891/sunrise-9328_qjh2bn.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"><span class="dc-bg-emoji">🎈</span><div class="dc-ov"><div class="dc-tag">Hidden Gem</div><div class="dc-name">Cappadocia</div><div class="dc-arr">Explore →</div></div></a>
-      <a href="destinations/amalfi.html" class="dc rv"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773174321/fe1ae1081933147527d277649c44277e_molrxf.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"><span class="dc-bg-emoji">🍋</span><div class="dc-ov"><div class="dc-tag">Romance</div><div class="dc-name">Amalfi Coast</div><div class="dc-arr">Explore →</div></div></a>
-      <a href="destinations/bali.html" class="dc rv rv1"><img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773174541/67de721a9834260c076e97be_Tegallalang_20Rice_20Terraces_lnfzfx.webp" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0"><span class="dc-bg-emoji">🌺</span><div class="dc-ov"><div class="dc-tag">Escape</div><div class="dc-name">Bali</div><div class="dc-arr">Explore →</div></div></a>
+  </div>
+
+  <div class="ih-right">
+    <img src="blake-hallstatt.jpg" alt="Blake at Hallstatt, Austria"/>
+    <div class="ih-location">📍 Hallstatt, Austria</div>
+  </div>
+</section>
+
+<!-- ── BLOG — the real content ── -->
+<section class="s blog-s">
+  <div style="max-width:1260px;margin:0 auto;">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:0;">
+      <div>
+        <div class="eyebrow light" style="margin-bottom:.5rem">// The writing</div>
+        <h2 style="font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--ink);letter-spacing:-.04em;line-height:1;">
+          What I've been<br><em style="font-style:italic;font-weight:300;color:var(--gold-dk)">writing about</em>
+        </h2>
+      </div>
+      <a href="blog.html" class="btn btn-wire-dark btn-arr">All Posts →</a>
+    </div>
+
+    <div class="blog-grid">
+
+      <!-- Featured post — Salzburg -->
+      <a href="blog.html" class="blog-card blog-card--featured">
+        <img class="blog-card-img" src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422432/salzburg-austria-aerial-view-historic-600nw-2647183381_uk5c2a.jpg" alt="Salzburg"/>
+        <div class="blog-card-body">
+          <div class="blog-card-tag">Austria · 5 days</div>
+          <div class="blog-card-title">5 Days in Salzburg — What It Actually Costs</div>
+          <p class="blog-card-desc">The Salzburg Card, the day trip to Hallstatt, what to skip and the one viewpoint that beats every other. A real breakdown from March 2025.</p>
+          <span class="blog-card-arr">Read the report →</span>
+        </div>
+      </a>
+
+      <!-- Post 2 — UK city breaks -->
+      <a href="blog.html" class="blog-card">
+        <div class="blog-card-body" style="padding-top:2rem;">
+          <div class="blog-card-tag">UK City Breaks</div>
+          <div class="blog-card-title">The UK City Breaks Actually Worth Your Weekend</div>
+          <p class="blog-card-desc">Beyond London. The cities that are genuinely underrated — and exactly how to do them properly on a student budget.</p>
+          <span class="blog-card-arr">Coming soon →</span>
+        </div>
+      </a>
+
+      <!-- Post 3 — coming soon -->
+      <div class="blog-card blog-coming">
+        <div class="blog-coming-label">// In progress</div>
+        <div class="blog-coming-title">More trip reports on the way</div>
+        <p style="font-size:.76rem;color:rgba(245,239,224,.2);line-height:1.65;margin-top:.6rem;">Subscribe below to get new posts the moment they go live.</p>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ABOUT -->
-<section class="s about-s">
-  <div class="s-inner">
-    <div class="about-grid">
-      <div class="about-vis rv">
-        <span style="position:relative;z-index:1">🌍</span>
-        <div class="about-badge"><strong>40+</strong><span>Countries</span></div>
-      </div>
-      <div class="about-text rv rv2">
-        <div class="eyebrow" style="color:var(--gold-dk)">The Story</div>
-        <h2 class="h-display on-light">Real traveller.<br><em>Honest stories.</em></h2>
-        <p>No fluff, no sponsored bias — just genuine travel experiences, budget breakdowns, and the tips nobody else tells you. Whether it's your first big trip or your fiftieth, there's something here for you.</p>
-        <a href="about.html" class="btn btn-wire-dark btn-arr">Meet the Traveller</a>
-      </div>
+<!-- ── GUIDES STRIP — de-emphasised, honest ── -->
+<div class="guides-strip">
+  <div class="gs-inner">
+    <div class="gs-text">
+      <div style="font-family:var(--ff-mono);font-size:.46rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem;">// When you're ready to plan</div>
+      <div class="gs-title">59 destination guides · 61 backpacker guides · 50 ski resorts</div>
+      <p class="gs-sub">The research framework is there when you need it. These are reference guides — they work best alongside the blog posts for context. More first-person content being added regularly.</p>
     </div>
-  </div>
-</section>
-
-
-
-<!-- SERVICES -->
-<section class="s svc-s">
-  <div style="max-width:1300px;margin:0 auto;position:relative;z-index:1">
-    <div class="rv" style="max-width:580px">
-      <div class="eyebrow">How This Works</div>
-      <h2 class="h-display">Guides you can <em>actually use</em></h2>
-      <p style="font-size:.95rem;color:var(--smoke);line-height:1.78;margin-top:1rem">No sponsored fluff. No paid placements. Real trip reports, honest budgets and the best activities — bookable directly from each guide.</p>
+    <div class="gs-links">
+      <a href="journeys.html" class="btn btn-wire">Destination Hubs →</a>
+      <a href="destinations/backpacker-guides.html" class="btn btn-wire">Backpacker Guides →</a>
     </div>
-    <div class="svc-grid">
-      <div class="sc rv"><div class="sc-icon">📖</div><div class="sc-name">Destination Guides</div><p class="sc-desc">Deep-dive guides with real costs, insider tips and what most blogs won't tell you. 59 destinations and growing.</p></div>
-      <div class="sc rv rv2"><div class="sc-icon">🎟️</div><div class="sc-name">Book Activities</div><p class="sc-desc">Every guide links to the best experiences via GetYourGuide — curated by someone who's been, not by an algorithm.</p></div>
-      <div class="sc rv rv4"><div class="sc-icon">📬</div><div class="sc-name">The Itinerary Newsletter</div><p class="sc-desc">Coming soon — complete, ready-to-use trip itineraries delivered straight to your inbox. Built from real trips.</p></div>
-    </div>
-    <div class="rv" style="margin-top:2.5rem"><a href="blog.html" class="btn btn-gold btn-arr">Read the Blog</a></div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-
-
-<!-- BACKPACKER BANNER -->
-<div class="bp-s">
-  <div class="bp-inner">
-    <div class="rv">
-      <div class="eyebrow teal">🎒 Travelling on a Budget?</div>
-      <h2 class="h-display">59 <em style="color:var(--teal)">Backpacker Guides</em> Now Live</h2>
-      <p style="font-size:.93rem;color:var(--smoke);margin-top:.9rem;max-width:500px;line-height:1.75">Daily budgets from £12, hostel picks, transport tips, and the highlights that actually matter — SE Asia, South America, Europe, Africa, and beyond.</p>
-    </div>
-    <div class="rv rv2"><a href="destinations/backpacker-guides.html" class="btn btn-teal btn-arr">Browse All Guides</a></div>
   </div>
 </div>
 
-<!-- NEWSLETTER -->
+<!-- ── WHAT THIS SITE IS ── -->
+<section class="s" style="background:var(--ink);">
+  <div style="max-width:1260px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;">
+
+    <div style="padding:1.8rem;background:rgba(245,239,224,.03);border:1px solid rgba(245,239,224,.07);border-radius:var(--r-md);">
+      <div style="font-size:1.5rem;margin-bottom:1rem;">✍️</div>
+      <div style="font-family:var(--ff-display);font-size:1rem;font-weight:700;color:var(--parchment);margin-bottom:.5rem;">Real trip reports</div>
+      <p style="font-size:.8rem;color:var(--smoke);line-height:1.75;">Salzburg, the Austrian Alps and UK city breaks — written from experience, with actual costs and honest opinions on what's worth it.</p>
+    </div>
+
+    <div style="padding:1.8rem;background:rgba(245,239,224,.03);border:1px solid rgba(245,239,224,.07);border-radius:var(--r-md);">
+      <div style="font-size:1.5rem;margin-bottom:1rem;">🎟️</div>
+      <div style="font-family:var(--ff-display);font-size:1rem;font-weight:700;color:var(--parchment);margin-bottom:.5rem;">Curated activities</div>
+      <p style="font-size:.8rem;color:var(--smoke);line-height:1.75;">Every destination guide links to the best tours and experiences via GetYourGuide — handpicked, not algorithmically generated. Same price, small commission supports the site.</p>
+    </div>
+
+    <div style="padding:1.8rem;background:rgba(14,191,184,.04);border:1px solid rgba(14,191,184,.15);border-radius:var(--r-md);position:relative;">
+      <div style="position:absolute;top:1rem;right:1rem;font-family:var(--ff-mono);font-size:.4rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(14,191,184,.15);color:var(--teal);border-radius:100px;padding:.2rem .55rem;">Soon</div>
+      <div style="font-size:1.5rem;margin-bottom:1rem;">📬</div>
+      <div style="font-family:var(--ff-display);font-size:1rem;font-weight:700;color:var(--parchment);margin-bottom:.5rem;">Itinerary newsletter</div>
+      <p style="font-size:.8rem;color:var(--smoke);line-height:1.75;">Complete, ready-to-use trip plans built from real trips. Subscribers get early access and a lower price when they launch.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── NEWSLETTER ── -->
 <section class="s nl-s">
   <div class="nl-inner">
     <div class="eyebrow rv" style="justify-content:center;color:var(--gold-dk)">The DEAG Newsletter</div>
@@ -381,50 +466,6 @@
       <input type="email" name="email" placeholder="Your email address" required/>
       <button type="submit">Subscribe</button>
     </form>
-  </div>
-</section>
-
-
-<section class="s" style="background:linear-gradient(160deg,#0A1A2E,#0D2440);padding:5rem var(--gutter);">
-  <div style="max-width:1260px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;">
-    <div>
-      <div class="eyebrow" style="color:var(--teal);margin-bottom:1rem">// New Section</div>
-      <h2 style="font-family:var(--ff-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:var(--parchment);letter-spacing:-.03em;line-height:1;margin-bottom:1.2rem;">The world's best<br><em style="font-style:italic;font-weight:300;color:#A8D4F8;">ski resorts</em></h2>
-      <p style="color:rgba(200,190,170,.65);font-size:1rem;line-height:1.8;margin-bottom:2rem;max-width:480px;">50 resorts across 20 countries — from Chamonix to Niseko, Bansko to Whistler. Lift pass prices, piste stats, accommodation costs and honest insider tips.</p>
-      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2rem;">
-        <div style="text-align:center;padding:1rem 1.5rem;background:rgba(14,191,184,.08);border:1px solid rgba(14,191,184,.2);border-radius:12px;">
-          <div style="font-family:var(--ff-display);font-size:2rem;font-weight:800;color:var(--parchment);line-height:1;">50</div>
-          <div style="font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-top:.2rem;">Resorts</div>
-        </div>
-        <div style="text-align:center;padding:1rem 1.5rem;background:rgba(14,191,184,.08);border:1px solid rgba(14,191,184,.2);border-radius:12px;">
-          <div style="font-family:var(--ff-display);font-size:2rem;font-weight:800;color:var(--parchment);line-height:1;">20</div>
-          <div style="font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-top:.2rem;">Countries</div>
-        </div>
-        <div style="text-align:center;padding:1rem 1.5rem;background:rgba(14,191,184,.08);border:1px solid rgba(14,191,184,.2);border-radius:12px;">
-          <div style="font-family:var(--ff-display);font-size:2rem;font-weight:800;color:var(--parchment);line-height:1;">£22</div>
-          <div style="font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;color:var(--teal);margin-top:.2rem;">From/day pass</div>
-        </div>
-      </div>
-      <a href="ski.html" class="btn btn-teal btn-arr">Explore All Ski Resorts →</a>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;">
-      <div style="border-radius:12px;overflow:hidden;height:180px;background:linear-gradient(145deg,#0A1A2E,#0D2440);border:1px solid rgba(14,191,184,.2);display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem;">
-        <div style="font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);">France</div>
-        <div style="font-family:var(--ff-display);font-size:1.2rem;font-weight:700;color:var(--parchment);">Chamonix</div>
-      </div>
-      <div style="border-radius:12px;overflow:hidden;height:180px;background:linear-gradient(145deg,#0A1A2E,#0D2440);border:1px solid rgba(14,191,184,.2);display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem;">
-        <div style="font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);">Japan</div>
-        <div style="font-family:var(--ff-display);font-size:1.2rem;font-weight:700;color:var(--parchment);">Niseko</div>
-      </div>
-      <div style="border-radius:12px;overflow:hidden;height:180px;background:linear-gradient(145deg,#0A1A2E,#0D2440);border:1px solid rgba(14,191,184,.2);display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem;">
-        <div style="font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);">Switzerland</div>
-        <div style="font-family:var(--ff-display);font-size:1.2rem;font-weight:700;color:var(--parchment);">Zermatt</div>
-      </div>
-      <div style="border-radius:12px;overflow:hidden;height:180px;background:linear-gradient(145deg,#0A1A2E,#0D2440);border:1px solid rgba(14,191,184,.2);display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem;">
-        <div style="font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);">Bulgaria</div>
-        <div style="font-family:var(--ff-display);font-size:1.2rem;font-weight:700;color:var(--parchment);">Bansko</div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -455,7 +496,40 @@
   </div>
 </footer>
 
-<script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
+<!-- Stat counter animation -->
+<script>
+(function(){
+  function animateStats(){
+    document.querySelectorAll('.ih-stat-n[data-count]').forEach(function(el){
+      var target = parseInt(el.dataset.count);
+      var start = 0;
+      var duration = 1800;
+      var startTime = null;
+      function step(ts){
+        if(!startTime) startTime = ts;
+        var progress = Math.min((ts - startTime)/duration, 1);
+        var ease = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(ease * target);
+        if(progress < 1) requestAnimationFrame(step);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  
+  // Trigger when stats come into view
+  var statsEl = document.querySelector('.ih-stats');
+  if(statsEl && 'IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ animateStats(); obs.disconnect(); } });
+    }, {threshold:0.3});
+    obs.observe(statsEl);
+  } else if(statsEl) {
+    animateStats();
+  }
+})();
+</script>
+
 <script>
 (function(){
 document.body.classList.add('js-ready');
@@ -499,4 +573,5 @@ window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getEle
 ckShow();
 })();
 </script>
-</body></html>
+</body>
+</html>
