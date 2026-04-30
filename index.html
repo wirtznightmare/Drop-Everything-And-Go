@@ -10,8 +10,8 @@
   gtag('config', 'G-S59LVL96RN');
 </script>
 <meta name="description" content="Drop Everything And Go — a university student's honest travel guides. Real trip reports, real costs, real opinions. Written by Blake from the places I've actually been."/>
-<title>Drop Everything And Go — Honest Travel by Blake</title>
-<meta property="og:title" content="Drop Everything And Go — Honest Travel by Blake"/>
+<title>Drop Everything And Go — Your Honest Travel Guide</title>
+<meta property="og:title" content="Drop Everything And Go — Your Honest Travel Guide"/>
 <meta property="og:description" content="Real trip reports, honest costs and destination deep-dives written by a university student who actually goes."/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="https://www.dropeverythingandgo.com/blake-hallstatt.jpg"/>
@@ -55,6 +55,25 @@
   background:linear-gradient(to right, var(--ink) 0%, transparent 18%),
              linear-gradient(to top, rgba(11,13,16,.5) 0%, transparent 40%);
   z-index:1;
+}
+  /* Default (desktop) */
+.ih-right img{
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+/* Tablet */
+@media (max-width: 1100px){
+  .ih-right img{
+    object-position: center 30%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px){
+  .ih-right img{
+    object-position: center 40%;
+  }
 }
 .ih-location{
   position:absolute;
