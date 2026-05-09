@@ -1,169 +1,189 @@
-cat > /tmp/build_peru.py << 'PYEOF'
-import re, os
-ROOT = '/mnt/user-data/outputs'
-DEST = ROOT + '/destinations'
-CLD  = 'https://res.cloudinary.com/dd2ef17ow/image/upload'
-GYG  = 'https://www.getyourguide.com/s/?partner_id=YHIEWDZ&cmp=share_to_earn&q='
-
-ref = open(f'{DEST}/salzburg.html').read()
-GA      = re.search(r'(<script async src="https://www.googletagmanager.*?</script>)', ref, re.DOTALL).group(1)
-FOOT    = re.search(r'(<footer>.*?</footer>)', ref, re.DOTALL).group(1)
-SCRP    = ref[ref.rfind('<script>\n(function'):ref.rfind('</script>')+9]
-mob_end = ref.find('</ul>', ref.find('<ul class="nav-mob"')) + 5
-NAV_BLOCK = ref[ref.find('<div id="progress-bar">'):mob_end]
-
-PERU = f'''<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-{GA}
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S59LVL96RN"></script>
 <meta name="description" content="Peru travel guide — Machu Picchu, the Sacred Valley, Lima food scene and the complete country breakdown. Where to go, when to go and what it actually costs."/>
 <title>Peru Travel Guide — Machu Picchu, Cusco &amp; Beyond | Drop Everything And Go</title>
 <meta property="og:title" content="Peru Travel Guide — Drop Everything And Go"/>
 <meta property="og:description" content="Machu Picchu, the Sacred Valley, Lima and the Amazon. The complete Peru guide."/>
-<meta property="og:image" content="{CLD}/v1773085766/machu-picchu.webp"/>
+<meta property="og:image" content="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773085766/machu-picchu.webp"/>
 <meta property="og:type" content="website"/>
 <link rel="canonical" href="https://www.dropeverythingandgo.com/destinations/peru.html"/>
 <link rel="stylesheet" href="../style.css"/>
 <style>
 /* ── COUNTRY HERO ── */
-.ch{{position:relative;height:92vh;min-height:560px;overflow:hidden;display:flex;align-items:flex-end;}}
-.ch-bg{{position:absolute;inset:0;}}
-.ch-bg img{{width:100%;height:100%;object-fit:cover;object-position:center 30%;}}
-.ch-grad{{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,14,.98) 0%,rgba(5,8,14,.6) 45%,rgba(5,8,14,.15) 100%);}}
-.ch-content{{position:relative;z-index:2;max-width:1260px;width:100%;margin:0 auto;padding:0 var(--gutter) 4rem;}}
-.ch-eyebrow{{font-family:var(--ff-mono);font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem;}}
-.ch-h1{{font-family:var(--ff-display);font-size:clamp(3.5rem,8vw,7rem);font-weight:800;color:var(--parchment);letter-spacing:-.04em;line-height:.88;margin-bottom:1rem;}}
-.ch-h1 em{{font-style:italic;font-weight:300;color:var(--gold-lt);}}
-.ch-tagline{{font-size:1.05rem;color:rgba(245,239,224,.7);max-width:540px;line-height:1.75;margin-bottom:2rem;}}
-.ch-pills{{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2.5rem;}}
-.ch-pill{{font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(245,239,224,.1);border:1px solid rgba(245,239,224,.18);color:rgba(245,239,224,.7);border-radius:100px;padding:.3rem .85rem;}}
-.ch-scroll{{font-family:var(--ff-mono);font-size:.46rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,239,224,.3);display:flex;align-items:center;gap:.5rem;}}
-.ch-scroll::after{{content:'';display:block;width:1px;height:32px;background:rgba(245,239,224,.2);}}
+.ch{position:relative;height:92vh;min-height:560px;overflow:hidden;display:flex;align-items:flex-end;}
+.ch-bg{position:absolute;inset:0;}
+.ch-bg img{width:100%;height:100%;object-fit:cover;object-position:center 30%;}
+.ch-grad{position:absolute;inset:0;background:linear-gradient(to top,rgba(5,8,14,.98) 0%,rgba(5,8,14,.6) 45%,rgba(5,8,14,.15) 100%);}
+.ch-content{position:relative;z-index:2;max-width:1260px;width:100%;margin:0 auto;padding:0 var(--gutter) 4rem;}
+.ch-eyebrow{font-family:var(--ff-mono);font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:.8rem;}
+.ch-h1{font-family:var(--ff-display);font-size:clamp(3.5rem,8vw,7rem);font-weight:800;color:var(--parchment);letter-spacing:-.04em;line-height:.88;margin-bottom:1rem;}
+.ch-h1 em{font-style:italic;font-weight:300;color:var(--gold-lt);}
+.ch-tagline{font-size:1.05rem;color:rgba(245,239,224,.7);max-width:540px;line-height:1.75;margin-bottom:2rem;}
+.ch-pills{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.ch-pill{font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(245,239,224,.1);border:1px solid rgba(245,239,224,.18);color:rgba(245,239,224,.7);border-radius:100px;padding:.3rem .85rem;}
+.ch-scroll{font-family:var(--ff-mono);font-size:.46rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,239,224,.3);display:flex;align-items:center;gap:.5rem;}
+.ch-scroll::after{content:'';display:block;width:1px;height:32px;background:rgba(245,239,224,.2);}
 
 /* ── QUICK FACTS BAR ── */
-.facts-bar{{background:var(--ink);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;}}
-.facts-bar::-webkit-scrollbar{{display:none;}}
-.facts-inner{{max-width:1260px;margin:0 auto;padding:.1rem var(--gutter);display:flex;gap:0;}}
-.fact-item{{display:flex;flex-direction:column;padding:1.2rem 1.8rem;border-right:1px solid var(--border);flex-shrink:0;min-width:120px;}}
-.fact-item:last-child{{border-right:none;}}
-.fact-label{{font-family:var(--ff-mono);font-size:.42rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,239,224,.3);margin-bottom:.3rem;}}
-.fact-value{{font-family:var(--ff-display);font-size:.9rem;font-weight:700;color:var(--parchment);}}
-.fact-sub{{font-size:.7rem;color:var(--smoke);margin-top:.1rem;}}
+.facts-bar{background:var(--ink);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;}
+.facts-bar::-webkit-scrollbar{display:none;}
+.facts-inner{max-width:1260px;margin:0 auto;padding:.1rem var(--gutter);display:flex;gap:0;}
+.fact-item{display:flex;flex-direction:column;padding:1.2rem 1.8rem;border-right:1px solid var(--border);flex-shrink:0;min-width:120px;}
+.fact-item:last-child{border-right:none;}
+.fact-label{font-family:var(--ff-mono);font-size:.42rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,239,224,.3);margin-bottom:.3rem;}
+.fact-value{font-family:var(--ff-display);font-size:.9rem;font-weight:700;color:var(--parchment);}
+.fact-sub{font-size:.7rem;color:var(--smoke);margin-top:.1rem;}
 
 /* ── INTRO SECTION ── */
-.country-intro{{background:var(--parchment);}}
-.ci-inner{{max-width:1260px;margin:0 auto;padding:4rem var(--gutter);display:grid;grid-template-columns:1.4fr 1fr;gap:4rem;align-items:start;}}
-.ci-text h2{{font-family:var(--ff-display);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;color:var(--ink);letter-spacing:-.04em;line-height:1.05;margin-bottom:1.2rem;}}
-.ci-text h2 em{{font-style:italic;font-weight:300;color:var(--gold-dk);}}
-.ci-text p{{font-size:.95rem;color:#4A5060;line-height:1.9;margin-bottom:1.1rem;}}
-.ci-card{{background:var(--ink);border-radius:var(--r-md);padding:1.8rem;}}
-.ci-card-title{{font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;}}
-.ci-row{{display:flex;justify-content:space-between;align-items:flex-start;padding:.65rem 0;border-bottom:1px solid rgba(245,239,224,.07);gap:1rem;}}
-.ci-row:last-child{{border-bottom:none;}}
-.ci-row-label{{font-size:.8rem;color:var(--smoke);}}
-.ci-row-value{{font-size:.8rem;color:var(--parchment);font-weight:600;text-align:right;max-width:55%;}}
+.country-intro{background:var(--parchment);}
+.ci-inner{max-width:1260px;margin:0 auto;padding:4rem var(--gutter);display:grid;grid-template-columns:1.4fr 1fr;gap:4rem;align-items:start;}
+.ci-text h2{font-family:var(--ff-display);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;color:var(--ink);letter-spacing:-.04em;line-height:1.05;margin-bottom:1.2rem;}
+.ci-text h2 em{font-style:italic;font-weight:300;color:var(--gold-dk);}
+.ci-text p{font-size:.95rem;color:#4A5060;line-height:1.9;margin-bottom:1.1rem;}
+.ci-card{background:var(--ink);border-radius:var(--r-md);padding:1.8rem;}
+.ci-card-title{font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:1rem;}
+.ci-row{display:flex;justify-content:space-between;align-items:flex-start;padding:.65rem 0;border-bottom:1px solid rgba(245,239,224,.07);gap:1rem;}
+.ci-row:last-child{border-bottom:none;}
+.ci-row-label{font-size:.8rem;color:var(--smoke);}
+.ci-row-value{font-size:.8rem;color:var(--parchment);font-weight:600;text-align:right;max-width:55%;}
 
 /* ── WHAT TO EXPECT ── */
-.wte-s{{background:var(--ink-2);}}
-.wte-inner{{max-width:1260px;margin:0 auto;padding:4rem var(--gutter);}}
-.wte-grid{{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem;}}
-.wte-card{{background:rgba(245,239,224,.03);border:1px solid rgba(245,239,224,.07);border-radius:var(--r-md);padding:1.8rem;}}
-.wte-icon{{font-size:1.8rem;margin-bottom:.9rem;}}
-.wte-title{{font-family:var(--ff-display);font-size:1rem;font-weight:700;color:var(--parchment);margin-bottom:.5rem;}}
-.wte-desc{{font-size:.82rem;color:var(--smoke);line-height:1.78;}}
+.wte-s{background:var(--ink-2);}
+.wte-inner{max-width:1260px;margin:0 auto;padding:4rem var(--gutter);}
+.wte-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem;}
+.wte-card{background:rgba(245,239,224,.03);border:1px solid rgba(245,239,224,.07);border-radius:var(--r-md);padding:1.8rem;}
+.wte-icon{font-size:1.8rem;margin-bottom:.9rem;}
+.wte-title{font-family:var(--ff-display);font-size:1rem;font-weight:700;color:var(--parchment);margin-bottom:.5rem;}
+.wte-desc{font-size:.82rem;color:var(--smoke);line-height:1.78;}
 
 /* ── WHEN TO GO ── */
-.wtg-s{{background:var(--parchment);}}
-.wtg-inner{{max-width:1260px;margin:0 auto;padding:4rem var(--gutter);}}
-.wtg-grid{{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem;}}
-.wtg-season{{background:var(--ink);border-radius:var(--r-md);padding:1.5rem;}}
-.wtg-season-name{{font-family:var(--ff-mono);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem;}}
-.wtg-season-months{{font-family:var(--ff-display);font-size:1rem;font-weight:700;color:var(--parchment);margin-bottom:.5rem;}}
-.wtg-season-desc{{font-size:.78rem;color:var(--smoke);line-height:1.7;}}
-.wtg-badge{{display:inline-block;font-family:var(--ff-mono);font-size:.4rem;letter-spacing:.1em;text-transform:uppercase;border-radius:100px;padding:.2rem .6rem;margin-bottom:.6rem;}}
-.wtg-badge--best{{background:rgba(14,191,184,.15);color:var(--teal);}}
-.wtg-badge--good{{background:rgba(200,145,42,.15);color:var(--gold);}}
-.wtg-badge--avoid{{background:rgba(245,239,224,.06);color:rgba(245,239,224,.35);}}
+.wtg-s{background:var(--parchment);}
+.wtg-inner{max-width:1260px;margin:0 auto;padding:4rem var(--gutter);}
+.wtg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2rem;}
+.wtg-season{background:var(--ink);border-radius:var(--r-md);padding:1.5rem;}
+.wtg-season-name{font-family:var(--ff-mono);font-size:.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem;}
+.wtg-season-months{font-family:var(--ff-display);font-size:1rem;font-weight:700;color:var(--parchment);margin-bottom:.5rem;}
+.wtg-season-desc{font-size:.78rem;color:var(--smoke);line-height:1.7;}
+.wtg-badge{display:inline-block;font-family:var(--ff-mono);font-size:.4rem;letter-spacing:.1em;text-transform:uppercase;border-radius:100px;padding:.2rem .6rem;margin-bottom:.6rem;}
+.wtg-badge--best{background:rgba(14,191,184,.15);color:var(--teal);}
+.wtg-badge--good{background:rgba(200,145,42,.15);color:var(--gold);}
+.wtg-badge--avoid{background:rgba(245,239,224,.06);color:rgba(245,239,224,.35);}
 
 /* ── THINGS TO DO ── */
-.things-s{{background:var(--ink);}}
-.things-inner{{max-width:1260px;margin:0 auto;padding:4rem var(--gutter);}}
-.things-grid{{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:2rem;}}
-.thing-card{{display:grid;grid-template-columns:auto 1fr;gap:1.2rem;background:rgba(245,239,224,.03);border:1px solid rgba(245,239,224,.07);border-radius:var(--r-md);padding:1.5rem;align-items:start;transition:border-color .25s,transform .3s var(--ease-spring);}}
-.thing-card:hover{{border-color:rgba(200,145,42,.25);transform:translateY(-3px);}}
-.thing-num{{font-family:var(--ff-mono);font-size:1.4rem;font-weight:800;color:rgba(200,145,42,.2);line-height:1;padding-top:.1rem;min-width:2.2rem;}}
-.thing-body{{}}
-.thing-title{{font-family:var(--ff-display);font-size:1rem;font-weight:700;color:var(--parchment);margin-bottom:.4rem;}}
-.thing-desc{{font-size:.8rem;color:var(--smoke);line-height:1.78;}}
-.thing-tip{{font-family:var(--ff-mono);font-size:.44rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-top:.6rem;}}
+.things-s{background:var(--ink);}
+.things-inner{max-width:1260px;margin:0 auto;padding:4rem var(--gutter);}
+.things-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.2rem;margin-top:2rem;}
+.thing-card{display:grid;grid-template-columns:auto 1fr;gap:1.2rem;background:rgba(245,239,224,.03);border:1px solid rgba(245,239,224,.07);border-radius:var(--r-md);padding:1.5rem;align-items:start;transition:border-color .25s,transform .3s var(--ease-spring);text-decoration:none;color:inherit;cursor:pointer;}
+.thing-card:hover{border-color:rgba(200,145,42,.25);transform:translateY(-3px);}
+.thing-num{font-family:var(--ff-mono);font-size:1.4rem;font-weight:800;color:rgba(200,145,42,.2);line-height:1;padding-top:.1rem;min-width:2.2rem;}
+.thing-body{}
+.thing-title{font-family:var(--ff-display);font-size:1rem;font-weight:700;color:var(--parchment);margin-bottom:.4rem;}
+.thing-desc{font-size:.8rem;color:var(--smoke);line-height:1.78;}
+.thing-tip{font-family:var(--ff-mono);font-size:.44rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-top:.6rem;}
+.thing-gyg{display:inline-block;font-family:var(--ff-mono);font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-dk);text-decoration:none;margin-top:.5rem;transition:color .2s;}
+.thing-gyg:hover{color:var(--gold-lt);}
 
 /* ── GYG SECTION ── */
-.gyg-s{{background:var(--ink-2);}}
-.gyg-inner{{max-width:1260px;margin:0 auto;padding:4rem var(--gutter);}}
-.gyg-grid{{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem;}}
-.gyg-card{{display:flex;align-items:flex-start;gap:1.1rem;background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:1.4rem;text-decoration:none;transition:border-color .2s,transform .3s var(--ease-spring);}}
-.gyg-card:hover{{border-color:rgba(200,145,42,.3);transform:translateY(-3px);}}
-.gyg-icon{{font-size:1.3rem;flex-shrink:0;margin-top:.1rem;}}
-.gyg-title{{font-family:var(--ff-display);font-size:.95rem;font-weight:700;color:var(--parchment);margin-bottom:.3rem;}}
-.gyg-desc{{font-size:.78rem;color:var(--smoke);line-height:1.65;}}
-.gyg-arr{{font-family:var(--ff-mono);font-size:.44rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dk);margin-top:.6rem;display:block;}}
-.gyg-disc{{font-family:var(--ff-mono);font-size:.42rem;color:rgba(200,190,170,.2);margin-top:1.5rem;}}
+.gyg-s{background:var(--ink-2);}
+.gyg-inner{max-width:1260px;margin:0 auto;padding:4rem var(--gutter);}
+.gyg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2rem;}
+.gyg-card{display:flex;align-items:flex-start;gap:1.1rem;background:rgba(245,239,224,.04);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);padding:1.4rem;text-decoration:none;transition:border-color .2s,transform .3s var(--ease-spring);}
+.gyg-card:hover{border-color:rgba(200,145,42,.3);transform:translateY(-3px);}
+.gyg-icon{font-size:1.3rem;flex-shrink:0;margin-top:.1rem;}
+.gyg-title{font-family:var(--ff-display);font-size:.95rem;font-weight:700;color:var(--parchment);margin-bottom:.3rem;}
+.gyg-desc{font-size:.78rem;color:var(--smoke);line-height:1.65;}
+.gyg-arr{font-family:var(--ff-mono);font-size:.44rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-dk);margin-top:.6rem;display:block;}
+.gyg-disc{font-family:var(--ff-mono);font-size:.42rem;color:rgba(200,190,170,.2);margin-top:1.5rem;}
 
 /* ── NEED TO KNOW ── */
-.ntk-s{{background:var(--parchment);}}
-.ntk-inner{{max-width:1260px;margin:0 auto;padding:4rem var(--gutter);display:grid;grid-template-columns:1fr 1fr;gap:4rem;}}
-.ntk-col-title{{font-family:var(--ff-display);font-size:1.3rem;font-weight:700;color:var(--ink);letter-spacing:-.02em;margin-bottom:1.2rem;}}
-.ntk-item{{display:flex;gap:1rem;padding:.75rem 0;border-bottom:1px solid rgba(11,13,16,.07);}}
-.ntk-item:last-child{{border-bottom:none;}}
-.ntk-icon{{font-size:1.1rem;flex-shrink:0;margin-top:.05rem;}}
-.ntk-text{{font-size:.85rem;color:#4A5060;line-height:1.72;}}
-.ntk-text strong{{color:var(--ink);font-weight:600;}}
+.ntk-s{background:var(--parchment);}
+.ntk-inner{max-width:1260px;margin:0 auto;padding:4rem var(--gutter);display:grid;grid-template-columns:1fr 1fr;gap:4rem;}
+.ntk-col-title{font-family:var(--ff-display);font-size:1.3rem;font-weight:700;color:var(--ink);letter-spacing:-.02em;margin-bottom:1.2rem;}
+.ntk-item{display:flex;gap:1rem;padding:.75rem 0;border-bottom:1px solid rgba(11,13,16,.07);}
+.ntk-item:last-child{border-bottom:none;}
+.ntk-icon{font-size:1.1rem;flex-shrink:0;margin-top:.05rem;}
+.ntk-text{font-size:.85rem;color:#4A5060;line-height:1.72;}
+.ntk-text strong{color:var(--ink);font-weight:600;}
 
 /* ── CITY STUBS ── */
-.cities-s{{background:var(--ink);}}
-.cities-inner{{max-width:1260px;margin:0 auto;padding:4rem var(--gutter);}}
-.cities-grid{{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem;}}
-.city-card{{display:block;text-decoration:none;background:rgba(245,239,224,.03);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);overflow:hidden;transition:border-color .25s,transform .35s var(--ease-spring),box-shadow .35s;}}
-.city-card:hover{{border-color:rgba(200,145,42,.3);transform:translateY(-5px);box-shadow:0 18px 45px rgba(0,0,0,.4);}}
-.city-card-img{{width:100%;height:180px;object-fit:cover;object-position:center;display:block;}}
-.city-card-img--placeholder{{background:linear-gradient(145deg,#0D1A2E,#0A1220);height:180px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;}}
-.city-card-body{{padding:1.4rem;}}
-.city-card-tag{{font-family:var(--ff-mono);font-size:.44rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.4rem;}}
-.city-card-name{{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;margin-bottom:.4rem;}}
-.city-card-desc{{font-size:.8rem;color:var(--smoke);line-height:1.7;margin-bottom:.8rem;}}
-.city-card-status{{font-family:var(--ff-mono);font-size:.44rem;letter-spacing:.12em;text-transform:uppercase;}}
-.city-card-status--live{{color:var(--teal);}}
-.city-card-status--soon{{color:rgba(245,239,224,.25);}}
-.city-card-arr{{color:var(--gold-dk);}}
+.cities-s{background:var(--ink);}
+.cities-inner{max-width:1260px;margin:0 auto;padding:4rem var(--gutter);}
+.cities-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2rem;}
+.city-card{display:block;text-decoration:none;background:rgba(245,239,224,.03);border:1px solid rgba(245,239,224,.08);border-radius:var(--r-md);overflow:hidden;transition:border-color .25s,transform .35s var(--ease-spring),box-shadow .35s;}
+.city-card:hover{border-color:rgba(200,145,42,.3);transform:translateY(-5px);box-shadow:0 18px 45px rgba(0,0,0,.4);}
+.city-card-img{width:100%;height:180px;object-fit:cover;object-position:center;display:block;}
+.city-card-img--placeholder{background:linear-gradient(145deg,#0D1A2E,#0A1220);height:180px;display:flex;align-items:center;justify-content:center;font-size:2.5rem;}
+.city-card-body{padding:1.4rem;}
+.city-card-tag{font-family:var(--ff-mono);font-size:.44rem;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:.4rem;}
+.city-card-name{font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;margin-bottom:.4rem;}
+.city-card-desc{font-size:.8rem;color:var(--smoke);line-height:1.7;margin-bottom:.8rem;}
+.city-card-status{font-family:var(--ff-mono);font-size:.44rem;letter-spacing:.12em;text-transform:uppercase;}
+.city-card-status--live{color:var(--teal);}
+.city-card-status--soon{color:rgba(245,239,224,.25);}
+.city-card-arr{color:var(--gold-dk);}
 
 /* ── RESPONSIVE ── */
-@media(max-width:1000px){{
-  .ci-inner{{grid-template-columns:1fr;gap:2rem;}}
-  .wte-grid{{grid-template-columns:1fr 1fr;}}
-  .things-grid{{grid-template-columns:1fr;}}
-  .gyg-grid{{grid-template-columns:1fr;}}
-  .ntk-inner{{grid-template-columns:1fr;gap:2rem;}}
-  .cities-grid{{grid-template-columns:1fr 1fr;}}
-}}
-@media(max-width:640px){{
-  .ch{{height:88vh;}}
-  .ch-h1{{font-size:clamp(2.8rem,12vw,4rem);}}
-  .wtg-grid{{grid-template-columns:1fr 1fr;}}
-  .wte-grid{{grid-template-columns:1fr;}}
-  .cities-grid{{grid-template-columns:1fr;}}
-  .facts-inner{{gap:0;}}
-}}
+@media(max-width:1000px){
+  .ci-inner{grid-template-columns:1fr;gap:2rem;}
+  .wte-grid{grid-template-columns:1fr 1fr;}
+  .things-grid{grid-template-columns:1fr;}
+  .gyg-grid{grid-template-columns:1fr;}
+  .ntk-inner{grid-template-columns:1fr;gap:2rem;}
+  .cities-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:640px){
+  .ch{height:88vh;}
+  .ch-h1{font-size:clamp(2.8rem,12vw,4rem);}
+  .wtg-grid{grid-template-columns:1fr 1fr;}
+  .wte-grid{grid-template-columns:1fr;}
+  .cities-grid{grid-template-columns:1fr;}
+  .facts-inner{gap:0;}
+}
 </style>
 </head>
 <body>
 <div id="progress-bar"></div>
-{NAV_BLOCK}
+<div id="progress-bar"></div>
+<div class="ck" id="ck">
+  <p class="ck-text">We use cookies to enhance your journey. <a href="../privacy.html">Privacy Policy</a></p>
+  <div class="ck-btns"><button class="ck-acc" onclick="ckAccept()">Accept</button><button class="ck-dec" onclick="ckDecline()">Decline</button></div>
+</div>
+<div class="ann-bar">
+  <a href="backpacker-guides.html">
+    <span class="ann-badge">🎒 NEW</span>
+    61 Backpacker Guides Live — SE Asia, Europe, Africa, Americas &amp; more · From £12/day
+    <span class="ann-arr">→</span>
+  </a>
+</div>
+<nav id="nav">
+  <a href="../index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Bespoke Planning</span></a>
+  <ul class="nav-links">
+    <li><a href="../journeys.html" class="active">Journeys</a></li>
+    <li><a href="../ski.html">Ski</a></li>
+    
+  <li><a href="../blog.html">Blog</a></li>
+    <li><a href="../services.html">Services</a></li>
+    
+    <li><a href="../contact.html" class="nav-cta">Plan My Trip</a></li>
+  </ul>
+  <button class="nav-ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<ul class="nav-mob" id="mob">
+  <li><a href="../journeys.html">Journeys</a></li>
+  <li><a href="../ski.html">Ski</a></li>
+  <li><a href="../blog.html">Blog</a></li>
+  <li><a href="../services.html">Services</a></li>
+  
+  <li><a href="../contact.html" class="mob-cta-btn">Plan My Trip</a></li>
+</ul>
 
 <!-- ── HERO ── -->
 <div class="ch">
   <div class="ch-bg">
-    <img src="{CLD}/v1773085766/machu-picchu.webp" alt="Machu Picchu, Peru"/>
+    <img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773085766/machu-picchu.webp" alt="Machu Picchu, Peru"/>
   </div>
   <div class="ch-grad"></div>
   <div class="ch-content">
@@ -257,31 +277,6 @@ PERU = f'''<!DOCTYPE html>
   </div>
 </section>
 
-<!-- ── WHAT TO EXPECT ── -->
-<section class="wte-s">
-  <div class="wte-inner">
-    <div class="eyebrow" style="color:var(--teal);margin-bottom:.6rem">// What to expect</div>
-    <h2 style="font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--parchment);letter-spacing:-.04em;line-height:1;">Three completely different Perus</h2>
-    <div class="wte-grid">
-      <div class="wte-card">
-        <div class="wte-icon">🏔️</div>
-        <div class="wte-title">The Andes — Inca Country</div>
-        <p class="wte-desc">Cusco, the Sacred Valley, Machu Picchu, Ollantaytambo and Rainbow Mountain. This is what most people come for and it delivers completely. Altitude is real — spend 2 days in Cusco (3,400m) before doing anything strenuous. The trek options range from the 4-day Inca Trail (book 6 months ahead) to easier alternatives like Salkantay or Lares.</p>
-      </div>
-      <div class="wte-card">
-        <div class="wte-icon">🌊</div>
-        <div class="wte-title">The Coast — Lima & Desert</div>
-        <p class="wte-desc">Lima is the best food city in South America. The Miraflores and Barranco districts are safe, walkable and packed with cevicherías, Nikkei restaurants and rooftop bars above the Pacific cliffs. The Nazca Lines are 5 hours south. Huacachina sand dunes (and sandboarding) are 2 hours south of Lima. Most people underestimate this part of Peru.</p>
-      </div>
-      <div class="wte-card">
-        <div class="wte-icon">🌿</div>
-        <div class="wte-title">The Amazon — Jungle Peru</div>
-        <p class="wte-desc">Iquitos and Puerto Maldonado are the gateways. No roads reach Iquitos — it's accessible only by river or plane, which tells you something about how remote it is. Tambopata National Reserve near Puerto Maldonado has extraordinary biodiversity — pink river dolphins, caimans, macaw clay licks. Usually done as a 3–4 day lodge extension to a Cusco trip.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ── WHEN TO GO ── -->
 <section class="wtg-s">
   <div class="wtg-inner">
@@ -323,131 +318,71 @@ PERU = f'''<!DOCTYPE html>
     <h2 style="font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--parchment);letter-spacing:-.04em;line-height:1;">Things to do in Peru</h2>
     <p style="font-size:.88rem;color:var(--smoke);max-width:640px;margin-top:.6rem;line-height:1.8;">The non-negotiables, the hidden gems and the ones most first-timers miss.</p>
     <div class="things-grid">
-      <div class="thing-card">
+      <a class="thing-card" href="https://www.getyourguide.com/s/?partner_id=YHIEWDZ&cmp=share_to_earn&q=machu+picchu+guided+tour+from+cusco" target="_blank" rel="noopener sponsored">
         <div class="thing-num">01</div>
         <div class="thing-body">
           <div class="thing-title">Machu Picchu at sunrise — first bus up</div>
           <p class="thing-desc">Take the 5:30am bus from Aguas Calientes to be inside the citadel before the crowds arrive at 9am. Walk the main circuit, then climb Huayna Picchu or Machu Picchu Mountain for the aerial view. Tickets are capacity-controlled — book at machupicchu.gob.pe weeks ahead.</p>
           <div class="thing-tip">→ Book direct at machupicchu.gob.pe — third-party sites charge a premium</div>
         </div>
-      </div>
-      <div class="thing-card">
+      </a>
+      <a class="thing-card" href="https://www.getyourguide.com/s/?partner_id=YHIEWDZ&cmp=share_to_earn&q=inca+trail+4+day+trek+peru" target="_blank" rel="noopener sponsored">
         <div class="thing-num">02</div>
         <div class="thing-body">
           <div class="thing-title">Trek the Inca Trail — 4 days</div>
           <p class="thing-desc">The classic route from km82 to the Sun Gate above Machu Picchu. Camping nights under Andean skies, cloud forest passes at 4,200m and the most dramatic arrival at an archaeological site in the world. Permits for all 500 daily trekkers sell out 6 months ahead — book via a licensed operator.</p>
           <div class="thing-tip">→ Alternative: Salkantay Trek (5 days, no permit needed, equally dramatic)</div>
         </div>
-      </div>
-      <div class="thing-card">
+      </a>
+      <a class="thing-card" href="https://www.getyourguide.com/s/?partner_id=YHIEWDZ&cmp=share_to_earn&q=sacred+valley+full+day+tour+cusco+peru" target="_blank" rel="noopener sponsored">
         <div class="thing-num">03</div>
         <div class="thing-body">
           <div class="thing-title">Sacred Valley — beyond Machu Picchu</div>
           <p class="thing-desc">Pisac market at dawn, the fortress at Ollantaytambo (still inhabited inside the original Inca structure), Moray's circular agricultural terraces and the Maras salt pans. This is the part of Peru that most people rush past on the way to Machu Picchu — spend at least a day here.</p>
           <div class="thing-tip">→ Stay overnight in Pisac or Ollantaytambo for the best morning light</div>
         </div>
-      </div>
-      <div class="thing-card">
+      </a>
+      <a class="thing-card" href="https://www.getyourguide.com/s/?partner_id=YHIEWDZ&cmp=share_to_earn&q=lima+food+tour+miraflores+peru" target="_blank" rel="noopener sponsored">
         <div class="thing-num">04</div>
         <div class="thing-body">
           <div class="thing-title">Ceviche in Lima — eat like a local</div>
           <p class="thing-desc">Lima's Miraflores district has cevicherías that rank among the world's best restaurants. Central (currently ranked top 5 globally), La Mar and Maido are the benchmark. But the real experience is eating ceviche at a mercado — Surquillo Market is cheap, chaotic and extraordinary. Go for lunch, not dinner.</p>
           <div class="thing-tip">→ Ceviche is a lunch dish in Peru — most top cevicherías don't open for dinner</div>
         </div>
-      </div>
-      <div class="thing-card">
+      </a>
+      <a class="thing-card" href="https://www.getyourguide.com/s/?partner_id=YHIEWDZ&cmp=share_to_earn&q=rainbow+mountain+vinicunca+day+trek+cusco" target="_blank" rel="noopener sponsored">
         <div class="thing-num">05</div>
         <div class="thing-body">
           <div class="thing-title">Rainbow Mountain (Vinicunca) — early start</div>
           <p class="thing-desc">The coloured stripes of mineral-rich rock at 5,200m above sea level are genuinely extraordinary. The catch: you need to be well acclimatised first (minimum 2 nights in Cusco at 3,400m), and you need to leave at 4am from Cusco to reach the summit before the clouds close in at midday. Worth every alarm.</p>
           <div class="thing-tip">→ Do not attempt this if you haven't spent at least 48 hours in Cusco first</div>
         </div>
-      </div>
-      <div class="thing-card">
+      </a>
+      <a class="thing-card" href="https://www.getyourguide.com/s/?partner_id=YHIEWDZ&cmp=share_to_earn&q=lake+titicaca+uros+islands+tour+puno+peru" target="_blank" rel="noopener sponsored">
         <div class="thing-num">06</div>
         <div class="thing-body">
           <div class="thing-title">Lake Titicaca and Isla del Sol</div>
           <p class="thing-desc">The world's highest navigable lake sits between Peru and Bolivia at 3,810m. The floating Uros islands (reed communities on the lake surface) are accessible from Puno. The Bolivian side has Isla del Sol — the Inca creation island — which is extraordinary and far less visited than the Peruvian shore.</p>
           <div class="thing-tip">→ Combine with an onward journey to La Paz, Bolivia for the full circuit</div>
         </div>
-      </div>
-      <div class="thing-card">
+      </a>
+      <a class="thing-card" href="https://www.getyourguide.com/s/?partner_id=YHIEWDZ&cmp=share_to_earn&q=huacachina+sandboarding+dune+buggy+peru" target="_blank" rel="noopener sponsored">
         <div class="thing-num">07</div>
         <div class="thing-body">
           <div class="thing-title">Huacachina — sandboarding the dunes</div>
           <p class="thing-desc">An oasis village surrounded by 100m sand dunes 5km from the city of Ica. Dune buggy tours at sunset followed by sandboarding down the faces are one of Peru's most unexpected and genuinely brilliant experiences. 3.5 hours south of Lima on the Panamericana — easy overnight from the capital.</p>
-          <div class="thing-tip">→ <a href="{GYG}huacachina+sandboarding+dune+buggy+peru" target="_blank" rel="noopener sponsored" style="color:var(--teal);">Book a dune buggy &amp; sandboarding tour here →</a></div>
+          <div class="thing-tip">→ Sunset is the best time — the dunes glow orange and the crowds thin out</div>
         </div>
-      </div>
-      <div class="thing-card">
+      </a>
+      <a class="thing-card" href="https://www.getyourguide.com/s/?partner_id=YHIEWDZ&cmp=share_to_earn&q=amazon+jungle+lodge+tambopata+peru" target="_blank" rel="noopener sponsored">
         <div class="thing-num">08</div>
         <div class="thing-body">
           <div class="thing-title">Amazon lodge — Tambopata or Pacaya-Samiria</div>
           <p class="thing-desc">The Peruvian Amazon is the most accessible section of the basin. Tambopata National Reserve near Puerto Maldonado (45-min flight from Cusco) has extraordinary biodiversity — macaw clay licks, giant river otters, caimans and pink dolphins. Most lodges operate 3-night all-inclusive packages that include all transport, guides and meals.</p>
           <div class="thing-tip">→ Go in the dry season (May–Oct) — river levels are lower and wildlife concentrates</div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ── BOOK ACTIVITIES VIA GYG ── -->
-<section class="gyg-s">
-  <div class="gyg-inner">
-    <div class="eyebrow" style="color:var(--teal);margin-bottom:.6rem">// Book ahead</div>
-    <h2 style="font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--parchment);letter-spacing:-.04em;line-height:1;">Experiences worth booking in advance</h2>
-    <p style="font-size:.84rem;color:var(--smoke);margin-top:.5rem;max-width:560px;line-height:1.8;">Via GetYourGuide — same price, small commission supports the site. Only things I'd genuinely recommend.</p>
-    <div class="gyg-grid">
-      <a href="{GYG}machu+picchu+guided+tour+from+cusco" target="_blank" rel="noopener sponsored" class="gyg-card">
-        <div class="gyg-icon">🎟️</div>
-        <div>
-          <div class="gyg-title">Machu Picchu Guided Tour from Cusco</div>
-          <p class="gyg-desc">Train from Cusco to Aguas Calientes, guided tour of the citadel with an archaeologist and return the same day or overnight.</p>
-          <span class="gyg-arr">Book via GetYourGuide →</span>
-        </div>
-      </a>
-      <a href="{GYG}sacred+valley+full+day+tour+cusco+peru" target="_blank" rel="noopener sponsored" class="gyg-card">
-        <div class="gyg-icon">🎟️</div>
-        <div>
-          <div class="gyg-title">Sacred Valley Full Day Tour</div>
-          <p class="gyg-desc">Pisac ruins and market, Ollantaytambo fortress, Maras salt pans and Moray circles — the best day trip from Cusco.</p>
-          <span class="gyg-arr">Book via GetYourGuide →</span>
-        </div>
-      </a>
-      <a href="{GYG}rainbow+mountain+vinicunca+day+trek+cusco" target="_blank" rel="noopener sponsored" class="gyg-card">
-        <div class="gyg-icon">🎟️</div>
-        <div>
-          <div class="gyg-title">Rainbow Mountain Day Trek</div>
-          <p class="gyg-desc">4am departure from Cusco, guided hike to the 5,200m summit, back by mid-afternoon. Acclimatisation essential first.</p>
-          <span class="gyg-arr">Book via GetYourGuide →</span>
-        </div>
-      </a>
-      <a href="{GYG}huacachina+sandboarding+dune+buggy+peru" target="_blank" rel="noopener sponsored" class="gyg-card">
-        <div class="gyg-icon">🎟️</div>
-        <div>
-          <div class="gyg-title">Huacachina Dune Buggy &amp; Sandboarding</div>
-          <p class="gyg-desc">Sunset dune buggy across the Huacachina oasis sand dunes followed by sandboarding back down. One of Peru's best experiences.</p>
-          <span class="gyg-arr">Book via GetYourGuide →</span>
-        </div>
-      </a>
-      <a href="{GYG}lima+food+tour+miraflores+peru" target="_blank" rel="noopener sponsored" class="gyg-card">
-        <div class="gyg-icon">🎟️</div>
-        <div>
-          <div class="gyg-title">Lima Food Tour — Miraflores &amp; Surquillo</div>
-          <p class="gyg-desc">Ceviche, lomo saltado, anticuchos and Pisco sour through Lima's best food market and neighbourhood restaurants.</p>
-          <span class="gyg-arr">Book via GetYourGuide →</span>
-        </div>
-      </a>
-      <a href="{GYG}amazon+jungle+lodge+tambopata+peru" target="_blank" rel="noopener sponsored" class="gyg-card">
-        <div class="gyg-icon">🎟️</div>
-        <div>
-          <div class="gyg-title">Amazon Lodge — Tambopata 3 Nights</div>
-          <p class="gyg-desc">All-inclusive Amazon lodge with river dolphins, macaw clay lick, night caiman spotting and guided rainforest walks.</p>
-          <span class="gyg-arr">Book via GetYourGuide →</span>
-        </div>
       </a>
     </div>
-    <p class="gyg-disc">Affiliate link — booking through these links costs you nothing extra and supports the site. <a href="../privacy.html" style="color:rgba(200,190,170,.35)">Disclosure →</a></p>
   </div>
 </section>
 
@@ -482,10 +417,8 @@ PERU = f'''<!DOCTYPE html>
     <h2 style="font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;color:var(--parchment);letter-spacing:-.04em;line-height:1;">Where to go in Peru</h2>
     <p style="font-size:.88rem;color:var(--smoke);max-width:640px;margin-top:.6rem;margin-bottom:0;line-height:1.8;">Detailed city guides — the Cusco and Lima guides are the most developed. More being added as I travel.</p>
     <div class="cities-grid">
-
-      <!-- Cusco — live guide -->
       <a href="peru-cusco.html" class="city-card">
-        <img class="city-card-img" src="{CLD}/v1773085766/machu-picchu.webp" alt="Cusco, Peru"/>
+        <img class="city-card-img" src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773085766/machu-picchu.webp" alt="Cusco, Peru"/>
         <div class="city-card-body">
           <div class="city-card-tag">Inca Capital · 3,400m altitude</div>
           <div class="city-card-name">Cusco</div>
@@ -493,8 +426,6 @@ PERU = f'''<!DOCTYPE html>
           <div class="city-card-status city-card-status--live city-card-arr">Read the Cusco guide →</div>
         </div>
       </a>
-
-      <!-- Lima — live guide -->
       <a href="peru-lima.html" class="city-card">
         <div class="city-card-img--placeholder">🌊</div>
         <div class="city-card-body">
@@ -504,8 +435,6 @@ PERU = f'''<!DOCTYPE html>
           <div class="city-card-status city-card-status--live city-card-arr">Read the Lima guide →</div>
         </div>
       </a>
-
-      <!-- Sacred Valley — stub -->
       <div class="city-card" style="cursor:default;">
         <div class="city-card-img--placeholder">🌄</div>
         <div class="city-card-body">
@@ -515,8 +444,6 @@ PERU = f'''<!DOCTYPE html>
           <div class="city-card-status city-card-status--soon">// Guide coming soon</div>
         </div>
       </div>
-
-      <!-- Arequipa — stub -->
       <div class="city-card" style="cursor:default;">
         <div class="city-card-img--placeholder">🌋</div>
         <div class="city-card-body">
@@ -526,8 +453,6 @@ PERU = f'''<!DOCTYPE html>
           <div class="city-card-status city-card-status--soon">// Guide coming soon</div>
         </div>
       </div>
-
-      <!-- Puno & Titicaca — stub -->
       <div class="city-card" style="cursor:default;">
         <div class="city-card-img--placeholder">🚤</div>
         <div class="city-card-body">
@@ -537,8 +462,6 @@ PERU = f'''<!DOCTYPE html>
           <div class="city-card-status city-card-status--soon">// Guide coming soon</div>
         </div>
       </div>
-
-      <!-- Iquitos — stub -->
       <div class="city-card" style="cursor:default;">
         <div class="city-card-img--placeholder">🌿</div>
         <div class="city-card-body">
@@ -548,7 +471,6 @@ PERU = f'''<!DOCTYPE html>
           <div class="city-card-status city-card-status--soon">// Guide coming soon</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -565,25 +487,65 @@ PERU = f'''<!DOCTYPE html>
   </div>
 </section>
 
-{FOOT}
-{SCRP}
+<!-- ── BUY ME A BEER ── -->
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="dropeverythingandgo" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a href="../index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Services</span></a>
+      <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
+      <div class="ft-social">
+        <a href="#" class="ft-soc-btn">📸</a><a href="#" class="ft-soc-btn">🎵</a>
+        <a href="#" class="ft-soc-btn">📌</a><a href="#" class="ft-soc-btn">▶</a>
+      </div>
+    </div>
+    <div class="ft-col"><h5>Explore</h5><ul>
+      <li><a href="../journeys.html">All Destinations</a></li>
+      <li><a href="../destinations/backpacker-guides.html">Backpacker Guides</a></li>
+      <li><a href="../blog.html">Blog</a></li>
+      
+    </ul></div>
+    <div class="ft-col"><h5>Services</h5><ul>
+      <li><a href="../services.html">Trip Planning</a></li>
+      <li><a href="../services.html">Hotel Curation</a></li>
+      <li><a href="../contact.html">Free Quote</a></li>
+    </ul></div>
+    <div class="ft-col"><h5>Info</h5><ul>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../privacy.html">Privacy Policy</a></li>
+      <li><a href="../privacy.html#terms">Terms</a></li>
+    </ul></div>
+  </div>
+  <div class="ft-badges">
+    <span class="ft-badge">🔒 Secure &amp; Trusted</span>
+    <span class="ft-badge">✈️ ATOL Protected Advice</span>
+    <span class="ft-badge">🌍 Worldwide Planning</span>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2025 Drop Everything And Go. All rights reserved.</p>
+    <div class="ft-bottom-links"><a href="../privacy.html">Privacy</a><a href="../privacy.html#cookies">Cookies</a><a href="../privacy.html#terms">Terms</a></div>
+  </div>
+</footer>
+<script>
+(function(){
+document.body.classList.add('js-ready');
+var pb=document.getElementById('progress-bar');
+if(pb)window.addEventListener('scroll',function(){pb.style.width=Math.min((scrollY/(document.body.scrollHeight-innerHeight))*100,100)+'%';},{passive:true});
+var nav=document.getElementById('nav');
+if(nav)window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>60);},{passive:true});
+var ham=document.getElementById('ham'),mob=document.getElementById('mob');
+if(ham&&mob)ham.addEventListener('click',function(){ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
+// Lower threshold + rootMargin so items visible on page load reveal immediately
+var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+// Also immediately reveal anything already in viewport
+window.addEventListener('load',function(){document.querySelectorAll('.rv').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0)el.classList.add('vis');});});
+function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=document.getElementById('ck');if(c)c.classList.add('vis');},1400);}
+window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
+ckShow();
+})();
+</script>
 </body>
-</html>'''
-
-open(f'{DEST}/peru.html', 'w').write(PERU)
-print(f"✓ peru.html written — {len(PERU)//1000}KB")
-print(f"  City stubs: {'cities-grid' in PERU}")
-print(f"  Things grid: {'things-grid' in PERU}")
-print(f"  Facts bar: {'facts-bar' in PERU}")
-print(f"  GYG links: {PERU.count('getyourguide')}")
-print(f"  NAV_BLOCK has nav-drop: {'nav-drop' in NAV_BLOCK}")
-PYEOF
-python3 /tmp/build_peru.py
-Output
-
-✓ peru.html written — 51KB
-  City stubs: True
-  Things grid: True
-  Facts bar: True
-  GYG links: 7
-  NAV_BLOCK has nav-drop: True
+</html>
