@@ -923,7 +923,7 @@ footer {
 .intro-photos img {
   width: 100%; height: 220px;
   object-fit: cover;
-  object-position: center center;
+  object-position: bottom left;
   display: block;
 }
 @media (max-width: 640px) {
@@ -931,23 +931,9 @@ footer {
   .intro-photos img {
   width: 100%; height: 220px;
   object-fit: cover;
-  object-position: center center;
+  object-position: bottom left;
   display: block;
 }
 }
 
 
-
-/* Arrow pointer */
-.nav-drop::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 10px; height: 10px;
-  background: rgba(11,15,26,.97);
-  border-left: 1px solid rgba(245,239,224,.09);
-  border-top: 1px solid rgba(245,239,224,.09);
-  transform: translateX(-50%) rotate(45deg);
-}
