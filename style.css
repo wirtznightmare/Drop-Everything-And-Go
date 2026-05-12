@@ -6,10 +6,10 @@
    ═══════════════════════════════════════════════ */
 
 :root {
-  /* Deep ocean navy — trust, reliability, credibility */
-  --ink:       #0B1728;
-  --ink-2:     #112038;
-  --ink-3:     #1A2E4A;
+  /* Cinematic near-black — bold, fast, zero hesitation */
+  --ink:       #07090F;
+  --ink-2:     #0D1220;
+  --ink-3:     #121A2E;
   /* Warm parchment — calm, clarity, lets colour pop */
   --parchment: #F6EEE0;
   --cream:     #FBF8F2;
@@ -21,9 +21,9 @@
   /* Teal — eco, adventure, freshness */
   --teal:      #0EBFB8;
   --teal-dk:   #0A9590;
-  /* Coral-orange — energy, urgency, adventure, excitement */
-  --coral:     #E86030;
-  --coral-lt:  #F07848;
+  /* Coral-orange — energy, urgency, go now */
+  --coral:     #F05A28;
+  --coral-lt:  #FF7040;
   /* Sky blue — trust, calm, reliability, open skies */
   --sky:       #2E88D0;
   --sky-lt:    #4AA0E4;
@@ -69,7 +69,7 @@ button { cursor: pointer; }
 
 /* ── ANNOUNCEMENT BANNER ── */
 .ann-bar {
-  background: linear-gradient(90deg, #0A2040, #112850, #0A2040);
+  background: linear-gradient(90deg, #04060C, #0A0F1C, #04060C);
   border-bottom: 1px solid rgba(14,191,184,0.25);
   padding: 0.7rem var(--gutter);
   text-align: center;
@@ -103,7 +103,7 @@ button { cursor: pointer; }
   transition: background 0.5s var(--ease-expo), border-color 0.5s, backdrop-filter 0.5s;
 }
 #nav.scrolled {
-  background: rgba(11,23,40,0.9);
+  background: rgba(7,9,15,0.92);
   backdrop-filter: blur(22px) saturate(160%);
   border-bottom-color: var(--border);
 }
@@ -136,13 +136,13 @@ button { cursor: pointer; }
 .nav-links a:hover, .nav-links a.active { color: var(--parchment); }
 .nav-links a:hover::after, .nav-links a.active::after { transform: scaleX(1); }
 .nav-cta {
-  background: var(--sky) !important; color: var(--white) !important;
+  background: var(--coral) !important; color: var(--white) !important;
   padding: 0.58rem 1.3rem !important; border-radius: var(--r-xs) !important;
   font-weight: 700 !important; letter-spacing: 0.1em !important;
   transition: background 0.3s, transform 0.3s var(--ease-spring) !important;
 }
 .nav-cta::after { display: none !important; }
-.nav-cta:hover { background: var(--sky-lt) !important; transform: translateY(-1px) !important; }
+.nav-cta:hover { background: var(--coral-lt) !important; transform: translateY(-1px) !important; }
 
 .nav-ham { display: none; background: none; border: none; width: 28px; height: 18px;
            position: relative; flex-direction: column; justify-content: space-between; }
@@ -167,7 +167,7 @@ button { cursor: pointer; }
 }
 .nav-mob a:hover { color: var(--gold); }
 .mob-cta-btn {
-  background: var(--sky); color: var(--white) !important;
+  background: var(--coral); color: var(--white) !important;
   padding: 0.9rem 2.5rem !important; border-radius: var(--r-xs) !important;
   font-family: var(--ff-ui) !important; font-size: 0.75rem !important;
   font-weight: 800 !important; letter-spacing: 0.18em !important;
@@ -237,8 +237,8 @@ button { cursor: pointer; }
 
 .btn-coral { background: var(--coral); color: var(--white); box-shadow: 0 4px 24px rgba(232,96,48,0.28); }
 .btn-coral:hover { background: var(--coral-lt); box-shadow: 0 8px 36px rgba(232,96,48,0.42); }
-.btn-sky { background: var(--sky); color: var(--white); box-shadow: 0 4px 24px rgba(46,136,208,0.28); }
-.btn-sky:hover { background: var(--sky-lt); box-shadow: 0 8px 36px rgba(46,136,208,0.42); }
+.btn-sky { background: var(--coral); color: var(--white); box-shadow: 0 4px 24px rgba(240,90,40,0.28); }
+.btn-sky:hover { background: var(--coral-lt); box-shadow: 0 8px 36px rgba(240,90,40,0.42); }
 .btn-arr::after { content: '→'; font-size: 0.85em; transition: transform 0.3s; background: none; transform: none; position: static; }
 .btn-arr:hover::after { transform: translateX(4px) !important; }
 
@@ -274,7 +274,7 @@ button { cursor: pointer; }
 .ck-text { font-size: 0.8rem; color: var(--mist); line-height: 1.65; }
 .ck-text a { color: var(--gold); }
 .ck-btns { display: flex; gap: 0.65rem; flex-shrink: 0; }
-.ck-acc { background: var(--sky); color: var(--white); border: none;
+.ck-acc { background: var(--coral); color: var(--white); border: none;
           border-radius: var(--r-xs); padding: 0.52rem 1.1rem;
           font-size: 0.7rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
 .ck-dec { background: rgba(255,255,255,0.06); color: var(--smoke); border: 1px solid rgba(255,255,255,0.1);
@@ -957,7 +957,7 @@ footer {
   top: calc(100% + 14px);
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(11,15,26,.97);
+  background: rgba(5,7,12,.97);
   backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(245,239,224,.09);
   border-radius: 12px;
@@ -1046,7 +1046,7 @@ footer {
   left: 50%;
   transform: translateX(-50%);
   width: 10px; height: 10px;
-  background: rgba(11,15,26,.97);
+  background: rgba(5,7,12,.97);
   border-left: 1px solid rgba(245,239,224,.09);
   border-top: 1px solid rgba(245,239,224,.09);
   transform: translateX(-50%) rotate(45deg);
