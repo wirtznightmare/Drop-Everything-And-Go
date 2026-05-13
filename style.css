@@ -942,11 +942,12 @@ footer {
 .nav-links li > a { display: flex; align-items: center; gap: .3rem; }
 .nav-links li > a .nav-caret {
   width: 0; height: 0;
-  border-left: 3px solid transparent;
-  border-right: 3px solid transparent;
-  border-top: 4px solid rgba(200,190,170,.4);
+  border-left: 3.5px solid transparent;
+  border-right: 3.5px solid transparent;
+  border-top: 4.5px solid rgba(200,190,170,.45);
   transition: transform .2s, border-top-color .2s;
-  flex-shrink: 0; margin-top: 1px;
+  flex-shrink: 0;
+  margin-top: 1px;
 }
 .nav-links li:hover > a .nav-caret { transform: rotate(180deg); border-top-color: var(--parchment); }
 
@@ -956,7 +957,7 @@ footer {
   top: calc(100% + 14px);
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(11,15,26,.97);
+  background: rgba(5,7,12,.97);
   backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(245,239,224,.09);
   border-radius: 12px;
