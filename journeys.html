@@ -4,66 +4,34 @@
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-S59LVL96RN"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S59LVL96RN');</script>
-<meta name="description" content="13 regional travel hubs — every destination we cover organised by continent, with full guides and ski resorts."/>
-<title>Journeys — Regional Travel Hubs | Drop Everything And Go</title>
-<meta property="og:title" content="Journeys — Regional Travel Hubs | Drop Everything And Go"/>
-<meta property="og:description" content="13 regional travel hubs — Southeast Asia to Patagonia. Find your next adventure."/>
+<meta name="description" content="Country travel guides from Drop Everything And Go — real trip reports, costs and honest advice. Starting with Austria."/>
+<title>Journeys — Country Guides | Drop Everything And Go</title>
+<meta property="og:title" content="Journeys — Country Guides | Drop Everything And Go"/>
+<meta property="og:description" content="Country-by-country travel guides, built as the trips happen. Starting with Austria."/>
 <meta property="og:type" content="website"/>
 <link rel="canonical" href="https://www.dropeverythingandgo.com/journeys.html"/>
 <link rel="stylesheet" href="style.css"/>
 <style>
 
-/* ── Destination cards ── */
-.d-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;}
-.d-card{position:relative;overflow:hidden;border-radius:var(--r-md);display:block;border:1px solid rgba(245,239,224,.07);transition:border-color .3s,transform .4s var(--ease-spring),box-shadow .4s;height:200px;text-decoration:none;}
-.d-card:hover{border-color:rgba(200,145,42,.3);transform:translateY(-5px);box-shadow:0 18px 45px rgba(0,0,0,.4);}
-.dc-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,13,16,.92) 0%,transparent 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.1rem;}
-.dc-tag{font-family:var(--ff-mono);font-size:.48rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:.2rem;}
-.dc-name{font-family:var(--ff-display);font-size:1.25rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;}
-.dc-arr{font-family:var(--ff-mono);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-top:.35rem;opacity:0;transform:translateX(-4px);transition:opacity .3s,transform .3s;}
-.d-card:hover .dc-arr{opacity:1;transform:translateX(0);}
+/* ── Country cards ── */
+.country-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;}
+.country-card{position:relative;overflow:hidden;border-radius:var(--r-md);display:block;border:1px solid rgba(245,239,224,.08);transition:border-color .3s,transform .4s var(--ease-spring),box-shadow .4s;height:340px;text-decoration:none;}
+.country-card:hover{border-color:rgba(200,145,42,.3);transform:translateY(-6px);box-shadow:0 24px 55px rgba(0,0,0,.45);}
+.country-card-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
+.cc-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,13,16,.95) 0%,rgba(11,13,16,.25) 55%,transparent 80%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.6rem;}
+.cc-status{font-family:var(--ff-mono);font-size:.46rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem;}
+.cc-name{font-family:var(--ff-display);font-size:1.7rem;font-weight:800;color:var(--parchment);letter-spacing:-.02em;line-height:1;margin-bottom:.5rem;}
+.cc-desc{font-size:.8rem;color:rgba(245,239,224,.65);line-height:1.7;margin-bottom:.8rem;}
+.cc-arr{font-family:var(--ff-mono);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);opacity:0;transform:translateX(-4px);transition:opacity .3s,transform .3s;}
+.country-card:hover .cc-arr{opacity:1;transform:translateX(0);}
 
-/* ── Hub cards ── */
+/* ── Coming soon card ── */
+.cc-soon{position:relative;overflow:hidden;border-radius:var(--r-md);border:1px dashed rgba(245,239,224,.15);height:340px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:1.6rem;background:rgba(245,239,224,.02);}
+.cc-soon-icon{font-size:1.8rem;margin-bottom:.8rem;opacity:.4;}
+.cc-soon-text{font-family:var(--ff-mono);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,239,224,.3);}
 
-/* ── Regional Hub Layout ── */
-.hub-section{background:var(--ink-2);padding:4rem var(--gutter);}
-.hub-section-inner{max-width:1260px;margin:0 auto;}
-.cont-group{margin-bottom:1.6rem;}
-.cont-group:last-child{margin-bottom:0;}
-.cont-label{font-family:var(--ff-mono);font-size:.52rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(14,191,184,.55);margin-bottom:.7rem;padding-left:.1rem;}
-.cont-grid{display:grid;gap:.85rem;}
-
-.hub-card{display:block;text-decoration:none;border-radius:var(--r-md);overflow:hidden;transition:transform .35s var(--ease-spring),box-shadow .35s;}
-.hub-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,.5);}
-.hub-card-inner{padding:1.4rem 1.5rem 1.3rem;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;position:relative;}
-.hub-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:.7rem;}
-.hub-emoji{font-size:1.6rem;line-height:1;}
-.hub-arr{font-family:var(--ff-mono);font-size:.8rem;color:rgba(245,239,224,.2);transition:color .25s,transform .25s;transform:translateX(-3px);}
-.hub-card:hover .hub-arr{color:rgba(245,239,224,.7);transform:translateX(0);}
-.hub-name{font-family:var(--ff-display);font-size:1.05rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;margin-bottom:.7rem;line-height:1.2;}
-.hub-dests{display:flex;flex-wrap:wrap;gap:.3rem;}
-.hc-dest{font-family:var(--ff-mono);font-size:.44rem;letter-spacing:.1em;text-transform:uppercase;background:rgba(245,239,224,.08);color:rgba(245,239,224,.45);border-radius:100px;padding:.2rem .55rem;white-space:nowrap;}
-.hub-card:hover .hc-dest{background:rgba(245,239,224,.12);color:rgba(245,239,224,.6);}
-
-@media(max-width:960px){.cont-grid{grid-template-columns:repeat(2,1fr)!important;}}
-@media(max-width:520px){.cont-grid{grid-template-columns:1fr!important;}.hub-card-inner{min-height:130px;}}
-.rg-title{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-family:var(--ff-display);font-size:1.25rem;font-weight:700;color:var(--ink);letter-spacing:-.02em;transition:color .2s;}
-.rg-title:hover{color:var(--gold-dk);}
-.rg-emoji{font-size:1.3rem;}
-.rg-arr{font-family:var(--ff-mono);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dk);margin-left:.5rem;}
-.rg-grid{grid-template-columns:repeat(4,1fr)!important;}
-
-/* ── Search / filter ── */
-.dest-search{width:100%;max-width:480px;background:rgba(245,239,224,.06);border:1px solid rgba(245,239,224,.12);border-radius:9px;padding:.75rem 1.1rem;font-family:var(--ff-body);font-size:.88rem;color:var(--parchment);outline:none;transition:border-color .2s;}
-.dest-search::placeholder{color:rgba(245,239,224,.3);}
-.dest-search:focus{border-color:rgba(14,191,184,.4);}
-.filter-btns{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;}
-.fb{font-family:var(--ff-mono);font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;padding:.3rem .85rem;border-radius:100px;border:1px solid rgba(245,239,224,.12);background:rgba(245,239,224,.05);color:rgba(245,239,224,.5);cursor:pointer;transition:all .2s;}
-.fb:hover,.fb.on{background:rgba(14,191,184,.12);border-color:rgba(14,191,184,.3);color:var(--teal);}
-
-@media(max-width:1100px){.d-grid{grid-template-columns:repeat(3,1fr);}}
-@media(max-width:760px){.d-grid{grid-template-columns:repeat(2,1fr);}}
-@media(max-width:480px){.d-grid{grid-template-columns:1fr;}}
+@media(max-width:960px){.country-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.country-grid{grid-template-columns:1fr;}.country-card,.cc-soon{height:300px;}}
 
 </style>
 </head>
@@ -82,15 +50,12 @@
     <span class="ann-arr">→</span>
   </a>
 </div>
+
 <nav id="nav">
   <a href="index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Bespoke Planning</span></a>
   <ul class="nav-links">
-
     <li><a href="journeys.html" class="active">Journeys</a></li>
-
-    <!-- Ski dropdown -->
-    <li>
-      <a href="ski.html">Ski <span class="nav-caret"></span></a>
+    <li><a href="ski.html">Ski <span class="nav-caret"></span></a>
       <div class="nav-drop nav-drop--ski">
         <div class="nav-drop-col">
           <div class="nav-drop-col-head">The Alps</div>
@@ -153,7 +118,6 @@
         </div>
       </div>
     </li>
-
     <li><a href="blog.html">Blog</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="contact.html" class="nav-cta">Plan My Trip</a></li>
@@ -168,190 +132,52 @@
   <li><a href="contact.html" class="nav-cta" style="margin-top:.5rem">Plan My Trip</a></li>
 </ul>
 
-<!-- HERO -->
-
-
-<!-- Hero -->
+<!-- ── HERO ── -->
 <section style="background:var(--ink);padding:7rem var(--gutter) 4rem;border-bottom:1px solid var(--border);">
   <div style="max-width:1260px;margin:0 auto;">
     <div class="eyebrow" style="color:var(--teal);margin-bottom:.8rem">// Where do you want to go?</div>
     <h1 style="font-family:var(--ff-display);font-size:clamp(2.8rem,7vw,5.5rem);font-weight:800;color:var(--parchment);letter-spacing:-.04em;line-height:.92;margin-bottom:1.2rem;">
-      Explore by<br><em style="font-style:italic;font-weight:300;color:var(--teal)">region</em>
+      Explore by<br><em style="font-style:italic;font-weight:300;color:var(--teal)">country</em>
     </h1>
-    <p style="font-size:.92rem;color:var(--smoke);max-width:500px;line-height:1.8;margin-bottom:2rem;">13 regional travel hubs — full destination guides, seasonal advice and ski resorts, all in one place.</p>
+    <p style="font-size:.92rem;color:var(--smoke);max-width:520px;line-height:1.8;margin-bottom:2rem;">Full country guides, built one trip at a time. Each one goes live once the trip's actually happened — real costs, real opinions, no filler.</p>
     <div style="display:flex;gap:1rem;flex-wrap:wrap;">
-      <a href="blog.html" class="btn btn-wire">Read the Blog →</a>
+      <a href="salzburg.html" class="btn btn-coral btn-arr">Read the Salzburg Post</a>
+      <a href="ski.html" class="btn btn-wire">Explore Ski Resorts →</a>
     </div>
   </div>
 </section>
 
-<section class="hub-section">
-  <div class="hub-section-inner">
-    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:2rem;">
-      <div>
-        <div class="eyebrow" style="color:var(--teal);margin-bottom:.5rem">// Explore by region</div>
-        <h2 style="font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:var(--parchment);letter-spacing:-.03em;line-height:1;">13 Regional <em style="font-style:italic;font-weight:300;color:var(--teal)">Travel Hubs</em></h2>
+<!-- ── COUNTRY GRID ── -->
+<section style="background:var(--ink);padding:4rem var(--gutter) 6rem;">
+  <div style="max-width:1260px;margin:0 auto;">
+    <div class="eyebrow" style="color:var(--teal);margin-bottom:.5rem">// Country guides</div>
+    <h2 style="font-family:var(--ff-display);font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;color:var(--parchment);letter-spacing:-.03em;line-height:1;margin-bottom:2rem;">One country, <em style="font-style:italic;font-weight:300;color:var(--teal)">fully covered</em></h2>
+
+    <div class="country-grid">
+
+      <a href="countries/austria.html" class="country-card rv">
+        <img class="country-card-img" src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1747934519/salzburg-hero.webp" alt="Austria — Salzburg and the Alps"/>
+        <div class="cc-ov">
+          <div class="cc-status">// Live now</div>
+          <div class="cc-name">Austria</div>
+          <p class="cc-desc">Salzburg, Hallstatt and six ski resorts covered in full — the first country guide is up.</p>
+          <div class="cc-arr">Explore Austria →</div>
+        </div>
+      </a>
+
+      <div class="cc-soon rv rv1">
+        <div class="cc-soon-icon">🗺️</div>
+        <div class="cc-soon-text">// Next country in progress</div>
       </div>
-      <p style="font-size:.8rem;color:var(--smoke);line-height:1.65;max-width:320px;">Regional travel hubs with destination guides and ski resorts — organised by region.</p>
-    </div>
-    
-<div class="cont-group">
-  <div class="cont-label">Asia</div>
-  <div class="cont-grid" style="grid-template-columns:repeat(5,1fr)"><a href="destinations/southeast-asia.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#061A0C,#0E2A14)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🌏</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">Southeast Asia</div>
-    <div class="hub-dests"><span class="hc-dest">Bali</span><span class="hc-dest">Vietnam</span><span class="hc-dest">Thailand</span><span class="hc-dest">Cambodia</span><span class="hc-dest">Singapore</span><span class="hc-dest">Philippines</span></div>
-  </div>
-</a><a href="destinations/south-asia.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#1A0A06,#2E1408)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🕉️</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">South Asia</div>
-    <div class="hub-dests"><span class="hc-dest">Maldives</span><span class="hc-dest">India</span><span class="hc-dest">Nepal</span><span class="hc-dest">Sri Lanka</span></div>
-  </div>
-</a><a href="destinations/east-asia.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#12061A,#200A2E)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🏯</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">East Asia</div>
-    <div class="hub-dests"><span class="hc-dest">Tokyo</span><span class="hc-dest">Kyoto</span><span class="hc-dest">Seoul</span><span class="hc-dest">Beijing</span><span class="hc-dest">Shanghai</span></div>
-  </div>
-</a><a href="destinations/central-asia.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#1A0A06,#2E1A06)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🏔️</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">Central Asia</div>
-    <div class="hub-dests"><span class="hc-dest">Georgia</span><span class="hc-dest">Cappadocia</span></div>
-  </div>
-</a><a href="destinations/middle-east.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#1A0C06,#2E1606)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🕌</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">Middle East</div>
-    <div class="hub-dests"><span class="hc-dest">Petra</span><span class="hc-dest">Marrakech</span><span class="hc-dest">Cairo</span><span class="hc-dest">Dubai</span></div>
-  </div>
-</a></div>
-</div>
-<div class="cont-group">
-  <div class="cont-label">Europe</div>
-  <div class="cont-grid" style="grid-template-columns:repeat(3,1fr)"><a href="destinations/western-europe.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#08091E,#0E1030)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🗼</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">Western Europe</div>
-    <div class="hub-dests"><span class="hc-dest">Rome</span><span class="hc-dest">Paris</span><span class="hc-dest">Barcelona</span><span class="hc-dest">Amsterdam</span><span class="hc-dest">Amalfi</span><span class="hc-dest">Santorini</span></div>
-  </div>
-</a><a href="destinations/eastern-europe.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#060E1E,#0C1830)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🏰</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">Eastern Europe</div>
-    <div class="hub-dests"><span class="hc-dest">Croatia</span><span class="hc-dest">Dubrovnik</span><span class="hc-dest">Prague</span><span class="hc-dest">Budapest</span><span class="hc-dest">Salzburg</span></div>
-  </div>
-</a><a href="destinations/northern-europe.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#061418,#0A2028)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🌊</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">Northern Europe</div>
-    <div class="hub-dests"><span class="hc-dest">Edinburgh</span><span class="hc-dest">London</span></div>
-  </div>
-</a></div>
-</div>
-<div class="cont-group">
-  <div class="cont-label">Americas</div>
-  <div class="cont-grid" style="grid-template-columns:repeat(3,1fr)"><a href="destinations/north-america.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#1A0612,#2E0E20)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🗽</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">North America</div>
-    <div class="hub-dests"><span class="hc-dest">New York</span><span class="hc-dest">Los Angeles</span><span class="hc-dest">Vancouver & Banff</span></div>
-  </div>
-</a><a href="destinations/central-america.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#180812,#281020)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🌮</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">Central America & Caribbean</div>
-    <div class="hub-dests"><span class="hc-dest">Mexico City</span><span class="hc-dest">Havana</span><span class="hc-dest">Costa Rica</span><span class="hc-dest">Guatemala</span></div>
-  </div>
-</a><a href="destinations/south-america.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#061A0C,#0E2A14)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🦙</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">South America</div>
-    <div class="hub-dests"><span class="hc-dest">Patagonia</span><span class="hc-dest">Peru</span><span class="hc-dest">Ecuador</span><span class="hc-dest">Buenos Aires</span><span class="hc-dest">Rio</span></div>
-  </div>
-</a></div>
-</div>
-<div class="cont-group">
-  <div class="cont-label">Africa</div>
-  <div class="cont-grid" style="grid-template-columns:repeat(1,1fr)"><a href="destinations/africa.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#140E00,#241A00)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🦁</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">Africa</div>
-    <div class="hub-dests"><span class="hc-dest">Kenya</span><span class="hc-dest">Zanzibar</span><span class="hc-dest">Cape Town</span><span class="hc-dest">Serengeti</span><span class="hc-dest">Rwanda</span></div>
-  </div>
-</a></div>
-</div>
-<div class="cont-group">
-  <div class="cont-label">Oceania</div>
-  <div class="cont-grid" style="grid-template-columns:repeat(1,1fr)"><a href="destinations/oceania.html" class="hub-card rv">
-  <div class="hub-card-inner" style="background:linear-gradient(135deg,#061520,#0E2030)">
-    <div class="hub-card-top">
-      <span class="hub-emoji">🦘</span>
-      <span class="hub-arr">→</span>
-    </div>
-    <div class="hub-name">Oceania & Pacific</div>
-    <div class="hub-dests"><span class="hc-dest">Sydney & Reef</span><span class="hc-dest">Queenstown</span><span class="hc-dest">Fiji</span></div>
-  </div>
-</a></div>
-</div>
-  </div>
-</section>
-<section class="s" style="background:var(--ink-2);padding:2rem var(--gutter);">
-  <div style="max-width:1260px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;">
-    <div>
-      <div style="font-family:var(--ff-display);font-size:1.1rem;font-weight:700;color:var(--parchment);letter-spacing:-.01em;">Looking for a specific destination?</div>
-      <p style="font-size:.8rem;color:var(--smoke);margin-top:.3rem;">Browse all 59 guides with search and region filters.</p>
-    </div>
-    <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
-      <a href="blog.html" class="btn btn-wire">Read the Blog →</a>
+
     </div>
   </div>
 </section>
 
-
-<!-- CTA -->
-<section class="s" style="background:linear-gradient(140deg,#112038,#0D2040);text-align:center;">
-  <div style="max-width:540px;margin:0 auto;">
-    <div class="eyebrow" style="color:var(--teal);justify-content:center;margin-bottom:.9rem">// Bespoke Planning</div>
-    <h2 style="font-family:var(--ff-display);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--parchment);letter-spacing:-.02em;margin-bottom:.8rem;">Can't decide? Let us plan it.</h2>
+<!-- ── PLAN MY TRIP CTA ── -->
+<section class="s" style="background:var(--ink-2);padding:4rem var(--gutter);text-align:center;">
+  <div style="max-width:560px;margin:0 auto;">
+    <h2 style="font-family:var(--ff-display);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--parchment);letter-spacing:-.02em;margin-bottom:.8rem;">Can't wait for the guide? Let us plan it.</h2>
     <p style="color:var(--smoke);line-height:1.7;margin-bottom:1.6rem;font-size:.86rem;">Tell us where in the world you want to go and we'll handle everything — itinerary, bookings, transfers.</p>
     <a href="contact.html" class="btn btn-coral btn-arr">Plan My Trip →</a>
   </div>
@@ -369,9 +195,24 @@
         <a href="#" class="ft-soc-btn" aria-label="YouTube">▶</a>
       </div>
     </div>
-    <div class="ft-col"><h5>Explore</h5><ul><li><a href="journeys.html">Journeys</a></li><li><a href="blog.html">Blog</a></li></ul></div>
-    <div class="ft-col"><h5>Services</h5><ul><li><a href="services.html">Trip Planning</a></li><li><a href="services.html">Hotel Curation</a></li><li><a href="services.html">Honeymoons</a></li><li><a href="contact.html">Free Quote</a></li></ul></div>
-    <div class="ft-col"><h5>Info</h5><ul><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="privacy.html#cookies">Cookies</a></li><li><a href="privacy.html#terms">Terms</a></li></ul></div>
+    <div class="ft-col"><h5>Explore</h5><ul>
+      <li><a href="journeys.html">Journeys</a></li>
+      <li><a href="ski.html">Ski</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul></div>
+    <div class="ft-col"><h5>Services</h5><ul>
+      <li><a href="services.html">Trip Planning</a></li>
+      <li><a href="services.html">Hotel Curation</a></li>
+      <li><a href="services.html">Honeymoons</a></li>
+      <li><a href="contact.html">Free Quote</a></li>
+    </ul></div>
+    <div class="ft-col"><h5>Info</h5><ul>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="privacy.html#cookies">Cookies</a></li>
+      <li><a href="privacy.html#terms">Terms</a></li>
+    </ul></div>
   </div>
   <div class="ft-badges">
     <span class="ft-badge">🔒 Secure &amp; Trusted</span>
@@ -379,7 +220,7 @@
     <span class="ft-badge">🌍 Worldwide Planning</span>
   </div>
   <div class="ft-bottom">
-    <p>© 2025 Drop Everything And Go. All rights reserved.</p>
+    <p>© 2026 Drop Everything And Go. All rights reserved.</p>
     <div class="ft-bottom-links"><a href="privacy.html">Privacy</a><a href="privacy.html#cookies">Cookies</a><a href="privacy.html#terms">Terms</a></div>
   </div>
 </footer>
@@ -392,85 +233,14 @@ var nav=document.getElementById('nav');
 if(nav)window.addEventListener('scroll',function(){nav.classList.toggle('scrolled',scrollY>60);},{passive:true});
 var ham=document.getElementById('ham'),mob=document.getElementById('mob');
 if(ham&&mob)ham.addEventListener('click',function(){ham.classList.toggle('open');mob.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':'';});
-// Lower threshold + rootMargin so items visible on page load reveal immediately
 var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
-// Also immediately reveal anything already in viewport
 window.addEventListener('load',function(){document.querySelectorAll('.rv').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0)el.classList.add('vis');});});
 function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=document.getElementById('ck');if(c)c.classList.add('vis');},1400);}
 window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
 window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
 ckShow();
 })();
-</script>
-
-<script>
-// ── Search + filter logic ──
-const allDests = [{"slug": "bali", "name": "Bali", "tag": "Indonesia", "hub": "southeast-asia", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773174541/67de721a9834260c076e97be_Tegallalang_20Rice_20Terraces_lnfzfx.webp"}, {"slug": "vietnam", "name": "Vietnam", "tag": "Southeast Asia", "hub": "southeast-asia", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423310/murray-mccallum-ha-long-bay-vietnam-tourist-boat-cruising-among-limestone-karsts-and-islets-in-unesco-site_u-l-q1tc1ej0_jif5kq.jpg"}, {"slug": "thailand", "name": "Thailand", "tag": "Southeast Asia", "hub": "southeast-asia", "img": ""}, {"slug": "cambodia", "name": "Angkor Wat", "tag": "Cambodia", "hub": "southeast-asia", "img": ""}, {"slug": "singapore", "name": "Singapore", "tag": "Southeast Asia", "hub": "southeast-asia", "img": ""}, {"slug": "philippines", "name": "El Nido & Palawan", "tag": "Philippines", "hub": "southeast-asia", "img": ""}, {"slug": "maldives", "name": "Maldives", "tag": "Indian Ocean", "hub": "south-asia", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422058/activemaldives_GettyImages-86477634_HR_f9khtp.jpg"}, {"slug": "golden-triangle", "name": "India — Golden Triangle", "tag": "South Asia", "hub": "south-asia", "img": ""}, {"slug": "kathmandu-everest", "name": "Nepal — Everest", "tag": "South Asia", "hub": "south-asia", "img": ""}, {"slug": "sri-lanka", "name": "Sri Lanka", "tag": "South Asia", "hub": "south-asia", "img": ""}, {"slug": "tokyo", "name": "Tokyo", "tag": "Japan", "hub": "east-asia", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423265/1701836232-fujiyoshida-japan-at-chureito-pagoda-and-mt-fuji_ut7ybj.jpg"}, {"slug": "kyoto", "name": "Kyoto", "tag": "Japan", "hub": "east-asia", "img": ""}, {"slug": "seoul", "name": "Seoul", "tag": "South Korea", "hub": "east-asia", "img": ""}, {"slug": "beijing", "name": "Beijing", "tag": "China", "hub": "east-asia", "img": ""}, {"slug": "shanghai", "name": "Shanghai", "tag": "China", "hub": "east-asia", "img": ""}, {"slug": "georgia", "name": "Georgia", "tag": "Caucasus", "hub": "central-asia", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773421844/Gergeti_Trinity_Church_-_Outside_Kazbegi_guapou.jpg"}, {"slug": "cappadocia", "name": "Cappadocia", "tag": "Turkey", "hub": "central-asia", "img": ""}, {"slug": "petra-wadi-rum", "name": "Petra & Wadi Rum", "tag": "Jordan", "hub": "middle-east", "img": ""}, {"slug": "marrakech", "name": "Marrakech & Morocco", "tag": "Morocco", "hub": "middle-east", "img": ""}, {"slug": "cairo-luxor", "name": "Cairo & Luxor", "tag": "Egypt", "hub": "middle-east", "img": ""}, {"slug": "dubai", "name": "Dubai", "tag": "UAE", "hub": "middle-east", "img": ""}, {"slug": "rome", "name": "Rome", "tag": "Italy", "hub": "western-europe", "img": ""}, {"slug": "paris", "name": "Paris", "tag": "France", "hub": "western-europe", "img": ""}, {"slug": "barcelona", "name": "Barcelona", "tag": "Spain", "hub": "western-europe", "img": ""}, {"slug": "amsterdam", "name": "Amsterdam", "tag": "Netherlands", "hub": "western-europe", "img": ""}, {"slug": "amalfi", "name": "Amalfi Coast", "tag": "Italy", "hub": "western-europe", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773174321/fe1ae1081933147527d277649c44277e_molrxf.jpg"}, {"slug": "santorini", "name": "Santorini", "tag": "Greece", "hub": "western-europe", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423170/01-santorini-caldera-greece_qchzdf.jpg"}, {"slug": "portugal", "name": "Portugal", "tag": "Western Europe", "hub": "western-europe", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422400/Sintra_Castles_Palaces_portugal_magik_tours_2509681399_js3ibk.webp"}, {"slug": "iceland", "name": "Iceland", "tag": "Northern Europe", "hub": "western-europe", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773421883/northern_lights_above_glacier_lagoon_v2osk_unsplash_7d39ca647f_x2fxsc.jpg"}, {"slug": "croatia", "name": "Croatia", "tag": "Balkans", "hub": "eastern-europe", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773175144/croatia-banje-beach-coast-aerial_dtfkpq.jpg"}, {"slug": "dubrovnik", "name": "Dubrovnik", "tag": "Croatia", "hub": "eastern-europe", "img": ""}, {"slug": "prague", "name": "Prague", "tag": "Czech Republic", "hub": "eastern-europe", "img": ""}, {"slug": "budapest", "name": "Budapest", "tag": "Hungary", "hub": "eastern-europe", "img": ""}, {"slug": "salzburg", "name": "Salzburg", "tag": "Austria", "hub": "eastern-europe", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422432/salzburg-austria-aerial-view-historic-600nw-2647183381_uk5c2a.jpg"}, {"slug": "edinburgh", "name": "Edinburgh", "tag": "Scotland", "hub": "northern-europe", "img": ""}, {"slug": "london", "name": "London", "tag": "UK", "hub": "northern-europe", "img": ""}, {"slug": "new-york", "name": "New York City", "tag": "North America", "hub": "north-america", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422120/lower-manhattan-skyline-and-brooklyn-bridge_pfon1f.jpg"}, {"slug": "los-angeles", "name": "Los Angeles", "tag": "North America", "hub": "north-america", "img": ""}, {"slug": "vancouver-banff", "name": "Vancouver & Banff", "tag": "Canada", "hub": "north-america", "img": ""}, {"slug": "mexico-city", "name": "Mexico City & Oaxaca", "tag": "Mexico", "hub": "central-america", "img": ""}, {"slug": "havana", "name": "Havana & Trinidad", "tag": "Cuba", "hub": "central-america", "img": ""}, {"slug": "costa-rica", "name": "Costa Rica", "tag": "Central America", "hub": "central-america", "img": ""}, {"slug": "guatemala", "name": "Guatemala", "tag": "Central America", "hub": "central-america", "img": ""}, {"slug": "patagonia", "name": "Patagonia", "tag": "South America", "hub": "south-america", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422176/Torres_20del_20Paine_20in_20Patagonia_2C_20Chile_20Tour_shutterstock_699918793_yyqhbf.jpg"}, {"slug": "peru", "name": "Peru", "tag": "South America", "hub": "south-america", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773085766/machu-picchu.webp"}, {"slug": "ecuador", "name": "Ecuador & Galápagos", "tag": "South America", "hub": "south-america", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773176813/Galapagos-Seal.jpg"}, {"slug": "buenos-aires", "name": "Buenos Aires", "tag": "Argentina", "hub": "south-america", "img": ""}, {"slug": "rio-de-janeiro", "name": "Rio de Janeiro", "tag": "Brazil", "hub": "south-america", "img": ""}, {"slug": "medellin-cartagena", "name": "Medellín & Cartagena", "tag": "Colombia", "hub": "south-america", "img": ""}, {"slug": "atacama-patagonia", "name": "Atacama & Patagonia", "tag": "Chile", "hub": "south-america", "img": ""}, {"slug": "uyuni-salt-flats", "name": "Uyuni Salt Flats", "tag": "Bolivia", "hub": "south-america", "img": ""}, {"slug": "kenya", "name": "Kenya", "tag": "East Africa", "hub": "africa", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773421993/masai-mara-great-migration-river-crossing-kenya-small_tvchpp.jpg"}, {"slug": "zanzibar", "name": "Zanzibar", "tag": "East Africa", "hub": "africa", "img": "https://res.cloudinary.com/dd2ef17ow/image/upload/v1773423414/aerial-view-zanzibar-pristine-nungwi-beach-where-crystal-clear-turquoise-waters-meet-soft-white-sand-traditional-wooden-365168956_fa49uu.jpg"}, {"slug": "cape-town", "name": "Cape Town", "tag": "South Africa", "hub": "africa", "img": ""}, {"slug": "serengeti-kilimanjaro", "name": "Serengeti & Kilimanjaro", "tag": "Tanzania", "hub": "africa", "img": ""}, {"slug": "rwanda-gorillas", "name": "Rwanda — Gorillas", "tag": "Africa", "hub": "africa", "img": ""}, {"slug": "sydney-great-barrier-reef", "name": "Sydney & the Reef", "tag": "Australia", "hub": "oceania", "img": ""}, {"slug": "queenstown-south-island", "name": "Queenstown & South Island", "tag": "New Zealand", "hub": "oceania", "img": ""}, {"slug": "fiji", "name": "Fiji", "tag": "Pacific", "hub": "oceania", "img": ""}];
-
-const searchInput = document.getElementById('dest-search');
-const filterBtns  = document.querySelectorAll('.fb');
-const regionGroups = document.getElementById('region-groups');
-const searchResults = document.getElementById('search-results');
-const searchGrid  = document.getElementById('search-grid');
-const noResults   = document.getElementById('no-results');
-
-let activeHub = 'all';
-let searchTerm = '';
-
-function makeCard(d) {
-  const bg = d.img ? '' : ' style="background:linear-gradient(145deg,#0D1A2E,#0A1220)"';
-  const img = d.img ? `<img src="${d.img}" alt="${d.name}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center">` : '';
-  return `<a href="destinations/${d.slug}.html" class="d-card rv"${bg}>${img}<div class="dc-ov"><div class="dc-tag">${d.tag}</div><div class="dc-name">${d.name}</div><div class="dc-arr">Explore →</div></div></a>`;
-}
-
-function render() {
-  const q = searchTerm.toLowerCase().trim();
-
-  if (q) {
-    // Search mode — show flat grid of matches
-    regionGroups.style.display = 'none';
-    searchResults.style.display = '';
-    const matches = allDests.filter(d =>
-      d.name.toLowerCase().includes(q) ||
-      d.tag.toLowerCase().includes(q) ||
-      d.hub.toLowerCase().includes(q)
-    );
-    searchGrid.innerHTML = matches.map(makeCard).join('');
-    noResults.style.display = matches.length ? 'none' : '';
-    return;
-  }
-
-  // Filter mode
-  regionGroups.style.display = '';
-  searchResults.style.display = 'none';
-  document.querySelectorAll('.region-group').forEach(g => {
-    const show = activeHub === 'all' || g.dataset.hub === activeHub;
-    g.style.display = show ? '' : 'none';
-  });
-}
-
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('on'));
-    btn.classList.add('on');
-    activeHub = btn.dataset.hub;
-    searchTerm = '';
-    searchInput.value = '';
-    render();
-  });
-});
-
-searchInput.addEventListener('input', e => {
-  searchTerm = e.target.value;
-  if (searchTerm) {
-    filterBtns.forEach(b => b.classList.remove('on'));
-  } else {
-    filterBtns[0].classList.add('on');
-    activeHub = 'all';
-  }
-  render();
-});
 </script>
 <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="dropeverythingandgo" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 </body>
