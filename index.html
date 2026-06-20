@@ -37,9 +37,12 @@
 }
 .ih-right{
   position:relative;
-  overflow:hidden;
 }
-.ih-right img{object-position:38% 72%;}
+.ih-right img{
+  width:100%;
+  height:auto;
+  display:block;
+}
 .ih-right::after{
   content:'';
   position:absolute;
@@ -256,8 +259,6 @@
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
   .intro-hero{grid-template-columns:1fr;min-height:auto;}
-  .ih-right{height:80vw;min-height:360px;max-height:540px;}
-  .ih-right img{object-position:38% 72%;}
   .ih-right::after{background:linear-gradient(to top,rgba(11,13,16,.65) 0%,transparent 55%);}
 }
 @media(max-width:600px){
