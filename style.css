@@ -987,3 +987,16 @@ footer {
 }
 .nav-drop a:hover { background: rgba(245,239,224,.06); color: var(--parchment); }
 .nav-drop-divider { height: 1px; background: rgba(245,239,224,.07); margin: .35rem .6rem; }
+
+/* ═══════════════════════════════════════════════
+   BRAND LOGO (nav lockup + footer logo)
+   ═══════════════════════════════════════════════ */
+.nav-logo--brand { flex-direction: row; align-items: center; gap: 0.75rem; }
+.nav-logo-img { width: 46px; height: 46px; flex-shrink: 0; display: block; }
+.nav-logo-text { display: flex; flex-direction: column; gap: 3px; }
+.ft-logo { display: block; width: 250px; max-width: 100%; }
+.ft-logo img { width: 100%; height: auto; border-radius: 14px; }
+@media (max-width: 768px) {
+  .nav-logo-img { width: 36px; height: 36px; }
+  .nav-logo--brand { gap: 0.6rem; }
+}
