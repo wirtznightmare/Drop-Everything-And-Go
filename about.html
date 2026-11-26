@@ -71,6 +71,9 @@
   gap: 1.2rem;
 }
 img  { display: block; max-width: 100%; height: auto; }
+.ah-photo-wrap { width: 100%; border-radius: var(--r-md); overflow: hidden; }
+.ah-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; }
+.ah-ctas { display: flex; flex-wrap: wrap; gap: .85rem; margin-top: 2rem; }
 a    { text-decoration: none; color: inherit; }
 .ah-photo-caption {
   font-family: var(--ff-mono);
@@ -257,10 +260,12 @@ a    { text-decoration: none; color: inherit; }
 /* ── RESPONSIVE ── */
 @media(max-width:900px) {
   .about-hero { grid-template-columns: 1fr; gap: 3rem; padding-top: 7rem; }
-  .ah-photo-wrap { max-width: 340px; aspect-ratio: 1/1; }
+  .ah-right { align-items: center; }
+  .ah-photo-wrap { max-width: 420px; aspect-ratio: 4/5; }
   .values-grid { grid-template-columns: 1fr; }
   .fp-card { grid-template-columns: 1fr; }
-  .fp-img { min-height: 280px; }
+  .fp-img { min-height: 0; aspect-ratio: 16/10; }
+  .fp-img img { position: absolute; inset: 0; }
 }
 @media(max-width:600px) {
   .fp-body { padding: 2rem 1.6rem; }
@@ -319,9 +324,9 @@ a    { text-decoration: none; color: inherit; }
       <p>The blog is the heart of it — real trip reports with real costs, the things worth doing and the things you can skip. The Salzburg post below is the first. More are coming.</p>
       <p>If a guide here helps you plan something brilliant, that's the whole point. And if you want a hand, <a href="contact.html" style="color:var(--gold-lt);text-decoration:underline;text-underline-offset:3px;">get in touch</a>: I'll suggest a plan and you book it.</p>
     </div>
-    <div style="margin-top:2rem;" class="rv rv3">
+    <div class="ah-ctas rv rv3">
       <a href="blog.html" class="btn btn-coral btn-arr">Read the Blog</a>
-      <a href="contact.html" class="btn btn-wire" style="margin-left:.85rem;">Get In Touch</a>
+      <a href="contact.html" class="btn btn-wire">Get In Touch</a>
     </div>
   </div>
   <div class="ah-right rv rv1">
