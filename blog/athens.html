@@ -1,24 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S59LVL96RN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-S59LVL96RN');
-</script>
-<!-- Travelpayouts -->
-<script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
-  (function () {
-      var script = document.createElement("script");
-      script.async = 1;
-      script.src = 'https://emrldtp.com/NTIxMTA3.js?t=521107';
-      document.head.appendChild(script);
-  })();
-</script>
 <meta charset="UTF-8"/>
+<!-- Remove this noindex line when the photos are in and the post goes live -->
+<meta name="robots" content="noindex"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 
 <!-- =============================================
@@ -54,13 +39,13 @@
 <title>Athens — Drop Everything And Go</title>
 <meta property="og:title" content="Athens — Drop Everything And Go"/>
 <meta property="og:description" content="Five days in Athens: the Acropolis, island-hopping to Agistri and Aegina, the coast at Glyfada, and everything you need to know before you go."/>
-<meta property="og:url" content="https://www.dropeverythingandgo.com/blog/athens.html"/>
-<meta property="og:image" content="YOUR-HERO-IMAGE-URL-HERE"/>
+<meta property="og:url" content="https://dropeverythingandgo.com/blog/athens.html"/>
+<meta property="og:image" content="https://dropeverythingandgo.com/og-deag.png"/>
 <meta property="og:type" content="article"/>
 <meta property="og:site_name" content="Drop Everything And Go"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="YOUR-HERO-IMAGE-URL-HERE"/>
-<link rel="canonical" href="https://www.dropeverythingandgo.com/blog/athens.html"/>
+<meta name="twitter:image" content="https://dropeverythingandgo.com/og-deag.png"/>
+<link rel="canonical" href="https://dropeverythingandgo.com/blog/athens.html"/>
 <!-- ─────────────────────────────────────── -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -77,10 +62,10 @@
   "description": "Five days in Athens: the Acropolis, island-hopping to Agistri and Aegina, the coast at Glyfada, and everything you need to know before you go.",
   "datePublished": "2026-06-03",
   "dateModified": "2026-06-03",
-  "author": {"@type": "Person", "name": "Blake Wirtz", "url": "https://www.dropeverythingandgo.com/about.html"},
-  "publisher": {"@type": "Organization", "name": "Drop Everything And Go", "url": "https://www.dropeverythingandgo.com"},
-  "image": "YOUR-HERO-IMAGE-URL-HERE",
-  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://www.dropeverythingandgo.com/blog/athens.html"}
+  "author": {"@type": "Person", "name": "Blake Adams", "url": "https://dropeverythingandgo.com/about.html"},
+  "publisher": {"@type": "Organization", "name": "Drop Everything And Go", "url": "https://dropeverythingandgo.com"},
+  "image": "https://dropeverythingandgo.com/og-deag.png",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://dropeverythingandgo.com/blog/athens.html"}
 }
 </script>
 
@@ -874,13 +859,14 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
 @keyframes aUp   { from { opacity:0; transform:translateY(28px) } to { opacity:1; transform:translateY(0) } }
 @keyframes aFade { from { opacity:0 } to { opacity:1 } }
 </style>
+<script src="../consent.js" data-travelpayouts="1" defer></script>
 </head>
 <body>
 
 <div id="progress-bar"></div>
 
 <div class="ck" id="ck">
-  <p class="ck-text">We use cookies to enhance your journey. <a href="../privacy.html">Privacy Policy</a> — we never sell your data.</p>
+  <p class="ck-text">We use analytics and affiliate cookies to see how the site is used. Nothing non-essential loads unless you accept. <a href="../privacy.html#cookies">Cookie policy</a></p>
   <div class="ck-btns">
     <button class="ck-acc" onclick="ckAccept()">Accept</button>
     <button class="ck-dec" onclick="ckDecline()">Decline</button>
@@ -891,13 +877,14 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
      NAV
      ══════════════════════════════════════════ -->
 <nav id="nav">
-  <a href="../index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Bespoke Planning</span></a>
+  <a href="../index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Honest Travel Blog</span></a>
   <ul class="nav-links">
     <li><a href="../journeys.html">Journeys</a></li>
     <li><a href="../ski.html">Ski</a></li>
     <li><a href="../blog.html" class="active">Blog</a></li>
+    <li><a href="../about.html">About</a></li>
     <li><a href="../services.html">Services</a></li>
-    <li><a href="../contact.html" class="nav-cta">Plan My Trip</a></li>
+    <li><a href="../contact.html" class="nav-cta">Get in Touch</a></li>
   </ul>
   <button class="nav-ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
@@ -905,8 +892,9 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
   <li><a href="../journeys.html">Journeys</a></li>
   <li><a href="../ski.html">Ski</a></li>
   <li><a href="../blog.html">Blog</a></li>
+  <li><a href="../about.html">About</a></li>
   <li><a href="../services.html">Services</a></li>
-  <li><a href="../contact.html" class="mob-cta-btn">Plan My Trip</a></li>
+  <li><a href="../contact.html" class="nav-cta" style="margin-top:.5rem">Get in Touch</a></li>
 </ul>
 
 <!-- ══════════════════════════════════════════
@@ -973,7 +961,7 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
     </div>
     <div class="ts-item">
       <div class="ts-label">Best time</div>
-      <div class="ts-value">Sep–<em>Apr</em></div>
+      <div class="ts-value">Apr–Jun · <em>Sep–Oct</em></div>
     </div>
     <div class="ts-item">
       <div class="ts-label">Country</div>
@@ -1024,6 +1012,8 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
            YOUR CONTENT STARTS HERE
            ════════════════════════════════════ -->
 
+      <p class="p rv" style="font-size:.78rem;opacity:.75;border-left:2px solid var(--gold);padding-left:.9rem;">This page may contain affiliate links (Travelpayouts). If you book through one I earn a small commission, at no extra cost to you. <a href="../privacy.html#affiliates">How this works</a>.</p>
+
       <h2 class="h2 rv" id="section-1">Arriving in Athens <em>& Kolonaki</em></h2>
 
       <p class="p rv">
@@ -1057,7 +1047,7 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
       </p>
 
       <p class="p rv">
-        The views over the city cannot be matched, with the Acropolis enshrined as the tallest point in Athens ensuring the city always sprawls out beneath your feet. My one and only suggestion for a visit here would be to ensure you come outside of peak tourist season. The Acropolis was busy for us in early April, and would be an absolute nightmare (I imagine) in the peak of summer, with too many people to see the buildings around you and the white stone turning the site into an oven.
+        The views over the city cannot be matched, with the city sprawling out beneath your feet in every direction. My one and only suggestion for a visit here would be to ensure you come outside of peak tourist season. The Acropolis was busy for us in early April, and would be an absolute nightmare (I imagine) in the peak of summer, with too many people to see the buildings around you and the white stone turning the site into an oven.
       </p>
 
       <blockquote class="pullquote rv">
@@ -1066,7 +1056,7 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
       </blockquote>
 
       <p class="p rv">
-        Leaving the Acropolis, our tour continued into the city, taking us first to the Hellenic Parliament to watch the changing of the guard ceremony, and then to the Olympic stadium, and on to Monastriaki Square. Here, we were left to our own devices to explore this corner of Athens. The markets here are sprawling, and sure to promise an antique bargain. With streets lined with traditional restaurants (and some tourist traps) this is the place to experience a gyros.
+        Leaving the Acropolis, our tour continued into the city, taking us first to the Hellenic Parliament to watch the changing of the guard ceremony, and then to the Panathenaic Stadium (the marble stadium of the first modern Olympics), and on to Monastiraki Square. Here, we were left to our own devices to explore this corner of Athens. The markets here are sprawling, and sure to promise an antique bargain. With streets lined with traditional restaurants (and some tourist traps) this is the place to experience a gyros.
       </p>
 
       <div class="tip-box tip-box--warn rv">
@@ -1136,7 +1126,7 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
         <div class="tip-icon">📌</div>
         <div class="tip-content">
           <strong>Museum entry costs</strong>
-          <p>Unfortunately, museum entry is quite expensive, especially if you're a non-EU citizen — but it's absolutely worth it. Factor this into your budget before you go.</p>
+          <p>Unfortunately, museum entry is quite expensive, and the discounts are mostly for EU students and under-25s — but it's absolutely worth it. Factor this into your budget before you go.</p>
         </div>
       </div>
 
@@ -1169,18 +1159,18 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
 
       <hr class="article-divider"/>
 
-      <p class="p rv">Athens is a city that earns its reputation. Whether you're standing on the Acropolis at sunrise, wandering the markets of Monastiraki, or eating the best lunch of your life on a boat off the coast of Agistri, it delivers at every turn. Go outside of peak summer if you can, hire a guide for the Acropolis, and don't skip the island-hopping tour. You will not regret it.</p>
+      <p class="p rv">Athens is a city that earns its reputation. Whether you're standing on the Acropolis first thing in the morning, wandering the markets of Monastiraki, or eating the best lunch of your life on a boat off the coast of Agistri, it delivers at every turn. Go outside of peak summer if you can, hire a guide for the Acropolis, and don't skip the island-hopping tour. You will not regret it.</p>
 
-      <p class="p rv" style="font-family:var(--ff-display);font-size:1.1rem;font-style:italic;color:#3A4050;">— Blake Wirtz, Athens · April 2026</p>
+      <p class="p rv" style="font-family:var(--ff-display);font-size:1.1rem;font-style:italic;color:#3A4050;">— Blake Adams, Athens · April 2026</p>
 
       <!-- SHARE STRIP -->
       <div class="share-strip rv">
         <span class="share-label">Share this post</span>
         <div class="share-btns">
           <a class="share-btn" id="copy-link" href="#" onclick="copyLink(event)">🔗 Copy link</a>
-          <a class="share-btn" href="https://twitter.com/intent/tweet?url=https://www.dropeverythingandgo.com/blog/athens.html&text=Athens+%E2%80%94+Drop+Everything+And+Go" target="_blank" rel="noopener">𝕏 Twitter</a>
-          <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https://www.dropeverythingandgo.com/blog/athens.html" target="_blank" rel="noopener">Facebook</a>
-          <a class="share-btn" href="https://pinterest.com/pin/create/button/?url=https://www.dropeverythingandgo.com/blog/athens.html&media=YOUR-HERO-IMAGE-URL-HERE&description=Athens+%E2%80%94+Drop+Everything+And+Go" target="_blank" rel="noopener">📌 Pin it</a>
+          <a class="share-btn" href="https://twitter.com/intent/tweet?url=https://dropeverythingandgo.com/blog/athens.html&text=Athens+%E2%80%94+Drop+Everything+And+Go" target="_blank" rel="noopener">𝕏 Twitter</a>
+          <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https://dropeverythingandgo.com/blog/athens.html" target="_blank" rel="noopener">Facebook</a>
+          <a class="share-btn" href="https://pinterest.com/pin/create/button/?url=https://dropeverythingandgo.com/blog/athens.html&media=https://dropeverythingandgo.com/og-deag.png&description=Athens+%E2%80%94+Drop+Everything+And+Go" target="_blank" rel="noopener">📌 Pin it</a>
         </div>
       </div>
 
@@ -1204,13 +1194,13 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
       <div class="author-bio-inner rv">
         <div class="author-avatar">
           <!-- Replace emoji with real photo when available:
-               <img src="../images/blake.jpg" alt="Blake Wirtz"/> -->
+               <img src="../images/blake.jpg" alt="Blake Adams"/> -->
           🌍
         </div>
         <div>
           <div class="author-info-label">Written by</div>
-          <div class="author-info-name">Blake Wirtz</div>
-          <p class="author-info-bio">Travel writer and trip planner behind Drop Everything And Go. 40+ countries, 80+ guides, and a firm belief that the best trips start with a last-minute decision. Based in the UK — usually elsewhere.</p>
+          <div class="author-info-name">Blake Adams</div>
+          <p class="author-info-bio">Travel writer and trip planner behind Drop Everything And Go. 40+ countries and a firm belief that the best trips start with a last-minute decision. Based in the UK — usually elsewhere.</p>
         </div>
       </div>
     </div>
@@ -1226,41 +1216,41 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
     <h2 class="related-title rv">You Might Also <em>Love</em></h2>
     <div class="related-grid">
 
-      <a href="RELATED-POST-1-URL.html" class="related-card rv">
+      <a href="../salzburg.html" class="related-card rv">
         <div class="related-img" style="background:linear-gradient(145deg,#0D2A18,#051408);">
           <!-- <img src="RELATED-POST-1-IMAGE.jpg" alt="Post 1 title"/> -->
           <div class="related-img-fallback">🏔️</div>
         </div>
         <div class="related-body">
-          <div class="related-cat">CATEGORY · COUNTRY</div>
-          <div class="related-post-title">Related Post One Title</div>
-          <div class="related-exc">One or two sentences on what this post covers. Why should they read it next?</div>
+          <div class="related-cat">City Break · Austria</div>
+          <div class="related-post-title">5 Days in Salzburg on a Budget</div>
+          <div class="related-exc">The Sound of Music walk, the Hallstatt day trip and what the Salzburg Card is actually worth.</div>
           <span class="related-read">Read more →</span>
         </div>
       </a>
 
-      <a href="RELATED-POST-2-URL.html" class="related-card rv rv1">
+      <a href="../countries/austria.html" class="related-card rv rv1">
         <div class="related-img" style="background:linear-gradient(145deg,#2A1A08,#120C04);">
           <!-- <img src="RELATED-POST-2-IMAGE.jpg" alt="Post 2 title"/> -->
           <div class="related-img-fallback">🌅</div>
         </div>
         <div class="related-body">
-          <div class="related-cat">CATEGORY · COUNTRY</div>
-          <div class="related-post-title">Related Post Two Title</div>
-          <div class="related-exc">One or two sentences on what this post covers. Why should they read it next?</div>
+          <div class="related-cat">Country Guide · Austria</div>
+          <div class="related-post-title">Austria: the full country guide</div>
+          <div class="related-exc">When to go, what it costs, and the bits most guides leave out.</div>
           <span class="related-read">Read more →</span>
         </div>
       </a>
 
-      <a href="RELATED-POST-3-URL.html" class="related-card rv rv2">
+      <a href="../blog.html" class="related-card rv rv2">
         <div class="related-img" style="background:linear-gradient(145deg,#1A0A3A,#0A0420);">
           <!-- <img src="RELATED-POST-3-IMAGE.jpg" alt="Post 3 title"/> -->
           <div class="related-img-fallback">🌍</div>
         </div>
         <div class="related-body">
-          <div class="related-cat">CATEGORY · COUNTRY</div>
-          <div class="related-post-title">Related Post Three Title</div>
-          <div class="related-exc">One or two sentences on what this post covers. Why should they read it next?</div>
+          <div class="related-cat">The Blog</div>
+          <div class="related-post-title">More trip reports</div>
+          <div class="related-exc">Everything else from the blog, and what's coming next.</div>
           <span class="related-read">Read more →</span>
         </div>
       </a>
@@ -1275,8 +1265,8 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
 <footer>
   <div class="ft-top">
     <div class="ft-brand">
-      <a href="../index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Services</span></a>
-      <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
+      <a href="../index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Honest Travel Blog</span></a>
+      <p>Honest travel stories from someone who actually goes.</p>
       <div class="ft-social">
         <a href="#" class="ft-soc-btn" aria-label="Instagram">📸</a>
         <a href="#" class="ft-soc-btn" aria-label="TikTok">🎵</a>
@@ -1286,15 +1276,10 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
     </div>
     <div class="ft-col"><h5>Explore</h5><ul>
       <li><a href="../journeys.html">Journeys</a></li>
-      <li><a href="../destinations/backpacker-guides.html">Backpacker Guides</a></li>
+      <li></li>
       <li><a href="../blog.html">Blog</a></li>
     </ul></div>
-    <div class="ft-col"><h5>Services</h5><ul>
-      <li><a href="../services.html">Trip Planning</a></li>
-      <li><a href="../services.html">Hotel Curation</a></li>
-      <li><a href="../services.html">Honeymoons</a></li>
-      <li><a href="../contact.html">Free Quote</a></li>
-    </ul></div>
+    <div class="ft-col"><h5>The Site</h5><ul><li><a href="../services.html">How it works</a></li><li><a href="../privacy.html#affiliates">Affiliate links</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
     <div class="ft-col"><h5>Info</h5><ul>
       <li><a href="../contact.html">Contact</a></li>
       <li><a href="../privacy.html">Privacy Policy</a></li>
@@ -1303,9 +1288,9 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
     </ul></div>
   </div>
   <div class="ft-badges">
-    <span class="ft-badge">🔒 Secure &amp; Trusted</span>
-    <span class="ft-badge">✈️ ATOL Protected Advice</span>
-    <span class="ft-badge">🌍 Worldwide Planning</span>
+    <span class="ft-badge">💷 Real costs</span>
+    <span class="ft-badge">✍️ No paid reviews</span>
+    <span class="ft-badge">🔗 Affiliate links disclosed</span>
   </div>
   <div class="ft-bottom">
     <p>© 2026 Drop Everything And Go. All rights reserved.</p>
@@ -1313,7 +1298,6 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
   </div>
 </footer>
 
-<script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
 <script>
 (function(){
   document.body.classList.add('js-ready');
@@ -1394,16 +1378,6 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
     }, {passive:true});
   })();
 
-  // ── Cookie banner ──
-  function ckShow(){
-    if(!localStorage.getItem('ck')) setTimeout(function(){
-      var c = document.getElementById('ck');
-      if(c) c.classList.add('vis');
-    }, 1400);
-  }
-  window.ckAccept  = function(){ localStorage.setItem('ck','y'); var c=document.getElementById('ck'); if(c) c.classList.remove('vis'); };
-  window.ckDecline = function(){ localStorage.setItem('ck','n'); var c=document.getElementById('ck'); if(c) c.classList.remove('vis'); };
-  ckShow();
 
   // ── Copy link button ──
   window.copyLink = function(e){

@@ -2,14 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S59LVL96RN"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S59LVL96RN');</script>
 <meta name="description" content="Country travel guides from Drop Everything And Go — real trip reports, costs and honest advice. Starting with Austria."/>
 <title>Journeys — Country Guides | Drop Everything And Go</title>
 <meta property="og:title" content="Journeys — Country Guides | Drop Everything And Go"/>
 <meta property="og:description" content="Country-by-country travel guides, built as the trips happen. Starting with Austria."/>
 <meta property="og:type" content="website"/>
-<link rel="canonical" href="https://www.dropeverythingandgo.com/journeys.html"/>
+<link rel="canonical" href="https://dropeverythingandgo.com/journeys.html"/>
 <link rel="stylesheet" href="style.css"/>
 <style>
 
@@ -34,12 +32,13 @@
 @media(max-width:600px){.country-grid{grid-template-columns:1fr;}.country-card,.cc-soon{height:300px;}}
 
 </style>
+<script src="consent.js" defer></script>
 </head>
 <body>
 <div id="progress-bar"></div>
 
 <div class="ck" id="ck">
-  <p class="ck-text">We use cookies to enhance your journey. <a href="privacy.html">Privacy Policy</a> — we never sell your data.</p>
+  <p class="ck-text">We use analytics and affiliate cookies to see how the site is used. Nothing non-essential loads unless you accept. <a href="privacy.html#cookies">Cookie policy</a></p>
   <div class="ck-btns"><button class="ck-acc" onclick="ckAccept()">Accept</button><button class="ck-dec" onclick="ckDecline()">Decline</button></div>
 </div>
 
@@ -52,75 +51,14 @@
 </div>
 
 <nav id="nav">
-  <a href="index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Bespoke Planning</span></a>
+  <a href="index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Honest Travel Blog</span></a>
   <ul class="nav-links">
     <li><a href="journeys.html" class="active">Journeys</a></li>
-    <li><a href="ski.html">Ski <span class="nav-caret"></span></a>
-      <div class="nav-drop nav-drop--ski">
-        <div class="nav-drop-col">
-          <div class="nav-drop-col-head">The Alps</div>
-          <a href="ski/chamonix.html">Chamonix</a>
-          <a href="ski/verbier.html">Verbier</a>
-          <a href="ski/zermatt.html">Zermatt</a>
-          <a href="ski/st-anton.html">St Anton</a>
-          <a href="ski/val-disere.html">Val d&#39;Isère</a>
-          <a href="ski/meribel.html">Méribel</a>
-          <a href="ski/ischgl.html">Ischgl</a>
-          <a href="ski/kitzbuhel.html">Kitzbühel</a>
-          <div class="nav-drop-divider"></div>
-          <a href="ski.html" class="nav-drop-all">All Alps resorts →</a>
-        </div>
-        <div class="nav-drop-col">
-          <div class="nav-drop-col-head">North America</div>
-          <a href="ski/whistler-blackcomb.html">Whistler-Blackcomb</a>
-          <a href="ski/jackson-hole.html">Jackson Hole</a>
-          <a href="ski/aspen-snowmass.html">Aspen</a>
-          <a href="ski/park-city.html">Park City</a>
-          <a href="ski/banff-lake-louise.html">Banff &amp; Lake Louise</a>
-          <a href="ski/vail.html">Vail</a>
-          <div class="nav-drop-divider"></div>
-          <a href="ski.html" class="nav-drop-all">All NA resorts →</a>
-        </div>
-        <div class="nav-drop-col">
-          <div class="nav-drop-col-head">Japan</div>
-          <a href="ski/niseko.html">Niseko</a>
-          <a href="ski/hakuba.html">Hakuba</a>
-          <a href="ski/nozawa-onsen.html">Nozawa Onsen</a>
-          <div class="nav-drop-divider"></div>
-          <div class="nav-drop-col-head" style="margin-top:.3rem">Scandinavia</div>
-          <a href="ski/are.html">Åre</a>
-          <a href="ski/hemsedal.html">Hemsedal</a>
-          <a href="ski/trysil.html">Trysil</a>
-          <a href="ski/levi.html">Levi</a>
-        </div>
-        <div class="nav-drop-col">
-          <div class="nav-drop-col-head">Eastern Europe</div>
-          <a href="ski/bansko.html">Bansko</a>
-          <a href="ski/gudauri.html">Gudauri</a>
-          <a href="ski/borovets.html">Borovets</a>
-          <div class="nav-drop-divider"></div>
-          <div class="nav-drop-col-head" style="margin-top:.3rem">Southern Hemisphere</div>
-          <a href="ski/queenstown-nz.html">Queenstown</a>
-          <a href="ski/valle-nevado.html">Valle Nevado</a>
-          <a href="ski/cerro-catedral.html">Cerro Catedral</a>
-          <a href="ski/perisher.html">Perisher</a>
-          <a href="ski/falls-creek.html">Falls Creek</a>
-        </div>
-        <div class="nav-drop-col">
-          <div class="nav-drop-col-head">Budget Picks</div>
-          <a href="ski/bansko.html">Bansko — from £28/day</a>
-          <a href="ski/borovets.html">Borovets — from £22/day</a>
-          <a href="ski/gudauri.html">Gudauri — from £28/day</a>
-          <a href="ski/livigno.html">Livigno — duty free</a>
-          <a href="ski/grandvalira.html">Grandvalira</a>
-          <div class="nav-drop-divider"></div>
-          <a href="ski.html" class="nav-drop-all">All 50 resorts →</a>
-        </div>
-      </div>
-    </li>
+    <li><a href="ski.html">Ski</a></li>
     <li><a href="blog.html">Blog</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="services.html">Services</a></li>
-    <li><a href="contact.html" class="nav-cta">Plan My Trip</a></li>
+    <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
   </ul>
   <button class="nav-ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
@@ -128,8 +66,9 @@
   <li><a href="journeys.html">Journeys</a></li>
   <li><a href="ski.html">Ski</a></li>
   <li><a href="blog.html">Blog</a></li>
+  <li><a href="about.html">About</a></li>
   <li><a href="services.html">Services</a></li>
-  <li><a href="contact.html" class="nav-cta" style="margin-top:.5rem">Plan My Trip</a></li>
+  <li><a href="contact.html" class="nav-cta" style="margin-top:.5rem">Get in Touch</a></li>
 </ul>
 
 <!-- ── HERO ── -->
@@ -177,17 +116,17 @@
 <!-- ── PLAN MY TRIP CTA ── -->
 <section class="s" style="background:var(--ink-2);padding:4rem var(--gutter);text-align:center;">
   <div style="max-width:560px;margin:0 auto;">
-    <h2 style="font-family:var(--ff-display);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--parchment);letter-spacing:-.02em;margin-bottom:.8rem;">Can't wait for the guide? Let us plan it.</h2>
-    <p style="color:var(--smoke);line-height:1.7;margin-bottom:1.6rem;font-size:.86rem;">Tell us where in the world you want to go and we'll handle everything — itinerary, bookings, transfers.</p>
-    <a href="contact.html" class="btn btn-coral btn-arr">Plan My Trip →</a>
+    <h2 style="font-family:var(--ff-display);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--parchment);letter-spacing:-.02em;margin-bottom:.8rem;">Can't wait for the guide?</h2>
+    <p style="color:var(--smoke);line-height:1.7;margin-bottom:1.6rem;font-size:.86rem;">Send me a question about where you're heading. I'm happy to share what I know.</p>
+    <a href="contact.html" class="btn btn-coral btn-arr">Get in Touch →</a>
   </div>
 </section>
 
 <footer>
   <div class="ft-top">
     <div class="ft-brand">
-      <a href="index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Services</span></a>
-      <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
+      <a href="index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Honest Travel Blog</span></a>
+      <p>Honest travel stories from someone who actually goes.</p>
       <div class="ft-social">
         <a href="#" class="ft-soc-btn" aria-label="Instagram">📸</a>
         <a href="#" class="ft-soc-btn" aria-label="TikTok">🎵</a>
@@ -200,12 +139,7 @@
       <li><a href="ski.html">Ski</a></li>
       <li><a href="blog.html">Blog</a></li>
     </ul></div>
-    <div class="ft-col"><h5>Services</h5><ul>
-      <li><a href="services.html">Trip Planning</a></li>
-      <li><a href="services.html">Hotel Curation</a></li>
-      <li><a href="services.html">Honeymoons</a></li>
-      <li><a href="contact.html">Free Quote</a></li>
-    </ul></div>
+    <div class="ft-col"><h5>The Site</h5><ul><li><a href="services.html">How it works</a></li><li><a href="privacy.html#affiliates">Affiliate links</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div class="ft-col"><h5>Info</h5><ul>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -215,9 +149,9 @@
     </ul></div>
   </div>
   <div class="ft-badges">
-    <span class="ft-badge">🔒 Secure &amp; Trusted</span>
-    <span class="ft-badge">✈️ ATOL Protected Advice</span>
-    <span class="ft-badge">🌍 Worldwide Planning</span>
+    <span class="ft-badge">💷 Real costs</span>
+    <span class="ft-badge">✍️ No paid reviews</span>
+    <span class="ft-badge">🔗 Affiliate links disclosed</span>
   </div>
   <div class="ft-bottom">
     <p>© 2026 Drop Everything And Go. All rights reserved.</p>
@@ -236,10 +170,6 @@ if(ham&&mob)ham.addEventListener('click',function(){ham.classList.toggle('open')
 var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 window.addEventListener('load',function(){document.querySelectorAll('.rv').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0)el.classList.add('vis');});});
-function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=document.getElementById('ck');if(c)c.classList.add('vis');},1400);}
-window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
-window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
-ckShow();
 })();
 </script>
 <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="dropeverythingandgo" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>

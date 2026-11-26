@@ -3,19 +3,12 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S59LVL96RN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-S59LVL96RN');
-</script>
 <meta name="description" content="About Blake — the person behind Drop Everything And Go. A university student's honest travel blog built from real trips, real costs and zero sponsored content."/>
 <title>About Blake — Drop Everything And Go</title>
 <meta property="og:title" content="About Blake — Drop Everything And Go"/>
 <meta property="og:description" content="A university student's honest travel blog. Real trips, real costs, zero sponsored takes."/>
 <meta property="og:type" content="website"/>
-<link rel="canonical" href="https://www.dropeverythingandgo.com/about.html"/>
+<link rel="canonical" href="https://dropeverythingandgo.com/about.html"/>
 <link rel="stylesheet" href="style.css"/>
 <style>
 
@@ -273,12 +266,13 @@ a    { text-decoration: none; color: inherit; }
   .fp-body { padding: 2rem 1.6rem; }
 }
 </style>
+<script src="consent.js" defer></script>
 </head>
 <body>
 <div id="progress-bar"></div>
 
 <div class="ck" id="ck">
-  <p class="ck-text">We use cookies to enhance your journey. <a href="privacy.html">Privacy Policy</a> — we never sell your data.</p>
+  <p class="ck-text">We use analytics and affiliate cookies to see how the site is used. Nothing non-essential loads unless you accept. <a href="privacy.html#cookies">Cookie policy</a></p>
   <div class="ck-btns"><button class="ck-acc" onclick="ckAccept()">Accept</button><button class="ck-dec" onclick="ckDecline()">Decline</button></div>
 </div>
 
@@ -291,15 +285,14 @@ a    { text-decoration: none; color: inherit; }
 </div>
 
 <nav id="nav">
-  <a href="index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Bespoke Planning</span></a>
+  <a href="index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Honest Travel Blog</span></a>
   <ul class="nav-links">
     <li><a href="journeys.html">Journeys</a></li>
-    <li><a href="ski.html">Ski <span class="nav-caret"></span></a>
- 
-    </li>
+    <li><a href="ski.html">Ski</a></li>
     <li><a href="blog.html">Blog</a></li>
+    <li><a href="about.html" class="active">About</a></li>
     <li><a href="services.html">Services</a></li>
-    <li><a href="contact.html" class="nav-cta">Plan My Trip</a></li>
+    <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
   </ul>
   <button class="nav-ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
@@ -307,8 +300,9 @@ a    { text-decoration: none; color: inherit; }
   <li><a href="journeys.html">Journeys</a></li>
   <li><a href="ski.html">Ski</a></li>
   <li><a href="blog.html">Blog</a></li>
+  <li><a href="about.html">About</a></li>
   <li><a href="services.html">Services</a></li>
-  <li><a href="contact.html" class="nav-cta" style="margin-top:.5rem">Plan My Trip</a></li>
+  <li><a href="contact.html" class="nav-cta" style="margin-top:.5rem">Get in Touch</a></li>
 </ul>
 
 <!-- ── ABOUT HERO ── -->
@@ -323,7 +317,7 @@ a    { text-decoration: none; color: inherit; }
       <p>I started Drop Everything And Go because every travel guide I read felt like it was written by someone who'd never actually been there — or worse, someone who had been there for free and couldn't say anything honest about it.</p>
       <p>I'm a university student. I book my own flights, pay for my own hotels, and eat at the places that look good rather than the ones that sent a press release. <strong>Everything on this site comes from that.</strong></p>
       <p>The blog is the heart of it — real trip reports with real costs, the things worth doing and the things you can skip. The Salzburg post below is the first. More are coming.</p>
-      <p>If a guide here helps you plan something brilliant, that's the whole point. And if you want someone to plan it for you — <a href="services.html" style="color:var(--gold-lt);text-decoration:underline;text-underline-offset:3px;">that's what the services page is for.</a></p>
+      <p>If a guide here helps you plan something brilliant, that's the whole point. And if you want a hand, <a href="contact.html" style="color:var(--gold-lt);text-decoration:underline;text-underline-offset:3px;">get in touch</a>: I'll suggest a plan and you book it.</p>
     </div>
     <div style="margin-top:2rem;" class="rv rv3">
       <a href="blog.html" class="btn btn-coral btn-arr">Read the Blog</a>
@@ -344,7 +338,7 @@ a    { text-decoration: none; color: inherit; }
     <div class="value-card rv">
       <div class="value-icon">✍️</div>
       <div class="value-title">Written from experience</div>
-      <p class="value-desc">Every post is a place I've actually been. I don't write about somewhere I haven't visited, and I don't dress up research as personal experience.</p>
+      <p class="value-desc">Every trip report is a place I've actually been. Ski guides for resorts I haven't skied yet are research guides and say so at the top. I don't dress up research as personal experience.</p>
     </div>
     <div class="value-card rv rv1">
       <div class="value-icon">💷</div>
@@ -354,7 +348,7 @@ a    { text-decoration: none; color: inherit; }
     <div class="value-card rv rv2">
       <div class="value-icon">🚫</div>
       <div class="value-title">Zero paid placements</div>
-      <p class="value-desc">Nothing on this site is sponsored. If I recommend something it's because it was genuinely worth it — not because someone paid me to say so.</p>
+      <p class="value-desc">Nothing on this site is sponsored. If I recommend something it's because it was worth it — not because someone paid me to say so.</p>
     </div>
   </div>
 </section>
@@ -365,7 +359,7 @@ a    { text-decoration: none; color: inherit; }
     <div class="eyebrow light rv" style="margin-bottom:1.5rem;color:var(--gold-dk)">// Start here — the first post</div>
     <a href="salzburg.html" class="fp-card rv">
       <div class="fp-img">
-        <img src="https://res.cloudinary.com/dd2ef17ow/image/upload/v1773422432/salzburg-austria-aerial-view-historic-600nw-2647183381_uk5c2a.jpg" alt="Salzburg aerial view, Austria"/>
+        <img src="blog/salzburg%20images/SnowySalzburg.jpg" alt="Salzburg under snow, March 2026"/>
         <div class="fp-img-overlay"></div>
       </div>
       <div class="fp-body">
@@ -406,7 +400,7 @@ a    { text-decoration: none; color: inherit; }
       <input type="hidden" name="_subject" value="New Subscriber — Drop Everything And Go"/>
       <input type="hidden" name="_replyto" value="dropeverythingandgo2026@gmail.com"/>
       <input type="hidden" name="_autoresponse" value="Thanks for subscribing to Drop Everything And Go! You'll get honest travel stories and trip reports straight to your inbox. No spam, ever. — Blake"/>
-      <input type="hidden" name="_next" value="https://www.dropeverythingandgo.com/index.html#subscribed"/>
+      <input type="hidden" name="_next" value="https://dropeverythingandgo.com/index.html#subscribed"/>
       <input type="text" name="_gotcha" style="display:none"/>
       <input type="email" name="email" placeholder="Your email address" required/>
       <button type="submit">Subscribe</button>
@@ -417,8 +411,8 @@ a    { text-decoration: none; color: inherit; }
 <footer>
   <div class="ft-top">
     <div class="ft-brand">
-      <a href="index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Travel Blog &amp; Services</span></a>
-      <p>Honest travel stories and expert trip planning from someone who actually goes.</p>
+      <a href="index.html" class="nav-logo">Drop Everything And Go<span class="nav-logo-sub">Honest Travel Blog</span></a>
+      <p>Honest travel stories from someone who actually goes.</p>
       <div class="ft-social">
         <a href="#" class="ft-soc-btn" aria-label="Instagram">📸</a>
         <a href="#" class="ft-soc-btn" aria-label="TikTok">🎵</a>
@@ -431,12 +425,7 @@ a    { text-decoration: none; color: inherit; }
       <li><a href="blog.html">Blog</a></li>
       <li><a href="ski.html">Ski</a></li>
     </ul></div>
-    <div class="ft-col"><h5>Services</h5><ul>
-      <li><a href="services.html">Trip Planning</a></li>
-      <li><a href="services.html">Hotel Curation</a></li>
-      <li><a href="services.html">Honeymoons</a></li>
-      <li><a href="contact.html">Free Quote</a></li>
-    </ul></div>
+    <div class="ft-col"><h5>The Site</h5><ul><li><a href="services.html">How it works</a></li><li><a href="privacy.html#affiliates">Affiliate links</a></li><li><a href="contact.html">Contact</a></li></ul></div>
     <div class="ft-col"><h5>Info</h5><ul>
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -445,9 +434,9 @@ a    { text-decoration: none; color: inherit; }
     </ul></div>
   </div>
   <div class="ft-badges">
-    <span class="ft-badge">🔒 Secure &amp; Trusted</span>
-    <span class="ft-badge">✈️ ATOL Protected Advice</span>
-    <span class="ft-badge">🌍 Worldwide Planning</span>
+    <span class="ft-badge">💷 Real costs</span>
+    <span class="ft-badge">✍️ No paid reviews</span>
+    <span class="ft-badge">🔗 Affiliate links disclosed</span>
   </div>
   <div class="ft-bottom">
     <p>© 2026 Drop Everything And Go. All rights reserved.</p>
@@ -468,10 +457,6 @@ a    { text-decoration: none; color: inherit; }
   var io = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target); } }); }, {threshold:0, rootMargin:'0px 0px -20px 0px'});
   document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
   window.addEventListener('load', function(){ document.querySelectorAll('.rv').forEach(function(el){ var r=el.getBoundingClientRect(); if(r.top<window.innerHeight&&r.bottom>0) el.classList.add('vis'); }); });
-  function ckShow(){ if(!localStorage.getItem('ck')) setTimeout(function(){ var c=document.getElementById('ck'); if(c) c.classList.add('vis'); }, 1400); }
-  window.ckAccept  = function(){ localStorage.setItem('ck','y'); var c=document.getElementById('ck'); if(c) c.classList.remove('vis'); };
-  window.ckDecline = function(){ localStorage.setItem('ck','n'); var c=document.getElementById('ck'); if(c) c.classList.remove('vis'); };
-  ckShow();
 })();
 </script>
 </body>
