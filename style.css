@@ -1009,3 +1009,15 @@ footer {
   .nav-links { display: none; }
   .nav-ham { display: flex; }
 }
+
+/* ═══ DEAG MARKS: Flight path in the header, Passport stamp in the footer ═══ */
+.nav-logo.nav-logo--mark { display: flex; flex-direction: row; align-items: center; flex-shrink: 0; line-height: 0; }
+.nav-logo--mark img { display: block; height: 40px; width: auto; max-width: none; filter: drop-shadow(0 1px 6px rgba(0,0,0,0.35)); }
+.ft-stamp { display: inline-block; line-height: 0; transition: transform 0.4s var(--ease-spring, ease); }
+.ft-stamp img { display: block; width: 112px; height: 112px; max-width: none; }
+.ft-stamp:hover { transform: rotate(-8deg); }
+@media (max-width: 760px) {
+  .nav-logo--mark img { height: 32px; }
+  .ft-stamp img { width: 96px; height: 96px; }
+}
+@media (prefers-reduced-motion: reduce) { .ft-stamp, .ft-stamp:hover { transition: none; transform: none; } }
