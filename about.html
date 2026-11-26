@@ -3,13 +3,6 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S59LVL96RN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-S59LVL96RN');
-</script>
 <meta name="description" content="About Blake — the person behind Drop Everything And Go. A university student's honest travel blog built from real trips, real costs and zero sponsored content."/>
 <title>About Blake — Drop Everything And Go</title>
 <meta property="og:title" content="About Blake — Drop Everything And Go"/>
@@ -273,12 +266,13 @@ a    { text-decoration: none; color: inherit; }
   .fp-body { padding: 2rem 1.6rem; }
 }
 </style>
+<script src="consent.js" defer></script>
 </head>
 <body>
 <div id="progress-bar"></div>
 
 <div class="ck" id="ck">
-  <p class="ck-text">We use cookies to enhance your journey. <a href="privacy.html">Privacy Policy</a> — we never sell your data.</p>
+  <p class="ck-text">We use analytics and affiliate cookies to see how the site is used. Nothing non-essential loads unless you accept. <a href="privacy.html#cookies">Cookie policy</a></p>
   <div class="ck-btns"><button class="ck-acc" onclick="ckAccept()">Accept</button><button class="ck-dec" onclick="ckDecline()">Decline</button></div>
 </div>
 
@@ -445,9 +439,9 @@ a    { text-decoration: none; color: inherit; }
     </ul></div>
   </div>
   <div class="ft-badges">
-    <span class="ft-badge">🔒 Secure &amp; Trusted</span>
-    <span class="ft-badge">✈️ ATOL Protected Advice</span>
-    <span class="ft-badge">🌍 Worldwide Planning</span>
+    <span class="ft-badge">💷 Real costs</span>
+    <span class="ft-badge">✍️ No paid reviews</span>
+    <span class="ft-badge">🌍 Worldwide planning</span>
   </div>
   <div class="ft-bottom">
     <p>© 2026 Drop Everything And Go. All rights reserved.</p>
@@ -468,10 +462,6 @@ a    { text-decoration: none; color: inherit; }
   var io = new IntersectionObserver(function(entries){ entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target); } }); }, {threshold:0, rootMargin:'0px 0px -20px 0px'});
   document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
   window.addEventListener('load', function(){ document.querySelectorAll('.rv').forEach(function(el){ var r=el.getBoundingClientRect(); if(r.top<window.innerHeight&&r.bottom>0) el.classList.add('vis'); }); });
-  function ckShow(){ if(!localStorage.getItem('ck')) setTimeout(function(){ var c=document.getElementById('ck'); if(c) c.classList.add('vis'); }, 1400); }
-  window.ckAccept  = function(){ localStorage.setItem('ck','y'); var c=document.getElementById('ck'); if(c) c.classList.remove('vis'); };
-  window.ckDecline = function(){ localStorage.setItem('ck','n'); var c=document.getElementById('ck'); if(c) c.classList.remove('vis'); };
-  ckShow();
 })();
 </script>
 </body>

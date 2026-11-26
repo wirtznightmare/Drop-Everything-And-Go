@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S59LVL96RN"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-S59LVL96RN');</script>
 <meta name="description" content="Country travel guides from Drop Everything And Go — real trip reports, costs and honest advice. Starting with Austria."/>
 <title>Journeys — Country Guides | Drop Everything And Go</title>
 <meta property="og:title" content="Journeys — Country Guides | Drop Everything And Go"/>
@@ -34,12 +32,13 @@
 @media(max-width:600px){.country-grid{grid-template-columns:1fr;}.country-card,.cc-soon{height:300px;}}
 
 </style>
+<script src="consent.js" defer></script>
 </head>
 <body>
 <div id="progress-bar"></div>
 
 <div class="ck" id="ck">
-  <p class="ck-text">We use cookies to enhance your journey. <a href="privacy.html">Privacy Policy</a> — we never sell your data.</p>
+  <p class="ck-text">We use analytics and affiliate cookies to see how the site is used. Nothing non-essential loads unless you accept. <a href="privacy.html#cookies">Cookie policy</a></p>
   <div class="ck-btns"><button class="ck-acc" onclick="ckAccept()">Accept</button><button class="ck-dec" onclick="ckDecline()">Decline</button></div>
 </div>
 
@@ -178,7 +177,7 @@
 <section class="s" style="background:var(--ink-2);padding:4rem var(--gutter);text-align:center;">
   <div style="max-width:560px;margin:0 auto;">
     <h2 style="font-family:var(--ff-display);font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--parchment);letter-spacing:-.02em;margin-bottom:.8rem;">Can't wait for the guide? Let us plan it.</h2>
-    <p style="color:var(--smoke);line-height:1.7;margin-bottom:1.6rem;font-size:.86rem;">Tell us where in the world you want to go and we'll handle everything — itinerary, bookings, transfers.</p>
+    <p style="color:var(--smoke);line-height:1.7;margin-bottom:1.6rem;font-size:.86rem;">Tell us where in the world you want to go and we'll plan the itinerary, stays and transfers for you to book.</p>
     <a href="contact.html" class="btn btn-coral btn-arr">Plan My Trip →</a>
   </div>
 </section>
@@ -215,9 +214,9 @@
     </ul></div>
   </div>
   <div class="ft-badges">
-    <span class="ft-badge">🔒 Secure &amp; Trusted</span>
-    <span class="ft-badge">✈️ ATOL Protected Advice</span>
-    <span class="ft-badge">🌍 Worldwide Planning</span>
+    <span class="ft-badge">💷 Real costs</span>
+    <span class="ft-badge">✍️ No paid reviews</span>
+    <span class="ft-badge">🌍 Worldwide planning</span>
   </div>
   <div class="ft-bottom">
     <p>© 2026 Drop Everything And Go. All rights reserved.</p>
@@ -236,10 +235,6 @@ if(ham&&mob)ham.addEventListener('click',function(){ham.classList.toggle('open')
 var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:0,rootMargin:'0px 0px -20px 0px'});
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 window.addEventListener('load',function(){document.querySelectorAll('.rv').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0)el.classList.add('vis');});});
-function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=document.getElementById('ck');if(c)c.classList.add('vis');},1400);}
-window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
-window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
-ckShow();
 })();
 </script>
 <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="dropeverythingandgo" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>

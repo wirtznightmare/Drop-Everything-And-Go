@@ -1,23 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S59LVL96RN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-S59LVL96RN');
-</script>
-<!-- Travelpayouts -->
-<script nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1">
-  (function () {
-      var script = document.createElement("script");
-      script.async = 1;
-      script.src = 'https://emrldtp.com/NTIxMTA3.js?t=521107';
-      document.head.appendChild(script);
-  })();
-</script>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
 
@@ -874,13 +857,14 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
 @keyframes aUp   { from { opacity:0; transform:translateY(28px) } to { opacity:1; transform:translateY(0) } }
 @keyframes aFade { from { opacity:0 } to { opacity:1 } }
 </style>
+<script src="../consent.js" data-travelpayouts="1" defer></script>
 </head>
 <body>
 
 <div id="progress-bar"></div>
 
 <div class="ck" id="ck">
-  <p class="ck-text">We use cookies to enhance your journey. <a href="../privacy.html">Privacy Policy</a> — we never sell your data.</p>
+  <p class="ck-text">We use analytics and affiliate cookies to see how the site is used. Nothing non-essential loads unless you accept. <a href="../privacy.html#cookies">Cookie policy</a></p>
   <div class="ck-btns">
     <button class="ck-acc" onclick="ckAccept()">Accept</button>
     <button class="ck-dec" onclick="ckDecline()">Decline</button>
@@ -1286,7 +1270,7 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
     </div>
     <div class="ft-col"><h5>Explore</h5><ul>
       <li><a href="../journeys.html">Journeys</a></li>
-      <li><a href="../destinations/backpacker-guides.html">Backpacker Guides</a></li>
+      <li></li>
       <li><a href="../blog.html">Blog</a></li>
     </ul></div>
     <div class="ft-col"><h5>Services</h5><ul>
@@ -1303,9 +1287,9 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
     </ul></div>
   </div>
   <div class="ft-badges">
-    <span class="ft-badge">🔒 Secure &amp; Trusted</span>
-    <span class="ft-badge">✈️ ATOL Protected Advice</span>
-    <span class="ft-badge">🌍 Worldwide Planning</span>
+    <span class="ft-badge">💷 Real costs</span>
+    <span class="ft-badge">✍️ No paid reviews</span>
+    <span class="ft-badge">🌍 Worldwide planning</span>
   </div>
   <div class="ft-bottom">
     <p>© 2026 Drop Everything And Go. All rights reserved.</p>
@@ -1313,7 +1297,6 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
   </div>
 </footer>
 
-<script src="//code.tidio.co/hxhwmnylcpdkhspzokcwtz6onkveacyg.js" async></script>
 <script>
 (function(){
   document.body.classList.add('js-ready');
@@ -1394,16 +1377,6 @@ footer { background: var(--ink); border-top: 1px solid var(--border); }
     }, {passive:true});
   })();
 
-  // ── Cookie banner ──
-  function ckShow(){
-    if(!localStorage.getItem('ck')) setTimeout(function(){
-      var c = document.getElementById('ck');
-      if(c) c.classList.add('vis');
-    }, 1400);
-  }
-  window.ckAccept  = function(){ localStorage.setItem('ck','y'); var c=document.getElementById('ck'); if(c) c.classList.remove('vis'); };
-  window.ckDecline = function(){ localStorage.setItem('ck','n'); var c=document.getElementById('ck'); if(c) c.classList.remove('vis'); };
-  ckShow();
 
   // ── Copy link button ──
   window.copyLink = function(e){

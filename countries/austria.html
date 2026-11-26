@@ -2,13 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-S59LVL96RN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-S59LVL96RN');
-</script>
 <meta name="description" content="Austria travel guide — Vienna, Salzburg, Hallstatt and the Alps. Where to go, when to go and what it actually costs."/>
 <title>Austria Travel Guide — Vienna, Salzburg &amp; The Alps | Drop Everything And Go</title>
 <meta property="og:title" content="Austria Travel Guide — Drop Everything And Go"/>
@@ -103,6 +96,7 @@
   .facts-inner{gap:0;}
 }
 </style>
+<script src="../consent.js" defer></script>
 </head>
 <body>
 <div id="progress-bar"></div>
@@ -491,12 +485,12 @@
     </ul></div>
   </div>
   <div class="ft-badges">
-    <span class="ft-badge">🔒 Secure &amp; Trusted</span>
-    <span class="ft-badge">✈️ ATOL Protected Advice</span>
-    <span class="ft-badge">🌍 Worldwide Planning</span>
+    <span class="ft-badge">💷 Real costs</span>
+    <span class="ft-badge">✍️ No paid reviews</span>
+    <span class="ft-badge">🌍 Worldwide planning</span>
   </div>
   <div class="ft-bottom">
-    <p>© 2025 Drop Everything And Go. All rights reserved.</p>
+    <p>© 2026 Drop Everything And Go. All rights reserved.</p>
     <div class="ft-bottom-links"><a href="../privacy.html">Privacy</a><a href="../privacy.html#cookies">Cookies</a><a href="../privacy.html#terms">Terms</a></div>
   </div>
 </footer>
@@ -514,10 +508,6 @@ var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 // Also immediately reveal anything already in viewport
 window.addEventListener('load',function(){document.querySelectorAll('.rv').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0)el.classList.add('vis');});});
-function ckShow(){if(!localStorage.getItem('ck'))setTimeout(function(){var c=document.getElementById('ck');if(c)c.classList.add('vis');},1400);}
-window.ckAccept=function(){localStorage.setItem('ck','y');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
-window.ckDecline=function(){localStorage.setItem('ck','n');var c=document.getElementById('ck');if(c)c.classList.remove('vis');};
-ckShow();
 })();
 </script>
 </body>
