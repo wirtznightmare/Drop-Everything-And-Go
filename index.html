@@ -8,7 +8,7 @@
 <meta property="og:description" content="Real trip reports, honest costs and destination deep-dives written by a university student who actually goes."/>
 <meta property="og:type" content="website"/>
 <meta property="og:image" content="https://www.dropeverythingandgo.com/og-deag.png"/>
-<link <link rel="canonical" href="https://www.dropeverythingandgo.com/"/>
+<link rel="canonical" href="https://www.dropeverythingandgo.com/"/>
 
 <!-- Favicons -->
 <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192"/>
@@ -316,8 +316,6 @@
 <body>
 <div id="progress-bar"></div>
 
-<div id="progress-bar"></div>
-
 <div class="ck" id="ck">
   <p class="ck-text">We use analytics and affiliate cookies to see how the site is used. Nothing non-essential loads unless you accept. <a href="privacy.html#cookies">Cookie policy</a></p>
   <div class="ck-btns"><button class="ck-acc" onclick="ckAccept()">Accept</button><button class="ck-dec" onclick="ckDecline()">Decline</button></div>
@@ -341,6 +339,7 @@
     <li>
       <a href="ski.html">Ski</a></li>
     <li><a href="blog.html">Blog</a></li>
+    <li><a href="about.html">About</a></li>
     <li><a href="services.html">Services</a></li>
     <li><a href="contact.html" class="nav-cta">Plan My Trip</a></li>
   </ul>
@@ -350,6 +349,7 @@
   <li><a href="journeys.html">Journeys</a></li>
   <li><a href="ski.html">Ski</a></li>
   <li><a href="blog.html">Blog</a></li>
+  <li><a href="about.html">About</a></li>
   <li><a href="services.html">Services</a></li>
   <li><a href="contact.html" class="nav-cta" style="margin-top:.5rem">Plan My Trip</a></li>
 </ul>
@@ -390,7 +390,7 @@
       </div>
       <div>
         <div class="ih-stat-n" data-count="1">0</div>
-        <div class="ih-stat-l">Blog Posted</div>
+        <div class="ih-stat-l">Blog Posts</div>
       </div>
       <div>
         <div class="ih-stat-n">0</div>
@@ -457,11 +457,11 @@
   <div class="gs-inner">
     <div class="gs-text">
       <div style="font-family:var(--ff-mono);font-size:.46rem;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:.5rem;">// When you're ready to plan</div>
-      <div class="gs-title">1 country guide live · 6 ski resorts covered · more on the way</div>
+      <div class="gs-title">1 country guide live · 6 Austrian ski resorts covered · more on the way</div>
       <p class="gs-sub">Austria is the first full country guide — Salzburg, Hallstatt and the Austrian ski resorts, all in one place. More countries are added as the trips actually happen.</p>
     </div>
     <div class="gs-links">
-      <a href="journeys.html" class="btn btn-wire">Explore Austria →</a>
+      <a href="countries/austria.html" class="btn btn-wire">Explore Austria →</a>
     </div>
   </div>
 </div>
@@ -605,29 +605,6 @@ var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if
 document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 // Also immediately reveal anything already in viewport
 window.addEventListener('load',function(){document.querySelectorAll('.rv').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0)el.classList.add('vis');});});
-// Count-up animation — triggers once when stat enters viewport
-(function(){
-  var counted=false;
-  var statsObs=new IntersectionObserver(function(entries){
-    if(entries[0].isIntersecting&&!counted){
-      counted=true;
-      document.querySelectorAll('.stat-n[data-count]').forEach(function(el){
-        var target=parseInt(el.getAttribute('data-count'));
-        var start=0; var duration=1800; var startTime=null;
-        function step(ts){
-          if(!startTime)startTime=ts;
-          var progress=Math.min((ts-startTime)/duration,1);
-          var ease=1-Math.pow(1-progress,3);
-          el.textContent=Math.floor(ease*target)+(progress>=1?'+':'');
-          if(progress<1)requestAnimationFrame(step);
-        }
-        requestAnimationFrame(step);
-      });
-    }
-  },{threshold:0.5});
-  var statsEl=document.querySelector('.stats-bar');
-  if(statsEl)statsObs.observe(statsEl);
-})();
 })();
 </script>
 <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="dropeverythingandgo" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
