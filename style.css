@@ -1000,3 +1000,12 @@ footer {
   .nav-logo-img { width: 36px; height: 36px; }
   .nav-logo--brand { gap: 0.6rem; }
 }
+
+/* Menu spacing: keep clear of the logo, tighten on mid-size screens,
+   and switch to the hamburger menu before the links can collide. */
+.nav-links { margin-left: 2.5rem; }
+@media (max-width: 1200px) { .nav-links { gap: 1.6rem; } }
+@media (max-width: 1000px) {
+  .nav-links { display: none; }
+  .nav-ham { display: flex; }
+}
