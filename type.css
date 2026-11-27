@@ -1,0 +1,23 @@
+/* Type system (Nov 2026)
+   Archivo: headings (wide), nav, buttons and labels (narrow).
+   Literata: anything you actually read. */
+
+:root { --ff-text: 'Literata', Georgia, serif; }
+
+/* Running text reads in Literata */
+main p, article p, section p, blockquote, main li, article li, section li, dd, td,
+.pg-subtitle, .ph-sub, .p, .post-intro, .pullquote p, .faq-a, .blog-card p, .nl-sub {
+  font-family: var(--ff-text);
+  font-optical-sizing: auto;
+}
+
+/* ...but small UI bits stay in Archivo */
+nav li, nav a, footer li, footer a, button, .btn, [class*="btn"],
+[class*="label"], [class*="tag"], [class*="eyebrow"], [class*="meta"],
+.ts-label, .ts-value {
+  font-family: var(--ff-ui, 'Archivo', sans-serif);
+}
+
+/* Headings: no light-italic second halves */
+h1 em, h2 em, h3 em, h4 em { font-style: normal; font-weight: inherit; }
+h1, h2, h3, h4 { text-wrap: balance; }
