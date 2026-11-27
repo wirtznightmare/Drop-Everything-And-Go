@@ -35,24 +35,22 @@
 .ah-left { position: relative; z-index: 1; }
 .ah-tag {
   font-family: var(--ff-mono);
-  font-size: .52rem;
-  letter-spacing: .22em;
+  font-size: 0.7rem;
+  letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--teal);
-  margin-bottom: 1.2rem;
-}
+  margin-bottom: 1.2rem; font-stretch: 87.5%; font-weight: 600; }
 .ah-h1 {
   font-family: var(--ff-display);
   font-size: clamp(3rem, 6vw, 5.5rem);
   font-weight: 800;
   color: var(--parchment);
-  letter-spacing: -.04em;
+  letter-spacing: -.015em;
   line-height: .92;
-  margin-bottom: 1.8rem;
-}
+  margin-bottom: 1.8rem; font-stretch: 112%; }
 .ah-h1 em {
-  font-style: italic;
-  font-weight: 300;
+  font-style: normal;
+  font-weight: inherit;
   color: var(--gold-lt);
   display: block;
 }
@@ -78,13 +76,12 @@ img  { display: block; max-width: 100%; height: auto; }
 a    { text-decoration: none; color: inherit; }
 .ah-photo-caption {
   font-family: var(--ff-mono);
-  font-size: .46rem;
-  letter-spacing: .16em;
+  font-size: 0.7rem;
+  letter-spacing: .06em;
   text-transform: uppercase;
   color: rgba(245,239,224,.35);
   text-align: center;
-  margin-top: .6rem;
-}
+  margin-top: .6rem; font-stretch: 87.5%; font-weight: 600; }
 
 /* ── VALUES STRIP ── */
 .values-strip {
@@ -112,8 +109,7 @@ a    { text-decoration: none; color: inherit; }
   font-size: 1rem;
   font-weight: 700;
   color: var(--parchment);
-  margin-bottom: .45rem;
-}
+  margin-bottom: .45rem; font-stretch: 112%; }
 .value-desc {
   font-size: .82rem;
   color: var(--smoke);
@@ -172,26 +168,24 @@ a    { text-decoration: none; color: inherit; }
 }
 .fp-eyebrow {
   font-family: var(--ff-mono);
-  font-size: .5rem;
-  letter-spacing: .22em;
+  font-size: 0.7rem;
+  letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  gap: .6rem;
-}
+  gap: .6rem; font-stretch: 87.5%; font-weight: 600; }
 .fp-eyebrow::before { content: ''; width: 18px; height: 1px; background: var(--gold); }
 .fp-post-title {
   font-family: var(--ff-display);
   font-size: clamp(1.6rem, 3vw, 2.4rem);
   font-weight: 700;
   color: var(--parchment);
-  letter-spacing: -.03em;
+  letter-spacing: -.015em;
   line-height: 1.08;
-  margin-bottom: 1rem;
-}
-.fp-post-title em { font-style: italic; font-weight: 300; color: var(--gold-lt); }
+  margin-bottom: 1rem; font-stretch: 112%; }
+.fp-post-title em { font-style: normal; font-weight: inherit; color: var(--gold-lt); }
 .fp-excerpt {
   font-size: .9rem;
   color: var(--smoke);
@@ -213,28 +207,25 @@ a    { text-decoration: none; color: inherit; }
 }
 .fp-meta-label {
   font-family: var(--ff-mono);
-  font-size: .42rem;
-  letter-spacing: .18em;
+  font-size: 0.7rem;
+  letter-spacing: .06em;
   text-transform: uppercase;
-  color: rgba(245,239,224,.3);
-}
+  color: rgba(245,239,224,.3); font-stretch: 87.5%; font-weight: 600; }
 .fp-meta-value {
   font-family: var(--ff-display);
   font-size: .92rem;
   font-weight: 600;
-  color: var(--parchment);
-}
+  color: var(--parchment); font-stretch: 112%; }
 .fp-read-btn {
   display: inline-flex;
   align-items: center;
   gap: .6rem;
   font-family: var(--ff-mono);
-  font-size: .58rem;
-  letter-spacing: .16em;
+  font-size: 0.7rem;
+  letter-spacing: .06em;
   text-transform: uppercase;
   color: var(--gold);
-  transition: gap .3s;
-}
+  transition: gap .3s; font-stretch: 87.5%; font-weight: 600; }
 .fp-card:hover .fp-read-btn { gap: 1rem; }
 
 /* ── NEWSLETTER ── */
@@ -253,7 +244,7 @@ a    { text-decoration: none; color: inherit; }
 .nl-form button {
   width: 100%; background: var(--gold); color: var(--ink);
   border: none; border-radius: var(--r-sm); padding: 1.1rem 1.6rem;
-  font-size: .72rem; font-weight: 800; letter-spacing: .18em;
+  font-size: .72rem; font-weight: 800; letter-spacing: .06em;
   text-transform: uppercase; cursor: pointer; transition: background .25s;
 }
 .nl-form button:hover { background: var(--gold-dk); }
@@ -273,6 +264,7 @@ a    { text-decoration: none; color: inherit; }
 }
 </style>
 <script src="consent.js" defer></script>
+<link rel="stylesheet" href="type.css"/>
 </head>
 <body>
 <div id="progress-bar"></div>
@@ -314,10 +306,10 @@ a    { text-decoration: none; color: inherit; }
 <!-- ── ABOUT HERO ── -->
 <section class="about-hero">
   <div class="ah-left">
-    <div class="ah-tag rv">// The person behind the blog</div>
+    <div class="ah-tag rv">About me</div>
     <h1 class="ah-h1 rv rv1">
       Hi, I'm Blake.
-      <em>I go places.</em>
+      <em>I book late and go cheap.</em>
     </h1>
     <div class="ah-body rv rv2">
       <p>I started Drop Everything And Go because so many of the travel guides I read sounded like they'd been written by someone who'd never been. Either that, or they'd been sent there for free and couldn't really say what they thought.</p>
@@ -362,7 +354,7 @@ a    { text-decoration: none; color: inherit; }
 <!-- ── FIRST POST FEATURE ── -->
 <section class="first-post-s">
   <div class="fp-inner">
-    <div class="eyebrow light rv" style="margin-bottom:1.5rem;color:var(--gold-dk)">Start here — the first post</div>
+    <div class="eyebrow light rv" style="margin-bottom:1.5rem;color:var(--gold-dk)">If you only read one post, read this one</div>
     <a href="salzburg.html" class="fp-card rv">
       <div class="fp-img">
         <img src="blog/salzburg%20images/SnowySalzburg.jpg" alt="Salzburg under snow, March 2026"/>
@@ -370,7 +362,7 @@ a    { text-decoration: none; color: inherit; }
       </div>
       <div class="fp-body">
         <div class="fp-eyebrow">City Break · Austria</div>
-        <h2 class="fp-post-title">5 Days in Salzburg <em>on a Budget</em></h2>
+        <h2 class="fp-post-title">5 Days in Salzburg on a Budget</h2>
         <p class="fp-excerpt">Whether the Salzburg Card is actually worth it, the day trip to Hallstatt, the fortress, the mountain that ended up being the best bit, and the Mozart sites I'd probably skip. Five days in March 2026, on a budget.</p>
         <div class="fp-meta">
           <div class="fp-meta-item">
@@ -400,7 +392,7 @@ a    { text-decoration: none; color: inherit; }
 <section class="s nl-s" style="border-top:1px solid rgba(11,13,16,.08);">
   <div class="nl-inner">
     <div class="eyebrow rv" style="justify-content:center;color:var(--gold-dk)">The DEAG Newsletter</div>
-    <h2 class="h-display on-light rv" style="color:var(--ink)">New posts straight<br><em>to your inbox.</em></h2>
+    <h2 class="h-display on-light rv" style="color:var(--ink)">Want the next post<br>in your inbox?</h2>
     <p class="rv">New trip reports and guides when they go up. No spam and nothing sponsored.</p>
     <form class="nl-form rv" action="https://formspree.io/f/mjgelkpz" method="POST">
       <input type="hidden" name="_subject" value="New Subscriber — Drop Everything And Go"/>
