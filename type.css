@@ -1,15 +1,15 @@
 /* Type system (Nov 2026, Blake's pick)
-   Alfa Slab One: headings. Bitter: everything else (text, nav, buttons, labels). */
+   Zilla Slab 700: headings. Bitter: everything else (text, nav, buttons, labels). */
 
 :root {
-  --ff-display: 'Alfa Slab One', Georgia, serif;
+  --ff-display: 'Zilla Slab', Georgia, serif;
   --ff-text:    'Bitter', 'Helvetica Neue', Arial, sans-serif;
   --ff-body:    'Bitter', 'Helvetica Neue', Arial, sans-serif;
   --ff-ui:      'Bitter', 'Helvetica Neue', Arial, sans-serif;
   --ff-mono:    'Bitter', 'Helvetica Neue', Arial, sans-serif;
 }
 
-/* Alfa Slab One only comes in one weight, so never fake a bold or italic */
+/* Never fake a bold or italic */
 * { font-synthesis: none; font-stretch: normal !important; }
 
 body { font-family: var(--ff-text); }
@@ -19,11 +19,11 @@ h1, h2, h3, .ih-h1, .ah-h1, .pg-title, .post-hero-headline, .post-title, .h2, .h
 .chapter-title, .related-title, .h-display, .ph-title, .blog-card-title,
 .related-post-title, .gyg-title, .author-info-name, .aud-title {
   font-family: var(--ff-display) !important;
-  font-weight: 400 !important;
+  font-weight: 700 !important;
   font-style: normal !important;
   letter-spacing: 0 !important;
   text-transform: none !important;
-  line-height: 1.05;
+  line-height: 1.02;
 }
 h1 em, h2 em, h3 em, h4 em { font-style: normal; font-weight: inherit; }
 h1, h2, h3, h4 { text-wrap: balance; }
