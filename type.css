@@ -1,23 +1,48 @@
-/* Type system (Nov 2026)
-   Archivo: headings (wide), nav, buttons and labels (narrow).
-   Literata: anything you actually read. */
+/* Type system (Nov 2026, Blake's pick)
+   Shrikhand: headings. Rubik: everything else (text, nav, buttons, labels). */
 
-:root { --ff-text: 'Literata', Georgia, serif; }
+:root {
+  --ff-display: 'Shrikhand', Georgia, serif;
+  --ff-text:    'Rubik', 'Helvetica Neue', Arial, sans-serif;
+  --ff-body:    'Rubik', 'Helvetica Neue', Arial, sans-serif;
+  --ff-ui:      'Rubik', 'Helvetica Neue', Arial, sans-serif;
+  --ff-mono:    'Rubik', 'Helvetica Neue', Arial, sans-serif;
+}
 
-/* Running text reads in Literata */
+/* Shrikhand only comes in one weight, so never fake a bold or italic */
+* { font-synthesis: none; font-stretch: normal !important; }
+
+body { font-family: var(--ff-text); }
+
+/* Headings */
+h1, h2, h3, .ih-h1, .ah-h1, .pg-title, .post-hero-headline, .post-title, .h2, .h3,
+.chapter-title, .related-title, .h-display, .ph-title, .blog-card-title,
+.related-post-title, .gyg-title, .author-info-name, .aud-title {
+  font-family: var(--ff-display) !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  line-height: 1.08;
+}
+h1 em, h2 em, h3 em, h4 em { font-style: normal; font-weight: inherit; }
+h1, h2, h3, h4 { text-wrap: balance; }
+
+/* Small headings read better in Rubik */
+h4, h5, h6 { font-family: var(--ff-ui) !important; font-weight: 700; }
+
+/* Running text */
 main p, article p, section p, blockquote, main li, article li, section li, dd, td,
 .pg-subtitle, .ph-sub, .p, .post-intro, .pullquote p, .faq-a, .blog-card p, .nl-sub {
   font-family: var(--ff-text);
-  font-optical-sizing: auto;
 }
+.p, .post-intro, main p { font-weight: 400; }
+.post-intro, .pullquote p { font-weight: 400; }
 
-/* ...but small UI bits stay in Archivo */
+/* Labels, nav, buttons */
 nav li, nav a, footer li, footer a, button, .btn, [class*="btn"],
 [class*="label"], [class*="tag"], [class*="eyebrow"], [class*="meta"],
-.ts-label, .ts-value {
-  font-family: var(--ff-ui, 'Archivo', sans-serif);
+.ts-label, .ts-value, .ih-stat-n {
+  font-family: var(--ff-ui) !important;
 }
-
-/* Headings: no light-italic second halves */
-h1 em, h2 em, h3 em, h4 em { font-style: normal; font-weight: inherit; }
-h1, h2, h3, h4 { text-wrap: balance; }
+[class*="label"], [class*="tag"], [class*="eyebrow"] { font-weight: 600; }
