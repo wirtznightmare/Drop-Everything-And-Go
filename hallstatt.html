@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="description" content="Is Hallstatt overrated? My day trip from Salzburg by train and ferry: how to arrive, what to do in 3 to 4 hours, and the salt mine and Skywalk."/>
+<title>Is Hallstatt Overrated? A Day Trip from Salzburg | Drop Everything And Go</title>
+<meta property="og:title" content="Is Hallstatt Overrated? A Day Trip from Salzburg | Drop Everything And Go"/>
+<meta property="og:image" content="https://dropeverythingandgo.com/blog/salzburg%20images/Hallstatt.jpg"/>
+<meta property="og:description" content="Is Hallstatt overrated? My day trip from Salzburg by train and ferry: how to arrive, what to do in 3 to 4 hours, and the salt mine and Skywalk."/>
+<meta property="og:url" content="https://dropeverythingandgo.com/hallstatt.html"/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="Drop Everything And Go"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="canonical" href="https://dropeverythingandgo.com/hallstatt.html"/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@600;700&family=Bitter:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+
+<style>
+:root {
+  --ff-text: 'Literata', Georgia, serif;
+  --ff-display: 'Archivo', 'Arial Narrow', sans-serif;
+  --ff-body: 'Literata', Georgia, serif;
+  --ff-mono: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --ink:        #0B0D10;
+  --ink-2:      #0F1318;
+  --ink-3:      #131820;
+  --gold:       #C8912A;
+  --gold-lt:    #D4A84B;
+  --gold-dk:    #A87520;
+  --teal:       #0EBFB8;
+  --teal-dk:    #0A9590;
+  --parchment:  #F5EFE0;
+  --cream:      #FAF7F2;
+  --white:      #FFFFFF;
+  --smoke:      #9AA0B0;
+  --border:     rgba(245,239,224,0.08);
+  --border-lt:  rgba(11,13,16,0.09);
+  --gutter:     clamp(1.25rem, 5vw, 4rem);
+  --col-text:   680px;
+  --col-sidebar: 220px;
+  --r-xs: 4px;
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --ease-expo:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--ff-body); background: var(--white); color: var(--ink); -webkit-font-smoothing: antialiased; }
+img  { display: block; max-width: 100%; height: auto; }
+a    { text-decoration: none; color: inherit; }
+
+.eyebrow { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.9rem; font-stretch: 87.5%; font-weight: 600; }
+.eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--gold); }
+.rv { opacity: 0; transform: translateY(18px); transition: opacity 0.7s var(--ease-expo), transform 0.7s var(--ease-expo); }
+.rv.rv1 { transition-delay: 0.08s; }
+.rv.rv2 { transition-delay: 0.16s; }
+.rv.rv3 { transition-delay: 0.24s; }
+.rv.vis { opacity: 1; transform: none; }
+
+#progress-bar { position: fixed; top: 0; left: 0; z-index: 400; height: 3px; width: 0%; background: linear-gradient(to right, var(--gold), var(--teal)); transition: width 0.1s linear; pointer-events: none; }
+
+#nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; padding: 1.4rem var(--gutter); display: flex; align-items: center; justify-content: space-between; transition: background 0.4s, padding 0.4s, border-color 0.4s; border-bottom: 1px solid transparent; }
+#nav.scrolled { background: rgba(11,13,16,0.96); backdrop-filter: blur(20px) saturate(160%); padding: 1rem var(--gutter); border-color: var(--border); }
+.nav-logo { font-family: var(--ff-display); font-size: 1.15rem; font-weight: 700; color: var(--parchment); display: flex; flex-direction: column; line-height: 1.1; letter-spacing: -0.01em; font-stretch: 112%; }
+.nav-logo-sub { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--smoke); margin-top: 0.15rem; font-weight: 400; font-stretch: 87.5%; font-weight: 600; }
+.nav-links { display: flex; align-items: center; gap: 2.2rem; list-style: none; }
+.nav-links a { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--smoke); transition: color 0.2s; font-stretch: 87.5%; font-weight: 600; }
+.nav-links a:hover, .nav-links a.active { color: var(--parchment); }
+.nav-cta { background: var(--gold); color: var(--ink) !important; padding: 0.55rem 1.3rem; border-radius: var(--r-xs); font-weight: 500; transition: background 0.2s !important; }
+.nav-cta:hover { background: var(--gold-lt) !important; }
+.nav-ham { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+.nav-ham span { display: block; width: 24px; height: 1.5px; background: var(--parchment); transition: all 0.3s; }
+.nav-ham.open span:nth-child(1) { transform: rotate(39deg) translateY(5px); }
+.nav-ham.open span:nth-child(2) { opacity: 0; }
+.nav-ham.open span:nth-child(3) { transform: rotate(-39deg) translateY(-5px); }
+.nav-mob { display: none; position: fixed; inset: 0; background: var(--ink-2); z-index: 190; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; list-style: none; }
+.nav-mob.open { display: flex; }
+.nav-mob a { font-family: var(--ff-display); font-size: 2.2rem; font-weight: 700; color: var(--parchment); transition: color 0.2s; font-stretch: 112%; }
+.nav-mob a:hover { color: var(--gold); }
+.mob-cta-btn { background: var(--gold); color: var(--ink) !important; padding: 0.8rem 2.5rem; border-radius: var(--r-sm); font-size: 0.85rem !important; }
+
+.post-hero { height: 92svh; min-height: 560px; max-height: 860px; position: relative; overflow: hidden; background: var(--ink); }
+.post-hero-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; }
+.post-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,13,16,0.94) 0%, rgba(11,13,16,0.50) 35%, rgba(11,13,16,0.15) 60%, transparent 85%); }
+.post-hero-inner { position: absolute; bottom: 0; left: 0; right: 0; padding: 0 var(--gutter) clamp(3rem, 5vw, 5rem); max-width: 820px; }
+.post-hero-tag { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold); display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.2rem; opacity: 0; animation: aUp 0.8s 0.3s var(--ease-expo) both; font-stretch: 87.5%; font-weight: 600; }
+.post-hero-tag::before { content: ''; width: 24px; height: 1px; background: var(--gold); display: block; }
+.post-hero-headline { font-family: var(--ff-display); font-size: clamp(3.5rem, 10vw, 9rem); font-weight: 700; line-height: 0.95; letter-spacing: -0.015em; color: var(--parchment); opacity: 0; animation: aUp 1s 0.5s var(--ease-expo) both; font-stretch: 112%; }
+.post-hero-headline em { display: block; font-style: normal; font-weight: inherit; color: var(--gold-lt); font-size: 0.62em; }
+
+.trip-stats { background: var(--ink-2); border-bottom: 1px solid rgba(200,145,42,0.15); padding: 0 var(--gutter); }
+.trip-stats-inner { max-width: 1100px; margin: 0 auto; display: flex; gap: 0; align-items: stretch; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.trip-stats-inner::-webkit-scrollbar { display: none; }
+.ts-item { display: flex; flex-direction: column; justify-content: center; padding: 1.1rem 2rem 1rem; border-right: 1px solid rgba(245,239,224,0.06); flex-shrink: 0; min-width: 100px; }
+.ts-item:first-child { padding-left: 0; }
+.ts-item:last-child  { border-right: none; }
+.ts-label { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(200,145,42,0.6); margin-bottom: 0.3rem; font-stretch: 87.5%; font-weight: 600; }
+.ts-value { font-family: var(--ff-display); font-size: 1.05rem; font-weight: 700; color: var(--parchment); letter-spacing: -0.01em; line-height: 1.1; white-space: nowrap; font-stretch: 112%; }
+.ts-value em { font-style: normal; font-weight: inherit; color: var(--gold-lt); }
+
+.breadcrumb { background: var(--ink); border-bottom: 1px solid var(--border); padding: 0.8rem var(--gutter); }
+.breadcrumb-inner { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; gap: 0.5rem; font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(154,160,176,0.55); font-stretch: 87.5%; font-weight: 600; }
+.breadcrumb-inner a { color: rgba(154,160,176,0.55); transition: color 0.2s; }
+.breadcrumb-inner a:hover { color: var(--gold); }
+.breadcrumb-sep { color: rgba(154,160,176,0.2); }
+
+.post-meta-bar { background: var(--cream); border-bottom: 1px solid var(--border-lt); padding: 0 var(--gutter); }
+.post-meta-inner { max-width: 1100px; margin: 0 auto; padding: 0.9rem 0; display: flex; align-items: center; gap: 0.9rem; flex-wrap: wrap; }
+.pm-cat { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold-dk); background: rgba(200,145,42,0.1); padding: 0.22rem 0.7rem; border-radius: var(--r-xs); font-stretch: 87.5%; font-weight: 600; }
+.pm-sep { color: rgba(11,13,16,0.15); }
+.pm-date, .pm-read { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--smoke); font-stretch: 87.5%; font-weight: 600; }
+
+.article-wrap { background: var(--white); }
+.article-layout { max-width: calc(var(--col-text) + var(--col-sidebar) + 4rem + var(--gutter) * 2); margin: 0 auto; padding: 0 var(--gutter); display: grid; grid-template-columns: minmax(0, var(--col-text)) var(--col-sidebar); gap: 0 4rem; align-items: start; }
+.article-body { padding: 4rem 0 5rem; min-width: 0; }
+.toc-sidebar { padding-top: 4rem; padding-bottom: 2rem; position: sticky; top: 90px; max-height: calc(100vh - 120px); overflow-y: auto; scrollbar-width: none; }
+.toc-sidebar::-webkit-scrollbar { display: none; }
+.toc-sidebar-inner { border-left: 2px solid rgba(200,145,42,0.2); padding-left: 1.4rem; }
+.toc-sidebar-label { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(200,145,42,0.55); margin-bottom: 1rem; font-stretch: 87.5%; font-weight: 600; }
+.toc-sidebar-list { list-style: none; counter-reset: toc-side; display: flex; flex-direction: column; gap: 0; }
+.toc-sidebar-list li { counter-increment: toc-side; }
+.toc-sidebar-list a { display: flex; gap: 0.65rem; align-items: baseline; font-size: 0.8rem; color: rgba(11,13,16,0.38); line-height: 1.45; padding: 0.45rem 0; border-left: 2px solid transparent; margin-left: -1.4rem; padding-left: 1.2rem; transition: color 0.2s, border-color 0.2s; text-decoration: none; }
+.toc-sidebar-list a::before { content: counter(toc-side, decimal-leading-zero); font-family: var(--ff-mono); font-size: 0.7rem; color: rgba(200,145,42,0.35); flex-shrink: 0; transition: color 0.2s; font-stretch: 87.5%; font-weight: 600; }
+.toc-sidebar-list a:hover { color: var(--ink); border-left-color: var(--gold); }
+.toc-sidebar-list a:hover::before { color: var(--gold); }
+.toc-sidebar-list a.toc-active { color: var(--gold-dk); border-left-color: var(--gold); font-weight: 500; }
+.toc-sidebar-list a.toc-active::before { color: var(--gold); }
+
+.toc { background: var(--cream); border: 1px solid rgba(200,145,42,0.18); border-left: 3px solid var(--gold); border-radius: var(--r-md); padding: 1.5rem 1.8rem; margin: 2rem 0 2.5rem; }
+.toc-title { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold-dk); margin-bottom: 1rem; font-stretch: 87.5%; font-weight: 600; }
+.toc ol { list-style: none; counter-reset: toc; display: flex; flex-direction: column; gap: 0.5rem; }
+.toc li { counter-increment: toc; display: flex; gap: 0.75rem; align-items: baseline; }
+.toc li::before { content: counter(toc, decimal-leading-zero); font-family: var(--ff-mono); font-size: 0.7rem; color: var(--gold); flex-shrink: 0; font-stretch: 87.5%; font-weight: 600; }
+.toc a { font-size: 0.88rem; color: var(--ink); transition: color 0.2s; line-height: 1.45; }
+.toc a:hover { color: var(--gold-dk); }
+
+.post-title { font-family: var(--ff-display); font-size: clamp(2.8rem, 6vw, 4.5rem); font-weight: 700; line-height: 0.97; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 1.2rem; font-stretch: 112%; }
+.post-title em { font-style: normal; font-weight: inherit; color: var(--gold-dk); }
+.post-intro { font-family: var(--ff-text); font-size: clamp(1.15rem, 2.2vw, 1.4rem); font-weight: 300; line-height: 1.68; color: #3A4050; margin-bottom: 2rem; border-left: 3px solid var(--gold); padding-left: 1.3rem; }
+.article-divider { border: none; border-top: 1px solid var(--border-lt); margin: 2.5rem 0; }
+
+.p { font-family: var(--ff-body); font-size: 1.02rem; line-height: 1.9; color: #2A3040; margin-bottom: 1.5rem; }
+.h2 { font-family: var(--ff-display); font-size: clamp(1.7rem, 3vw, 2.3rem); font-weight: 700; line-height: 1.06; letter-spacing: -0.015em; color: var(--ink); margin: 3.5rem 0 1rem; padding-top: 0.5rem; font-stretch: 112%; }
+.h2 em { font-style: normal; font-weight: inherit; color: var(--gold-dk); }
+.h3 { font-family: var(--ff-display); font-size: clamp(1.3rem, 2.2vw, 1.65rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.015em; color: var(--ink); margin: 2.5rem 0 0.75rem; font-stretch: 112%; }
+
+.chapter-header { display: flex; align-items: flex-start; gap: 1rem; margin: 4rem 0 1.4rem; padding-top: 1.5rem; border-top: 1px solid var(--border-lt); }
+.chapter-label { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold); background: rgba(200,145,42,0.08); border: 1px solid rgba(200,145,42,0.2); padding: 0.35rem 0.75rem; border-radius: var(--r-xs); white-space: nowrap; flex-shrink: 0; margin-top: 0.5rem; font-stretch: 87.5%; font-weight: 600; }
+.chapter-title { font-family: var(--ff-display); font-size: clamp(1.65rem, 3vw, 2.3rem); font-weight: 700; line-height: 1.05; letter-spacing: -0.015em; color: var(--ink); font-stretch: 112%; }
+.chapter-title em { font-style: normal; font-weight: inherit; color: var(--gold-dk); }
+
+
+
+
+
+.img-full { margin: 2.5rem 0; text-align: center; background: var(--cream); }
+.img-full img { display: inline-block; max-width: 100%; height: auto; object-fit: contain; vertical-align: bottom; }
+.img-caption { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(154,160,176,0.8); text-align: center; margin-top: 0.6rem; margin-bottom: 1.5rem; line-height: 1.5; font-stretch: 87.5%; font-weight: 600; }
+
+.pullquote { position: relative; margin: 3.5rem 0; padding: 2.2rem 2.4rem 2.2rem 2.8rem; border-left: 4px solid var(--gold); background: var(--cream); border-radius: 0 var(--r-md) var(--r-md) 0; overflow: hidden; }
+.pullquote::before { content: '\201C'; font-family: var(--ff-text); font-size: 9rem; line-height: 1; color: rgba(200,145,42,0.1); position: absolute; top: -1.5rem; right: 1rem; font-style: italic; pointer-events: none; }
+.pullquote p { font-family: var(--ff-text); font-size: clamp(1.25rem, 2.8vw, 1.7rem); font-style: italic; font-weight: 300; line-height: 1.45; color: var(--ink); margin: 0; position: relative; z-index: 1; }
+
+.highlight-box { background: var(--ink); border-radius: var(--r-md); padding: 1.8rem 2rem; margin: 2.5rem 0; }
+.highlight-box-label { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; font-stretch: 87.5%; font-weight: 600; }
+.highlight-box p { font-size: 0.92rem; color: rgba(245,239,224,0.78); line-height: 1.72; margin: 0; }
+.highlight-box p + p { margin-top: 0.6rem; }
+
+.tip-box { display: flex; gap: 1rem; background: rgba(14,191,184,0.05); border: 1px solid rgba(14,191,184,0.18); border-left: 3px solid var(--teal); border-radius: 0 var(--r-md) var(--r-md) 0; padding: 1.2rem 1.5rem; margin: 2rem 0; }
+.tip-box--gold { background: rgba(200,145,42,0.05); border-color: rgba(200,145,42,0.18); border-left-color: var(--gold); }
+.tip-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 0.1rem; line-height: 1; }
+.tip-content strong { display: block; font-size: 0.82rem; font-weight: 500; color: var(--ink); margin-bottom: 0.25rem; }
+.tip-content p { font-size: 0.88rem; line-height: 1.65; color: #4A5060; margin: 0; }
+
+.gyg-box { display: flex; gap: 1.1rem; align-items: flex-start; background: var(--cream); border: 1px solid rgba(200,145,42,0.15); border-top: 3px solid var(--teal); border-radius: var(--r-md); padding: 1.3rem 1.5rem; margin: 2rem 0; text-decoration: none; color: inherit; transition: box-shadow 0.3s, transform 0.3s var(--ease-spring); display: block; }
+.gyg-box:hover { box-shadow: 0 8px 28px rgba(11,13,16,0.08); transform: translateY(-2px); }
+.gyg-inner { display: flex; gap: 1.1rem; align-items: flex-start; }
+.gyg-icon { font-size: 1.7rem; flex-shrink: 0; line-height: 1; }
+.gyg-label { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--teal-dk); margin-bottom: 0.25rem; font-stretch: 87.5%; font-weight: 600; }
+.gyg-title { font-family: var(--ff-display); font-size: 1.05rem; font-weight: 700; color: var(--ink); margin-bottom: 0.25rem; letter-spacing: -0.01em; font-stretch: 112%; }
+.gyg-desc { font-size: 0.84rem; color: #5A6070; line-height: 1.6; margin-bottom: 0.65rem; }
+.gyg-cta { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--teal-dk); font-weight: 500; transition: gap 0.2s; font-stretch: 87.5%; font-weight: 600; }
+.gyg-box:hover .gyg-cta { gap: 0.8rem; }
+.gyg-disclosure { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; color: rgba(154,160,176,0.45); margin-top: 0.6rem; display: block; font-stretch: 87.5%; font-weight: 600; }
+
+.nl-interrupt { background: var(--ink); border-radius: var(--r-lg); padding: 2.5rem 2.2rem; margin: 3.5rem 0; text-align: center; }
+.nl-interrupt-eyebrow { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; font-stretch: 87.5%; font-weight: 600; }
+.nl-interrupt h3 { font-family: var(--ff-display); font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.015em; color: var(--parchment); margin-bottom: 0.6rem; font-stretch: 112%; }
+.nl-interrupt h3 em { font-style: normal; font-weight: inherit; color: var(--gold-lt); }
+.nl-interrupt p { font-size: 0.88rem; color: var(--smoke); line-height: 1.7; max-width: 420px; margin: 0 auto 1.6rem; }
+.nl-interrupt-form { display: flex; max-width: 400px; margin: 0 auto; gap: 0; }
+.nl-interrupt-form input { flex: 1; padding: 0.85rem 1.1rem; background: rgba(245,239,224,0.07); border: 1px solid rgba(245,239,224,0.14); border-right: none; border-radius: var(--r-sm) 0 0 var(--r-sm); font-family: var(--ff-body); font-size: 0.88rem; color: var(--parchment); outline: none; transition: border-color 0.2s; }
+.nl-interrupt-form input:focus { border-color: rgba(200,145,42,0.4); }
+.nl-interrupt-form input::placeholder { color: rgba(245,239,224,0.25); }
+.nl-interrupt-form button { background: var(--gold); color: var(--ink); border: none; border-radius: 0 var(--r-sm) var(--r-sm) 0; padding: 0.85rem 1.3rem; font-family: var(--ff-mono); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; white-space: nowrap; transition: background 0.2s; font-stretch: 87.5%; font-weight: 600; }
+.nl-interrupt-form button:hover { background: var(--gold-lt); }
+
+.fact-table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.88rem; }
+.fact-table tr { border-bottom: 1px solid var(--border-lt); }
+.fact-table tr:last-child { border-bottom: none; }
+.fact-table tr:hover td { background: rgba(200,145,42,0.03); }
+.fact-table td { padding: 0.72rem 0.5rem; vertical-align: top; line-height: 1.55; }
+.fact-table td:first-child { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold-dk); white-space: nowrap; padding-right: 1.5rem; width: 130px; vertical-align: top; padding-top: 0.9rem; font-stretch: 87.5%; font-weight: 600; }
+.fact-table td:last-child { color: #2A3040; }
+
+.share-strip { border-top: 1px solid var(--border-lt); border-bottom: 1px solid var(--border-lt); padding: 2rem 0; margin: 3rem 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.2rem; }
+.share-label { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--smoke); font-stretch: 87.5%; font-weight: 600; }
+.share-btns { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.share-btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; padding: 0.55rem 1rem; border-radius: var(--r-xs); background: var(--cream); border: 1px solid var(--border-lt); color: #4A5060; cursor: pointer; transition: all 0.2s; text-decoration: none; font-stretch: 87.5%; font-weight: 600; }
+.share-btn:hover { background: var(--ink); color: var(--parchment); border-color: var(--ink); }
+
+.author-bio { padding: 0 0 4rem; }
+.author-bio-inner { background: var(--ink); border-radius: var(--r-lg); padding: 2rem 2.2rem; display: flex; gap: 1.5rem; align-items: flex-start; }
+.author-avatar { width: 64px; height: 64px; border-radius: 50%; background: var(--gold); display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0; overflow: hidden; }
+.author-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.author-info-label { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.2rem; font-stretch: 87.5%; font-weight: 600; }
+.author-info-name { font-family: var(--ff-display); font-size: 1.2rem; font-weight: 700; color: var(--parchment); margin-bottom: 0.5rem; letter-spacing: -0.01em; font-stretch: 112%; }
+.author-info-bio { font-size: 0.85rem; color: var(--smoke); line-height: 1.68; }
+
+.related-s { background: var(--cream); padding: 4.5rem var(--gutter); border-top: 1px solid var(--border-lt); }
+.related-inner { max-width: 1100px; margin: 0 auto; }
+.related-title { font-family: var(--ff-display); font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; line-height: 1; letter-spacing: -0.015em; color: var(--ink); margin-bottom: 2rem; font-stretch: 112%; }
+.related-title em { font-style: normal; font-weight: inherit; color: var(--gold-dk); }
+.related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.related-card { background: var(--white); border-radius: var(--r-md); overflow: hidden; border: 1px solid rgba(11,13,16,0.07); box-shadow: 0 2px 14px rgba(11,13,16,0.05); display: block; transition: transform 0.4s var(--ease-spring), box-shadow 0.4s; }
+.related-card:hover { transform: translateY(-7px); box-shadow: 0 20px 50px rgba(11,13,16,0.12); }
+.related-img { height: 210px; overflow: hidden; position: relative; }
+.related-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease-expo); }
+.related-card:hover .related-img img { transform: scale(1.06); }
+.related-img-fallback { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; }
+.related-body { padding: 1.5rem; }
+.related-cat { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.5rem; font-stretch: 87.5%; font-weight: 600; }
+.related-post-title { font-family: var(--ff-display); font-size: 1.2rem; font-weight: 700; color: var(--ink); line-height: 1.18; margin-bottom: 0.5rem; letter-spacing: -0.015em; font-stretch: 112%; }
+.related-exc { font-size: 0.82rem; color: #6A7080; line-height: 1.65; margin-bottom: 0.9rem; }
+.related-read { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--gold-dk); display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.25s; font-stretch: 87.5%; font-weight: 600; }
+.related-card:hover .related-read { gap: 0.8rem; }
+
+footer { background: var(--ink); border-top: 1px solid var(--border); }
+.ft-top { max-width: 1300px; margin: 0 auto; padding: 4.5rem var(--gutter) 3rem; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3.5rem; }
+.ft-brand p { font-size: 0.85rem; color: var(--smoke); line-height: 1.72; margin: 1rem 0 1.5rem; max-width: 270px; }
+.ft-social { display: flex; gap: 0.7rem; }
+.ft-soc-btn { width: 36px; height: 36px; border-radius: 50%; background: rgba(245,239,224,0.05); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; transition: background 0.2s, transform 0.3s; }
+.ft-soc-btn:hover { background: rgba(200,145,42,0.15); transform: translateY(-2px); }
+.ft-col h5 { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: var(--smoke); margin-bottom: 1.2rem; font-stretch: 87.5%; font-weight: 600; }
+.ft-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+.ft-col a { font-size: 0.88rem; color: rgba(200,190,170,0.55); transition: color 0.2s; }
+.ft-col a:hover { color: var(--parchment); }
+.ft-badges { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1.2rem var(--gutter); display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+.ft-badge { font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; color: rgba(154,160,176,0.5); font-stretch: 87.5%; font-weight: 600; }
+.ft-bottom { max-width: 1300px; margin: 0 auto; padding: 1.5rem var(--gutter); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.ft-bottom p { font-size: 0.8rem; color: rgba(154,160,176,0.4); }
+.ft-bottom-links { display: flex; gap: 1.5rem; }
+.ft-bottom-links a { font-size: 0.78rem; color: rgba(154,160,176,0.35); transition: color 0.2s; }
+.ft-bottom-links a:hover { color: var(--smoke); }
+
+.ck { position: fixed; bottom: 1.5rem; left: 1.5rem; right: 1.5rem; background: var(--ink-2); border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.2rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; z-index: 500; box-shadow: 0 8px 40px rgba(0,0,0,0.45); transform: translateY(140%); transition: transform 0.55s var(--ease-expo); max-width: 680px; margin: 0 auto; }
+.ck.vis { transform: translateY(0); }
+.ck-text { font-size: 0.82rem; color: var(--smoke); line-height: 1.6; }
+.ck-text a { color: var(--gold); text-decoration: underline; }
+.ck-btns { display: flex; gap: 0.7rem; flex-shrink: 0; }
+.ck-acc { background: var(--gold); color: var(--ink); border: none; border-radius: var(--r-xs); padding: 0.5rem 1.2rem; font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; font-stretch: 87.5%; font-weight: 600; }
+.ck-dec { background: transparent; color: var(--smoke); border: 1px solid var(--border); border-radius: var(--r-xs); padding: 0.5rem 1.2rem; font-family: var(--ff-mono); font-size: 0.7rem; letter-spacing: 0.05em; text-transform: uppercase; cursor: pointer; font-stretch: 87.5%; font-weight: 600; }
+
+@media (max-width: 1100px) {
+  .article-layout { grid-template-columns: 1fr; max-width: calc(var(--col-text) + var(--gutter) * 2); }
+  .toc-sidebar { display: none; }
+  .toc { display: block; }
+}
+@media (min-width: 1101px) {
+  .toc { display: none; }
+  .toc-sidebar { display: block; }
+}
+@media (max-width: 1000px) {
+  .nav-links { display: none; }
+  .nav-ham { display: flex; }
+  .ft-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .related-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 680px) {
+
+  .pullquote { margin: 2.5rem 0; }
+  .related-grid { grid-template-columns: 1fr; }
+  .ft-top { grid-template-columns: 1fr; }
+  .author-bio-inner { flex-direction: column; }
+  .chapter-header { flex-direction: column; gap: 0.6rem; }
+  .nl-interrupt-form { flex-direction: column; }
+  .nl-interrupt-form input { border-right: 1px solid rgba(245,239,224,0.14); border-bottom: none; border-radius: var(--r-sm) var(--r-sm) 0 0; }
+  .nl-interrupt-form button { border-radius: 0 0 var(--r-sm) var(--r-sm); padding: 0.85rem; }
+  .share-strip { flex-direction: column; gap: 0.8rem; }
+}
+
+@keyframes aUp   { from { opacity:0; transform:translateY(28px) } to { opacity:1; transform:translateY(0) } }
+@keyframes aFade { from { opacity:0 } to { opacity:1 } }
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Is Hallstatt Overrated? I Went to Find Out",
+  "description": "Is Hallstatt overrated? My day trip from Salzburg by train and ferry: how to arrive, what to do in 3 to 4 hours, and the salt mine and Skywalk.",
+  "datePublished": "2026-11-28",
+  "dateModified": "2026-11-28",
+  "author": {"@type": "Person", "name": "Blake Adams", "url": "https://dropeverythingandgo.com/about.html"},
+  "publisher": {"@type": "Organization", "name": "Drop Everything And Go", "url": "https://dropeverythingandgo.com"},
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://dropeverythingandgo.com/hallstatt.html"}
+}
+</script>
+<script src="consent.js" data-travelpayouts="1" defer></script>
+<link rel="stylesheet" href="type.css"/>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<div class="ck" id="ck">
+  <p class="ck-text">We use analytics and affiliate cookies to see how the site is used. Nothing non-essential loads unless you accept. <a href="privacy.html#cookies">Cookie policy</a></p>
+  <div class="ck-btns">
+    <button class="ck-acc" onclick="ckAccept()">Accept</button>
+    <button class="ck-dec" onclick="ckDecline()">Decline</button>
+  </div>
+</div>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo nav-logo--mark" aria-label="Drop Everything And Go home"><img src="deag-peak.svg" alt="DEAG: Drop Everything And Go" width="104" height="40"></a>
+  <ul class="nav-links">
+    <li><a href="journeys.html">Destinations</a></li>
+    <li><a href="ski.html">Ski</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <button class="nav-ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+<ul class="nav-mob" id="mob">
+  <li><a href="journeys.html">Destinations</a></li>
+  <li><a href="ski.html">Ski</a></li>
+  <li><a href="blog.html">Blog</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="services.html">Services</a></li>
+  <li><a href="contact.html" class="nav-cta" style="margin-top:.5rem">Get in Touch</a></li>
+</ul>
+
+<!-- HERO -->
+<div class="post-hero">
+  <img class="post-hero-img" src="blog/salzburg%20images/Hallstatt.jpg" alt="Hallstatt on the edge of the Hallstätter See"/>
+  <div class="post-hero-overlay"></div>
+  <div class="post-hero-inner">
+    <div class="post-hero-tag">Day Trip · Austria</div>
+    <div class="post-hero-headline">
+      Hallstatt
+      <em>from Salzburg</em>
+    </div>
+  </div>
+</div>
+
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <div class="breadcrumb-inner">
+    <a href="index.html">Home</a>
+    <span class="breadcrumb-sep">/</span>
+    <a href="blog.html">Blog</a>
+    <span class="breadcrumb-sep">/</span>
+    <span>Hallstatt Day Trip from Salzburg</span>
+  </div>
+</nav>
+
+<div class="post-meta-bar">
+  <div class="post-meta-inner">
+    <span class="pm-cat">Day Trip · Austria</span>
+    <span class="pm-sep">·</span>
+    <span class="pm-date">March 2026</span>
+    <span class="pm-sep">·</span>
+    <span class="pm-read">5 min read</span>
+  </div>
+</div>
+
+<div class="trip-stats">
+  <div class="trip-stats-inner">
+    <div class="ts-item"><div class="ts-label">Time there</div><div class="ts-value">3 to 4 <em>hours</em></div></div>
+    <div class="ts-item"><div class="ts-label">Season</div><div class="ts-value">Late <em>March</em></div></div>
+    <div class="ts-item"><div class="ts-label">From</div><div class="ts-value">Salzburg</div></div>
+    <div class="ts-item"><div class="ts-label">Type</div><div class="ts-value">Day Trip</div></div>
+    <div class="ts-item"><div class="ts-label">Getting there</div><div class="ts-value">Train <em>+ ferry</em></div></div>
+  </div>
+</div>
+
+<!-- ARTICLE -->
+<div class="article-wrap">
+  <div class="article-layout">
+
+    <article class="article-body" itemscope itemtype="https://schema.org/BlogPosting">
+
+      <h1 class="post-title rv">Is Hallstatt Overrated?<br><em>I Went to Find Out</em></h1>
+
+      <p class="post-intro rv rv1">Short answer, no. It's that simple (as long as you follow my guide).</p>
+
+      <hr class="article-divider"/>
+
+      <nav class="toc rv">
+        <div class="toc-title">In this guide</div>
+        <ol>
+          <li><a href="#expectations">Going in with my guard up</a></li>
+          <li><a href="#getting-there">Get the train, then the ferry</a></li>
+          <li><a href="#what-we-did">Three to four hours is plenty</a></li>
+          <li><a href="#salt-mine">The salt mine and the Skywalk</a></li>
+          <li><a href="#practical">The practical bits</a></li>
+          <li><a href="#final-thoughts">So, is it overrated?</a></li>
+        </ol>
+      </nav>
+
+      <p class="p rv" style="font-size:.78rem;opacity:.75;border-left:2px solid var(--gold);padding-left:.9rem;">There's one affiliate link in this post (a GetYourGuide tour). If you book through it I earn a small commission, at no extra cost to you. <a href="privacy.html#affiliates">How this works</a>.</p>
+
+      <!-- EXPECTATIONS -->
+      <div class="chapter-header rv" id="expectations">
+        <span class="chapter-label">The Doubt</span>
+        <h2 class="chapter-title">Going in with my guard up</h2>
+      </div>
+
+      <p class="p rv">So, Hallstatt. Every travel blog going will tell you it's unmissable. It's been photographed so many times it barely looks real anymore, and there's literally a full-size copy of it built in China. You'd be forgiven for turning up with your expectations in check.</p>
+
+      <p class="p rv">That was me, honestly. I still thought it would be amazing, but there was no way it could be as good as the photos make it look. I was wrong. It outperformed every expectation I had, and the way you arrive has a lot to do with that.</p>
+
+      <p class="p rv">We did it as a day trip in the middle of our <a href="salzburg.html" style="text-decoration:underline;text-underline-offset:3px;">five days in Salzburg</a> at the end of March, and this is exactly how I'd do it again.</p>
+
+      <!-- GETTING THERE -->
+      <div class="chapter-header rv" id="getting-there">
+        <span class="chapter-label">Getting There</span>
+        <h2 class="chapter-title">Get the train, then the ferry</h2>
+      </div>
+
+      <p class="p rv">From Salzburg it's roughly two hours by train. Book it on the ÖBB app in advance, it's cheap and it's easy. The journey itself is half the fun. We spent most of it with our faces against the glass, looking out at the mountain passes and the alpine lakes, and the Austrian countryside is something else. Even the houses out there are pretty!</p>
+
+      <p class="p rv">The train drops you at Hallstatt station, which is on the opposite side of the lake to the town. From there you hop on a short ferry across the Hallstätter See. Whatever you do, don't skip this and go round by road. The whole point of arriving in Hallstatt is watching it appear from the water.</p>
+
+      <div class="img-full rv">
+        <img src="blog/salzburg%20images/Hallstatt.jpg" alt="Hallstatt seen from the ferry on the Hallstätter See"/>
+      </div>
+      <p class="img-caption">Hallstatt, gradually materialising from the water as the ferry pulled in.</p>
+
+      <p class="p rv">The town gets closer and closer as you cross, and the way it sits right on the edge of the lake with the mountain going straight up behind it looks quite magical. That moment is worth the journey on its own.</p>
+
+      <div class="tip-box tip-box--gold rv">
+        <div class="tip-icon">⛴️</div>
+        <div class="tip-content">
+          <strong>The ferry meets the train</strong>
+          <p>The boats from the station are timed around the trains, so you won't be stood around for long. Check the timetable for the way back too, as they don't run all day.</p>
+        </div>
+      </div>
+
+      <!-- WHAT WE DID -->
+      <div class="chapter-header rv" id="what-we-did">
+        <span class="chapter-label">The Day</span>
+        <h2 class="chapter-title">Three to four hours is plenty</h2>
+      </div>
+
+      <p class="p rv">The town is small, so you don't need a full day. Here's what we actually did.</p>
+
+      <h3 class="h3 rv">Get up above it first</h3>
+
+      <p class="p rv">Climb the stairs up from the main street to the viewpoint. This is the famous postcard shot, and in late March we had it entirely to ourselves, which I don't think happens much in summer. We sat up there with our packed sandwiches and took it all in. It's the cheapest lunch with a view you'll ever have, and it's one of the things I'll remember most about the day.</p>
+
+      <div class="img-full rv">
+        <img src="images/blake-hallstatt.jpg" alt="Blake above the rooftops of Hallstatt" style="max-height:560px;width:auto;margin:0 auto;"/>
+      </div>
+      <p class="img-caption">Up above the town in late March, with nobody else around.</p>
+
+      <h3 class="h3 rv">The charnel house</h3>
+
+      <p class="p rv">Up in the churchyard above the town there's a small chapel full of skulls, over a thousand of them, a lot of them painted with names and flowers. The graveyard ran out of space centuries ago, so bones were dug up and moved in here. I'll be honest, I didn't fancy going in myself. I can see why people do though, and if you're braver than me it's probably one of the more interesting things you'll see in Austria.</p>
+
+      <h3 class="h3 rv">Find a spot by the church and sit down</h3>
+
+      <p class="p rv">This was the bit that made Hallstatt feel like a real place rather than a backdrop. We found somewhere near the church, got a beer (which was great, by the way) and just sat there people watching while the bells chimed across the water. No plan, nowhere to be. If you only do one thing on this list, do this.</p>
+
+      <blockquote class="pullquote rv">
+        <p>A beer, a bit of people watching, and the church bells ringing out over the lake. That's Hallstatt.</p>
+      </blockquote>
+
+      <h3 class="h3 rv">Walk the promenade</h3>
+
+      <p class="p rv">Then have a wander along the lakefront, find your fridge magnet and get an ice cream. You know what you're doing here.</p>
+
+      <!-- SALT MINE -->
+      <div class="chapter-header rv" id="salt-mine">
+        <span class="chapter-label">Worth Knowing</span>
+        <h2 class="chapter-title">The salt mine and the Skywalk</h2>
+      </div>
+
+      <p class="p rv">When we went in March 2026, the salt mine and the Skywalk were shut for works, so we couldn't do them. They're a big deal though. Hallstatt roughly means "place of salt", and the mine up the hill is the oldest known salt mine in the world. It's the whole reason the town exists.</p>
+
+      <p class="p rv">They've reopened since. The funicular takes you up the Salzberg to the Skywalk, a platform hanging out over the rooftops, and the mine tour starts from up there. If you're going, add a couple of hours to the day.</p>
+
+      <table class="fact-table rv">
+        <tr><td>Mine + funicular</td><td>€49 for adults (includes the funicular up and down)</td></tr>
+        <tr><td>Funicular only</td><td>€29 return for adults, which gets you to the Skywalk</td></tr>
+        <tr><td>Winter hours</td><td>Funicular roughly 9am to 4:30pm, last mine tour mid-afternoon</td></tr>
+        <tr><td>Winter closure</td><td>Closed 7 to 29 January 2027 for renovation, and on 24 and 31 December</td></tr>
+      </table>
+
+      <p class="p rv" style="font-size:.85rem;opacity:.8;">Prices and dates from <a href="https://www.salzwelten.at/en/hallstatt/prices-opening-hours" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:3px;">Salzwelten</a> as of November 2026. Check before you go, as they do change.</p>
+
+      <p class="p rv">If you're going in that January gap, or you just don't fancy it, the town is still well worth the trip. We didn't do either and still came home buzzing about it.</p>
+
+      <!-- PRACTICAL -->
+      <hr class="article-divider"/>
+
+      <h2 class="h2 rv" id="practical">The practical bits</h2>
+
+      <table class="fact-table rv">
+        <tr><td>Train</td><td>Salzburg to Hallstatt station, roughly two hours. Book on the ÖBB app ahead of time for the cheaper fares.</td></tr>
+        <tr><td>Ferry</td><td>From Hallstatt station across the lake to the town. A few minutes, timed with the trains.</td></tr>
+        <tr><td>Time needed</td><td>3 to 4 hours in the town, or add a couple more for the salt mine.</td></tr>
+        <tr><td>When to go</td><td>We went in late March and had the viewpoint to ourselves. Summer is a lot busier.</td></tr>
+        <tr><td>Food</td><td>Bring a packed lunch from Salzburg and treat yourself to a drink in town.</td></tr>
+      </table>
+
+      <p class="p rv">If you'd rather leave the logistics to someone else, the <a href="https://www.getyourguide.com/salzburg-l4/halbtages-tour-nach-hallstatt-ab-salzburg-t51222/?partner_id=YHIEWDZ&cmp=share_to_earn" target="_blank" rel="noopener sponsored" style="text-decoration:underline;text-underline-offset:3px;">half-day guided tour from Salzburg to Hallstatt on GetYourGuide</a> is one of the most booked trips in the city (5.5 hours, with free cancellation). You do miss the ferry arrival that way though, so I'd still go on your own if you can.</p>
+
+      <!-- FINAL -->
+      <hr class="article-divider"/>
+
+      <h2 class="h2 rv" id="final-thoughts">So, is it overrated?</h2>
+
+      <p class="p rv">No. I turned up half expecting the photos to have oversold it, and it ended up beating them. The thing I'll remember is the way the town gradually came out of the water as the ferry crossed the lake.</p>
+
+      <p class="p rv">We were back in Salzburg by mid-afternoon, which was exactly the right amount of time. For everything else we got up to on that trip (the fortress, the Sound of Music walk and the mountain on the last day) <a href="salzburg.html" style="text-decoration:underline;text-underline-offset:3px;">read the full Salzburg post here</a>.</p>
+
+      <div class="share-strip rv">
+        <span class="share-label">Share this post</span>
+        <div class="share-btns">
+          <a class="share-btn" id="copy-link" href="#" onclick="copyLink(event)">🔗 Copy link</a>
+          <a class="share-btn" href="https://twitter.com/intent/tweet?url=https://dropeverythingandgo.com/hallstatt.html&text=Is+Hallstatt+Overrated%3F+I+Went+to+Find+Out" target="_blank" rel="noopener">𝕏 Twitter</a>
+          <a class="share-btn" href="https://www.facebook.com/sharer/sharer.php?u=https://dropeverythingandgo.com/hallstatt.html" target="_blank" rel="noopener">Facebook</a>
+          <a class="share-btn" href="https://pinterest.com/pin/create/button/?url=https://dropeverythingandgo.com/hallstatt.html&description=Hallstatt+Day+Trip+from+Salzburg" target="_blank" rel="noopener">📌 Pin it</a>
+        </div>
+      </div>
+
+    </article>
+
+    <aside class="toc-sidebar" id="toc-sidebar" aria-label="Table of contents">
+      <div class="toc-sidebar-inner">
+        <div class="toc-sidebar-label">In this guide</div>
+        <ol class="toc-sidebar-list" id="toc-sidebar-list"></ol>
+      </div>
+    </aside>
+
+  </div>
+
+  <div style="max-width:calc(var(--col-text) + var(--col-sidebar) + 4rem + var(--gutter) * 2);margin:0 auto;padding:0 var(--gutter);">
+    <div class="author-bio">
+      <div class="author-bio-inner rv">
+        <div class="author-avatar">🌍</div>
+        <div>
+          <div class="author-info-label">Written by</div>
+          <div class="author-info-name">Blake Adams</div>
+          <p class="author-info-bio">I'm Blake, the uni student behind Drop Everything And Go. I'm based in the UK, but I'm usually planning the next trip (or already on it).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── BUY ME A BEER ── -->
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="dropeverythingandgo" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+
+<!-- RELATED POSTS -->
+<section class="related-s">
+  <div class="related-inner">
+    <h2 class="related-title rv">Keep reading</h2>
+    <div class="related-grid">
+
+      <a href="salzburg.html" class="related-card rv">
+        <div class="related-img">
+          <img src="blog/salzburg%20images/SnowySalzburg.jpg" alt="Salzburg in winter snow"/>
+        </div>
+        <div class="related-body">
+          <div class="related-cat">City Break · Austria</div>
+          <div class="related-post-title">5 Days in Salzburg on a Budget</div>
+          <div class="related-exc">The rest of the trip: the Sound of Music walk, the fortress, the Salzburg Card and the mountain that ended up being the best bit.</div>
+          <span class="related-read">Read more →</span>
+        </div>
+      </a>
+
+      <a href="countries/austria.html" class="related-card rv rv1">
+        <div class="related-img" style="background:linear-gradient(145deg,#2A1A08,#120C04);">
+          <div class="related-img-fallback">🏔️</div>
+        </div>
+        <div class="related-body">
+          <div class="related-cat">Country Guide · Austria</div>
+          <div class="related-post-title">Austria: the full country guide</div>
+          <div class="related-exc">Vienna, Hallstatt, when to go, what it costs and skiing in Austria.</div>
+          <span class="related-read">Read more →</span>
+        </div>
+      </a>
+
+      <a href="ski/obergurgl.html" class="related-card rv rv2">
+        <div class="related-img" style="background:linear-gradient(145deg,#1A0A3A,#0A0420);">
+          <div class="related-img-fallback">⛷️</div>
+        </div>
+        <div class="related-body">
+          <div class="related-cat">Ski · Austria</div>
+          <div class="related-post-title">Obergurgl: a school ski week in the Ötztal</div>
+          <div class="related-exc">One of the highest, most snow-sure villages in Austria, and easy to reach by train.</div>
+          <span class="related-read">Read more →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+  
+<!-- ── BUY ME A BEER ── -->
+<section style="background:var(--parchment);padding:2rem var(--gutter);border-top:1px solid rgba(11,13,16,.08);">
+  <div style="max-width:760px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+    <div style="flex:1;min-width:220px;">
+      <p style="font-size:.8rem;color:#7A8090;line-height:1.7;margin:0;">
+        <span style="font-size:1rem;">🍺</span> &nbsp;Everything on this site is free. If a guide helped you plan something great,
+        <a href="https://buymeacoffee.com/dropeverythingandgo" target="_blank" rel="noopener noreferrer"
+           style="color:var(--gold-dk);font-weight:600;text-decoration:none;">buying me a beer</a>
+        is a nice way to say thanks.
+      </p>
+    </div>
+    <a href="https://buymeacoffee.com/dropeverythingandgo"
+       target="_blank" rel="noopener noreferrer"
+       style="flex-shrink:0;display:inline-flex;align-items:center;gap:.5rem;background:#FFDD00;color:#000;font-family:var(--ff-mono);font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;padding:.7rem 1.3rem;border-radius:100px;text-decoration:none;white-space:nowrap;font-stretch:87.5%;font-weight:600;">
+      🍺 Buy Me a Beer
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-top">
+    <div class="ft-brand">
+      <a href="index.html" class="ft-stamp" aria-label="Drop Everything And Go home"><img src="deag-stamp.svg" alt="DEAG: Drop Everything And Go" width="112" height="112"></a>
+      <p>Trips I've actually taken, written up so you can take them too.</p>
+      <div class="ft-social">
+        <a href="https://www.tiktok.com/@dropeverythingandgo" class="ft-soc-btn" aria-label="TikTok" target="_blank" rel="noopener noreferrer">🎵</a>
+      </div>
+    </div>
+    <div class="ft-col"><h5>Explore</h5><ul>
+      <li><a href="journeys.html">Destinations</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul></div>
+    <div class="ft-col"><h5>The Site</h5><ul><li><a href="services.html">How it works</a></li><li><a href="privacy.html#affiliates">Affiliate links</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div class="ft-col"><h5>Info</h5><ul>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="privacy.html#cookies">Cookies</a></li>
+      <li><a href="privacy.html#terms">Terms</a></li>
+    </ul></div>
+  </div>
+  <div class="ft-badges">
+    <span class="ft-badge">💷 Real costs</span>
+    <span class="ft-badge">✍️ No paid reviews</span>
+    <span class="ft-badge">🔗 Affiliate links disclosed</span>
+  </div>
+  <div class="ft-bottom">
+    <p>© 2026 Drop Everything And Go. All rights reserved.</p>
+    <div class="ft-bottom-links"><a href="privacy.html">Privacy</a><a href="privacy.html#cookies">Cookies</a><a href="privacy.html#terms">Terms</a></div>
+  </div>
+</footer>
+
+
+<script>
+(function(){
+  var pb = document.getElementById('progress-bar');
+  if(pb) window.addEventListener('scroll', function(){ pb.style.width = Math.min((scrollY / (document.body.scrollHeight - innerHeight)) * 100, 100) + '%'; }, {passive:true});
+
+  var nav = document.getElementById('nav');
+  if(nav) window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', scrollY > 60); }, {passive:true});
+
+  var ham = document.getElementById('ham'), mob = document.getElementById('mob');
+  if(ham && mob) ham.addEventListener('click', function(){
+    ham.classList.toggle('open'); mob.classList.toggle('open');
+    document.body.style.overflow = mob.classList.contains('open') ? 'hidden' : '';
+  });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('vis'); io.unobserve(e.target); } });
+  }, {threshold: 0, rootMargin: '0px 0px -20px 0px'});
+  document.querySelectorAll('.rv').forEach(function(el){ io.observe(el); });
+  window.addEventListener('load', function(){
+    document.querySelectorAll('.rv').forEach(function(el){
+      var r = el.getBoundingClientRect();
+      if(r.top < window.innerHeight && r.bottom > 0) el.classList.add('vis');
+    });
+  });
+
+  (function(){
+    var inlineToc = document.querySelector('.toc ol');
+    var sidebarList = document.getElementById('toc-sidebar-list');
+    if(!inlineToc || !sidebarList) return;
+    var cloned = inlineToc.cloneNode(true);
+    Array.from(cloned.querySelectorAll('li')).forEach(function(li){
+      var a = li.querySelector('a');
+      if(a) sidebarList.appendChild(li);
+    });
+    var anchors = Array.from(sidebarList.querySelectorAll('a'));
+    var sections = anchors.map(function(a){ var id = a.getAttribute('href').replace('#',''); return document.getElementById(id); }).filter(Boolean);
+    if(!sections.length) return;
+    var activeIndex = 0;
+    function setActive(i){ if(i === activeIndex) return; activeIndex = i; anchors.forEach(function(a){ a.classList.remove('toc-active'); }); if(anchors[i]) anchors[i].classList.add('toc-active'); }
+    setActive(0);
+    window.addEventListener('scroll', function(){
+      var scrollMid = scrollY + window.innerHeight * 0.35; var found = 0;
+      sections.forEach(function(s, i){ if(s.offsetTop <= scrollMid) found = i; });
+      setActive(found);
+    }, {passive:true});
+  })();
+
+
+  window.copyLink = function(e){
+    e.preventDefault();
+    var btn = document.getElementById('copy-link');
+    navigator.clipboard.writeText(window.location.href).then(function(){
+      if(btn){ btn.textContent = '✓ Copied!'; setTimeout(function(){ btn.textContent = '🔗 Copy link'; }, 2000); }
+    });
+  };
+})();
+</script>
+
+</body>
+</html>
