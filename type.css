@@ -46,3 +46,17 @@ nav li, nav a, footer li, footer a, button, .btn, [class*="btn"],
   font-family: var(--ff-ui) !important;
 }
 [class*="label"], [class*="tag"], [class*="eyebrow"] { font-weight: 600; }
+
+/* Big page titles: Gloock, narrower and closer to the original look.
+   Section headings keep Zilla Slab. */
+h1, .ih-h1, .ah-h1, .pg-title, .post-hero-headline, .ph-title {
+  font-family: 'Gloock', Georgia, serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.01em !important;
+}
+h1 em, .ih-h1 em, .ah-h1 em, .pg-title em, .post-hero-headline em {
+  font-family: 'Newsreader', Georgia, serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+}
+.ah-h1 em { display: block; font-size: 0.62em; line-height: 1.1; margin-top: .2em; }
