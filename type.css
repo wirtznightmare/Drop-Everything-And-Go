@@ -46,3 +46,23 @@ nav li, nav a, footer li, footer a, button, .btn, [class*="btn"],
   font-family: var(--ff-ui) !important;
 }
 [class*="label"], [class*="tag"], [class*="eyebrow"] { font-weight: 600; }
+
+/* Section headers with a label "placard": labels share one column so every
+   title starts at the same left edge, and the label sits on the title's
+   first line. */
+.chapter-header {
+  display: grid !important;
+  grid-template-columns: 8.5rem 1fr;
+  column-gap: 1.2rem;
+  align-items: baseline !important;
+}
+.chapter-label {
+  justify-self: start;
+  margin-top: 0 !important;
+  position: relative;
+  top: -0.35em;
+}
+@media (max-width: 760px) {
+  .chapter-header { grid-template-columns: 1fr; row-gap: 0.6rem; }
+  .chapter-label { top: 0; }
+}
